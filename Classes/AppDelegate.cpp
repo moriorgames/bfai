@@ -1,8 +1,6 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
-
-// #define USE_AUDIO_ENGINE 1
-// #define USE_SIMPLE_AUDIO_ENGINE 1
+#include "MoriorGames/Scenes/LogoScene.h"
+#include "MoriorGames/Screen/Resolution.h"
 
 #if USE_AUDIO_ENGINE && USE_SIMPLE_AUDIO_ENGINE
 #error "Don't use AudioEngine and SimpleAudioEngine at the same time. Please just select one in your game!"
@@ -18,14 +16,14 @@ using namespace CocosDenshion;
 
 USING_NS_CC;
 
+using namespace std;
+using MoriorGames::Resolution;
+using MoriorGames::LogoScene;
+
 static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
 static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);
 static cocos2d::Size mediumResolutionSize = cocos2d::Size(1024, 768);
 static cocos2d::Size largeResolutionSize = cocos2d::Size(2048, 1536);
-
-AppDelegate::AppDelegate()
-{
-}
 
 AppDelegate::~AppDelegate() 
 {
@@ -94,7 +92,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    auto scene = LogoScene::createScene();
 
     // run
     director->runWithScene(scene);

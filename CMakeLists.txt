@@ -154,28 +154,23 @@ elseif ( MACOSX OR APPLE )
     )
 endif ()
 
-set(GAME_SRC
-        ${PLATFORM_SPECIFIC_SRC}
-        Classes/AppDelegate.cpp
-        Classes/HelloWorldScene.cpp
-        )
+set(GAME_SRC ${PLATFORM_SPECIFIC_SRC} Classes/AppDelegate.cpp)
 
-set(GAME_HEADERS
-        ${PLATFORM_SPECIFIC_HEADERS}
-        Classes/AppDelegate.h
-        Classes/HelloWorldScene.h
-        )
+set(GAME_HEADERS ${PLATFORM_SPECIFIC_HEADERS} Classes/AppDelegate.h)
+
+# Add the Specific Classes of the project recursively
+file(GLOB_RECURSE Classes/MoriorGames "*.h" "*.cpp")
 
 # add the executable
 if(ANDROID)
-    add_library(${APP_NAME} SHARED ${GAME_SRC} ${GAME_HEADERS})
+    add_library(${APP_NAME} SHARED ${GAME_SRC} ${GAME_HEADERS} ${Classes/MoriorGames})
     IF(CMAKE_BUILD_TYPE STREQUAL "Release")
         ADD_CUSTOM_COMMAND(TARGET ${APP_NAME} POST_BUILD COMMAND ${CMAKE_STRIP} lib${APP_NAME}.so)
     ENDIF()
 elseif(MSVC)
-	add_executable(${APP_NAME} ${GAME_SRC} ${GAME_HEADERS} proj.win32/game.rc)
+	add_executable(${APP_NAME} ${GAME_SRC} ${GAME_HEADERS} ${Classes/MoriorGames} proj.win32/game.rc)
 else()
-    add_executable(${APP_NAME} ${GAME_SRC} ${GAME_HEADERS})
+    add_executable(${APP_NAME} ${GAME_SRC} ${GAME_HEADERS} ${Classes/MoriorGames})
 endif()
 
 target_link_libraries(${APP_NAME} cocos2d)

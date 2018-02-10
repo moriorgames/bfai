@@ -11,9 +11,12 @@ LOCAL_MODULE := MyGame_shared
 
 LOCAL_MODULE_FILENAME := libMyGame
 
-LOCAL_SRC_FILES := hellocpp/main.cpp \
-                   ../../Classes/AppDelegate.cpp \
-                   ../../Classes/HelloWorldScene.cpp
+LOCAL_SRC_FILES := projectbfai/main.cpp \
+                   ../../Classes/MoriorGames/Scenes/LogoScene.cpp \
+                   ../../Classes/MoriorGames/Screen/Resolution.cpp \
+                   ../../Classes/MoriorGames/View/LogoView.cpp \
+                   ../../Classes/MoriorGames/View/ViewHelper.cpp \
+                   ../../Classes/AppDelegate.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 

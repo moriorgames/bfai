@@ -60,7 +60,7 @@ def caculate_built_samples(args):
     targets += args
 
     # remove duplicate elements, for example
-    # python android-build.py cpp hellocpp
+    # python android-build.py cpp projectbfai
     targets = set(targets)
     return list(targets)
 

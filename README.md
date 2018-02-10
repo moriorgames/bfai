@@ -40,4 +40,5 @@ $ cocos run -p android && adb logcat | grep cocos2d
 $ adb kill-server
 $ adb start-server
 $ adb devices
+$ cocos run -p android --app-abi arm64-v8a
 ```

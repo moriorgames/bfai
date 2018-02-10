@@ -27,6 +27,10 @@
 		4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE44D202EE32E00B687FB /* Resolution.cpp */; };
 		4F3AE450202EE32E00B687FB /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE44D202EE32E00B687FB /* Resolution.cpp */; };
+		4F3AE454202EE9E000B687FB /* ViewHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE452202EE9E000B687FB /* ViewHelper.cpp */; };
+		4F3AE455202EE9E000B687FB /* ViewHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE452202EE9E000B687FB /* ViewHelper.cpp */; };
+		4F3AE458202EE9F600B687FB /* LogoView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE456202EE9F600B687FB /* LogoView.cpp */; };
+		4F3AE459202EE9F600B687FB /* LogoView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE456202EE9F600B687FB /* LogoView.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -130,6 +134,10 @@
 		4F3AE44A202EE30500B687FB /* LogoScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoScene.h; sourceTree = "<group>"; };
 		4F3AE44D202EE32E00B687FB /* Resolution.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Resolution.cpp; sourceTree = "<group>"; };
 		4F3AE44E202EE32E00B687FB /* Resolution.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Resolution.h; sourceTree = "<group>"; };
+		4F3AE452202EE9E000B687FB /* ViewHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ViewHelper.cpp; sourceTree = "<group>"; };
+		4F3AE453202EE9E000B687FB /* ViewHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewHelper.h; sourceTree = "<group>"; };
+		4F3AE456202EE9F600B687FB /* LogoView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LogoView.cpp; sourceTree = "<group>"; };
+		4F3AE457202EE9F600B687FB /* LogoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoView.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -324,6 +332,7 @@
 		4F3AE443202EE1F400B687FB /* MoriorGames */ = {
 			isa = PBXGroup;
 			children = (
+				4F3AE451202EE9B900B687FB /* View */,
 				4F3AE447202EE2CE00B687FB /* Scenes */,
 				4F3AE448202EE2D800B687FB /* Screen */,
 			);
@@ -346,6 +355,17 @@
 				4F3AE44E202EE32E00B687FB /* Resolution.h */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		4F3AE451202EE9B900B687FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F3AE452202EE9E000B687FB /* ViewHelper.cpp */,
+				4F3AE453202EE9E000B687FB /* ViewHelper.h */,
+				4F3AE456202EE9F600B687FB /* LogoView.cpp */,
+				4F3AE457202EE9F600B687FB /* LogoView.h */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
@@ -543,6 +563,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3AE454202EE9E000B687FB /* ViewHelper.cpp in Sources */,
+				4F3AE458202EE9F600B687FB /* LogoView.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -556,6 +578,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3AE455202EE9E000B687FB /* ViewHelper.cpp in Sources */,
+				4F3AE459202EE9F600B687FB /* LogoView.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				4F3AE450202EE32E00B687FB /* Resolution.cpp in Sources */,
 				4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */,

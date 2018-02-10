@@ -1,6 +1,8 @@
 #include "LogoScene.h"
+#include "../View/LogoView.h"
 
 using MoriorGames::LogoScene;
+using MoriorGames::LogoView;
 USING_NS_CC;
 
 Scene *LogoScene::createScene()
@@ -20,6 +22,8 @@ bool LogoScene::init()
     if (!Layer::init()) {
         return false;
     }
+
+    (new LogoView(this))->addLogo();
 
     return true;
 }

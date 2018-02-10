@@ -1,7 +1,9 @@
 #include "LogoScene.h"
+#include "SplashScene.h"
 #include "../View/LogoView.h"
 
 using MoriorGames::LogoScene;
+using MoriorGames::SplashScene;
 using MoriorGames::LogoView;
 USING_NS_CC;
 
@@ -25,9 +27,13 @@ bool LogoScene::init()
 
     (new LogoView(this))->addLogo();
 
+    this->scheduleOnce(schedule_selector(LogoScene::goToSplashScene), SCENES_DELAY_TIME);
+
     return true;
 }
 
 void LogoScene::goToSplashScene(float delay)
 {
+    auto scene = SplashScene::createScene();
+    Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
 }

@@ -13,6 +13,7 @@ LOCAL_MODULE_FILENAME := libBFAI
 
 LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Scenes/LogoScene.cpp \
+                   ../../Classes/MoriorGames/Scenes/SplashScene.cpp \
                    ../../Classes/MoriorGames/Screen/Position.cpp \
                    ../../Classes/MoriorGames/Screen/Resolution.cpp \
                    ../../Classes/MoriorGames/Screen/ScreenProperties.cpp \

@@ -23,6 +23,8 @@
 		4F2CBFF3202F1E9300169E86 /* SpriteAnimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */; };
 		4F2CBFF5202F21A600169E86 /* s-morior-games.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF4202F21A600169E86 /* s-morior-games.mp3 */; };
 		4F2CBFF6202F21A600169E86 /* s-morior-games.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF4202F21A600169E86 /* s-morior-games.mp3 */; };
+		4F2CBFF9202F22CD00169E86 /* SplashScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF7202F22CD00169E86 /* SplashScene.cpp */; };
+		4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF7202F22CD00169E86 /* SplashScene.cpp */; };
 		4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE44D202EE32E00B687FB /* Resolution.cpp */; };
@@ -138,6 +140,8 @@
 		4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteAnimator.cpp; sourceTree = "<group>"; };
 		4F2CBFF1202F1E9300169E86 /* SpriteAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpriteAnimator.h; sourceTree = "<group>"; };
 		4F2CBFF4202F21A600169E86 /* s-morior-games.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "s-morior-games.mp3"; sourceTree = "<group>"; };
+		4F2CBFF7202F22CD00169E86 /* SplashScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SplashScene.cpp; sourceTree = "<group>"; };
+		4F2CBFF8202F22CD00169E86 /* SplashScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashScene.h; sourceTree = "<group>"; };
 		4F3AE449202EE30500B687FB /* LogoScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LogoScene.cpp; sourceTree = "<group>"; };
 		4F3AE44A202EE30500B687FB /* LogoScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoScene.h; sourceTree = "<group>"; };
 		4F3AE44D202EE32E00B687FB /* Resolution.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Resolution.cpp; sourceTree = "<group>"; };
@@ -370,6 +374,8 @@
 			children = (
 				4F3AE449202EE30500B687FB /* LogoScene.cpp */,
 				4F3AE44A202EE30500B687FB /* LogoScene.h */,
+				4F2CBFF7202F22CD00169E86 /* SplashScene.cpp */,
+				4F2CBFF8202F22CD00169E86 /* SplashScene.h */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				4F2CBFF9202F22CD00169E86 /* SplashScene.cpp in Sources */,
 				4F3AE461202F040400B687FB /* ScreenProperties.cpp in Sources */,
 				4F3AE45D202F03D700B687FB /* Position.cpp in Sources */,
 			);
@@ -614,6 +621,7 @@
 				4F3AE459202EE9F600B687FB /* LogoView.cpp in Sources */,
 				4F3AE462202F040400B687FB /* ScreenProperties.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */,
 				4F3AE450202EE32E00B687FB /* Resolution.cpp in Sources */,
 				4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,

@@ -21,6 +21,7 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Services/SpriteAnimator.cpp \
                    ../../Classes/MoriorGames/View/LoadingView.cpp \
                    ../../Classes/MoriorGames/View/LogoView.cpp \
+                   ../../Classes/MoriorGames/View/SplashView.cpp \
                    ../../Classes/MoriorGames/View/ViewHelper.cpp \
                    ../../Classes/AppDelegate.cpp
 

@@ -45,6 +45,10 @@
 		4F3AE462202F040400B687FB /* ScreenProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE45F202F040400B687FB /* ScreenProperties.cpp */; };
 		4F3AE464202F054D00B687FB /* main-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3AE463202F054D00B687FB /* main-logo.png */; };
 		4F3AE465202F054D00B687FB /* main-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3AE463202F054D00B687FB /* main-logo.png */; };
+		4FA6AD68202F7C8800158956 /* SplashView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6AD66202F7C8800158956 /* SplashView.cpp */; };
+		4FA6AD69202F7C8800158956 /* SplashView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6AD66202F7C8800158956 /* SplashView.cpp */; };
+		4FA6AD6C202F7E0000158956 /* splash-screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4FA6AD6B202F7E0000158956 /* splash-screen.jpg */; };
+		4FA6AD6D202F7E0000158956 /* splash-screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4FA6AD6B202F7E0000158956 /* splash-screen.jpg */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -166,6 +170,9 @@
 		4F3AE45F202F040400B687FB /* ScreenProperties.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ScreenProperties.cpp; sourceTree = "<group>"; };
 		4F3AE460202F040400B687FB /* ScreenProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenProperties.h; sourceTree = "<group>"; };
 		4F3AE463202F054D00B687FB /* main-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-logo.png"; sourceTree = "<group>"; };
+		4FA6AD66202F7C8800158956 /* SplashView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SplashView.cpp; sourceTree = "<group>"; };
+		4FA6AD67202F7C8800158956 /* SplashView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashView.h; sourceTree = "<group>"; };
+		4FA6AD6B202F7E0000158956 /* splash-screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "splash-screen.jpg"; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -336,6 +343,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4FA6AD6B202F7E0000158956 /* splash-screen.jpg */,
 				4F2CBFFF202F2BC600169E86 /* loader-bar-border.png */,
 				4F2CC002202F2BD000169E86 /* loader-bar.png */,
 				4F2CBFF4202F21A600169E86 /* s-morior-games.mp3 */,
@@ -414,6 +422,8 @@
 				4F3AE457202EE9F600B687FB /* LogoView.h */,
 				4F2CBFFB202F252000169E86 /* LoadingView.cpp */,
 				4F2CBFFC202F252000169E86 /* LoadingView.h */,
+				4FA6AD66202F7C8800158956 /* SplashView.cpp */,
+				4FA6AD67202F7C8800158956 /* SplashView.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -583,6 +593,7 @@
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				4FA6AD6C202F7E0000158956 /* splash-screen.jpg in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				4F3AE464202F054D00B687FB /* main-logo.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
@@ -598,6 +609,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FA6AD6D202F7E0000158956 /* splash-screen.jpg in Resources */,
 				4F2CBFF6202F21A600169E86 /* s-morior-games.mp3 in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				4F2CC004202F2BD000169E86 /* loader-bar.png in Resources */,
@@ -621,6 +633,7 @@
 				4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
 				4F2CBFF2202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
+				4FA6AD68202F7C8800158956 /* SplashView.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
@@ -647,6 +660,7 @@
 				4F2CBFF3202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
 				4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */,
 				4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
+				4FA6AD69202F7C8800158956 /* SplashView.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,6 +1,8 @@
 #include "SplashScene.h"
+#include "../View/SplashView.h"
 
 using MoriorGames::SplashScene;
+using MoriorGames::SplashView;
 USING_NS_CC;
 
 Scene *SplashScene::createScene()
@@ -21,6 +23,7 @@ bool SplashScene::init()
         return false;
     }
 
+    new SplashView(this);
     loadingView = new LoadingView(this);
 
     return true;

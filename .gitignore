@@ -50,6 +50,7 @@ cocos2d/cocos/platform/android/java/local.properties
 cocos2d/cocos/platform/android/java/res/
 .metadata/
 .recommenders/
+cocos2d/plugin/plugins/qh360/proj.android/ForAssets/res/icon/
 
 # proj.ios_mac
 cocos2d/build/build/

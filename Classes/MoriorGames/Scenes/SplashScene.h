@@ -18,10 +18,10 @@ public:
     void increaseLoadingBar(float delay);
 
 private:
-    float loadingBarPercentage = 40;
+    float loadingBarPercentage = 0.0f;
     LoadingView *loadingView;
 
-    void goToMainMenuScene(float delay);
+    void goToMainMenuScene();
 
 };
 

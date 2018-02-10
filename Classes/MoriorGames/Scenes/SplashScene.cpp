@@ -1,4 +1,5 @@
 #include "SplashScene.h"
+#include "../Scenes/MainMenuScene.h"
 #include "../View/SplashView.h"
 
 using MoriorGames::SplashScene;
@@ -26,15 +27,23 @@ bool SplashScene::init()
     new SplashView(this);
     loadingView = new LoadingView(this);
 
+    this->schedule(schedule_selector(SplashScene::increaseLoadingBar), LOADER_BAR_DELAY);
+
     return true;
 }
 
 void SplashScene::increaseLoadingBar(float delay)
 {
-
+    loadingBarPercentage += 3;
+    loadingView->setLoadingBarPercentage(loadingBarPercentage);
+    if (loadingBarPercentage > 99) {
+        this->unschedule(schedule_selector(SplashScene::increaseLoadingBar));
+        SplashScene::goToMainMenuScene();
+    }
 }
 
-void SplashScene::goToMainMenuScene(float delay)
+void SplashScene::goToMainMenuScene()
 {
-
+    auto scene = MainMenuScene::createScene();
+    Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
 }

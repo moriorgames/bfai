@@ -16,6 +16,7 @@ public:
 
 public:
     explicit LoadingView(Layer *layer);
+    void setLoadingBarPercentage(float percentage);
 
 private:
     Node *container;

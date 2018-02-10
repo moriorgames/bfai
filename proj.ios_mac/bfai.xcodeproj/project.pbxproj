@@ -27,6 +27,10 @@
 		4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF7202F22CD00169E86 /* SplashScene.cpp */; };
 		4F2CBFFD202F252000169E86 /* LoadingView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFFB202F252000169E86 /* LoadingView.cpp */; };
 		4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFFB202F252000169E86 /* LoadingView.cpp */; };
+		4F2CC000202F2BC600169E86 /* loader-bar-border.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CBFFF202F2BC600169E86 /* loader-bar-border.png */; };
+		4F2CC001202F2BC600169E86 /* loader-bar-border.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CBFFF202F2BC600169E86 /* loader-bar-border.png */; };
+		4F2CC003202F2BD000169E86 /* loader-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CC002202F2BD000169E86 /* loader-bar.png */; };
+		4F2CC004202F2BD000169E86 /* loader-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CC002202F2BD000169E86 /* loader-bar.png */; };
 		4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE44D202EE32E00B687FB /* Resolution.cpp */; };
@@ -146,6 +150,8 @@
 		4F2CBFF8202F22CD00169E86 /* SplashScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashScene.h; sourceTree = "<group>"; };
 		4F2CBFFB202F252000169E86 /* LoadingView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingView.cpp; sourceTree = "<group>"; };
 		4F2CBFFC202F252000169E86 /* LoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		4F2CBFFF202F2BC600169E86 /* loader-bar-border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loader-bar-border.png"; sourceTree = "<group>"; };
+		4F2CC002202F2BD000169E86 /* loader-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loader-bar.png"; sourceTree = "<group>"; };
 		4F3AE449202EE30500B687FB /* LogoScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LogoScene.cpp; sourceTree = "<group>"; };
 		4F3AE44A202EE30500B687FB /* LogoScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoScene.h; sourceTree = "<group>"; };
 		4F3AE44D202EE32E00B687FB /* Resolution.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Resolution.cpp; sourceTree = "<group>"; };
@@ -330,6 +336,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4F2CBFFF202F2BC600169E86 /* loader-bar-border.png */,
+				4F2CC002202F2BD000169E86 /* loader-bar.png */,
 				4F2CBFF4202F21A600169E86 /* s-morior-games.mp3 */,
 				4F3AE463202F054D00B687FB /* main-logo.png */,
 				521A8EA819F11F5000D177D7 /* fonts */,
@@ -563,11 +571,13 @@
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
+				4F2CC000202F2BC600169E86 /* loader-bar-border.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				4F2CBFF5202F21A600169E86 /* s-morior-games.mp3 in Resources */,
+				4F2CC003202F2BD000169E86 /* loader-bar.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
@@ -590,6 +600,8 @@
 			files = (
 				4F2CBFF6202F21A600169E86 /* s-morior-games.mp3 in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
+				4F2CC004202F2BD000169E86 /* loader-bar.png in Resources */,
+				4F2CC001202F2BC600169E86 /* loader-bar-border.png in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				4F3AE465202F054D00B687FB /* main-logo.png in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,

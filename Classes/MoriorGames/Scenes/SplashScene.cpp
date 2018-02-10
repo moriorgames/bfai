@@ -21,7 +21,14 @@ bool SplashScene::init()
         return false;
     }
 
+    loadingView = new LoadingView(this);
+
     return true;
+}
+
+void SplashScene::increaseLoadingBar(float delay)
+{
+
 }
 
 void SplashScene::goToMainMenuScene(float delay)

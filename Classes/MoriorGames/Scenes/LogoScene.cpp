@@ -25,7 +25,7 @@ bool LogoScene::init()
         return false;
     }
 
-    (new LogoView(this))->addLogo();
+    new LogoView(this);
 
     this->scheduleOnce(schedule_selector(LogoScene::goToSplashScene), SCENES_DELAY_TIME);
 

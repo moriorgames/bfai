@@ -2,6 +2,7 @@
 #define MORIOR_GAMES_SCENES_SPLASH_SCENE_H
 
 #include "cocos2d.h"
+#include "../View/LoadingView.h"
 
 namespace MoriorGames {
 
@@ -14,9 +15,14 @@ public:
 
     CREATE_FUNC(SplashScene);
 
+    void increaseLoadingBar(float delay);
+
 private:
+    float loadingBarPercentage = 40;
+    LoadingView *loadingView;
 
     void goToMainMenuScene(float delay);
+
 };
 
 }

@@ -9,7 +9,9 @@ class LogoView: public ViewHelper
 {
 public:
     explicit LogoView(Layer *layer);
-    void addLogo();
+
+private:
+    void addView() override;
 };
 
 }

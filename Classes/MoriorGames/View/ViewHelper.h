@@ -18,6 +18,9 @@ protected:
     float scale;
     Position *position;
     Point centerPosition;
+
+private:
+    virtual void addView()= 0;
 };
 
 }

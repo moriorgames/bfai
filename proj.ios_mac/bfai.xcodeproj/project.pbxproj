@@ -25,6 +25,8 @@
 		4F2CBFF6202F21A600169E86 /* s-morior-games.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF4202F21A600169E86 /* s-morior-games.mp3 */; };
 		4F2CBFF9202F22CD00169E86 /* SplashScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF7202F22CD00169E86 /* SplashScene.cpp */; };
 		4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF7202F22CD00169E86 /* SplashScene.cpp */; };
+		4F2CBFFD202F252000169E86 /* LoadingView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFFB202F252000169E86 /* LoadingView.cpp */; };
+		4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFFB202F252000169E86 /* LoadingView.cpp */; };
 		4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE44D202EE32E00B687FB /* Resolution.cpp */; };
@@ -142,6 +144,8 @@
 		4F2CBFF4202F21A600169E86 /* s-morior-games.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "s-morior-games.mp3"; sourceTree = "<group>"; };
 		4F2CBFF7202F22CD00169E86 /* SplashScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SplashScene.cpp; sourceTree = "<group>"; };
 		4F2CBFF8202F22CD00169E86 /* SplashScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashScene.h; sourceTree = "<group>"; };
+		4F2CBFFB202F252000169E86 /* LoadingView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingView.cpp; sourceTree = "<group>"; };
+		4F2CBFFC202F252000169E86 /* LoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		4F3AE449202EE30500B687FB /* LogoScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LogoScene.cpp; sourceTree = "<group>"; };
 		4F3AE44A202EE30500B687FB /* LogoScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoScene.h; sourceTree = "<group>"; };
 		4F3AE44D202EE32E00B687FB /* Resolution.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Resolution.cpp; sourceTree = "<group>"; };
@@ -400,6 +404,8 @@
 				4F3AE453202EE9E000B687FB /* ViewHelper.h */,
 				4F3AE456202EE9F600B687FB /* LogoView.cpp */,
 				4F3AE457202EE9F600B687FB /* LogoView.h */,
+				4F2CBFFB202F252000169E86 /* LoadingView.cpp */,
+				4F2CBFFC202F252000169E86 /* LoadingView.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -608,6 +614,7 @@
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				4F2CBFF9202F22CD00169E86 /* SplashScene.cpp in Sources */,
+				4F2CBFFD202F252000169E86 /* LoadingView.cpp in Sources */,
 				4F3AE461202F040400B687FB /* ScreenProperties.cpp in Sources */,
 				4F3AE45D202F03D700B687FB /* Position.cpp in Sources */,
 			);
@@ -626,6 +633,7 @@
 				4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,
 				4F2CBFF3202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
+				4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */,
 				4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 			);

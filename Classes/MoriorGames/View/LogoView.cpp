@@ -7,9 +7,10 @@ using MoriorGames::SoundPlayer;
 LogoView::LogoView(Layer *layer)
     : ViewHelper(layer)
 {
+    addView();
 }
 
-void LogoView::addLogo()
+void LogoView::addView()
 {
     auto logo = Sprite::create("main-logo.png");
     logo->setScale(scale);

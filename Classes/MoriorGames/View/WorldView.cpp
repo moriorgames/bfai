@@ -1,0 +1,47 @@
+#include "WorldView.h"
+
+using MoriorGames::WorldView;
+
+const std::string WorldView::WORLD_NAME = "world-node";
+
+WorldView::WorldView(Layer *layer)
+    : ViewHelper(layer)
+{
+    addView();
+}
+
+void WorldView::addView()
+{
+    container = new Node;
+
+    addWorld();
+
+    layer->addChild(container, Z_ORDER_WORLD);
+}
+
+void WorldView::addWorld()
+{
+    auto world = Sprite::create("asset-world.png");
+    world->setScale(scale);
+    world->setPosition(centerPosition);
+    world->setName(WORLD_NAME);
+
+    auto content = world->getContentSize();
+
+//    auto details = new Sprite;
+//    details->initWithSpriteFrameName(getFrameName("heroes-blue-fire"));
+//    details->setPosition(
+//        content.width / 2,
+//        content.height / 2 + DETAIL_Y
+//    );
+//    details->runAction(detailAction());
+//    world->addChild(details);
+
+    container->addChild(world);
+}
+
+Action *WorldView::detailAction()
+{
+//    return generateAction("heroes-blue-fire", 16, "default", 0, 36);
+    return nullptr;
+}

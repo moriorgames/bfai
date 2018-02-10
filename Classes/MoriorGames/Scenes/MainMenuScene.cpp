@@ -1,5 +1,6 @@
 #include "MainMenuScene.h"
 #include "../View/BackgroundView.h"
+#include "../View/WorldView.h"
 
 using MoriorGames::MainMenuScene;
 USING_NS_CC;
@@ -23,6 +24,7 @@ bool MainMenuScene::init()
     }
 
     new BackgroundView(this);
+    new WorldView(this);
 
     return true;
 }

@@ -25,6 +25,7 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/View/LogoView.cpp \
                    ../../Classes/MoriorGames/View/SplashView.cpp \
                    ../../Classes/MoriorGames/View/ViewHelper.cpp \
+                   ../../Classes/MoriorGames/View/WorldView.cpp \
                    ../../Classes/AppDelegate.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes

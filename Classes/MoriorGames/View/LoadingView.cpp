@@ -32,10 +32,10 @@ void LoadingView::addLoadingBar()
     auto loadingBarNode = new Node;
 
     // Loading Background Bar
-    auto backgroundBar = Sprite::create("loader-bar-border.png");
+    auto backgroundBar = Sprite::create("asset-loader-bar-border.png");
 
     // Loading Foreground Bar
-    auto foregroundBar = Sprite::create("loader-bar.png");
+    auto foregroundBar = Sprite::create("asset-loader-bar.png");
 
     loadingBar = new ProgressTimer;
     loadingBar->initWithSprite(foregroundBar);

@@ -1,4 +1,5 @@
 #include "MainMenuScene.h"
+#include "../View/BackgroundView.h"
 
 using MoriorGames::MainMenuScene;
 USING_NS_CC;
@@ -20,6 +21,8 @@ bool MainMenuScene::init()
     if (!Layer::init()) {
         return false;
     }
+
+    new BackgroundView(this);
 
     return true;
 }

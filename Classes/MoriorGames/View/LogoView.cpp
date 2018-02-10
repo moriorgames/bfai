@@ -12,7 +12,7 @@ LogoView::LogoView(Layer *layer)
 
 void LogoView::addView()
 {
-    auto logo = Sprite::create("main-logo.png");
+    auto logo = Sprite::create("img-main-logo.png");
     logo->setScale(scale);
     logo->setPosition(centerPosition);
 

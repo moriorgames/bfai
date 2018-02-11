@@ -2,13 +2,14 @@
 #define MORIOR_GAMES_VIEW_LOADING_VIEW_H
 
 #include "ViewHelper.h"
+#include "../Services/SpriteAnimator.h"
 
 namespace MoriorGames {
 
 class WorldView: public ViewHelper
 {
 public:
-    int const DETAIL_Y = 30;
+    int const DETAIL_Y = 120;
     static const std::string WORLD_NAME;
 
 public:
@@ -16,6 +17,7 @@ public:
 
 private:
     Node *container;
+    SpriteAnimator *spriteAnimator;
 
     void addView() override;
     void addWorld();

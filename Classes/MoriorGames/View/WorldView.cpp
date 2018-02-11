@@ -7,6 +7,7 @@ const std::string WorldView::WORLD_NAME = "world-node";
 WorldView::WorldView(Layer *layer)
     : ViewHelper(layer)
 {
+    spriteAnimator = new SpriteAnimator;
     addView();
 }
 
@@ -28,20 +29,19 @@ void WorldView::addWorld()
 
     auto content = world->getContentSize();
 
-//    auto details = new Sprite;
-//    details->initWithSpriteFrameName(getFrameName("heroes-blue-fire"));
-//    details->setPosition(
-//        content.width / 2,
-//        content.height / 2 + DETAIL_Y
-//    );
-//    details->runAction(detailAction());
-//    world->addChild(details);
+    auto details = new Sprite;
+    details->initWithSpriteFrameName(spriteAnimator->getFrameName("details"));
+    details->setPosition(
+        content.width / 2,
+        content.height / 2 + DETAIL_Y
+    );
+    details->runAction(detailAction());
+    world->addChild(details);
 
     container->addChild(world);
 }
 
 Action *WorldView::detailAction()
 {
-//    return generateAction("heroes-blue-fire", 16, "default", 0, 36);
-    return nullptr;
+    return spriteAnimator->generateAction("details", 16, "default", 0, 36);
 }

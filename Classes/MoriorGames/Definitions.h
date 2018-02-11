@@ -19,6 +19,15 @@
 #define LOADER_BAR_DELAY 0.06
 #define UPGRADE_DELAY 0.01
 
-#define MODE_SOUND 0
+#define MODE_SOUND 1
+
+#define CARTESIAN_EAST          0
+#define CARTESIAN_NORTHEAST     45
+#define CARTESIAN_NORTH         90
+#define CARTESIAN_NORTHWEST     135
+#define CARTESIAN_WEST          180
+#define CARTESIAN_SOUTHWEST     225
+#define CARTESIAN_SOUTH         270
+#define CARTESIAN_SOUTHEAST     315
 
 #endif

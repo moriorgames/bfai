@@ -1,5 +1,6 @@
 #include "SplashScene.h"
 #include "../Scenes/MainMenuScene.h"
+#include "../Services/AssetManager.h"
 #include "../View/SplashView.h"
 
 using MoriorGames::SplashScene;
@@ -36,6 +37,9 @@ void SplashScene::increaseLoadingBar(float delay)
 {
     loadingBarPercentage += 3;
     loadingView->setLoadingBarPercentage(loadingBarPercentage);
+    if (loadingBarPercentage == 66) {
+        new AssetManager();
+    }
     if (loadingBarPercentage > 99) {
         this->unschedule(schedule_selector(SplashScene::increaseLoadingBar));
         SplashScene::goToMainMenuScene();

@@ -2,7 +2,7 @@
 
 using MoriorGames::WorldView;
 
-const std::string WorldView::WORLD_NAME = "world-node";
+const std::string WorldView::NAME = "world-node";
 
 WorldView::WorldView(Layer *layer)
     : ViewHelper(layer)
@@ -25,7 +25,8 @@ void WorldView::addWorld()
     auto world = Sprite::create("asset-world.png");
     world->setScale(scale);
     world->setPosition(centerPosition);
-    world->setName(WORLD_NAME);
+    world->setPositionY(centerPosition.y + WORLD_Y);
+    world->setName(NAME);
 
     auto content = world->getContentSize();
 

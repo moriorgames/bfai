@@ -9,7 +9,7 @@ namespace MoriorGames {
 class BattleButton: public ViewHelper
 {
 public:
-    int const BUTTON_Y = -110;
+    int const BUTTON_Y = -410;
     static const std::string NAME;
 
 public:

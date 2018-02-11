@@ -19,7 +19,7 @@
 #define LOADER_BAR_DELAY 0.06
 #define UPGRADE_DELAY 0.01
 
-#define MODE_SOUND 1
+#define MODE_SOUND 0
 #define DEBUG_SCENE 0
 
 #define CARTESIAN_EAST          0

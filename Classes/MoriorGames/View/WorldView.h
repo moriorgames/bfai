@@ -9,7 +9,7 @@ namespace MoriorGames {
 class WorldView: public ViewHelper
 {
 public:
-    int const WORLD_Y = 10;
+    int const WORLD_Y = 20;
     int const DETAIL_Y = 120;
     static const std::string NAME;
 

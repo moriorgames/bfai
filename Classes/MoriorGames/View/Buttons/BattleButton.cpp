@@ -18,7 +18,7 @@ void BattleButton::addView()
     auto button = ui::Button::create("ui/button-battle.png", "", "");
     button->setScale(scale);
     button->setPosition(centerPosition);
-    button->setPositionY(centerPosition.y + BUTTON_Y);
+    button->setPositionY(centerPosition.y + BUTTON_Y * scale);
     button->setName(NAME);
 
     // Translator: translator->tr("menu_" + key)

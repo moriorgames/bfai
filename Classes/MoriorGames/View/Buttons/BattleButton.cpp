@@ -15,7 +15,7 @@ BattleButton::BattleButton(Layer *layer)
 
 void BattleButton::addView()
 {
-    auto button = ui::Button::create("button-battle.png", "", "");
+    auto button = ui::Button::create("ui/button-battle.png", "", "");
     button->setScale(scale);
     button->setPosition(centerPosition);
     button->setPositionY(centerPosition.y + BUTTON_Y);

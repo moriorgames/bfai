@@ -22,7 +22,7 @@ void WorldView::addView()
 
 void WorldView::addWorld()
 {
-    auto world = Sprite::create("asset-world.png");
+    auto world = Sprite::create("img/world.png");
     world->setScale(scale);
     world->setPosition(centerPosition);
     world->setPositionY(centerPosition.y + WORLD_Y);

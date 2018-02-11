@@ -5,18 +5,18 @@
 
 namespace MoriorGames {
 
-class AssetManager
+class SpritesInitializer
 {
 public:
-    AssetManager();
+    SpritesInitializer();
 
 private:
     cocos2d::SpriteFrameCache *cacher;
-    std::vector<std::string> assets{
-        "world-sprites"
+    std::vector<std::string> sprites{
+        "world"
     };
 
-    void addAssets();
+    void addSprites();
 };
 
 }

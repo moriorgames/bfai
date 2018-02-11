@@ -254,13 +254,13 @@
             <key>premultiplyAlpha</key>
             <false/>
             <key>realTextureFileName</key>
-            <string>world-sprites.png</string>
+            <string>world.png</string>
             <key>size</key>
             <string>{442,1700}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:935f540b3ad2fadcd6a0764a0e053f8d:333f4afc7cc948d6203af624b94b17e0:d8b45258cfe126dd6a09b27ad91957ab$</string>
+            <string>$TexturePacker:SmartUpdate:a5ac41ca0561f7f30ae4dc53f2851e02:333f4afc7cc948d6203af624b94b17e0:b1cac0f65344e7e523bd206211506128$</string>
             <key>textureFileName</key>
-            <string>world-sprites.png</string>
+            <string>world.png</string>
         </dict>
     </dict>
 </plist>

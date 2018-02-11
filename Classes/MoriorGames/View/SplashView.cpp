@@ -10,7 +10,7 @@ SplashView::SplashView(Layer *layer)
 
 void SplashView::addView()
 {
-    auto splashScreen = Sprite::create("img-splash-screen.jpg");
+    auto splashScreen = Sprite::create("img/splash-screen.jpg");
     splashScreen->setScale(scale);
     splashScreen->setPosition(centerPosition);
 

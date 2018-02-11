@@ -14,11 +14,11 @@ BackgroundView::BackgroundView(Layer *layer)
 
 void BackgroundView::addView()
 {
-    auto background = Sprite::create("img-background.jpg");
+    auto background = Sprite::create("img/background.jpg");
     background->setScale(scale);
     background->setPosition(centerPosition);
     background->setName(BACKGROUND_NAME);
 
     layer->addChild(background, Z_ORDER_BACKGROUND);
-    SoundPlayer::playBackgroundMusic("s-main-menu-theme.mp3");
+    SoundPlayer::playBackgroundMusic("sounds/main-menu-theme.mp3");
 }

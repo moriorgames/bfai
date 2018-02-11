@@ -52,6 +52,7 @@ cocos2d/cocos/platform/android/java/res/
 .recommenders/
 cocos2d/plugin/plugins/qh360/proj.android/ForAssets/res/icon/
 
+
 # proj.ios_mac
 cocos2d/build/build/
 cocos2d/build/cocos2d_libs.xcodeproj/xcuserdata/

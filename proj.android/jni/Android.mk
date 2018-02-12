@@ -24,6 +24,7 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Services/SpriteAnimator.cpp \
                    ../../Classes/MoriorGames/Services/SpritesInitializer.cpp \
                    ../../Classes/MoriorGames/View/Buttons/BattleButton.cpp \
+                   ../../Classes/MoriorGames/View/Custom/BattleInitCustomActions.cpp \
                    ../../Classes/MoriorGames/View/BackgroundView.cpp \
                    ../../Classes/MoriorGames/View/BattleBackgroundView.cpp \
                    ../../Classes/MoriorGames/View/LoadingView.cpp \

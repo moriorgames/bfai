@@ -49,6 +49,8 @@
 		4FBCDC502032008E006B3B5E /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC4D2032008E006B3B5E /* BattleScene.cpp */; };
 		4FBCDC532032031D006B3B5E /* BattleBackgroundView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC512032031D006B3B5E /* BattleBackgroundView.cpp */; };
 		4FBCDC542032031D006B3B5E /* BattleBackgroundView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC512032031D006B3B5E /* BattleBackgroundView.cpp */; };
+		4FBCDC582032079A006B3B5E /* BattleInitCustomActions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC562032079A006B3B5E /* BattleInitCustomActions.cpp */; };
+		4FBCDC592032079A006B3B5E /* BattleInitCustomActions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC562032079A006B3B5E /* BattleInitCustomActions.cpp */; };
 		4FE0EAE120303AD600E6DD88 /* BattleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */; };
 		4FE0EAE220303AD600E6DD88 /* BattleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */; };
 		4FE0EAE92030410000E6DD88 /* FontCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EAE72030410000E6DD88 /* FontCreator.cpp */; };
@@ -192,6 +194,8 @@
 		4FBCDC4E2032008E006B3B5E /* BattleScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
 		4FBCDC512032031D006B3B5E /* BattleBackgroundView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleBackgroundView.cpp; sourceTree = "<group>"; };
 		4FBCDC522032031D006B3B5E /* BattleBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleBackgroundView.h; sourceTree = "<group>"; };
+		4FBCDC562032079A006B3B5E /* BattleInitCustomActions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleInitCustomActions.cpp; sourceTree = "<group>"; };
+		4FBCDC572032079A006B3B5E /* BattleInitCustomActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleInitCustomActions.h; sourceTree = "<group>"; };
 		4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleButton.cpp; sourceTree = "<group>"; };
 		4FE0EAE020303AD600E6DD88 /* BattleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleButton.h; sourceTree = "<group>"; };
 		4FE0EAE72030410000E6DD88 /* FontCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FontCreator.cpp; sourceTree = "<group>"; };
@@ -450,6 +454,7 @@
 		4F3AE451202EE9B900B687FB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4FBCDC5520320770006B3B5E /* Custom */,
 				4FE0EADD20303AB200E6DD88 /* Buttons */,
 				4F3AE452202EE9E000B687FB /* ViewHelper.cpp */,
 				4F3AE453202EE9E000B687FB /* ViewHelper.h */,
@@ -483,6 +488,15 @@
 				4FA6AD8F202F9A6E00158956 /* TextUtils.h */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		4FBCDC5520320770006B3B5E /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4FBCDC562032079A006B3B5E /* BattleInitCustomActions.cpp */,
+				4FBCDC572032079A006B3B5E /* BattleInitCustomActions.h */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		4FE0EADD20303AB200E6DD88 /* Buttons */ = {
@@ -705,6 +719,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
 				4FA6AD85202F965E00158956 /* SpritesInitializer.cpp in Sources */,
+				4FBCDC582032079A006B3B5E /* BattleInitCustomActions.cpp in Sources */,
 				4FE0EAE120303AD600E6DD88 /* BattleButton.cpp in Sources */,
 				4FA6AD70202F809A00158956 /* MainMenuScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -725,6 +740,7 @@
 				4FE0EAEA2030410000E6DD88 /* FontCreator.cpp in Sources */,
 				4F3AE462202F040400B687FB /* ScreenProperties.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				4FBCDC592032079A006B3B5E /* BattleInitCustomActions.cpp in Sources */,
 				4FBCDC502032008E006B3B5E /* BattleScene.cpp in Sources */,
 				4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */,
 				4F3AE450202EE32E00B687FB /* Resolution.cpp in Sources */,

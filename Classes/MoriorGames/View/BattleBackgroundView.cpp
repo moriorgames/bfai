@@ -1,4 +1,5 @@
 #include "BattleBackgroundView.h"
+#include "Custom/BattleInitCustomActions.h"
 #include "../Services/SoundPlayer.h"
 
 using MoriorGames::BattleBackgroundView;
@@ -25,6 +26,8 @@ void BattleBackgroundView::addView()
     background->setName(NAME);
 
     layer->addChild(background, Z_ORDER_BACKGROUND);
+
+    new BattleInitCustomActions(layer);
 
     SoundPlayer::playBackgroundMusic("sounds/main-menu-theme.mp3");
 }

@@ -46,8 +46,17 @@ void SplashScene::increaseLoadingBar(float delay)
     }
 }
 
+#ifdef DEBUG_SCENE
+#include "../Scenes/BattleScene.h"
+#endif
+
 void SplashScene::goToMainMenuScene()
 {
-    auto scene = MainMenuScene::createScene();
+    Scene *scene;
+    if (DEBUG_SCENE) {
+        scene = BattleScene::createScene();
+    } else {
+        scene = MainMenuScene::createScene();
+    }
     Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
 }

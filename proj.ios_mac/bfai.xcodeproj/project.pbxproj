@@ -47,6 +47,8 @@
 		4FA6AD86202F965E00158956 /* SpritesInitializer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6AD83202F965E00158956 /* SpritesInitializer.cpp */; };
 		4FBCDC4F2032008E006B3B5E /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC4D2032008E006B3B5E /* BattleScene.cpp */; };
 		4FBCDC502032008E006B3B5E /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC4D2032008E006B3B5E /* BattleScene.cpp */; };
+		4FBCDC532032031D006B3B5E /* BattleBackgroundView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC512032031D006B3B5E /* BattleBackgroundView.cpp */; };
+		4FBCDC542032031D006B3B5E /* BattleBackgroundView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC512032031D006B3B5E /* BattleBackgroundView.cpp */; };
 		4FE0EAE120303AD600E6DD88 /* BattleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */; };
 		4FE0EAE220303AD600E6DD88 /* BattleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */; };
 		4FE0EAE92030410000E6DD88 /* FontCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EAE72030410000E6DD88 /* FontCreator.cpp */; };
@@ -188,6 +190,8 @@
 		4FA6AD8F202F9A6E00158956 /* TextUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextUtils.h; sourceTree = "<group>"; };
 		4FBCDC4D2032008E006B3B5E /* BattleScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleScene.cpp; sourceTree = "<group>"; };
 		4FBCDC4E2032008E006B3B5E /* BattleScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleScene.h; sourceTree = "<group>"; };
+		4FBCDC512032031D006B3B5E /* BattleBackgroundView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleBackgroundView.cpp; sourceTree = "<group>"; };
+		4FBCDC522032031D006B3B5E /* BattleBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleBackgroundView.h; sourceTree = "<group>"; };
 		4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleButton.cpp; sourceTree = "<group>"; };
 		4FE0EAE020303AD600E6DD88 /* BattleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleButton.h; sourceTree = "<group>"; };
 		4FE0EAE72030410000E6DD88 /* FontCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FontCreator.cpp; sourceTree = "<group>"; };
@@ -459,6 +463,8 @@
 				4FA6AD73202F83A200158956 /* BackgroundView.h */,
 				4FA6AD7C202F8FC200158956 /* WorldView.cpp */,
 				4FA6AD7D202F8FC200158956 /* WorldView.h */,
+				4FBCDC512032031D006B3B5E /* BattleBackgroundView.cpp */,
+				4FBCDC522032031D006B3B5E /* BattleBackgroundView.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -684,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3AE454202EE9E000B687FB /* ViewHelper.cpp in Sources */,
+				4FBCDC532032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
 				4F3AE458202EE9F600B687FB /* LogoView.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */,
@@ -721,6 +728,7 @@
 				4FBCDC502032008E006B3B5E /* BattleScene.cpp in Sources */,
 				4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */,
 				4F3AE450202EE32E00B687FB /* Resolution.cpp in Sources */,
+				4FBCDC542032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
 				4FE0EAE220303AD600E6DD88 /* BattleButton.cpp in Sources */,
 				4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,

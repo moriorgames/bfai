@@ -4,7 +4,7 @@
 using MoriorGames::BackgroundView;
 using MoriorGames::SoundPlayer;
 
-const std::string BackgroundView::BACKGROUND_NAME = "background-node";
+const std::string BackgroundView::NAME = "background-node";
 
 BackgroundView::BackgroundView(Layer *layer)
     : ViewHelper(layer)
@@ -17,7 +17,7 @@ void BackgroundView::addView()
     auto background = Sprite::create("img/background.jpg");
     background->setScale(scale);
     background->setPosition(centerPosition);
-    background->setName(BACKGROUND_NAME);
+    background->setName(NAME);
 
     layer->addChild(background, Z_ORDER_BACKGROUND);
     SoundPlayer::playBackgroundMusic("sounds/main-menu-theme.mp3");

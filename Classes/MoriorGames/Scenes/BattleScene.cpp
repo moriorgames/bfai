@@ -1,4 +1,5 @@
 #include "BattleScene.h"
+#include "../View/BattleBackgroundView.h"
 
 using MoriorGames::BattleScene;
 USING_NS_CC;
@@ -20,6 +21,8 @@ bool BattleScene::init()
     if (!Layer::init()) {
         return false;
     }
+
+    new BattleBackgroundView(this);
 
     return true;
 }

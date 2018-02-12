@@ -8,7 +8,7 @@ namespace MoriorGames {
 class BackgroundView: public ViewHelper
 {
 public:
-    static const std::string BACKGROUND_NAME;
+    static const std::string NAME;
 
 public:
     explicit BackgroundView(Layer *layer);

@@ -1,4 +1,5 @@
 #include "BattleButton.h"
+#include "../../Scenes/BattleScene.h"
 #include "../../Services/SoundPlayer.h"
 #include "../../Services/FontCreator.h"
 
@@ -28,7 +29,9 @@ void BattleButton::addView()
         [&](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-                CCLOG("BUTTON battle pressed!");
+                SoundPlayer::playEffect("sounds/button.mp3");
+                auto scene = BattleScene::createScene();
+                Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
             }
         });
 

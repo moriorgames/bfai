@@ -12,6 +12,7 @@ LOCAL_MODULE := MyGame_shared
 LOCAL_MODULE_FILENAME := libBFAI
 
 LOCAL_SRC_FILES := projectbfai/main.cpp \
+                   ../../Classes/MoriorGames/Scenes/BattleScene.cpp \
                    ../../Classes/MoriorGames/Scenes/LogoScene.cpp \
                    ../../Classes/MoriorGames/Scenes/MainMenuScene.cpp \
                    ../../Classes/MoriorGames/Scenes/SplashScene.cpp \

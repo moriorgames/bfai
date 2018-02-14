@@ -1,4 +1,5 @@
 #include "BattleScene.h"
+#include "../Grid/GridSystem.h"
 #include "../View/BattleBackgroundView.h"
 
 using MoriorGames::BattleScene;
@@ -23,6 +24,10 @@ bool BattleScene::init()
     }
 
     new BattleBackgroundView(this);
+    auto gridSystem = new GridSystem();
+
+    auto grid = gridSystem->displayGrid();
+    this->addChild(grid, Z_ORDER_GRID);
 
     return true;
 }

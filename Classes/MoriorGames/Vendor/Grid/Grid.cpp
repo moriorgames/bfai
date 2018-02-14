@@ -3,15 +3,11 @@
 using MoriorGames::Grid;
 using MoriorGames::Coordinate;
 
-const int Grid::TILES_QUANTITY = 17;
+const int Grid::TILES_QUANTITY = 8;
 
-const int Grid::TILE_SIZE = 12;
-
-const int Grid::TILE_WIDTH = 12;
+const int Grid::TILE_SIZE = 26;
 
 const int Grid::CENTER_FACTOR = 150;
-
-const int Grid::ADVANTAGE = 2;
 
 std::vector<Coordinate *> Grid::createGrid()
 {

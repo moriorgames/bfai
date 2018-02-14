@@ -12,6 +12,10 @@ LOCAL_MODULE := MyGame_shared
 LOCAL_MODULE_FILENAME := libBFAI
 
 LOCAL_SRC_FILES := projectbfai/main.cpp \
+                   ../../Classes/MoriorGames/Grid/GridHD.cpp \
+                   ../../Classes/MoriorGames/Grid/GridHDR.cpp \
+                   ../../Classes/MoriorGames/Grid/GridSD.cpp \
+                   ../../Classes/MoriorGames/Grid/GridSystem.cpp \
                    ../../Classes/MoriorGames/Scenes/BattleScene.cpp \
                    ../../Classes/MoriorGames/Scenes/LogoScene.cpp \
                    ../../Classes/MoriorGames/Scenes/MainMenuScene.cpp \
@@ -23,6 +27,9 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Services/SoundPlayer.cpp \
                    ../../Classes/MoriorGames/Services/SpriteAnimator.cpp \
                    ../../Classes/MoriorGames/Services/SpritesInitializer.cpp \
+                   ../../Classes/MoriorGames/Vendor/Entity/Hero.cpp \
+                   ../../Classes/MoriorGames/Vendor/Grid/Grid.cpp \
+                   ../../Classes/MoriorGames/Vendor/ValueObjects/Coordinate.cpp \
                    ../../Classes/MoriorGames/View/Buttons/BattleButton.cpp \
                    ../../Classes/MoriorGames/View/Custom/BattleInitCustomActions.cpp \
                    ../../Classes/MoriorGames/View/BackgroundView.cpp \

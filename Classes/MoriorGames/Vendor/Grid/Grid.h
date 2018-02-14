@@ -14,11 +14,7 @@ public:
 
     static const int TILE_SIZE;
 
-    static const int TILE_WIDTH;
-
     static const int CENTER_FACTOR;
-
-    static const int ADVANTAGE;
 
 public:
     std::vector<Coordinate *> createGrid();
@@ -27,7 +23,7 @@ public:
 
     static std::vector<int> getLines()
     {
-        return {7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -7};
+        return {3, 2, 1, 0, -1, -2, -3};
     }
 
     static bool isAllowedLine(int y);

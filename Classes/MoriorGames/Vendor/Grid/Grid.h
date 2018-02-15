@@ -2,6 +2,7 @@
 #define MORIOR_GAMES_VENDOR_GRID_GRID_H
 
 #include <cmath>
+#include <iostream>
 #include <vector>
 #include "../ValueObjects/Coordinate.h"
 
@@ -17,24 +18,17 @@ public:
     static const int CENTER_FACTOR;
 
 public:
-    std::vector<Coordinate *> createGrid();
+    std::vector<Coordinate *> createGridCoordinates();
 
     virtual int getFactor();
 
-    static std::vector<int> getLines()
-    {
-        return {3, 2, 1, 0, -1, -2, -3};
-    }
-
-    static bool isAllowedLine(int y);
-
-    static bool collisionMidObstacles(int x, int y);
+    void printCoordinates();
 
 private:
-
     std::vector<Coordinate *> coordinates;
+    std::vector<int> lines{3, 2, 1, 0, -1, -2, -3};
 
-    void generateTiles(int tileQuantity, std::vector<int> lineRange);
+    void generateTiles();
 };
 
 }

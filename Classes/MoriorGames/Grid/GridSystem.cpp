@@ -19,7 +19,7 @@ GridSystem::GridSystem()
         grid = new GridSD;
     }
 
-    coordinates = grid->createGrid();
+    coordinates = grid->createGridCoordinates();
 }
 
 cocos2d::DrawNode *GridSystem::displayGrid()

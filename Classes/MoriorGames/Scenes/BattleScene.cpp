@@ -1,6 +1,7 @@
 #include "BattleScene.h"
 #include "../Grid/GridSystem.h"
 #include "../View/BattleBackgroundView.h"
+#include "../View/HeroView.h"
 
 using MoriorGames::BattleScene;
 USING_NS_CC;
@@ -28,6 +29,8 @@ bool BattleScene::init()
 
     auto grid = gridSystem->displayGrid();
     this->addChild(grid, Z_ORDER_GRID);
+
+    new HeroView(this);
 
     return true;
 }

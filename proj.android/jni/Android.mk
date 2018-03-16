@@ -27,6 +27,7 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Services/SoundPlayer.cpp \
                    ../../Classes/MoriorGames/Services/SpriteAnimator.cpp \
                    ../../Classes/MoriorGames/Services/SpritesInitializer.cpp \
+                   ../../Classes/MoriorGames/Services/StringFileReader.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Hero.cpp \
                    ../../Classes/MoriorGames/Vendor/Grid/Grid.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/HeroParser.cpp \

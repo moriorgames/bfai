@@ -1,5 +1,6 @@
 #include "BattleScene.h"
 #include "../Grid/GridSystem.h"
+#include "../Services/StringFileReader.h"
 #include "../Vendor/Parsers/HeroParser.h"
 #include "../View/BattleBackgroundView.h"
 #include "../View/HeroView.h"
@@ -32,15 +33,11 @@ bool BattleScene::init()
     auto grid = gridSystem->displayGrid();
     this->addChild(grid, Z_ORDER_GRID);
 
-    std::string fileName = "data/heroes.json";
-    auto fileUtils = FileUtils::getInstance();
-    auto jsonFile = fileUtils->fullPathForFilename(fileName);
-    if (fileUtils->isFileExist(jsonFile)) {
-        auto json = fileUtils->getStringFromFile(jsonFile);
-        auto parser = new HeroParser(json);
-        for (auto hero:parser->parse()) {
-            new HeroView(this, hero);
-        }
+    std::string file = "data/heroes.json";
+    auto json = (new StringFileReader)->getStringFromFile(file);
+    auto parser = new HeroParser(json);
+    for (auto hero:parser->parse()) {
+        new HeroView(this, hero);
     }
 
     return true;

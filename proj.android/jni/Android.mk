@@ -29,6 +29,8 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Services/SpritesInitializer.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Hero.cpp \
                    ../../Classes/MoriorGames/Vendor/Grid/Grid.cpp \
+                   ../../Classes/MoriorGames/Vendor/Parsers/HeroParser.cpp \
+                   ../../Classes/MoriorGames/Vendor/Parsers/JsonParser.cpp \
                    ../../Classes/MoriorGames/Vendor/ValueObjects/Coordinate.cpp \
                    ../../Classes/MoriorGames/View/Buttons/BattleButton.cpp \
                    ../../Classes/MoriorGames/View/Custom/BattleInitCustomActions.cpp \

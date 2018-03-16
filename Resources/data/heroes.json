@@ -1,0 +1,15 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Paul",
+      "slug": "paul",
+      "damage": 2,
+      "ranged": 6,
+      "health": 5,
+      "movement": 3,
+      "moveFrames": 24,
+      "attackFrames": 24
+    }
+  ]
+}

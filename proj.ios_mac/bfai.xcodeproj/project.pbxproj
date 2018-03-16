@@ -79,6 +79,12 @@
 		4FE0EAF720304B8500E6DD88 /* sprites in Resources */ = {isa = PBXBuildFile; fileRef = 4FE0EAF520304B8500E6DD88 /* sprites */; };
 		4FE0EAF920304D5800E6DD88 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 4FE0EAF820304D5800E6DD88 /* sounds */; };
 		4FE0EAFA20304D5800E6DD88 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 4FE0EAF820304D5800E6DD88 /* sounds */; };
+		4FEFCC20205AE61700D447C4 /* JsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFCC1C205AE61700D447C4 /* JsonParser.cpp */; };
+		4FEFCC21205AE61700D447C4 /* JsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFCC1C205AE61700D447C4 /* JsonParser.cpp */; };
+		4FEFCC22205AE61700D447C4 /* HeroParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFCC1D205AE61700D447C4 /* HeroParser.cpp */; };
+		4FEFCC23205AE61700D447C4 /* HeroParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFCC1D205AE61700D447C4 /* HeroParser.cpp */; };
+		4FEFCC25205AE97400D447C4 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 4FEFCC24205AE97400D447C4 /* data */; };
+		4FEFCC26205AE97400D447C4 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 4FEFCC24205AE97400D447C4 /* data */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -236,6 +242,11 @@
 		4FE0EAEF20304B5300E6DD88 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		4FE0EAF520304B8500E6DD88 /* sprites */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sprites; sourceTree = "<group>"; };
 		4FE0EAF820304D5800E6DD88 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
+		4FEFCC1C205AE61700D447C4 /* JsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonParser.cpp; sourceTree = "<group>"; };
+		4FEFCC1D205AE61700D447C4 /* HeroParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeroParser.cpp; sourceTree = "<group>"; };
+		4FEFCC1E205AE61700D447C4 /* HeroParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroParser.h; sourceTree = "<group>"; };
+		4FEFCC1F205AE61700D447C4 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
+		4FEFCC24205AE97400D447C4 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -406,6 +417,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4FEFCC24205AE97400D447C4 /* data */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				4FE0EAEC203046C100E6DD88 /* img */,
 				4FE0EAF820304D5800E6DD88 /* sounds */,
@@ -530,10 +542,11 @@
 		4FA6AD8D202F9A4800158956 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				4F8910572034BEFE00D8382C /* ValueObjects */,
-				4F8910562034BEF800D8382C /* Grid */,
 				4FBCDC5B20322051006B3B5E /* Entity */,
+				4F8910562034BEF800D8382C /* Grid */,
+				4FEFCBF2205AE5A300D447C4 /* Parsers */,
 				4FA6AD8E202F9A5C00158956 /* Utils */,
+				4F8910572034BEFE00D8382C /* ValueObjects */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -586,6 +599,17 @@
 				4FE0EAE020303AD600E6DD88 /* BattleButton.h */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		4FEFCBF2205AE5A300D447C4 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				4FEFCC1D205AE61700D447C4 /* HeroParser.cpp */,
+				4FEFCC1E205AE61700D447C4 /* HeroParser.h */,
+				4FEFCC1C205AE61700D447C4 /* JsonParser.cpp */,
+				4FEFCC1F205AE61700D447C4 /* JsonParser.h */,
+			);
+			path = Parsers;
 			sourceTree = "<group>";
 		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
@@ -759,6 +783,7 @@
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				4FE0EAF620304B8500E6DD88 /* sprites in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
+				4FEFCC25205AE97400D447C4 /* data in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -768,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FE0EAFA20304D5800E6DD88 /* sounds in Resources */,
+				4FEFCC26205AE97400D447C4 /* data in Resources */,
 				4FE0EAEE203046C100E6DD88 /* img in Resources */,
 				4FE0EAF720304B8500E6DD88 /* sprites in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
@@ -803,6 +829,7 @@
 				4F89105E2034BF3A00D8382C /* Grid.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
+				4FEFCC22205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4FA6AD85202F965E00158956 /* SpritesInitializer.cpp in Sources */,
 				4FBCDC582032079A006B3B5E /* BattleInitCustomActions.cpp in Sources */,
 				4FBCDC6C203220CD006B3B5E /* GridSystem.cpp in Sources */,
@@ -815,6 +842,7 @@
 				4F3AE461202F040400B687FB /* ScreenProperties.cpp in Sources */,
 				4F3AE45D202F03D700B687FB /* Position.cpp in Sources */,
 				4FBCDC5E2032207E006B3B5E /* Hero.cpp in Sources */,
+				4FEFCC20205AE61700D447C4 /* JsonParser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,8 +873,10 @@
 				4F2CBFF3202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
 				4FBCDC6B203220CD006B3B5E /* GridSD.cpp in Sources */,
 				4FA6AD75202F83A200158956 /* BackgroundView.cpp in Sources */,
+				4FEFCC21205AE61700D447C4 /* JsonParser.cpp in Sources */,
 				4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */,
 				4F89105B2034BF2800D8382C /* Coordinate.cpp in Sources */,
+				4FEFCC23205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
 				4FA6AD69202F7C8800158956 /* SplashView.cpp in Sources */,
 				4FBCDC5F2032207E006B3B5E /* Hero.cpp in Sources */,

@@ -4,8 +4,8 @@ using MoriorGames::HeroView;
 
 const std::string HeroView::NAME = "hero-node";
 
-HeroView::HeroView(Layer *layer)
-    : ViewHelper(layer)
+HeroView::HeroView(Layer *layer, Hero *hero)
+    : ViewHelper(layer), hero{hero}
 {
     spriteAnimator = new SpriteAnimator;
     addView();
@@ -23,15 +23,15 @@ void HeroView::addView()
 
 void HeroView::addHero()
 {
-    auto hero = new Sprite;
-    hero->initWithSpriteFrameName(spriteAnimator->getFrameName("paul", "move"));
-    hero->setPosition(400, 420);
-    hero->runAction(detailAction());
+    auto sprite = new Sprite;
+    sprite->initWithSpriteFrameName(spriteAnimator->getFrameName(hero->getSlug()));
+    sprite->setPosition(400, 420);
+    sprite->runAction(moveAction());
 
-    container->addChild(hero);
+    container->addChild(sprite);
 }
 
-Action *HeroView::detailAction()
+Action *HeroView::moveAction()
 {
-    return spriteAnimator->generateAction("paul", 24, "move", 0, 24);
+    return spriteAnimator->generateAction(hero->getSlug(), hero->getMoveFrames(), "move", 0, 24);
 }

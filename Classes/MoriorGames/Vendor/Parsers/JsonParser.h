@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "../../../../cocos2d/external/json/document.h"
+#include "json/document.h"
 
 namespace MoriorGames {
 

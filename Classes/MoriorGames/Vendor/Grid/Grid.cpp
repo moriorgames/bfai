@@ -16,6 +16,23 @@ std::vector<Coordinate *> Grid::createGridCoordinates()
     return coordinates;
 }
 
+/**
+ * @todo Theres a more performant way to access coordinates data. A 2 dimensional vector of ints
+ * we can check this if we use a lot this function and slows down the program.
+ */
+Coordinate *Grid::findByXY(int x, int y)
+{
+    auto it = find_if(coordinates.begin(), coordinates.end(), [x, y](Coordinate *coordinate)
+    { return coordinate->x == x && coordinate->y == y; });
+
+    if (it != coordinates.end()) {
+
+        return *it;
+    }
+
+    return nullptr;
+}
+
 int Grid::getFactor()
 {
     return 0;

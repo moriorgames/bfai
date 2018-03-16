@@ -19,10 +19,9 @@ public:
 
 public:
     std::vector<Coordinate *> createGridCoordinates();
-
     virtual int getFactor();
-
     void printCoordinates();
+    Coordinate *findByXY(int x, int y);
 
 private:
     std::vector<Coordinate *> coordinates;

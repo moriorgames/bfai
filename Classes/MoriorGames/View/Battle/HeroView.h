@@ -27,6 +27,7 @@ private:
 
     void addView() override;
     void addHero();
+    void addHealthBar();
     Action *idleAction();
     Action *moveAction();
     Action *attackAction();

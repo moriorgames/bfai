@@ -19,6 +19,7 @@ void HeroView::addView()
     container->setScale(scale);
 
     addHero();
+    addHealthBar();
 
     layer->addChild(container, Z_ORDER_HEROES);
 }
@@ -38,4 +39,15 @@ void HeroView::addHero()
 Action *HeroView::moveAction()
 {
     return spriteAnimator->generateAction(hero->getSlug(), hero->getMoveFrames(), "move", 0, FPS);
+}
+
+void MoriorGames::HeroView::addHealthBar()
+{
+    int position = 40;
+    for (int i = 0; i < hero->getCurrentHealth(); ++i) {
+        auto hitPoint = Sprite::create("img/hit-point.png");
+        hitPoint->setPosition(position, 120);
+        container->addChild(hitPoint);
+        position -= 18;
+    }
 }

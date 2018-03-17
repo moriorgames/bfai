@@ -18,12 +18,13 @@ BattleView::BattleView(Layer *layer)
 void BattleView::addView()
 {
     new BattleBackgroundView(layer);
-    new GridSystem(layer);
+    auto gridSystem = new GridSystem(layer);
 
     std::string file = "data/heroes.json";
     auto json = (new StringFileReader)->getStringFromFile(file);
     auto parser = new HeroParser(json);
-    for (auto hero:parser->parse()) {
-        new HeroView(layer, hero);
+    for (auto battleHero:parser->parseForBattle()) {
+        battleHero->setCoordinate(new Coordinate(0, 0));
+        new HeroView(layer, gridSystem, battleHero);
     }
 }

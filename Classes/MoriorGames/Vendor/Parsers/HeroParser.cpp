@@ -2,6 +2,7 @@
 
 using MoriorGames::HeroParser;
 using MoriorGames::Hero;
+using MoriorGames::BattleHero;
 
 HeroParser::HeroParser(std::string json)
     : JsonParser(json)
@@ -17,9 +18,9 @@ std::vector<Hero *> HeroParser::parse()
         const Value &data = document[ROW];
         for (auto itr = data.Begin(); itr != data.End(); ++itr) {
             if ((*itr).IsObject()) {
-                items.push_back(
-                    create(*itr)
-                );
+                auto hero = new Hero;
+                addData(hero, *itr);
+                items.push_back(hero);
             }
         }
     }
@@ -27,10 +28,27 @@ std::vector<Hero *> HeroParser::parse()
     return items;
 }
 
-Hero *HeroParser::create(const rapidjson::Value &data)
+std::vector<BattleHero *> HeroParser::parseForBattle()
 {
-    auto item = new Hero;
+    std::vector<BattleHero *> items;
 
+    if (document.HasMember(ROW) && document[ROW].IsArray()) {
+
+        const Value &data = document[ROW];
+        for (auto itr = data.Begin(); itr != data.End(); ++itr) {
+            if ((*itr).IsObject()) {
+                auto hero = new BattleHero;
+                addData(hero, *itr);
+                items.push_back(hero);
+            }
+        }
+    }
+
+    return items;
+}
+
+void HeroParser::addData(Hero *item, const rapidjson::Value &data)
+{
     item->setId(getInt(data, "id"));
     item->setName(getString(data, "name"));
     item->setSlug(getString(data, "slug"));
@@ -40,7 +58,4 @@ Hero *HeroParser::create(const rapidjson::Value &data)
     item->setMovement(getInt(data, "movement"));
     item->setMoveFrames(getInt(data, "moveFrames"));
     item->setAttackFrames(getInt(data, "attackFrames"));
-
-    return item;
 }
-

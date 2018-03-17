@@ -4,7 +4,9 @@
 using MoriorGames::GridSystem;
 USING_NS_CC;
 
-const Color4F GridSystem::GRID_COLOR{0, 0, 0, .2f};
+const Color4F GridSystem::FILL_COLOR{0, 0, 0, .1f};
+
+const Color4F GridSystem::BORDER_COLOR{0, 0, 0, .15f};
 
 GridSystem::GridSystem(Layer *layer)
     : layer{layer}
@@ -54,7 +56,7 @@ void GridSystem::displayGrid()
         rectangle[2] = Vec2(coordinateToScreen(coordinate).x - width, coordinateToScreen(coordinate).y - height);
         rectangle[3] = Vec2(coordinateToScreen(coordinate).x + width, coordinateToScreen(coordinate).y - height);
 
-        drawNode->drawPolygon(rectangle, 4, GRID_COLOR, 1, GRID_COLOR);
+        drawNode->drawPolygon(rectangle, 4, FILL_COLOR, 1, BORDER_COLOR);
 
     }
 

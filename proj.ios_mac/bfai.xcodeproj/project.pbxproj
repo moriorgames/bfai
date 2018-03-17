@@ -471,8 +471,8 @@
 		4F3AE443202EE1F400B687FB /* MoriorGames */ = {
 			isa = PBXGroup;
 			children = (
-				4FBCDC5A20322033006B3B5E /* Grid */,
 				4F3AE45A202F033B00B687FB /* Definitions.h */,
+				4FBCDC5A20322033006B3B5E /* Grid */,
 				4F3AE447202EE2CE00B687FB /* Scenes */,
 				4F3AE448202EE2D800B687FB /* Screen */,
 				4F2CBFEA202F1E4400169E86 /* Services */,
@@ -500,10 +500,10 @@
 		4F3AE448202EE2D800B687FB /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				4F3AE44D202EE32E00B687FB /* Resolution.cpp */,
-				4F3AE44E202EE32E00B687FB /* Resolution.h */,
 				4F3AE45B202F03D700B687FB /* Position.cpp */,
 				4F3AE45C202F03D700B687FB /* Position.h */,
+				4F3AE44D202EE32E00B687FB /* Resolution.cpp */,
+				4F3AE44E202EE32E00B687FB /* Resolution.h */,
 				4F3AE45F202F040400B687FB /* ScreenProperties.cpp */,
 				4F3AE460202F040400B687FB /* ScreenProperties.h */,
 			);

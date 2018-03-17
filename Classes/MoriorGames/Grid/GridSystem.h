@@ -14,7 +14,8 @@ namespace MoriorGames {
 class GridSystem: public ScreenProperties
 {
 public:
-    static const Color4F GRID_COLOR;
+    static const Color4F FILL_COLOR;
+    static const Color4F BORDER_COLOR;
 
 public:
     GridSystem(Layer *layer);

@@ -3,6 +3,7 @@
 
 #include "JsonParser.h"
 #include "../Entity/Hero.h"
+#include "../Entity/BattleHero.h"
 
 namespace MoriorGames {
 
@@ -12,9 +13,10 @@ public:
     const char *ROW = "heroes";
     HeroParser(std::string json);
     std::vector<Hero *> parse();
+    std::vector<BattleHero *> parseForBattle();
 
 private:
-    Hero *create(const rapidjson::Value &data);
+    void addData(Hero *, const rapidjson::Value &data);
 };
 
 }

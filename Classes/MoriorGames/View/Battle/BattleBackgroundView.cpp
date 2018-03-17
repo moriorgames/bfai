@@ -1,6 +1,6 @@
 #include "BattleBackgroundView.h"
-#include "Custom/BattleInitCustomActions.h"
-#include "../Services/SoundPlayer.h"
+#include "../Custom/BattleInitCustomActions.h"
+#include "../../Services/SoundPlayer.h"
 
 using MoriorGames::BattleBackgroundView;
 using MoriorGames::SoundPlayer;

@@ -1,5 +1,5 @@
-#ifndef MORIOR_GAMES_VIEW_LOADING_VIEW_H
-#define MORIOR_GAMES_VIEW_LOADING_VIEW_H
+#ifndef MORIOR_GAMES_VIEW_WORLD_VIEW_H
+#define MORIOR_GAMES_VIEW_WORLD_VIEW_H
 
 #include "ViewHelper.h"
 #include "../Services/SpriteAnimator.h"

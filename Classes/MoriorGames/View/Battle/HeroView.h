@@ -1,9 +1,9 @@
-#ifndef MORIOR_GAMES_VIEW_HERO_VIEW_H
-#define MORIOR_GAMES_VIEW_HERO_VIEW_H
+#ifndef MORIOR_GAMES_VIEW_BATTLE_HERO_VIEW_H
+#define MORIOR_GAMES_VIEW_BATTLE_HERO_VIEW_H
 
-#include "ViewHelper.h"
-#include "../Vendor/Entity/Hero.h"
-#include "../Services/SpriteAnimator.h"
+#include "../ViewHelper.h"
+#include "../../Vendor/Entity/Hero.h"
+#include "../../Services/SpriteAnimator.h"
 
 namespace MoriorGames {
 

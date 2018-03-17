@@ -17,15 +17,17 @@ public:
     static const Color4F GRID_COLOR;
 
 public:
-    GridSystem();
-    cocos2d::DrawNode *displayGrid();
+    GridSystem(Layer *layer);
     cocos2d::Vec2 coordinateToScreen(Coordinate *coordinate);
     float axisYToScreen(int y);
     float axisXToScreen(int x);
 
 private:
+    Layer *layer;
     Grid *grid;
     std::vector<Coordinate *> coordinates;
+
+    void displayGrid();
 };
 
 }

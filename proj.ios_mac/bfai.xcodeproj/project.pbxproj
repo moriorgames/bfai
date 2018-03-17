@@ -35,6 +35,10 @@
 		4F3AE45E202F03D700B687FB /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE45B202F03D700B687FB /* Position.cpp */; };
 		4F3AE461202F040400B687FB /* ScreenProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE45F202F040400B687FB /* ScreenProperties.cpp */; };
 		4F3AE462202F040400B687FB /* ScreenProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE45F202F040400B687FB /* ScreenProperties.cpp */; };
+		4F7314BE205CF3D4005AAB83 /* BattleHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7314BD205CF3D4005AAB83 /* BattleHero.cpp */; };
+		4F7314BF205CF3D4005AAB83 /* BattleHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7314BD205CF3D4005AAB83 /* BattleHero.cpp */; };
+		4F7314C3205CF5B5005AAB83 /* BattleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7314C1205CF5B5005AAB83 /* BattleView.cpp */; };
+		4F7314C4205CF5B5005AAB83 /* BattleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7314C1205CF5B5005AAB83 /* BattleView.cpp */; };
 		4F89105A2034BF2800D8382C /* Coordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8910582034BF2800D8382C /* Coordinate.cpp */; };
 		4F89105B2034BF2800D8382C /* Coordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8910582034BF2800D8382C /* Coordinate.cpp */; };
 		4F89105E2034BF3A00D8382C /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F89105C2034BF3A00D8382C /* Grid.cpp */; };
@@ -203,6 +207,10 @@
 		4F3AE45C202F03D700B687FB /* Position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
 		4F3AE45F202F040400B687FB /* ScreenProperties.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ScreenProperties.cpp; sourceTree = "<group>"; };
 		4F3AE460202F040400B687FB /* ScreenProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenProperties.h; sourceTree = "<group>"; };
+		4F7314BB205CF3D4005AAB83 /* BattleHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleHero.h; sourceTree = "<group>"; };
+		4F7314BD205CF3D4005AAB83 /* BattleHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleHero.cpp; sourceTree = "<group>"; };
+		4F7314C1205CF5B5005AAB83 /* BattleView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleView.cpp; sourceTree = "<group>"; };
+		4F7314C2205CF5B5005AAB83 /* BattleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleView.h; sourceTree = "<group>"; };
 		4F8910582034BF2800D8382C /* Coordinate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinate.cpp; sourceTree = "<group>"; };
 		4F8910592034BF2800D8382C /* Coordinate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
 		4F89105C2034BF3A00D8382C /* Grid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Grid.cpp; sourceTree = "<group>"; };
@@ -505,6 +513,7 @@
 		4F3AE451202EE9B900B687FB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F7314C0205CF4BD005AAB83 /* Battle */,
 				4FBCDC5520320770006B3B5E /* Custom */,
 				4FE0EADD20303AB200E6DD88 /* Buttons */,
 				4F3AE452202EE9E000B687FB /* ViewHelper.cpp */,
@@ -519,12 +528,21 @@
 				4FA6AD73202F83A200158956 /* BackgroundView.h */,
 				4FA6AD7C202F8FC200158956 /* WorldView.cpp */,
 				4FA6AD7D202F8FC200158956 /* WorldView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4F7314C0205CF4BD005AAB83 /* Battle */ = {
+			isa = PBXGroup;
+			children = (
 				4FBCDC512032031D006B3B5E /* BattleBackgroundView.cpp */,
 				4FBCDC522032031D006B3B5E /* BattleBackgroundView.h */,
+				4F7314C1205CF5B5005AAB83 /* BattleView.cpp */,
+				4F7314C2205CF5B5005AAB83 /* BattleView.h */,
 				4F9604CD2059A12C004CAEED /* HeroView.cpp */,
 				4F9604CE2059A12C004CAEED /* HeroView.h */,
 			);
-			path = View;
+			path = Battle;
 			sourceTree = "<group>";
 		};
 		4F8910562034BEF800D8382C /* Grid */ = {
@@ -592,6 +610,8 @@
 		4FBCDC5B20322051006B3B5E /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				4F7314BD205CF3D4005AAB83 /* BattleHero.cpp */,
+				4F7314BB205CF3D4005AAB83 /* BattleHero.h */,
 				4FBCDC5C2032207E006B3B5E /* Hero.cpp */,
 				4FBCDC5D2032207E006B3B5E /* Hero.h */,
 			);
@@ -831,7 +851,9 @@
 				4FA6AD68202F7C8800158956 /* SplashView.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				4FE0EAE92030410000E6DD88 /* FontCreator.cpp in Sources */,
+				4F7314C3205CF5B5005AAB83 /* BattleView.cpp in Sources */,
 				4FA6AD7E202F8FC200158956 /* WorldView.cpp in Sources */,
+				4F7314BE205CF3D4005AAB83 /* BattleHero.cpp in Sources */,
 				4FD96FD0205B84F700C0F5A1 /* StringFileReader.cpp in Sources */,
 				4F89105E2034BF3A00D8382C /* Grid.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -861,6 +883,7 @@
 				4FA6AD7F202F8FC200158956 /* WorldView.cpp in Sources */,
 				4F3AE459202EE9F600B687FB /* LogoView.cpp in Sources */,
 				4FE0EAEA2030410000E6DD88 /* FontCreator.cpp in Sources */,
+				4F7314C4205CF5B5005AAB83 /* BattleView.cpp in Sources */,
 				4F3AE462202F040400B687FB /* ScreenProperties.cpp in Sources */,
 				4FBCDC6F203220CD006B3B5E /* GridHDR.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
@@ -872,6 +895,7 @@
 				4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */,
 				4F3AE450202EE32E00B687FB /* Resolution.cpp in Sources */,
 				4FBCDC542032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
+				4F7314BF205CF3D4005AAB83 /* BattleHero.cpp in Sources */,
 				4FE0EAE220303AD600E6DD88 /* BattleButton.cpp in Sources */,
 				4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4FBCDC69203220CD006B3B5E /* GridHD.cpp in Sources */,

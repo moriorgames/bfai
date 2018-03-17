@@ -7,14 +7,10 @@ namespace MoriorGames {
 
 class Hero
 {
-public:
-    static const std::string SIDE_PLAYER;
-    static const std::string SIDE_ENEMY;
-
-private:
-    int id;
-    std::string name, slug, side = SIDE_PLAYER;
-    int damage, ranged, health, injury = 0, movement, moveFrames, attackFrames;
+protected:
+    int id = 0;
+    std::string name = "", slug = "";
+    int damage = 0, ranged = 0, health = 0, movement = 0, moveFrames = 0, attackFrames = 0;
 
 public:
     int getId() const;
@@ -23,23 +19,18 @@ public:
     void setName(const std::string &name);
     const std::string &getSlug() const;
     void setSlug(const std::string &slug);
-    const std::string &getSide() const;
-    void setSide(const std::string &side);
     int getDamage() const;
     void setDamage(int damage);
     int getRanged() const;
     void setRanged(int ranged);
     int getHealth() const;
     void setHealth(int health);
-    int getInjury() const;
     int getMovement() const;
     void setMovement(int movement);
     int getMoveFrames() const;
     void setMoveFrames(int moveFrames);
     int getAttackFrames() const;
     void setAttackFrames(int attackFrames);
-
-    void addInjury();
 
     void print();
 };

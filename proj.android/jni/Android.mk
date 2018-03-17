@@ -28,16 +28,18 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Services/SpriteAnimator.cpp \
                    ../../Classes/MoriorGames/Services/SpritesInitializer.cpp \
                    ../../Classes/MoriorGames/Services/StringFileReader.cpp \
+                   ../../Classes/MoriorGames/Vendor/Entity/BattleHero.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Hero.cpp \
                    ../../Classes/MoriorGames/Vendor/Grid/Grid.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/HeroParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/JsonParser.cpp \
                    ../../Classes/MoriorGames/Vendor/ValueObjects/Coordinate.cpp \
+                   ../../Classes/MoriorGames/View/Battle/BattleBackgroundView.cpp \
+                   ../../Classes/MoriorGames/View/Battle/BattleView.cpp \
+                   ../../Classes/MoriorGames/View/Battle/HeroView.cpp \
                    ../../Classes/MoriorGames/View/Buttons/BattleButton.cpp \
                    ../../Classes/MoriorGames/View/Custom/BattleInitCustomActions.cpp \
                    ../../Classes/MoriorGames/View/BackgroundView.cpp \
-                   ../../Classes/MoriorGames/View/BattleBackgroundView.cpp \
-                   ../../Classes/MoriorGames/View/HeroView.cpp \
                    ../../Classes/MoriorGames/View/LoadingView.cpp \
                    ../../Classes/MoriorGames/View/LogoView.cpp \
                    ../../Classes/MoriorGames/View/SplashView.cpp \

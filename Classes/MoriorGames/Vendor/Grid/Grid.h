@@ -4,6 +4,7 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "../ValueObjects/Coordinate.h"
 
 namespace MoriorGames {

@@ -7,8 +7,8 @@ class Coordinate
 {
 public:
     int x, y;
+    explicit Coordinate(Coordinate *coordinate);
     Coordinate(int x, int y);
-    Coordinate(Coordinate *coordinate);
 };
 
 }

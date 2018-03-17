@@ -2,10 +2,6 @@
 
 using MoriorGames::Hero;
 
-const std::string Hero::SIDE_PLAYER = "side-player";
-
-const std::string Hero::SIDE_ENEMY = "side-enemy";
-
 int Hero::getId() const
 {
     return id;
@@ -34,16 +30,6 @@ const std::string &Hero::getSlug() const
 void Hero::setSlug(const std::string &slug)
 {
     this->slug = slug;
-}
-
-const std::string &Hero::getSide() const
-{
-    return side;
-}
-
-void Hero::setSide(const std::string &side)
-{
-    this->side = side;
 }
 
 int Hero::getDamage() const
@@ -76,11 +62,6 @@ void Hero::setHealth(int health)
     this->health = health;
 }
 
-int Hero::getInjury() const
-{
-    return injury;
-}
-
 int Hero::getMovement() const
 {
     return movement;
@@ -111,12 +92,27 @@ void Hero::setAttackFrames(int attackFrames)
     this->attackFrames = attackFrames;
 }
 
-void Hero::addInjury()
-{
-    injury++;
-}
-
 void Hero::print()
 {
-
+    printf("========= Hero: \n"
+               " - id %i\n"
+               " - name %s\n"
+               " - slug %s\n"
+               " - damage %i\n"
+               " - ranged %i\n"
+               " - health %i\n"
+               " - movement %i\n"
+               " - moveFrames %i\n"
+               " - attackFrames %i\n"
+               " \n",
+           id,
+           name.c_str(),
+           slug.c_str(),
+           damage,
+           ranged,
+           health,
+           movement,
+           moveFrames,
+           attackFrames
+    );
 }

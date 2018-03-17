@@ -1,11 +1,13 @@
 #include "GridSystem.h"
+#include "../Definitions.h"
 
 using MoriorGames::GridSystem;
 USING_NS_CC;
 
 const Color4F GridSystem::GRID_COLOR{0, 0, 0, .2f};
 
-GridSystem::GridSystem()
+GridSystem::GridSystem(Layer *layer)
+    : layer{layer}
 {
     if (isHDR()) {
         grid = new GridHDR;
@@ -20,9 +22,25 @@ GridSystem::GridSystem()
     }
 
     coordinates = grid->createGridCoordinates();
+    displayGrid();
 }
 
-cocos2d::DrawNode *GridSystem::displayGrid()
+cocos2d::Vec2 GridSystem::coordinateToScreen(Coordinate *coordinate)
+{
+    return Vec2(axisXToScreen(coordinate->x), axisYToScreen(coordinate->y));
+}
+
+float GridSystem::axisYToScreen(int y)
+{
+    return (grid->getFactor() * Grid::CENTER_FACTOR) + (y * Grid::TILE_SIZE * grid->getFactor());
+}
+
+float GridSystem::axisXToScreen(int x)
+{
+    return visibleSize.width / 2 + x * Grid::TILE_SIZE * grid->getFactor();
+}
+
+void GridSystem::displayGrid()
 {
     auto drawNode = DrawNode::create();
     float width = Grid::TILE_SIZE / 2 * grid->getFactor();
@@ -40,20 +58,5 @@ cocos2d::DrawNode *GridSystem::displayGrid()
 
     }
 
-    return drawNode;
-}
-
-cocos2d::Vec2 GridSystem::coordinateToScreen(Coordinate *coordinate)
-{
-    return Vec2(axisXToScreen(coordinate->x), axisYToScreen(coordinate->y));
-}
-
-float GridSystem::axisYToScreen(int y)
-{
-    return (grid->getFactor() * Grid::CENTER_FACTOR) + (y * Grid::TILE_SIZE * grid->getFactor());
-}
-
-float GridSystem::axisXToScreen(int x)
-{
-    return visibleSize.width / 2 + x * Grid::TILE_SIZE * grid->getFactor();
+    layer->addChild(drawNode, Z_ORDER_GRID);
 }

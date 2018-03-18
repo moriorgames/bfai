@@ -15,6 +15,7 @@ class GridSystem: public ScreenProperties
 {
 public:
     static const Color4F FILL_COLOR;
+    static const Color4F MOVE_FILL_COLOR;
     static const Color4F BORDER_COLOR;
 
 public:
@@ -22,10 +23,13 @@ public:
     cocos2d::Vec2 coordinateToScreen(Coordinate *coordinate);
     float axisYToScreen(int y);
     float axisXToScreen(int x);
+    void drawTile(Coordinate *coordinate, Color4F color);
 
 private:
     Layer *layer;
     Grid *grid;
+    float height = 0;
+    float width = 0;
     std::vector<Coordinate *> coordinates;
 
     void displayGrid();

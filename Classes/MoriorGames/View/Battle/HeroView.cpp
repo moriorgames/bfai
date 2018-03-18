@@ -2,9 +2,7 @@
 
 using MoriorGames::HeroView;
 
-const std::string HeroView::NAME = "hero-node";
-
-const Point HeroView::ANCHOR{0.5, 0.3};
+const Point HeroView::ANCHOR{0.5, 0.35};
 
 HeroView::HeroView(Layer *layer, GridSystem *gridSystem, BattleHero *hero)
     : ViewHelper(layer), gridSystem{gridSystem}, hero{hero}
@@ -43,10 +41,10 @@ Action *HeroView::moveAction()
 
 void MoriorGames::HeroView::addHealthBar()
 {
-    int position = 40;
+    int position = 37;
     for (int i = 0; i < hero->getCurrentHealth(); ++i) {
         auto hitPoint = Sprite::create("img/hit-point.png");
-        hitPoint->setPosition(position, 120);
+        hitPoint->setPosition(position, 110);
         container->addChild(hitPoint);
         position -= 18;
     }

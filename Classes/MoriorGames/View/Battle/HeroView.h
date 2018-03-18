@@ -11,9 +11,6 @@ namespace MoriorGames {
 class HeroView: public ViewHelper
 {
 public:
-    int const WORLD_Y = 20;
-    int const DETAIL_Y = 120;
-    static const std::string NAME;
     static const Point ANCHOR;
 
 public:

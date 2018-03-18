@@ -27,4 +27,9 @@ void BattleView::addView()
         battleHero->setCoordinate(new Coordinate(0, 0));
         new HeroView(layer, gridSystem, battleHero);
     }
+
+    gridSystem->drawTile(new Coordinate(0, 1), GridSystem::MOVE_FILL_COLOR);
+    gridSystem->drawTile(new Coordinate(0, -1), GridSystem::MOVE_FILL_COLOR);
+    gridSystem->drawTile(new Coordinate(1, 0), GridSystem::MOVE_FILL_COLOR);
+    gridSystem->drawTile(new Coordinate(-1, 0), GridSystem::MOVE_FILL_COLOR);
 }

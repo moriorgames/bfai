@@ -11,6 +11,13 @@ HeroView::HeroView(Layer *layer, GridSystem *gridSystem, BattleHero *hero)
     addView();
 }
 
+void HeroView::moveTo(Coordinate *coordinate)
+{
+    auto action = MoveTo::create(1, gridSystem->coordinateToScreen(coordinate));
+
+    container->runAction(action);
+}
+
 void HeroView::addView()
 {
     container = new Node;

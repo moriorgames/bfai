@@ -14,6 +14,18 @@ Grid::Grid()
     createGridCoordinates();
 }
 
+bool Grid::isValidCoordinate(Coordinate *coordinate)
+{
+    if (abs(coordinate->x) <= TILES_QUANTITY) {
+        for (auto line:lines)
+            if (coordinate->y == line) {
+                return true;
+            }
+    }
+
+    return false;
+}
+
 const std::vector<Coordinate *> &Grid::getCoordinates() const
 {
     return coordinates;

@@ -73,6 +73,8 @@
 		4FBCDC6D203220CD006B3B5E /* GridSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC65203220CD006B3B5E /* GridSystem.cpp */; };
 		4FBCDC6E203220CD006B3B5E /* GridHDR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC67203220CD006B3B5E /* GridHDR.cpp */; };
 		4FBCDC6F203220CD006B3B5E /* GridHDR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC67203220CD006B3B5E /* GridHDR.cpp */; };
+		4FD30897205ED742007D8039 /* HeroMoveEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD30895205ED742007D8039 /* HeroMoveEventListener.cpp */; };
+		4FD30898205ED742007D8039 /* HeroMoveEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD30895205ED742007D8039 /* HeroMoveEventListener.cpp */; };
 		4FD96FD0205B84F700C0F5A1 /* StringFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD96FCE205B84F700C0F5A1 /* StringFileReader.cpp */; };
 		4FD96FD1205B84F700C0F5A1 /* StringFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD96FCE205B84F700C0F5A1 /* StringFileReader.cpp */; };
 		4FE0EAE120303AD600E6DD88 /* BattleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */; };
@@ -248,6 +250,8 @@
 		4FBCDC65203220CD006B3B5E /* GridSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridSystem.cpp; sourceTree = "<group>"; };
 		4FBCDC66203220CD006B3B5E /* GridSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridSystem.h; sourceTree = "<group>"; };
 		4FBCDC67203220CD006B3B5E /* GridHDR.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridHDR.cpp; sourceTree = "<group>"; };
+		4FD30895205ED742007D8039 /* HeroMoveEventListener.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HeroMoveEventListener.cpp; sourceTree = "<group>"; };
+		4FD30896205ED742007D8039 /* HeroMoveEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroMoveEventListener.h; sourceTree = "<group>"; };
 		4FD96FCE205B84F700C0F5A1 /* StringFileReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StringFileReader.cpp; sourceTree = "<group>"; };
 		4FD96FCF205B84F700C0F5A1 /* StringFileReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringFileReader.h; sourceTree = "<group>"; };
 		4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleButton.cpp; sourceTree = "<group>"; };
@@ -475,6 +479,7 @@
 		4F3AE443202EE1F400B687FB /* MoriorGames */ = {
 			isa = PBXGroup;
 			children = (
+				4FD30893205ED6FE007D8039 /* EventListeners */,
 				4F3AE45A202F033B00B687FB /* Definitions.h */,
 				4FBCDC5A20322033006B3B5E /* Grid */,
 				4F3AE447202EE2CE00B687FB /* Scenes */,
@@ -630,6 +635,15 @@
 				4FBCDC5D2032207E006B3B5E /* Hero.h */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		4FD30893205ED6FE007D8039 /* EventListeners */ = {
+			isa = PBXGroup;
+			children = (
+				4FD30895205ED742007D8039 /* HeroMoveEventListener.cpp */,
+				4FD30896205ED742007D8039 /* HeroMoveEventListener.h */,
+			);
+			path = EventListeners;
 			sourceTree = "<group>";
 		};
 		4FE0EADD20303AB200E6DD88 /* Buttons */ = {
@@ -877,6 +891,7 @@
 				4FA6AD85202F965E00158956 /* SpritesInitializer.cpp in Sources */,
 				4FBCDC582032079A006B3B5E /* BattleInitCustomActions.cpp in Sources */,
 				4FBCDC6C203220CD006B3B5E /* GridSystem.cpp in Sources */,
+				4FD30897205ED742007D8039 /* HeroMoveEventListener.cpp in Sources */,
 				4FBCDC6A203220CD006B3B5E /* GridSD.cpp in Sources */,
 				4FE0EAE120303AD600E6DD88 /* BattleButton.cpp in Sources */,
 				4FA6AD70202F809A00158956 /* MainMenuScene.cpp in Sources */,
@@ -920,6 +935,7 @@
 				4F2CBFF3202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
 				4FBCDC6B203220CD006B3B5E /* GridSD.cpp in Sources */,
 				4FA6AD75202F83A200158956 /* BackgroundView.cpp in Sources */,
+				4FD30898205ED742007D8039 /* HeroMoveEventListener.cpp in Sources */,
 				4FEFCC21205AE61700D447C4 /* JsonParser.cpp in Sources */,
 				4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */,
 				4F3B0B82205E57C500D4B53C /* PathFinder.cpp in Sources */,

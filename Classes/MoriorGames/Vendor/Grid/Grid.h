@@ -20,6 +20,7 @@ public:
 
 public:
     Grid();
+    bool isValidCoordinate(Coordinate *);
     const std::vector<Coordinate *> &getCoordinates() const;
     virtual int getFactor();
     void printCoordinates();

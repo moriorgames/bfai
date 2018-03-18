@@ -25,6 +25,7 @@ public:
     float axisYToScreen(int y);
     float axisXToScreen(int x);
     void drawTile(Coordinate *coordinate, Color4F color);
+    Coordinate *getClosestCoordinate(float x, float y);
 
 private:
     Layer *layer;
@@ -33,6 +34,7 @@ private:
     float width = 0;
 
     void displayGrid();
+    double getDistance(float x, float y, Coordinate *);
 };
 
 }

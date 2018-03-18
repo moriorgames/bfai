@@ -12,6 +12,7 @@ LOCAL_MODULE := MyGame_shared
 LOCAL_MODULE_FILENAME := libBFAI
 
 LOCAL_SRC_FILES := projectbfai/main.cpp \
+                   ../../Classes/MoriorGames/EventListeners/HeroMoveEventListener.cpp \
                    ../../Classes/MoriorGames/Grid/GridHD.cpp \
                    ../../Classes/MoriorGames/Grid/GridHDR.cpp \
                    ../../Classes/MoriorGames/Grid/GridSD.cpp \

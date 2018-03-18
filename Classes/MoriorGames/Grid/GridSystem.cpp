@@ -64,9 +64,42 @@ void MoriorGames::GridSystem::drawTile(Coordinate *coordinate, Color4F color)
     layer->addChild(drawNode, Z_ORDER_GRID);
 }
 
+Coordinate *GridSystem::getClosestCoordinate(float x, float y)
+{
+    int i = 0;
+    int index = 0;
+    double distance = 5000;
+    for (auto coordinate:grid->getCoordinates()) {
+
+        double sumDistance = getDistance(x, y, coordinate);
+
+        if (sumDistance < distance) {
+            distance = sumDistance;
+            index = i;
+        }
+        i++;
+    }
+
+    return grid->getCoordinates()[index];
+}
+
 void GridSystem::displayGrid()
 {
     for (auto coordinate:grid->getCoordinates()) {
         drawTile(coordinate, FILL_COLOR);
     }
+}
+
+double MoriorGames::GridSystem::getDistance(float x, float y, Coordinate *coordinate)
+{
+    auto screenCoordinate = coordinateToScreen(coordinate);
+
+    float x2 = screenCoordinate.x;
+    float y2 = screenCoordinate.y;
+
+    double distanceX = fabs(x2 - x) / 2;
+    double distanceY = fabs(y2 - y) / 2;
+    double sumDistance = distanceX + distanceY;
+
+    return sumDistance;
 }

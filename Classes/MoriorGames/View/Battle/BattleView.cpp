@@ -1,6 +1,7 @@
 #include "BattleView.h"
 #include "BattleBackgroundView.h"
 #include "HeroView.h"
+#include "../../EventListeners/HeroMoveEventListener.h"
 #include "../../Grid/GridSystem.h"
 #include "../../Services/StringFileReader.h"
 #include "../../Vendor/Parsers/HeroParser.h"
@@ -34,12 +35,14 @@ void BattleView::addView()
         }
     }
 
-    hero->setCoordinate(new Coordinate(0, 0));
-    new HeroView(layer, gridSystem, hero);
+    hero->setCoordinate(new Coordinate(-7, 2));
+    auto heroView = new HeroView(layer, gridSystem, hero);
 
-    auto pathFinder = new PathFinder(2, new Coordinate(0, 0), gridSystem->getGrid());
+    auto pathFinder = new PathFinder(2, hero->getCoordinate(), gridSystem->getGrid());
 
     for (auto path:pathFinder->getPathScope()) {
         gridSystem->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR);
     }
+
+    new HeroMoveEventListener(layer, gridSystem, heroView);
 }

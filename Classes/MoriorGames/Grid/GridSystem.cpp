@@ -25,9 +25,13 @@ GridSystem::GridSystem(Layer *layer)
         grid = new GridSD;
     }
 
-    coordinates = grid->createGridCoordinates();
     height = width = Grid::TILE_SIZE / 2 * grid->getFactor();
     displayGrid();
+}
+
+Grid *GridSystem::getGrid() const
+{
+    return grid;
 }
 
 cocos2d::Vec2 GridSystem::coordinateToScreen(Coordinate *coordinate)
@@ -62,7 +66,7 @@ void MoriorGames::GridSystem::drawTile(Coordinate *coordinate, Color4F color)
 
 void GridSystem::displayGrid()
 {
-    for (auto coordinate:coordinates) {
+    for (auto coordinate:grid->getCoordinates()) {
         drawTile(coordinate, FILL_COLOR);
     }
 }

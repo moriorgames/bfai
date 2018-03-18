@@ -33,6 +33,7 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Vendor/Grid/Grid.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/HeroParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/JsonParser.cpp \
+                   ../../Classes/MoriorGames/Vendor/Services/PathFinder.cpp \
                    ../../Classes/MoriorGames/Vendor/ValueObjects/Coordinate.cpp \
                    ../../Classes/MoriorGames/View/Battle/BattleBackgroundView.cpp \
                    ../../Classes/MoriorGames/View/Battle/BattleView.cpp \

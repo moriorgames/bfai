@@ -35,6 +35,8 @@
 		4F3AE45E202F03D700B687FB /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE45B202F03D700B687FB /* Position.cpp */; };
 		4F3AE461202F040400B687FB /* ScreenProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE45F202F040400B687FB /* ScreenProperties.cpp */; };
 		4F3AE462202F040400B687FB /* ScreenProperties.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE45F202F040400B687FB /* ScreenProperties.cpp */; };
+		4F3B0B81205E57C500D4B53C /* PathFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B0B7E205E57C500D4B53C /* PathFinder.cpp */; };
+		4F3B0B82205E57C500D4B53C /* PathFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B0B7E205E57C500D4B53C /* PathFinder.cpp */; };
 		4F7314BE205CF3D4005AAB83 /* BattleHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7314BD205CF3D4005AAB83 /* BattleHero.cpp */; };
 		4F7314BF205CF3D4005AAB83 /* BattleHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7314BD205CF3D4005AAB83 /* BattleHero.cpp */; };
 		4F7314C3205CF5B5005AAB83 /* BattleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7314C1205CF5B5005AAB83 /* BattleView.cpp */; };
@@ -207,6 +209,8 @@
 		4F3AE45C202F03D700B687FB /* Position.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
 		4F3AE45F202F040400B687FB /* ScreenProperties.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ScreenProperties.cpp; sourceTree = "<group>"; };
 		4F3AE460202F040400B687FB /* ScreenProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenProperties.h; sourceTree = "<group>"; };
+		4F3B0B7E205E57C500D4B53C /* PathFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PathFinder.cpp; sourceTree = "<group>"; };
+		4F3B0B7F205E57C500D4B53C /* PathFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathFinder.h; sourceTree = "<group>"; };
 		4F7314BB205CF3D4005AAB83 /* BattleHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleHero.h; sourceTree = "<group>"; };
 		4F7314BD205CF3D4005AAB83 /* BattleHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleHero.cpp; sourceTree = "<group>"; };
 		4F7314C1205CF5B5005AAB83 /* BattleView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleView.cpp; sourceTree = "<group>"; };
@@ -532,6 +536,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4F3B0B7D205E57C500D4B53C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4F3B0B7E205E57C500D4B53C /* PathFinder.cpp */,
+				4F3B0B7F205E57C500D4B53C /* PathFinder.h */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		4F7314C0205CF4BD005AAB83 /* Battle */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +582,7 @@
 				4FBCDC5B20322051006B3B5E /* Entity */,
 				4F8910562034BEF800D8382C /* Grid */,
 				4FEFCBF2205AE5A300D447C4 /* Parsers */,
+				4F3B0B7D205E57C500D4B53C /* Services */,
 				4FA6AD8E202F9A5C00158956 /* Utils */,
 				4F8910572034BEFE00D8382C /* ValueObjects */,
 			);
@@ -835,6 +849,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3B0B81205E57C500D4B53C /* PathFinder.cpp in Sources */,
 				4F3AE454202EE9E000B687FB /* ViewHelper.cpp in Sources */,
 				4FBCDC532032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
 				4F3AE458202EE9F600B687FB /* LogoView.cpp in Sources */,
@@ -907,6 +922,7 @@
 				4FA6AD75202F83A200158956 /* BackgroundView.cpp in Sources */,
 				4FEFCC21205AE61700D447C4 /* JsonParser.cpp in Sources */,
 				4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */,
+				4F3B0B82205E57C500D4B53C /* PathFinder.cpp in Sources */,
 				4F89105B2034BF2800D8382C /* Coordinate.cpp in Sources */,
 				4FEFCC23205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,

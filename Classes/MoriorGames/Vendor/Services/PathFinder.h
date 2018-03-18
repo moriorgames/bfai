@@ -8,8 +8,8 @@ namespace MoriorGames {
 
 struct Path
 {
-    Coordinate *current;
-    Coordinate *previous = nullptr;
+    int level = 0;
+    Coordinate *coordinate = nullptr;
 };
 
 class PathFinder
@@ -17,6 +17,7 @@ class PathFinder
 public:
     PathFinder(int move, Coordinate *origin, Grid *grid);
     std::vector<Coordinate *> find(Coordinate *target);
+    const std::vector<Path> &getPathScope() const;
 
 private:
     int move;
@@ -25,6 +26,7 @@ private:
     std::vector<Path> pathScope;
 
     void buildPathScope();
+    std::vector<Coordinate *> moveAxis(Coordinate *current);
 };
 
 }

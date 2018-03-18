@@ -4,8 +4,10 @@
 #include "../../Grid/GridSystem.h"
 #include "../../Services/StringFileReader.h"
 #include "../../Vendor/Parsers/HeroParser.h"
+#include "../../Vendor/Services/PathFinder.h"
 
 using MoriorGames::BattleView;
+using MoriorGames::PathFinder;
 
 const std::string BattleView::NAME = "battle-node";
 
@@ -23,13 +25,21 @@ void BattleView::addView()
     std::string file = "data/heroes.json";
     auto json = (new StringFileReader)->getStringFromFile(file);
     auto parser = new HeroParser(json);
+
+    BattleHero *hero;
+
     for (auto battleHero:parser->parseForBattle()) {
-        battleHero->setCoordinate(new Coordinate(0, 0));
-        new HeroView(layer, gridSystem, battleHero);
+        if (battleHero->getId() == 1) {
+            hero = battleHero;
+        }
     }
 
-    gridSystem->drawTile(new Coordinate(0, 1), GridSystem::MOVE_FILL_COLOR);
-    gridSystem->drawTile(new Coordinate(0, -1), GridSystem::MOVE_FILL_COLOR);
-    gridSystem->drawTile(new Coordinate(1, 0), GridSystem::MOVE_FILL_COLOR);
-    gridSystem->drawTile(new Coordinate(-1, 0), GridSystem::MOVE_FILL_COLOR);
+    hero->setCoordinate(new Coordinate(0, 0));
+    new HeroView(layer, gridSystem, hero);
+
+    auto pathFinder = new PathFinder(2, new Coordinate(0, 0), gridSystem->getGrid());
+
+    for (auto path:pathFinder->getPathScope()) {
+        gridSystem->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR);
+    }
 }

@@ -20,6 +20,7 @@ public:
 
 public:
     GridSystem(Layer *layer);
+    Grid *getGrid() const;
     cocos2d::Vec2 coordinateToScreen(Coordinate *coordinate);
     float axisYToScreen(int y);
     float axisXToScreen(int x);
@@ -30,7 +31,6 @@ private:
     Grid *grid;
     float height = 0;
     float width = 0;
-    std::vector<Coordinate *> coordinates;
 
     void displayGrid();
 };

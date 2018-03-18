@@ -19,7 +19,8 @@ public:
     static const int CENTER_FACTOR;
 
 public:
-    std::vector<Coordinate *> createGridCoordinates();
+    Grid();
+    const std::vector<Coordinate *> &getCoordinates() const;
     virtual int getFactor();
     void printCoordinates();
     Coordinate *findByXY(int x, int y);
@@ -28,7 +29,7 @@ private:
     std::vector<Coordinate *> coordinates;
     std::vector<int> lines{3, 2, 1, 0, -1, -2, -3};
 
-    void generateTiles();
+    void createGridCoordinates();
 };
 
 }

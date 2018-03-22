@@ -12,6 +12,16 @@ BattleHero::BattleHero()
     coordinate = new Coordinate(0, 0);
 }
 
+int BattleHero::getBattleHeroId() const
+{
+    return battleHeroId;
+}
+
+void BattleHero::setBattleHeroId(int battleHeroId)
+{
+    this->battleHeroId = battleHeroId;
+}
+
 const std::string &BattleHero::getSide() const
 {
     return side;
@@ -49,6 +59,19 @@ void BattleHero::setCoordinate(Coordinate *coordinate)
 Coordinate *BattleHero::getCoordinate() const
 {
     return coordinate;
+}
+
+void BattleHero::copy(Hero *hero)
+{
+    id = hero->getId();
+    name = hero->getName();
+    slug = hero->getSlug();
+    damage = hero->getDamage();
+    ranged = hero->getRanged();
+    health = hero->getHealth();
+    movement = hero->getMovement();
+    moveFrames = hero->getMoveFrames();
+    attackFrames = hero->getAttackFrames();
 }
 
 void BattleHero::print()

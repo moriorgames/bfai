@@ -1,6 +1,8 @@
 #include "SplashScene.h"
 #include "../Scenes/MainMenuScene.h"
 #include "../Services/SpritesInitializer.h"
+#include "../Services/StringFileReader.h"
+#include "../Vendor/Repository/HeroRepository.h"
 #include "../View/SplashView.h"
 
 using MoriorGames::SplashScene;
@@ -39,6 +41,8 @@ void SplashScene::increaseLoadingBar(float delay)
     loadingView->setLoadingBarPercentage(loadingBarPercentage);
     if (loadingBarPercentage == 66) {
         new SpritesInitializer();
+        auto json = (new StringFileReader)->getStringFromFile("data/heroes.json");
+        heroRepo->init(json);
     }
     if (loadingBarPercentage > 99) {
         this->unschedule(schedule_selector(SplashScene::increaseLoadingBar));

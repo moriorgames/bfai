@@ -2,10 +2,43 @@
   "heroes": [
     {
       "id": 1,
+      "name": "Jaimie",
+      "slug": "jaimie",
+      "damage": 2,
+      "ranged": 4,
+      "health": 4,
+      "movement": 4,
+      "moveFrames": 16,
+      "attackFrames": 24
+    },
+    {
+      "id": 2,
+      "name": "Pink",
+      "slug": "pink",
+      "damage": 2,
+      "ranged": 4,
+      "health": 5,
+      "movement": 3,
+      "moveFrames": 24,
+      "attackFrames": 24
+    },
+    {
+      "id": 3,
+      "name": "Atlas",
+      "slug": "atlas",
+      "damage": 2,
+      "ranged": 4,
+      "health": 5,
+      "movement": 3,
+      "moveFrames": 24,
+      "attackFrames": 24
+    },
+    {
+      "id": 4,
       "name": "Paul",
       "slug": "paul",
       "damage": 2,
-      "ranged": 6,
+      "ranged": 4,
       "health": 5,
       "movement": 3,
       "moveFrames": 24,

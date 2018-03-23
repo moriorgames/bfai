@@ -2,6 +2,7 @@
 #define MORIOR_GAMES_VIEW_BATTLE_BATTLE_VIEW_H
 
 #include "../ViewHelper.h"
+#include "HeroView.h"
 
 namespace MoriorGames {
 
@@ -14,6 +15,7 @@ public:
     explicit BattleView(Layer *layer);
 
 private:
+    std::vector<HeroView *> heroes;
     void addView() override;
 };
 

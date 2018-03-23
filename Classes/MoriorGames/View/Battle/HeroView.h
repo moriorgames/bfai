@@ -15,6 +15,7 @@ public:
 
 public:
     HeroView(Layer *, GridSystem *, BattleHero *);
+    BattleHero *getHero() const;
     void moveTo(Coordinate *);
 
 private:

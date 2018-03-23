@@ -31,7 +31,7 @@ void PathFinder::buildPathScope()
     path.coordinate = origin;
     pathScope.push_back(path);
 
-    for (int i = 0; i <= move; ++i) {
+    for (int i = 0; i < move; ++i) {
         for (auto pathStruct:pathScope) {
             if (pathStruct.level == i) {
                 for (auto axis:moveAxis(pathStruct.coordinate)) {

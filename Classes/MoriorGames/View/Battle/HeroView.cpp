@@ -1,6 +1,7 @@
 #include "HeroView.h"
 
 using MoriorGames::HeroView;
+using MoriorGames::BattleHero;
 
 const Point HeroView::ANCHOR{0.5, 0.35};
 
@@ -9,6 +10,11 @@ HeroView::HeroView(Layer *layer, GridSystem *gridSystem, BattleHero *hero)
 {
     spriteAnimator = new SpriteAnimator;
     addView();
+}
+
+BattleHero *HeroView::getHero() const
+{
+    return hero;
 }
 
 void HeroView::moveTo(Coordinate *coordinate)

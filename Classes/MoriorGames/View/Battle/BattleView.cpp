@@ -1,10 +1,11 @@
 #include "BattleView.h"
 #include "BattleBackgroundView.h"
-#include "HeroView.h"
 #include "../../EventListeners/HeroMoveEventListener.h"
 #include "../../Grid/GridSystem.h"
 #include "../../Services/StringFileReader.h"
+#include "../../Vendor/Factories/BattleFactory.h"
 #include "../../Vendor/Parsers/HeroParser.h"
+#include "../../Vendor/Repository/HeroRepository.h"
 #include "../../Vendor/Services/PathFinder.h"
 
 using MoriorGames::BattleView;
@@ -23,26 +24,25 @@ void BattleView::addView()
     new BattleBackgroundView(layer);
     auto gridSystem = new GridSystem(layer);
 
-    std::string file = "data/heroes.json";
-    auto json = (new StringFileReader)->getStringFromFile(file);
-    auto parser = new HeroParser(json);
+    auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
+    auto battle = (new BattleFactory)->execute(json, heroRepo);
 
-    BattleHero *hero;
-
-    for (auto battleHero:parser->parseForBattle()) {
-        if (battleHero->getId() == 1) {
-            hero = battleHero;
-        }
+    for (auto battleHero:battle->getHeroes()) {
+        heroes.push_back(
+            new HeroView(layer, gridSystem, battleHero)
+        );
     }
 
-    hero->setCoordinate(new Coordinate(-7, 2));
-    auto heroView = new HeroView(layer, gridSystem, hero);
-
-    auto pathFinder = new PathFinder(2, hero->getCoordinate(), gridSystem->getGrid());
+    auto pathFinder = new PathFinder(battle->getActiveHero()->getMovement(), battle->getActiveHero()->getCoordinate(), gridSystem->getGrid());
 
     for (auto path:pathFinder->getPathScope()) {
         gridSystem->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR);
     }
 
-    new HeroMoveEventListener(layer, gridSystem, heroView);
+    for (auto hero:heroes) {
+        if (hero->getHero()->getBattleHeroId() == battle->getActiveHero()->getBattleHeroId()) {
+            new HeroMoveEventListener(layer, gridSystem, hero);
+        }
+    }
+
 }

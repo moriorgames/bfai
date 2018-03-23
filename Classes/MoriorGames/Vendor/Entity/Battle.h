@@ -18,7 +18,7 @@ public:
 
 private:
     std::vector<BattleHero *> heroes;
-    int activeHero = 0;
+    int activeHero = 1;
     int turn = 0;
 };
 

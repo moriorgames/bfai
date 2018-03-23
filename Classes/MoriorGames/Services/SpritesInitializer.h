@@ -13,7 +13,7 @@ public:
 private:
     cocos2d::SpriteFrameCache *cacher;
     std::vector<std::string> sprites{
-        "paul", "world"
+        "paul", "jaimie", "world"
     };
 
     void addSprites();

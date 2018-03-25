@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "../Grid/GridSystem.h"
+#include "../Vendor/Entity/Battle.h"
 #include "../Vendor/ValueObjects/Coordinate.h"
 #include "../View/Battle/HeroView.h"
 USING_NS_CC;
@@ -14,7 +15,7 @@ namespace MoriorGames {
 class HeroMoveEventListener
 {
 public:
-    HeroMoveEventListener(Layer *layer, GridSystem *gridSystem, HeroView *heroView);
+    HeroMoveEventListener(Layer *layer, GridSystem *gridSystem, std::vector<HeroView *> heroViews, Battle *battle);
     bool onTouchBegin(Touch *touch, Event *event);
     bool onTouchMove(Touch *touch, Event *event);
     bool onTouchEnd(Touch *touch, Event *event);
@@ -22,7 +23,8 @@ public:
 private:
     Layer *layer;
     GridSystem *gridSystem;
-    HeroView *heroView;
+    std::vector<HeroView *> heroViews;
+    Battle *battle;
 
     bool isTouchWithinBoundariesOfBattleField(Vec2 screenTouch);
     Coordinate *closestCoordinate(Vec2 screenTouch);

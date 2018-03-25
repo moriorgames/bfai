@@ -28,21 +28,18 @@ void BattleView::addView()
     auto battle = (new BattleFactory)->execute(json, heroRepo);
 
     for (auto battleHero:battle->getHeroes()) {
-        heroes.push_back(
+        heroViews.push_back(
             new HeroView(layer, gridSystem, battleHero)
         );
     }
 
-    auto pathFinder = new PathFinder(battle->getActiveHero()->getMovement(), battle->getActiveHero()->getCoordinate(), gridSystem->getGrid());
+    auto pathFinder = new PathFinder(battle->getActiveHero()->getMovement(),
+                                     battle->getActiveHero()->getCoordinate(),
+                                     gridSystem->getGrid());
 
     for (auto path:pathFinder->getPathScope()) {
         gridSystem->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR);
     }
 
-    for (auto hero:heroes) {
-        if (hero->getHero()->getBattleHeroId() == battle->getActiveHero()->getBattleHeroId()) {
-            new HeroMoveEventListener(layer, gridSystem, hero);
-        }
-    }
-
+    new HeroMoveEventListener(layer, gridSystem, heroViews, battle);
 }

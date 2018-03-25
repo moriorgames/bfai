@@ -15,7 +15,7 @@ public:
     explicit BattleView(Layer *layer);
 
 private:
-    std::vector<HeroView *> heroes;
+    std::vector<HeroView *> heroViews;
     void addView() override;
 };
 

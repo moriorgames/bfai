@@ -2,6 +2,7 @@
 #define MORIOR_GAMES_VENDOR_ENTITY_BATTLE_H
 
 #include <vector>
+#include <algorithm>
 #include "BattleHero.h"
 
 namespace MoriorGames {

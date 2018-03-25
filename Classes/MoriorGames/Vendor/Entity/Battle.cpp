@@ -27,6 +27,17 @@ BattleHero *Battle::getActiveHero()
 
 void Battle::nextHero()
 {
+    auto activeHero = this->activeHero;
+    auto it = std::find_if(heroes.begin(), heroes.end(), [activeHero](BattleHero *battleHero)
+    { return battleHero->getBattleHeroId() > activeHero; });
+
+    if (it != heroes.end()) {
+        this->activeHero = (*it)->getBattleHeroId();
+    } else {
+        this->activeHero = 0;
+        addTurn();
+        nextHero();
+    }
 }
 
 void Battle::addTurn()

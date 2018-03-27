@@ -21,6 +21,7 @@ BattleView::BattleView(Layer *layer)
 
 void BattleView::addView()
 {
+    battleContainer = new BattleContainer;
     new BattleBackgroundView(layer);
     auto gridSystem = new GridSystem(layer);
 
@@ -28,9 +29,7 @@ void BattleView::addView()
     auto battle = (new BattleFactory)->execute(json, heroRepo);
 
     for (auto battleHero:battle->getHeroes()) {
-        heroViews.push_back(
-            new HeroView(layer, gridSystem, battleHero)
-        );
+        battleContainer->addHeroView(new HeroView(layer, gridSystem, battleHero));
     }
 
     auto pathFinder = new PathFinder(battle->getActiveHero()->getMovement(),
@@ -41,5 +40,5 @@ void BattleView::addView()
         gridSystem->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR);
     }
 
-    new HeroMoveEventListener(layer, gridSystem, heroViews, battle);
+    new HeroMoveEventListener(layer, gridSystem, battleContainer, battle);
 }

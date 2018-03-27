@@ -2,8 +2,10 @@
 
 using MoriorGames::HeroMoveEventListener;
 
-HeroMoveEventListener::HeroMoveEventListener(Layer *layer, GridSystem *gridSystem, std::vector<HeroView *> heroViews, Battle *battle)
-    : layer{layer}, gridSystem{gridSystem}, heroViews{heroViews}, battle{battle}
+HeroMoveEventListener::HeroMoveEventListener(
+    Layer *layer, GridSystem *gridSystem, BattleContainer *battleContainer, Battle *battle
+)
+    : layer{layer}, gridSystem{gridSystem}, battleContainer{battleContainer}, battle{battle}
 {
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(true);
@@ -32,8 +34,8 @@ bool HeroMoveEventListener::onTouchEnd(Touch *touch, Event *event)
     Vec2 screenTouch = layer->convertTouchToNodeSpace(touch);
 
     if (isTouchWithinBoundariesOfBattleField(screenTouch)) {
-        for (auto heroView:heroViews) {
-            if (heroView->getHero()->getBattleHeroId() == battle->getActiveHero()->getBattleHeroId()) {
+        for (auto heroView:battleContainer->getHeroViews()) {
+            if (heroView->getHero() == battle->getActiveHero()) {
                 auto coordinate = closestCoordinate(screenTouch);
                 heroView->moveTo(coordinate);
             }

@@ -24,6 +24,7 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Screen/Position.cpp \
                    ../../Classes/MoriorGames/Screen/Resolution.cpp \
                    ../../Classes/MoriorGames/Screen/ScreenProperties.cpp \
+                   ../../Classes/MoriorGames/Services/BattleContainer.cpp \
                    ../../Classes/MoriorGames/Services/FontCreator.cpp \
                    ../../Classes/MoriorGames/Services/SoundPlayer.cpp \
                    ../../Classes/MoriorGames/Services/SpriteAnimator.cpp \

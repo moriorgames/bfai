@@ -21,22 +21,19 @@ BattleView::BattleView(Layer *layer)
 
 void BattleView::addView()
 {
-    battleContainer = new BattleContainer;
+    battleContainer = new BattleContainer(layer);
     new BattleBackgroundView(layer);
-    auto gridSystem = new GridSystem(layer);
 
     auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
     auto battle = (new BattleFactory)->execute(json, heroRepo);
 
     for (auto battleHero:battle->getHeroes()) {
-        battleContainer->addHeroView(new HeroView(layer, gridSystem, battleHero));
+        battleContainer->addHeroView(new HeroView(layer, battleContainer->getGridSystem(), battleHero));
     }
 
-    auto pathFinder = new PathFinder(gridSystem->getGrid());
-
-    for (auto path:pathFinder->buildPathScope(battle->getActiveHero())) {
-        gridSystem->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR);
+    for (auto path:battleContainer->getPathFinder()->buildPathScope(battle->getActiveHero())) {
+        battleContainer->getGridSystem()->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR);
     }
 
-    new HeroMoveEventListener(layer, gridSystem, battleContainer, battle);
+    new HeroMoveEventListener(layer, battleContainer->getGridSystem(), battleContainer, battle);
 }

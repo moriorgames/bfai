@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "../Grid/Grid.h"
+#include "../Entity/BattleHero.h"
 
 namespace MoriorGames {
 
@@ -15,17 +16,13 @@ struct Path
 class PathFinder
 {
 public:
-    PathFinder(int move, Coordinate *origin, Grid *grid);
-    std::vector<Coordinate *> find(Coordinate *target);
-    const std::vector<Path> &getPathScope() const;
+    PathFinder(Grid *grid);
+    const std::vector<Path> &buildPathScope(BattleHero *);
 
 private:
-    int move;
-    Coordinate *origin;
     Grid *grid;
     std::vector<Path> pathScope;
 
-    void buildPathScope();
     std::vector<Coordinate *> moveAxis(Coordinate *current);
 };
 

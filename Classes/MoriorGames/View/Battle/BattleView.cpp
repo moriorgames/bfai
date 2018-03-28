@@ -32,11 +32,9 @@ void BattleView::addView()
         battleContainer->addHeroView(new HeroView(layer, gridSystem, battleHero));
     }
 
-    auto pathFinder = new PathFinder(battle->getActiveHero()->getMovement(),
-                                     battle->getActiveHero()->getCoordinate(),
-                                     gridSystem->getGrid());
+    auto pathFinder = new PathFinder(gridSystem->getGrid());
 
-    for (auto path:pathFinder->getPathScope()) {
+    for (auto path:pathFinder->buildPathScope(battle->getActiveHero())) {
         gridSystem->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR);
     }
 

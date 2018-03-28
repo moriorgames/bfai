@@ -89,4 +89,6 @@ void BattleHero::print()
            coordinate->x,
            coordinate->y
     );
+
+    Hero::print();
 }

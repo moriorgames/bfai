@@ -1,7 +1,6 @@
 #include "BattleScene.h"
 #include "../View/Battle/BattleView.h"
 
-using MoriorGames::BattleScene;
 USING_NS_CC;
 
 Scene *BattleScene::createScene()

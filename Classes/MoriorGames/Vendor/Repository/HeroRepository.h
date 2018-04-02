@@ -4,8 +4,6 @@
 #include <vector>
 #include "../Parsers/HeroParser.h"
 
-namespace MoriorGames {
-
 class HeroRepository
 {
 public:
@@ -16,8 +14,6 @@ private:
     std::vector<Hero *> heroes;
 };
 
-}
-
-extern MoriorGames::HeroRepository *heroRepo;
+extern HeroRepository *heroRepo;
 
 #endif

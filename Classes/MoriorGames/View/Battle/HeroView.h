@@ -6,8 +6,6 @@
 #include "../../Services/SpriteAnimator.h"
 #include "../../Vendor/Entity/BattleHero.h"
 
-namespace MoriorGames {
-
 class HeroView: public ViewHelper
 {
 public:
@@ -31,7 +29,5 @@ private:
     Action *moveAction();
     Action *attackAction();
 };
-
-}
 
 #endif

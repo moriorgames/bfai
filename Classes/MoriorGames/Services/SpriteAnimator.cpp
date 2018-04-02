@@ -1,8 +1,6 @@
 #include "SpriteAnimator.h"
 #include "../Vendor/Utils/TextUtils.h"
 
-using MoriorGames::SpriteAnimator;
-
 cocos2d::Action *
 SpriteAnimator::generateAction(
     std::string entity, float frames, std::string action, int direction, float duration, int module

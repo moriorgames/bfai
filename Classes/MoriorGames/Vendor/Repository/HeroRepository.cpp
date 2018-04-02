@@ -1,8 +1,5 @@
 #include "HeroRepository.h"
 
-using MoriorGames::HeroRepository;
-using MoriorGames::Hero;
-
 void HeroRepository::init(const std::string &json)
 {
     auto parser = new HeroParser(json);

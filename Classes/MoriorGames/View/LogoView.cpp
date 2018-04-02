@@ -1,9 +1,6 @@
 #include "LogoView.h"
 #include "../Services/SoundPlayer.h"
 
-using MoriorGames::LogoView;
-using MoriorGames::SoundPlayer;
-
 LogoView::LogoView(Layer *layer)
     : ViewHelper(layer)
 {

@@ -1,7 +1,5 @@
 #include "Resolution.h"
 
-using MoriorGames::Resolution;
-
 const float Resolution::SD_WIDTH = 512;
 
 const float Resolution::SD_HEIGHT = 384;

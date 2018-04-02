@@ -5,8 +5,6 @@
 #include "Hero.h"
 #include "../ValueObjects/Coordinate.h"
 
-namespace MoriorGames {
-
 class BattleHero: public Hero
 {
 public:
@@ -35,7 +33,5 @@ public:
     void copy(Hero *);
     void print();
 };
-
-}
 
 #endif

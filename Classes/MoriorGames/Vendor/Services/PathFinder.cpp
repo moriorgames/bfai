@@ -1,10 +1,5 @@
 #include "PathFinder.h"
 
-using MoriorGames::PathFinder;
-using MoriorGames::Coordinate;
-using MoriorGames::Grid;
-using MoriorGames::Path;
-
 PathFinder::PathFinder(Grid *grid)
     : grid{grid}
 {

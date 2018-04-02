@@ -5,8 +5,6 @@
 #include <vector>
 #include "json/document.h"
 
-namespace MoriorGames {
-
 using namespace rapidjson;
 
 class JsonParser
@@ -22,7 +20,5 @@ protected:
     std::string getString(const rapidjson::Value &data, std::string key);
     bool getBool(const rapidjson::Value &data, std::string key);
 };
-
-}
 
 #endif

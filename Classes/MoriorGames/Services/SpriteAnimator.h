@@ -5,8 +5,6 @@
 #include "../Definitions.h"
 USING_NS_CC;
 
-namespace MoriorGames {
-
 class SpriteAnimator
 {
 public:
@@ -37,7 +35,5 @@ private:
 
     bool isAllowedDirection(int direction);
 };
-
-}
 
 #endif

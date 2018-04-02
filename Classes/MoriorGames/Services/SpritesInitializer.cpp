@@ -1,6 +1,5 @@
 #include "SpritesInitializer.h"
 
-using MoriorGames::SpritesInitializer;
 USING_NS_CC;
 
 SpritesInitializer::SpritesInitializer()

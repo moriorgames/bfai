@@ -3,8 +3,6 @@
 
 #include <string>
 
-namespace MoriorGames {
-
 class Hero
 {
 protected:
@@ -34,7 +32,5 @@ public:
 
     void print();
 };
-
-}
 
 #endif

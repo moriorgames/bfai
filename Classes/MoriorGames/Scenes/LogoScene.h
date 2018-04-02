@@ -3,8 +3,6 @@
 
 #include "cocos2d.h"
 
-namespace MoriorGames {
-
 class LogoScene: public cocos2d::Layer
 {
 public:
@@ -18,7 +16,5 @@ private:
 
     void goToSplashScene(float delay);
 };
-
-}
 
 #endif

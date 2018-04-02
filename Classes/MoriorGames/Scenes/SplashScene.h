@@ -4,8 +4,6 @@
 #include "cocos2d.h"
 #include "../View/LoadingView.h"
 
-namespace MoriorGames {
-
 class SplashScene: public cocos2d::Layer
 {
 public:
@@ -24,7 +22,5 @@ private:
     void goToMainMenuScene();
 
 };
-
-}
 
 #endif

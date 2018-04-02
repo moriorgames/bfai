@@ -3,7 +3,6 @@
 #include "../View/BackgroundView.h"
 #include "../View/WorldView.h"
 
-using MoriorGames::MainMenuScene;
 USING_NS_CC;
 
 Scene *MainMenuScene::createScene()

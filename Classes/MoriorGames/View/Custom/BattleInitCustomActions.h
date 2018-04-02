@@ -4,8 +4,6 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
-namespace MoriorGames {
-
 class BattleInitCustomActions
 {
 public:
@@ -16,7 +14,5 @@ private:
 
     void runActions(Layer *layer);
 };
-
-}
 
 #endif

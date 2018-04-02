@@ -4,8 +4,6 @@
 #include "ui/CocosGUI.h"
 #include "../ViewHelper.h"
 
-namespace MoriorGames {
-
 class BattleButton: public ViewHelper
 {
 public:
@@ -18,7 +16,5 @@ public:
 private:
     void addView() override;
 };
-
-}
 
 #endif

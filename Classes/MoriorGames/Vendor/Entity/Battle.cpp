@@ -1,8 +1,5 @@
 #include "Battle.h"
 
-using MoriorGames::Battle;
-using MoriorGames::BattleHero;
-
 void Battle::addHero(BattleHero *battleHero)
 {
     battleHero->setBattleHeroId(heroes.size() + 1);

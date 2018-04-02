@@ -5,8 +5,6 @@
 #include <algorithm>
 #include "BattleHero.h"
 
-namespace MoriorGames {
-
 class Battle
 {
 public:
@@ -22,7 +20,5 @@ private:
     int activeHero = 1;
     int turn = 0;
 };
-
-}
 
 #endif

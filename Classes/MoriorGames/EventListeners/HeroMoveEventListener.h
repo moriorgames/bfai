@@ -9,10 +9,6 @@
 #include "../View/Battle/HeroView.h"
 USING_NS_CC;
 
-using MoriorGames::Coordinate;
-
-namespace MoriorGames {
-
 class HeroMoveEventListener
 {
 public:
@@ -30,7 +26,5 @@ private:
     bool isTouchWithinBoundariesOfBattleField(Vec2 screenTouch);
     Coordinate *closestCoordinate(Vec2 screenTouch);
 };
-
-}
 
 #endif

@@ -1,8 +1,5 @@
 #include "BattleHero.h"
 
-using MoriorGames::BattleHero;
-using MoriorGames::Coordinate;
-
 const std::string BattleHero::SIDE_PLAYER = "side-player";
 
 const std::string BattleHero::SIDE_ENEMY = "side-enemy";

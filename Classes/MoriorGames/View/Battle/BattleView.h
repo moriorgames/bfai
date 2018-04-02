@@ -4,8 +4,6 @@
 #include "../ViewHelper.h"
 #include "../../Services/BattleContainer.h"
 
-namespace MoriorGames {
-
 class BattleView: public ViewHelper
 {
 public:
@@ -18,7 +16,5 @@ private:
     BattleContainer *battleContainer;
     void addView() override;
 };
-
-}
 
 #endif

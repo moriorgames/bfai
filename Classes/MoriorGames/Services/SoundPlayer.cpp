@@ -1,8 +1,6 @@
 #include "SoundPlayer.h"
 #include "../Definitions.h"
 
-using MoriorGames::SoundPlayer;
-
 void SoundPlayer::playEffect(std::string file)
 {
     if (MODE_SOUND) {

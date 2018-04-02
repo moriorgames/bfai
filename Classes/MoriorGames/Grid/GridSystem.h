@@ -6,11 +6,6 @@
 #include "GridHDR.h"
 #include "../Screen/ScreenProperties.h"
 
-using MoriorGames::Grid;
-using MoriorGames::Coordinate;
-
-namespace MoriorGames {
-
 class GridSystem: public ScreenProperties
 {
 public:
@@ -40,7 +35,5 @@ private:
     void displayGrid();
     double getDistance(float x, float y, Coordinate *);
 };
-
-}
 
 #endif

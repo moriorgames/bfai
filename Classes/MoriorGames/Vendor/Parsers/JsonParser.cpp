@@ -1,7 +1,5 @@
 #include "JsonParser.h"
 
-using MoriorGames::JsonParser;
-
 JsonParser::JsonParser(std::string json)
 {
     document.Parse(json.c_str());

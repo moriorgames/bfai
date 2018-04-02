@@ -4,8 +4,6 @@
 #include "ViewHelper.h"
 #include "../Services/SpriteAnimator.h"
 
-namespace MoriorGames {
-
 class WorldView: public ViewHelper
 {
 public:
@@ -24,7 +22,5 @@ private:
     void addWorld();
     Action *detailAction();
 };
-
-}
 
 #endif

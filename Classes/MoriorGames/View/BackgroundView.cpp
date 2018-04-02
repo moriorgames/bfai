@@ -1,9 +1,6 @@
 #include "BackgroundView.h"
 #include "../Services/SoundPlayer.h"
 
-using MoriorGames::BackgroundView;
-using MoriorGames::SoundPlayer;
-
 const std::string BackgroundView::NAME = "background-node";
 
 BackgroundView::BackgroundView(Layer *layer)

@@ -4,8 +4,6 @@
 #include "cocos2d.h"
 #include "Resolution.h"
 
-namespace MoriorGames {
-
 class ScreenProperties
 {
 public:
@@ -31,7 +29,5 @@ protected:
     cocos2d::Vec2 origin;
     cocos2d::Size winSize;
 };
-
-}
 
 #endif

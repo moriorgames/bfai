@@ -1,7 +1,6 @@
 #include "GridSystem.h"
 #include "../Definitions.h"
 
-using MoriorGames::GridSystem;
 USING_NS_CC;
 
 const Color4F GridSystem::FILL_COLOR{0, 0, 0, 0};
@@ -107,7 +106,7 @@ void GridSystem::displayGrid()
     }
 }
 
-double MoriorGames::GridSystem::getDistance(float x, float y, Coordinate *coordinate)
+double GridSystem::getDistance(float x, float y, Coordinate *coordinate)
 {
     auto screenCoordinate = coordinateToScreen(coordinate);
 

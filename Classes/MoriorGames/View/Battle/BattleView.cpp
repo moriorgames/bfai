@@ -8,9 +8,6 @@
 #include "../../Vendor/Repository/HeroRepository.h"
 #include "../../Vendor/Services/PathFinder.h"
 
-using MoriorGames::BattleView;
-using MoriorGames::PathFinder;
-
 const std::string BattleView::NAME = "battle-node";
 
 BattleView::BattleView(Layer *layer)

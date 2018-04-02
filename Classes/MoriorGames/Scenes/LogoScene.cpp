@@ -2,9 +2,6 @@
 #include "SplashScene.h"
 #include "../View/LogoView.h"
 
-using MoriorGames::LogoScene;
-using MoriorGames::SplashScene;
-using MoriorGames::LogoView;
 USING_NS_CC;
 
 Scene *LogoScene::createScene()

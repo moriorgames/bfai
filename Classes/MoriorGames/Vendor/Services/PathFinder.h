@@ -5,8 +5,6 @@
 #include "../Grid/Grid.h"
 #include "../Entity/BattleHero.h"
 
-namespace MoriorGames {
-
 struct Path
 {
     int level = 0;
@@ -25,7 +23,5 @@ private:
 
     std::vector<Coordinate *> moveAxis(Coordinate *current);
 };
-
-}
 
 #endif

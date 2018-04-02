@@ -1,8 +1,5 @@
 #include "HeroView.h"
 
-using MoriorGames::HeroView;
-using MoriorGames::BattleHero;
-
 const Point HeroView::ANCHOR{0.5, 0.35};
 
 HeroView::HeroView(Layer *layer, GridSystem *gridSystem, BattleHero *hero)
@@ -52,7 +49,7 @@ Action *HeroView::moveAction()
     return spriteAnimator->generateAction(hero->getSlug(), hero->getMoveFrames(), "move", 0, FPS);
 }
 
-void MoriorGames::HeroView::addHealthBar()
+void HeroView::addHealthBar()
 {
     int position = 37;
     for (int i = 0; i < hero->getCurrentHealth(); ++i) {

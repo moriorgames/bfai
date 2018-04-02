@@ -1,7 +1,5 @@
 #include "LoadingView.h"
 
-using MoriorGames::LoadingView;
-
 const std::string LoadingView::LOADING_BAR_NAME = "loading-bar";
 
 LoadingView::LoadingView(Layer *layer)

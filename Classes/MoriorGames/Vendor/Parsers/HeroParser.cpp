@@ -1,9 +1,5 @@
 #include "HeroParser.h"
 
-using MoriorGames::HeroParser;
-using MoriorGames::Hero;
-using MoriorGames::BattleHero;
-
 HeroParser::HeroParser(std::string json)
     : JsonParser(json)
 {

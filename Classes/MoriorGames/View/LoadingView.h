@@ -3,8 +3,6 @@
 
 #include "ViewHelper.h"
 
-namespace MoriorGames {
-
 class LoadingView: public ViewHelper
 {
 public:
@@ -26,7 +24,5 @@ private:
 
     void addView() override;
 };
-
-}
 
 #endif

@@ -1,7 +1,5 @@
 #include "WorldView.h"
 
-using MoriorGames::WorldView;
-
 const std::string WorldView::NAME = "world-node";
 
 WorldView::WorldView(Layer *layer)

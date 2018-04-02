@@ -3,8 +3,6 @@
 
 #include "../Vendor/Grid/Grid.h"
 
-namespace MoriorGames {
-
 class GridHD: public Grid
 {
 public:
@@ -13,7 +11,5 @@ public:
 public:
     virtual int getFactor() override;
 };
-
-}
 
 #endif

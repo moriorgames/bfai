@@ -1,7 +1,5 @@
 #include "HeroMoveEventListener.h"
 
-using MoriorGames::HeroMoveEventListener;
-
 HeroMoveEventListener::HeroMoveEventListener(
     Layer *layer, GridSystem *gridSystem, BattleContainer *battleContainer, Battle *battle
 )

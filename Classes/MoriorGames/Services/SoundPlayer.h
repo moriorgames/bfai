@@ -4,15 +4,11 @@
 #include <string>
 #include "SimpleAudioEngine.h"
 
-namespace MoriorGames {
-
 class SoundPlayer
 {
 public:
     static void playEffect(std::string file);
     static void playBackgroundMusic(std::string file);
 };
-
-}
 
 #endif

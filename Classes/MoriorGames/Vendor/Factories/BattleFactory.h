@@ -5,14 +5,10 @@
 #include "../Entity/Battle.h"
 #include "../Repository/HeroRepository.h"
 
-namespace MoriorGames {
-
 class BattleFactory
 {
 public:
     Battle *execute(const std::string &json, HeroRepository *);
 };
-
-}
 
 #endif

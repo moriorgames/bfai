@@ -3,8 +3,6 @@
 
 #include "cocos2d.h"
 
-namespace MoriorGames {
-
 class SpritesInitializer
 {
 public:
@@ -18,7 +16,5 @@ private:
 
     void addSprites();
 };
-
-}
 
 #endif

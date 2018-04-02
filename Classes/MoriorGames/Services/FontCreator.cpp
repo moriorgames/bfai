@@ -1,7 +1,5 @@
 #include "FontCreator.h"
 
-using MoriorGames::FontCreator;
-
 Label *FontCreator::buttonLabel(std::string text, std::string font, float size)
 {
     auto label = Label::createWithTTF(text, font, size);

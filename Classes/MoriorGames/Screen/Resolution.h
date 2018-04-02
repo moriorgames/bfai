@@ -4,8 +4,6 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
-namespace MoriorGames {
-
 class Resolution
 {
 public:
@@ -60,8 +58,6 @@ private:
     DesignProperties designProperties;
 };
 
-}
-
-extern MoriorGames::Resolution *globalResolution;
+extern Resolution *globalResolution;
 
 #endif

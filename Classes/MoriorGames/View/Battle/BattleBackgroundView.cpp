@@ -2,9 +2,6 @@
 #include "../Custom/BattleInitCustomActions.h"
 #include "../../Services/SoundPlayer.h"
 
-using MoriorGames::BattleBackgroundView;
-using MoriorGames::SoundPlayer;
-
 const std::string BattleBackgroundView::NAME = "battle-background-node";
 
 BattleBackgroundView::BattleBackgroundView(Layer *layer)

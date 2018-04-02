@@ -3,8 +3,6 @@
 
 #include "../ViewHelper.h"
 
-namespace MoriorGames {
-
 class BattleBackgroundView: public ViewHelper
 {
 public:
@@ -17,7 +15,5 @@ public:
 private:
     void addView() override;
 };
-
-}
 
 #endif

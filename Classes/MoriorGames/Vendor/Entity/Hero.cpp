@@ -1,7 +1,5 @@
 #include "Hero.h"
 
-using MoriorGames::Hero;
-
 int Hero::getId() const
 {
     return id;

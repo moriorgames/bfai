@@ -1,11 +1,5 @@
 #include "Position.h"
 
-using MoriorGames::Position;
-
-Position::Position()
-{
-}
-
 cocos2d::Point Position::getCenteredPosition()
 {
     return cocos2d::Point(centerX(), centerY());

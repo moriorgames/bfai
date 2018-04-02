@@ -3,9 +3,6 @@
 #include "../../Services/SoundPlayer.h"
 #include "../../Services/FontCreator.h"
 
-using MoriorGames::BattleButton;
-using MoriorGames::SoundPlayer;
-
 const std::string BattleButton::NAME = "battle-button-node";
 
 BattleButton::BattleButton(Layer *layer)

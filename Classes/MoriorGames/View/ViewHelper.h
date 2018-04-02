@@ -6,8 +6,6 @@
 #include "../Definitions.h"
 USING_NS_CC;
 
-namespace MoriorGames {
-
 class ViewHelper
 {
 public:
@@ -22,7 +20,5 @@ protected:
 private:
     virtual void addView()= 0;
 };
-
-}
 
 #endif

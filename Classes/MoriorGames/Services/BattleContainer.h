@@ -7,10 +7,6 @@
 #include "../View/Battle/HeroView.h"
 USING_NS_CC;
 
-using MoriorGames::GridSystem;
-using MoriorGames::PathFinder;
-using MoriorGames::HeroView;
-
 class BattleContainer
 {
 public:

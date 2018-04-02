@@ -1,7 +1,5 @@
 #include "BattleInitCustomActions.h"
 
-using MoriorGames::BattleInitCustomActions;
-
 BattleInitCustomActions::BattleInitCustomActions(Layer *layer)
 {
     runActions(layer);

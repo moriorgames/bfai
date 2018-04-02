@@ -4,14 +4,10 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
-namespace MoriorGames {
-
 class StringFileReader
 {
 public:
     std::string getStringFromFile(std::string file);
 };
-
-}
 
 #endif

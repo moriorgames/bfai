@@ -5,8 +5,6 @@
 #include "../Vendor/Repository/HeroRepository.h"
 #include "../View/SplashView.h"
 
-using MoriorGames::SplashScene;
-using MoriorGames::SplashView;
 USING_NS_CC;
 
 Scene *SplashScene::createScene()

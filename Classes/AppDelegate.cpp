@@ -3,8 +3,8 @@
 #include "MoriorGames/Screen/Resolution.h"
 #include "MoriorGames/Vendor/Repository/HeroRepository.h"
 
-MoriorGames::Resolution *globalResolution = new MoriorGames::Resolution;
-MoriorGames::HeroRepository *heroRepo = new MoriorGames::HeroRepository;
+Resolution *globalResolution = new Resolution;
+HeroRepository *heroRepo = new HeroRepository;
 
 #if USE_AUDIO_ENGINE && USE_SIMPLE_AUDIO_ENGINE
 #error "Don't use AudioEngine and SimpleAudioEngine at the same time. Please just select one in your game!"
@@ -21,8 +21,6 @@ using namespace CocosDenshion;
 USING_NS_CC;
 
 using namespace std;
-using MoriorGames::Resolution;
-using MoriorGames::LogoScene;
 
 static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
 

@@ -1,7 +1,5 @@
 #include "SplashView.h"
 
-using MoriorGames::SplashView;
-
 SplashView::SplashView(Layer *layer)
     : ViewHelper(layer)
 {

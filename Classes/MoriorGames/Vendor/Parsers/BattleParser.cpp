@@ -1,8 +1,5 @@
 #include "BattleParser.h"
 
-using MoriorGames::BattleParser;
-using MoriorGames::Battle;
-
 BattleParser::BattleParser(std::string json)
     : JsonParser(json)
 {

@@ -1,6 +1,5 @@
 #include "ScreenProperties.h"
 
-using MoriorGames::ScreenProperties;
 USING_NS_CC;
 
 ScreenProperties::ScreenProperties()

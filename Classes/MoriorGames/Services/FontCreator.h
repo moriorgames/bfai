@@ -4,8 +4,6 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
-namespace MoriorGames {
-
 class FontCreator
 {
 public:
@@ -13,7 +11,5 @@ public:
 
     Label *buttonLabel(std::string text, std::string font = "fonts/buttons-label.otf", float size = 90);
 };
-
-}
 
 #endif

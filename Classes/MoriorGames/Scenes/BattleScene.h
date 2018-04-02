@@ -3,8 +3,6 @@
 
 #include "cocos2d.h"
 
-namespace MoriorGames {
-
 class BattleScene: public cocos2d::Layer
 {
 public:
@@ -14,7 +12,5 @@ public:
 
     CREATE_FUNC(BattleScene);
 };
-
-}
 
 #endif

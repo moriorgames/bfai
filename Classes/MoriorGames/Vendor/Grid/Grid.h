@@ -7,8 +7,6 @@
 #include <algorithm>
 #include "../ValueObjects/Coordinate.h"
 
-namespace MoriorGames {
-
 class Grid
 {
 public:
@@ -32,7 +30,5 @@ private:
 
     void createGridCoordinates();
 };
-
-}
 
 #endif

@@ -1,8 +1,5 @@
 #include "Grid.h"
 
-using MoriorGames::Grid;
-using MoriorGames::Coordinate;
-
 const int Grid::TILES_QUANTITY = 8;
 
 const int Grid::TILE_SIZE = 26;

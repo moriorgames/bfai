@@ -3,8 +3,6 @@
 
 #include "ViewHelper.h"
 
-namespace MoriorGames {
-
 class SplashView: public ViewHelper
 {
 public:
@@ -13,7 +11,5 @@ public:
 private:
     void addView() override;
 };
-
-}
 
 #endif

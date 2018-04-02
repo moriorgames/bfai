@@ -5,8 +5,6 @@
 #include "../Entity/Hero.h"
 #include "../Entity/BattleHero.h"
 
-namespace MoriorGames {
-
 class HeroParser: public JsonParser
 {
 public:
@@ -18,7 +16,5 @@ public:
 private:
     void addData(Hero *, const rapidjson::Value &data);
 };
-
-}
 
 #endif

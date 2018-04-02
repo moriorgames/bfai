@@ -32,7 +32,7 @@ void BattleView::addView()
     }
 
     for (auto path:battleContainer->getPathFinder()->buildPathScope(battle->getActiveHero())) {
-        battleContainer->getGridSystem()->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR);
+        battleContainer->getGridSystem()->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR, GridSystem::MOVE_NAME);
     }
 
     new HeroMoveEventListener(layer, battleContainer->getGridSystem(), battleContainer, battle);

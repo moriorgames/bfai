@@ -38,6 +38,7 @@ bool HeroMoveEventListener::onTouchEnd(Touch *touch, Event *event)
             if (heroView->getHero() == battle->getActiveHero()) {
                 auto coordinate = closestCoordinate(screenTouch);
                 heroView->moveTo(coordinate);
+                gridSystem->removeTilesByName(GridSystem::MOVE_NAME);
             }
         }
         battle->nextHero();

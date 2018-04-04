@@ -1,16 +1,20 @@
 #include "BattleContainer.h"
 
-BattleContainer::BattleContainer(Layer *layer)
+BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     : layer{layer}
 {
+    battle = (new BattleFactory)->execute(json, heroRepo);
     gridSystem = new GridSystem(layer);
     pathFinder = new PathFinder(gridSystem->getGrid());
+
+    init();
 }
 
-BattleContainer::~BattleContainer()
+void BattleContainer::buildPathScopeView()
 {
-    delete gridSystem;
-    delete pathFinder;
+    for (auto path:pathFinder->buildPathScope(battle->getActiveHero())) {
+        gridSystem->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR, GridSystem::MOVE_NAME);
+    }
 }
 
 GridSystem *BattleContainer::getGridSystem() const
@@ -18,16 +22,25 @@ GridSystem *BattleContainer::getGridSystem() const
     return gridSystem;
 }
 
-PathFinder *BattleContainer::getPathFinder() const
+Battle *BattleContainer::getBattle() const
 {
-    return pathFinder;
+    return battle;
 }
 
-void BattleContainer::addHeroView(HeroView *heroView)
-{
-    heroViews.push_back(heroView);
-}
 const std::vector<HeroView *> &BattleContainer::getHeroViews() const
 {
     return heroViews;
+}
+
+void BattleContainer::init()
+{
+    addHeroViews();
+    buildPathScopeView();
+}
+
+void BattleContainer::addHeroViews()
+{
+    for (auto battleHero:battle->getHeroes()) {
+        heroViews.push_back(new HeroView(layer, gridSystem, battleHero));
+    }
 }

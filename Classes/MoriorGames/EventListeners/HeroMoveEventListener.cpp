@@ -1,9 +1,8 @@
 #include "HeroMoveEventListener.h"
 
-HeroMoveEventListener::HeroMoveEventListener(
-    Layer *layer, GridSystem *gridSystem, BattleContainer *battleContainer, Battle *battle
+HeroMoveEventListener::HeroMoveEventListener(Layer *layer, BattleContainer *battleContainer
 )
-    : layer{layer}, gridSystem{gridSystem}, battleContainer{battleContainer}, battle{battle}
+    : layer{layer}, battleContainer{battleContainer}
 {
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(true);
@@ -32,14 +31,18 @@ bool HeroMoveEventListener::onTouchEnd(Touch *touch, Event *event)
     Vec2 screenTouch = layer->convertTouchToNodeSpace(touch);
 
     if (isTouchWithinBoundariesOfBattleField(screenTouch)) {
+
+        auto activeHero = battleContainer->getBattle()->getActiveHero();
         for (auto heroView:battleContainer->getHeroViews()) {
-            if (heroView->getHero() == battle->getActiveHero()) {
+            if (heroView->getHero() == activeHero) {
                 auto coordinate = closestCoordinate(screenTouch);
                 heroView->moveTo(coordinate);
-                gridSystem->removeTilesByName(GridSystem::MOVE_NAME);
+                activeHero->setCoordinate(coordinate);
+                battleContainer->getGridSystem()->removeTilesByName(GridSystem::MOVE_NAME);
             }
         }
-        battle->nextHero();
+        battleContainer->getBattle()->nextHero();
+        battleContainer->buildPathScopeView();
     }
 
     return true;
@@ -52,5 +55,5 @@ bool HeroMoveEventListener::isTouchWithinBoundariesOfBattleField(Vec2 screenTouc
 
 Coordinate *HeroMoveEventListener::closestCoordinate(Vec2 screenTouch)
 {
-    return gridSystem->getClosestCoordinate(screenTouch.x, screenTouch.y);
+    return battleContainer->getGridSystem()->getClosestCoordinate(screenTouch.x, screenTouch.y);
 }

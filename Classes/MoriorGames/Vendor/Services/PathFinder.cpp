@@ -7,6 +7,7 @@ PathFinder::PathFinder(Grid *grid)
 
 const std::vector<Path> &PathFinder::buildPathScope(BattleHero *battleHero)
 {
+    pathScope.clear();
     Path path;
     path.coordinate = battleHero->getCoordinate();
     pathScope.push_back(path);

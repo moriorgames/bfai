@@ -3,7 +3,6 @@
 #include "../../EventListeners/HeroMoveEventListener.h"
 #include "../../Grid/GridSystem.h"
 #include "../../Services/StringFileReader.h"
-#include "../../Vendor/Factories/BattleFactory.h"
 #include "../../Vendor/Parsers/HeroParser.h"
 #include "../../Vendor/Repository/HeroRepository.h"
 #include "../../Vendor/Services/PathFinder.h"
@@ -18,19 +17,10 @@ BattleView::BattleView(Layer *layer)
 
 void BattleView::addView()
 {
-    battleContainer = new BattleContainer(layer);
+    auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
     new BattleBackgroundView(layer);
 
-    auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
-    auto battle = (new BattleFactory)->execute(json, heroRepo);
+    battleContainer = new BattleContainer(layer, json);
 
-    for (auto battleHero:battle->getHeroes()) {
-        battleContainer->addHeroView(new HeroView(layer, battleContainer->getGridSystem(), battleHero));
-    }
-
-    for (auto path:battleContainer->getPathFinder()->buildPathScope(battle->getActiveHero())) {
-        battleContainer->getGridSystem()->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR, GridSystem::MOVE_NAME);
-    }
-
-    new HeroMoveEventListener(layer, battleContainer->getGridSystem(), battleContainer, battle);
+    new HeroMoveEventListener(layer, battleContainer);
 }

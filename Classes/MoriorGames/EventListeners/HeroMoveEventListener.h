@@ -12,16 +12,14 @@ USING_NS_CC;
 class HeroMoveEventListener
 {
 public:
-    HeroMoveEventListener(Layer *layer, GridSystem *gridSystem, BattleContainer *battleContainer, Battle *battle);
+    HeroMoveEventListener(Layer *layer, BattleContainer *battleContainer);
     bool onTouchBegin(Touch *touch, Event *event);
     bool onTouchMove(Touch *touch, Event *event);
     bool onTouchEnd(Touch *touch, Event *event);
 
 private:
     Layer *layer;
-    GridSystem *gridSystem;
     BattleContainer *battleContainer;
-    Battle *battle;
 
     bool isTouchWithinBoundariesOfBattleField(Vec2 screenTouch);
     Coordinate *closestCoordinate(Vec2 screenTouch);

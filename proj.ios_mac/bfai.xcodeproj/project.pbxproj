@@ -208,6 +208,7 @@
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F12CC92207890190033DE0E /* ResolutionChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResolutionChecker.cpp; sourceTree = "<group>"; };
 		4F12CC93207890190033DE0E /* ResolutionChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResolutionChecker.h; sourceTree = "<group>"; };
+		4F12CC992078985F0033DE0E /* Path.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
 		4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoundPlayer.cpp; sourceTree = "<group>"; };
 		4F2CBFED202F1E7D00169E86 /* SoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
 		4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteAnimator.cpp; sourceTree = "<group>"; };
@@ -491,6 +492,14 @@
 			path = ../Classes;
 			sourceTree = "<group>";
 		};
+		4F12CC97207898430033DE0E /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				4F12CC992078985F0033DE0E /* Path.h */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
 		4F2CBFEA202F1E4400169E86 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,6 +651,7 @@
 		4FA6AD8D202F9A4800158956 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				4F12CC97207898430033DE0E /* Containers */,
 				4FBCDC5B20322051006B3B5E /* Entity */,
 				4F72384520637E580064037C /* Factories */,
 				4F8910562034BEF800D8382C /* Grid */,

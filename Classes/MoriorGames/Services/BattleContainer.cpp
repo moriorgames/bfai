@@ -32,6 +32,11 @@ const std::vector<HeroView *> &BattleContainer::getHeroViews() const
     return heroViews;
 }
 
+PathFinder *BattleContainer::getPathFinder() const
+{
+    return pathFinder;
+}
+
 void BattleContainer::init()
 {
     addHeroViews();

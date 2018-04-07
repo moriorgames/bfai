@@ -55,5 +55,7 @@ bool HeroMoveEventListener::isTouchWithinBoundariesOfBattleField(Vec2 screenTouc
 
 Coordinate *HeroMoveEventListener::closestCoordinate(Vec2 screenTouch)
 {
-    return battleContainer->getGridSystem()->getClosestCoordinate(screenTouch.x, screenTouch.y);
+    auto paths = battleContainer->getPathFinder()->getPathScope();
+
+    return battleContainer->getGridSystem()->getClosestCoordinate(paths, screenTouch.x, screenTouch.y);
 }

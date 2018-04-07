@@ -64,23 +64,20 @@ void GridSystem::drawTile(Coordinate *coordinate, Color4F color, std::string nod
     node->addChild(drawNode);
 }
 
-Coordinate *GridSystem::getClosestCoordinate(float x, float y)
+Coordinate *GridSystem::getClosestCoordinate(std::vector<Path> &paths, float x, float y)
 {
-    int i = 0;
-    int index = 0;
-    double distance = 5000;
-    for (auto coordinate:grid->getCoordinates()) {
+    double tmpDistance = 5000;
+    auto coordinate = new Coordinate(0, 0);
+    for (auto path:paths) {
 
-        double sumDistance = getDistance(x, y, coordinate);
-
-        if (sumDistance < distance) {
-            distance = sumDistance;
-            index = i;
+        auto distance = getDistance(x, y, path.coordinate);
+        if (distance < tmpDistance) {
+            coordinate = path.coordinate;
+            tmpDistance = distance;
         }
-        i++;
     }
 
-    return grid->getCoordinates()[index];
+    return coordinate;
 }
 
 void GridSystem::removeTilesByName(std::string nodeName)
@@ -98,7 +95,6 @@ void GridSystem::displayGrid()
         drawTile(coordinate, FILL_COLOR);
     }
 }
-
 double GridSystem::getDistance(float x, float y, Coordinate *coordinate)
 {
     auto screenVec2 = coordinate2Screen->execute(coordinate);

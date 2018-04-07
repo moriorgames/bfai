@@ -21,8 +21,10 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Scenes/LogoScene.cpp \
                    ../../Classes/MoriorGames/Scenes/MainMenuScene.cpp \
                    ../../Classes/MoriorGames/Scenes/SplashScene.cpp \
+                   ../../Classes/MoriorGames/Screen/Coordinate2Screen.cpp \
                    ../../Classes/MoriorGames/Screen/Position.cpp \
                    ../../Classes/MoriorGames/Screen/Resolution.cpp \
+                   ../../Classes/MoriorGames/Screen/ResolutionChecker.cpp \
                    ../../Classes/MoriorGames/Screen/ScreenProperties.cpp \
                    ../../Classes/MoriorGames/Services/BattleContainer.cpp \
                    ../../Classes/MoriorGames/Services/FontCreator.cpp \

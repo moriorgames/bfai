@@ -5,6 +5,7 @@
 #include "GridHD.h"
 #include "GridHDR.h"
 #include "../Screen/Coordinate2Screen.h"
+#include "../Vendor/Containers/Path.h"
 
 class GridSystem
 {
@@ -19,7 +20,7 @@ public:
     Grid *getGrid() const;
     Coordinate2Screen *getCoordinate2Screen() const;
     void drawTile(Coordinate *coordinate, Color4F color, std::string nodeName = "");
-    Coordinate *getClosestCoordinate(float x, float y);
+    Coordinate *getClosestCoordinate(std::vector<Path> &paths, float x, float y);
     void removeTilesByName(std::string nodeName = "");
 
 private:

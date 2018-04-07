@@ -37,6 +37,11 @@ const std::vector<Path> &PathFinder::buildPathScope(BattleHero *battleHero)
     return pathScope;
 }
 
+const std::vector<Path> &PathFinder::getPathScope() const
+{
+    return pathScope;
+}
+
 std::vector<Coordinate *> PathFinder::moveAxis(Coordinate *current)
 {
     std::vector<Coordinate *> axis;

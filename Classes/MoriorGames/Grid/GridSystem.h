@@ -4,9 +4,9 @@
 #include "GridSD.h"
 #include "GridHD.h"
 #include "GridHDR.h"
-#include "../Screen/ScreenProperties.h"
+#include "../Screen/Coordinate2Screen.h"
 
-class GridSystem: public ScreenProperties
+class GridSystem
 {
 public:
     static const Color4F FILL_COLOR;
@@ -17,9 +17,7 @@ public:
 public:
     GridSystem(Layer *layer);
     Grid *getGrid() const;
-    cocos2d::Vec2 coordinateToScreen(Coordinate *coordinate);
-    float axisYToScreen(int y);
-    float axisXToScreen(int x);
+    Coordinate2Screen *getCoordinate2Screen() const;
     void drawTile(Coordinate *coordinate, Color4F color, std::string nodeName = "");
     Coordinate *getClosestCoordinate(float x, float y);
     void removeTilesByName(std::string nodeName = "");
@@ -29,6 +27,7 @@ private:
     Node *movementTiles = new Node;
     Layer *layer;
     Grid *grid;
+    Coordinate2Screen *coordinate2Screen;
     float height = 0;
     float width = 0;
 

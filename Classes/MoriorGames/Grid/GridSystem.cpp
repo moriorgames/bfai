@@ -1,5 +1,6 @@
 #include "GridSystem.h"
 #include "../Definitions.h"
+#include "../Screen/ResolutionChecker.h"
 
 USING_NS_CC;
 
@@ -14,18 +15,19 @@ const std::string GridSystem::MOVE_NAME = "movement-node";
 GridSystem::GridSystem(Layer *layer)
     : layer{layer}
 {
-    if (isHDR()) {
+    if (ResolutionChecker::isHDR()) {
         grid = new GridHDR;
     }
 
-    if (isHD()) {
+    if (ResolutionChecker::isHD()) {
         grid = new GridHD;
     }
 
-    if (isSD()) {
+    if (ResolutionChecker::isSD()) {
         grid = new GridSD;
     }
 
+    coordinate2Screen = new Coordinate2Screen(grid->getFactor());
     height = width = Grid::TILE_SIZE / 2 * grid->getFactor();
     displayGrid();
 
@@ -38,19 +40,9 @@ Grid *GridSystem::getGrid() const
     return grid;
 }
 
-cocos2d::Vec2 GridSystem::coordinateToScreen(Coordinate *coordinate)
+Coordinate2Screen *GridSystem::getCoordinate2Screen() const
 {
-    return Vec2(axisXToScreen(coordinate->x), axisYToScreen(coordinate->y));
-}
-
-float GridSystem::axisYToScreen(int y)
-{
-    return (grid->getFactor() * Grid::CENTER_FACTOR) + (y * Grid::TILE_SIZE * grid->getFactor());
-}
-
-float GridSystem::axisXToScreen(int x)
-{
-    return visibleSize.width / 2 + x * Grid::TILE_SIZE * grid->getFactor();
+    return coordinate2Screen;
 }
 
 void GridSystem::drawTile(Coordinate *coordinate, Color4F color, std::string nodeName)
@@ -60,12 +52,13 @@ void GridSystem::drawTile(Coordinate *coordinate, Color4F color, std::string nod
         node = movementTiles;
     }
     auto drawNode = DrawNode::create();
+    auto screenVec2 = coordinate2Screen->execute(coordinate);
 
     Vec2 rectangle[4];
-    rectangle[0] = Vec2(coordinateToScreen(coordinate).x + width, coordinateToScreen(coordinate).y + height);
-    rectangle[1] = Vec2(coordinateToScreen(coordinate).x - width, coordinateToScreen(coordinate).y + height);
-    rectangle[2] = Vec2(coordinateToScreen(coordinate).x - width, coordinateToScreen(coordinate).y - height);
-    rectangle[3] = Vec2(coordinateToScreen(coordinate).x + width, coordinateToScreen(coordinate).y - height);
+    rectangle[0] = Vec2(screenVec2.x + width, screenVec2.y + height);
+    rectangle[1] = Vec2(screenVec2.x - width, screenVec2.y + height);
+    rectangle[2] = Vec2(screenVec2.x - width, screenVec2.y - height);
+    rectangle[3] = Vec2(screenVec2.x + width, screenVec2.y - height);
 
     drawNode->drawPolygon(rectangle, 4, color, 1, BORDER_COLOR);
     node->addChild(drawNode);
@@ -108,10 +101,10 @@ void GridSystem::displayGrid()
 
 double GridSystem::getDistance(float x, float y, Coordinate *coordinate)
 {
-    auto screenCoordinate = coordinateToScreen(coordinate);
+    auto screenVec2 = coordinate2Screen->execute(coordinate);
 
-    float x2 = screenCoordinate.x;
-    float y2 = screenCoordinate.y;
+    float x2 = screenVec2.x;
+    float y2 = screenVec2.y;
 
     double distanceX = fabs(x2 - x) / 2;
     double distanceY = fabs(y2 - y) / 2;

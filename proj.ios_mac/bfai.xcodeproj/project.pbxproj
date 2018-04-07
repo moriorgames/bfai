@@ -15,6 +15,8 @@
 		294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D0D631D0D56D500F7F5D4 /* CoreText.framework */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
+		4F12CC94207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
+		4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
 		4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */; };
 		4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */; };
 		4F2CBFF2202F1E9300169E86 /* SpriteAnimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */; };
@@ -204,6 +206,8 @@
 		294D0D631D0D56D500F7F5D4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4F12CC92207890190033DE0E /* ResolutionChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResolutionChecker.cpp; sourceTree = "<group>"; };
+		4F12CC93207890190033DE0E /* ResolutionChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResolutionChecker.h; sourceTree = "<group>"; };
 		4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoundPlayer.cpp; sourceTree = "<group>"; };
 		4F2CBFED202F1E7D00169E86 /* SoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
 		4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteAnimator.cpp; sourceTree = "<group>"; };
@@ -547,6 +551,8 @@
 				4F3AE460202F040400B687FB /* ScreenProperties.h */,
 				4F576D182075E56200011BC7 /* Coordinate2Screen.cpp */,
 				4F576D192075E56200011BC7 /* Coordinate2Screen.h */,
+				4F12CC92207890190033DE0E /* ResolutionChecker.cpp */,
+				4F12CC93207890190033DE0E /* ResolutionChecker.h */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -928,6 +934,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
+				4F12CC94207890190033DE0E /* ResolutionChecker.cpp in Sources */,
 				4F7EB1632069FF340086A900 /* BattleContainer.cpp in Sources */,
 				4F9604CF2059A12C004CAEED /* HeroView.cpp in Sources */,
 				4F2CBFF2202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
@@ -975,6 +982,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3AE455202EE9E000B687FB /* ViewHelper.cpp in Sources */,
+				4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */,
 				4FA6AD7F202F8FC200158956 /* WorldView.cpp in Sources */,
 				4F3AE459202EE9F600B687FB /* LogoView.cpp in Sources */,
 				4FE0EAEA2030410000E6DD88 /* FontCreator.cpp in Sources */,

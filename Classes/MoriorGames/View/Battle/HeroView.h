@@ -17,9 +17,9 @@ public:
     void moveTo(Coordinate *);
 
 private:
+    Node *container;
     GridSystem *gridSystem;
     BattleHero *hero;
-    Node *container;
     SpriteAnimator *spriteAnimator;
 
     void addView() override;

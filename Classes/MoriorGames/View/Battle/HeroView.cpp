@@ -16,7 +16,8 @@ BattleHero *HeroView::getHero() const
 
 void HeroView::moveTo(Coordinate *coordinate)
 {
-    auto action = MoveTo::create(1, gridSystem->coordinateToScreen(coordinate));
+    auto coordinate2Screen = gridSystem->getCoordinate2Screen();
+    auto action = MoveTo::create(1, coordinate2Screen->execute(coordinate));
 
     container->runAction(action);
 }
@@ -39,7 +40,8 @@ void HeroView::addHero()
     sprite->runAction(moveAction());
     sprite->setAnchorPoint(ANCHOR);
 
-    auto position = gridSystem->coordinateToScreen(hero->getCoordinate());
+    auto coordinate2Screen = gridSystem->getCoordinate2Screen();
+    auto position = coordinate2Screen->execute(hero->getCoordinate());
     container->setPosition(position);
     container->addChild(sprite);
 }

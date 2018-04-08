@@ -6,12 +6,12 @@ void Battle::addHero(BattleHero *battleHero)
     heroes.push_back(battleHero);
 }
 
-const std::vector<BattleHero *> &Battle::getHeroes() const
+const std::vector<BattleHero *> &Battle::getBattleHeroes() const
 {
     return heroes;
 }
 
-BattleHero *Battle::getActiveHero()
+BattleHero *Battle::getActiveBattleHero()
 {
     for (auto hero:heroes) {
         if (hero->getBattleHeroId() == activeHero) {

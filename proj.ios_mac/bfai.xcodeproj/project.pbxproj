@@ -89,8 +89,8 @@
 		4FBCDC6D203220CD006B3B5E /* GridSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC65203220CD006B3B5E /* GridSystem.cpp */; };
 		4FBCDC6E203220CD006B3B5E /* GridHDR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC67203220CD006B3B5E /* GridHDR.cpp */; };
 		4FBCDC6F203220CD006B3B5E /* GridHDR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC67203220CD006B3B5E /* GridHDR.cpp */; };
-		4FD30897205ED742007D8039 /* HeroMoveEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD30895205ED742007D8039 /* HeroMoveEventListener.cpp */; };
-		4FD30898205ED742007D8039 /* HeroMoveEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD30895205ED742007D8039 /* HeroMoveEventListener.cpp */; };
+		4FD30897205ED742007D8039 /* BattleEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD30895205ED742007D8039 /* BattleEventListener.cpp */; };
+		4FD30898205ED742007D8039 /* BattleEventListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD30895205ED742007D8039 /* BattleEventListener.cpp */; };
 		4FD96FD0205B84F700C0F5A1 /* StringFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD96FCE205B84F700C0F5A1 /* StringFileReader.cpp */; };
 		4FD96FD1205B84F700C0F5A1 /* StringFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FD96FCE205B84F700C0F5A1 /* StringFileReader.cpp */; };
 		4FE0EAE120303AD600E6DD88 /* BattleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */; };
@@ -111,10 +111,12 @@
 		4FEFCC23205AE61700D447C4 /* HeroParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFCC1D205AE61700D447C4 /* HeroParser.cpp */; };
 		4FEFCC25205AE97400D447C4 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 4FEFCC24205AE97400D447C4 /* data */; };
 		4FEFCC26205AE97400D447C4 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 4FEFCC24205AE97400D447C4 /* data */; };
-		4FEFE75A2079E0A30031A6B5 /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7582079E0A30031A6B5 /* Action.cpp */; };
-		4FEFE75B2079E0A30031A6B5 /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7582079E0A30031A6B5 /* Action.cpp */; };
+		4FEFE75A2079E0A30031A6B5 /* BattleAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7582079E0A30031A6B5 /* BattleAction.cpp */; };
+		4FEFE75B2079E0A30031A6B5 /* BattleAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7582079E0A30031A6B5 /* BattleAction.cpp */; };
 		4FEFE75F2079E0E90031A6B5 /* BattleProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */; };
 		4FEFE7602079E0E90031A6B5 /* BattleProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */; };
+		4FEFE7632079E8CF0031A6B5 /* BattleActionDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7612079E8CF0031A6B5 /* BattleActionDispatcher.cpp */; };
+		4FEFE7642079E8CF0031A6B5 /* BattleActionDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7612079E8CF0031A6B5 /* BattleActionDispatcher.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -287,8 +289,8 @@
 		4FBCDC65203220CD006B3B5E /* GridSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridSystem.cpp; sourceTree = "<group>"; };
 		4FBCDC66203220CD006B3B5E /* GridSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridSystem.h; sourceTree = "<group>"; };
 		4FBCDC67203220CD006B3B5E /* GridHDR.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridHDR.cpp; sourceTree = "<group>"; };
-		4FD30895205ED742007D8039 /* HeroMoveEventListener.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HeroMoveEventListener.cpp; sourceTree = "<group>"; };
-		4FD30896205ED742007D8039 /* HeroMoveEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroMoveEventListener.h; sourceTree = "<group>"; };
+		4FD30895205ED742007D8039 /* BattleEventListener.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleEventListener.cpp; sourceTree = "<group>"; };
+		4FD30896205ED742007D8039 /* BattleEventListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleEventListener.h; sourceTree = "<group>"; };
 		4FD96FCE205B84F700C0F5A1 /* StringFileReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StringFileReader.cpp; sourceTree = "<group>"; };
 		4FD96FCF205B84F700C0F5A1 /* StringFileReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringFileReader.h; sourceTree = "<group>"; };
 		4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleButton.cpp; sourceTree = "<group>"; };
@@ -304,10 +306,12 @@
 		4FEFCC1E205AE61700D447C4 /* HeroParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroParser.h; sourceTree = "<group>"; };
 		4FEFCC1F205AE61700D447C4 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
 		4FEFCC24205AE97400D447C4 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
-		4FEFE7582079E0A30031A6B5 /* Action.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Action.cpp; sourceTree = "<group>"; };
-		4FEFE7592079E0A30031A6B5 /* Action.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
+		4FEFE7582079E0A30031A6B5 /* BattleAction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleAction.cpp; sourceTree = "<group>"; };
+		4FEFE7592079E0A30031A6B5 /* BattleAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleAction.h; sourceTree = "<group>"; };
 		4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleProcessor.cpp; sourceTree = "<group>"; };
 		4FEFE75E2079E0E90031A6B5 /* BattleProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleProcessor.h; sourceTree = "<group>"; };
+		4FEFE7612079E8CF0031A6B5 /* BattleActionDispatcher.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleActionDispatcher.cpp; sourceTree = "<group>"; };
+		4FEFE7622079E8CF0031A6B5 /* BattleActionDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleActionDispatcher.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -715,8 +719,8 @@
 				4F7314BB205CF3D4005AAB83 /* BattleHero.h */,
 				4FBCDC5C2032207E006B3B5E /* Hero.cpp */,
 				4FBCDC5D2032207E006B3B5E /* Hero.h */,
-				4FEFE7582079E0A30031A6B5 /* Action.cpp */,
-				4FEFE7592079E0A30031A6B5 /* Action.h */,
+				4FEFE7582079E0A30031A6B5 /* BattleAction.cpp */,
+				4FEFE7592079E0A30031A6B5 /* BattleAction.h */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -724,8 +728,10 @@
 		4FD30893205ED6FE007D8039 /* EventListeners */ = {
 			isa = PBXGroup;
 			children = (
-				4FD30895205ED742007D8039 /* HeroMoveEventListener.cpp */,
-				4FD30896205ED742007D8039 /* HeroMoveEventListener.h */,
+				4FEFE7612079E8CF0031A6B5 /* BattleActionDispatcher.cpp */,
+				4FEFE7622079E8CF0031A6B5 /* BattleActionDispatcher.h */,
+				4FD30895205ED742007D8039 /* BattleEventListener.cpp */,
+				4FD30896205ED742007D8039 /* BattleEventListener.h */,
 			);
 			path = EventListeners;
 			sourceTree = "<group>";
@@ -974,7 +980,7 @@
 				4FA6AD7E202F8FC200158956 /* WorldView.cpp in Sources */,
 				4F7314BE205CF3D4005AAB83 /* BattleHero.cpp in Sources */,
 				4FD96FD0205B84F700C0F5A1 /* StringFileReader.cpp in Sources */,
-				4FEFE75A2079E0A30031A6B5 /* Action.cpp in Sources */,
+				4FEFE75A2079E0A30031A6B5 /* BattleAction.cpp in Sources */,
 				4F89105E2034BF3A00D8382C /* Grid.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
@@ -984,7 +990,8 @@
 				4F72384320637E450064037C /* Battle.cpp in Sources */,
 				4FBCDC582032079A006B3B5E /* BattleInitCustomActions.cpp in Sources */,
 				4FBCDC6C203220CD006B3B5E /* GridSystem.cpp in Sources */,
-				4FD30897205ED742007D8039 /* HeroMoveEventListener.cpp in Sources */,
+				4FD30897205ED742007D8039 /* BattleEventListener.cpp in Sources */,
+				4FEFE7632079E8CF0031A6B5 /* BattleActionDispatcher.cpp in Sources */,
 				4FBCDC6A203220CD006B3B5E /* GridSD.cpp in Sources */,
 				4F576D152075E17E00011BC7 /* GridView.cpp in Sources */,
 				4FE0EAE120303AD600E6DD88 /* BattleButton.cpp in Sources */,
@@ -1015,6 +1022,7 @@
 				4FBCDC6F203220CD006B3B5E /* GridHDR.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				4FBCDC6D203220CD006B3B5E /* GridSystem.cpp in Sources */,
+				4FEFE7642079E8CF0031A6B5 /* BattleActionDispatcher.cpp in Sources */,
 				4F9604D02059A12C004CAEED /* HeroView.cpp in Sources */,
 				4FBCDC592032079A006B3B5E /* BattleInitCustomActions.cpp in Sources */,
 				4F7EB1642069FF340086A900 /* BattleContainer.cpp in Sources */,
@@ -1037,8 +1045,8 @@
 				4F2CBFF3202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
 				4FBCDC6B203220CD006B3B5E /* GridSD.cpp in Sources */,
 				4FA6AD75202F83A200158956 /* BackgroundView.cpp in Sources */,
-				4FEFE75B2079E0A30031A6B5 /* Action.cpp in Sources */,
-				4FD30898205ED742007D8039 /* HeroMoveEventListener.cpp in Sources */,
+				4FEFE75B2079E0A30031A6B5 /* BattleAction.cpp in Sources */,
+				4FD30898205ED742007D8039 /* BattleEventListener.cpp in Sources */,
 				4FEFCC21205AE61700D447C4 /* JsonParser.cpp in Sources */,
 				4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */,
 				4F72384920637E580064037C /* BattleFactory.cpp in Sources */,

@@ -9,8 +9,8 @@ class Battle
 {
 public:
     void addHero(BattleHero *);
-    const std::vector<BattleHero *> &getHeroes() const;
-    BattleHero *getActiveHero();
+    const std::vector<BattleHero *> &getBattleHeroes() const;
+    BattleHero *getActiveBattleHero();
     void nextHero();
     void addTurn();
     void print();

@@ -1,10 +1,10 @@
-#ifndef MORIOR_GAMES_VENDOR_ENTITY_ACTION_H
-#define MORIOR_GAMES_VENDOR_ENTITY_ACTION_H
+#ifndef MORIOR_GAMES_VENDOR_ENTITY_BATTLE_ACTION_H
+#define MORIOR_GAMES_VENDOR_ENTITY_BATTLE_ACTION_H
 
 #include <string>
 #include "../ValueObjects/Coordinate.h"
 
-class Action
+class BattleAction
 {
 public:
     int getId() const;

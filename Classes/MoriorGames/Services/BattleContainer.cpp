@@ -12,7 +12,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
 
 void BattleContainer::buildPathScopeView()
 {
-    for (auto path:pathFinder->buildPathScope(battle->getActiveHero())) {
+    for (auto path:pathFinder->buildPathScope(battle->getActiveBattleHero())) {
         gridSystem->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR, GridSystem::MOVE_NAME);
     }
 }
@@ -45,7 +45,7 @@ void BattleContainer::init()
 
 void BattleContainer::addHeroViews()
 {
-    for (auto battleHero:battle->getHeroes()) {
+    for (auto battleHero:battle->getBattleHeroes()) {
         heroViews.push_back(new HeroView(layer, gridSystem, battleHero));
     }
 }

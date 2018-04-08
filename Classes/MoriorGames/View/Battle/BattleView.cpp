@@ -1,6 +1,6 @@
 #include "BattleView.h"
 #include "BattleBackgroundView.h"
-#include "../../EventListeners/HeroMoveEventListener.h"
+#include "../../EventListeners/BattleEventListener.h"
 #include "../../Grid/GridSystem.h"
 #include "../../Services/StringFileReader.h"
 #include "../../Vendor/Parsers/HeroParser.h"
@@ -22,5 +22,5 @@ void BattleView::addView()
 
     battleContainer = new BattleContainer(layer, json);
 
-    new HeroMoveEventListener(layer, battleContainer);
+    new BattleEventListener(layer, battleContainer);
 }

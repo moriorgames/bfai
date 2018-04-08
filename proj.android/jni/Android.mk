@@ -12,7 +12,8 @@ LOCAL_MODULE := MyGame_shared
 LOCAL_MODULE_FILENAME := libBFAI
 
 LOCAL_SRC_FILES := projectbfai/main.cpp \
-                   ../../Classes/MoriorGames/EventListeners/HeroMoveEventListener.cpp \
+                   ../../Classes/MoriorGames/EventListeners/BattleActionDispatcher.cpp \
+                   ../../Classes/MoriorGames/EventListeners/BattleEventListener.cpp \
                    ../../Classes/MoriorGames/Grid/GridHD.cpp \
                    ../../Classes/MoriorGames/Grid/GridHDR.cpp \
                    ../../Classes/MoriorGames/Grid/GridSD.cpp \
@@ -32,8 +33,8 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Services/SpriteAnimator.cpp \
                    ../../Classes/MoriorGames/Services/SpritesInitializer.cpp \
                    ../../Classes/MoriorGames/Services/StringFileReader.cpp \
-                   ../../Classes/MoriorGames/Vendor/Entity/Action.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Battle.cpp \
+                   ../../Classes/MoriorGames/Vendor/Entity/BattleAction.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/BattleHero.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Hero.cpp \
                    ../../Classes/MoriorGames/Vendor/Factories/BattleFactory.cpp \

@@ -111,6 +111,10 @@
 		4FEFCC23205AE61700D447C4 /* HeroParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFCC1D205AE61700D447C4 /* HeroParser.cpp */; };
 		4FEFCC25205AE97400D447C4 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 4FEFCC24205AE97400D447C4 /* data */; };
 		4FEFCC26205AE97400D447C4 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 4FEFCC24205AE97400D447C4 /* data */; };
+		4FEFE75A2079E0A30031A6B5 /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7582079E0A30031A6B5 /* Action.cpp */; };
+		4FEFE75B2079E0A30031A6B5 /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7582079E0A30031A6B5 /* Action.cpp */; };
+		4FEFE75F2079E0E90031A6B5 /* BattleProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */; };
+		4FEFE7602079E0E90031A6B5 /* BattleProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -300,6 +304,10 @@
 		4FEFCC1E205AE61700D447C4 /* HeroParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroParser.h; sourceTree = "<group>"; };
 		4FEFCC1F205AE61700D447C4 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
 		4FEFCC24205AE97400D447C4 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
+		4FEFE7582079E0A30031A6B5 /* Action.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Action.cpp; sourceTree = "<group>"; };
+		4FEFE7592079E0A30031A6B5 /* Action.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
+		4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleProcessor.cpp; sourceTree = "<group>"; };
+		4FEFE75E2079E0E90031A6B5 /* BattleProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleProcessor.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -593,6 +601,8 @@
 			children = (
 				4F3B0B7E205E57C500D4B53C /* PathFinder.cpp */,
 				4F3B0B7F205E57C500D4B53C /* PathFinder.h */,
+				4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */,
+				4FEFE75E2079E0E90031A6B5 /* BattleProcessor.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -705,6 +715,8 @@
 				4F7314BB205CF3D4005AAB83 /* BattleHero.h */,
 				4FBCDC5C2032207E006B3B5E /* Hero.cpp */,
 				4FBCDC5D2032207E006B3B5E /* Hero.h */,
+				4FEFE7582079E0A30031A6B5 /* Action.cpp */,
+				4FEFE7592079E0A30031A6B5 /* Action.h */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -962,6 +974,7 @@
 				4FA6AD7E202F8FC200158956 /* WorldView.cpp in Sources */,
 				4F7314BE205CF3D4005AAB83 /* BattleHero.cpp in Sources */,
 				4FD96FD0205B84F700C0F5A1 /* StringFileReader.cpp in Sources */,
+				4FEFE75A2079E0A30031A6B5 /* Action.cpp in Sources */,
 				4F89105E2034BF3A00D8382C /* Grid.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
@@ -980,6 +993,7 @@
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				4F2CBFF9202F22CD00169E86 /* SplashScene.cpp in Sources */,
 				4F2CBFFD202F252000169E86 /* LoadingView.cpp in Sources */,
+				4FEFE75F2079E0E90031A6B5 /* BattleProcessor.cpp in Sources */,
 				4F3AE461202F040400B687FB /* ScreenProperties.cpp in Sources */,
 				4F3AE45D202F03D700B687FB /* Position.cpp in Sources */,
 				4FBCDC5E2032207E006B3B5E /* Hero.cpp in Sources */,
@@ -1016,12 +1030,14 @@
 				4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4FBCDC69203220CD006B3B5E /* GridHD.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,
+				4FEFE7602079E0E90031A6B5 /* BattleProcessor.cpp in Sources */,
 				4F576D1B2075E56200011BC7 /* Coordinate2Screen.cpp in Sources */,
 				4FA6AD71202F809A00158956 /* MainMenuScene.cpp in Sources */,
 				4FA6AD86202F965E00158956 /* SpritesInitializer.cpp in Sources */,
 				4F2CBFF3202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
 				4FBCDC6B203220CD006B3B5E /* GridSD.cpp in Sources */,
 				4FA6AD75202F83A200158956 /* BackgroundView.cpp in Sources */,
+				4FEFE75B2079E0A30031A6B5 /* Action.cpp in Sources */,
 				4FD30898205ED742007D8039 /* HeroMoveEventListener.cpp in Sources */,
 				4FEFCC21205AE61700D447C4 /* JsonParser.cpp in Sources */,
 				4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */,

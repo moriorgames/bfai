@@ -11,12 +11,9 @@ class Grid
 {
 public:
     static const int TILES_QUANTITY;
-
     static const int TILE_SIZE;
-
     static const int CENTER_FACTOR;
 
-public:
     Grid();
     bool isValidCoordinate(Coordinate *);
     const std::vector<Coordinate *> &getCoordinates() const;

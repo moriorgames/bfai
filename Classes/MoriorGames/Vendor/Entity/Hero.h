@@ -5,11 +5,6 @@
 
 class Hero
 {
-protected:
-    int id = 0;
-    std::string name = "", slug = "";
-    int damage = 0, ranged = 0, health = 0, movement = 0, moveFrames = 0, attackFrames = 0;
-
 public:
     int getId() const;
     void setId(int id);
@@ -31,6 +26,11 @@ public:
     void setAttackFrames(int attackFrames);
 
     void print();
+
+protected:
+    int id = 0;
+    std::string name = "", slug = "";
+    int damage = 0, ranged = 0, health = 0, movement = 0, moveFrames = 0, attackFrames = 0;
 };
 
 #endif

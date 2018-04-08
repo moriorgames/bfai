@@ -8,18 +8,10 @@
 class BattleHero: public Hero
 {
 public:
-    BattleHero();
     static const std::string SIDE_PLAYER;
     static const std::string SIDE_ENEMY;
 
-private:
-    int battleHeroId = 0;
-    std::string side = SIDE_PLAYER;
-    int injury = 0;
-    bool dead = false;
-    Coordinate *coordinate;
-
-public:
+    BattleHero();
     int getBattleHeroId() const;
     void setBattleHeroId(int battleHeroId);
     const std::string &getSide() const;
@@ -27,11 +19,18 @@ public:
     int getCurrentHealth() const;
     void addInjury(int injury);
     bool isDead();
-    void setCoordinate(Coordinate *);
     Coordinate *getCoordinate() const;
+    void setCoordinate(Coordinate *);
 
     void copy(Hero *);
     void print();
+
+private:
+    int battleHeroId = 0;
+    std::string side = SIDE_PLAYER;
+    int injury = 0;
+    bool dead = false;
+    Coordinate *coordinate;
 };
 
 #endif

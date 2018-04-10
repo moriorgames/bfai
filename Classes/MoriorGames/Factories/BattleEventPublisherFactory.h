@@ -9,7 +9,7 @@ public:
     static const short ONLINE;
     static const short OFFLINE;
 
-    BattleEventPublishable *execute(short type);
+    static BattleEventPublishable *execute(short type);
 };
 
 #endif

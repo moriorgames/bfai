@@ -1,4 +1,5 @@
 #include "BattleContainer.h"
+#include "../Factories/BattleEventPublisherFactory.h"
 
 BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     : layer{layer}
@@ -6,6 +7,8 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     battle = (new BattleFactory)->execute(json, heroRepo);
     gridSystem = new GridSystem(layer);
     pathFinder = new PathFinder(gridSystem->getGrid());
+    auto connectionType = BattleEventPublisherFactory::OFFLINE;
+    battleEventPublisher = BattleEventPublisherFactory::execute(connectionType);
     addBattleProcessor();
 
     init();
@@ -58,4 +61,9 @@ void BattleContainer::addBattleProcessor()
     for (auto heroView:heroViews) {
         battleProcessor->registerObserver(heroView);
     }
+}
+
+BattleEventPublishable *BattleContainer::getBattleEventPublisher() const
+{
+    return battleEventPublisher;
 }

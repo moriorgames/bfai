@@ -1,7 +1,6 @@
 #include "BattleView.h"
 #include "BattleBackgroundView.h"
 #include "../../EventListeners/BattleEventListener.h"
-#include "../../Factories/BattleEventPublisherFactory.h"
 #include "../../Services/StringFileReader.h"
 
 const std::string BattleView::NAME = "battle-node";
@@ -18,8 +17,6 @@ void BattleView::addView()
     new BattleBackgroundView(layer);
 
     battleContainer = new BattleContainer(layer, json);
-    auto connectionType = BattleEventPublisherFactory::OFFLINE;
-    auto battleEventPublisher = BattleEventPublisherFactory::execute(connectionType);
 
-    new BattleEventListener(layer, battleContainer, battleEventPublisher);
+    new BattleEventListener(layer, battleContainer);
 }

@@ -13,7 +13,7 @@ USING_NS_CC;
 class BattleEventListener
 {
 public:
-    BattleEventListener(Layer *, BattleContainer *, BattleEventPublishable *);
+    BattleEventListener(Layer *, BattleContainer *);
     bool onTouchBegin(Touch *, Event *);
     bool onTouchMove(Touch *, Event *);
     bool onTouchEnd(Touch *, Event *);
@@ -21,7 +21,6 @@ public:
 private:
     Layer *layer;
     BattleContainer *battleContainer;
-    BattleEventPublishable *battleEventPublishable;
 
     bool isTouchWithinBoundariesOfBattleField(Vec2 screenTouch);
     Coordinate *closestCoordinate(Vec2 screenTouch);

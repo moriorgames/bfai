@@ -1,12 +1,7 @@
 #include "BattleEventListener.h"
-#include "../Transformers/BattleAction2Json.h"
 
-BattleEventListener::BattleEventListener(
-    Layer *layer,
-    BattleContainer *battleContainer,
-    BattleEventPublishable *battleEventPublishable
-)
-    : layer{layer}, battleContainer{battleContainer}, battleEventPublishable{battleEventPublishable}
+BattleEventListener::BattleEventListener(Layer *layer, BattleContainer *battleContainer)
+    : layer{layer}, battleContainer{battleContainer}
 {
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(true);
@@ -44,7 +39,7 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
                 auto battleAction = new BattleAction;
                 battleAction->setBattleHeroId(activeBattleHero->getBattleHeroId());
                 battleAction->setCoordinate(coordinate);
-                BattleAction2Json::transform(battleAction);
+                battleContainer->getBattleEventPublisher()->publish(battleAction);
 
                 // @TODO this has to be handled by Battle Processor after receive the Action
                 heroView->moveTo(coordinate);

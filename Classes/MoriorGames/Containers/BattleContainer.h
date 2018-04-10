@@ -2,6 +2,7 @@
 #define MORIOR_GAMES_CONTAINERS_BATTLE_CONTAINER_H
 
 #include "cocos2d.h"
+#include "../EventListeners/BattleEventPublishable.h"
 #include "../Grid/GridSystem.h"
 #include "../Vendor/Services/PathFinder.h"
 #include "../Vendor/Services/BattleProcessor.h"
@@ -18,6 +19,7 @@ public:
     Battle *getBattle() const;
     const std::vector<HeroView *> &getHeroViews() const;
     PathFinder *getPathFinder() const;
+    BattleEventPublishable *getBattleEventPublisher() const;
 
 private:
     Layer *layer;
@@ -25,6 +27,7 @@ private:
     GridSystem *gridSystem;
     PathFinder *pathFinder;
     BattleProcessor *battleProcessor;
+    BattleEventPublishable *battleEventPublisher;
     std::vector<HeroView *> heroViews;
 
     void init();

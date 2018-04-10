@@ -6,11 +6,11 @@ const short BattleEventPublisherFactory::ONLINE = 1;
 
 const short BattleEventPublisherFactory::OFFLINE = 2;
 
-BattleEventPublishable *BattleEventPublisherFactory::execute(short type)
+BattleEventPublishable *BattleEventPublisherFactory::execute(short connectionType)
 {
     BattleEventPublishable *battleEventPublishable;
 
-    switch (type) {
+    switch (connectionType) {
     case ONLINE:
         battleEventPublishable = new BattleEventOnlinePublisher;
         break;

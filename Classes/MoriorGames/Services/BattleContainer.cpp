@@ -6,6 +6,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     battle = (new BattleFactory)->execute(json, heroRepo);
     gridSystem = new GridSystem(layer);
     pathFinder = new PathFinder(gridSystem->getGrid());
+    addBattleProcessor();
 
     init();
 }
@@ -47,5 +48,14 @@ void BattleContainer::addHeroViews()
 {
     for (auto battleHero:battle->getBattleHeroes()) {
         heroViews.push_back(new HeroView(layer, gridSystem, battleHero));
+    }
+}
+
+void BattleContainer::addBattleProcessor()
+{
+    battleProcessor = new BattleProcessor(battle);
+
+    for (auto heroView:heroViews) {
+        battleProcessor->registerObserver(heroView);
     }
 }

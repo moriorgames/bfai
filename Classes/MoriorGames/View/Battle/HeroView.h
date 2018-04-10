@@ -4,9 +4,10 @@
 #include "../ViewHelper.h"
 #include "../../Grid/GridSystem.h"
 #include "../../Services/SpriteAnimator.h"
+#include "../../Vendor/Observer/BattleObservable.h"
 #include "../../Vendor/Entity/BattleHero.h"
 
-class HeroView: public ViewHelper
+class HeroView: public ViewHelper, public BattleObservable
 {
 public:
     static const Point ANCHOR;
@@ -15,6 +16,7 @@ public:
     HeroView(Layer *, GridSystem *, BattleHero *);
     BattleHero *getHero() const;
     void moveTo(Coordinate *);
+    void update(BattleAction *) override;
 
 private:
     Node *container;

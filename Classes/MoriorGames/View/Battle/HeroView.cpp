@@ -61,3 +61,7 @@ void HeroView::addHealthBar()
         position -= 18;
     }
 }
+
+void HeroView::update(BattleAction *battleAction)
+{
+}

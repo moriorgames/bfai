@@ -6,7 +6,10 @@
 class BattleEventPublisherFactory
 {
 public:
-    BattleEventPublishable *execute();
+    static const short ONLINE;
+    static const short OFFLINE;
+
+    BattleEventPublishable *execute(short type);
 };
 
 #endif

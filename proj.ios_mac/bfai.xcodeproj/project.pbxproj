@@ -275,6 +275,8 @@
 		4F89105D2034BF3A00D8382C /* Grid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		4F9604CD2059A12C004CAEED /* HeroView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HeroView.cpp; sourceTree = "<group>"; };
 		4F9604CE2059A12C004CAEED /* HeroView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroView.h; sourceTree = "<group>"; };
+		4F9CE30F207D269000A65619 /* BattleObservable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleObservable.h; sourceTree = "<group>"; };
+		4F9CE313207D269D00A65619 /* BattlePublishable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattlePublishable.h; sourceTree = "<group>"; };
 		4FA6AD66202F7C8800158956 /* SplashView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SplashView.cpp; sourceTree = "<group>"; };
 		4FA6AD67202F7C8800158956 /* SplashView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashView.h; sourceTree = "<group>"; };
 		4FA6AD6E202F809A00158956 /* MainMenuScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuScene.cpp; sourceTree = "<group>"; };
@@ -685,9 +687,19 @@
 			path = ValueObjects;
 			sourceTree = "<group>";
 		};
+		4F9CE30C207D267500A65619 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				4F9CE30F207D269000A65619 /* BattleObservable.h */,
+				4F9CE313207D269D00A65619 /* BattlePublishable.h */,
+			);
+			path = Observer;
+			sourceTree = "<group>";
+		};
 		4FA6AD8D202F9A4800158956 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				4F9CE30C207D267500A65619 /* Observer */,
 				4F12CC97207898430033DE0E /* Containers */,
 				4FBCDC5B20322051006B3B5E /* Entity */,
 				4F72384520637E580064037C /* Factories */,

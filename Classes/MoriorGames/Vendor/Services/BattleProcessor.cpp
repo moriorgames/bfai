@@ -8,3 +8,18 @@ BattleProcessor::BattleProcessor(Battle *battle)
 void BattleProcessor::execute()
 {
 }
+
+void BattleProcessor::registerObserver(BattleObservable *)
+{
+
+}
+
+void BattleProcessor::removeObserver(BattleObservable *)
+{
+
+}
+
+void BattleProcessor::notifyObservers()
+{
+
+}

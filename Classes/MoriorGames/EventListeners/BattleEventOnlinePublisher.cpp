@@ -2,5 +2,11 @@
 
 void BattleEventOnlinePublisher::publish(BattleAction *battleAction)
 {
-    BattleAction2Json::transform(battleAction);
+    auto json = BattleAction2Json::transform(battleAction);
+
+//    socket->send(json);
+}
+
+void BattleEventOnlinePublisher::setBattleProcessor(BattleProcessor *battleProcessor)
+{
 }

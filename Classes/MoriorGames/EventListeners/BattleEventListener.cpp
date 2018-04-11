@@ -41,15 +41,15 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
                 battleAction->setCoordinate(coordinate);
                 battleContainer->getBattleEventPublisher()->publish(battleAction);
 
-                // @TODO this has to be handled by Battle Processor after receive the Action
-                heroView->moveTo(coordinate);
-                activeBattleHero->setCoordinate(coordinate);
-                battleContainer->getGridSystem()->removeTilesByName(GridSystem::MOVE_NAME);
+//                // @TODO this has to be handled by Battle Processor after receive the Action
+//                heroView->moveTo(coordinate);
+//                activeBattleHero->setCoordinate(coordinate);
+//                battleContainer->getGridSystem()->removeTilesByName(GridSystem::MOVE_NAME);
             }
         }
-        // @TODO this has to be handled by Battle Processor after receive the Action
-        battleContainer->getBattle()->nextHero();
-        battleContainer->buildPathScopeView();
+//        // @TODO this has to be handled by Battle Processor after receive the Action
+//        battleContainer->getBattle()->nextHero();
+//        battleContainer->buildPathScopeView();
     }
 
     return true;

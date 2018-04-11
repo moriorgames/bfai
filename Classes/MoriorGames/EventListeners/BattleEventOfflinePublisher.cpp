@@ -2,5 +2,10 @@
 
 void BattleEventOfflinePublisher::publish(BattleAction *battleAction)
 {
-    BattleAction2Json::transform(battleAction);
+    battleProcessor->processBattleAction(battleAction);
+}
+
+void BattleEventOfflinePublisher::setBattleProcessor(BattleProcessor *battleProcessor)
+{
+    this->battleProcessor = battleProcessor;
 }

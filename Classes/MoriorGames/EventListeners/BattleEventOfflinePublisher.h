@@ -7,6 +7,10 @@ class BattleEventOfflinePublisher: public BattleEventPublishable
 {
 public:
     void publish(BattleAction *) override;
+    void setBattleProcessor(BattleProcessor *) override;
+
+private:
+    BattleProcessor *battleProcessor;
 };
 
 #endif

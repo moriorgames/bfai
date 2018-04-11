@@ -2,12 +2,14 @@
 #define MORIOR_GAMES_EVENT_LISTENERS_BATTLE_EVENT_PUBLISHABLE_H
 
 #include "../Vendor/Entity/BattleAction.h"
+#include "../Vendor/Services/BattleProcessor.h"
 #include "../Transformers/BattleAction2Json.h"
 
 class BattleEventPublishable
 {
 public:
     virtual void publish(BattleAction *) = 0;
+    virtual void setBattleProcessor(BattleProcessor *) = 0;
 };
 
 #endif

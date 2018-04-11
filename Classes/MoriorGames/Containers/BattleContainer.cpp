@@ -10,6 +10,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     auto connectionType = BattleEventPublisherFactory::OFFLINE;
     battleEventPublisher = BattleEventPublisherFactory::execute(connectionType);
     addBattleProcessor();
+    battleEventPublisher->setBattleProcessor(battleProcessor);
 
     init();
 }

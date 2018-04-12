@@ -30,8 +30,7 @@ private:
     BattleEventPublishable *eventPublisher;
     std::vector<HeroView *> heroViews;
 
-    void initServices(const std::string &json);
-    void initViews();
+    void init(const std::string &json);
     void addHeroViews();
     BattleProcessor *addBattleProcessor();
 };

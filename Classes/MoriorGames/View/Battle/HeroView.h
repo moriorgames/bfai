@@ -21,7 +21,7 @@ public:
 private:
     Node *container;
     GridSystem *gridSystem;
-    BattleHero *hero;
+    BattleHero *battleHero;
     SpriteAnimator *spriteAnimator;
 
     void addView() override;

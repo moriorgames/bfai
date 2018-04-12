@@ -12,7 +12,9 @@ public:
     void processBattleAction(BattleAction *);
     void registerObserver(BattleObservable *) override;
     void removeObserver(BattleObservable *) override;
-    void notifyObservers() override;
+
+protected:
+    void notifyObservers(BattleAction *) override;
 
 private:
     Battle *battle;

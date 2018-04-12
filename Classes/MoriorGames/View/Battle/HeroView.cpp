@@ -2,8 +2,8 @@
 
 const Point HeroView::ANCHOR{0.5, 0.35};
 
-HeroView::HeroView(Layer *layer, GridSystem *gridSystem, BattleHero *hero)
-    : ViewHelper(layer), gridSystem{gridSystem}, hero{hero}
+HeroView::HeroView(Layer *layer, GridSystem *gridSystem, BattleHero *battleHero)
+    : ViewHelper(layer), gridSystem{gridSystem}, battleHero{battleHero}
 {
     spriteAnimator = new SpriteAnimator;
     addView();
@@ -11,7 +11,7 @@ HeroView::HeroView(Layer *layer, GridSystem *gridSystem, BattleHero *hero)
 
 BattleHero *HeroView::getHero() const
 {
-    return hero;
+    return battleHero;
 }
 
 void HeroView::moveTo(Coordinate *coordinate)
@@ -36,25 +36,25 @@ void HeroView::addView()
 void HeroView::addHero()
 {
     auto sprite = new Sprite;
-    sprite->initWithSpriteFrameName(spriteAnimator->getFrameName(hero->getSlug()));
+    sprite->initWithSpriteFrameName(spriteAnimator->getFrameName(battleHero->getSlug()));
     sprite->runAction(moveAction());
     sprite->setAnchorPoint(ANCHOR);
 
     auto coordinate2Screen = gridSystem->getCoordinate2Screen();
-    auto position = coordinate2Screen->execute(hero->getCoordinate());
+    auto position = coordinate2Screen->execute(battleHero->getCoordinate());
     container->setPosition(position);
     container->addChild(sprite);
 }
 
 Action *HeroView::moveAction()
 {
-    return spriteAnimator->generateAction(hero->getSlug(), hero->getMoveFrames(), "move", 0, FPS);
+    return spriteAnimator->generateAction(battleHero->getSlug(), battleHero->getMoveFrames(), "move", 0, FPS);
 }
 
 void HeroView::addHealthBar()
 {
     int position = 37;
-    for (int i = 0; i < hero->getCurrentHealth(); ++i) {
+    for (int i = 0; i < battleHero->getCurrentHealth(); ++i) {
         auto hitPoint = Sprite::create("img/hit-point.png");
         hitPoint->setPosition(position, 110);
         container->addChild(hitPoint);
@@ -64,4 +64,7 @@ void HeroView::addHealthBar()
 
 void HeroView::update(BattleAction *battleAction)
 {
+    if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {
+        moveTo(battleHero->getCoordinate());
+    }
 }

@@ -8,7 +8,9 @@ class BattlePublishable
 public:
     virtual void registerObserver(BattleObservable *) = 0;
     virtual void removeObserver(BattleObservable *) = 0;
-    virtual void notifyObservers() = 0;
+
+protected:
+    virtual void notifyObservers(BattleAction *) = 0;
 };
 
 #endif

@@ -17,39 +17,26 @@ void BattleProcessor::processBattleAction(BattleAction *battleAction)
 
     battle->nextHero();
 
-//    auto activeBattleHero = battleContainer->getBattle()->getActiveBattleHero();
-//    for (auto heroView:battleContainer->getHeroViews()) {
-//        if (heroView->getHero() == activeBattleHero) {
-//            auto coordinate = closestCoordinate(screenTouch);
-//
-//            auto battleAction = new BattleAction;
-//            battleAction->setBattleHeroId(activeBattleHero->getBattleHeroId());
-//            battleAction->setCoordinate(coordinate);
-//            battleContainer->getBattleEventPublisher()->publish(battleAction);
-//
-//            // @TODO this has to be handled by Battle Processor after receive the Action
-//            heroView->moveTo(coordinate);
-//            activeBattleHero->setCoordinate(coordinate);
-//            battleContainer->getGridSystem()->removeTilesByName(GridSystem::MOVE_NAME);
-//        }
-//    }
 //    // @TODO this has to be handled by Battle Processor after receive the Action
-//    battleContainer->getBattle()->nextHero();
+//    battleContainer->getGridSystem()->removeTilesByName(GridSystem::MOVE_NAME);
 //    battleContainer->buildPathScopeView();
 
-    notifyObservers();
+    notifyObservers(battleAction);
 }
 
-void BattleProcessor::registerObserver(BattleObservable *)
+void BattleProcessor::registerObserver(BattleObservable *observer)
 {
-
+    observers.push_back(observer);
 }
 
-void BattleProcessor::removeObserver(BattleObservable *)
+void BattleProcessor::removeObserver(BattleObservable *observer)
 {
-
+    observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
 }
-void BattleProcessor::notifyObservers()
-{
 
+void BattleProcessor::notifyObservers(BattleAction *battleAction)
+{
+    for (auto observer:observers) {
+        observer->update(battleAction);
+    }
 }

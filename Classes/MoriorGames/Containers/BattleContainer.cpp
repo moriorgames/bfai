@@ -4,8 +4,7 @@
 BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     : layer{layer}
 {
-    initServices(json);
-    initViews();
+    init(json);
 }
 
 void BattleContainer::buildPathScopeView()
@@ -40,18 +39,14 @@ BattleEventPublishable *BattleContainer::getEventPublisher() const
     return eventPublisher;
 }
 
-void BattleContainer::initServices(const std::string &json)
+void BattleContainer::init(const std::string &json)
 {
     battle = (new BattleFactory)->execute(json, heroRepo);
     gridSystem = new GridSystem(layer);
+    addHeroViews();
     pathFinder = new PathFinder(gridSystem->getGrid());
     battleProcessor = addBattleProcessor();
     eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);
-}
-
-void BattleContainer::initViews()
-{
-    addHeroViews();
     buildPathScopeView();
 }
 

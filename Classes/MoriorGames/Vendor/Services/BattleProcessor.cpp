@@ -38,8 +38,6 @@ void BattleProcessor::processBattleAction(BattleAction *battleAction)
 //    battleContainer->buildPathScopeView();
 
     notifyObservers();
-
-    battle->print();
 }
 
 void BattleProcessor::registerObserver(BattleObservable *)

@@ -9,7 +9,6 @@ class BattleEventPublishable
 {
 public:
     virtual void publish(BattleAction *) = 0;
-    virtual void setBattleProcessor(BattleProcessor *) = 0;
 };
 
 #endif

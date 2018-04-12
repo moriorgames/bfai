@@ -19,7 +19,7 @@ public:
     Battle *getBattle() const;
     const std::vector<HeroView *> &getHeroViews() const;
     PathFinder *getPathFinder() const;
-    BattleEventPublishable *getBattleEventPublisher() const;
+    BattleEventPublishable *getEventPublisher() const;
 
 private:
     Layer *layer;
@@ -27,12 +27,13 @@ private:
     GridSystem *gridSystem;
     PathFinder *pathFinder;
     BattleProcessor *battleProcessor;
-    BattleEventPublishable *battleEventPublisher;
+    BattleEventPublishable *eventPublisher;
     std::vector<HeroView *> heroViews;
 
-    void init();
+    void initServices(const std::string &json);
+    void initViews();
     void addHeroViews();
-    void addBattleProcessor();
+    BattleProcessor *addBattleProcessor();
 };
 
 #endif

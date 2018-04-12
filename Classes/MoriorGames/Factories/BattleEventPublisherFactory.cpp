@@ -6,7 +6,7 @@ const short BattleEventPublisherFactory::ONLINE = 1;
 
 const short BattleEventPublisherFactory::OFFLINE = 2;
 
-BattleEventPublishable *BattleEventPublisherFactory::execute(short connectionType)
+BattleEventPublishable *BattleEventPublisherFactory::execute(short connectionType, BattleProcessor *battleProcessor)
 {
     BattleEventPublishable *battleEventPublishable;
 
@@ -16,7 +16,7 @@ BattleEventPublishable *BattleEventPublisherFactory::execute(short connectionTyp
         break;
     case OFFLINE:
     default:
-        battleEventPublishable = new BattleEventOfflinePublisher;
+        battleEventPublishable = new BattleEventOfflinePublisher(battleProcessor);
     }
 
     return battleEventPublishable;

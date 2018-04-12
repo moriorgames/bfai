@@ -4,15 +4,8 @@
 BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     : layer{layer}
 {
-    battle = (new BattleFactory)->execute(json, heroRepo);
-    gridSystem = new GridSystem(layer);
-    pathFinder = new PathFinder(gridSystem->getGrid());
-    auto connectionType = BattleEventPublisherFactory::OFFLINE;
-    battleEventPublisher = BattleEventPublisherFactory::execute(connectionType);
-    addBattleProcessor();
-    battleEventPublisher->setBattleProcessor(battleProcessor);
-
-    init();
+    initServices(json);
+    initViews();
 }
 
 void BattleContainer::buildPathScopeView()
@@ -42,7 +35,21 @@ PathFinder *BattleContainer::getPathFinder() const
     return pathFinder;
 }
 
-void BattleContainer::init()
+BattleEventPublishable *BattleContainer::getEventPublisher() const
+{
+    return eventPublisher;
+}
+
+void BattleContainer::initServices(const std::string &json)
+{
+    battle = (new BattleFactory)->execute(json, heroRepo);
+    gridSystem = new GridSystem(layer);
+    pathFinder = new PathFinder(gridSystem->getGrid());
+    battleProcessor = addBattleProcessor();
+    eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);
+}
+
+void BattleContainer::initViews()
 {
     addHeroViews();
     buildPathScopeView();
@@ -55,16 +62,13 @@ void BattleContainer::addHeroViews()
     }
 }
 
-void BattleContainer::addBattleProcessor()
+BattleProcessor *BattleContainer::addBattleProcessor()
 {
-    battleProcessor = new BattleProcessor(battle);
+    auto battleProcessor = new BattleProcessor(battle);
 
     for (auto heroView:heroViews) {
         battleProcessor->registerObserver(heroView);
     }
-}
 
-BattleEventPublishable *BattleContainer::getBattleEventPublisher() const
-{
-    return battleEventPublisher;
+    return battleProcessor;
 }

@@ -7,7 +7,6 @@ class BattleEventOnlinePublisher: public BattleEventPublishable
 {
 public:
     void publish(BattleAction *) override;
-    void setBattleProcessor(BattleProcessor *) override;
 };
 
 #endif

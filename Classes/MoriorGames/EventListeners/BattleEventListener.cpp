@@ -31,25 +31,14 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
 
     if (isTouchWithinBoundariesOfBattleField(screenTouch)) {
 
-        auto activeBattleHero = battleContainer->getBattle()->getActiveBattleHero();
-        for (auto heroView:battleContainer->getHeroViews()) {
-            if (heroView->getHero() == activeBattleHero) {
-                auto coordinate = closestCoordinate(screenTouch);
+        auto coordinate = closestCoordinate(screenTouch);
+        auto battleAction = new BattleAction;
+        battleAction->setBattleHeroId(
+            battleContainer->getBattle()->getActiveBattleHero()->getBattleHeroId()
+        );
+        battleAction->setCoordinate(coordinate);
+        battleContainer->getEventPublisher()->publish(battleAction);
 
-                auto battleAction = new BattleAction;
-                battleAction->setBattleHeroId(activeBattleHero->getBattleHeroId());
-                battleAction->setCoordinate(coordinate);
-                battleContainer->getBattleEventPublisher()->publish(battleAction);
-
-//                // @TODO this has to be handled by Battle Processor after receive the Action
-//                heroView->moveTo(coordinate);
-//                activeBattleHero->setCoordinate(coordinate);
-//                battleContainer->getGridSystem()->removeTilesByName(GridSystem::MOVE_NAME);
-            }
-        }
-//        // @TODO this has to be handled by Battle Processor after receive the Action
-//        battleContainer->getBattle()->nextHero();
-//        battleContainer->buildPathScopeView();
     }
 
     return true;

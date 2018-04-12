@@ -6,7 +6,3 @@ void BattleEventOnlinePublisher::publish(BattleAction *battleAction)
 
 //    socket->send(json);
 }
-
-void BattleEventOnlinePublisher::setBattleProcessor(BattleProcessor *battleProcessor)
-{
-}

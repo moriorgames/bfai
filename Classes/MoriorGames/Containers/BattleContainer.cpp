@@ -10,7 +10,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
 void BattleContainer::buildPathScopeView()
 {
     for (auto path:pathFinder->buildPathScope(battle->getActiveBattleHero())) {
-        gridSystem->drawTile(path.coordinate, GridSystem::MOVE_FILL_COLOR, GridSystem::MOVE_NAME);
+        gridSystem->getGridView()->drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, GridView::MOVE_NAME);
     }
 }
 
@@ -64,6 +64,7 @@ BattleProcessor *BattleContainer::addBattleProcessor()
     for (auto heroView:heroViews) {
         battleProcessor->registerObserver(heroView);
     }
+    battleProcessor->registerObserver(gridSystem->getGridView());
 
     return battleProcessor;
 }

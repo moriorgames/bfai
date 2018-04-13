@@ -4,14 +4,6 @@
 
 USING_NS_CC;
 
-const Color4F GridSystem::FILL_COLOR{0, 0, 0, 0};
-
-const Color4F GridSystem::MOVE_FILL_COLOR{.2f, 1, .2f, .3f};
-
-const Color4F GridSystem::BORDER_COLOR{0, 0, 0, .15f};
-
-const std::string GridSystem::MOVE_NAME = "movement-node";
-
 GridSystem::GridSystem(Layer *layer)
     : layer{layer}
 {
@@ -28,11 +20,9 @@ GridSystem::GridSystem(Layer *layer)
     }
 
     coordinate2Screen = new Coordinate2Screen(grid->getFactor());
-    height = width = Grid::TILE_SIZE / 2 * grid->getFactor();
+    float size = Grid::TILE_SIZE / 2 * grid->getFactor();
+    gridView = new GridView(layer, coordinate2Screen, size);
     displayGrid();
-
-    layer->addChild(gridTiles, Z_ORDER_GRID);
-    layer->addChild(movementTiles, Z_ORDER_GRID);
 }
 
 Grid *GridSystem::getGrid() const
@@ -45,23 +35,9 @@ Coordinate2Screen *GridSystem::getCoordinate2Screen() const
     return coordinate2Screen;
 }
 
-void GridSystem::drawTile(Coordinate *coordinate, Color4F color, std::string nodeName)
+GridView *GridSystem::getGridView() const
 {
-    auto node = gridTiles;
-    if (nodeName == MOVE_NAME) {
-        node = movementTiles;
-    }
-    auto drawNode = DrawNode::create();
-    auto screenVec2 = coordinate2Screen->execute(coordinate);
-
-    Vec2 rectangle[4];
-    rectangle[0] = Vec2(screenVec2.x + width, screenVec2.y + height);
-    rectangle[1] = Vec2(screenVec2.x - width, screenVec2.y + height);
-    rectangle[2] = Vec2(screenVec2.x - width, screenVec2.y - height);
-    rectangle[3] = Vec2(screenVec2.x + width, screenVec2.y - height);
-
-    drawNode->drawPolygon(rectangle, 4, color, 1, BORDER_COLOR);
-    node->addChild(drawNode);
+    return gridView;
 }
 
 Coordinate *GridSystem::getClosestCoordinate(std::vector<Path> &paths, float x, float y)
@@ -80,21 +56,13 @@ Coordinate *GridSystem::getClosestCoordinate(std::vector<Path> &paths, float x, 
     return coordinate;
 }
 
-void GridSystem::removeTilesByName(std::string nodeName)
-{
-    auto node = gridTiles;
-    if (nodeName == MOVE_NAME) {
-        node = movementTiles;
-    }
-    node->removeAllChildren();
-}
-
 void GridSystem::displayGrid()
 {
     for (auto coordinate:grid->getCoordinates()) {
-        drawTile(coordinate, FILL_COLOR);
+        gridView->drawTile(coordinate, GridView::FILL_COLOR);
     }
 }
+
 double GridSystem::getDistance(float x, float y, Coordinate *coordinate)
 {
     auto screenVec2 = coordinate2Screen->execute(coordinate);

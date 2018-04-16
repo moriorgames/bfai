@@ -17,7 +17,6 @@ public:
     void buildPathScopeView();
     GridSystem *getGridSystem() const;
     Battle *getBattle() const;
-    const std::vector<HeroView *> &getHeroViews() const;
     PathFinder *getPathFinder() const;
     BattleEventPublishable *getEventPublisher() const;
 

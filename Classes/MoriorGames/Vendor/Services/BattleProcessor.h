@@ -1,14 +1,16 @@
 #ifndef MORIOR_GAMES_VENDOR_SERVICES_BATTLE_PROCESSOR_H
 #define MORIOR_GAMES_VENDOR_SERVICES_BATTLE_PROCESSOR_H
 
-#include "../Observer/BattlePublishable.h"
+#include "PathFinder.h"
 #include "../Entity/Battle.h"
 #include "../Entity/BattleAction.h"
+#include "../Observer/BattlePublishable.h"
+#include "../Grid/Grid.h"
 
 class BattleProcessor: public BattlePublishable
 {
 public:
-    explicit BattleProcessor(Battle *);
+    explicit BattleProcessor(Battle *, PathFinder *, Grid *);
     void processBattleAction(BattleAction *);
     void registerObserver(BattleObservable *) override;
     void removeObserver(BattleObservable *) override;
@@ -18,6 +20,8 @@ protected:
 
 private:
     Battle *battle;
+    PathFinder *pathFinder;
+    Grid *grid;
     std::vector<BattleObservable *> observers;
 };
 

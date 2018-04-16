@@ -1,8 +1,8 @@
 #include "BattleProcessor.h"
 #include "../Parsers/BattleActionParser.h"
 
-BattleProcessor::BattleProcessor(Battle *battle)
-    : battle{battle}
+BattleProcessor::BattleProcessor(Battle *battle, PathFinder *pathFinder, Grid *grid)
+    : battle{battle}, pathFinder{pathFinder}, grid{grid}
 {
 }
 
@@ -16,10 +16,7 @@ void BattleProcessor::processBattleAction(BattleAction *battleAction)
     }
 
     battle->nextHero();
-
-//    // @TODO this has to be handled by Battle Processor after receive the Action
-//    battleContainer->getGridSystem()->removeTilesByName(GridSystem::MOVE_NAME);
-//    battleContainer->buildPathScopeView();
+    pathFinder->buildPathScope(battle->getActiveBattleHero());
 
     notifyObservers(battleAction);
 }

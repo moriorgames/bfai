@@ -24,11 +24,6 @@ Battle *BattleContainer::getBattle() const
     return battle;
 }
 
-const std::vector<HeroView *> &BattleContainer::getHeroViews() const
-{
-    return heroViews;
-}
-
 PathFinder *BattleContainer::getPathFinder() const
 {
     return pathFinder;
@@ -59,7 +54,7 @@ void BattleContainer::addHeroViews()
 
 BattleProcessor *BattleContainer::addBattleProcessor()
 {
-    auto battleProcessor = new BattleProcessor(battle);
+    auto battleProcessor = new BattleProcessor(battle, pathFinder, gridSystem->getGrid());
 
     for (auto heroView:heroViews) {
         battleProcessor->registerObserver(heroView);

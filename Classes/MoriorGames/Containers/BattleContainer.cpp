@@ -1,4 +1,5 @@
 #include "BattleContainer.h"
+#include "../View/Battle/BattleBackgroundView.h"
 #include "../Factories/BattleEventPublisherFactory.h"
 
 BattleContainer::BattleContainer(Layer *layer, const std::string &json)
@@ -36,6 +37,8 @@ BattleEventPublishable *BattleContainer::getEventPublisher() const
 
 void BattleContainer::init(const std::string &json)
 {
+    new BattleBackgroundView(layer);
+
     battle = (new BattleFactory)->execute(json, heroRepo);
     gridSystem = new GridSystem(layer);
     addHeroViews();

@@ -1,7 +1,7 @@
 #include "BattleEventListener.h"
 
-BattleEventListener::BattleEventListener(Layer *layer, BattleContainer *battleContainer)
-    : layer{layer}, battleContainer{battleContainer}
+BattleEventListener::BattleEventListener(Layer *layer, Battle *battle, BattleContainer *battleContainer)
+    : layer{layer}, battle{battle}, battleContainer{battleContainer}
 {
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(true);
@@ -34,7 +34,7 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
         auto coordinate = closestCoordinate(screenTouch);
         auto battleAction = new BattleAction;
         battleAction->setBattleHeroId(
-            battleContainer->getBattle()->getActiveBattleHero()->getBattleHeroId()
+            battle->getActiveBattleHero()->getBattleHeroId()
         );
         battleAction->setCoordinate(coordinate);
         battleContainer->getEventPublisher()->publish(battleAction);

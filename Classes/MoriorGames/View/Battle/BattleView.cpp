@@ -16,5 +16,5 @@ void BattleView::addView()
 
     battleContainer = new BattleContainer(layer, json);
 
-    new BattleEventListener(layer, battleContainer->getBattle(), battleContainer);
+    new BattleEventListener(layer, battleContainer->getBattle(), battleContainer->getEventPublisher(), battleContainer);
 }

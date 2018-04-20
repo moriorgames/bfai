@@ -1,7 +1,8 @@
 #include "BattleEventListener.h"
 
-BattleEventListener::BattleEventListener(Layer *layer, Battle *battle, BattleContainer *battleContainer)
-    : layer{layer}, battle{battle}, battleContainer{battleContainer}
+BattleEventListener::BattleEventListener(
+    Layer *layer, Battle *battle, BattleEventPublishable *eventPublisher, BattleContainer *battleContainer)
+    : layer{layer}, battle{battle}, eventPublisher{eventPublisher}, battleContainer{battleContainer}
 {
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(true);
@@ -37,8 +38,8 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
             battle->getActiveBattleHero()->getBattleHeroId()
         );
         battleAction->setCoordinate(coordinate);
-        battleContainer->getEventPublisher()->publish(battleAction);
-        battleContainer->buildPathScopeView();
+        eventPublisher->publish(battleAction);
+//        battleContainer->buildPathScopeView();
 
     }
 

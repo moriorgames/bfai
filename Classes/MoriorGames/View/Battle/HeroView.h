@@ -2,8 +2,8 @@
 #define MORIOR_GAMES_VIEW_BATTLE_HERO_VIEW_H
 
 #include "../ViewHelper.h"
-#include "../../Containers/GridContainer.h"
 #include "../../Services/SpriteAnimator.h"
+#include "../../Screen/Coordinate2Screen.h"
 #include "../../Vendor/Observer/BattleObservable.h"
 #include "../../Vendor/Entity/BattleHero.h"
 
@@ -13,14 +13,13 @@ public:
     static const Point ANCHOR;
 
 public:
-    HeroView(Layer *, GridContainer *, BattleHero *);
-    BattleHero *getHero() const;
+    HeroView(Layer *, Coordinate2Screen *, BattleHero *);
     void moveTo(Coordinate *);
     void update(BattleAction *) override;
 
 private:
     Node *container;
-    GridContainer *gridContainer;
+    Coordinate2Screen *coordinate2Screen;
     BattleHero *battleHero;
     SpriteAnimator *spriteAnimator;
 

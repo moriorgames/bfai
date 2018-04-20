@@ -2,21 +2,15 @@
 
 const Point HeroView::ANCHOR{0.5, 0.35};
 
-HeroView::HeroView(Layer *layer, GridContainer *gridContainer, BattleHero *battleHero)
-    : ViewHelper(layer), gridContainer{gridContainer}, battleHero{battleHero}
+HeroView::HeroView(Layer *layer, Coordinate2Screen *coordinate2Screen, BattleHero *battleHero)
+    : ViewHelper(layer), coordinate2Screen{coordinate2Screen}, battleHero{battleHero}
 {
     spriteAnimator = new SpriteAnimator;
     addView();
 }
 
-BattleHero *HeroView::getHero() const
-{
-    return battleHero;
-}
-
 void HeroView::moveTo(Coordinate *coordinate)
 {
-    auto coordinate2Screen = gridContainer->getCoordinate2Screen();
     auto action = MoveTo::create(1, coordinate2Screen->execute(coordinate));
 
     container->runAction(action);
@@ -40,7 +34,6 @@ void HeroView::addHero()
     sprite->runAction(moveAction());
     sprite->setAnchorPoint(ANCHOR);
 
-    auto coordinate2Screen = gridContainer->getCoordinate2Screen();
     auto position = coordinate2Screen->execute(battleHero->getCoordinate());
     container->setPosition(position);
     container->addChild(sprite);

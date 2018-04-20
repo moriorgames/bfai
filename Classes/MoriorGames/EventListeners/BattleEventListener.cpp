@@ -1,7 +1,8 @@
 #include "BattleEventListener.h"
 
 BattleEventListener::BattleEventListener(
-    Layer *layer, Battle *battle, BattleEventPublishable *eventPublisher, GridContainer *gridContainer)
+    Layer *layer, Battle *battle, BattleEventPublishable *eventPublisher, GridContainer *gridContainer
+)
     : layer{layer}, battle{battle}, eventPublisher{eventPublisher}, gridContainer{gridContainer}
 {
     auto touchListener = EventListenerTouchOneByOne::create();

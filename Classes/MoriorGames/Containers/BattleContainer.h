@@ -2,11 +2,11 @@
 #define MORIOR_GAMES_CONTAINERS_BATTLE_CONTAINER_H
 
 #include "cocos2d.h"
-#include "../EventListeners/BattleEventPublishable.h"
 #include "../Containers/GridContainer.h"
-#include "../Vendor/Services/PathFinder.h"
-#include "../Vendor/Services/BattleProcessor.h"
+#include "../EventListeners/BattleEventPublishable.h"
 #include "../Vendor/Factories/BattleFactory.h"
+#include "../Vendor/Services/BattleProcessor.h"
+#include "../Vendor/Services/PathFinder.h"
 #include "../View/Battle/HeroView.h"
 USING_NS_CC;
 
@@ -14,8 +14,8 @@ class BattleContainer
 {
 public:
     BattleContainer(Layer *layer, const std::string &json);
-    GridContainer *getGridContainer() const;
     Battle *getBattle() const;
+    GridContainer *getGridContainer() const;
     BattleEventPublishable *getEventPublisher() const;
     void buildPathScopeView();
 

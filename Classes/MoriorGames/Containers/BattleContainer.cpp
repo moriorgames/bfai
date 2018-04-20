@@ -1,6 +1,6 @@
 #include "BattleContainer.h"
-#include "../View/Battle/BattleBackgroundView.h"
 #include "../Factories/BattleEventPublisherFactory.h"
+#include "../View/Battle/BattleBackgroundView.h"
 
 BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     : layer{layer}
@@ -16,14 +16,14 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     buildPathScopeView();
 }
 
-GridContainer *BattleContainer::getGridContainer() const
-{
-    return gridContainer;
-}
-
 Battle *BattleContainer::getBattle() const
 {
     return battle;
+}
+
+GridContainer *BattleContainer::getGridContainer() const
+{
+    return gridContainer;
 }
 
 BattleEventPublishable *BattleContainer::getEventPublisher() const
@@ -41,7 +41,7 @@ void BattleContainer::buildPathScopeView()
 void BattleContainer::addHeroViews()
 {
     for (auto battleHero:battle->getBattleHeroes()) {
-        heroViews.push_back(new HeroView(layer, gridContainer, battleHero));
+        heroViews.push_back(new HeroView(layer, gridContainer->getCoordinate2Screen(), battleHero));
     }
 }
 

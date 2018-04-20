@@ -14,22 +14,19 @@ class BattleContainer
 {
 public:
     BattleContainer(Layer *layer, const std::string &json);
-    void buildPathScopeView();
     GridContainer *getGridContainer() const;
     Battle *getBattle() const;
-    PathFinder *getPathFinder() const;
     BattleEventPublishable *getEventPublisher() const;
+    void buildPathScopeView();
 
 private:
     Layer *layer;
     Battle *battle;
     GridContainer *gridContainer;
-    PathFinder *pathFinder;
     BattleProcessor *battleProcessor;
     BattleEventPublishable *eventPublisher;
     std::vector<HeroView *> heroViews;
 
-    void init(const std::string &json);
     void addHeroViews();
     BattleProcessor *addBattleProcessor();
 };

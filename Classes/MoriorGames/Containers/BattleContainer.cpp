@@ -5,14 +5,15 @@
 BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     : layer{layer}
 {
-    init(json);
-}
+    new BattleBackgroundView(layer);
 
-void BattleContainer::buildPathScopeView()
-{
-    for (auto path:pathFinder->buildPathScope(battle->getActiveBattleHero())) {
-        gridContainer->getGridView()->drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, GridView::MOVE_NAME);
-    }
+    gridContainer = new GridContainer(layer);
+
+    battle = (new BattleFactory)->execute(json, heroRepo);
+    addHeroViews();
+    battleProcessor = addBattleProcessor();
+    eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);
+    buildPathScopeView();
 }
 
 GridContainer *BattleContainer::getGridContainer() const
@@ -25,27 +26,16 @@ Battle *BattleContainer::getBattle() const
     return battle;
 }
 
-PathFinder *BattleContainer::getPathFinder() const
-{
-    return pathFinder;
-}
-
 BattleEventPublishable *BattleContainer::getEventPublisher() const
 {
     return eventPublisher;
 }
 
-void BattleContainer::init(const std::string &json)
+void BattleContainer::buildPathScopeView()
 {
-    new BattleBackgroundView(layer);
-
-    battle = (new BattleFactory)->execute(json, heroRepo);
-    gridContainer = new GridContainer(layer);
-    addHeroViews();
-    pathFinder = new PathFinder(gridContainer->getGrid());
-    battleProcessor = addBattleProcessor();
-    eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);
-    buildPathScopeView();
+    for (auto path:gridContainer->getPathFinder()->buildPathScope(battle->getActiveBattleHero())) {
+        gridContainer->getGridView()->drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, GridView::MOVE_NAME);
+    }
 }
 
 void BattleContainer::addHeroViews()
@@ -57,7 +47,7 @@ void BattleContainer::addHeroViews()
 
 BattleProcessor *BattleContainer::addBattleProcessor()
 {
-    auto battleProcessor = new BattleProcessor(battle, pathFinder, gridContainer->getGrid());
+    auto battleProcessor = new BattleProcessor(battle, gridContainer->getPathFinder(), gridContainer->getGrid());
 
     for (auto heroView:heroViews) {
         battleProcessor->registerObserver(heroView);

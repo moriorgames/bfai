@@ -1,8 +1,8 @@
 #include "BattleEventListener.h"
 
 BattleEventListener::BattleEventListener(
-    Layer *layer, Battle *battle, BattleEventPublishable *eventPublisher, BattleContainer *battleContainer)
-    : layer{layer}, battle{battle}, eventPublisher{eventPublisher}, battleContainer{battleContainer}
+    Layer *layer, Battle *battle, BattleEventPublishable *eventPublisher, GridContainer *gridContainer)
+    : layer{layer}, battle{battle}, eventPublisher{eventPublisher}, gridContainer{gridContainer}
 {
     auto touchListener = EventListenerTouchOneByOne::create();
     touchListener->setSwallowTouches(true);
@@ -53,7 +53,7 @@ bool BattleEventListener::isTouchWithinBoundariesOfBattleField(Vec2 screenTouch)
 
 Coordinate *BattleEventListener::closestCoordinate(Vec2 screenTouch)
 {
-    auto paths = battleContainer->getPathFinder()->getPathScope();
+    auto paths = gridContainer->getPathFinder()->getPathScope();
 
-    return battleContainer->getGridContainer()->getClosestCoordinate()->execute(paths, screenTouch.x, screenTouch.y);
+    return gridContainer->getClosestCoordinate()->execute(paths, screenTouch.x, screenTouch.y);
 }

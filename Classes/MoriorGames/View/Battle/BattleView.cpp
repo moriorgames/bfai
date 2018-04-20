@@ -1,4 +1,5 @@
 #include "BattleView.h"
+#include "../../Containers/BattleContainer.h"
 #include "../../EventListeners/BattleEventListener.h"
 #include "../../Services/StringFileReader.h"
 
@@ -14,7 +15,9 @@ void BattleView::addView()
 {
     auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
 
-    battleContainer = new BattleContainer(layer, json);
+    auto battleContainer = new BattleContainer(layer, json);
 
-    new BattleEventListener(layer, battleContainer->getBattle(), battleContainer->getEventPublisher(), battleContainer);
+    new BattleEventListener(
+        layer, battleContainer->getBattle(), battleContainer->getEventPublisher(), battleContainer->getGridContainer()
+    );
 }

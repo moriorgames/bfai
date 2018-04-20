@@ -6,6 +6,7 @@
 #include "../Grid/GridHDR.h"
 #include "../Screen/ClosestCoordinate.h"
 #include "../Vendor/Containers/Path.h"
+#include "../Vendor/Services/PathFinder.h"
 #include "../View/Battle/GridView.h"
 USING_NS_CC;
 
@@ -16,6 +17,7 @@ public:
     Grid *getGrid() const;
     Coordinate2Screen *getCoordinate2Screen() const;
     ClosestCoordinate *getClosestCoordinate() const;
+    PathFinder *getPathFinder() const;
     GridView *getGridView() const;
 
 private:
@@ -24,6 +26,7 @@ private:
     GridView *gridView;
     Coordinate2Screen *coordinate2Screen;
     ClosestCoordinate *closestCoordinate;
+    PathFinder *pathFinder;
 
     void displayGrid();
 };

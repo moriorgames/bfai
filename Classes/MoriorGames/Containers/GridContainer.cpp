@@ -20,6 +20,7 @@ GridContainer::GridContainer(Layer *layer)
     closestCoordinate = new ClosestCoordinate(coordinate2Screen);
     float size = Grid::TILE_SIZE / 2 * grid->getFactor();
     gridView = new GridView(layer, coordinate2Screen, size);
+    pathFinder = new PathFinder(grid);
     displayGrid();
 }
 
@@ -36,6 +37,11 @@ Coordinate2Screen *GridContainer::getCoordinate2Screen() const
 ClosestCoordinate *GridContainer::getClosestCoordinate() const
 {
     return closestCoordinate;
+}
+
+PathFinder *GridContainer::getPathFinder() const
+{
+    return pathFinder;
 }
 
 GridView *GridContainer::getGridView() const

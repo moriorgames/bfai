@@ -54,5 +54,5 @@ Coordinate *BattleEventListener::closestCoordinate(Vec2 screenTouch)
 {
     auto paths = battleContainer->getPathFinder()->getPathScope();
 
-    return battleContainer->getGridSystem()->getClosestCoordinate()->execute(paths, screenTouch.x, screenTouch.y);
+    return battleContainer->getGridContainer()->getClosestCoordinate()->execute(paths, screenTouch.x, screenTouch.y);
 }

@@ -3,7 +3,6 @@
 
 #include "cocos2d.h"
 #include "BattleEventPublishable.h"
-#include "../Grid/GridSystem.h"
 #include "../Containers/BattleContainer.h"
 #include "../Vendor/Entity/Battle.h"
 #include "../Vendor/ValueObjects/Coordinate.h"

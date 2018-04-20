@@ -1,10 +1,7 @@
-#include "GridSystem.h"
-#include "../Definitions.h"
+#include "GridContainer.h"
 #include "../Screen/ResolutionChecker.h"
 
-USING_NS_CC;
-
-GridSystem::GridSystem(Layer *layer)
+GridContainer::GridContainer(Layer *layer)
     : layer{layer}
 {
     if (ResolutionChecker::isHDR()) {
@@ -26,26 +23,27 @@ GridSystem::GridSystem(Layer *layer)
     displayGrid();
 }
 
-Grid *GridSystem::getGrid() const
+Grid *GridContainer::getGrid() const
 {
     return grid;
 }
 
-Coordinate2Screen *GridSystem::getCoordinate2Screen() const
+Coordinate2Screen *GridContainer::getCoordinate2Screen() const
 {
     return coordinate2Screen;
 }
 
-ClosestCoordinate *GridSystem::getClosestCoordinate() const
+ClosestCoordinate *GridContainer::getClosestCoordinate() const
 {
     return closestCoordinate;
 }
 
-GridView *GridSystem::getGridView() const
+GridView *GridContainer::getGridView() const
 {
     return gridView;
 }
-void GridSystem::displayGrid()
+
+void GridContainer::displayGrid()
 {
     for (auto coordinate:grid->getCoordinates()) {
         gridView->drawTile(coordinate, GridView::FILL_COLOR);

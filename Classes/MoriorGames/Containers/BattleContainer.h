@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include "../EventListeners/BattleEventPublishable.h"
-#include "../Grid/GridSystem.h"
+#include "../Containers/GridContainer.h"
 #include "../Vendor/Services/PathFinder.h"
 #include "../Vendor/Services/BattleProcessor.h"
 #include "../Vendor/Factories/BattleFactory.h"
@@ -15,7 +15,7 @@ class BattleContainer
 public:
     BattleContainer(Layer *layer, const std::string &json);
     void buildPathScopeView();
-    GridSystem *getGridSystem() const;
+    GridContainer *getGridContainer() const;
     Battle *getBattle() const;
     PathFinder *getPathFinder() const;
     BattleEventPublishable *getEventPublisher() const;
@@ -23,7 +23,7 @@ public:
 private:
     Layer *layer;
     Battle *battle;
-    GridSystem *gridSystem;
+    GridContainer *gridContainer;
     PathFinder *pathFinder;
     BattleProcessor *battleProcessor;
     BattleEventPublishable *eventPublisher;

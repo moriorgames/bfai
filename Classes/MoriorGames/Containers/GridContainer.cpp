@@ -19,8 +19,8 @@ GridContainer::GridContainer(Layer *layer)
     coordinate2Screen = new Coordinate2Screen(grid->getFactor());
     closestCoordinate = new ClosestCoordinate(coordinate2Screen);
     float size = Grid::TILE_SIZE / 2 * grid->getFactor();
-    gridView = new GridView(layer, coordinate2Screen, size);
     pathFinder = new PathFinder(grid);
+    gridView = new GridView(layer, pathFinder, coordinate2Screen, size);
     displayGrid();
 }
 

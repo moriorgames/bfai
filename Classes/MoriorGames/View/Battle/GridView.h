@@ -3,8 +3,9 @@
 
 #include "cocos2d.h"
 #include "../../Screen/Coordinate2Screen.h"
-#include "../../Vendor/ValueObjects/Coordinate.h"
 #include "../../Vendor/Observer/BattleObservable.h"
+#include "../../Vendor/Services/PathFinder.h"
+#include "../../Vendor/ValueObjects/Coordinate.h"
 USING_NS_CC;
 
 class GridView: public BattleObservable
@@ -16,17 +17,19 @@ public:
     static const std::string MOVE_NAME;
 
 public:
-    GridView(Layer *, Coordinate2Screen *, float size);
+    GridView(Layer *, PathFinder *, Coordinate2Screen *, float size);
     void drawTile(Coordinate *coordinate, Color4F color, std::string nodeName = "");
     void update(BattleAction *) override;
 
 private:
     Layer *layer;
+    PathFinder *pathFinder;
     Coordinate2Screen *coordinate2Screen;
     float size = 0;
     Node *gridTiles = new Node;
     Node *movementTiles = new Node;
 
+    void buildPathScopeView();
     void removeTilesByName(std::string nodeName);
 };
 

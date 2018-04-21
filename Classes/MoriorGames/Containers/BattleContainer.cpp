@@ -13,7 +13,6 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     addHeroViews();
     battleProcessor = addBattleProcessor();
     eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);
-    buildPathScopeView();
 }
 
 Battle *BattleContainer::getBattle() const
@@ -31,13 +30,6 @@ BattleEventPublishable *BattleContainer::getEventPublisher() const
     return eventPublisher;
 }
 
-void BattleContainer::buildPathScopeView()
-{
-    for (auto path:gridContainer->getPathFinder()->buildPathScope(battle->getActiveBattleHero())) {
-        gridContainer->getGridView()->drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, GridView::MOVE_NAME);
-    }
-}
-
 void BattleContainer::addHeroViews()
 {
     for (auto battleHero:battle->getBattleHeroes()) {
@@ -53,6 +45,7 @@ BattleProcessor *BattleContainer::addBattleProcessor()
         battleProcessor->registerObserver(heroView);
     }
     battleProcessor->registerObserver(gridContainer->getGridView());
+    battleProcessor->processBattleAction(new BattleAction);
 
     return battleProcessor;
 }

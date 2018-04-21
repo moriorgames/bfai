@@ -17,7 +17,6 @@ public:
     Battle *getBattle() const;
     GridContainer *getGridContainer() const;
     BattleEventPublishable *getEventPublisher() const;
-    void buildPathScopeView();
 
 private:
     Layer *layer;

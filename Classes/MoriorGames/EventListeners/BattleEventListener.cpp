@@ -40,7 +40,6 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
         );
         battleAction->setCoordinate(coordinate);
         eventPublisher->publish(battleAction);
-//        battleContainer->buildPathScopeView();
 
     }
 

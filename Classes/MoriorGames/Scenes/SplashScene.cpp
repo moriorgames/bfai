@@ -3,6 +3,7 @@
 #include "../Services/SpritesInitializer.h"
 #include "../Services/StringFileReader.h"
 #include "../Vendor/Repository/HeroRepository.h"
+#include "../Vendor/Repository/SkillRepository.h"
 #include "../View/SplashView.h"
 
 USING_NS_CC;
@@ -39,8 +40,10 @@ void SplashScene::increaseLoadingBar(float delay)
     loadingView->setLoadingBarPercentage(loadingBarPercentage);
     if (loadingBarPercentage == 66) {
         new SpritesInitializer();
-        auto json = (new StringFileReader)->getStringFromFile("data/heroes.json");
-        heroRepo->init(json);
+        auto heroesJson = (new StringFileReader)->getStringFromFile("data/heroes.json");
+        heroRepo->init(heroesJson);
+        auto skillsJson = (new StringFileReader)->getStringFromFile("data/skills.json");
+        skillRepo->init(skillsJson);
     }
     if (loadingBarPercentage > 99) {
         this->unschedule(schedule_selector(SplashScene::increaseLoadingBar));

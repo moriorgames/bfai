@@ -90,19 +90,24 @@ void Hero::setAttackFrames(int attackFrames)
     this->attackFrames = attackFrames;
 }
 
+void Hero::addSkill(Skill *skill)
+{
+    skills.push_back(skill);
+}
+
 void Hero::print()
 {
     printf("========= Hero: \n"
-               " - id %i\n"
-               " - name %s\n"
-               " - slug %s\n"
-               " - damage %i\n"
-               " - ranged %i\n"
-               " - health %i\n"
-               " - movement %i\n"
-               " - moveFrames %i\n"
-               " - attackFrames %i\n"
-               " \n",
+           " - id %i\n"
+           " - name %s\n"
+           " - slug %s\n"
+           " - damage %i\n"
+           " - ranged %i\n"
+           " - health %i\n"
+           " - movement %i\n"
+           " - moveFrames %i\n"
+           " - attackFrames %i\n"
+           " \n",
            id,
            name.c_str(),
            slug.c_str(),

@@ -41,13 +41,16 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/BattleAction.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/BattleHero.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Hero.cpp \
+                   ../../Classes/MoriorGames/Vendor/Entity/Skill.cpp \
                    ../../Classes/MoriorGames/Vendor/Factories/BattleFactory.cpp \
                    ../../Classes/MoriorGames/Vendor/Grid/Grid.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/BattleActionParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/BattleParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/HeroParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/JsonParser.cpp \
+                   ../../Classes/MoriorGames/Vendor/Parsers/SkillParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Repository/HeroRepository.cpp \
+                   ../../Classes/MoriorGames/Vendor/Repository/SkillRepository.cpp \
                    ../../Classes/MoriorGames/Vendor/Services/BattleProcessor.cpp \
                    ../../Classes/MoriorGames/Vendor/Services/PathFinder.cpp \
                    ../../Classes/MoriorGames/Vendor/ValueObjects/Coordinate.cpp \

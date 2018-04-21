@@ -1,14 +1,14 @@
-#include "HeroRepository.h"
+#include "SkillRepository.h"
 
-void HeroRepository::init(const std::string &json)
+void SkillRepository::init(const std::string &json)
 {
-    auto parser = new HeroParser(json);
+    auto parser = new SkillParser(json);
     for (auto item:parser->parse()) {
         items.push_back(item);
     }
 }
 
-Hero *HeroRepository::findById(int id)
+Skill *SkillRepository::findById(int id)
 {
     for (auto item:items) {
         if (item->getId() == id) {

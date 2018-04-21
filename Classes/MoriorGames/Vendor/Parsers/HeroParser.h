@@ -9,7 +9,7 @@ class HeroParser: public JsonParser
 {
 public:
     const char *ROW = "heroes";
-    HeroParser(std::string json);
+    explicit HeroParser(std::string json);
     std::vector<Hero *> parse();
     std::vector<BattleHero *> parseForBattle();
 

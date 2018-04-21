@@ -22,6 +22,11 @@ BattleHero *Battle::getActiveBattleHero()
     return nullptr;
 }
 
+void Battle::setActiveSkill(int activeSkill)
+{
+    this->activeSkill = activeSkill;
+}
+
 void Battle::nextHero()
 {
     auto activeHero = this->activeHero;
@@ -45,9 +50,9 @@ void Battle::addTurn()
 void Battle::print()
 {
     printf("========= Battle: \n"
-               " - activeHero %i\n"
-               " - turn %i\n"
-               " \n",
+           " - activeHero %i\n"
+           " - turn %i\n"
+           " \n",
            activeHero,
            turn
     );

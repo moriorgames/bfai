@@ -2,6 +2,8 @@
 #define MORIOR_GAMES_VENDOR_ENTITY_HERO_H
 
 #include <string>
+#include <vector>
+#include "Skill.h"
 
 class Hero
 {
@@ -25,12 +27,16 @@ public:
     int getAttackFrames() const;
     void setAttackFrames(int attackFrames);
 
+    void addSkill(Skill *);
+
     void print();
 
 protected:
     int id = 0;
     std::string name = "", slug = "";
     int damage = 0, ranged = 0, health = 0, movement = 0, moveFrames = 0, attackFrames = 0;
+
+    std::vector<Skill *> skills;
 };
 
 #endif

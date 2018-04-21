@@ -11,7 +11,7 @@ public:
     Hero *findById(int id);
 
 private:
-    std::vector<Hero *> heroes;
+    std::vector<Hero *> items;
 };
 
 extern HeroRepository *heroRepo;

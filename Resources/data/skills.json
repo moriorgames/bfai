@@ -1,0 +1,16 @@
+{
+  "skills": [
+    {
+      "id": 1,
+      "name": "Next turn",
+      "slug": "next-turn",
+      "type": 1
+    },
+    {
+      "id": 2,
+      "name": "Movement",
+      "slug": "movement",
+      "type": 2
+    }
+  ]
+}

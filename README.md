@@ -32,6 +32,9 @@ $ keytool -keystore clientbattlefury -genkey -alias mgbattlefury -validity 9999
 To show the logs on android device you can execute this command:
 
 ```
+# Android sdk manager
+$ cd /usr/local/Cellar/android-sdk/24.4.1_1/tools
+$ ./android
 # To see android SDk installed APIS
 $ android list
 $ adb logcat

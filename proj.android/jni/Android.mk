@@ -12,33 +12,38 @@ LOCAL_MODULE := MyGame_shared
 LOCAL_MODULE_FILENAME := libBFAI
 
 LOCAL_SRC_FILES := projectbfai/main.cpp \
-                   ../../Classes/MoriorGames/EventListeners/BattleActionDispatcher.cpp \
+                   ../../Classes/MoriorGames/Containers/BattleContainer.cpp \
+                   ../../Classes/MoriorGames/Containers/GridContainer.cpp \
                    ../../Classes/MoriorGames/EventListeners/BattleEventListener.cpp \
+                   ../../Classes/MoriorGames/EventListeners/BattleEventOfflinePublisher.cpp \
+                   ../../Classes/MoriorGames/EventListeners/BattleEventOnlinePublisher.cpp \
+                   ../../Classes/MoriorGames/Factories/BattleEventPublisherFactory.cpp \
                    ../../Classes/MoriorGames/Grid/GridHD.cpp \
                    ../../Classes/MoriorGames/Grid/GridHDR.cpp \
                    ../../Classes/MoriorGames/Grid/GridSD.cpp \
-                   ../../Classes/MoriorGames/Grid/GridSystem.cpp \
                    ../../Classes/MoriorGames/Scenes/BattleScene.cpp \
                    ../../Classes/MoriorGames/Scenes/LogoScene.cpp \
                    ../../Classes/MoriorGames/Scenes/MainMenuScene.cpp \
                    ../../Classes/MoriorGames/Scenes/SplashScene.cpp \
+                   ../../Classes/MoriorGames/Screen/ClosestCoordinate.cpp \
                    ../../Classes/MoriorGames/Screen/Coordinate2Screen.cpp \
                    ../../Classes/MoriorGames/Screen/Position.cpp \
                    ../../Classes/MoriorGames/Screen/Resolution.cpp \
                    ../../Classes/MoriorGames/Screen/ResolutionChecker.cpp \
                    ../../Classes/MoriorGames/Screen/ScreenProperties.cpp \
-                   ../../Classes/MoriorGames/Services/BattleContainer.cpp \
                    ../../Classes/MoriorGames/Services/FontCreator.cpp \
                    ../../Classes/MoriorGames/Services/SoundPlayer.cpp \
                    ../../Classes/MoriorGames/Services/SpriteAnimator.cpp \
                    ../../Classes/MoriorGames/Services/SpritesInitializer.cpp \
                    ../../Classes/MoriorGames/Services/StringFileReader.cpp \
+                   ../../Classes/MoriorGames/Transformers/BattleAction2Json.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Battle.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/BattleAction.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/BattleHero.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Hero.cpp \
                    ../../Classes/MoriorGames/Vendor/Factories/BattleFactory.cpp \
                    ../../Classes/MoriorGames/Vendor/Grid/Grid.cpp \
+                   ../../Classes/MoriorGames/Vendor/Parsers/BattleActionParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/BattleParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/HeroParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/JsonParser.cpp \
@@ -48,6 +53,7 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Vendor/ValueObjects/Coordinate.cpp \
                    ../../Classes/MoriorGames/View/Battle/BattleBackgroundView.cpp \
                    ../../Classes/MoriorGames/View/Battle/BattleView.cpp \
+                   ../../Classes/MoriorGames/View/Battle/GridView.cpp \
                    ../../Classes/MoriorGames/View/Battle/HeroView.cpp \
                    ../../Classes/MoriorGames/View/Buttons/BattleButton.cpp \
                    ../../Classes/MoriorGames/View/Custom/BattleInitCustomActions.cpp \

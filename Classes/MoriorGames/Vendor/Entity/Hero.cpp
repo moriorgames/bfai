@@ -90,6 +90,11 @@ void Hero::setAttackFrames(int attackFrames)
     this->attackFrames = attackFrames;
 }
 
+const std::vector<Skill *> &Hero::getSkills() const
+{
+    return skills;
+}
+
 void Hero::addSkill(Skill *skill)
 {
     skills.push_back(skill);

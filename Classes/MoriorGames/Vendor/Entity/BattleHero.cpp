@@ -69,17 +69,18 @@ void BattleHero::copy(Hero *hero)
     movement = hero->getMovement();
     moveFrames = hero->getMoveFrames();
     attackFrames = hero->getAttackFrames();
+    skills = hero->getSkills();
 }
 
 void BattleHero::print()
 {
     printf("========= BattleHero: \n"
-               " - side %s\n"
-               " - injury %i\n"
-               " - dead %i\n"
-               " - X %i\n"
-               " - Y %i\n"
-               " \n",
+           " - side %s\n"
+           " - injury %i\n"
+           " - dead %i\n"
+           " - X %i\n"
+           " - Y %i\n"
+           " \n",
            side.c_str(),
            injury,
            dead,
@@ -88,4 +89,7 @@ void BattleHero::print()
     );
 
     Hero::print();
+    for (auto skill:skills) {
+        skill->print();
+    }
 }

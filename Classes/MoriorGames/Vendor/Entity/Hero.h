@@ -27,6 +27,7 @@ public:
     int getAttackFrames() const;
     void setAttackFrames(int attackFrames);
 
+    const std::vector<Skill *> &getSkills() const;
     void addSkill(Skill *);
 
     void print();

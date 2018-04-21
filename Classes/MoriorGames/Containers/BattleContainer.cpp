@@ -9,7 +9,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
 
     gridContainer = new GridContainer(layer);
 
-    battle = (new BattleFactory)->execute(json, heroRepo);
+    battle = (new BattleFactory)->execute(json, heroRepo, skillRepo);
     addHeroViews();
     battleProcessor = addBattleProcessor();
     eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);

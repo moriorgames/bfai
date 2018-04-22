@@ -11,6 +11,7 @@ public:
     void addHero(BattleHero *);
     const std::vector<BattleHero *> &getBattleHeroes() const;
     BattleHero *getActiveBattleHero();
+    int getActiveSkill() const;
     void setActiveSkill(int activeSkill);
     void nextHero();
     void addTurn();

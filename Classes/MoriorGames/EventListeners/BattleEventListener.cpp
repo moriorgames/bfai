@@ -38,6 +38,9 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
         battleAction->setBattleHeroId(
             battle->getActiveBattleHero()->getBattleHeroId()
         );
+        battleAction->setSkillId(
+            battle->getActiveSkill()
+        );
         battleAction->setCoordinate(coordinate);
         eventPublisher->publish(battleAction);
 

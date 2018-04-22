@@ -22,6 +22,11 @@ BattleHero *Battle::getActiveBattleHero()
     return nullptr;
 }
 
+int Battle::getActiveSkill() const
+{
+    return activeSkill;
+}
+
 void Battle::setActiveSkill(int activeSkill)
 {
     this->activeSkill = activeSkill;

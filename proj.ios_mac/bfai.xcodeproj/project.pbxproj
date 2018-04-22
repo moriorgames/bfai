@@ -15,6 +15,8 @@
 		294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D0D631D0D56D500F7F5D4 /* CoreText.framework */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
+		4F01D160208C2AE9002231DA /* SkillsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F01D15E208C2AE9002231DA /* SkillsView.cpp */; };
+		4F01D161208C2AE9002231DA /* SkillsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F01D15E208C2AE9002231DA /* SkillsView.cpp */; };
 		4F12CC94207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
 		4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
 		4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */; };
@@ -228,6 +230,8 @@
 		294D0D631D0D56D500F7F5D4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4F01D15E208C2AE9002231DA /* SkillsView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SkillsView.cpp; sourceTree = "<group>"; };
+		4F01D15F208C2AE9002231DA /* SkillsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkillsView.h; sourceTree = "<group>"; };
 		4F12CC92207890190033DE0E /* ResolutionChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResolutionChecker.cpp; sourceTree = "<group>"; };
 		4F12CC93207890190033DE0E /* ResolutionChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResolutionChecker.h; sourceTree = "<group>"; };
 		4F12CC992078985F0033DE0E /* Path.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
@@ -689,6 +693,8 @@
 				4F9604CE2059A12C004CAEED /* HeroView.h */,
 				4F576D132075E17E00011BC7 /* GridView.cpp */,
 				4F576D142075E17E00011BC7 /* GridView.h */,
+				4F01D15E208C2AE9002231DA /* SkillsView.cpp */,
+				4F01D15F208C2AE9002231DA /* SkillsView.h */,
 			);
 			path = Battle;
 			sourceTree = "<group>";
@@ -1053,6 +1059,7 @@
 				4F5C0CDF208B0749006D57BF /* SkillRepository.cpp in Sources */,
 				4F9604CF2059A12C004CAEED /* HeroView.cpp in Sources */,
 				4F2CBFF2202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
+				4F01D160208C2AE9002231DA /* SkillsView.cpp in Sources */,
 				4F89105A2034BF2800D8382C /* Coordinate.cpp in Sources */,
 				4FA0677F207DC36700934122 /* BattleActionParser.cpp in Sources */,
 				4FBCDC68203220CD006B3B5E /* GridHD.cpp in Sources */,
@@ -1156,6 +1163,7 @@
 				4FEFCC23205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
 				4FA6AD69202F7C8800158956 /* SplashView.cpp in Sources */,
+				4F01D161208C2AE9002231DA /* SkillsView.cpp in Sources */,
 				4F72384D20637E850064037C /* BattleParser.cpp in Sources */,
 				4F72384420637E450064037C /* Battle.cpp in Sources */,
 				4FA06780207DC36700934122 /* BattleActionParser.cpp in Sources */,

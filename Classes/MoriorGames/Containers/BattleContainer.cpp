@@ -1,11 +1,13 @@
 #include "BattleContainer.h"
 #include "../Factories/BattleEventPublisherFactory.h"
 #include "../View/Battle/BattleBackgroundView.h"
+#include "../View/Battle/SkillsView.h"
 
 BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     : layer{layer}
 {
     new BattleBackgroundView(layer);
+    new SkillsView(layer);
 
     gridContainer = new GridContainer(layer);
 

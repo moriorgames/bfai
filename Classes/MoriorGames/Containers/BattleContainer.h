@@ -8,6 +8,7 @@
 #include "../Vendor/Services/BattleProcessor.h"
 #include "../Vendor/Services/PathFinder.h"
 #include "../View/Battle/HeroView.h"
+#include "../View/Battle/SkillsView.h"
 USING_NS_CC;
 
 class BattleContainer
@@ -25,6 +26,7 @@ private:
     BattleProcessor *battleProcessor;
     BattleEventPublishable *eventPublisher;
     std::vector<HeroView *> heroViews;
+    SkillsView *skillsView;
 
     void addHeroViews();
     BattleProcessor *addBattleProcessor();

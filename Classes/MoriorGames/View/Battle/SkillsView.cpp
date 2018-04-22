@@ -1,4 +1,5 @@
 #include "SkillsView.h"
+#include "../../Vendor/Repository/SkillRepository.h"
 
 SkillsView::SkillsView(Layer *layer)
     : ViewHelper(layer)
@@ -6,19 +7,33 @@ SkillsView::SkillsView(Layer *layer)
     addView();
 }
 
+void SkillsView::addSkillButtons(Hero *hero)
+{
+    float x = 70;
+    float y = -70;
+    for (auto skill:hero->getSkills()) {
+
+        auto skillModel = skillRepo->findById(skill->getId());
+        auto button = ui::Button::create("ui/" + skillModel->getSlug() + ".png", "", "");
+        button->setPosition(Point(x, y));
+        button->addTouchEventListener(
+            [&, skillModel](Ref *sender, ui::Widget::TouchEventType type)
+            {
+                if (type == ui::Widget::TouchEventType::ENDED) {
+                    CCLOG("Skill: %s", skillModel->getName().c_str());
+                }
+            });
+        container->addChild(button);
+        x += 110;
+    }
+}
+
 void SkillsView::addView()
 {
     container = new Node;
     container->setScale(scale);
     container->setPosition(position->getTopLeftPosition());
-
-    auto button1 = ui::Button::create("ui/next-turn.png", "", "");
-    button1->setPosition(Point(50, -50));
-    auto button2 = ui::Button::create("ui/movement.png", "", "");
-    button2->setPosition(Point(150, -50));
-
-    container->addChild(button1);
-    container->addChild(button2);
+    container->removeAllChildren();
 
     layer->addChild(container, Z_ORDER_MENU_ITEMS);
 }

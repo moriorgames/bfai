@@ -51,7 +51,9 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
 
 bool BattleEventListener::isTouchWithinBoundariesOfBattleField(Vec2 screenTouch)
 {
-    return true;
+    auto heightTouch = screenTouch.y / globalResolution->getScale();
+
+    return heightTouch > 200 && heightTouch < 1000;
 }
 
 Coordinate *BattleEventListener::closestCoordinate(Vec2 screenTouch)

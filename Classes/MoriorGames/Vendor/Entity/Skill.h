@@ -8,6 +8,7 @@ class Skill
 public:
     static short TYPE_NEXT_TURN;
     static short TYPE_MOVE;
+    static short TYPE_SHOT;
 
 public:
     int getId() const;

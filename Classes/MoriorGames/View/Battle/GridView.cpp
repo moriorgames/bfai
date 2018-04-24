@@ -5,7 +5,7 @@ const Color4F GridView::FILL_COLOR{0, 0, 0, 0};
 
 const Color4F GridView::MOVE_FILL_COLOR{.2f, 1, .2f, .3f};
 
-const Color4F GridView::BORDER_COLOR{0, 0, 0, .15f};
+const Color4F GridView::BORDER_COLOR{0, 0, 0, .05f};
 
 const std::string GridView::MOVE_NAME = "movement-node";
 

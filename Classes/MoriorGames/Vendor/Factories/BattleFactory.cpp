@@ -22,4 +22,5 @@ void BattleFactory::addBaseSkills(Hero *hero)
 {
     hero->addSkill(skillRepo->findByType(Skill::TYPE_NEXT_TURN));
     hero->addSkill(skillRepo->findByType(Skill::TYPE_MOVE));
+    hero->addSkill(skillRepo->findByType(Skill::TYPE_SHOT));
 }

@@ -4,6 +4,8 @@ short Skill::TYPE_NEXT_TURN = 1;
 
 short Skill::TYPE_MOVE = 2;
 
+short Skill::TYPE_SHOT = 3;
+
 int Skill::getId() const
 {
     return id;

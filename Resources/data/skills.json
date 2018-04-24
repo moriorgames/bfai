@@ -11,6 +11,12 @@
       "name": "Movement",
       "slug": "movement",
       "type": 2
+    },
+    {
+      "id": 3,
+      "name": "Shot",
+      "slug": "shot",
+      "type": 3
     }
   ]
 }

@@ -1,26 +1,37 @@
 #include "SkillsView.h"
+#include "../../Vendor/Entity/BattleAction.h"
 #include "../../Vendor/Repository/SkillRepository.h"
 
-SkillsView::SkillsView(Layer *layer)
-    : ViewHelper(layer)
+SkillsView::SkillsView(Layer *layer, BattleEventPublishable *eventPublisher)
+    : ViewHelper(layer), eventPublisher{eventPublisher}
 {
     addView();
 }
 
-void SkillsView::addSkillButtons(Hero *hero)
+void SkillsView::addSkillButtons(BattleHero *battleHero)
 {
     float x = 70;
     float y = -70;
-    for (auto skill:hero->getSkills()) {
+    for (auto skill:battleHero->getSkills()) {
 
         auto skillModel = skillRepo->findById(skill->getId());
         auto button = ui::Button::create("ui/" + skillModel->getSlug() + ".png", "", "");
         button->setPosition(Point(x, y));
         button->addTouchEventListener(
-            [&, skillModel](Ref *sender, ui::Widget::TouchEventType type)
+            [&, battleHero, skillModel](Ref *sender, ui::Widget::TouchEventType type)
             {
                 if (type == ui::Widget::TouchEventType::ENDED) {
-                    CCLOG("Skill: %s", skillModel->getName().c_str());
+                    if (skillModel->getType() == Skill::TYPE_NEXT_TURN) {
+                        auto battleAction = new BattleAction;
+                        battleAction->setBattleHeroId(
+                            battleHero->getBattleHeroId()
+                        );
+                        battleAction->setSkillId(
+                            skillModel->getId()
+                        );
+                        battleAction->setCoordinate(battleHero->getCoordinate());
+                        eventPublisher->publish(battleAction);
+                    }
                 }
             });
         container->addChild(button);

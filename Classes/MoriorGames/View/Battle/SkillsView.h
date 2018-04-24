@@ -3,16 +3,18 @@
 
 #include "ui/CocosGUI.h"
 #include "../ViewHelper.h"
-#include "../../Vendor/Entity/Hero.h"
+#include "../../EventListeners/BattleEventPublishable.h"
+#include "../../Vendor/Entity/BattleHero.h"
 
 class SkillsView: public ViewHelper
 {
 public:
-    SkillsView(Layer *);
-    void addSkillButtons(Hero *);
+    SkillsView(Layer *, BattleEventPublishable *);
+    void addSkillButtons(BattleHero *);
 
 private:
     Node *container;
+    BattleEventPublishable *eventPublisher;
     void addView() override;
 };
 

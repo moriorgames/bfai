@@ -34,6 +34,16 @@ int BattleHero::getCurrentHealth() const
     return health - injury;
 }
 
+void BattleHero::move()
+{
+    moved = true;
+}
+
+bool BattleHero::hasMoved()
+{
+    return moved;
+}
+
 void BattleHero::addInjury(int injury)
 {
     this->injury += injury;
@@ -56,6 +66,11 @@ void BattleHero::setCoordinate(Coordinate *coordinate)
 Coordinate *BattleHero::getCoordinate() const
 {
     return coordinate;
+}
+
+void BattleHero::startTurn()
+{
+    moved = false;
 }
 
 void BattleHero::copy(Hero *hero)

@@ -5,22 +5,22 @@ const Color4F GridView::FILL_COLOR{0, 0, 0, 0};
 
 const Color4F GridView::MOVE_FILL_COLOR{.2f, 1, .2f, .3f};
 
-const Color4F GridView::BORDER_COLOR{0, 0, 0, .05f};
+const Color4F GridView::ATTACK_FILL_COLOR{1, .2f, .2f, .3f};
 
-const std::string GridView::MOVE_NAME = "movement-node";
+const Color4F GridView::BORDER_COLOR{0, 0, 0, .05f};
 
 GridView::GridView(Layer *layer, PathFinder *pathFinder, Coordinate2Screen *coordinate2Screen, float size)
     : layer{layer}, pathFinder{pathFinder}, coordinate2Screen{coordinate2Screen}, size{size}
 {
     layer->addChild(gridTiles, Z_ORDER_GRID);
-    layer->addChild(movementTiles, Z_ORDER_GRID);
+    layer->addChild(actionTiles, Z_ORDER_GRID);
 }
 
 void GridView::drawTile(Coordinate *coordinate, Color4F color, std::string nodeName)
 {
     auto node = gridTiles;
-    if (nodeName == MOVE_NAME) {
-        node = movementTiles;
+    if (nodeName == ACTION_GRID) {
+        node = actionTiles;
     }
     auto drawNode = DrawNode::create();
     auto screenVec2 = coordinate2Screen->execute(coordinate);
@@ -37,22 +37,22 @@ void GridView::drawTile(Coordinate *coordinate, Color4F color, std::string nodeN
 
 void GridView::update(BattleAction *)
 {
-    removeTilesByName(MOVE_NAME);
+    removeTilesByName(ACTION_GRID);
     buildPathScopeView();
 }
 
 void GridView::buildPathScopeView()
 {
     for (auto path:pathFinder->getPathScope()) {
-        drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, GridView::MOVE_NAME);
+        drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, GridView::ACTION_GRID);
     }
 }
 
 void GridView::removeTilesByName(std::string nodeName)
 {
     auto node = gridTiles;
-    if (nodeName == MOVE_NAME) {
-        node = movementTiles;
+    if (nodeName == ACTION_GRID) {
+        node = actionTiles;
     }
     node->removeAllChildren();
 }

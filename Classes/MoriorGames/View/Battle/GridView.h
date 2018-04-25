@@ -13,8 +13,9 @@ class GridView: public BattleObservable
 public:
     static const Color4F FILL_COLOR;
     static const Color4F MOVE_FILL_COLOR;
+    static const Color4F ATTACK_FILL_COLOR;
     static const Color4F BORDER_COLOR;
-    static const std::string MOVE_NAME;
+    const std::string ACTION_GRID = "action-grid-node";
 
 public:
     GridView(Layer *, PathFinder *, Coordinate2Screen *, float size);
@@ -26,8 +27,7 @@ private:
     PathFinder *pathFinder;
     Coordinate2Screen *coordinate2Screen;
     float size = 0;
-    Node *gridTiles = new Node;
-    Node *movementTiles = new Node;
+    Node *gridTiles = new Node, *actionTiles = new Node;
 
     void buildPathScopeView();
     void removeTilesByName(std::string nodeName);

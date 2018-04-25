@@ -4,6 +4,246 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>jaimie/attack/0/10.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-9}</string>
+                <key>spriteSize</key>
+                <string>{154,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{701,157},{154,120}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/11.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-9}</string>
+                <key>spriteSize</key>
+                <string>{154,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{707,1},{154,120}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/12.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-9}</string>
+                <key>spriteSize</key>
+                <string>{154,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{821,313},{154,120}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/13.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-9}</string>
+                <key>spriteSize</key>
+                <string>{154,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{823,157},{154,120}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/14.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-9}</string>
+                <key>spriteSize</key>
+                <string>{154,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{829,1},{154,120}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/15.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-9}</string>
+                <key>spriteSize</key>
+                <string>{154,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{943,313},{154,120}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/16.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-9}</string>
+                <key>spriteSize</key>
+                <string>{154,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{945,157},{154,120}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/17.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-9}</string>
+                <key>spriteSize</key>
+                <string>{154,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{951,1},{154,120}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/18.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-1}</string>
+                <key>spriteSize</key>
+                <string>{154,136}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{683,313},{154,136}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/19.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,1}</string>
+                <key>spriteSize</key>
+                <string>{154,140}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{157,331},{154,140}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>jaimie/attack/0/20.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,3}</string>
+                <key>spriteSize</key>
+                <string>{154,144}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{537,317},{154,144}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/21.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,3}</string>
+                <key>spriteSize</key>
+                <string>{154,144}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{561,1},{154,144}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/22.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,0}</string>
+                <key>spriteSize</key>
+                <string>{154,138}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{561,157},{154,138}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/23.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-6}</string>
+                <key>spriteSize</key>
+                <string>{154,126}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{1,337},{154,126}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>jaimie/attack/0/24.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-9}</string>
+                <key>spriteSize</key>
+                <string>{154,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{1065,313},{154,120}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>jaimie/attack/0/25.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{23,-9}</string>
+                <key>spriteSize</key>
+                <string>{154,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{200,200}</string>
+                <key>textureRect</key>
+                <string>{{1067,157},{154,120}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
             <key>jaimie/default/0/10.png</key>
             <dict>
                 <key>aliases</key>
@@ -15,9 +255,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,1793},{154,120}}</string>
+                <string>{{701,157},{154,120}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>jaimie/move/0/10.png</key>
             <dict>
@@ -30,9 +270,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,1},{110,148}}</string>
+                <string>{{313,323},{110,148}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/11.png</key>
             <dict>
@@ -45,9 +285,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,113},{110,146}}</string>
+                <string>{{1187,313},{110,146}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/12.png</key>
             <dict>
@@ -60,9 +300,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,225},{110,144}}</string>
+                <string>{{1189,153},{110,144}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/13.png</key>
             <dict>
@@ -75,9 +315,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,337},{110,152}}</string>
+                <string>{{425,319},{110,152}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/14.png</key>
             <dict>
@@ -90,9 +330,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,449},{110,160}}</string>
+                <string>{{225,1},{110,160}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/15.png</key>
             <dict>
@@ -105,9 +345,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,561},{110,164}}</string>
+                <string>{{113,1},{110,164}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/16.png</key>
             <dict>
@@ -120,9 +360,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,673},{110,166}}</string>
+                <string>{{1,1},{110,166}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/17.png</key>
             <dict>
@@ -135,9 +375,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,785},{110,166}}</string>
+                <string>{{1,169},{110,166}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/18.png</key>
             <dict>
@@ -150,9 +390,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,897},{110,162}}</string>
+                <string>{{113,167},{110,162}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/19.png</key>
             <dict>
@@ -165,9 +405,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,1009},{110,158}}</string>
+                <string>{{225,163},{110,158}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/20.png</key>
             <dict>
@@ -180,9 +420,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,1121},{110,158}}</string>
+                <string>{{337,1},{110,158}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/21.png</key>
             <dict>
@@ -195,9 +435,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,1233},{110,156}}</string>
+                <string>{{337,161},{110,156}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/22.png</key>
             <dict>
@@ -210,9 +450,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,1345},{110,156}}</string>
+                <string>{{449,1},{110,156}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/23.png</key>
             <dict>
@@ -225,9 +465,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,1457},{110,156}}</string>
+                <string>{{449,159},{110,156}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/24.png</key>
             <dict>
@@ -240,9 +480,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,1569},{110,152}}</string>
+                <string>{{1073,1},{110,152}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
             <key>jaimie/move/0/25.png</key>
             <dict>
@@ -255,9 +495,9 @@
                 <key>spriteSourceSize</key>
                 <string>{200,200}</string>
                 <key>textureRect</key>
-                <string>{{1,1681},{110,150}}</string>
+                <string>{{1185,1},{110,150}}</string>
                 <key>textureRotated</key>
-                <true/>
+                <false/>
             </dict>
         </dict>
         <key>metadata</key>
@@ -271,9 +511,9 @@
             <key>realTextureFileName</key>
             <string>jaimie.png</string>
             <key>size</key>
-            <string>{168,1914}</string>
+            <string>{1300,472}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:ee5a9f1b6ae941976f708722b6a07f83:de903be8def62463d4e145686642ea96:db98f45d858d70918e7243d9db1da619$</string>
+            <string>$TexturePacker:SmartUpdate:923dfece3ea582346af7a8af7bc12642:1ad5fbcac4c8b75b60aeb678ecc5a5a5:db98f45d858d70918e7243d9db1da619$</string>
             <key>textureFileName</key>
             <string>jaimie.png</string>
         </dict>

@@ -35,6 +35,25 @@ void GridView::drawTile(Coordinate *coordinate, Color4F color, std::string nodeN
     node->addChild(drawNode);
 }
 
+void GridView::buildPathForMove(BattleHero *battleHero)
+{
+    for (auto path:pathFinder->buildPathScope(battleHero)) {
+        drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, GridView::ACTION_GRID);
+    }
+}
+
+void GridView::buildPathForAction(BattleHero *battleHero)
+{
+    for (auto path:pathFinder->buildPathScope(battleHero)) {
+        drawTile(path.coordinate, GridView::ATTACK_FILL_COLOR, GridView::ACTION_GRID);
+    }
+}
+
+void GridView::removeActionGrid()
+{
+    removeTilesByName(ACTION_GRID);
+}
+
 void GridView::update(BattleAction *)
 {
     removeTilesByName(ACTION_GRID);

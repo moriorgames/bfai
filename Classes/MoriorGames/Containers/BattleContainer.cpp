@@ -14,7 +14,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     battleProcessor = addBattleProcessor();
     eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);
 
-    skillsView = new SkillsView(layer, eventPublisher);
+    skillsView = new SkillsView(layer, eventPublisher, gridContainer->getGridView());
     skillsView->addSkillButtons(battle->getActiveBattleHero());
 }
 

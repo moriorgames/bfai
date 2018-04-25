@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "../../Screen/Coordinate2Screen.h"
 #include "../../Vendor/Observer/BattleObservable.h"
+#include "../../Vendor/Entity/BattleHero.h"
 #include "../../Vendor/Services/PathFinder.h"
 #include "../../Vendor/ValueObjects/Coordinate.h"
 USING_NS_CC;
@@ -20,6 +21,9 @@ public:
 public:
     GridView(Layer *, PathFinder *, Coordinate2Screen *, float size);
     void drawTile(Coordinate *coordinate, Color4F color, std::string nodeName = "");
+    void buildPathForMove(BattleHero *);
+    void buildPathForAction(BattleHero *);
+    void removeActionGrid();
     void update(BattleAction *) override;
 
 private:

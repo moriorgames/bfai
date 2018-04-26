@@ -10,13 +10,7 @@ void BattleInitCustomActions::runActions(Layer *layer)
     layer->setScale(layer->getScale() * 0.80f);
 
     auto scaleTo = ScaleTo::create(1.5f, 1.0f);
-
-    auto callback = CallFunc::create(
-        [this]()
-        {
-//            showBattleSet();
-//            showFuryBar();
-        });
+    auto callback = CallFunc::create([this]() {});
 
     layer->runAction(
         Sequence::create(

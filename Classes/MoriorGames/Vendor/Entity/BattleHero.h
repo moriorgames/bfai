@@ -28,6 +28,7 @@ public:
 
     void copy(Hero *);
     void print();
+    bool isActive = false;
 
 private:
     int battleHeroId = 0;

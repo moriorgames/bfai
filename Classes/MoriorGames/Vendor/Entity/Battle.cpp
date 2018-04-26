@@ -34,17 +34,21 @@ void Battle::setActiveSkill(int activeSkill)
 
 void Battle::nextHero()
 {
-    auto activeHero = this->activeHero;
-    auto it = std::find_if(heroes.begin(), heroes.end(), [activeHero](BattleHero *battleHero)
-    { return battleHero->getBattleHeroId() > activeHero; });
+    std::for_each(heroes.begin(), heroes.end(), [&](BattleHero *hero)
+    { hero->isActive = false; });
 
-    if (it != heroes.end()) {
-        this->activeHero = (*it)->getBattleHeroId();
-    } else {
-        this->activeHero = 0;
-        addTurn();
-        nextHero();
+    for (auto hero:heroes) {
+        if (hero->getBattleHeroId() > activeHero) {
+            activeHero = hero->getBattleHeroId();
+            hero->isActive = true;
+
+            return;
+        }
     }
+
+    activeHero = 0;
+    addTurn();
+    nextHero();
 }
 
 void Battle::addTurn()

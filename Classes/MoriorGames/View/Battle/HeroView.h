@@ -14,11 +14,14 @@ public:
 
 public:
     HeroView(Layer *, Coordinate2Screen *, BattleHero *);
+    void stop();
     void moveTo(Coordinate *);
+    void action();
     void update(BattleAction *) override;
 
 private:
     Node *container;
+    Sprite *heroSprite;
     Coordinate2Screen *coordinate2Screen;
     BattleHero *battleHero;
     SpriteAnimator *spriteAnimator;
@@ -26,7 +29,6 @@ private:
     void addView() override;
     void addHero();
     void addHealthBar();
-    Action *idleAction();
     Action *moveAction();
     Action *attackAction();
 };

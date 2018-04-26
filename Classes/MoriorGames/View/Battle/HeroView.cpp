@@ -6,14 +6,25 @@ HeroView::HeroView(Layer *layer, Coordinate2Screen *coordinate2Screen, BattleHer
     : ViewHelper(layer), coordinate2Screen{coordinate2Screen}, battleHero{battleHero}
 {
     spriteAnimator = new SpriteAnimator;
+    heroSprite = new Sprite;
     addView();
+}
+
+void HeroView::stop()
+{
+    heroSprite->stopAllActions();
 }
 
 void HeroView::moveTo(Coordinate *coordinate)
 {
-    auto action = MoveTo::create(1, coordinate2Screen->execute(coordinate));
+    auto moveTo = MoveTo::create(1, coordinate2Screen->execute(coordinate));
+    auto callback = CallFunc::create([this]() { stop(); });
 
-    container->runAction(action);
+    container->runAction(Sequence::create(moveTo, callback, nullptr));
+}
+
+void HeroView::action()
+{
 }
 
 void HeroView::addView()
@@ -29,19 +40,12 @@ void HeroView::addView()
 
 void HeroView::addHero()
 {
-    auto sprite = new Sprite;
-    sprite->initWithSpriteFrameName(spriteAnimator->getFrameName(battleHero->getSlug()));
-    sprite->runAction(moveAction());
-    sprite->setAnchorPoint(ANCHOR);
+    heroSprite->initWithSpriteFrameName(spriteAnimator->getFrameName(battleHero->getSlug()));
+    heroSprite->setAnchorPoint(ANCHOR);
 
     auto position = coordinate2Screen->execute(battleHero->getCoordinate());
     container->setPosition(position);
-    container->addChild(sprite);
-}
-
-Action *HeroView::moveAction()
-{
-    return spriteAnimator->generateAction(battleHero->getSlug(), battleHero->getMoveFrames(), "move", 0, FPS);
+    container->addChild(heroSprite);
 }
 
 void HeroView::addHealthBar()
@@ -57,7 +61,20 @@ void HeroView::addHealthBar()
 
 void HeroView::update(BattleAction *battleAction)
 {
+    if (battleHero->isActive) {
+        heroSprite->runAction(moveAction());
+    }
     if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {
         moveTo(battleHero->getCoordinate());
     }
+}
+
+Action *HeroView::moveAction()
+{
+    return spriteAnimator->generateAction(battleHero->getSlug(), battleHero->getMoveFrames(), "move", 0, FPS);
+}
+
+Action *HeroView::attackAction()
+{
+    return spriteAnimator->generateAction(battleHero->getSlug(), battleHero->getAttackFrames(), "attack", 0, FPS);
 }

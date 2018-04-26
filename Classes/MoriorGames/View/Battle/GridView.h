@@ -4,7 +4,7 @@
 #include "cocos2d.h"
 #include "../../Screen/Coordinate2Screen.h"
 #include "../../Vendor/Observer/BattleObservable.h"
-#include "../../Vendor/Entity/BattleHero.h"
+#include "../../Vendor/Entity/Battle.h"
 #include "../../Vendor/Services/PathFinder.h"
 #include "../../Vendor/ValueObjects/Coordinate.h"
 USING_NS_CC;
@@ -18,7 +18,7 @@ public:
     static const Color4F BORDER_COLOR;
 
 public:
-    GridView(Layer *, PathFinder *, Coordinate2Screen *, float size);
+    GridView(Layer *, Battle *, PathFinder *, Coordinate2Screen *, float size);
     void drawTile(Coordinate *coordinate, Color4F color, Node *);
     void buildGrid(const std::vector<Coordinate *> &coordinates);
     void buildPathForMove(BattleHero *);
@@ -28,6 +28,7 @@ public:
 
 private:
     Layer *layer;
+    Battle *battle;
     PathFinder *pathFinder;
     Coordinate2Screen *coordinate2Screen;
     float size = 0;

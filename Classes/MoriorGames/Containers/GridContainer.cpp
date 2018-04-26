@@ -1,7 +1,7 @@
 #include "GridContainer.h"
 #include "../Screen/ResolutionChecker.h"
 
-GridContainer::GridContainer(Layer *layer)
+GridContainer::GridContainer(Layer *layer, Battle *battle)
     : layer{layer}
 {
     if (ResolutionChecker::isHDR()) {
@@ -20,7 +20,7 @@ GridContainer::GridContainer(Layer *layer)
     closestCoordinate = new ClosestCoordinate(coordinate2Screen);
     float size = Grid::TILE_SIZE / 2 * grid->getFactor();
     pathFinder = new PathFinder(grid);
-    gridView = new GridView(layer, pathFinder, coordinate2Screen, size);
+    gridView = new GridView(layer, battle, pathFinder, coordinate2Screen, size);
     gridView->buildGrid(grid->getCoordinates());
 }
 

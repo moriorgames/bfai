@@ -9,8 +9,12 @@ const Color4F GridView::ATTACK_FILL_COLOR{1, .2f, .2f, .3f};
 
 const Color4F GridView::BORDER_COLOR{0, 0, 0, .05f};
 
-GridView::GridView(Layer *layer, PathFinder *pathFinder, Coordinate2Screen *coordinate2Screen, float size)
-    : layer{layer}, pathFinder{pathFinder}, coordinate2Screen{coordinate2Screen}, size{size}
+GridView::GridView(Layer *layer,
+                   Battle *battle,
+                   PathFinder *pathFinder,
+                   Coordinate2Screen *coordinate2Screen,
+                   float size)
+    : layer{layer}, battle{battle}, pathFinder{pathFinder}, coordinate2Screen{coordinate2Screen}, size{size}
 {
     layer->addChild(gridTiles, Z_ORDER_GRID);
     layer->addChild(actionTiles, Z_ORDER_GRID);
@@ -65,7 +69,7 @@ void GridView::update(BattleAction *)
 
 void GridView::buildPathScopeView()
 {
-    for (auto path:pathFinder->getPathScope()) {
+    for (auto path:pathFinder->buildPathScope(battle->getActiveBattleHero())) {
         drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, actionTiles);
     }
 }

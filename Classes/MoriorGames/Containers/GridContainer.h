@@ -6,6 +6,7 @@
 #include "../Grid/GridHDR.h"
 #include "../Screen/ClosestCoordinate.h"
 #include "../Vendor/Containers/Path.h"
+#include "../Vendor/Entity/Battle.h"
 #include "../Vendor/Services/PathFinder.h"
 #include "../View/Battle/GridView.h"
 USING_NS_CC;
@@ -13,7 +14,7 @@ USING_NS_CC;
 class GridContainer
 {
 public:
-    explicit GridContainer(Layer *layer);
+    explicit GridContainer(Layer *, Battle *);
     Grid *getGrid() const;
     Coordinate2Screen *getCoordinate2Screen() const;
     ClosestCoordinate *getClosestCoordinate() const;

@@ -2,19 +2,36 @@
 #include "../../Vendor/Entity/BattleAction.h"
 #include "../../Vendor/Repository/SkillRepository.h"
 
-SkillsView::SkillsView(Layer *layer, BattleEventPublishable *eventPublisher, GridView *gridView)
-    : ViewHelper(layer), eventPublisher{eventPublisher}, gridView{gridView}
+SkillsView::SkillsView(Layer *layer, Battle *battle, BattleEventPublishable *eventPublisher, GridView *gridView)
+    : ViewHelper(layer), battle{battle}, eventPublisher{eventPublisher}, gridView{gridView}
 {
     addView();
 }
 
-/**
- * @TODO here there is a BUG with the battle hero, battle hero must change accordingly with the next turn
- *
- * @param battleHero
- */
-void SkillsView::addSkillButtons(BattleHero *battleHero)
+void SkillsView::update(BattleAction *)
 {
+    removeSkillButtons();
+    addSkillButtons();
+}
+
+void SkillsView::addView()
+{
+    container = new Node;
+    container->setScale(scale);
+    container->setPosition(position->getTopLeftPosition());
+    container->removeAllChildren();
+
+    layer->addChild(container, Z_ORDER_MENU_ITEMS);
+}
+
+void SkillsView::removeSkillButtons()
+{
+    container->removeAllChildren();
+}
+
+void SkillsView::addSkillButtons()
+{
+    auto battleHero = battle->getActiveBattleHero();
     float x = 70;
     float y = -70;
     auto gridViewLambda = gridView;
@@ -55,14 +72,4 @@ void SkillsView::addSkillButtons(BattleHero *battleHero)
         container->addChild(button);
         x += 110;
     }
-}
-
-void SkillsView::addView()
-{
-    container = new Node;
-    container->setScale(scale);
-    container->setPosition(position->getTopLeftPosition());
-    container->removeAllChildren();
-
-    layer->addChild(container, Z_ORDER_MENU_ITEMS);
 }

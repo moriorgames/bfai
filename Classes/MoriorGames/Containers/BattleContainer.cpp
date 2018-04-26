@@ -8,14 +8,13 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     new BattleBackgroundView(layer);
 
     gridContainer = new GridContainer(layer);
-
     battle = (new BattleFactory)->execute(json, heroRepo, skillRepo);
-    addHeroViews();
-    battleProcessor = addBattleProcessor();
+    battleProcessor = new BattleProcessor(battle, gridContainer->getPathFinder(), gridContainer->getGrid());
     eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);
+    skillsView = new SkillsView(layer, battle, eventPublisher, gridContainer->getGridView());
 
-    skillsView = new SkillsView(layer, eventPublisher, gridContainer->getGridView());
-    skillsView->addSkillButtons(battle->getActiveBattleHero());
+    addHeroViews();
+    registerObservers();
 }
 
 Battle *BattleContainer::getBattle() const
@@ -40,15 +39,12 @@ void BattleContainer::addHeroViews()
     }
 }
 
-BattleProcessor *BattleContainer::addBattleProcessor()
+void BattleContainer::registerObservers()
 {
-    auto battleProcessor = new BattleProcessor(battle, gridContainer->getPathFinder(), gridContainer->getGrid());
-
     for (auto heroView:heroViews) {
         battleProcessor->registerObserver(heroView);
     }
     battleProcessor->registerObserver(gridContainer->getGridView());
+    battleProcessor->registerObserver(skillsView);
     battleProcessor->processBattleAction(new BattleAction);
-
-    return battleProcessor;
 }

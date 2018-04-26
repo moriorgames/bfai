@@ -29,7 +29,7 @@ private:
     SkillsView *skillsView;
 
     void addHeroViews();
-    BattleProcessor *addBattleProcessor();
+    void registerObservers();
 };
 
 #endif

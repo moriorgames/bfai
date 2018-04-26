@@ -4,20 +4,25 @@
 #include "ui/CocosGUI.h"
 #include "../ViewHelper.h"
 #include "../../EventListeners/BattleEventPublishable.h"
-#include "../../Vendor/Entity/BattleHero.h"
+#include "../../Vendor/Entity/Battle.h"
+#include "../../Vendor/Observer/BattleObservable.h"
 #include "../../View/Battle/GridView.h"
 
-class SkillsView: public ViewHelper
+class SkillsView: public ViewHelper, public BattleObservable
 {
 public:
-    SkillsView(Layer *, BattleEventPublishable *, GridView *);
-    void addSkillButtons(BattleHero *);
+    SkillsView(Layer *, Battle *, BattleEventPublishable *, GridView *);
+    void update(BattleAction *) override;
 
 private:
     Node *container;
+    Battle *battle;
     BattleEventPublishable *eventPublisher;
     GridView *gridView;
+
     void addView() override;
+    void removeSkillButtons();
+    void addSkillButtons();
 };
 
 #endif

@@ -10,7 +10,7 @@
 class BattleProcessor: public BattlePublishable
 {
 public:
-    explicit BattleProcessor(Battle *, PathFinder *, Grid *);
+    explicit BattleProcessor(Battle *, Grid *);
     void processBattleAction(BattleAction *);
     void registerObserver(BattleObservable *) override;
     void removeObserver(BattleObservable *) override;

@@ -21,7 +21,7 @@ GridContainer::GridContainer(Layer *layer)
     float size = Grid::TILE_SIZE / 2 * grid->getFactor();
     pathFinder = new PathFinder(grid);
     gridView = new GridView(layer, pathFinder, coordinate2Screen, size);
-    displayGrid();
+    gridView->buildGrid(grid->getCoordinates());
 }
 
 Grid *GridContainer::getGrid() const
@@ -47,11 +47,4 @@ PathFinder *GridContainer::getPathFinder() const
 GridView *GridContainer::getGridView() const
 {
     return gridView;
-}
-
-void GridContainer::displayGrid()
-{
-    for (auto coordinate:grid->getCoordinates()) {
-        gridView->drawTile(coordinate, GridView::FILL_COLOR);
-    }
 }

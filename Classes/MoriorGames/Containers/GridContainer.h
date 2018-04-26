@@ -27,8 +27,6 @@ private:
     Coordinate2Screen *coordinate2Screen;
     ClosestCoordinate *closestCoordinate;
     PathFinder *pathFinder;
-
-    void displayGrid();
 };
 
 #endif

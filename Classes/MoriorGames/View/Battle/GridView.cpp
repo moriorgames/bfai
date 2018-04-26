@@ -16,12 +16,8 @@ GridView::GridView(Layer *layer, PathFinder *pathFinder, Coordinate2Screen *coor
     layer->addChild(actionTiles, Z_ORDER_GRID);
 }
 
-void GridView::drawTile(Coordinate *coordinate, Color4F color, std::string nodeName)
+void GridView::drawTile(Coordinate *coordinate, Color4F color, Node *node)
 {
-    auto node = gridTiles;
-    if (nodeName == ACTION_GRID) {
-        node = actionTiles;
-    }
     auto drawNode = DrawNode::create();
     auto screenVec2 = coordinate2Screen->execute(coordinate);
 
@@ -35,43 +31,41 @@ void GridView::drawTile(Coordinate *coordinate, Color4F color, std::string nodeN
     node->addChild(drawNode);
 }
 
+void GridView::buildGrid(const std::vector<Coordinate *> &coordinates)
+{
+    for (auto coordinate:coordinates) {
+        drawTile(coordinate, GridView::FILL_COLOR, gridTiles);
+    }
+}
+
 void GridView::buildPathForMove(BattleHero *battleHero)
 {
     for (auto path:pathFinder->buildPathScope(battleHero)) {
-        drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, GridView::ACTION_GRID);
+        drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, actionTiles);
     }
 }
 
 void GridView::buildPathForAction(BattleHero *battleHero)
 {
     for (auto path:pathFinder->buildPathScope(battleHero)) {
-        drawTile(path.coordinate, GridView::ATTACK_FILL_COLOR, GridView::ACTION_GRID);
+        drawTile(path.coordinate, GridView::ATTACK_FILL_COLOR, actionTiles);
     }
 }
 
 void GridView::removeActionGrid()
 {
-    removeTilesByName(ACTION_GRID);
+    actionTiles->removeAllChildren();
 }
 
 void GridView::update(BattleAction *)
 {
-    removeTilesByName(ACTION_GRID);
+    removeActionGrid();
     buildPathScopeView();
 }
 
 void GridView::buildPathScopeView()
 {
     for (auto path:pathFinder->getPathScope()) {
-        drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, GridView::ACTION_GRID);
+        drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, actionTiles);
     }
-}
-
-void GridView::removeTilesByName(std::string nodeName)
-{
-    auto node = gridTiles;
-    if (nodeName == ACTION_GRID) {
-        node = actionTiles;
-    }
-    node->removeAllChildren();
 }

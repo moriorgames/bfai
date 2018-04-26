@@ -1,9 +1,10 @@
 #include "BattleProcessor.h"
 #include "../Parsers/BattleActionParser.h"
 
-BattleProcessor::BattleProcessor(Battle *battle, PathFinder *pathFinder, Grid *grid)
-    : battle{battle}, pathFinder{pathFinder}, grid{grid}
+BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
+    : battle{battle}, grid{grid}
 {
+    pathFinder = new PathFinder(grid);
 }
 
 void BattleProcessor::processBattleAction(BattleAction *battleAction)

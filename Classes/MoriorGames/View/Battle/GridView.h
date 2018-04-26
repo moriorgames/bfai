@@ -16,11 +16,11 @@ public:
     static const Color4F MOVE_FILL_COLOR;
     static const Color4F ATTACK_FILL_COLOR;
     static const Color4F BORDER_COLOR;
-    const std::string ACTION_GRID = "action-grid-node";
 
 public:
     GridView(Layer *, PathFinder *, Coordinate2Screen *, float size);
-    void drawTile(Coordinate *coordinate, Color4F color, std::string nodeName = "");
+    void drawTile(Coordinate *coordinate, Color4F color, Node *);
+    void buildGrid(const std::vector<Coordinate *> &coordinates);
     void buildPathForMove(BattleHero *);
     void buildPathForAction(BattleHero *);
     void removeActionGrid();
@@ -34,7 +34,6 @@ private:
     Node *gridTiles = new Node, *actionTiles = new Node;
 
     void buildPathScopeView();
-    void removeTilesByName(std::string nodeName);
 };
 
 #endif

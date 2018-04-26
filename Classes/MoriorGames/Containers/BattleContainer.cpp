@@ -9,7 +9,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
 
     gridContainer = new GridContainer(layer);
     battle = (new BattleFactory)->execute(json, heroRepo, skillRepo);
-    battleProcessor = new BattleProcessor(battle, gridContainer->getPathFinder(), gridContainer->getGrid());
+    battleProcessor = new BattleProcessor(battle, gridContainer->getGrid());
     eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);
     skillsView = new SkillsView(layer, battle, eventPublisher, gridContainer->getGridView());
 

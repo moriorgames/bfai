@@ -20,7 +20,8 @@ GridContainer::GridContainer(Layer *layer, Battle *battle)
     closestCoordinate = new ClosestCoordinate(coordinate2Screen);
     float size = Grid::TILE_SIZE / 2 * grid->getFactor();
     pathFinder = new PathFinder(grid);
-    gridView = new GridView(layer, battle, pathFinder, coordinate2Screen, size);
+    auto tileDrawer = new TileDrawer(size, coordinate2Screen);
+    gridView = new GridView(layer, battle, pathFinder, tileDrawer);
     gridView->buildGrid(grid->getCoordinates());
 }
 

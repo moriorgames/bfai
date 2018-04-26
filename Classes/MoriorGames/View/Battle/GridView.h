@@ -2,6 +2,7 @@
 #define MORIOR_GAMES_VIEW_BATTLE_GRID_VIEW_H
 
 #include "cocos2d.h"
+#include "TileDrawer.h"
 #include "../../Screen/Coordinate2Screen.h"
 #include "../../Vendor/Observer/BattleObservable.h"
 #include "../../Vendor/Entity/Battle.h"
@@ -15,10 +16,9 @@ public:
     static const Color4F FILL_COLOR;
     static const Color4F MOVE_FILL_COLOR;
     static const Color4F ATTACK_FILL_COLOR;
-    static const Color4F BORDER_COLOR;
 
 public:
-    GridView(Layer *, Battle *, PathFinder *, Coordinate2Screen *, float size);
+    GridView(Layer *, Battle *, PathFinder *, TileDrawer *);
     void drawTile(Coordinate *coordinate, Color4F color, Node *);
     void buildGrid(const std::vector<Coordinate *> &coordinates);
     void buildPathForMove(BattleHero *);
@@ -30,8 +30,7 @@ private:
     Layer *layer;
     Battle *battle;
     PathFinder *pathFinder;
-    Coordinate2Screen *coordinate2Screen;
-    float size = 0;
+    TileDrawer *tileDrawer;
     Node *gridTiles = new Node, *actionTiles = new Node;
 
     void buildPathScopeView();

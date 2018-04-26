@@ -44,6 +44,7 @@ void SkillsView::addSkillButtons()
             [&, battleHero, skillModel, gridViewLambda](Ref *sender, ui::Widget::TouchEventType type)
             {
                 if (type == ui::Widget::TouchEventType::ENDED) {
+                    battle->setActiveSkill(skillModel->getId());
                     if (skillModel->getType() == Skill::TYPE_NEXT_TURN) {
                         auto battleAction = new BattleAction;
                         battleAction->setBattleHeroId(

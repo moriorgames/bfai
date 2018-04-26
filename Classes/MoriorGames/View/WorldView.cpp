@@ -42,5 +42,5 @@ void WorldView::addWorld()
 
 Action *WorldView::detailAction()
 {
-    return spriteAnimator->generateAction("details", 16, "default", 0, 36);
+    return spriteAnimator->generateAction("details", "default", 16, 36);
 }

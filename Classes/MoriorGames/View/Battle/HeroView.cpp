@@ -1,4 +1,5 @@
 #include "HeroView.h"
+#include "../../Vendor/Repository/SkillRepository.h"
 
 const Point HeroView::ANCHOR{0.5, 0.35};
 
@@ -10,6 +11,23 @@ HeroView::HeroView(Layer *layer, Coordinate2Screen *coordinate2Screen, BattleHer
     addView();
 }
 
+void HeroView::update(BattleAction *battleAction)
+{
+    stop();
+    if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {
+        auto skill = skillRepo->findById(battleAction->getSkillId());
+        if (skill->getType() == Skill::TYPE_MOVE) {
+            moveTo(battleHero->getCoordinate());
+        }
+        if (skill->getType() == Skill::TYPE_SHOT) {
+            action();
+        }
+    }
+    if (battleHero->isActive) {
+        heroSprite->runAction(moveAction());
+    }
+}
+
 void HeroView::stop()
 {
     heroSprite->stopAllActions();
@@ -17,14 +35,16 @@ void HeroView::stop()
 
 void HeroView::moveTo(Coordinate *coordinate)
 {
+    heroSprite->runAction(moveAction());
     auto moveTo = MoveTo::create(1, coordinate2Screen->execute(coordinate));
-    auto callback = CallFunc::create([this]() { stop(); });
-
+    auto callback = CallFunc::create([this]()
+                                     { stop(); });
     container->runAction(Sequence::create(moveTo, callback, nullptr));
 }
 
 void HeroView::action()
 {
+    heroSprite->runAction(attackAction());
 }
 
 void HeroView::addView()
@@ -59,22 +79,12 @@ void HeroView::addHealthBar()
     }
 }
 
-void HeroView::update(BattleAction *battleAction)
-{
-    if (battleHero->isActive) {
-        heroSprite->runAction(moveAction());
-    }
-    if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {
-        moveTo(battleHero->getCoordinate());
-    }
-}
-
 Action *HeroView::moveAction()
 {
-    return spriteAnimator->generateAction(battleHero->getSlug(), battleHero->getMoveFrames(), "move", 0, FPS);
+    return spriteAnimator->generateAction(battleHero->getSlug(), "move", battleHero->getMoveFrames(), FPS);
 }
 
 Action *HeroView::attackAction()
 {
-    return spriteAnimator->generateAction(battleHero->getSlug(), battleHero->getAttackFrames(), "attack", 0, FPS);
+    return spriteAnimator->generateSingleAction(battleHero->getSlug(), "attack", battleHero->getAttackFrames(), FPS);
 }

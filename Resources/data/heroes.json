@@ -9,7 +9,7 @@
       "health": 4,
       "movement": 3,
       "moveFrames": 16,
-      "attackFrames": 24
+      "attackFrames": 16
     },
     {
       "id": 2,

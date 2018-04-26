@@ -14,9 +14,6 @@ public:
 
 public:
     HeroView(Layer *, Coordinate2Screen *, BattleHero *);
-    void stop();
-    void moveTo(Coordinate *);
-    void action();
     void update(BattleAction *) override;
 
 private:
@@ -29,6 +26,11 @@ private:
     void addView() override;
     void addHero();
     void addHealthBar();
+
+    void stop();
+    void moveTo(Coordinate *);
+    void action();
+
     Action *moveAction();
     Action *attackAction();
 };

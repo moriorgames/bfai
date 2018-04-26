@@ -8,14 +8,8 @@ USING_NS_CC;
 class SpriteAnimator
 {
 public:
-    cocos2d::Action *generateAction(
-        std::string entity,
-        float frames,
-        std::string action = "default",
-        int direction = 0,
-        float duration = 0,
-        int module = 0
-    );
+    Action *generateAction(std::string entity, std::string action, int frames, float duration);
+    Action *generateSingleAction(std::string entity, std::string action, int frames, float duration);
 
     std::string getFrameName(
         std::string entity, std::string action = "default", int direction = 0, int frame = 10

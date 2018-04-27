@@ -56,9 +56,13 @@ void HeroAnimator::hurt(BattleAction *battleAction)
     sprite->runAction(damaged);
 
     auto damageLabel = fontCreator->damageLabel(to_string(battleAction->getExtra()));
-    auto jump = JumpBy::create(0.35, Vec2(0, 0), 20, 1);
+    auto jump = JumpBy::create(0.4, Vec2(0, 0), 20, 2);
     auto damageSeq = Sequence::create(jump, jump, RemoveSelf::create(true), nullptr);
     damageLabel->runAction(damageSeq);
+    damageLabel->setPosition(
+        sprite->getContentSize().width / 2,
+        sprite->getContentSize().height / 2
+    );
 
     sprite->addChild(damageLabel);
 }

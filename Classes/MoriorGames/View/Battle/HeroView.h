@@ -15,13 +15,14 @@ public:
 
 private:
     Node *container;
+    Node *hitPoints;
     Coordinate2Screen *coordinate2Screen;
     BattleHero *battleHero;
     HeroAnimator *heroAnimator;
 
     void addView() override;
     void addHero();
-    void addHealthBar();
+    void buildHealthBar();
 };
 
 #endif

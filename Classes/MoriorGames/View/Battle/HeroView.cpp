@@ -18,6 +18,7 @@ void HeroView::update(BattleAction *battleAction)
             container->runAction(heroAnimator->moveTo(battleHero->getCoordinate()));
         } else if (battleAction->getSkillId() == Skill::DAMAGE_ID) {
             heroAnimator->hurt(battleAction);
+            buildHealthBar();
         } else {
 
             auto skill = skillRepo->findById(battleAction->getSkillId());
@@ -35,11 +36,13 @@ void HeroView::update(BattleAction *battleAction)
 
 void HeroView::addView()
 {
+    hitPoints = new Node;
     container = new Node;
     container->setScale(scale);
+    container->addChild(hitPoints);
 
     addHero();
-    addHealthBar();
+    buildHealthBar();
 
     layer->addChild(container, Z_ORDER_HEROES);
 }
@@ -51,13 +54,14 @@ void HeroView::addHero()
     container->addChild(heroAnimator->createSprite());
 }
 
-void HeroView::addHealthBar()
+void HeroView::buildHealthBar()
 {
+    hitPoints->removeAllChildren();
     int position = 37;
     for (int i = 0; i < battleHero->getCurrentHealth(); ++i) {
         auto hitPoint = Sprite::create("img/hit-point.png");
         hitPoint->setPosition(position, 110);
-        container->addChild(hitPoint);
+        hitPoints->addChild(hitPoint);
         position -= 18;
     }
 }

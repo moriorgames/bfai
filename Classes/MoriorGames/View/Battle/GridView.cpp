@@ -26,16 +26,16 @@ void GridView::buildGrid(const std::vector<Coordinate *> &coordinates)
     }
 }
 
-void GridView::buildPathForMove(BattleHero *battleHero)
+void GridView::buildPathForMove(BattleHero *hero)
 {
-    for (auto path:pathFinder->buildPathScope(battleHero)) {
+    for (auto path:pathFinder->buildPathScope(hero->getCoordinate(), hero->getMovement())) {
         drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, actionTiles);
     }
 }
 
-void GridView::buildPathForAction(BattleHero *battleHero)
+void GridView::buildPathForAction(BattleHero *hero)
 {
-    for (auto path:pathFinder->buildPathScope(battleHero)) {
+    for (auto path:pathFinder->buildPathScope(hero->getCoordinate(), hero->getRanged())) {
         drawTile(path.coordinate, GridView::ATTACK_FILL_COLOR, actionTiles);
     }
 }
@@ -53,7 +53,8 @@ void GridView::update(BattleAction *)
 
 void GridView::buildPathScopeView()
 {
-    for (auto path:pathFinder->buildPathScope(battle->getActiveBattleHero())) {
+    auto hero = battle->getActiveBattleHero();
+    for (auto path:pathFinder->buildPathScope(hero->getCoordinate(), hero->getMovement())) {
         drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, actionTiles);
     }
 }

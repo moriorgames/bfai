@@ -5,14 +5,14 @@ PathFinder::PathFinder(Grid *grid)
 {
 }
 
-const std::vector<Path> &PathFinder::buildPathScope(BattleHero *battleHero)
+const std::vector<Path> &PathFinder::buildPathScope(Coordinate *origin, int range)
 {
     pathScope.clear();
     Path path;
-    path.coordinate = battleHero->getCoordinate();
+    path.coordinate = origin;
     pathScope.push_back(path);
 
-    for (int i = 0; i < battleHero->getMovement(); ++i) {
+    for (int i = 0; i < range; ++i) {
         for (auto pathStruct:pathScope) {
             if (pathStruct.level == i) {
                 for (auto axis:moveAxis(pathStruct.coordinate)) {

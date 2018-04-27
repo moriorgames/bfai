@@ -4,13 +4,13 @@
 #include <vector>
 #include "../Containers/Path.h"
 #include "../Grid/Grid.h"
-#include "../Entity/BattleHero.h"
+#include "../ValueObjects/Coordinate.h"
 
 class PathFinder
 {
 public:
     PathFinder(Grid *grid);
-    const std::vector<Path> &buildPathScope(BattleHero *);
+    const std::vector<Path> &buildPathScope(Coordinate *, int range);
     const std::vector<Path> &getPathScope() const;
 
 private:

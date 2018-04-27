@@ -14,6 +14,9 @@ Sprite *HeroAnimator::createSprite()
     sprite = new Sprite;
     sprite->initWithSpriteFrameName(spriteAnimator->getFrameName(battleHero->getSlug()));
     sprite->setAnchorPoint(ANCHOR);
+    if (battleHero->getSide() == BattleHero::SIDE_ENEMY) {
+        sprite->setFlippedX(true);
+    }
 
     return sprite;
 }

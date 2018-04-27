@@ -11,6 +11,12 @@
       "side": "side-player",
       "x": -7,
       "y": -2
+    },
+    {
+      "id": 5,
+      "side": "side-enemy",
+      "x": 6,
+      "y": 0
     }
   ]
 }

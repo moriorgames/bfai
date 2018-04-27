@@ -43,6 +43,17 @@
       "movement": 2,
       "moveFrames": 24,
       "attackFrames": 24
+    },
+    {
+      "id": 5,
+      "name": "Fractal",
+      "slug": "fractal",
+      "damage": 2,
+      "ranged": 1,
+      "health": 9,
+      "movement": 3,
+      "moveFrames": 24,
+      "attackFrames": 24
     }
   ]
 }

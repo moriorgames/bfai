@@ -18,7 +18,8 @@ Battle *BattleFactory::execute(const std::string &json, HeroRepository *heroRepo
 
 void BattleFactory::addBaseSkills(Hero *hero)
 {
-    hero->addSkill(skillRepo->findByType(Skill::TYPE_NEXT_TURN));
-    hero->addSkill(skillRepo->findByType(Skill::TYPE_MOVE));
-    hero->addSkill(skillRepo->findByType(Skill::TYPE_SHOT));
+    hero->addSkill(skillRepo->findById(Skill::NEXT_TURN_ID));
+    hero->addSkill(skillRepo->findById(Skill::MOVE_ID));
+
+    hero->addSkill(skillRepo->findByType(Skill::TYPE_SINGLE_ATTACK));
 }

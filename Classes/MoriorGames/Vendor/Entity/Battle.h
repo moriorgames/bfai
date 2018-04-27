@@ -8,8 +8,6 @@
 class Battle
 {
 public:
-    const int DEFAULT_SKILL_MOVE = 2;
-
     void addHero(BattleHero *);
     const std::vector<BattleHero *> &getBattleHeroes() const;
     BattleHero *getActiveBattleHero();
@@ -22,7 +20,7 @@ public:
 private:
     std::vector<BattleHero *> heroes;
     int activeHero = 0;
-    int activeSkill = DEFAULT_SKILL_MOVE;
+    int activeSkill = Skill::MOVE_ID;
     int turn = 0;
 };
 

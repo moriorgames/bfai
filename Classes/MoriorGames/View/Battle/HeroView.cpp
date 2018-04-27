@@ -10,15 +10,22 @@ HeroView::HeroView(Layer *layer, Coordinate2Screen *coordinate2Screen, BattleHer
 
 void HeroView::update(BattleAction *battleAction)
 {
-    battleHero->print();
-    heroAnimator->stop();
     if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {
-        auto skill = skillRepo->findById(battleAction->getSkillId());
-        if (skill->getType() == Skill::TYPE_MOVE) {
+        if (battleAction->getSkillId() == Skill::NEXT_TURN_ID) {
+            heroAnimator->stop();
+        } else if (battleAction->getSkillId() == Skill::MOVE_ID) {
+            heroAnimator->stop();
             container->runAction(heroAnimator->moveTo(battleHero->getCoordinate()));
-        }
-        if (skill->getType() == Skill::TYPE_SHOT) {
-            heroAnimator->action();
+        } else if (battleAction->getSkillId() == Skill::DAMAGE_ID) {
+            heroAnimator->hurt(battleAction);
+        } else {
+
+            auto skill = skillRepo->findById(battleAction->getSkillId());
+            if (skill->getType() == Skill::TYPE_SINGLE_ATTACK) {
+                heroAnimator->stop();
+                heroAnimator->action();
+            }
+
         }
     }
     if (battleHero->isActive) {

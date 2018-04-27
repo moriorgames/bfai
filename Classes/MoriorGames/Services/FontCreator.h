@@ -10,6 +10,8 @@ public:
     const cocos2d::Color4B STROKE_COLOR = Color4B::BLACK;
 
     Label *buttonLabel(std::string text, std::string font = "fonts/buttons-label.otf", float size = 90);
+
+    Label *damageLabel(std::string text, std::string font = "fonts/buttons-label.otf", float size = 50);
 };
 
 #endif

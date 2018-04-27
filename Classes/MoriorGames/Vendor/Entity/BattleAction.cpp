@@ -30,6 +30,16 @@ void BattleAction::setSkillId(int skillId)
     this->skillId = skillId;
 }
 
+int BattleAction::getExtra() const
+{
+    return extra;
+}
+
+void BattleAction::setExtra(int extra)
+{
+    BattleAction::extra = extra;
+}
+
 Coordinate *BattleAction::getCoordinate() const
 {
     return coordinate;
@@ -46,9 +56,11 @@ void BattleAction::print()
            " - id %i\n"
            " - battleHeroId %i\n"
            " - skillId %i\n"
+           " - extra %i\n"
            " \n",
            id,
            battleHeroId,
-           skillId
+           skillId,
+           extra
     );
 }

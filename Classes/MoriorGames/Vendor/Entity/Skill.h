@@ -6,9 +6,10 @@
 class Skill
 {
 public:
-    static short TYPE_NEXT_TURN;
-    static short TYPE_MOVE;
-    static short TYPE_SHOT;
+    static short DAMAGE_ID;
+    static short NEXT_TURN_ID;
+    static short MOVE_ID;
+    static short TYPE_SINGLE_ATTACK;
 
 public:
     int getId() const;

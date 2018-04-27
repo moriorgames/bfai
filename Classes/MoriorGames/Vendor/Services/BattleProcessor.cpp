@@ -36,6 +36,12 @@ void BattleProcessor::notifyObservers(BattleAction *battleAction)
     for (auto observer:observers) {
         observer->update(battleAction);
     }
+    for (auto extraAction:extraActions) {
+        for (auto observer:observers) {
+            observer->update(extraAction);
+        }
+    }
+    extraActions.clear();
 }
 
 bool BattleProcessor::isBattleActionAllowed(BattleHero *battleHero, BattleAction *battleAction)
@@ -46,13 +52,14 @@ bool BattleProcessor::isBattleActionAllowed(BattleHero *battleHero, BattleAction
 
 void BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *battleAction)
 {
-    auto skill = skillRepo->findById(battleAction->getSkillId());
-
-    if (skill->getType() == Skill::TYPE_MOVE) {
+    if (battleAction->getSkillId() == Skill::MOVE_ID) {
         movement(battleHero, battleAction);
+
+        return;
     }
 
-    if (skill->getType() == Skill::TYPE_SHOT) {
+    auto skill = skillRepo->findById(battleAction->getSkillId());
+    if (skill->getType() == Skill::TYPE_SINGLE_ATTACK) {
         singleDamage(battleHero, battleAction);
     }
 }
@@ -65,9 +72,16 @@ void BattleProcessor::movement(BattleHero *battleHero, BattleAction *battleActio
 void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAction)
 {
     for (auto defender:battle->getBattleHeroes()) {
-        battleAction->print();
         if (defender->getCoordinate()->isEqual(battleAction->getCoordinate())) {
-            defender->addInjury(attacker->getDamage());
+            auto damage = attacker->getDamage();
+            defender->addInjury(damage);
+
+            auto damageAction = new BattleAction;
+            damageAction->setSkillId(Skill::DAMAGE_ID);
+            damageAction->setBattleHeroId(defender->getBattleHeroId());
+            damageAction->setExtra(damage);
+            damageAction->print();
+            extraActions.push_back(damageAction);
             break;
         }
     }

@@ -23,6 +23,7 @@ private:
     PathFinder *pathFinder;
     Grid *grid;
     std::vector<BattleObservable *> observers;
+    std::vector<BattleAction *> extraActions;
 
     void battleActionProcess(BattleHero *, BattleAction *);
     void movement(BattleHero *, BattleAction *);

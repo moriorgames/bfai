@@ -13,13 +13,15 @@ public:
     void setBattleHeroId(int battleHeroId);
     int getSkillId() const;
     void setSkillId(int skillId);
+    int getExtra() const;
+    void setExtra(int extra);
     Coordinate *getCoordinate() const;
     void setCoordinate(Coordinate *);
 
     void print();
 
 private:
-    int id = 0, battleHeroId = 0, skillId = 0;
+    int id = 0, battleHeroId = 0, skillId = 0, extra = 0;
     Coordinate *coordinate = nullptr;
 };
 

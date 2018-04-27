@@ -2,21 +2,27 @@
   "skills": [
     {
       "id": 1,
-      "name": "Next turn",
-      "slug": "next-turn",
-      "type": 1
+      "name": "Damage",
+      "slug": "damage",
+      "type": 0
     },
     {
       "id": 2,
-      "name": "Movement",
-      "slug": "movement",
-      "type": 2
+      "name": "Next turn",
+      "slug": "next-turn",
+      "type": 0
     },
     {
       "id": 3,
+      "name": "Movement",
+      "slug": "movement",
+      "type": 0
+    },
+    {
+      "id": 4,
       "name": "Shot",
       "slug": "shot",
-      "type": 3
+      "type": 1
     }
   ]
 }

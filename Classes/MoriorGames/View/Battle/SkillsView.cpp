@@ -45,7 +45,7 @@ void SkillsView::addSkillButtons()
             {
                 if (type == ui::Widget::TouchEventType::ENDED) {
                     battle->setActiveSkill(skillModel->getId());
-                    if (skillModel->getType() == Skill::TYPE_NEXT_TURN) {
+                    if (skillModel->getId() == Skill::NEXT_TURN_ID) {
                         auto battleAction = new BattleAction;
                         battleAction->setBattleHeroId(
                             battleHero->getBattleHeroId()
@@ -56,13 +56,13 @@ void SkillsView::addSkillButtons()
                         battleAction->setCoordinate(battleHero->getCoordinate());
                         eventPublisher->publish(battleAction);
                     }
-                    if (skillModel->getType() == Skill::TYPE_MOVE) {
+                    if (skillModel->getId() == Skill::MOVE_ID) {
 
                         gridViewLambda->removeActionGrid();
                         gridViewLambda->buildPathForMove(battleHero);
 
                     }
-                    if (skillModel->getType() == Skill::TYPE_SHOT) {
+                    if (skillModel->getType() == Skill::TYPE_SINGLE_ATTACK) {
 
                         gridViewLambda->removeActionGrid();
                         gridViewLambda->buildPathForAction(battleHero);

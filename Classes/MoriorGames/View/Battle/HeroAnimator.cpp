@@ -1,9 +1,11 @@
 #include "HeroAnimator.h"
+#include "../../Vendor/Utils/TextUtils.h"
 #include "../../Definitions.h"
 
 HeroAnimator::HeroAnimator(BattleHero *battleHero, Coordinate2Screen *coordinate2Screen)
     : battleHero{battleHero}, coordinate2Screen{coordinate2Screen}
 {
+    fontCreator = new FontCreator;
     spriteAnimator = new SpriteAnimator;
 }
 
@@ -41,6 +43,24 @@ Action *HeroAnimator::moveTo(Coordinate *coordinate)
 void HeroAnimator::action()
 {
     sprite->runAction(actionAnimation());
+}
+
+void HeroAnimator::hurt(BattleAction *battleAction)
+{
+    auto hit = Sequence::createWithTwoActions(
+        TintTo::create(0.15, HIT_COLOR),
+        TintTo::create(0.15, DEFAULT_COLOR)
+    );
+    auto damaged = Sequence::create(hit, hit, hit, nullptr);
+
+    sprite->runAction(damaged);
+
+    auto damageLabel = fontCreator->damageLabel(to_string(battleAction->getExtra()));
+    auto jump = JumpBy::create(0.35, Vec2(0, 0), 20, 1);
+    auto damageSeq = Sequence::create(jump, jump, RemoveSelf::create(true), nullptr);
+    damageLabel->runAction(damageSeq);
+
+    sprite->addChild(damageLabel);
 }
 
 Action *HeroAnimator::moveAnimation()

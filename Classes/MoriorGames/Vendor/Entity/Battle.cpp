@@ -39,7 +39,7 @@ void Battle::nextHero()
 
     for (auto hero:heroes) {
         if (hero->getBattleHeroId() > activeHero) {
-            activeSkill = DEFAULT_SKILL_MOVE;
+            activeSkill = Skill::MOVE_ID;
             activeHero = hero->getBattleHeroId();
             hero->isActive = true;
 

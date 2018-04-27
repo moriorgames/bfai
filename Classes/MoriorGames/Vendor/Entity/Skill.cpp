@@ -1,10 +1,12 @@
 #include "Skill.h"
 
-short Skill::TYPE_NEXT_TURN = 1;
+short Skill::DAMAGE_ID = 1;
 
-short Skill::TYPE_MOVE = 2;
+short Skill::NEXT_TURN_ID = 2;
 
-short Skill::TYPE_SHOT = 3;
+short Skill::MOVE_ID = 3;
+
+short Skill::TYPE_SINGLE_ATTACK = 1;
 
 int Skill::getId() const
 {

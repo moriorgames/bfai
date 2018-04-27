@@ -25,7 +25,7 @@ private:
     std::vector<BattleObservable *> observers;
     std::vector<BattleAction *> extraActions;
 
-    void battleActionProcess(BattleHero *, BattleAction *);
+    bool battleActionProcess(BattleHero *, BattleAction *);
     void movement(BattleHero *, BattleAction *);
     void singleDamage(BattleHero *, BattleAction *);
     bool isBattleActionAllowed(BattleHero *, BattleAction *);

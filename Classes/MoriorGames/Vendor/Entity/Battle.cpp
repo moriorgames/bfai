@@ -54,6 +54,8 @@ void Battle::nextHero()
 
 void Battle::addTurn()
 {
+    std::for_each(heroes.begin(), heroes.end(), [&](BattleHero *hero)
+    { hero->startTurn(); });
     turn++;
 }
 

@@ -10,14 +10,18 @@ BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
 
 void BattleProcessor::processBattleAction(BattleAction *battleAction)
 {
+    bool endOfTurn = true;
     for (auto battleHero:battle->getBattleHeroes()) {
         if (isBattleActionAllowed(battleHero, battleAction)) {
-            battleActionProcess(battleHero, battleAction);
+            endOfTurn = battleActionProcess(battleHero, battleAction);
             break;
         }
     }
 
-    battle->nextHero();
+    if (endOfTurn) {
+        battle->nextHero();
+    }
+
     notifyObservers(battleAction);
 }
 
@@ -50,22 +54,25 @@ bool BattleProcessor::isBattleActionAllowed(BattleHero *battleHero, BattleAction
         battleHero->getBattleHeroId() == battle->getActiveBattleHero()->getBattleHeroId();
 }
 
-void BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *battleAction)
+bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *battleAction)
 {
-    if (battleAction->getSkillId() == Skill::MOVE_ID) {
+    if (!battleHero->hasMoved() && battleAction->getSkillId() == Skill::MOVE_ID) {
         movement(battleHero, battleAction);
 
-        return;
+        return false;
     }
 
     auto skill = skillRepo->findById(battleAction->getSkillId());
     if (skill->getType() == Skill::TYPE_SINGLE_ATTACK) {
         singleDamage(battleHero, battleAction);
     }
+
+    return true;
 }
 
 void BattleProcessor::movement(BattleHero *battleHero, BattleAction *battleAction)
 {
+    battleHero->move();
     battleHero->setCoordinate(battleAction->getCoordinate());
 }
 

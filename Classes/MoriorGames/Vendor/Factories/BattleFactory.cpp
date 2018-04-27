@@ -11,8 +11,6 @@ Battle *BattleFactory::execute(const std::string &json, HeroRepository *heroRepo
         if (hero) {
             battleHero->copy(hero);
         }
-
-        battleHero->print();
     }
 
     return battle;

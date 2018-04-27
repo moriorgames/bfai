@@ -42,4 +42,13 @@ void BattleAction::setCoordinate(Coordinate *coordinate)
 
 void BattleAction::print()
 {
+    printf("========= BattleAction: \n"
+           " - id %i\n"
+           " - battleHeroId %i\n"
+           " - skillId %i\n"
+           " \n",
+           id,
+           battleHeroId,
+           skillId
+    );
 }

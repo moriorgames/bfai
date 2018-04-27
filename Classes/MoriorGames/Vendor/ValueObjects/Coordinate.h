@@ -4,8 +4,9 @@
 class Coordinate
 {
 public:
-    explicit Coordinate(Coordinate *coordinate);
+    explicit Coordinate(Coordinate *);
     Coordinate(int x, int y);
+    bool isEqual(const Coordinate *);
 
     int x, y;
 };

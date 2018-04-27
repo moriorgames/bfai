@@ -2,7 +2,7 @@
 #include "../../Definitions.h"
 
 HeroAnimator::HeroAnimator(BattleHero *battleHero, Coordinate2Screen *coordinate2Screen)
-    : sprite{sprite}, battleHero{battleHero}, coordinate2Screen{coordinate2Screen}
+    : battleHero{battleHero}, coordinate2Screen{coordinate2Screen}
 {
     spriteAnimator = new SpriteAnimator;
 }

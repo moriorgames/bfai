@@ -10,6 +10,7 @@ HeroView::HeroView(Layer *layer, Coordinate2Screen *coordinate2Screen, BattleHer
 
 void HeroView::update(BattleAction *battleAction)
 {
+    battleHero->print();
     heroAnimator->stop();
     if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {
         auto skill = skillRepo->findById(battleAction->getSkillId());

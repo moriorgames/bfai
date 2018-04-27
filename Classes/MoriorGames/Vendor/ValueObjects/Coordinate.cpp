@@ -9,3 +9,8 @@ Coordinate::Coordinate(Coordinate *coordinate)
     : x{coordinate->x}, y{coordinate->y}
 {
 }
+
+bool Coordinate::isEqual(const Coordinate *coordinate)
+{
+    return coordinate->x == x && coordinate->y == y;
+}

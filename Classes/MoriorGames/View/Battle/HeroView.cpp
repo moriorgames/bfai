@@ -1,50 +1,28 @@
 #include "HeroView.h"
 #include "../../Vendor/Repository/SkillRepository.h"
 
-const Point HeroView::ANCHOR{0.5, 0.35};
-
 HeroView::HeroView(Layer *layer, Coordinate2Screen *coordinate2Screen, BattleHero *battleHero)
     : ViewHelper(layer), coordinate2Screen{coordinate2Screen}, battleHero{battleHero}
 {
-    spriteAnimator = new SpriteAnimator;
-    heroSprite = new Sprite;
+    heroAnimator = new HeroAnimator(battleHero, coordinate2Screen);
     addView();
 }
 
 void HeroView::update(BattleAction *battleAction)
 {
-    stop();
+    heroAnimator->stop();
     if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {
         auto skill = skillRepo->findById(battleAction->getSkillId());
         if (skill->getType() == Skill::TYPE_MOVE) {
-            moveTo(battleHero->getCoordinate());
+            container->runAction(heroAnimator->moveTo(battleHero->getCoordinate()));
         }
         if (skill->getType() == Skill::TYPE_SHOT) {
-            action();
+            heroAnimator->action();
         }
     }
     if (battleHero->isActive) {
-        heroSprite->runAction(moveAction());
+        heroAnimator->move();
     }
-}
-
-void HeroView::stop()
-{
-    heroSprite->stopAllActions();
-}
-
-void HeroView::moveTo(Coordinate *coordinate)
-{
-    heroSprite->runAction(moveAction());
-    auto moveTo = MoveTo::create(1, coordinate2Screen->execute(coordinate));
-    auto callback = CallFunc::create([this]()
-                                     { stop(); });
-    container->runAction(Sequence::create(moveTo, callback, nullptr));
-}
-
-void HeroView::action()
-{
-    heroSprite->runAction(attackAction());
 }
 
 void HeroView::addView()
@@ -60,12 +38,9 @@ void HeroView::addView()
 
 void HeroView::addHero()
 {
-    heroSprite->initWithSpriteFrameName(spriteAnimator->getFrameName(battleHero->getSlug()));
-    heroSprite->setAnchorPoint(ANCHOR);
-
     auto position = coordinate2Screen->execute(battleHero->getCoordinate());
     container->setPosition(position);
-    container->addChild(heroSprite);
+    container->addChild(heroAnimator->createSprite());
 }
 
 void HeroView::addHealthBar()
@@ -77,14 +52,4 @@ void HeroView::addHealthBar()
         container->addChild(hitPoint);
         position -= 18;
     }
-}
-
-Action *HeroView::moveAction()
-{
-    return spriteAnimator->generateAction(battleHero->getSlug(), "move", battleHero->getMoveFrames(), FPS);
-}
-
-Action *HeroView::attackAction()
-{
-    return spriteAnimator->generateSingleAction(battleHero->getSlug(), "attack", battleHero->getAttackFrames(), FPS);
 }

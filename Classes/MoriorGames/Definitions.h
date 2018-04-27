@@ -23,7 +23,7 @@
 #define UPGRADE_DELAY 0.01
 
 #define MODE_SOUND 0
-#define DEBUG_SCENE 0
+#define DEBUG_SCENE 1
 
 #define CARTESIAN_EAST          0
 #define CARTESIAN_NORTHEAST     45

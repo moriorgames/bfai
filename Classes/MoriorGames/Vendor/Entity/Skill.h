@@ -9,7 +9,7 @@ public:
     static short DAMAGE_ID;
     static short NEXT_TURN_ID;
     static short MOVE_ID;
-    static short TYPE_SINGLE_ATTACK;
+    static short SINGLE_ATTACK_ID;
 
 public:
     int getId() const;

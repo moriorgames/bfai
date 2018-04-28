@@ -21,6 +21,5 @@ void BattleFactory::addBaseSkills(Hero *hero)
 {
     hero->addSkill(skillRepo->findById(Skill::NEXT_TURN_ID));
     hero->addSkill(skillRepo->findById(Skill::MOVE_ID));
-
-    hero->addSkill(skillRepo->findByType(Skill::TYPE_SINGLE_ATTACK));
+    hero->addSkill(skillRepo->findById(Skill::SINGLE_ATTACK_ID));
 }

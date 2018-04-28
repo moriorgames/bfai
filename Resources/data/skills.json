@@ -20,9 +20,9 @@
     },
     {
       "id": 4,
-      "name": "Shot",
-      "slug": "shot",
-      "type": 1
+      "name": "Single Attack",
+      "slug": "single-attack",
+      "type": 0
     }
   ]
 }

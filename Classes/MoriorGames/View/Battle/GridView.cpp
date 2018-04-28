@@ -53,8 +53,10 @@ void GridView::update(BattleAction *)
 
 void GridView::buildPathScopeView()
 {
-    auto hero = battle->getActiveBattleHero();
-    for (auto path:pathFinder->buildPathScope(hero->getCoordinate(), hero->getMovement())) {
-        drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, actionTiles);
+    auto battleHero = battle->getActiveBattleHero();
+    if (!battleHero->hasMoved()) {
+        buildPathForMove(battleHero);
+    } else {
+        buildPathForAction(battleHero);
     }
 }

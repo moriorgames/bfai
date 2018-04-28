@@ -62,7 +62,7 @@ void SkillsView::addSkillButtons()
                         gridViewLambda->buildPathForMove(battleHero);
 
                     }
-                    if (skillModel->getType() == Skill::TYPE_SINGLE_ATTACK) {
+                    if (skillModel->getId() == Skill::SINGLE_ATTACK_ID) {
 
                         gridViewLambda->removeActionGrid();
                         gridViewLambda->buildPathForAction(battleHero);

@@ -19,14 +19,9 @@ void HeroView::update(BattleAction *battleAction)
         } else if (battleAction->getSkillId() == Skill::DAMAGE_ID) {
             heroAnimator->hurt(battleAction);
             buildHealthBar();
-        } else {
-
-            auto skill = skillRepo->findById(battleAction->getSkillId());
-            if (skill->getType() == Skill::TYPE_SINGLE_ATTACK) {
-                heroAnimator->stop();
-                heroAnimator->action();
-            }
-
+        } else if (battleAction->getSkillId() == Skill::SINGLE_ATTACK_ID) {
+            heroAnimator->stop();
+            heroAnimator->action();
         }
     }
     if (battleHero->isActive) {

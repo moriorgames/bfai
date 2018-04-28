@@ -38,7 +38,7 @@
       "name": "Paul",
       "slug": "paul",
       "damage": 2,
-      "ranged": 3,
+      "ranged": 2,
       "health": 5,
       "movement": 2,
       "moveFrames": 24,

@@ -6,7 +6,7 @@ short Skill::NEXT_TURN_ID = 2;
 
 short Skill::MOVE_ID = 3;
 
-short Skill::TYPE_SINGLE_ATTACK = 1;
+short Skill::SINGLE_ATTACK_ID = 4;
 
 int Skill::getId() const
 {

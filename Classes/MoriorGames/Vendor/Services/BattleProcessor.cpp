@@ -20,6 +20,8 @@ void BattleProcessor::processBattleAction(BattleAction *battleAction)
 
     if (endOfTurn) {
         battle->nextHero();
+    } else {
+        battle->setActiveSkill(Skill::SINGLE_ATTACK_ID);
     }
 
     notifyObservers(battleAction);
@@ -62,8 +64,7 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
         return false;
     }
 
-    auto skill = skillRepo->findById(battleAction->getSkillId());
-    if (skill->getType() == Skill::TYPE_SINGLE_ATTACK) {
+    if (battleAction->getSkillId() == Skill::SINGLE_ATTACK_ID) {
         singleDamage(battleHero, battleAction);
     }
 
@@ -89,7 +90,6 @@ void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAct
             damageAction->setSkillId(Skill::DAMAGE_ID);
             damageAction->setBattleHeroId(defender->getBattleHeroId());
             damageAction->setExtra(damage);
-            damageAction->print();
             extraActions.push_back(damageAction);
             break;
         }

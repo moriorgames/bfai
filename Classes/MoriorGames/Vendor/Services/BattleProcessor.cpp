@@ -89,6 +89,9 @@ void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAct
         if (defender->getCoordinate()->isEqual(battleAction->getCoordinate())) {
             auto damage = attacker->getDamage();
             defender->addInjury(damage);
+            if (defender->isDead()) {
+                battleAction->getCoordinate()->occupied = false;
+            }
 
             auto damageAction = new BattleAction;
             damageAction->setSkillId(Skill::DAMAGE_ID);

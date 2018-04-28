@@ -51,13 +51,18 @@ void HeroAnimator::action()
 
 void HeroAnimator::hurt(BattleAction *battleAction)
 {
-    auto hit = Sequence::createWithTwoActions(
-        TintTo::create(0.15, HIT_COLOR),
-        TintTo::create(0.15, DEFAULT_COLOR)
-    );
-    auto damaged = Sequence::create(hit, hit, hit, nullptr);
+    if (battleHero->isDead()) {
+        sprite->setSpriteFrame(spriteAnimator->getFrameName("death", "default"));
+        sprite->runAction(deathAnimation());
+    } else {
+        auto hit = Sequence::createWithTwoActions(
+            TintTo::create(0.15, HIT_COLOR),
+            TintTo::create(0.15, DEFAULT_COLOR)
+        );
+        auto damaged = Sequence::create(hit, hit, hit, nullptr);
 
-    sprite->runAction(damaged);
+        sprite->runAction(damaged);
+    }
 
     auto damageLabel = fontCreator->damageLabel(to_string(battleAction->getExtra()));
     auto jump = JumpBy::create(0.4, Vec2(0, 0), 20, 2);
@@ -79,4 +84,9 @@ Action *HeroAnimator::moveAnimation()
 Action *HeroAnimator::actionAnimation()
 {
     return spriteAnimator->generateSingleAction(battleHero->getSlug(), "attack", battleHero->getAttackFrames(), FPS);
+}
+
+Action *HeroAnimator::deathAnimation()
+{
+    return spriteAnimator->generateSingleAction("death", "default", 16, FPS);
 }

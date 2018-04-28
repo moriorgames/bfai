@@ -31,9 +31,9 @@ private:
     FontCreator *fontCreator;
     SpriteAnimator *spriteAnimator;
 
-
     Action *moveAnimation();
     Action *actionAnimation();
+    Action *deathAnimation();
 };
 
 #endif

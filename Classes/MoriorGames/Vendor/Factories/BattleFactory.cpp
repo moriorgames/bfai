@@ -1,7 +1,8 @@
 #include "BattleFactory.h"
 #include "../Parsers/BattleParser.h"
+#include "../Repository/SkillRepository.h"
 
-Battle *BattleFactory::execute(const std::string &json, HeroRepository *heroRepository, SkillRepository *skillRepo)
+Battle *BattleFactory::execute(const std::string &json, HeroRepository *heroRepository)
 {
     auto battleParser = new BattleParser(json);
     auto battle = battleParser->parse();

@@ -28,7 +28,7 @@ void GridView::buildGrid(const std::vector<Coordinate *> &coordinates)
 
 void GridView::buildPathForMove(BattleHero *hero)
 {
-    for (auto path:pathFinder->buildPathScope(hero->getCoordinate(), hero->getMovement())) {
+    for (auto path:pathFinder->buildPathScope(hero->getCoordinate(), hero->getMovement(), true)) {
         drawTile(path.coordinate, GridView::MOVE_FILL_COLOR, actionTiles);
     }
 }

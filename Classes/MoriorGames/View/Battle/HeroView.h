@@ -23,6 +23,7 @@ private:
     void addView() override;
     void addHero();
     void buildHealthBar();
+    void setLocalZOrder();
 };
 
 #endif

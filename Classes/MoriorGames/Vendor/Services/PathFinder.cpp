@@ -5,7 +5,7 @@ PathFinder::PathFinder(Grid *grid)
 {
 }
 
-const std::vector<Path> &PathFinder::buildPathScope(Coordinate *origin, int range)
+const std::vector<Path> &PathFinder::buildPathScope(Coordinate *origin, int range, bool withCollision)
 {
     pathScope.clear();
     Path path;
@@ -16,18 +16,20 @@ const std::vector<Path> &PathFinder::buildPathScope(Coordinate *origin, int rang
         for (auto pathStruct:pathScope) {
             if (pathStruct.level == i) {
                 for (auto axis:moveAxis(pathStruct.coordinate)) {
-                    bool add = true;
-                    for (auto limits:pathScope) {
-                        if (limits.coordinate->x == axis->x && limits.coordinate->y == axis->y) {
-                            add = false;
-                            break;
+                    if (!withCollision || (withCollision && !axis->occupied)) {
+                        bool add = true;
+                        for (auto limits:pathScope) {
+                            if (limits.coordinate->x == axis->x && limits.coordinate->y == axis->y) {
+                                add = false;
+                                break;
+                            }
                         }
-                    }
-                    if (add && grid->isValidCoordinate(axis)) {
-                        Path newPath;
-                        newPath.level = i + 1;
-                        newPath.coordinate = axis;
-                        pathScope.push_back(newPath);
+                        if (add && grid->isValidCoordinate(axis)) {
+                            Path newPath;
+                            newPath.level = i + 1;
+                            newPath.coordinate = axis;
+                            pathScope.push_back(newPath);
+                        }
                     }
                 }
             }
@@ -44,11 +46,28 @@ const std::vector<Path> &PathFinder::getPathScope() const
 
 std::vector<Coordinate *> PathFinder::moveAxis(Coordinate *current)
 {
+    int x = current->x;
+    int y = current->y;
     std::vector<Coordinate *> axis;
-    axis.push_back(new Coordinate(current->x, current->y + 1));
-    axis.push_back(new Coordinate(current->x, current->y - 1));
-    axis.push_back(new Coordinate(current->x + 1, current->y));
-    axis.push_back(new Coordinate(current->x - 1, current->y));
+    auto axis1 = grid->findByXY(x, y + 1);
+    if (axis1 != nullptr) {
+        axis.push_back(axis1);
+    }
+
+    auto axis2 = grid->findByXY(x, y - 1);
+    if (axis2 != nullptr) {
+        axis.push_back(axis2);
+    }
+
+    auto axis3 = grid->findByXY(x + 1, y);
+    if (axis3 != nullptr) {
+        axis.push_back(axis3);
+    }
+
+    auto axis4 = grid->findByXY(x - 1, y);
+    if (axis4 != nullptr) {
+        axis.push_back(axis4);
+    }
 
     return axis;
 }

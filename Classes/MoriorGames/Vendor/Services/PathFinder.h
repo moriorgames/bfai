@@ -10,7 +10,7 @@ class PathFinder
 {
 public:
     PathFinder(Grid *grid);
-    const std::vector<Path> &buildPathScope(Coordinate *, int range);
+    const std::vector<Path> &buildPathScope(Coordinate *, int range, bool withCollision = false);
     const std::vector<Path> &getPathScope() const;
 
 private:

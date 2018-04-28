@@ -64,13 +64,3 @@ void Grid::createGridCoordinates()
         }
     }
 }
-
-void Grid::printCoordinates()
-{
-    int counter = 0;
-    for (auto coordinate:coordinates) {
-        std::cout << "X: " << coordinate->x << " Y: " << coordinate->y << std::endl;
-        counter++;
-    }
-    std::cout << "Total: " << counter << std::endl;
-}

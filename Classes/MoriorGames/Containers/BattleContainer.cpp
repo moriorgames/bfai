@@ -7,7 +7,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
 {
     new BattleBackgroundView(layer);
 
-    battle = (new BattleFactory)->execute(json, heroRepo, skillRepo);
+    battle = (new BattleFactory)->execute(json, heroRepo);
     gridContainer = new GridContainer(layer, battle);
     battleProcessor = new BattleProcessor(battle, gridContainer->getGrid());
     eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);

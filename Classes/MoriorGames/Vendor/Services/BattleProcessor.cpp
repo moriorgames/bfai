@@ -13,6 +13,8 @@ void BattleProcessor::processBattleAction(BattleAction *battleAction)
     bool endOfTurn = true;
     for (auto battleHero:battle->getBattleHeroes()) {
         if (isBattleActionAllowed(battleHero, battleAction)) {
+            auto coord = battleAction->getCoordinate();
+            battleAction->setCoordinate(grid->findByXY(coord->x, coord->y));
             endOfTurn = battleActionProcess(battleHero, battleAction);
             break;
         }
@@ -75,6 +77,8 @@ void BattleProcessor::movement(BattleHero *battleHero, BattleAction *battleActio
 {
     battleHero->move();
     battleHero->flip(battleAction->getCoordinate());
+    battleHero->getCoordinate()->occupied = false;
+    battleAction->getCoordinate()->occupied = true;
     battleHero->setCoordinate(battleAction->getCoordinate());
 }
 

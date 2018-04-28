@@ -17,6 +17,11 @@ GridContainer::GridContainer(Layer *layer, Battle *battle)
     }
 
     coordinate2Screen = new Coordinate2Screen(grid->getFactor());
+    for (auto battleHero:battle->getBattleHeroes()) {
+        auto coordinate = grid->findByXY(battleHero->getCoordinate()->x, battleHero->getCoordinate()->y);
+        coordinate->occupied = true;
+        battleHero->setCoordinate(coordinate);
+    }
     closestCoordinate = new ClosestCoordinate(coordinate2Screen);
     float size = Grid::TILE_SIZE / 2 * grid->getFactor();
     pathFinder = new PathFinder(grid);

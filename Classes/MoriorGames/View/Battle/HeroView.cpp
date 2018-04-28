@@ -27,6 +27,7 @@ void HeroView::update(BattleAction *battleAction)
     if (battleHero->isActive) {
         heroAnimator->move();
     }
+    setLocalZOrder();
 }
 
 void HeroView::addView()
@@ -40,6 +41,7 @@ void HeroView::addView()
     buildHealthBar();
 
     layer->addChild(container, Z_ORDER_HEROES);
+    setLocalZOrder();
 }
 
 void HeroView::addHero()
@@ -59,4 +61,9 @@ void HeroView::buildHealthBar()
         hitPoints->addChild(hitPoint);
         position -= 18;
     }
+}
+
+void HeroView::setLocalZOrder()
+{
+    container->setLocalZOrder(Z_ORDER_HEROES - battleHero->getCoordinate()->y);
 }

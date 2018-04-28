@@ -9,6 +9,7 @@ public:
     bool isEqual(const Coordinate *);
 
     int x, y;
+    bool occupied = false;
 };
 
 #endif

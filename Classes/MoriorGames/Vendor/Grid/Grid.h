@@ -18,7 +18,6 @@ public:
     bool isValidCoordinate(Coordinate *);
     const std::vector<Coordinate *> &getCoordinates() const;
     virtual int getFactor();
-    void printCoordinates();
     Coordinate *findByXY(int x, int y);
 
 private:

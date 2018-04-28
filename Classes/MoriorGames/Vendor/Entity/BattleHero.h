@@ -27,8 +27,10 @@ public:
     void startTurn();
 
     void copy(Hero *);
+    void flip(Coordinate *);
     void print();
     bool isActive = false;
+    bool flipped = false;
 
 private:
     int battleHeroId = 0;

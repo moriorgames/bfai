@@ -14,9 +14,7 @@ Sprite *HeroAnimator::createSprite()
     sprite = new Sprite;
     sprite->initWithSpriteFrameName(spriteAnimator->getFrameName(battleHero->getSlug()));
     sprite->setAnchorPoint(ANCHOR);
-    if (battleHero->getSide() == BattleHero::SIDE_ENEMY) {
-        sprite->setFlippedX(true);
-    }
+    sprite->setFlippedX(battleHero->flipped);
 
     return sprite;
 }
@@ -29,6 +27,7 @@ void HeroAnimator::stop()
 
 void HeroAnimator::move()
 {
+    sprite->setFlippedX(battleHero->flipped);
     sprite->runAction(moveAnimation());
 }
 
@@ -36,6 +35,7 @@ Action *HeroAnimator::moveTo(Coordinate *coordinate)
 {
     move();
     sprite->runAction(moveAnimation());
+    auto pos = coordinate2Screen->execute(coordinate);
     auto moveTo = MoveTo::create(1, coordinate2Screen->execute(coordinate));
     auto callback = CallFunc::create([this]()
                                      { stop(); });
@@ -45,6 +45,7 @@ Action *HeroAnimator::moveTo(Coordinate *coordinate)
 
 void HeroAnimator::action()
 {
+    sprite->setFlippedX(battleHero->flipped);
     sprite->runAction(actionAnimation());
 }
 

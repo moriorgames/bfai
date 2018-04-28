@@ -73,11 +73,13 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
 void BattleProcessor::movement(BattleHero *battleHero, BattleAction *battleAction)
 {
     battleHero->move();
+    battleHero->flip(battleAction->getCoordinate());
     battleHero->setCoordinate(battleAction->getCoordinate());
 }
 
 void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAction)
 {
+    attacker->flip(battleAction->getCoordinate());
     for (auto defender:battle->getBattleHeroes()) {
         if (defender->getCoordinate()->isEqual(battleAction->getCoordinate())) {
             auto damage = attacker->getDamage();

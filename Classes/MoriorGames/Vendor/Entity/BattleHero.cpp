@@ -87,6 +87,16 @@ void BattleHero::copy(Hero *hero)
     skills = hero->getSkills();
 }
 
+void BattleHero::flip(Coordinate *coordinate)
+{
+    flipped = side == BattleHero::SIDE_ENEMY;
+    if (this->coordinate->x > coordinate->x) {
+        flipped = true;
+    } else if (this->coordinate->x < coordinate->x) {
+        flipped = false;
+    }
+}
+
 void BattleHero::print()
 {
     printf("========= BattleHero: \n"

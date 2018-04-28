@@ -10,6 +10,7 @@ Battle *BattleFactory::execute(const std::string &json, HeroRepository *heroRepo
         addBaseSkills(hero);
         if (hero) {
             battleHero->copy(hero);
+            battleHero->flip(battleHero->getCoordinate());
         }
     }
 

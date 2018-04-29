@@ -11,7 +11,7 @@ public:
     void initBattleHero(BattleHero *);
 
 private:
-    void addBaseSkills(Hero *);
+    void addBaseSkills(BattleHero *);
 };
 
 #endif

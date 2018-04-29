@@ -17,14 +17,14 @@ Battle *BattleFactory::execute(const std::string &json)
 void BattleFactory::initBattleHero(BattleHero *battleHero)
 {
     auto hero = heroRepo->findById(battleHero->getId());
-    addBaseSkills(hero);
     if (hero) {
         battleHero->copy(hero);
         battleHero->flip(battleHero->getCoordinate());
+        addBaseSkills(battleHero);
     }
 }
 
-void BattleFactory::addBaseSkills(Hero *hero)
+void BattleFactory::addBaseSkills(BattleHero *hero)
 {
     hero->addSkill(skillRepo->findById(Skill::NEXT_TURN_ID));
     hero->addSkill(skillRepo->findById(Skill::MOVE_ID));

@@ -33,7 +33,7 @@ void SkillsView::addSkillButtons()
 {
     auto battleHero = battle->getActiveBattleHero();
     float x = 70;
-    float y = -70;
+    float y = -50;
     auto gridViewLambda = gridView;
     for (auto skill:battleHero->getSkills()) {
 

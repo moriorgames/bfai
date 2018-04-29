@@ -1,8 +1,8 @@
 #include "BattleHero.h"
 
-const std::string BattleHero::SIDE_PLAYER = "side-player";
+const std::string BattleHero::SIDE_LOCAL = "side-player";
 
-const std::string BattleHero::SIDE_ENEMY = "side-enemy";
+const std::string BattleHero::SIDE_VISITOR = "side-enemy";
 
 BattleHero::BattleHero()
 {
@@ -89,7 +89,7 @@ void BattleHero::copy(Hero *hero)
 
 void BattleHero::flip(Coordinate *coordinate)
 {
-    flipped = side == BattleHero::SIDE_ENEMY;
+    flipped = side == BattleHero::SIDE_VISITOR;
     if (this->coordinate->x > coordinate->x) {
         flipped = true;
     } else if (this->coordinate->x < coordinate->x) {

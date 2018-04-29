@@ -2,6 +2,7 @@
 #define MORIOR_GAMES_VIEW_BATTLE_HERO_VIEW_H
 
 #include "HeroAnimator.h"
+#include "HeroHitPointsView.h"
 #include "../ViewHelper.h"
 #include "../../Screen/Coordinate2Screen.h"
 #include "../../Vendor/Observer/BattleObservable.h"
@@ -10,19 +11,18 @@
 class HeroView: public ViewHelper, public BattleObservable
 {
 public:
-    HeroView(Layer *, Coordinate2Screen *, BattleHero *);
+    HeroView(Layer *, BattleHero *, Coordinate2Screen *);
     void update(BattleAction *) override;
 
 private:
     Node *container;
-    Node *hitPoints;
-    Coordinate2Screen *coordinate2Screen;
     BattleHero *battleHero;
+    Coordinate2Screen *coordinate2Screen;
     HeroAnimator *heroAnimator;
+    HeroHitPointsView *heroHitPointsView;
 
     void addView() override;
     void addHero();
-    void buildHealthBar();
     void setLocalZOrder();
 };
 

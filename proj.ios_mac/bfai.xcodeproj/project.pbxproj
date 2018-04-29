@@ -61,6 +61,8 @@
 		4F5C0CDC208B0254006D57BF /* SkillParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C0CD9208B0254006D57BF /* SkillParser.cpp */; };
 		4F5C0CDF208B0749006D57BF /* SkillRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C0CDD208B0749006D57BF /* SkillRepository.cpp */; };
 		4F5C0CE0208B0749006D57BF /* SkillRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C0CDD208B0749006D57BF /* SkillRepository.cpp */; };
+		4F668B702095A9AE00D9FD36 /* HeroHitPointsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F668B6E2095A9AE00D9FD36 /* HeroHitPointsView.cpp */; };
+		4F668B712095A9AE00D9FD36 /* HeroHitPointsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F668B6E2095A9AE00D9FD36 /* HeroHitPointsView.cpp */; };
 		4F72383F20637E0D0064037C /* HeroRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F72383D20637E0D0064037C /* HeroRepository.cpp */; };
 		4F72384020637E0D0064037C /* HeroRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F72383D20637E0D0064037C /* HeroRepository.cpp */; };
 		4F72384320637E450064037C /* Battle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F72384120637E440064037C /* Battle.cpp */; };
@@ -283,6 +285,8 @@
 		4F5C0CDA208B0254006D57BF /* SkillParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkillParser.h; sourceTree = "<group>"; };
 		4F5C0CDD208B0749006D57BF /* SkillRepository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SkillRepository.cpp; sourceTree = "<group>"; };
 		4F5C0CDE208B0749006D57BF /* SkillRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkillRepository.h; sourceTree = "<group>"; };
+		4F668B6E2095A9AE00D9FD36 /* HeroHitPointsView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HeroHitPointsView.cpp; sourceTree = "<group>"; };
+		4F668B6F2095A9AE00D9FD36 /* HeroHitPointsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroHitPointsView.h; sourceTree = "<group>"; };
 		4F72383D20637E0D0064037C /* HeroRepository.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeroRepository.cpp; sourceTree = "<group>"; };
 		4F72383E20637E0D0064037C /* HeroRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroRepository.h; sourceTree = "<group>"; };
 		4F72384120637E440064037C /* Battle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Battle.cpp; sourceTree = "<group>"; };
@@ -707,6 +711,8 @@
 				4F01D15F208C2AE9002231DA /* SkillsView.h */,
 				4FDBF47020919E2B005FF943 /* TileDrawer.cpp */,
 				4FDBF47120919E2B005FF943 /* TileDrawer.h */,
+				4F668B6E2095A9AE00D9FD36 /* HeroHitPointsView.cpp */,
+				4F668B6F2095A9AE00D9FD36 /* HeroHitPointsView.h */,
 			);
 			path = Battle;
 			sourceTree = "<group>";
@@ -1081,6 +1087,7 @@
 				4FA0677F207DC36700934122 /* BattleActionParser.cpp in Sources */,
 				4FBCDC68203220CD006B3B5E /* GridHD.cpp in Sources */,
 				4F576D1A2075E56200011BC7 /* Coordinate2Screen.cpp in Sources */,
+				4F668B702095A9AE00D9FD36 /* HeroHitPointsView.cpp in Sources */,
 				4FBCDC4F2032008E006B3B5E /* BattleScene.cpp in Sources */,
 				4F578162207C79240060C7D9 /* BattleEventPublisherFactory.cpp in Sources */,
 				4F72384820637E580064037C /* BattleFactory.cpp in Sources */,
@@ -1177,6 +1184,7 @@
 				4FEFCC21205AE61700D447C4 /* JsonParser.cpp in Sources */,
 				4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */,
 				4F57815E207C78240060C7D9 /* BattleEventOnlinePublisher.cpp in Sources */,
+				4F668B712095A9AE00D9FD36 /* HeroHitPointsView.cpp in Sources */,
 				4F578163207C79240060C7D9 /* BattleEventPublisherFactory.cpp in Sources */,
 				4F72384920637E580064037C /* BattleFactory.cpp in Sources */,
 				4F3B0B82205E57C500D4B53C /* PathFinder.cpp in Sources */,

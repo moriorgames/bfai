@@ -35,7 +35,7 @@ BattleEventPublishable *BattleContainer::getEventPublisher() const
 void BattleContainer::addHeroViews()
 {
     for (auto battleHero:battle->getBattleHeroes()) {
-        heroViews.push_back(new HeroView(layer, gridContainer->getCoordinate2Screen(), battleHero));
+        heroViews.push_back(new HeroView(layer, battleHero, gridContainer->getCoordinate2Screen()));
     }
 }
 

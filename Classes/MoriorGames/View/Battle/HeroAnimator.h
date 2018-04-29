@@ -22,7 +22,7 @@ public:
     void move();
     Action *moveTo(Coordinate *);
     void action();
-    void hurt(BattleAction *);
+    void hurt(Node *, BattleAction *);
 
 private:
     Sprite *sprite;

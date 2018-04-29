@@ -21,7 +21,7 @@ void HeroView::update(BattleAction *battleAction)
             heroAnimator->stop();
             container->runAction(heroAnimator->moveTo(battleHero->getCoordinate()));
         } else if (battleAction->getSkillId() == Skill::DAMAGE_ID) {
-            heroAnimator->hurt(battleAction);
+            heroAnimator->hurt(container, battleAction);
         } else if (battleAction->getSkillId() == Skill::SINGLE_ATTACK_ID) {
             heroAnimator->stop();
             heroAnimator->action();

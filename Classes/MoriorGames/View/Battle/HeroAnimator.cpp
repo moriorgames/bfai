@@ -49,11 +49,15 @@ void HeroAnimator::action()
     sprite->runAction(actionAnimation());
 }
 
-void HeroAnimator::hurt(BattleAction *battleAction)
+void HeroAnimator::hurt(Node *container, BattleAction *battleAction)
 {
     if (battleHero->isDead()) {
         sprite->setSpriteFrame(spriteAnimator->getFrameName("death", "default"));
         sprite->runAction(deathAnimation());
+        auto delay = DelayTime::create(1.5f);
+        auto callback = CallFunc::create([this, container]()
+                                         { container->removeAllChildren(); });
+        sprite->runAction(Sequence::create(delay, callback, nullptr));
     } else {
         auto hit = Sequence::createWithTwoActions(
             TintTo::create(0.15, HIT_COLOR),

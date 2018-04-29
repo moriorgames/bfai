@@ -4,6 +4,7 @@
 HeroView::HeroView(Layer *layer, BattleHero *battleHero, Coordinate2Screen *coordinate2Screen)
     : ViewHelper(layer), battleHero{battleHero}, coordinate2Screen{coordinate2Screen}
 {
+    battleHero->spawned = true;
     heroAnimator = new HeroAnimator(battleHero, coordinate2Screen);
     heroHitPointsView = new HeroHitPointsView(battleHero);
     addView();
@@ -22,7 +23,7 @@ void HeroView::update(BattleAction *battleAction)
             container->runAction(heroAnimator->moveTo(battleHero->getCoordinate()));
         } else if (battleAction->getSkillId() == Skill::DAMAGE_ID) {
             heroAnimator->hurt(container, battleAction);
-        } else if (battleAction->getSkillId() == Skill::SINGLE_ATTACK_ID) {
+        } else {
             heroAnimator->stop();
             heroAnimator->action();
         }

@@ -11,13 +11,14 @@
 #include "../View/Battle/SkillsView.h"
 USING_NS_CC;
 
-class BattleContainer
+class BattleContainer: public BattleObservable
 {
 public:
     BattleContainer(Layer *layer, const std::string &json);
     Battle *getBattle() const;
     GridContainer *getGridContainer() const;
     BattleEventPublishable *getEventPublisher() const;
+    void update(BattleAction *) override;
 
 private:
     Layer *layer;

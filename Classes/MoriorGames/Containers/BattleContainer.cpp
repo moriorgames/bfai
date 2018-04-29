@@ -1,5 +1,6 @@
 #include "BattleContainer.h"
 #include "../Factories/BattleEventPublisherFactory.h"
+#include "../Vendor/Repository/SkillRepository.h"
 #include "../View/Battle/BattleBackgroundView.h"
 
 BattleContainer::BattleContainer(Layer *layer, const std::string &json)
@@ -46,5 +47,22 @@ void BattleContainer::registerObservers()
     }
     battleProcessor->registerObserver(gridContainer->getGridView());
     battleProcessor->registerObserver(skillsView);
+    battleProcessor->registerObserver(this);
     battleProcessor->processBattleAction(new BattleAction);
+}
+
+void BattleContainer::update(BattleAction *battleAction)
+{
+    auto skill = skillRepo->findById(battleAction->getSkillId());
+    if (skill != nullptr) {
+        if (skill->getType() == Skill::TYPE_SPAWN) {
+            for (auto battleHero:battle->getBattleHeroes()) {
+                if (!battleHero->spawned) {
+                    auto heroView = new HeroView(layer, battleHero, gridContainer->getCoordinate2Screen());
+                    heroViews.push_back(heroView);
+                    battleProcessor->registerObserver(heroView);
+                }
+            }
+        }
+    }
 }

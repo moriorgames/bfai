@@ -31,6 +31,7 @@ public:
     void print();
     bool isActive = false;
     bool flipped = false;
+    bool spawned = false;
 
 private:
     int battleHeroId = 0;

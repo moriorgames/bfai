@@ -31,7 +31,7 @@ void BattleFactory::addBaseSkills(Hero *hero)
     hero->addSkill(skillRepo->findById(Skill::SINGLE_ATTACK_ID));
 
     // @TODO temporary assignation of skill this has to be managed automatically
-//    if (hero->getSlug() == "fractal") {
-    hero->addSkill(skillRepo->findById(6));
-//    }
+    if (hero->getSlug() == "fractal") {
+        hero->addSkill(skillRepo->findById(6));
+    }
 }

@@ -1,11 +1,13 @@
 #include "BattleProcessor.h"
 #include "../Parsers/BattleActionParser.h"
 #include "../Repository/SkillRepository.h"
+#include "../Repository/HeroRepository.h"
 
 BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
     : battle{battle}, grid{grid}
 {
     pathFinder = new PathFinder(grid);
+    battleFactory = new BattleFactory;
 }
 
 void BattleProcessor::processBattleAction(BattleAction *battleAction)
@@ -52,12 +54,6 @@ void BattleProcessor::notifyObservers(BattleAction *battleAction)
     extraActions.clear();
 }
 
-bool BattleProcessor::isBattleActionAllowed(BattleHero *battleHero, BattleAction *battleAction)
-{
-    return battleHero->getBattleHeroId() == battleAction->getBattleHeroId() &&
-        battleHero->getBattleHeroId() == battle->getActiveBattleHero()->getBattleHeroId();
-}
-
 bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *battleAction)
 {
     if (!battleHero->hasMoved() && battleAction->getSkillId() == Skill::MOVE_ID) {
@@ -68,6 +64,12 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
 
     if (battleAction->getSkillId() == Skill::SINGLE_ATTACK_ID) {
         singleDamage(battleHero, battleAction);
+    } else {
+
+        auto skill = skillRepo->findById(battleAction->getSkillId());
+        if (skill->getType() == Skill::TYPE_SPAWN) {
+            spawn(skill, battleHero);
+        }
     }
 
     return true;
@@ -101,4 +103,24 @@ void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAct
             break;
         }
     }
+}
+
+void BattleProcessor::spawn(Skill *skill, BattleHero *battleHero)
+{
+    // @TODO this is a temporary spike to spawn heroes in gameplay
+    auto spawnHero = new BattleHero;
+    spawnHero->setId(6);
+    spawnHero->setSide(battleHero->getSide());
+    auto coordinate = grid->findByXY(battleHero->getCoordinate()->x, battleHero->getCoordinate()->y + 1);
+    coordinate->occupied = true;
+    spawnHero->setCoordinate(coordinate);
+    battleFactory->initBattleHero(spawnHero);
+
+    battle->addHero(spawnHero);
+}
+
+bool BattleProcessor::isBattleActionAllowed(BattleHero *battleHero, BattleAction *battleAction)
+{
+    return battleHero->getBattleHeroId() == battleAction->getBattleHeroId() &&
+        battleHero->getBattleHeroId() == battle->getActiveBattleHero()->getBattleHeroId();
 }

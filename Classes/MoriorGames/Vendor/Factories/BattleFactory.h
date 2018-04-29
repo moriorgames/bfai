@@ -3,12 +3,12 @@
 
 #include <string>
 #include "../Entity/Battle.h"
-#include "../Repository/HeroRepository.h"
 
 class BattleFactory
 {
 public:
-    Battle *execute(const std::string &json, HeroRepository *);
+    Battle *execute(const std::string &json);
+    void initBattleHero(BattleHero *);
 
 private:
     void addBaseSkills(Hero *);

@@ -23,6 +23,18 @@
       "name": "Single Attack",
       "slug": "single-attack",
       "type": 0
+    },
+    {
+      "id": 5,
+      "name": "Shotgun",
+      "slug": "shotgun",
+      "type": 1
+    },
+    {
+      "id": 6,
+      "name": "Spawn Bots",
+      "slug": "spawn-bots",
+      "type": 2
     }
   ]
 }

@@ -2,19 +2,19 @@
   "heroes": [
     {
       "id": 1,
-      "side": "side-player",
+      "side": "local",
       "x": -7,
       "y": 2
     },
     {
       "id": 4,
-      "side": "side-player",
+      "side": "local",
       "x": -7,
       "y": -2
     },
     {
       "id": 5,
-      "side": "side-enemy",
+      "side": "visitor",
       "x": 6,
       "y": 0
     }

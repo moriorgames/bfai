@@ -4,6 +4,7 @@
 #include "PathFinder.h"
 #include "../Entity/Battle.h"
 #include "../Entity/BattleAction.h"
+#include "../Factories/BattleFactory.h"
 #include "../Observer/BattlePublishable.h"
 #include "../Grid/Grid.h"
 
@@ -21,6 +22,7 @@ protected:
 private:
     Battle *battle;
     PathFinder *pathFinder;
+    BattleFactory *battleFactory;
     Grid *grid;
     std::vector<BattleObservable *> observers;
     std::vector<BattleAction *> extraActions;
@@ -28,6 +30,7 @@ private:
     bool battleActionProcess(BattleHero *, BattleAction *);
     void movement(BattleHero *, BattleAction *);
     void singleDamage(BattleHero *, BattleAction *);
+    void spawn(Skill *, BattleHero *);
     bool isBattleActionAllowed(BattleHero *, BattleAction *);
 };
 

@@ -54,6 +54,17 @@
       "movement": 3,
       "moveFrames": 24,
       "attackFrames": 24
+    },
+    {
+      "id": 6,
+      "name": "Bot",
+      "slug": "bot",
+      "damage": 1,
+      "ranged": 1,
+      "health": 6,
+      "movement": 5,
+      "moveFrames": 16,
+      "attackFrames": 24
     }
   ]
 }

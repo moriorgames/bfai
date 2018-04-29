@@ -68,9 +68,21 @@ void SkillsView::addSkillButtons()
                         gridViewLambda->buildPathForAction(battleHero);
 
                     }
+
+                    if (skillModel->getType() == Skill::TYPE_SPAWN) {
+                        auto battleAction = new BattleAction;
+                        battleAction->setBattleHeroId(
+                            battleHero->getBattleHeroId()
+                        );
+                        battleAction->setSkillId(
+                            skillModel->getId()
+                        );
+                        battleAction->setCoordinate(battleHero->getCoordinate());
+                        eventPublisher->publish(battleAction);
+                    }
                 }
             });
         container->addChild(button);
-        x += 110;
+        x += 130;
     }
 }

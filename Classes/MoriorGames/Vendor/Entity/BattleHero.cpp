@@ -1,8 +1,8 @@
 #include "BattleHero.h"
 
-const std::string BattleHero::SIDE_LOCAL = "side-player";
+const std::string BattleHero::SIDE_LOCAL = "local";
 
-const std::string BattleHero::SIDE_VISITOR = "side-enemy";
+const std::string BattleHero::SIDE_VISITOR = "visitor";
 
 BattleHero::BattleHero()
 {

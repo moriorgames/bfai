@@ -10,6 +10,8 @@ public:
     static short NEXT_TURN_ID;
     static short MOVE_ID;
     static short SINGLE_ATTACK_ID;
+    static short TYPE_AREA_DAMAGE;
+    static short TYPE_SPAWN;
 
 public:
     int getId() const;

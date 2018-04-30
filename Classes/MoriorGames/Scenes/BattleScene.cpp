@@ -1,4 +1,5 @@
 #include "BattleScene.h"
+#include "MainMenuScene.h"
 #include "../View/Battle/BattleView.h"
 
 USING_NS_CC;
@@ -24,4 +25,10 @@ bool BattleScene::init()
     new BattleView(this);
 
     return true;
+}
+
+void BattleScene::goToMainMenuScene(float delay)
+{
+    auto scene = MainMenuScene::createScene();
+    Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
 }

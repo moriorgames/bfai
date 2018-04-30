@@ -31,6 +31,7 @@ private:
     void movement(BattleHero *, BattleAction *);
     void singleDamage(BattleHero *, BattleAction *);
     void spawn(Skill *, BattleHero *, BattleAction *);
+    bool checkEndOfBattle();
     bool isBattleActionAllowed(BattleHero *, BattleAction *);
 };
 

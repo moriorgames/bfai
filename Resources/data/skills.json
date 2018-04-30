@@ -53,6 +53,15 @@
       "damage": 0,
       "ranged": 1,
       "extra": 6
+    },
+    {
+      "id": 99,
+      "name": "End Of Battle",
+      "slug": "end-of-battle",
+      "type": 0,
+      "damage": 0,
+      "ranged": 0,
+      "extra": 6
     }
   ]
 }

@@ -14,7 +14,7 @@ void BattleInitCustomActions::runActions(Layer *layer)
 
     layer->runAction(
         Sequence::create(
-            DelayTime::create(3.0f),
+            DelayTime::create(2.0f),
             Spawn::createWithTwoActions(EaseQuinticActionInOut::create(scaleTo), callback),
             nullptr
         )

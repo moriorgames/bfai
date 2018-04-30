@@ -8,6 +8,8 @@ short Skill::MOVE_ID = 3;
 
 short Skill::SINGLE_ATTACK_ID = 4;
 
+short Skill::END_OF_BATTLE_ID = 99;
+
 short Skill::TYPE_AREA_DAMAGE = 1;
 
 short Skill::TYPE_SPAWN = 2;

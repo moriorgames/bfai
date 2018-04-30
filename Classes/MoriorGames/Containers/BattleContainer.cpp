@@ -2,6 +2,7 @@
 #include "../Factories/BattleEventPublisherFactory.h"
 #include "../Vendor/Repository/SkillRepository.h"
 #include "../View/Battle/BattleBackgroundView.h"
+#include "../View/Battle/EndOfBattle.h"
 
 BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     : layer{layer}
@@ -55,6 +56,9 @@ void BattleContainer::update(BattleAction *battleAction)
 {
     auto skill = skillRepo->findById(battleAction->getSkillId());
     if (skill != nullptr) {
+        if (skill->getId() == Skill::END_OF_BATTLE_ID) {
+            new EndOfBattle(layer);
+        }
         if (skill->getType() == Skill::TYPE_SPAWN) {
             for (auto battleHero:battle->getBattleHeroes()) {
                 if (!battleHero->spawned) {

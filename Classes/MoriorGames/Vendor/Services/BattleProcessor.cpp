@@ -43,6 +43,7 @@ void BattleProcessor::removeObserver(BattleObservable *observer)
 
 void BattleProcessor::notifyObservers(BattleAction *battleAction)
 {
+    bool endOfBattle = checkEndOfBattle();
     auto count = observers.size();
     for (int i = 0; i < count; ++i) {
         observers[i]->update(battleAction);
@@ -53,6 +54,9 @@ void BattleProcessor::notifyObservers(BattleAction *battleAction)
         }
     }
     extraActions.clear();
+    if (endOfBattle) {
+        observers.clear();
+    }
 }
 
 bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *battleAction)
@@ -117,6 +121,32 @@ void BattleProcessor::spawn(Skill *skill, BattleHero *battleHero, BattleAction *
     battleFactory->initBattleHero(spawnHero);
 
     battle->addHero(spawnHero);
+}
+
+bool BattleProcessor::checkEndOfBattle()
+{
+    bool localDeath = true, visitorDeath = true;
+    for (auto hero:battle->getBattleHeroes()) {
+        if (hero->getSide() == BattleHero::SIDE_LOCAL && !hero->isDead()) {
+            localDeath = false;
+        }
+        if (hero->getSide() == BattleHero::SIDE_VISITOR && !hero->isDead()) {
+            visitorDeath = false;
+        }
+    }
+    if (localDeath) {
+        battle->visitorWin();
+    }
+    if (visitorDeath) {
+        battle->localWin();
+    }
+    if (localDeath || visitorDeath) {
+        auto endOfBattleAction = new BattleAction;
+        endOfBattleAction->setSkillId(Skill::END_OF_BATTLE_ID);
+        extraActions.push_back(endOfBattleAction);
+    }
+
+    return localDeath || visitorDeath;
 }
 
 bool BattleProcessor::isBattleActionAllowed(BattleHero *battleHero, BattleAction *battleAction)

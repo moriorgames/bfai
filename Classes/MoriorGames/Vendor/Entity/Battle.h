@@ -15,6 +15,10 @@ public:
     void setActiveSkill(int activeSkill);
     void nextHero();
     void addTurn();
+    void localWin();
+    void visitorWin();
+    bool isLocalWinner();
+    bool isVisitorWinner();
     void print();
 
 private:
@@ -22,6 +26,7 @@ private:
     int activeHero = 0;
     int activeSkill = Skill::MOVE_ID;
     int turn = 0;
+    bool localWins = false, visitorWins = false;
 };
 
 #endif

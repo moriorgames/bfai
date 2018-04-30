@@ -59,6 +59,26 @@ void Battle::addTurn()
     turn++;
 }
 
+void Battle::localWin()
+{
+    localWins = true;
+}
+
+void Battle::visitorWin()
+{
+    visitorWins = true;
+}
+
+bool Battle::isLocalWinner()
+{
+    return localWins;
+}
+
+bool Battle::isVisitorWinner()
+{
+    return visitorWins;
+}
+
 void Battle::print()
 {
     printf("========= Battle: \n"

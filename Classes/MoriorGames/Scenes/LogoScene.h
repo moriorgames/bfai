@@ -13,7 +13,6 @@ public:
     CREATE_FUNC(LogoScene);
 
 private:
-
     void goToSplashScene(float delay);
 };
 

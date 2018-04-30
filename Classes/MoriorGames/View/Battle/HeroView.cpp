@@ -14,14 +14,13 @@ void HeroView::update(BattleAction *battleAction)
 {
     if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {
 
-        heroHitPointsView->update();
-
         if (battleAction->getSkillId() == Skill::NEXT_TURN_ID) {
             heroAnimator->stop();
         } else if (battleAction->getSkillId() == Skill::MOVE_ID) {
             heroAnimator->stop();
             container->runAction(heroAnimator->moveTo(battleHero->getCoordinate()));
         } else if (battleAction->getSkillId() == Skill::DAMAGE_ID) {
+            heroHitPointsView->update();
             heroAnimator->hurt(container, battleAction);
         } else {
             heroAnimator->stop();
@@ -38,6 +37,7 @@ void HeroView::addView()
 {
     container = new Node;
     container->setScale(scale);
+    container->setCascadeOpacityEnabled(true);
     heroHitPointsView->addHitPoints(container);
 
     addHero();

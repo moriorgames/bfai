@@ -1,6 +1,7 @@
 #ifndef MORIOR_GAMES_VENDOR_SERVICES_AI_H
 #define MORIOR_GAMES_VENDOR_SERVICES_AI_H
 
+#include <cmath>
 #include "PathFinder.h"
 #include "../../EventListeners/BattleEventPublishable.h"
 #include "../Entity/Battle.h"
@@ -19,7 +20,9 @@ private:
     BattleEventPublishable *eventPublisher;
     PathFinder *pathFinder;
 
-    Coordinate *getRandomCoordinate(BattleHero *);
+    Coordinate *getCoordinateAction(BattleHero *);
+    Coordinate *closestCoordinateWithEnemy(BattleHero *, std::vector<Path> &pathScope);
+    double getDistance(Coordinate *, Coordinate *);
 };
 
 #endif

@@ -17,6 +17,30 @@
       "side": "visitor",
       "x": 6,
       "y": 0
+    },
+    {
+      "id": 6,
+      "side": "visitor",
+      "x": 7,
+      "y": -2
+    },
+    {
+      "id": 6,
+      "side": "visitor",
+      "x": 7,
+      "y": 2
+    },
+    {
+      "id": 4,
+      "side": "visitor",
+      "x": 5,
+      "y": -3
+    },
+    {
+      "id": 4,
+      "side": "visitor",
+      "x": 5,
+      "y": 3
     }
   ]
 }

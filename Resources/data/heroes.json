@@ -59,7 +59,7 @@
       "id": 6,
       "name": "Bot",
       "slug": "bot",
-      "damage": 1,
+      "damage": 2,
       "ranged": 1,
       "health": 4,
       "movement": 5,

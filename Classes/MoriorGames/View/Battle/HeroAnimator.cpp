@@ -56,7 +56,7 @@ void HeroAnimator::hurt(Node *container, BattleAction *battleAction)
         sprite->runAction(deathAnimation());
         auto delay = DelayTime::create(1.5f);
         auto callback = CallFunc::create([this, container]()
-                                         { container->removeAllChildren(); });
+                                         { container->setOpacity(0); });
         sprite->runAction(Sequence::create(delay, callback, nullptr));
     } else {
         auto hit = Sequence::createWithTwoActions(

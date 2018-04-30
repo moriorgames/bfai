@@ -43,12 +43,13 @@ void BattleProcessor::removeObserver(BattleObservable *observer)
 
 void BattleProcessor::notifyObservers(BattleAction *battleAction)
 {
-    for (auto observer:observers) {
-        observer->update(battleAction);
+    auto count = observers.size();
+    for (int i = 0; i < count; ++i) {
+        observers[i]->update(battleAction);
     }
     for (auto extraAction:extraActions) {
-        for (auto observer:observers) {
-            observer->update(extraAction);
+        for (int i = 0; i < count; ++i) {
+            observers[i]->update(extraAction);
         }
     }
     extraActions.clear();

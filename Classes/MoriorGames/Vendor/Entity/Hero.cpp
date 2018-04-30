@@ -90,6 +90,16 @@ void Hero::setAttackFrames(int attackFrames)
     this->attackFrames = attackFrames;
 }
 
+int Hero::getAgro() const
+{
+    return agro;
+}
+
+void Hero::addAgro(int agro)
+{
+    this->agro += agro;
+}
+
 const std::vector<Skill *> &Hero::getSkills() const
 {
     return skills;

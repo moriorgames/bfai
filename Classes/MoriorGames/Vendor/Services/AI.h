@@ -11,6 +11,8 @@
 class AI
 {
 public:
+    const float AGRO_FACTOR = 3;
+
     AI(Battle *, Grid *, BattleEventPublishable *);
     void process();
 
@@ -20,8 +22,14 @@ private:
     BattleEventPublishable *eventPublisher;
     PathFinder *pathFinder;
 
-    Coordinate *getCoordinateAction(BattleHero *);
-    Coordinate *closestCoordinateWithEnemy(BattleHero *, std::vector<Path> &pathScope);
+    Coordinate *calculateCoordinate(BattleHero *);
+
+    Coordinate *coordinateForMove(BattleHero *, std::vector<Path> &pathScope);
+    Coordinate *coordinateForAction(BattleHero *, std::vector<Path> &pathScope);
+
+    Coordinate *enemyCoordinateTarget(BattleHero *);
+    Coordinate *closestCoordinate(Coordinate *, std::vector<Path> &pathScope);
+    double getDistance(BattleHero *, Coordinate *);
     double getDistance(Coordinate *, Coordinate *);
 };
 

@@ -62,7 +62,7 @@
       "damage": 2,
       "ranged": 1,
       "health": 4,
-      "movement": 5,
+      "movement": 4,
       "moveFrames": 16,
       "attackFrames": 24
     }

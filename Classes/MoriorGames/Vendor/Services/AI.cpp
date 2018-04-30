@@ -13,7 +13,7 @@ void AI::process()
 
     if (activeHero->getSide() == BattleHero::SIDE_VISITOR) {
 
-        auto coordinate = getCoordinateAction(activeHero);
+        auto coordinate = calculateCoordinate(activeHero);
         auto battleAction = new BattleAction;
         battleAction->setBattleHeroId(
             activeHero->getBattleHeroId()
@@ -30,53 +30,79 @@ void AI::process()
     }
 }
 
-Coordinate *AI::getCoordinateAction(BattleHero *battleHero)
+Coordinate *AI::calculateCoordinate(BattleHero *activeHero)
 {
-    std::vector<Path> pathScope;
-    if (!battleHero->hasMoved()) {
-        pathScope = pathFinder->buildPathScope(battleHero->getCoordinate(), battleHero->getMovement(), true);
-    } else {
-        pathScope = pathFinder->buildPathScope(battleHero->getCoordinate(), battleHero->getRanged());
-    }
+    if (!activeHero->hasMoved()) {
+        auto pathScope = pathFinder->buildPathScope(activeHero->getCoordinate(), activeHero->getMovement(), true);
 
-    return closestCoordinateWithEnemy(battleHero, pathScope);
+        return coordinateForMove(activeHero, pathScope);
+    } else {
+        auto pathScope = pathFinder->buildPathScope(activeHero->getCoordinate(), activeHero->getRanged());
+
+        return coordinateForAction(activeHero, pathScope);
+    }
 }
 
-Coordinate *AI::closestCoordinateWithEnemy(BattleHero *battleHero, std::vector<Path> &pathScope)
+Coordinate *AI::coordinateForMove(BattleHero *activeHero, std::vector<Path> &pathScope)
 {
-    auto closestCoordinate = new Coordinate(0, 0);
+    auto coordinateTarget = enemyCoordinateTarget(activeHero);
+
+    return closestCoordinate(coordinateTarget, pathScope);
+}
+
+Coordinate *AI::coordinateForAction(BattleHero *activeHero, std::vector<Path> &pathScope)
+{
+    auto coordinateTarget = enemyCoordinateTarget(activeHero);
+    auto coordinate = closestCoordinate(coordinateTarget, pathScope);
+
+    // Check selected coordinate does not belong to a hero on the same side as me
+    for (auto hero:battle->getBattleHeroes()) {
+        if (!hero->isDead() && hero->getSide() == BattleHero::SIDE_LOCAL) {
+            if (hero->getCoordinate()->isEqual(coordinate)) {
+
+                return coordinate;
+            }
+        }
+    }
+
+    return new Coordinate(99, 99);
+}
+
+Coordinate *AI::enemyCoordinateTarget(BattleHero *current)
+{
+    auto coordinateTarget = new Coordinate(0, 0);
     double distance = 5000;
     for (auto enemy:battle->getBattleHeroes()) {
         if (!enemy->isDead() && enemy->getSide() == BattleHero::SIDE_LOCAL) {
-            auto tmpDistance = getDistance(battleHero->getCoordinate(), enemy->getCoordinate());
+            auto tmpDistance = getDistance(enemy, current->getCoordinate());
             if (distance > tmpDistance) {
-                closestCoordinate = enemy->getCoordinate();
+                coordinateTarget = enemy->getCoordinate();
                 distance = tmpDistance;
             }
         }
     }
 
-    distance = 5000;
+    return coordinateTarget;
+}
+
+double AI::getDistance(BattleHero *enemy, Coordinate *coordinate)
+{
+    return getDistance(enemy->getCoordinate(), coordinate) - (enemy->getAgro() / AGRO_FACTOR);
+}
+
+Coordinate *AI::closestCoordinate(Coordinate *coordinateTarget, std::vector<Path> &pathScope)
+{
+    double distance = 5000;
     int index = 0;
     for (int i = 0; i < pathScope.size(); ++i) {
-        auto tmpDistance = getDistance(closestCoordinate, pathScope[i].coordinate);
+        auto tmpDistance = getDistance(coordinateTarget, pathScope[i].coordinate);
         if (distance > tmpDistance) {
             distance = tmpDistance;
             index = i;
         }
     }
 
-    // Check selected coordinate does not belong to a hero on the same side as me
-    auto coordinate = pathScope[index].coordinate;
-    for (auto hero:battle->getBattleHeroes()) {
-        if (!hero->isDead() && hero->getSide() == BattleHero::SIDE_VISITOR) {
-            if (hero->getCoordinate()->isEqual(coordinate)) {
-                return new Coordinate(99, 99);
-            }
-        }
-    }
-
-    return coordinate;
+    return pathScope[index].coordinate;
 }
 
 double AI::getDistance(Coordinate *a, Coordinate *b)

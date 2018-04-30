@@ -93,12 +93,15 @@ void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAct
 {
     attacker->flip(battleAction->getCoordinate());
     for (auto defender:battle->getBattleHeroes()) {
-        if (defender->getCoordinate()->isEqual(battleAction->getCoordinate())) {
+        if (!defender->isDead() && defender->getCoordinate()->isEqual(battleAction->getCoordinate())) {
+
             auto damage = attacker->getDamage();
             defender->addInjury(damage);
             if (defender->isDead()) {
                 battleAction->getCoordinate()->occupied = false;
             }
+
+            attacker->addAgro(damage);
 
             auto damageAction = new BattleAction;
             damageAction->setSkillId(Skill::DAMAGE_ID);

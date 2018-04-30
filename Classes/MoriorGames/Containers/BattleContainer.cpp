@@ -14,6 +14,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     battleProcessor = new BattleProcessor(battle, gridContainer->getGrid());
     eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);
     skillsView = new SkillsView(layer, battle, eventPublisher, gridContainer->getGridView());
+    artificialIntelligence = new AI(battle, gridContainer->getGrid(), eventPublisher);
 
     addHeroViews();
     registerObservers();
@@ -32,6 +33,11 @@ GridContainer *BattleContainer::getGridContainer() const
 BattleEventPublishable *BattleContainer::getEventPublisher() const
 {
     return eventPublisher;
+}
+
+AI *BattleContainer::getAI() const
+{
+    return artificialIntelligence;
 }
 
 void BattleContainer::addHeroViews()

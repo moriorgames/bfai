@@ -19,6 +19,8 @@ public:
     void visitorWin();
     bool isLocalWinner();
     bool isVisitorWinner();
+    bool isOnline();
+    void setOnline(bool online);
     void print();
 
 private:
@@ -27,6 +29,7 @@ private:
     int activeSkill = Skill::MOVE_ID;
     int turn = 0;
     bool localWins = false, visitorWins = false;
+    bool _isOnline = false;
 };
 
 #endif

@@ -1,6 +1,5 @@
 #include "BattleScene.h"
 #include "MainMenuScene.h"
-#include "../View/Battle/BattleView.h"
 
 USING_NS_CC;
 
@@ -22,9 +21,16 @@ bool BattleScene::init()
         return false;
     }
 
-    new BattleView(this);
+    battleView = new BattleView(this);
+
+    this->schedule(schedule_selector(BattleScene::scheduledEvents), 3.f);
 
     return true;
+}
+
+void BattleScene::scheduledEvents(float delay)
+{
+    battleView->ai();
 }
 
 void BattleScene::goToMainMenuScene(float delay)

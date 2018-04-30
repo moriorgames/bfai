@@ -29,6 +29,8 @@
 		4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFFB202F252000169E86 /* LoadingView.cpp */; };
 		4F2DF5462096F15A00F38AEE /* EndOfBattle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DF5442096F15A00F38AEE /* EndOfBattle.cpp */; };
 		4F2DF5472096F15A00F38AEE /* EndOfBattle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DF5442096F15A00F38AEE /* EndOfBattle.cpp */; };
+		4F2DF54B2097340D00F38AEE /* AI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DF5492097340D00F38AEE /* AI.cpp */; };
+		4F2DF54C2097340D00F38AEE /* AI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DF5492097340D00F38AEE /* AI.cpp */; };
 		4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE44D202EE32E00B687FB /* Resolution.cpp */; };
@@ -253,6 +255,8 @@
 		4F2CBFFC202F252000169E86 /* LoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		4F2DF5442096F15A00F38AEE /* EndOfBattle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EndOfBattle.cpp; sourceTree = "<group>"; };
 		4F2DF5452096F15A00F38AEE /* EndOfBattle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EndOfBattle.h; sourceTree = "<group>"; };
+		4F2DF5492097340D00F38AEE /* AI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AI.cpp; sourceTree = "<group>"; };
+		4F2DF54A2097340D00F38AEE /* AI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AI.h; sourceTree = "<group>"; };
 		4F3AE449202EE30500B687FB /* LogoScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LogoScene.cpp; sourceTree = "<group>"; };
 		4F3AE44A202EE30500B687FB /* LogoScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoScene.h; sourceTree = "<group>"; };
 		4F3AE44D202EE32E00B687FB /* Resolution.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Resolution.cpp; sourceTree = "<group>"; };
@@ -570,14 +574,14 @@
 		4F2CBFEA202F1E4400169E86 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4FE0EAE72030410000E6DD88 /* FontCreator.cpp */,
+				4FE0EAE82030410000E6DD88 /* FontCreator.h */,
 				4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */,
 				4F2CBFED202F1E7D00169E86 /* SoundPlayer.h */,
 				4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */,
 				4F2CBFF1202F1E9300169E86 /* SpriteAnimator.h */,
 				4FA6AD83202F965E00158956 /* SpritesInitializer.cpp */,
 				4FA6AD84202F965E00158956 /* SpritesInitializer.h */,
-				4FE0EAE72030410000E6DD88 /* FontCreator.cpp */,
-				4FE0EAE82030410000E6DD88 /* FontCreator.h */,
 				4FD96FCE205B84F700C0F5A1 /* StringFileReader.cpp */,
 				4FD96FCF205B84F700C0F5A1 /* StringFileReader.h */,
 			);
@@ -665,6 +669,8 @@
 				4F3B0B7F205E57C500D4B53C /* PathFinder.h */,
 				4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */,
 				4FEFE75E2079E0E90031A6B5 /* BattleProcessor.h */,
+				4F2DF5492097340D00F38AEE /* AI.cpp */,
+				4F2DF54A2097340D00F38AEE /* AI.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1077,6 +1083,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3B0B81205E57C500D4B53C /* PathFinder.cpp in Sources */,
+				4F2DF54B2097340D00F38AEE /* AI.cpp in Sources */,
 				4F3AE454202EE9E000B687FB /* ViewHelper.cpp in Sources */,
 				4FBCDC532032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
 				4F3AE458202EE9F600B687FB /* LogoView.cpp in Sources */,
@@ -1199,6 +1206,7 @@
 				4F89105B2034BF2800D8382C /* Coordinate.cpp in Sources */,
 				4FEFCC23205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
+				4F2DF54C2097340D00F38AEE /* AI.cpp in Sources */,
 				4FA6AD69202F7C8800158956 /* SplashView.cpp in Sources */,
 				4F01D161208C2AE9002231DA /* SkillsView.cpp in Sources */,
 				4F72384D20637E850064037C /* BattleParser.cpp in Sources */,

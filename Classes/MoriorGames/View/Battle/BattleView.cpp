@@ -15,9 +15,14 @@ void BattleView::addView()
 {
     auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
 
-    auto battleContainer = new BattleContainer(layer, json);
+    battleContainer = new BattleContainer(layer, json);
 
     new BattleEventListener(
         layer, battleContainer->getBattle(), battleContainer->getEventPublisher(), battleContainer->getGridContainer()
     );
+}
+
+void BattleView::ai()
+{
+    battleContainer->getAI()->process();
 }

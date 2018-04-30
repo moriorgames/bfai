@@ -5,6 +5,7 @@
 #include "../Containers/GridContainer.h"
 #include "../EventListeners/BattleEventPublishable.h"
 #include "../Vendor/Factories/BattleFactory.h"
+#include "../Vendor/Services/AI.h"
 #include "../Vendor/Services/BattleProcessor.h"
 #include "../Vendor/Services/PathFinder.h"
 #include "../View/Battle/HeroView.h"
@@ -18,14 +19,16 @@ public:
     Battle *getBattle() const;
     GridContainer *getGridContainer() const;
     BattleEventPublishable *getEventPublisher() const;
+    AI *getAI() const;
     void update(BattleAction *) override;
 
 private:
     Layer *layer;
     Battle *battle;
     GridContainer *gridContainer;
-    BattleProcessor *battleProcessor;
     BattleEventPublishable *eventPublisher;
+    AI *artificialIntelligence;
+    BattleProcessor *battleProcessor;
     std::vector<HeroView *> heroViews;
     SkillsView *skillsView;
 

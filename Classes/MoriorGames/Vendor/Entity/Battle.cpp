@@ -79,6 +79,16 @@ bool Battle::isVisitorWinner()
     return visitorWins;
 }
 
+bool Battle::isOnline()
+{
+    return _isOnline;
+}
+
+void Battle::setOnline(bool online)
+{
+    this->_isOnline = online;
+}
+
 void Battle::print()
 {
     printf("========= Battle: \n"

@@ -30,13 +30,14 @@ bool BattleEventListener::onTouchMove(Touch *touch, Event *event)
 bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
 {
     Vec2 screenTouch = layer->convertTouchToNodeSpace(touch);
+    auto activeHero = battle->getActiveBattleHero();
 
-    if (isTouchWithinBoundariesOfBattleField(screenTouch)) {
+    if (activeHero->getSide() == BattleHero::SIDE_LOCAL && isTouchWithinBoundariesOfBattleField(screenTouch)) {
 
         auto coordinate = closestCoordinate(screenTouch);
         auto battleAction = new BattleAction;
         battleAction->setBattleHeroId(
-            battle->getActiveBattleHero()->getBattleHeroId()
+            activeHero->getBattleHeroId()
         );
         battleAction->setSkillId(
             battle->getActiveSkill()

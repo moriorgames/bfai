@@ -55,30 +55,20 @@ void SkillsView::addSkillButtons()
                         );
                         battleAction->setCoordinate(battleHero->getCoordinate());
                         eventPublisher->publish(battleAction);
-                    }
-                    if (skillModel->getId() == Skill::MOVE_ID) {
+                    } else if (skillModel->getId() == Skill::MOVE_ID) {
 
                         gridViewLambda->removeActionGrid();
                         gridViewLambda->buildPathForMove(battleHero);
 
-                    }
-                    if (skillModel->getId() == Skill::SINGLE_ATTACK_ID) {
+                    } else if (skillModel->getId() == Skill::SINGLE_ATTACK_ID) {
 
                         gridViewLambda->removeActionGrid();
                         gridViewLambda->buildPathForAction(battleHero);
 
-                    }
+                    } else {
 
-                    if (skillModel->getType() == Skill::TYPE_SPAWN) {
-                        auto battleAction = new BattleAction;
-                        battleAction->setBattleHeroId(
-                            battleHero->getBattleHeroId()
-                        );
-                        battleAction->setSkillId(
-                            skillModel->getId()
-                        );
-                        battleAction->setCoordinate(battleHero->getCoordinate());
-                        eventPublisher->publish(battleAction);
+                        gridViewLambda->removeActionGrid();
+                        gridViewLambda->buildPathForSkill(battleHero, skillModel);
                     }
                 }
             });

@@ -52,6 +52,36 @@ void Skill::setType(short type)
     this->type = type;
 }
 
+int Skill::getDamage() const
+{
+    return damage;
+}
+
+void Skill::setDamage(int damage)
+{
+    this->damage = damage;
+}
+
+int Skill::getRanged() const
+{
+    return ranged;
+}
+
+void Skill::setRanged(int ranged)
+{
+    this->ranged = ranged;
+}
+
+int Skill::getExtra() const
+{
+    return extra;
+}
+
+void Skill::setExtra(int extra)
+{
+    this->extra = extra;
+}
+
 void Skill::print()
 {
     printf("========= Skill: \n"
@@ -59,10 +89,16 @@ void Skill::print()
            " - name %s\n"
            " - slug %s\n"
            " - type %i\n"
+           " - damage %i\n"
+           " - ranged %i\n"
+           " - extra %i\n"
            " \n",
            id,
            name.c_str(),
            slug.c_str(),
-           type
+           type,
+           damage,
+           ranged,
+           extra
     );
 }

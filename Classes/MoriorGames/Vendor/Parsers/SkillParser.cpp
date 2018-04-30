@@ -30,5 +30,8 @@ void SkillParser::addData(Skill *item, const rapidjson::Value &data)
     item->setName(getString(data, "name"));
     item->setSlug(getString(data, "slug"));
     item->setType(getInt(data, "type"));
+    item->setDamage(getInt(data, "damage"));
+    item->setRanged(getInt(data, "ranged"));
+    item->setExtra(getInt(data, "extra"));
 }
 

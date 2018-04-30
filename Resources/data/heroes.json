@@ -61,7 +61,7 @@
       "slug": "bot",
       "damage": 1,
       "ranged": 1,
-      "health": 6,
+      "health": 4,
       "movement": 5,
       "moveFrames": 16,
       "attackFrames": 24

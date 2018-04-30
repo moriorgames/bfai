@@ -23,6 +23,7 @@ public:
     void buildGrid(const std::vector<Coordinate *> &coordinates);
     void buildPathForMove(BattleHero *);
     void buildPathForAction(BattleHero *);
+    void buildPathForSkill(BattleHero *, Skill *);
     void removeActionGrid();
     void update(BattleAction *) override;
 

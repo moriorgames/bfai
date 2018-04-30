@@ -30,7 +30,7 @@ private:
     bool battleActionProcess(BattleHero *, BattleAction *);
     void movement(BattleHero *, BattleAction *);
     void singleDamage(BattleHero *, BattleAction *);
-    void spawn(Skill *, BattleHero *);
+    void spawn(Skill *, BattleHero *, BattleAction *);
     bool isBattleActionAllowed(BattleHero *, BattleAction *);
 };
 

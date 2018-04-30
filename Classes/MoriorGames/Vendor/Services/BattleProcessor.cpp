@@ -68,7 +68,7 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
 
         auto skill = skillRepo->findById(battleAction->getSkillId());
         if (skill->getType() == Skill::TYPE_SPAWN) {
-            spawn(skill, battleHero);
+            spawn(skill, battleHero, battleAction);
         }
     }
 
@@ -105,13 +105,12 @@ void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAct
     }
 }
 
-void BattleProcessor::spawn(Skill *skill, BattleHero *battleHero)
+void BattleProcessor::spawn(Skill *skill, BattleHero *battleHero, BattleAction *battleAction)
 {
-    // @TODO this is a temporary spike to spawn heroes in gameplay
     auto spawnHero = new BattleHero;
-    spawnHero->setId(6);
+    spawnHero->setId(skill->getExtra());
     spawnHero->setSide(battleHero->getSide());
-    auto coordinate = grid->findByXY(battleHero->getCoordinate()->x, battleHero->getCoordinate()->y + 1);
+    auto coordinate = grid->findByXY(battleAction->getCoordinate()->x, battleAction->getCoordinate()->y);
     coordinate->occupied = true;
     spawnHero->setCoordinate(coordinate);
     battleFactory->initBattleHero(spawnHero);

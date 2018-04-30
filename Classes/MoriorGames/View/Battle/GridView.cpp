@@ -40,6 +40,13 @@ void GridView::buildPathForAction(BattleHero *hero)
     }
 }
 
+void GridView::buildPathForSkill(BattleHero *hero, Skill *skill)
+{
+    for (auto path:pathFinder->buildPathScope(hero->getCoordinate(), skill->getRanged(), true)) {
+        drawTile(path.coordinate, GridView::ATTACK_FILL_COLOR, actionTiles);
+    }
+}
+
 void GridView::removeActionGrid()
 {
     actionTiles->removeAllChildren();

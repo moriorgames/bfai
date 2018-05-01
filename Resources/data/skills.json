@@ -42,7 +42,7 @@
       "slug": "shotgun",
       "type": 1,
       "damage": 3,
-      "ranged": 3,
+      "ranged": 2,
       "extra": 0
     },
     {

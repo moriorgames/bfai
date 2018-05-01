@@ -42,6 +42,10 @@
       "skillId": 6
     },
     {
+      "battleHeroId": 2,
+      "skillId": 5
+    },
+    {
       "battleHeroId": 1,
       "skillId": 7
     }

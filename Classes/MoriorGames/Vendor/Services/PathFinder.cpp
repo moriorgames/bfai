@@ -39,6 +39,49 @@ const std::vector<Path> &PathFinder::buildPathScope(Coordinate *origin, int rang
     return pathScope;
 }
 
+const std::vector<Path> &PathFinder::buildPathForArea(Coordinate *origin, int range)
+{
+    pathScope.clear();
+    Path pathRight;
+    pathRight.coordinate = origin;
+    pathRight.coordinate->x++;
+    pathScope.push_back(pathRight);
+
+    // Right Area
+    for (int i = 0; i < range; ++i) {
+        for (auto pathStruct:pathScope) {
+            if (pathStruct.level == i) {
+
+                auto axisRight = grid->findByXY(pathStruct.coordinate->x + 1, pathStruct.coordinate->y);
+
+                for (auto axis:moveAreaAxis(axisRight)) {
+                    bool add = true;
+                    for (auto limits:pathScope) {
+                        if (limits.coordinate->x == axis->x && limits.coordinate->y == axis->y) {
+                            add = false;
+                            break;
+                        }
+                    }
+                    if (add && grid->isValidCoordinate(axis)) {
+                        Path newPath;
+                        newPath.level = i + 1;
+                        newPath.coordinate = axis;
+                        pathScope.push_back(newPath);
+                    }
+                }
+                Path newPath;
+                newPath.level = i + 1;
+                newPath.coordinate = axisRight;
+                pathScope.push_back(newPath);
+            }
+        }
+    }
+
+    // Left Area
+
+    return pathScope;
+}
+
 const std::vector<Path> &PathFinder::getPathScope() const
 {
     return pathScope;
@@ -67,6 +110,24 @@ std::vector<Coordinate *> PathFinder::moveAxis(Coordinate *current)
     auto axis4 = grid->findByXY(x - 1, y);
     if (axis4 != nullptr) {
         axis.push_back(axis4);
+    }
+
+    return axis;
+}
+
+std::vector<Coordinate *> PathFinder::moveAreaAxis(Coordinate *current)
+{
+    int x = current->x;
+    int y = current->y;
+    std::vector<Coordinate *> axis;
+    auto axis1 = grid->findByXY(x, y + 1);
+    if (axis1 != nullptr) {
+        axis.push_back(axis1);
+    }
+
+    auto axis2 = grid->findByXY(x, y - 1);
+    if (axis2 != nullptr) {
+        axis.push_back(axis2);
     }
 
     return axis;

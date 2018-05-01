@@ -37,6 +37,12 @@ void SkillsView::addSkillButtons()
     auto gridViewLambda = gridView;
     for (auto skill:battleHero->getSkills()) {
 
+        auto skillBackground = Sprite::create("ui/selected-skill.png");
+        skillBackground->setPosition(Point(x, y));
+        if (skill->getId() == battle->getActiveSkill()) {
+            skillBackground->setScale(skillBackground->getScale() * 1.15f);
+        }
+
         auto skillModel = skillRepo->findById(skill->getId());
         auto button = ui::Button::create("ui/" + skillModel->getSlug() + ".png", "", "");
         button->setPosition(Point(x, y));
@@ -70,8 +76,11 @@ void SkillsView::addSkillButtons()
                         gridViewLambda->removeActionGrid();
                         gridViewLambda->buildPathForSkill(battleHero, skillModel);
                     }
+
+                    update(new BattleAction);
                 }
             });
+        container->addChild(skillBackground);
         container->addChild(button);
         x += 140;
     }

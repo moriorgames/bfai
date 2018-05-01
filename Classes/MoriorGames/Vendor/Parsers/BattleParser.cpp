@@ -16,9 +16,9 @@ Battle *BattleParser::parse()
 
 void BattleParser::addHeroesData(Battle *battle, const rapidjson::Value &data)
 {
-    if (document.HasMember(ROW) && document[ROW].IsArray()) {
+    if (document.HasMember(HEROES) && document[HEROES].IsArray()) {
 
-        const Value &data = document[ROW];
+        const Value &data = document[HEROES];
         for (auto itr = data.Begin(); itr != data.End(); ++itr) {
             if ((*itr).IsObject()) {
                 addHeroData(battle, *itr);
@@ -29,12 +29,33 @@ void BattleParser::addHeroesData(Battle *battle, const rapidjson::Value &data)
 
 void BattleParser::addHeroData(Battle *battle, const rapidjson::Value &data)
 {
-    auto hero = new BattleHero;
+    auto battleHero = new BattleHero;
     auto coordinate = new Coordinate(getInt(data, "x"), getInt(data, "y"));
 
-    hero->setId(getInt(data, "id"));
-    hero->setSide(getString(data, "side"));
-    hero->setCoordinate(coordinate);
+    battleHero->setBattleHeroId(getInt(data, "battleHeroId"));
+    battleHero->setId(getInt(data, "heroId"));
+    battleHero->setSide(getString(data, "side"));
+    battleHero->setCoordinate(coordinate);
 
-    battle->addHero(hero);
+    battle->addHero(battleHero);
+}
+
+std::vector<SkillHero> BattleParser::parseSkills()
+{
+    std::vector<SkillHero> skillHeroes;
+
+    if (document.HasMember(SKILLS) && document[SKILLS].IsArray()) {
+
+        const Value &data = document[SKILLS];
+        for (auto itr = data.Begin(); itr != data.End(); ++itr) {
+            if ((*itr).IsObject()) {
+                SkillHero skillHero;
+                skillHero.skillId = getInt(*itr, "skillId");
+                skillHero.battleHeroId = getInt(*itr, "battleHeroId");
+                skillHeroes.push_back(skillHero);
+            }
+        }
+    }
+
+    return skillHeroes;
 }

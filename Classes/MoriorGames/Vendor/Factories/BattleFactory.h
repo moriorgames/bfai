@@ -3,6 +3,7 @@
 
 #include <string>
 #include "../Entity/Battle.h"
+#include "../Parsers/BattleParser.h"
 
 class BattleFactory
 {
@@ -11,6 +12,8 @@ public:
     void initBattleHero(BattleHero *);
 
 private:
+    BattleParser *battleParser;
+
     void addBaseSkills(BattleHero *);
 };
 

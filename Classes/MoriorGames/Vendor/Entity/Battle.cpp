@@ -2,7 +2,6 @@
 
 void Battle::addHero(BattleHero *battleHero)
 {
-    battleHero->setBattleHeroId(heroes.size() + 1);
     heroes.push_back(battleHero);
 }
 

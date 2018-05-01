@@ -1,46 +1,45 @@
 {
   "heroes": [
     {
-      "id": 1,
+      "battleHeroId": 1,
+      "heroId": 1,
       "side": "local",
       "x": -7,
       "y": 2
     },
     {
-      "id": 4,
+      "battleHeroId": 2,
+      "heroId": 4,
       "side": "local",
       "x": -7,
       "y": -2
     },
     {
-      "id": 5,
+      "battleHeroId": 3,
+      "heroId": 5,
       "side": "visitor",
       "x": 6,
       "y": 0
     },
     {
-      "id": 6,
+      "battleHeroId": 4,
+      "heroId": 6,
       "side": "visitor",
       "x": 7,
       "y": -2
     },
     {
-      "id": 6,
-      "side": "visitor",
-      "x": 7,
-      "y": 2
-    },
-    {
-      "id": 4,
+      "battleHeroId": 5,
+      "heroId": 4,
       "side": "visitor",
       "x": 5,
       "y": -3
-    },
+    }
+  ],
+  "skillsHeroes": [
     {
-      "id": 4,
-      "side": "visitor",
-      "x": 5,
-      "y": 3
+      "battleHeroId": 3,
+      "skillId": 6
     }
   ]
 }

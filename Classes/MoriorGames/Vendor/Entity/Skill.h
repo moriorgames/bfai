@@ -13,6 +13,10 @@ public:
     static short END_OF_BATTLE_ID;
     static short TYPE_AREA_DAMAGE;
     static short TYPE_SPAWN;
+    static short TYPE_BOOST_HEALTH;
+    static short TYPE_BOOST_DAMAGE;
+    static short TYPE_BOOST_RANGED;
+    static short TYPE_BOOST_MOVE;
 
 public:
     int getId() const;

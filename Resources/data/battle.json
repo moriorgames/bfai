@@ -40,6 +40,10 @@
     {
       "battleHeroId": 3,
       "skillId": 6
+    },
+    {
+      "battleHeroId": 1,
+      "skillId": 7
     }
   ]
 }

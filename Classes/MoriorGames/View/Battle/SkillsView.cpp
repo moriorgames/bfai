@@ -37,6 +37,13 @@ void SkillsView::addSkillButtons()
     auto gridViewLambda = gridView;
     for (auto skill:battleHero->getSkills()) {
 
+        if (skill->getType() == Skill::TYPE_BOOST_HEALTH ||
+            skill->getType() == Skill::TYPE_BOOST_DAMAGE ||
+            skill->getType() == Skill::TYPE_BOOST_RANGED ||
+            skill->getType() == Skill::TYPE_BOOST_MOVE) {
+            continue;
+        }
+
         auto skillBackground = Sprite::create("ui/selected-skill.png");
         skillBackground->setPosition(Point(x, y));
         if (skill->getId() == battle->getActiveSkill()) {

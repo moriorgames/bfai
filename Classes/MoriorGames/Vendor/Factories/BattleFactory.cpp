@@ -31,7 +31,20 @@ void BattleFactory::addBaseSkills(BattleHero *battleHero)
 
     for (auto skillHero:battleParser->parseSkills()) {
         if (battleHero->getBattleHeroId() == skillHero.battleHeroId) {
-            battleHero->addSkill(skillRepo->findById(skillHero.skillId));
+            auto skill = skillRepo->findById(skillHero.skillId);
+            if (skill->getType() == Skill::TYPE_BOOST_HEALTH) {
+                battleHero->setHealth(battleHero->getHealth() + 1);
+            }
+            if (skill->getType() == Skill::TYPE_BOOST_DAMAGE) {
+                battleHero->setDamage(battleHero->getDamage() + 1);
+            }
+            if (skill->getType() == Skill::TYPE_BOOST_RANGED) {
+                battleHero->setRanged(battleHero->getRanged() + 1);
+            }
+            if (skill->getType() == Skill::TYPE_BOOST_MOVE) {
+                battleHero->setMovement(battleHero->getMovement() + 1);
+            }
+            battleHero->addSkill(skill);
         }
     }
 }

@@ -14,6 +14,14 @@ short Skill::TYPE_AREA_DAMAGE = 1;
 
 short Skill::TYPE_SPAWN = 2;
 
+short Skill::TYPE_BOOST_HEALTH = 3;
+
+short Skill::TYPE_BOOST_DAMAGE = 4;
+
+short Skill::TYPE_BOOST_RANGED = 5;
+
+short Skill::TYPE_BOOST_MOVE = 6;
+
 int Skill::getId() const
 {
     return id;

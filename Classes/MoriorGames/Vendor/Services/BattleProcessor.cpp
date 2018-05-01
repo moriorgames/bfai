@@ -7,6 +7,7 @@ BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
     : battle{battle}, grid{grid}
 {
     pathFinder = new PathFinder(grid);
+    battleActionChecker = new BattleActionChecker(pathFinder);
     battleFactory = new BattleFactory;
 }
 
@@ -61,6 +62,12 @@ void BattleProcessor::notifyObservers(BattleAction *battleAction)
 
 bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *battleAction)
 {
+    auto skill = skillRepo->findById(battleAction->getSkillId());
+    if (!battleActionChecker->check(skill, battleHero, battleAction)) {
+
+        return true;
+    }
+
     if (!battleHero->hasMoved() && battleAction->getSkillId() == Skill::MOVE_ID) {
         movement(battleHero, battleAction);
 
@@ -71,7 +78,6 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
         singleDamage(battleHero, battleAction);
     } else {
 
-        auto skill = skillRepo->findById(battleAction->getSkillId());
         if (skill->getType() == Skill::TYPE_SPAWN) {
             spawn(skill, battleHero, battleAction);
         }

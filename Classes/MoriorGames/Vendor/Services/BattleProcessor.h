@@ -2,6 +2,7 @@
 #define MORIOR_GAMES_VENDOR_SERVICES_BATTLE_PROCESSOR_H
 
 #include "PathFinder.h"
+#include "BattleActionChecker.h"
 #include "../Entity/Battle.h"
 #include "../Entity/BattleAction.h"
 #include "../Factories/BattleFactory.h"
@@ -23,6 +24,7 @@ private:
     Battle *battle;
     PathFinder *pathFinder;
     BattleFactory *battleFactory;
+    BattleActionChecker *battleActionChecker;
     Grid *grid;
     std::vector<BattleObservable *> observers;
     std::vector<BattleAction *> extraActions;

@@ -75,6 +75,9 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
         if (skill->getType() == Skill::TYPE_SPAWN) {
             spawn(skill, battleHero, battleAction);
         }
+        if (skill->getType() == Skill::TYPE_AREA_DAMAGE) {
+            areaDamage(skill, battleHero, battleAction);
+        }
     }
 
     return true;
@@ -96,18 +99,8 @@ void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAct
         if (!defender->isDead() && defender->getCoordinate()->isEqual(battleAction->getCoordinate())) {
 
             auto damage = attacker->getDamage();
-            defender->addInjury(damage);
-            if (defender->isDead()) {
-                battleAction->getCoordinate()->occupied = false;
-            }
+            performDamage(defender, attacker, battleAction, damage);
 
-            attacker->addAgro(damage);
-
-            auto damageAction = new BattleAction;
-            damageAction->setSkillId(Skill::DAMAGE_ID);
-            damageAction->setBattleHeroId(defender->getBattleHeroId());
-            damageAction->setExtra(damage);
-            extraActions.push_back(damageAction);
             break;
         }
     }
@@ -124,6 +117,36 @@ void BattleProcessor::spawn(Skill *skill, BattleHero *battleHero, BattleAction *
     battleFactory->initBattleHero(spawnHero);
 
     battle->addHero(spawnHero);
+}
+
+void BattleProcessor::areaDamage(Skill *skill, BattleHero *attacker, BattleAction *battleAction)
+{
+    auto pathScope = pathFinder->buildPathForArea(attacker->getCoordinate(), skill->getRanged());
+    for (auto path:pathScope) {
+        if (isValidAreaOfEffect(attacker, battleAction, path.coordinate)) {
+            for (auto defender:battle->getBattleHeroes()) {
+                if (!defender->isDead() && defender->getCoordinate()->isEqual(path.coordinate)) {
+                    performDamage(defender, attacker, battleAction, skill->getDamage());
+                }
+            }
+        }
+    }
+}
+
+void BattleProcessor::performDamage(BattleHero *defender, BattleHero *attacker, BattleAction *battleAction, int damage)
+{
+    defender->addInjury(damage);
+    if (defender->isDead()) {
+        battleAction->getCoordinate()->occupied = false;
+    }
+
+    attacker->addAgro(damage);
+
+    auto damageAction = new BattleAction;
+    damageAction->setSkillId(Skill::DAMAGE_ID);
+    damageAction->setBattleHeroId(defender->getBattleHeroId());
+    damageAction->setExtra(damage);
+    extraActions.push_back(damageAction);
 }
 
 bool BattleProcessor::checkEndOfBattle()
@@ -156,4 +179,12 @@ bool BattleProcessor::isBattleActionAllowed(BattleHero *battleHero, BattleAction
 {
     return battleHero->getBattleHeroId() == battleAction->getBattleHeroId() &&
         battleHero->getBattleHeroId() == battle->getActiveBattleHero()->getBattleHeroId();
+}
+
+bool BattleProcessor::isValidAreaOfEffect(BattleHero *battleHero, BattleAction *battleAction, Coordinate *coordinate)
+{
+    auto x = battleHero->getCoordinate()->x;
+
+    return (x > battleAction->getCoordinate()->x && x > coordinate->x) ||
+        (x < battleAction->getCoordinate()->x && x < coordinate->x);
 }

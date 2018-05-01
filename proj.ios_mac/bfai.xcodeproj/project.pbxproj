@@ -79,6 +79,8 @@
 		4F7314BF205CF3D4005AAB83 /* BattleHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7314BD205CF3D4005AAB83 /* BattleHero.cpp */; };
 		4F7314C3205CF5B5005AAB83 /* BattleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7314C1205CF5B5005AAB83 /* BattleView.cpp */; };
 		4F7314C4205CF5B5005AAB83 /* BattleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7314C1205CF5B5005AAB83 /* BattleView.cpp */; };
+		4F78876620989A8C00F18454 /* PathFinderArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F78876420989A8C00F18454 /* PathFinderArea.cpp */; };
+		4F78876720989A8C00F18454 /* PathFinderArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F78876420989A8C00F18454 /* PathFinderArea.cpp */; };
 		4F7EB1632069FF340086A900 /* BattleContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EB1612069FF340086A900 /* BattleContainer.cpp */; };
 		4F7EB1642069FF340086A900 /* BattleContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EB1612069FF340086A900 /* BattleContainer.cpp */; };
 		4F89105A2034BF2800D8382C /* Coordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8910582034BF2800D8382C /* Coordinate.cpp */; };
@@ -307,6 +309,8 @@
 		4F7314BD205CF3D4005AAB83 /* BattleHero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BattleHero.cpp; sourceTree = "<group>"; };
 		4F7314C1205CF5B5005AAB83 /* BattleView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleView.cpp; sourceTree = "<group>"; };
 		4F7314C2205CF5B5005AAB83 /* BattleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleView.h; sourceTree = "<group>"; };
+		4F78876420989A8C00F18454 /* PathFinderArea.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PathFinderArea.cpp; sourceTree = "<group>"; };
+		4F78876520989A8C00F18454 /* PathFinderArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathFinderArea.h; sourceTree = "<group>"; };
 		4F7EB1612069FF340086A900 /* BattleContainer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleContainer.cpp; sourceTree = "<group>"; };
 		4F7EB1622069FF340086A900 /* BattleContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleContainer.h; sourceTree = "<group>"; };
 		4F8910582034BF2800D8382C /* Coordinate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinate.cpp; sourceTree = "<group>"; };
@@ -665,12 +669,14 @@
 		4F3B0B7D205E57C500D4B53C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4F3B0B7E205E57C500D4B53C /* PathFinder.cpp */,
-				4F3B0B7F205E57C500D4B53C /* PathFinder.h */,
-				4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */,
-				4FEFE75E2079E0E90031A6B5 /* BattleProcessor.h */,
 				4F2DF5492097340D00F38AEE /* AI.cpp */,
 				4F2DF54A2097340D00F38AEE /* AI.h */,
+				4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */,
+				4FEFE75E2079E0E90031A6B5 /* BattleProcessor.h */,
+				4F3B0B7E205E57C500D4B53C /* PathFinder.cpp */,
+				4F3B0B7F205E57C500D4B53C /* PathFinder.h */,
+				4F78876420989A8C00F18454 /* PathFinderArea.cpp */,
+				4F78876520989A8C00F18454 /* PathFinderArea.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1117,6 +1123,7 @@
 				4FEFE75A2079E0A30031A6B5 /* BattleAction.cpp in Sources */,
 				4F89105E2034BF3A00D8382C /* Grid.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				4F78876620989A8C00F18454 /* PathFinderArea.cpp in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
 				4FEFCC22205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F72383F20637E0D0064037C /* HeroRepository.cpp in Sources */,
@@ -1157,6 +1164,7 @@
 				4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */,
 				4FA6AD7F202F8FC200158956 /* WorldView.cpp in Sources */,
 				4F5C0CE0208B0749006D57BF /* SkillRepository.cpp in Sources */,
+				4F78876720989A8C00F18454 /* PathFinderArea.cpp in Sources */,
 				4F5C0CDC208B0254006D57BF /* SkillParser.cpp in Sources */,
 				4F3AE459202EE9F600B687FB /* LogoView.cpp in Sources */,
 				4FE0EAEA2030410000E6DD88 /* FontCreator.cpp in Sources */,

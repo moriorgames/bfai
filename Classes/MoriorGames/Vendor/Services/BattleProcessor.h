@@ -31,8 +31,11 @@ private:
     void movement(BattleHero *, BattleAction *);
     void singleDamage(BattleHero *, BattleAction *);
     void spawn(Skill *, BattleHero *, BattleAction *);
+    void areaDamage(Skill *, BattleHero *, BattleAction *);
+    void performDamage(BattleHero *, BattleHero *, BattleAction *, int damage);
     bool checkEndOfBattle();
     bool isBattleActionAllowed(BattleHero *, BattleAction *);
+    bool isValidAreaOfEffect(BattleHero *, BattleAction *, Coordinate *);
 };
 
 #endif

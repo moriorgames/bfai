@@ -18,7 +18,7 @@ void SkillsView::addView()
 {
     container = new Node;
     container->setScale(scale);
-    container->setPosition(position->getTopLeftPosition());
+    container->setPosition(position->getLeftBotPosition());
     container->removeAllChildren();
 
     layer->addChild(container, Z_ORDER_MENU_ITEMS);
@@ -32,8 +32,8 @@ void SkillsView::removeSkillButtons()
 void SkillsView::addSkillButtons()
 {
     auto battleHero = battle->getActiveBattleHero();
-    float x = 70;
-    float y = -50;
+    float x = 80;
+    float y = 80;
     auto gridViewLambda = gridView;
     for (auto skill:battleHero->getSkills()) {
 
@@ -73,6 +73,6 @@ void SkillsView::addSkillButtons()
                 }
             });
         container->addChild(button);
-        x += 130;
+        x += 140;
     }
 }

@@ -26,7 +26,7 @@ void LoadingView::addView()
 
 void LoadingView::addLoadingBar()
 {
-    auto bottomPosition = position->getBottomCenteredPosition();
+    auto bottomPosition = position->getCenterBotPosition();
     auto loadingBarNode = new Node;
 
     // Loading Background Bar

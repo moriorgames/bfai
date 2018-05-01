@@ -14,7 +14,7 @@ void BattleBackgroundView::addView()
 {
     auto background = Sprite::create("img/battle-background.jpg");
 
-    auto pos = position->getBottomCenteredPosition();
+    auto pos = position->getCenterBotPosition();
     background->setScale(scale);
     background->setAnchorPoint({0.5, 0});
     background->setPosition(

@@ -6,15 +6,17 @@
 class Position: public ScreenProperties
 {
 public:
-    cocos2d::Point getCenteredPosition();
-    cocos2d::Point getBottomCenteredPosition();
-    cocos2d::Point getTopCenteredPosition();
-    cocos2d::Point getLeftCenteredPosition();
-    cocos2d::Point getRightCenteredPosition();
-    cocos2d::Point getTopLeftPosition();
-    cocos2d::Point getTopRightPosition();
-    cocos2d::Point getBotRightPosition();
-    cocos2d::Point getBotLeftPosition();
+    cocos2d::Point getLeftTopPosition();
+    cocos2d::Point getLeftCenterPosition();
+    cocos2d::Point getLeftBotPosition();
+
+    cocos2d::Point getCenterTopPosition();
+    cocos2d::Point getCenterCenterPosition();
+    cocos2d::Point getCenterBotPosition();
+
+    cocos2d::Point getRightTopPosition();
+    cocos2d::Point getRightCenterPosition();
+    cocos2d::Point getRightBotPosition();
 
 private:
     float centerX();

@@ -1,48 +1,48 @@
 #include "Position.h"
 
-cocos2d::Point Position::getCenteredPosition()
-{
-    return cocos2d::Point(centerX(), centerY());
-}
-
-cocos2d::Point Position::getBottomCenteredPosition()
-{
-    return cocos2d::Point(centerX(), bot());
-}
-
-cocos2d::Point Position::getTopCenteredPosition()
-{
-    return cocos2d::Point(centerX(), top());
-}
-
-cocos2d::Point Position::getLeftCenteredPosition()
-{
-    return cocos2d::Point(left(), centerY());
-}
-
-cocos2d::Point Position::getRightCenteredPosition()
-{
-    return cocos2d::Point(right(), centerY());
-}
-
-cocos2d::Point Position::getTopLeftPosition()
+cocos2d::Point Position::getLeftTopPosition()
 {
     return cocos2d::Point(left(), top());
 }
 
-cocos2d::Point Position::getTopRightPosition()
+cocos2d::Point Position::getLeftCenterPosition()
+{
+    return cocos2d::Point(left(), centerY());
+}
+
+cocos2d::Point Position::getLeftBotPosition()
+{
+    return cocos2d::Point(left(), bot());
+}
+
+cocos2d::Point Position::getCenterTopPosition()
+{
+    return cocos2d::Point(centerX(), top());
+}
+
+cocos2d::Point Position::getCenterCenterPosition()
+{
+    return cocos2d::Point(centerX(), centerY());
+}
+
+cocos2d::Point Position::getCenterBotPosition()
+{
+    return cocos2d::Point(centerX(), bot());
+}
+
+cocos2d::Point Position::getRightTopPosition()
 {
     return cocos2d::Point(right(), top());
 }
 
-cocos2d::Point Position::getBotRightPosition()
+cocos2d::Point Position::getRightCenterPosition()
 {
-    return cocos2d::Point(right(), bot());
+    return cocos2d::Point(right(), centerY());
 }
 
-cocos2d::Point Position::getBotLeftPosition()
+cocos2d::Point Position::getRightBotPosition()
 {
-    return cocos2d::Point(left(), bot());
+    return cocos2d::Point(right(), bot());
 }
 
 float Position::centerX()

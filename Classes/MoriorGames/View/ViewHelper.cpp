@@ -5,5 +5,5 @@ ViewHelper::ViewHelper(Layer *layer)
 {
     scale = globalResolution->getScale();
     position = new Position;
-    centerPosition = position->getCenteredPosition();
+    centerPosition = position->getCenterCenterPosition();
 }

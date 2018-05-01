@@ -6,6 +6,7 @@
 #include "../../Screen/Coordinate2Screen.h"
 #include "../../Vendor/Observer/BattleObservable.h"
 #include "../../Vendor/Entity/Battle.h"
+#include "../../Vendor/Factories/PathBuilder.h"
 #include "../../Vendor/Services/PathFinder.h"
 #include "../../Vendor/ValueObjects/Coordinate.h"
 USING_NS_CC;
@@ -20,10 +21,8 @@ public:
 public:
     GridView(Layer *, Battle *, PathFinder *, TileDrawer *);
     void drawTile(Coordinate *coordinate, Color4F color, Node *);
-    void buildGrid(const std::vector<Coordinate *> &coordinates);
-    void buildPathForMove(BattleHero *);
-    void buildPathForAction(BattleHero *);
-    void buildPathForSkill(BattleHero *, Skill *);
+    void drawGrid(const std::vector<Coordinate *> &coordinates);
+    void drawPath(Skill *, BattleHero *);
     void removeActionGrid();
     void update(BattleAction *) override;
 
@@ -31,6 +30,7 @@ private:
     Layer *layer;
     Battle *battle;
     PathFinder *pathFinder;
+    PathBuilder *pathBuilder;
     TileDrawer *tileDrawer;
     Node *gridTiles = new Node, *actionTiles = new Node;
 

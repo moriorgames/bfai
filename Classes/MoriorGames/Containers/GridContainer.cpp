@@ -27,7 +27,7 @@ GridContainer::GridContainer(Layer *layer, Battle *battle)
     pathFinder = new PathFinder(grid);
     auto tileDrawer = new TileDrawer(size, coordinate2Screen);
     gridView = new GridView(layer, battle, pathFinder, tileDrawer);
-    gridView->buildGrid(grid->getCoordinates());
+    gridView->drawGrid(grid->getCoordinates());
 }
 
 Grid *GridContainer::getGrid() const

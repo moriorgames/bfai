@@ -91,6 +91,10 @@
 		4F9604D02059A12C004CAEED /* HeroView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F9604CD2059A12C004CAEED /* HeroView.cpp */; };
 		4FA0677F207DC36700934122 /* BattleActionParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0677D207DC36700934122 /* BattleActionParser.cpp */; };
 		4FA06780207DC36700934122 /* BattleActionParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0677D207DC36700934122 /* BattleActionParser.cpp */; };
+		4FA669452098DE5E00EDFC0A /* BattleActionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA669432098DE5E00EDFC0A /* BattleActionChecker.cpp */; };
+		4FA669462098DE5E00EDFC0A /* BattleActionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA669432098DE5E00EDFC0A /* BattleActionChecker.cpp */; };
+		4FA6694E2098E0DA00EDFC0A /* PathBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6694C2098E0DA00EDFC0A /* PathBuilder.cpp */; };
+		4FA6694F2098E0DA00EDFC0A /* PathBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6694C2098E0DA00EDFC0A /* PathBuilder.cpp */; };
 		4FA6AD68202F7C8800158956 /* SplashView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6AD66202F7C8800158956 /* SplashView.cpp */; };
 		4FA6AD69202F7C8800158956 /* SplashView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6AD66202F7C8800158956 /* SplashView.cpp */; };
 		4FA6AD70202F809A00158956 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6AD6E202F809A00158956 /* MainMenuScene.cpp */; };
@@ -323,6 +327,10 @@
 		4F9CE313207D269D00A65619 /* BattlePublishable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattlePublishable.h; sourceTree = "<group>"; };
 		4FA0677D207DC36700934122 /* BattleActionParser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleActionParser.cpp; sourceTree = "<group>"; };
 		4FA0677E207DC36700934122 /* BattleActionParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleActionParser.h; sourceTree = "<group>"; };
+		4FA669432098DE5E00EDFC0A /* BattleActionChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleActionChecker.cpp; sourceTree = "<group>"; };
+		4FA669442098DE5E00EDFC0A /* BattleActionChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleActionChecker.h; sourceTree = "<group>"; };
+		4FA6694C2098E0DA00EDFC0A /* PathBuilder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PathBuilder.cpp; sourceTree = "<group>"; };
+		4FA6694D2098E0DA00EDFC0A /* PathBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathBuilder.h; sourceTree = "<group>"; };
 		4FA6AD66202F7C8800158956 /* SplashView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SplashView.cpp; sourceTree = "<group>"; };
 		4FA6AD67202F7C8800158956 /* SplashView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplashView.h; sourceTree = "<group>"; };
 		4FA6AD6E202F809A00158956 /* MainMenuScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuScene.cpp; sourceTree = "<group>"; };
@@ -671,6 +679,8 @@
 			children = (
 				4F2DF5492097340D00F38AEE /* AI.cpp */,
 				4F2DF54A2097340D00F38AEE /* AI.h */,
+				4FA669432098DE5E00EDFC0A /* BattleActionChecker.cpp */,
+				4FA669442098DE5E00EDFC0A /* BattleActionChecker.h */,
 				4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */,
 				4FEFE75E2079E0E90031A6B5 /* BattleProcessor.h */,
 				4F3B0B7E205E57C500D4B53C /* PathFinder.cpp */,
@@ -706,6 +716,8 @@
 			children = (
 				4F72384620637E580064037C /* BattleFactory.h */,
 				4F72384720637E580064037C /* BattleFactory.cpp */,
+				4FA6694C2098E0DA00EDFC0A /* PathBuilder.cpp */,
+				4FA6694D2098E0DA00EDFC0A /* PathBuilder.h */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1113,6 +1125,7 @@
 				4FBCDC6E203220CD006B3B5E /* GridHDR.cpp in Sources */,
 				4FA6AD74202F83A200158956 /* BackgroundView.cpp in Sources */,
 				4FDBF47220919E2B005FF943 /* TileDrawer.cpp in Sources */,
+				4FA6694E2098E0DA00EDFC0A /* PathBuilder.cpp in Sources */,
 				4FA6AD68202F7C8800158956 /* SplashView.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				4FE0EAE92030410000E6DD88 /* FontCreator.cpp in Sources */,
@@ -1137,6 +1150,7 @@
 				4F576D152075E17E00011BC7 /* GridView.cpp in Sources */,
 				4F57815B207C78240060C7D9 /* BattleEventOfflinePublisher.cpp in Sources */,
 				4FE0EAE120303AD600E6DD88 /* BattleButton.cpp in Sources */,
+				4FA669452098DE5E00EDFC0A /* BattleActionChecker.cpp in Sources */,
 				4F72384C20637E850064037C /* BattleParser.cpp in Sources */,
 				4FA6AD70202F809A00158956 /* MainMenuScene.cpp in Sources */,
 				4F4B1FC22092E09A00DAA0B1 /* HeroAnimator.cpp in Sources */,
@@ -1181,6 +1195,7 @@
 				4FD96FD1205B84F700C0F5A1 /* StringFileReader.cpp in Sources */,
 				4FBCDC502032008E006B3B5E /* BattleScene.cpp in Sources */,
 				4F4B1FC32092E09A00DAA0B1 /* HeroAnimator.cpp in Sources */,
+				4FA6694F2098E0DA00EDFC0A /* PathBuilder.cpp in Sources */,
 				4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */,
 				4F576D162075E17E00011BC7 /* GridView.cpp in Sources */,
 				4F3AE450202EE32E00B687FB /* Resolution.cpp in Sources */,
@@ -1215,6 +1230,7 @@
 				4FEFCC23205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
 				4F2DF54C2097340D00F38AEE /* AI.cpp in Sources */,
+				4FA669462098DE5E00EDFC0A /* BattleActionChecker.cpp in Sources */,
 				4FA6AD69202F7C8800158956 /* SplashView.cpp in Sources */,
 				4F01D161208C2AE9002231DA /* SkillsView.cpp in Sources */,
 				4F72384D20637E850064037C /* BattleParser.cpp in Sources */,

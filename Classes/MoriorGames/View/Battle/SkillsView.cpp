@@ -68,20 +68,11 @@ void SkillsView::addSkillButtons()
                         );
                         battleAction->setCoordinate(battleHero->getCoordinate());
                         eventPublisher->publish(battleAction);
-                    } else if (skillModel->getId() == Skill::MOVE_ID) {
-
-                        gridViewLambda->removeActionGrid();
-                        gridViewLambda->buildPathForMove(battleHero);
-
-                    } else if (skillModel->getId() == Skill::SINGLE_ATTACK_ID) {
-
-                        gridViewLambda->removeActionGrid();
-                        gridViewLambda->buildPathForAction(battleHero);
 
                     } else {
 
                         gridViewLambda->removeActionGrid();
-                        gridViewLambda->buildPathForSkill(battleHero, skillModel);
+                        gridViewLambda->drawPath(skillModel, battleHero);
                     }
 
                     update(new BattleAction);

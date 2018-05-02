@@ -30,6 +30,16 @@ void Hero::setSlug(const std::string &slug)
     this->slug = slug;
 }
 
+const std::string &Hero::getUserToken() const
+{
+    return userToken;
+}
+
+void Hero::setUserToken(const std::string &userToken)
+{
+    this->userToken = userToken;
+}
+
 int Hero::getDamage() const
 {
     return damage;
@@ -116,6 +126,7 @@ void Hero::print()
            " - id %i\n"
            " - name %s\n"
            " - slug %s\n"
+           " - userToken %s\n"
            " - damage %i\n"
            " - ranged %i\n"
            " - health %i\n"
@@ -126,6 +137,7 @@ void Hero::print()
            id,
            name.c_str(),
            slug.c_str(),
+           userToken.c_str(),
            damage,
            ranged,
            health,

@@ -50,16 +50,19 @@ void SkillsView::addSkillButtons()
             skillBackground->setScale(skillBackground->getScale() * 1.15f);
         }
 
+        auto battle = this->battle;
         auto skillModel = skillRepo->findById(skill->getId());
         auto button = ui::Button::create("ui/" + skillModel->getSlug() + ".png", "", "");
         button->setPosition(Point(x, y));
         button->addTouchEventListener(
-            [&, battleHero, skillModel, gridViewLambda](Ref *sender, ui::Widget::TouchEventType type)
+            [&, battleHero, skillModel, gridViewLambda, battle](Ref *sender, ui::Widget::TouchEventType type)
             {
                 if (type == ui::Widget::TouchEventType::ENDED) {
                     battle->setActiveSkill(skillModel->getId());
                     if (skillModel->getId() == Skill::NEXT_TURN_ID) {
                         auto battleAction = new BattleAction;
+                        battleAction->setBattleToken(battle->getToken());
+                        battleAction->setUserToken(battle->getUserToken());
                         battleAction->setBattleHeroId(
                             battleHero->getBattleHeroId()
                         );

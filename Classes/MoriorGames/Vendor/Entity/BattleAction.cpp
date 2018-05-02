@@ -1,5 +1,25 @@
 #include "BattleAction.h"
 
+const std::string &BattleAction::getBattleToken() const
+{
+    return battleToken;
+}
+
+void BattleAction::setBattleToken(const std::string &battleToken)
+{
+    this->battleToken = battleToken;
+}
+
+const std::string &BattleAction::getUserToken() const
+{
+    return userToken;
+}
+
+void BattleAction::setUserToken(const std::string &userToken)
+{
+    this->userToken = userToken;
+}
+
 int BattleAction::getId() const
 {
     return id;

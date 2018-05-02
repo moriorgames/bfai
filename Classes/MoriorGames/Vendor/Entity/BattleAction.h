@@ -7,6 +7,10 @@
 class BattleAction
 {
 public:
+    const std::string &getBattleToken() const;
+    void setBattleToken(const std::string &battleToken);
+    const std::string &getUserToken() const;
+    void setUserToken(const std::string &userToken);
     int getId() const;
     void setId(int id);
     int getBattleHeroId() const;
@@ -21,6 +25,7 @@ public:
     void print();
 
 private:
+    std::string battleToken = "", userToken = "";
     int id = 0, battleHeroId = 0, skillId = 0, extra = 0;
     Coordinate *coordinate = nullptr;
 };

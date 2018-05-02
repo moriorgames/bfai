@@ -24,6 +24,7 @@ const std::string &User::getSlug() const
     return slug;
 
 }
+
 void User::setSlug(const std::string &slug)
 {
     this->slug = slug;

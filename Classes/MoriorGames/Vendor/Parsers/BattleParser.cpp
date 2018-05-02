@@ -9,6 +9,7 @@ Battle *BattleParser::parse()
 {
     auto battle = new Battle;
 
+    battle->setToken(getString(document, "token"));
     addHeroesData(battle, document);
 
     return battle;
@@ -32,6 +33,7 @@ void BattleParser::addHeroData(Battle *battle, const rapidjson::Value &data)
     auto battleHero = new BattleHero;
     auto coordinate = new Coordinate(getInt(data, "x"), getInt(data, "y"));
 
+    battleHero->setUserToken(getString(data, "userToken"));
     battleHero->setBattleHeroId(getInt(data, "battleHeroId"));
     battleHero->setId(getInt(data, "heroId"));
     battleHero->setSide(getString(data, "side"));

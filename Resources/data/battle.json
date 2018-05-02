@@ -2,6 +2,7 @@
   "token": "Miu_tTgazSW6OkSFAYyBxT4DbUpgQ-hQwZlatQV8auY",
   "heroes": [
     {
+      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FA",
       "battleHeroId": 1,
       "heroId": 1,
       "side": "local",
@@ -9,6 +10,7 @@
       "y": 2
     },
     {
+      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FA",
       "battleHeroId": 2,
       "heroId": 4,
       "side": "local",
@@ -16,6 +18,7 @@
       "y": -2
     },
     {
+      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "battleHeroId": 3,
       "heroId": 5,
       "side": "visitor",
@@ -23,6 +26,7 @@
       "y": 0
     },
     {
+      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "battleHeroId": 4,
       "heroId": 6,
       "side": "visitor",
@@ -30,6 +34,7 @@
       "y": -2
     },
     {
+      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "battleHeroId": 5,
       "heroId": 4,
       "side": "visitor",

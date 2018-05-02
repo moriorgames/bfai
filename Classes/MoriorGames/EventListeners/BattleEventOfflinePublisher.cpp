@@ -7,5 +7,6 @@ BattleEventOfflinePublisher::BattleEventOfflinePublisher(BattleProcessor *battle
 
 void BattleEventOfflinePublisher::publish(BattleAction *battleAction)
 {
+    BattleAction2Json::transform(battleAction);
     battleProcessor->processBattleAction(battleAction);
 }

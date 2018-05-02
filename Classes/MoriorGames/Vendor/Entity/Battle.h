@@ -1,6 +1,7 @@
 #ifndef MORIOR_GAMES_VENDOR_ENTITY_BATTLE_H
 #define MORIOR_GAMES_VENDOR_ENTITY_BATTLE_H
 
+#include <string>
 #include <vector>
 #include <algorithm>
 #include "BattleHero.h"
@@ -8,6 +9,10 @@
 class Battle
 {
 public:
+    const std::string &getToken() const;
+    void setToken(const std::string &token);
+    const std::string &getUserToken() const;
+    void setUserToken(const std::string &userToken);
     void addHero(BattleHero *);
     const std::vector<BattleHero *> &getBattleHeroes() const;
     BattleHero *getActiveBattleHero();
@@ -24,6 +29,7 @@ public:
     void print();
 
 private:
+    std::string token = "", userToken = "";
     std::vector<BattleHero *> heroes;
     int activeHero = 0;
     int activeSkill = Skill::MOVE_ID;

@@ -4,8 +4,8 @@
 std::string BattleAction2Json::transform(BattleAction *battleAction)
 {
     std::string json =
-        "{ \"userToken\":\"FakeUserToken\", "
-        "\"battleToken\":\"FakeBattleToken\", "
+        "{ \"battleToken\":\"" + battleAction->getBattleToken() + "\", "
+        "\"userToken\":\"" + battleAction->getUserToken() + "\", "
         "\"battleHeroId\":\"" + to_string(battleAction->getBattleHeroId()) + "\", "
         "\"skillId\":\"" + to_string(battleAction->getSkillId()) + "\", "
         "\"x\":\"" + to_string(battleAction->getCoordinate()->x) + "\", "

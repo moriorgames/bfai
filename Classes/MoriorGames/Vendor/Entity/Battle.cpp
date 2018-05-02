@@ -1,5 +1,25 @@
 #include "Battle.h"
 
+const std::string &Battle::getToken() const
+{
+    return token;
+}
+
+void Battle::setToken(const std::string &token)
+{
+    this->token = token;
+}
+
+const std::string &Battle::getUserToken() const
+{
+    return userToken;
+}
+
+void Battle::setUserToken(const std::string &userToken)
+{
+    this->userToken = userToken;
+}
+
 void Battle::addHero(BattleHero *battleHero)
 {
     heroes.push_back(battleHero);
@@ -91,9 +111,11 @@ void Battle::setOnline(bool online)
 void Battle::print()
 {
     printf("========= Battle: \n"
+           " - token %s\n"
            " - activeHero %i\n"
            " - turn %i\n"
            " \n",
+           token.c_str(),
            activeHero,
            turn
     );

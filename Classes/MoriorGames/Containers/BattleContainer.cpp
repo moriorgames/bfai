@@ -1,5 +1,6 @@
 #include "BattleContainer.h"
 #include "../Factories/BattleEventPublisherFactory.h"
+#include "../Vendor/Entity/User.h"
 #include "../Vendor/Repository/SkillRepository.h"
 #include "../View/Battle/BattleBackgroundView.h"
 #include "../View/Battle/EndOfBattle.h"
@@ -10,6 +11,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     new BattleBackgroundView(layer);
 
     battle = (new BattleFactory)->execute(json);
+    battle->setUserToken(playerUser->getToken());
     gridContainer = new GridContainer(layer, battle);
     battleProcessor = new BattleProcessor(battle, gridContainer->getGrid());
     eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);

@@ -44,7 +44,6 @@ void SplashScene::increaseLoadingBar(float delay)
         new SpritesInitializer();
         auto userJson = (new StringFileReader)->getStringFromFile("data/user.json");
         playerUser = (new UserParser(userJson))->parse();
-        playerUser->print();
         auto heroesJson = (new StringFileReader)->getStringFromFile("data/heroes.json");
         heroRepo->init(heroesJson);
         auto skillsJson = (new StringFileReader)->getStringFromFile("data/skills.json");

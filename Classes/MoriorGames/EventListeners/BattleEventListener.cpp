@@ -36,6 +36,8 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
 
         auto coordinate = closestCoordinate(screenTouch);
         auto battleAction = new BattleAction;
+        battleAction->setBattleToken(battle->getToken());
+        battleAction->setUserToken(battle->getUserToken());
         battleAction->setBattleHeroId(
             activeHero->getBattleHeroId()
         );

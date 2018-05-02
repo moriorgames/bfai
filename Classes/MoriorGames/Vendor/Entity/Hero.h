@@ -13,6 +13,8 @@ public:
     const std::string &getName() const;
     void setName(const std::string &name);
     const std::string &getSlug() const;
+    const std::string &getUserToken() const;
+    void setUserToken(const std::string &userToken);
     void setSlug(const std::string &slug);
     int getDamage() const;
     void setDamage(int damage);
@@ -36,7 +38,7 @@ public:
 
 protected:
     int id = 0;
-    std::string name = "", slug = "";
+    std::string name = "", slug = "", userToken = "";
     int damage = 0, ranged = 0, health = 0, movement = 0, moveFrames = 0, attackFrames = 0, agro = 0;
 
     std::vector<Skill *> skills;

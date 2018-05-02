@@ -18,14 +18,3 @@ Skill *SkillRepository::findById(int id)
 
     return nullptr;
 }
-
-Skill *SkillRepository::findByType(int type)
-{
-    for (auto item:items) {
-        if (item->getType() == type) {
-            return item;
-        }
-    }
-
-    return nullptr;
-}

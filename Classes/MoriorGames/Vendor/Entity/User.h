@@ -25,4 +25,6 @@ protected:
     int level = 0, experience = 0;
 };
 
+extern User *playerUser;
+
 #endif

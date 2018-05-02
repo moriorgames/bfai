@@ -9,7 +9,6 @@ class SkillRepository
 public:
     void init(const std::string &json);
     Skill *findById(int id);
-    Skill *findByType(int type);
 
 private:
     std::vector<Skill *> items;

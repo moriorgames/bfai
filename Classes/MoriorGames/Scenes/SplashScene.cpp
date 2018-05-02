@@ -2,6 +2,8 @@
 #include "../Scenes/MainMenuScene.h"
 #include "../Services/SpritesInitializer.h"
 #include "../Services/StringFileReader.h"
+#include "../Vendor/Entity/User.h"
+#include "../Vendor/Parsers/UserParser.h"
 #include "../Vendor/Repository/HeroRepository.h"
 #include "../Vendor/Repository/SkillRepository.h"
 #include "../View/SplashView.h"
@@ -40,6 +42,9 @@ void SplashScene::increaseLoadingBar(float delay)
     loadingView->setLoadingBarPercentage(loadingBarPercentage);
     if (loadingBarPercentage == 66) {
         new SpritesInitializer();
+        auto userJson = (new StringFileReader)->getStringFromFile("data/user.json");
+        playerUser = (new UserParser(userJson))->parse();
+        playerUser->print();
         auto heroesJson = (new StringFileReader)->getStringFromFile("data/heroes.json");
         heroRepo->init(heroesJson);
         auto skillsJson = (new StringFileReader)->getStringFromFile("data/skills.json");

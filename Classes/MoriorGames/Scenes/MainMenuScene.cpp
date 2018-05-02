@@ -5,6 +5,9 @@
 
 USING_NS_CC;
 
+#include "../Services/StringFileReader.h"
+#include "../Vendor/Parsers/UserParser.h"
+
 Scene *MainMenuScene::createScene()
 {
     auto scene = Scene::create();
@@ -26,6 +29,10 @@ bool MainMenuScene::init()
     new BackgroundView(this);
     new WorldView(this);
     new BattleButton(this);
+
+    auto json = (new StringFileReader)->getStringFromFile("data/user.json");
+    auto user = (new UserParser(json))->parse();
+    user->print();
 
     return true;
 }

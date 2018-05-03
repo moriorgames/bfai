@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "../Containers/GridContainer.h"
 #include "../EventListeners/BattleEventPublishable.h"
+#include "../Http/Client.h"
 #include "../Vendor/Factories/BattleFactory.h"
 #include "../Vendor/Services/AI.h"
 #include "../Vendor/Services/BattleProcessor.h"
@@ -15,15 +16,17 @@ USING_NS_CC;
 class BattleContainer: public BattleObservable
 {
 public:
-    BattleContainer(Layer *layer, const std::string &json);
+    BattleContainer(Layer *, Socket *, const std::string &json);
     Battle *getBattle() const;
     GridContainer *getGridContainer() const;
     BattleEventPublishable *getEventPublisher() const;
+    BattleProcessor *getBattleProcessor() const;
     AI *getAI() const;
     void update(BattleAction *) override;
 
 private:
     Layer *layer;
+    Socket *socket;
     Battle *battle;
     GridContainer *gridContainer;
     BattleEventPublishable *eventPublisher;

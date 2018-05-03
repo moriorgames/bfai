@@ -73,11 +73,15 @@ void BattleAction::setCoordinate(Coordinate *coordinate)
 void BattleAction::print()
 {
     printf("========= BattleAction: \n"
+           " - battleToken %s\n"
+           " - userToken %s\n"
            " - id %i\n"
            " - battleHeroId %i\n"
            " - skillId %i\n"
            " - extra %i\n"
            " \n",
+           battleToken.c_str(),
+           userToken.c_str(),
            id,
            battleHeroId,
            skillId,

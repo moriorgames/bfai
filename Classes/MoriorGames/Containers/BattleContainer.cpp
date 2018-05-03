@@ -5,8 +5,8 @@
 #include "../View/Battle/BattleBackgroundView.h"
 #include "../View/Battle/EndOfBattle.h"
 
-BattleContainer::BattleContainer(Layer *layer, const std::string &json)
-    : layer{layer}
+BattleContainer::BattleContainer(Layer *layer, Socket *socket, const std::string &json)
+    : layer{layer}, socket{socket}
 {
     new BattleBackgroundView(layer);
 
@@ -18,7 +18,7 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     if (battle->isOnline()) {
         connectionType = BattleEventPublisherFactory::ONLINE;
     }
-    eventPublisher = BattleEventPublisherFactory::execute(connectionType, battleProcessor);
+    eventPublisher = BattleEventPublisherFactory::execute(connectionType, battleProcessor, socket);
     skillsView = new SkillsView(layer, battle, eventPublisher, gridContainer->getGridView());
     artificialIntelligence = new AI(battle, gridContainer->getGrid(), eventPublisher);
 
@@ -39,6 +39,11 @@ GridContainer *BattleContainer::getGridContainer() const
 BattleEventPublishable *BattleContainer::getEventPublisher() const
 {
     return eventPublisher;
+}
+
+BattleProcessor *BattleContainer::getBattleProcessor() const
+{
+    return battleProcessor;
 }
 
 AI *BattleContainer::getAI() const

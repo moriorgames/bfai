@@ -21,7 +21,9 @@ bool BattleScene::init()
         return false;
     }
 
-    battleView = new BattleView(this);
+    socket = new Socket;
+    battleView = new BattleView(this, socket);
+    connectToSocket(8080);
 
     this->schedule(schedule_selector(BattleScene::scheduledEvents), 3.f);
 
@@ -41,8 +43,8 @@ void BattleScene::goToMainMenuScene(float delay)
 
 void BattleScene::connectToSocket(int port)
 {
-//    std::string socketHost = container->getBattleClient()->getSocketHost(port);
-//    socket->init(*this, socketHost);
+    std::string socketHost = "127.0.0.1:8080";
+    socket->init(*this, socketHost);
 }
 
 void BattleScene::onOpen(Socket *ws)
@@ -51,9 +53,9 @@ void BattleScene::onOpen(Socket *ws)
 
 void BattleScene::onMessage(Socket *ws, const Socket::Data &data)
 {
-    // Sync first time when get checksum
     std::string json = data.bytes;
-//    synchroTurn = container->getBattleManager()->getBattleParser()->parseAction(json);
+    battleView->processOnlineAction(data.bytes);
+    CCLOG("%s", data.bytes);
 }
 
 void BattleScene::onClose(Socket *ws)

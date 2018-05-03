@@ -18,6 +18,8 @@ void BattleActionParser::addBattleActionData(BattleAction *battleAction, const r
 {
     auto coordinate = new Coordinate(getInt(data, "x"), getInt(data, "y"));
 
+    battleAction->setBattleToken(getString(data, "battleToken"));
+    battleAction->setUserToken(getString(data, "userToken"));
     battleAction->setId(getInt(data, "id"));
     battleAction->setBattleHeroId(getInt(data, "battleHeroId"));
     battleAction->setSkillId(getInt(data, "skillId"));

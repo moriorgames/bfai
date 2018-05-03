@@ -7,14 +7,14 @@ const short BattleEventPublisherFactory::ONLINE = 1;
 const short BattleEventPublisherFactory::OFFLINE = 2;
 
 BattleEventPublishable *BattleEventPublisherFactory::execute(
-    short connectionType, BattleProcessor *battleProcessor
+    short connectionType, BattleProcessor *battleProcessor, Socket *socket
 )
 {
     BattleEventPublishable *battleEventPublishable;
 
     switch (connectionType) {
     case ONLINE:
-        battleEventPublishable = new BattleEventOnlinePublisher;
+        battleEventPublishable = new BattleEventOnlinePublisher(socket);
         break;
     case OFFLINE:
     default:

@@ -10,10 +10,12 @@ public:
     static const std::string NAME;
 
 public:
-    explicit BattleView(Layer *layer);
+    BattleView(Layer *, Socket *);
+    void processOnlineAction(std::string json);
     void ai();
 
 private:
+    Socket *socket;
     BattleContainer *battleContainer;
 
     void addView() override;

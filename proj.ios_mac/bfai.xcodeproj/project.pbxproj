@@ -17,6 +17,8 @@
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		4F01D160208C2AE9002231DA /* SkillsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F01D15E208C2AE9002231DA /* SkillsView.cpp */; };
 		4F01D161208C2AE9002231DA /* SkillsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F01D15E208C2AE9002231DA /* SkillsView.cpp */; };
+		4F02062E209ACA520000B29C /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F02062C209ACA520000B29C /* Client.cpp */; };
+		4F02062F209ACA520000B29C /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F02062C209ACA520000B29C /* Client.cpp */; };
 		4F12CC94207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
 		4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
 		4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */; };
@@ -252,6 +254,8 @@
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F01D15E208C2AE9002231DA /* SkillsView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SkillsView.cpp; sourceTree = "<group>"; };
 		4F01D15F208C2AE9002231DA /* SkillsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkillsView.h; sourceTree = "<group>"; };
+		4F02062C209ACA520000B29C /* Client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
+		4F02062D209ACA520000B29C /* Client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
 		4F12CC92207890190033DE0E /* ResolutionChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResolutionChecker.cpp; sourceTree = "<group>"; };
 		4F12CC93207890190033DE0E /* ResolutionChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResolutionChecker.h; sourceTree = "<group>"; };
 		4F12CC992078985F0033DE0E /* Path.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
@@ -583,6 +587,15 @@
 			path = ../Classes;
 			sourceTree = "<group>";
 		};
+		4F02062A209ACA430000B29C /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				4F02062C209ACA520000B29C /* Client.cpp */,
+				4F02062D209ACA520000B29C /* Client.h */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
 		4F12CC97207898430033DE0E /* Containers */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +629,7 @@
 				4FD30893205ED6FE007D8039 /* EventListeners */,
 				4F57815F207C79020060C7D9 /* Factories */,
 				4FBCDC5A20322033006B3B5E /* Grid */,
+				4F02062A209ACA430000B29C /* Http */,
 				4F3AE447202EE2CE00B687FB /* Scenes */,
 				4F3AE448202EE2D800B687FB /* Screen */,
 				4F2CBFEA202F1E4400169E86 /* Services */,
@@ -1124,6 +1138,7 @@
 				4F7EB1632069FF340086A900 /* BattleContainer.cpp in Sources */,
 				4F5C0CDF208B0749006D57BF /* SkillRepository.cpp in Sources */,
 				4F9604CF2059A12C004CAEED /* HeroView.cpp in Sources */,
+				4F02062E209ACA520000B29C /* Client.cpp in Sources */,
 				4F2CBFF2202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
 				4F01D160208C2AE9002231DA /* SkillsView.cpp in Sources */,
 				4F89105A2034BF2800D8382C /* Coordinate.cpp in Sources */,
@@ -1242,6 +1257,7 @@
 				4F72384920637E580064037C /* BattleFactory.cpp in Sources */,
 				4F3B0B82205E57C500D4B53C /* PathFinder.cpp in Sources */,
 				4F89105B2034BF2800D8382C /* Coordinate.cpp in Sources */,
+				4F02062F209ACA520000B29C /* Client.cpp in Sources */,
 				4FEFCC23205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
 				4F3EBAE32099765F008F6198 /* UserParser.cpp in Sources */,

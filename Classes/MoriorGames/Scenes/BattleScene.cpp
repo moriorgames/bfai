@@ -38,3 +38,28 @@ void BattleScene::goToMainMenuScene(float delay)
     auto scene = MainMenuScene::createScene();
     Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
 }
+
+void BattleScene::connectToSocket(int port)
+{
+//    std::string socketHost = container->getBattleClient()->getSocketHost(port);
+//    socket->init(*this, socketHost);
+}
+
+void BattleScene::onOpen(Socket *ws)
+{
+}
+
+void BattleScene::onMessage(Socket *ws, const Socket::Data &data)
+{
+    // Sync first time when get checksum
+    std::string json = data.bytes;
+//    synchroTurn = container->getBattleManager()->getBattleParser()->parseAction(json);
+}
+
+void BattleScene::onClose(Socket *ws)
+{
+}
+
+void BattleScene::onError(Socket *ws, const Socket::ErrorCode &error)
+{
+}

@@ -24,6 +24,7 @@
 
 #define MODE_SOUND 0
 #define DEBUG_SCENE 1
+#define SANDBOX_MODE 1
 
 #define CARTESIAN_EAST          0
 #define CARTESIAN_NORTHEAST     45

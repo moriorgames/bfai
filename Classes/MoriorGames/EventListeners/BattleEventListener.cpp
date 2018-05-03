@@ -1,4 +1,5 @@
 #include "BattleEventListener.h"
+#include "../Vendor/Entity/User.h"
 
 BattleEventListener::BattleEventListener(
     Layer *layer, Battle *battle, BattleEventPublishable *eventPublisher, GridContainer *gridContainer
@@ -32,7 +33,7 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
     Vec2 screenTouch = layer->convertTouchToNodeSpace(touch);
     auto activeHero = battle->getActiveBattleHero();
 
-    if (activeHero->getSide() == BattleHero::SIDE_LOCAL && isTouchWithinBoundariesOfBattleField(screenTouch)) {
+    if (activeHero->getUserToken() == playerUser->getToken() && isTouchWithinBoundariesOfBattleField(screenTouch)) {
 
         auto coordinate = closestCoordinate(screenTouch);
         auto battleAction = new BattleAction;

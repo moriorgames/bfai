@@ -9,25 +9,27 @@ AI::AI(Battle *battle, Grid *grid, BattleEventPublishable *eventPublisher)
 
 void AI::process()
 {
-    auto activeHero = battle->getActiveBattleHero();
+    if (!battle->isOnline()) {
+        auto activeHero = battle->getActiveBattleHero();
 
-    if (activeHero->getSide() == BattleHero::SIDE_VISITOR) {
+        if (activeHero->getSide() == BattleHero::SIDE_VISITOR) {
 
-        auto coordinate = calculateCoordinate(activeHero);
-        auto battleAction = new BattleAction;
-        battleAction->setBattleHeroId(
-            activeHero->getBattleHeroId()
-        );
-        // @TODO this is causing some troubles we have to solve this in another way
-        if (coordinate->x == 99) {
-            battleAction->setSkillId(Skill::NEXT_TURN_ID);
-        } else {
-            battleAction->setSkillId(
-                battle->getActiveSkill()
+            auto coordinate = calculateCoordinate(activeHero);
+            auto battleAction = new BattleAction;
+            battleAction->setBattleHeroId(
+                activeHero->getBattleHeroId()
             );
+            // @TODO this is causing some troubles we have to solve this in another way
+            if (coordinate->x == 99) {
+                battleAction->setSkillId(Skill::NEXT_TURN_ID);
+            } else {
+                battleAction->setSkillId(
+                    battle->getActiveSkill()
+                );
+            }
+            battleAction->setCoordinate(coordinate);
+            eventPublisher->publish(battleAction);
         }
-        battleAction->setCoordinate(coordinate);
-        eventPublisher->publish(battleAction);
     }
 }
 

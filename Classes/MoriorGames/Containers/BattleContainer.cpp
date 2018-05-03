@@ -14,7 +14,11 @@ BattleContainer::BattleContainer(Layer *layer, const std::string &json)
     battle->setUserToken(playerUser->getToken());
     gridContainer = new GridContainer(layer, battle);
     battleProcessor = new BattleProcessor(battle, gridContainer->getGrid());
-    eventPublisher = BattleEventPublisherFactory::execute(BattleEventPublisherFactory::OFFLINE, battleProcessor);
+    short connectionType = BattleEventPublisherFactory::OFFLINE;
+    if (battle->isOnline()) {
+        connectionType = BattleEventPublisherFactory::ONLINE;
+    }
+    eventPublisher = BattleEventPublisherFactory::execute(connectionType, battleProcessor);
     skillsView = new SkillsView(layer, battle, eventPublisher, gridContainer->getGridView());
     artificialIntelligence = new AI(battle, gridContainer->getGrid(), eventPublisher);
 

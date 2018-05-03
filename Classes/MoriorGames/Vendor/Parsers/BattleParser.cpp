@@ -9,10 +9,16 @@ Battle *BattleParser::parse()
 {
     auto battle = new Battle;
 
-    battle->setToken(getString(document, "token"));
+    addBattleData(battle, document);
     addHeroesData(battle, document);
 
     return battle;
+}
+
+void BattleParser::addBattleData(Battle *battle, const rapidjson::Value &data)
+{
+    battle->setToken(getString(document, "token"));
+    battle->setOnline(getBool(document, "online"));
 }
 
 void BattleParser::addHeroesData(Battle *battle, const rapidjson::Value &data)

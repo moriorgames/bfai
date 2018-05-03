@@ -20,6 +20,7 @@ public:
     std::vector<SkillHero> parseSkills();
 
 private:
+    void addBattleData(Battle *, const rapidjson::Value &data);
     void addHeroesData(Battle *, const rapidjson::Value &data);
     void addHeroData(Battle *, const rapidjson::Value &data);
 };

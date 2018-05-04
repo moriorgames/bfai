@@ -1,5 +1,6 @@
 #include "MainMenuScene.h"
 #include "../View/Buttons/BattleButton.h"
+#include "../View/Buttons/BattleHeroesButton.h"
 #include "../View/BackgroundView.h"
 #include "../View/WorldView.h"
 
@@ -26,6 +27,7 @@ bool MainMenuScene::init()
     new BackgroundView(this);
     new WorldView(this);
     new BattleButton(this);
+    new BattleHeroesButton(this);
 
     return true;
 }

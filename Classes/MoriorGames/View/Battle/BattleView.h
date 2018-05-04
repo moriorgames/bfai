@@ -11,6 +11,7 @@ public:
 
 public:
     BattleView(Layer *, Socket *);
+    Battle *getBattle();
     void processOnlineAction(std::string json);
     void ai();
 

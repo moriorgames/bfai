@@ -23,7 +23,9 @@ bool BattleScene::init()
 
     socket = new Socket;
     battleView = new BattleView(this, socket);
-    connectToSocket(8080);
+    if (battleView->getBattle()->isOnline()) {
+        connectToSocket(8080);
+    }
 
     this->schedule(schedule_selector(BattleScene::scheduledEvents), 3.f);
 

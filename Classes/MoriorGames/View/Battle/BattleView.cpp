@@ -12,6 +12,11 @@ BattleView::BattleView(Layer *layer, Socket *socket)
     addView();
 }
 
+Battle *BattleView::getBattle()
+{
+    return battleContainer->getBattle();
+}
+
 void BattleView::processOnlineAction(std::string json)
 {
     auto battleAction = (new BattleActionParser(json))->parse();
@@ -29,7 +34,6 @@ void BattleView::addView()
         layer, battleContainer->getBattle(), battleContainer->getEventPublisher(), battleContainer->getGridContainer()
     );
 }
-
 void BattleView::ai()
 {
     battleContainer->getAI()->process();

@@ -11,6 +11,7 @@ Battle *BattleParser::parse()
 
     addBattleData(battle, document);
     addHeroesData(battle, document);
+    addSkillsHeroesData(battle, document);
 
     return battle;
 }
@@ -48,22 +49,24 @@ void BattleParser::addHeroData(Battle *battle, const rapidjson::Value &data)
     battle->addHero(battleHero);
 }
 
-std::vector<SkillHero> BattleParser::parseSkills()
+void BattleParser::addSkillsHeroesData(Battle *battle, const rapidjson::Value &data)
 {
-    std::vector<SkillHero> skillHeroes;
-
     if (document.HasMember(SKILLS) && document[SKILLS].IsArray()) {
 
         const Value &data = document[SKILLS];
         for (auto itr = data.Begin(); itr != data.End(); ++itr) {
             if ((*itr).IsObject()) {
-                SkillHero skillHero;
-                skillHero.skillId = getInt(*itr, "skillId");
-                skillHero.battleHeroId = getInt(*itr, "battleHeroId");
-                skillHeroes.push_back(skillHero);
+                addSkillHeroData(battle, *itr);
             }
         }
     }
+}
 
-    return skillHeroes;
+void BattleParser::addSkillHeroData(Battle *battle, const rapidjson::Value &data)
+{
+    auto skillHero = new SkillHero;
+    skillHero->setSkillId(getInt(data, "skillId"));
+    skillHero->setBattleHeroId(getInt(data, "battleHeroId"));
+
+    battle->addSkillHero(skillHero);
 }

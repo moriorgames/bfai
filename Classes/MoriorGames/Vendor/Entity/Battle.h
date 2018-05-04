@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include "BattleHero.h"
+#include "SkillHero.h"
 
 class Battle
 {
@@ -15,6 +16,8 @@ public:
     void setUserToken(const std::string &userToken);
     void addHero(BattleHero *);
     const std::vector<BattleHero *> &getBattleHeroes() const;
+    void addSkillHero(SkillHero *);
+    const std::vector<SkillHero *> &getSkillHeroes() const;
     BattleHero *getActiveBattleHero();
     int getActiveSkill() const;
     void setActiveSkill(int activeSkill);
@@ -31,6 +34,7 @@ public:
 private:
     std::string token = "", userToken = "";
     std::vector<BattleHero *> heroes;
+    std::vector<SkillHero *> skillHeroes;
     int activeHero = 0;
     int activeSkill = Skill::MOVE_ID;
     int turn = 0;

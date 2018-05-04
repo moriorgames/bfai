@@ -5,7 +5,7 @@
 #include "BattleActionChecker.h"
 #include "../Entity/Battle.h"
 #include "../Entity/BattleAction.h"
-#include "../Factories/BattleFactory.h"
+#include "../Factories/BattleHeroInitializer.h"
 #include "../Observer/BattlePublishable.h"
 #include "../Grid/Grid.h"
 
@@ -23,7 +23,7 @@ protected:
 private:
     Battle *battle;
     PathFinder *pathFinder;
-    BattleFactory *battleFactory;
+    BattleHeroInitializer *battleHeroInitializer;
     BattleActionChecker *battleActionChecker;
     Grid *grid;
     std::vector<BattleObservable *> observers;

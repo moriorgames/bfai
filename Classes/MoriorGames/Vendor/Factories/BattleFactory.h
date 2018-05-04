@@ -9,12 +9,6 @@ class BattleFactory
 {
 public:
     Battle *execute(const std::string &json);
-    void initBattleHero(BattleHero *);
-
-private:
-    BattleParser *battleParser;
-
-    void addBaseSkills(BattleHero *);
 };
 
 #endif

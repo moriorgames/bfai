@@ -8,7 +8,7 @@ BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
 {
     pathFinder = new PathFinder(grid);
     battleActionChecker = new BattleActionChecker(pathFinder);
-    battleFactory = new BattleFactory;
+    battleHeroInitializer = new BattleHeroInitializer;
 }
 
 void BattleProcessor::processBattleAction(BattleAction *battleAction)
@@ -120,7 +120,7 @@ void BattleProcessor::spawn(Skill *skill, BattleHero *battleHero, BattleAction *
     auto coordinate = grid->findByXY(battleAction->getCoordinate()->x, battleAction->getCoordinate()->y);
     coordinate->occupied = true;
     spawnHero->setCoordinate(coordinate);
-    battleFactory->initBattleHero(spawnHero);
+    battleHeroInitializer->init(battle, spawnHero);
 
     battle->addHero(spawnHero);
 }

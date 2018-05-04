@@ -30,6 +30,16 @@ const std::vector<BattleHero *> &Battle::getBattleHeroes() const
     return heroes;
 }
 
+void Battle::addSkillHero(SkillHero *skillHero)
+{
+    skillHeroes.push_back(skillHero);
+}
+
+const std::vector<SkillHero *> &Battle::getSkillHeroes() const
+{
+    return skillHeroes;
+}
+
 BattleHero *Battle::getActiveBattleHero()
 {
     for (auto hero:heroes) {

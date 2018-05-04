@@ -1,6 +1,6 @@
 {
   "token": "Miu_tTgazSW6OkSFAYyBxT4DbUpgQ-hQwZlatQV8auY",
-  "online": true,
+  "online": false,
   "heroes": [
     {
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FA",
@@ -19,10 +19,10 @@
       "y": -2
     },
     {
-      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
+      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FA",
       "battleHeroId": 3,
       "heroId": 5,
-      "side": "visitor",
+      "side": "local",
       "x": 6,
       "y": 0
     },

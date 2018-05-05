@@ -124,7 +124,6 @@ ui::Button *RightFrame::getActionButton(Hero *hero)
                 SoundPlayer::playEffect("sounds/button.mp3");
                 auto scene = BattleHeroesScene::createScene();
                 Director::getInstance()->replaceScene(scene);
-//                Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
             }
         });
 

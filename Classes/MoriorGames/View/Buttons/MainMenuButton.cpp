@@ -11,14 +11,15 @@ MainMenuButton::MainMenuButton(Layer *layer)
 
 void MainMenuButton::addView()
 {
-    auto button = ui::Button::create("ui/button-battle.png", "", "");
+    auto button = ui::Button::create("ui/back-button.png", "", "");
     button->setScale(scale);
-    button->setPosition(centerPosition);
-    button->setPositionY(centerPosition.y + BUTTON_Y * scale);
+    button->setPosition(
+        Point(
+            position->getLeftTopPosition().x + BUTTON_X * scale,
+            position->getLeftTopPosition().y + BUTTON_Y * scale
+        )
+    );
 
-    // Translator: translator->tr("menu_" + key)
-    auto label = (new FontCreator)->buttonLabel("MAIN MENU");
-    button->setTitleLabel(label);
     button->addTouchEventListener(
         [&](Ref *sender, ui::Widget::TouchEventType type)
         {

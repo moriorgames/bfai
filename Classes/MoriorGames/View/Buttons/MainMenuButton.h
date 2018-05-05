@@ -7,7 +7,8 @@
 class MainMenuButton: public ViewHelper
 {
 public:
-    int const BUTTON_Y = -410;
+    int const BUTTON_X = 120;
+    int const BUTTON_Y = -70;
 
     explicit MainMenuButton(Layer *layer);
 

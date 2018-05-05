@@ -6,10 +6,13 @@
 class BattleHeroesView: public ViewHelper
 {
 public:
+    int const FRAME_X = 500;
+
     explicit BattleHeroesView(Layer *);
 
 private:
     void addView() override;
+    void addFrames();
 };
 
 #endif

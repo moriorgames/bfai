@@ -1,4 +1,6 @@
 #include "BattleHeroesView.h"
+#include "LeftFrame.h"
+#include "RightFrame.h"
 #include "../Buttons/MainMenuButton.h"
 
 BattleHeroesView::BattleHeroesView(Layer *layer)
@@ -10,4 +12,11 @@ BattleHeroesView::BattleHeroesView(Layer *layer)
 void BattleHeroesView::addView()
 {
     new MainMenuButton(layer);
+    addFrames();
+}
+
+void BattleHeroesView::addFrames()
+{
+    new LeftFrame(layer);
+    new RightFrame(layer);
 }

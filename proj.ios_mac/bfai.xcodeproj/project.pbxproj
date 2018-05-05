@@ -25,6 +25,10 @@
 		4F1A53F0209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53ED209D70B7004DDDDC /* BattleHeroesView.cpp */; };
 		4F1A53F5209D72C8004DDDDC /* MainMenuButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */; };
 		4F1A53F6209D72C8004DDDDC /* MainMenuButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */; };
+		4F1A53F9209D7C99004DDDDC /* LeftFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53F7209D7C99004DDDDC /* LeftFrame.cpp */; };
+		4F1A53FA209D7C99004DDDDC /* LeftFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53F7209D7C99004DDDDC /* LeftFrame.cpp */; };
+		4F1A53FD209D7CA4004DDDDC /* RightFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53FB209D7CA4004DDDDC /* RightFrame.cpp */; };
+		4F1A53FE209D7CA4004DDDDC /* RightFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53FB209D7CA4004DDDDC /* RightFrame.cpp */; };
 		4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */; };
 		4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */; };
 		4F2CBFF2202F1E9300169E86 /* SpriteAnimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */; };
@@ -275,6 +279,10 @@
 		4F1A53EE209D70B7004DDDDC /* BattleHeroesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleHeroesView.h; sourceTree = "<group>"; };
 		4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuButton.cpp; sourceTree = "<group>"; };
 		4F1A53F4209D72C8004DDDDC /* MainMenuButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuButton.h; sourceTree = "<group>"; };
+		4F1A53F7209D7C99004DDDDC /* LeftFrame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LeftFrame.cpp; sourceTree = "<group>"; };
+		4F1A53F8209D7C99004DDDDC /* LeftFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftFrame.h; sourceTree = "<group>"; };
+		4F1A53FB209D7CA4004DDDDC /* RightFrame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RightFrame.cpp; sourceTree = "<group>"; };
+		4F1A53FC209D7CA4004DDDDC /* RightFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightFrame.h; sourceTree = "<group>"; };
 		4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoundPlayer.cpp; sourceTree = "<group>"; };
 		4F2CBFED202F1E7D00169E86 /* SoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
 		4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteAnimator.cpp; sourceTree = "<group>"; };
@@ -633,6 +641,10 @@
 			children = (
 				4F1A53ED209D70B7004DDDDC /* BattleHeroesView.cpp */,
 				4F1A53EE209D70B7004DDDDC /* BattleHeroesView.h */,
+				4F1A53F7209D7C99004DDDDC /* LeftFrame.cpp */,
+				4F1A53F8209D7C99004DDDDC /* LeftFrame.h */,
+				4F1A53FB209D7CA4004DDDDC /* RightFrame.cpp */,
+				4F1A53FC209D7CA4004DDDDC /* RightFrame.h */,
 			);
 			path = BattleHeroes;
 			sourceTree = "<group>";
@@ -1214,6 +1226,7 @@
 				4F78876620989A8C00F18454 /* PathFinderArea.cpp in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
 				4F1A53EF209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */,
+				4F1A53F9209D7C99004DDDDC /* LeftFrame.cpp in Sources */,
 				4FEFCC22205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F72383F20637E0D0064037C /* HeroRepository.cpp in Sources */,
 				4FA6AD85202F965E00158956 /* SpritesInitializer.cpp in Sources */,
@@ -1229,6 +1242,7 @@
 				4FA669452098DE5E00EDFC0A /* BattleActionChecker.cpp in Sources */,
 				4F72384C20637E850064037C /* BattleParser.cpp in Sources */,
 				4FA6AD70202F809A00158956 /* MainMenuScene.cpp in Sources */,
+				4F1A53FD209D7CA4004DDDDC /* RightFrame.cpp in Sources */,
 				4F4B1FC22092E09A00DAA0B1 /* HeroAnimator.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				4F2CBFF9202F22CD00169E86 /* SplashScene.cpp in Sources */,
@@ -1253,6 +1267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1A53FA209D7C99004DDDDC /* LeftFrame.cpp in Sources */,
 				4F3EBADE2099740A008F6198 /* User.cpp in Sources */,
 				4F3AE455202EE9E000B687FB /* ViewHelper.cpp in Sources */,
 				4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */,
@@ -1304,6 +1319,7 @@
 				4FD30898205ED742007D8039 /* BattleEventListener.cpp in Sources */,
 				4FDBF47320919E2B005FF943 /* TileDrawer.cpp in Sources */,
 				4FEFCC21205AE61700D447C4 /* JsonParser.cpp in Sources */,
+				4F1A53FE209D7CA4004DDDDC /* RightFrame.cpp in Sources */,
 				4F2CBFFE202F252000169E86 /* LoadingView.cpp in Sources */,
 				4F57815E207C78240060C7D9 /* BattleEventOnlinePublisher.cpp in Sources */,
 				4F668B712095A9AE00D9FD36 /* HeroHitPointsView.cpp in Sources */,

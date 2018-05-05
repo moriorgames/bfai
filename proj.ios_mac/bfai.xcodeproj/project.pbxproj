@@ -21,6 +21,10 @@
 		4F02062F209ACA520000B29C /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F02062C209ACA520000B29C /* Client.cpp */; };
 		4F12CC94207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
 		4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
+		4F1A53EF209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53ED209D70B7004DDDDC /* BattleHeroesView.cpp */; };
+		4F1A53F0209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53ED209D70B7004DDDDC /* BattleHeroesView.cpp */; };
+		4F1A53F5209D72C8004DDDDC /* MainMenuButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */; };
+		4F1A53F6209D72C8004DDDDC /* MainMenuButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */; };
 		4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */; };
 		4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */; };
 		4F2CBFF2202F1E9300169E86 /* SpriteAnimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */; };
@@ -267,6 +271,10 @@
 		4F12CC92207890190033DE0E /* ResolutionChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResolutionChecker.cpp; sourceTree = "<group>"; };
 		4F12CC93207890190033DE0E /* ResolutionChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResolutionChecker.h; sourceTree = "<group>"; };
 		4F12CC992078985F0033DE0E /* Path.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
+		4F1A53ED209D70B7004DDDDC /* BattleHeroesView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleHeroesView.cpp; sourceTree = "<group>"; };
+		4F1A53EE209D70B7004DDDDC /* BattleHeroesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleHeroesView.h; sourceTree = "<group>"; };
+		4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuButton.cpp; sourceTree = "<group>"; };
+		4F1A53F4209D72C8004DDDDC /* MainMenuButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuButton.h; sourceTree = "<group>"; };
 		4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoundPlayer.cpp; sourceTree = "<group>"; };
 		4F2CBFED202F1E7D00169E86 /* SoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
 		4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteAnimator.cpp; sourceTree = "<group>"; };
@@ -620,6 +628,15 @@
 			path = Containers;
 			sourceTree = "<group>";
 		};
+		4F1A53F2209D71F1004DDDDC /* BattleHeroes */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A53ED209D70B7004DDDDC /* BattleHeroesView.cpp */,
+				4F1A53EE209D70B7004DDDDC /* BattleHeroesView.h */,
+			);
+			path = BattleHeroes;
+			sourceTree = "<group>";
+		};
 		4F2CBFEA202F1E4400169E86 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +715,7 @@
 				4FA6AD72202F83A200158956 /* BackgroundView.cpp */,
 				4FA6AD73202F83A200158956 /* BackgroundView.h */,
 				4F7314C0205CF4BD005AAB83 /* Battle */,
+				4F1A53F2209D71F1004DDDDC /* BattleHeroes */,
 				4FE0EADD20303AB200E6DD88 /* Buttons */,
 				4FBCDC5520320770006B3B5E /* Custom */,
 				4F2CBFFB202F252000169E86 /* LoadingView.cpp */,
@@ -925,6 +943,8 @@
 				4FE0EAE020303AD600E6DD88 /* BattleButton.h */,
 				4FBFCADC209CBF05009199AC /* BattleHeroesButton.cpp */,
 				4FBFCADD209CBF05009199AC /* BattleHeroesButton.h */,
+				4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */,
+				4F1A53F4209D72C8004DDDDC /* MainMenuButton.h */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -1155,6 +1175,7 @@
 				4F3AE454202EE9E000B687FB /* ViewHelper.cpp in Sources */,
 				4FBCDC532032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
 				4F3AE458202EE9F600B687FB /* LogoView.cpp in Sources */,
+				4F1A53F5209D72C8004DDDDC /* MainMenuButton.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
@@ -1192,6 +1213,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4F78876620989A8C00F18454 /* PathFinderArea.cpp in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
+				4F1A53EF209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */,
 				4FEFCC22205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F72383F20637E0D0064037C /* HeroRepository.cpp in Sources */,
 				4FA6AD85202F965E00158956 /* SpritesInitializer.cpp in Sources */,
@@ -1262,10 +1284,12 @@
 				4FBCDC542032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
 				4F7314BF205CF3D4005AAB83 /* BattleHero.cpp in Sources */,
 				4FE0EAE220303AD600E6DD88 /* BattleButton.cpp in Sources */,
+				4F1A53F6209D72C8004DDDDC /* MainMenuButton.cpp in Sources */,
 				4F57815C207C78240060C7D9 /* BattleEventOfflinePublisher.cpp in Sources */,
 				4F2DF5472096F15A00F38AEE /* EndOfBattle.cpp in Sources */,
 				4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4FBCDC69203220CD006B3B5E /* GridHD.cpp in Sources */,
+				4F1A53F0209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,
 				4FBFCADA209CBD92009199AC /* BattleHeroesScene.cpp in Sources */,
 				4FEFE7602079E0E90031A6B5 /* BattleProcessor.cpp in Sources */,

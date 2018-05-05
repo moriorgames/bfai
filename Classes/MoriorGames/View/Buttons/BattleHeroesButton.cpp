@@ -3,8 +3,6 @@
 #include "../../Services/SoundPlayer.h"
 #include "../../Services/FontCreator.h"
 
-const std::string BattleHeroesButton::NAME = "battle-heroes-button-node";
-
 BattleHeroesButton::BattleHeroesButton(Layer *layer)
     : ViewHelper(layer)
 {
@@ -17,7 +15,6 @@ void BattleHeroesButton::addView()
     button->setScale(scale);
     button->setPosition(position->getLeftCenterPosition());
     button->setPositionX(position->getLeftCenterPosition().x + BUTTON_X * scale);
-    button->setName(NAME);
 
     button->addTouchEventListener(
         [&](Ref *sender, ui::Widget::TouchEventType type)

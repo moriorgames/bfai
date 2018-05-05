@@ -8,9 +8,7 @@ class BattleHeroesButton: public ViewHelper
 {
 public:
     int const BUTTON_X = 300;
-    static const std::string NAME;
 
-public:
     explicit BattleHeroesButton(Layer *layer);
 
 private:

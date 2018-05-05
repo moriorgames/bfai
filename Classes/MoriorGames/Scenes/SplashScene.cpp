@@ -56,14 +56,14 @@ void SplashScene::increaseLoadingBar(float delay)
 }
 
 #ifdef DEBUG_SCENE
-#include "../Scenes/BattleScene.h"
+#include "../Scenes/BattleHeroesScene.h"
 #endif
 
 void SplashScene::goToMainMenuScene()
 {
     Scene *scene;
     if (DEBUG_SCENE) {
-        scene = BattleScene::createScene();
+        scene = BattleHeroesScene::createScene();
     } else {
         scene = MainMenuScene::createScene();
     }

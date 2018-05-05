@@ -8,9 +8,7 @@ class BattleButton: public ViewHelper
 {
 public:
     int const BUTTON_Y = -410;
-    static const std::string NAME;
 
-public:
     explicit BattleButton(Layer *layer);
 
 private:

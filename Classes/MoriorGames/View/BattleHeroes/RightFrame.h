@@ -10,19 +10,20 @@ class RightFrame: public ViewHelper
 {
 public:
     float const FRAME_X = 500;
-    float const SCROLL_VIEW_MARGIN = 20;
-    float const SCROLL_VIEW_INNER_HEIGHT = 150;
+    float const SCROLL_VIEW_MARGIN = 8;
+    float const SCROLL_VIEW_INNER_HEIGHT = 240;
 
     explicit RightFrame(Layer *);
 
 private:
+    float scrollViewHeight = 0;
     FontCreator *fontCreator;
     Sprite *frame;
     ui::ScrollView *scrollView;
 
     void addView() override;
     void addHeroesList();
-    void addRow(float y, Hero *);
+    void addRow(int index, Hero *);
 };
 
 #endif

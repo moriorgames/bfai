@@ -28,3 +28,21 @@ Label *FontCreator::hitPointsLabel(std::string text, std::string font, float siz
 
     return label;
 }
+
+Label *FontCreator::titleLabel(std::string text, std::string font, float size)
+{
+    auto label = Label::createWithTTF(text, font, size);
+    label->setColor(Color3B::WHITE);
+    label->enableOutline(Color4B::BLACK, 2);
+    label->enableShadow();
+
+    return label;
+}
+
+Label *FontCreator::infoLabel(std::string text, std::string font, float size)
+{
+    auto label = Label::createWithTTF(text, font, size);
+    label->setColor(Color3B::WHITE);
+
+    return label;
+}

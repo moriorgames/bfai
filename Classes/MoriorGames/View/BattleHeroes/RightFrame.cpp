@@ -63,39 +63,63 @@ void RightFrame::addRow(int index, Hero *hero)
     portrait->initWithSpriteFrameName("portraits/" + hero->getSlug() + ".png");
     portrait->setAnchorPoint(Point(0, 0));
     portrait->setPosition(Point(SCROLL_VIEW_MARGIN * 2, SCROLL_VIEW_MARGIN * 2));
+    sprite->addChild(portrait);
 
     auto name = fontCreator->titleLabel(hero->getName());
     name->setAnchorPoint(Point(0, 0));
-    name->setPosition(220, 150);
+    name->setPosition(ROW_1, 150);
+    sprite->addChild(name);
 
     std::string damageText = "Damage: " + to_string(hero->getDamage());
     auto damageLabel = fontCreator->infoLabel(damageText);
     damageLabel->setAnchorPoint(Point(0, 0));
-    damageLabel->setPosition(230, 100);
+    damageLabel->setPosition(ROW_1, 100);
+    sprite->addChild(damageLabel);
 
     std::string healthText = "Health: " + to_string(hero->getHealth());
     auto healthLabel = fontCreator->infoLabel(healthText);
     healthLabel->setAnchorPoint(Point(0, 0));
-    healthLabel->setPosition(230, 60);
+    healthLabel->setPosition(ROW_1, 60);
+    sprite->addChild(healthLabel);
 
     std::string rangedText = "Ranged: " + to_string(hero->getRanged());
     auto rangedLabel = fontCreator->infoLabel(rangedText);
     rangedLabel->setAnchorPoint(Point(0, 0));
-    rangedLabel->setPosition(430, 100);
+    rangedLabel->setPosition(ROW_2, 100);
+    sprite->addChild(rangedLabel);
 
     std::string moveText = "Movement: " + to_string(hero->getMovement());
     auto moveLabel = fontCreator->infoLabel(moveText);
     moveLabel->setAnchorPoint(Point(0, 0));
-    moveLabel->setPosition(430, 60);
-
-    sprite->addChild(portrait);
-    sprite->addChild(name);
-    sprite->addChild(damageLabel);
-    sprite->addChild(healthLabel);
-    sprite->addChild(rangedLabel);
+    moveLabel->setPosition(ROW_2, 60);
     sprite->addChild(moveLabel);
+
+    auto actionButton = getActionButton(hero);
+    actionButton->setAnchorPoint(Point(0, 0));
+    actionButton->setPosition(Point(ROW_3, 60));
+    sprite->addChild(actionButton);
 
     sprite->setPositionY(y);
 
     scrollView->addChild(sprite);
+}
+
+ui::Button *RightFrame::getActionButton(Hero *hero)
+{
+    auto button = ui::Button::create("ui/action-button.png", "", "");
+
+    // Translator: translator->tr("menu_" + key)
+    auto label = fontCreator->buttonLabel("Use", "fonts/buttons-label.otf", 50);
+    button->setTitleLabel(label);
+    button->addTouchEventListener(
+        [&](Ref *sender, ui::Widget::TouchEventType type)
+        {
+            if (type == ui::Widget::TouchEventType::ENDED) {
+//                SoundPlayer::playEffect("sounds/button.mp3");
+//                auto scene = BattleScene::createScene();
+//                Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
+            }
+        });
+
+    return button;
 }

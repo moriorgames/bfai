@@ -13,6 +13,10 @@ public:
     float const SCROLL_VIEW_MARGIN = 8;
     float const SCROLL_VIEW_INNER_HEIGHT = 240;
 
+    float const ROW_1 = 220;
+    float const ROW_2 = 410;
+    float const ROW_3 = 600;
+
     explicit RightFrame(Layer *);
 
 private:
@@ -24,6 +28,7 @@ private:
     void addView() override;
     void addHeroesList();
     void addRow(int index, Hero *);
+    ui::Button *getActionButton(Hero *);
 };
 
 #endif

@@ -1,11 +1,13 @@
 #include "AppDelegate.h"
 #include "MoriorGames/Scenes/LogoScene.h"
 #include "MoriorGames/Screen/Resolution.h"
+#include "MoriorGames/Vendor/Containers/BattleHeroesConfig.h"
 #include "MoriorGames/Vendor/Entity/User.h"
 #include "MoriorGames/Vendor/Repository/HeroRepository.h"
 #include "MoriorGames/Vendor/Repository/SkillRepository.h"
 
 Resolution *globalResolution = new Resolution;
+BattleHeroesConfig *battleHeroesConfig = new BattleHeroesConfig;
 User *playerUser = new User;
 HeroRepository *heroRepo = new HeroRepository;
 SkillRepository *skillRepo = new SkillRepository;

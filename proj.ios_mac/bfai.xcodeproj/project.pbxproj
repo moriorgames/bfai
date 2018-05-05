@@ -41,6 +41,8 @@
 		4F2DF5472096F15A00F38AEE /* EndOfBattle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DF5442096F15A00F38AEE /* EndOfBattle.cpp */; };
 		4F2DF54B2097340D00F38AEE /* AI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DF5492097340D00F38AEE /* AI.cpp */; };
 		4F2DF54C2097340D00F38AEE /* AI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DF5492097340D00F38AEE /* AI.cpp */; };
+		4F2ECD97209DF14F00E387F5 /* BattleHeroesConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2ECD95209DF14F00E387F5 /* BattleHeroesConfig.cpp */; };
+		4F2ECD98209DF14F00E387F5 /* BattleHeroesConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2ECD95209DF14F00E387F5 /* BattleHeroesConfig.cpp */; };
 		4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE44D202EE32E00B687FB /* Resolution.cpp */; };
@@ -295,6 +297,8 @@
 		4F2DF5452096F15A00F38AEE /* EndOfBattle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EndOfBattle.h; sourceTree = "<group>"; };
 		4F2DF5492097340D00F38AEE /* AI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AI.cpp; sourceTree = "<group>"; };
 		4F2DF54A2097340D00F38AEE /* AI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AI.h; sourceTree = "<group>"; };
+		4F2ECD95209DF14F00E387F5 /* BattleHeroesConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleHeroesConfig.cpp; sourceTree = "<group>"; };
+		4F2ECD96209DF14F00E387F5 /* BattleHeroesConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleHeroesConfig.h; sourceTree = "<group>"; };
 		4F3AE449202EE30500B687FB /* LogoScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LogoScene.cpp; sourceTree = "<group>"; };
 		4F3AE44A202EE30500B687FB /* LogoScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoScene.h; sourceTree = "<group>"; };
 		4F3AE44D202EE32E00B687FB /* Resolution.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Resolution.cpp; sourceTree = "<group>"; };
@@ -632,6 +636,8 @@
 			isa = PBXGroup;
 			children = (
 				4F12CC992078985F0033DE0E /* Path.h */,
+				4F2ECD95209DF14F00E387F5 /* BattleHeroesConfig.cpp */,
+				4F2ECD96209DF14F00E387F5 /* BattleHeroesConfig.h */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -1213,6 +1219,7 @@
 				4FDBF47220919E2B005FF943 /* TileDrawer.cpp in Sources */,
 				4FA6694E2098E0DA00EDFC0A /* PathBuilder.cpp in Sources */,
 				4FA6AD68202F7C8800158956 /* SplashView.cpp in Sources */,
+				4F2ECD97209DF14F00E387F5 /* BattleHeroesConfig.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				4FE0EAE92030410000E6DD88 /* FontCreator.cpp in Sources */,
 				4F7314C3205CF5B5005AAB83 /* BattleView.cpp in Sources */,
@@ -1324,6 +1331,7 @@
 				4F57815E207C78240060C7D9 /* BattleEventOnlinePublisher.cpp in Sources */,
 				4F668B712095A9AE00D9FD36 /* HeroHitPointsView.cpp in Sources */,
 				4F5F7B04209C1BFA00FD1D45 /* SkillHero.cpp in Sources */,
+				4F2ECD98209DF14F00E387F5 /* BattleHeroesConfig.cpp in Sources */,
 				4F578163207C79240060C7D9 /* BattleEventPublisherFactory.cpp in Sources */,
 				4F72384920637E580064037C /* BattleFactory.cpp in Sources */,
 				4F5F7B09209C234800FD1D45 /* BattleHeroInitializer.cpp in Sources */,

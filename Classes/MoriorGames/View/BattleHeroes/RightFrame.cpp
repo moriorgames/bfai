@@ -1,4 +1,7 @@
 #include "RightFrame.h"
+#include "../../Scenes/BattleHeroesScene.h"
+#include "../../Services/SoundPlayer.h"
+#include "../../Vendor/Containers/BattleHeroesConfig.h"
 #include "../../Vendor/Repository/HeroRepository.h"
 #include "../../Vendor/Utils/TextUtils.h"
 
@@ -45,8 +48,10 @@ void RightFrame::addHeroesList()
 
     int index = 0;
     for (auto hero:heroes) {
-        addRow(index, hero);
-        index++;
+        if (!battleHeroesConfig->hasHero(hero)) {
+            addRow(index, hero);
+            index++;
+        }
     }
 
     frame->addChild(scrollView);
@@ -112,11 +117,13 @@ ui::Button *RightFrame::getActionButton(Hero *hero)
     auto label = fontCreator->buttonLabel("Use", "fonts/buttons-label.otf", 50);
     button->setTitleLabel(label);
     button->addTouchEventListener(
-        [&](Ref *sender, ui::Widget::TouchEventType type)
+        [&, hero](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-//                SoundPlayer::playEffect("sounds/button.mp3");
-//                auto scene = BattleScene::createScene();
+                battleHeroesConfig->addHero(hero);
+                SoundPlayer::playEffect("sounds/button.mp3");
+                auto scene = BattleHeroesScene::createScene();
+                Director::getInstance()->replaceScene(scene);
 //                Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
             }
         });

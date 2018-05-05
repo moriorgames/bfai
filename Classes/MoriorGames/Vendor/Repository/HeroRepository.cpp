@@ -8,6 +8,11 @@ void HeroRepository::init(const std::string &json)
     }
 }
 
+const std::vector<Hero *> &HeroRepository::findAll() const
+{
+    return items;
+}
+
 Hero *HeroRepository::findById(int id)
 {
     for (auto item:items) {

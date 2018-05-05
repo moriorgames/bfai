@@ -8,6 +8,7 @@ class HeroRepository
 {
 public:
     void init(const std::string &json);
+    const std::vector<Hero *> &findAll() const;
     Hero *findById(int id);
 
 private:

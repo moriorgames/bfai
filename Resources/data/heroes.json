@@ -65,6 +65,28 @@
       "movement": 4,
       "moveFrames": 16,
       "attackFrames": 24
+    },
+    {
+      "id": 7,
+      "name": "Mecha Knuckles",
+      "slug": "mecha-knuckles",
+      "damage": 2,
+      "ranged": 1,
+      "health": 4,
+      "movement": 4,
+      "moveFrames": 16,
+      "attackFrames": 24
+    },
+    {
+      "id": 8,
+      "name": "Shera",
+      "slug": "shera",
+      "damage": 2,
+      "ranged": 1,
+      "health": 4,
+      "movement": 4,
+      "moveFrames": 16,
+      "attackFrames": 24
     }
   ]
 }

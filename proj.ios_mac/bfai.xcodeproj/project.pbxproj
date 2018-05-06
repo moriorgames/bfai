@@ -107,6 +107,8 @@
 		4F89105B2034BF2800D8382C /* Coordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8910582034BF2800D8382C /* Coordinate.cpp */; };
 		4F89105E2034BF3A00D8382C /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F89105C2034BF3A00D8382C /* Grid.cpp */; };
 		4F89105F2034BF3A00D8382C /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F89105C2034BF3A00D8382C /* Grid.cpp */; };
+		4F91C4D5209ECDF600A662CB /* AbstractFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F91C4D3209ECDF600A662CB /* AbstractFrame.cpp */; };
+		4F91C4D6209ECDF600A662CB /* AbstractFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F91C4D3209ECDF600A662CB /* AbstractFrame.cpp */; };
 		4F9604CF2059A12C004CAEED /* HeroView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F9604CD2059A12C004CAEED /* HeroView.cpp */; };
 		4F9604D02059A12C004CAEED /* HeroView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F9604CD2059A12C004CAEED /* HeroView.cpp */; };
 		4FA0677F207DC36700934122 /* BattleActionParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0677D207DC36700934122 /* BattleActionParser.cpp */; };
@@ -365,6 +367,8 @@
 		4F8910592034BF2800D8382C /* Coordinate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
 		4F89105C2034BF3A00D8382C /* Grid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Grid.cpp; sourceTree = "<group>"; };
 		4F89105D2034BF3A00D8382C /* Grid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
+		4F91C4D3209ECDF600A662CB /* AbstractFrame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractFrame.cpp; sourceTree = "<group>"; };
+		4F91C4D4209ECDF600A662CB /* AbstractFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbstractFrame.h; sourceTree = "<group>"; };
 		4F9604CD2059A12C004CAEED /* HeroView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HeroView.cpp; sourceTree = "<group>"; };
 		4F9604CE2059A12C004CAEED /* HeroView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroView.h; sourceTree = "<group>"; };
 		4F9CE30F207D269000A65619 /* BattleObservable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleObservable.h; sourceTree = "<group>"; };
@@ -651,6 +655,8 @@
 				4F1A53F8209D7C99004DDDDC /* LeftFrame.h */,
 				4F1A53FB209D7CA4004DDDDC /* RightFrame.cpp */,
 				4F1A53FC209D7CA4004DDDDC /* RightFrame.h */,
+				4F91C4D3209ECDF600A662CB /* AbstractFrame.cpp */,
+				4F91C4D4209ECDF600A662CB /* AbstractFrame.h */,
 			);
 			path = BattleHeroes;
 			sourceTree = "<group>";
@@ -1205,6 +1211,7 @@
 				4F2CBFF2202F1E9300169E86 /* SpriteAnimator.cpp in Sources */,
 				4F01D160208C2AE9002231DA /* SkillsView.cpp in Sources */,
 				4F5F7B03209C1BFA00FD1D45 /* SkillHero.cpp in Sources */,
+				4F91C4D5209ECDF600A662CB /* AbstractFrame.cpp in Sources */,
 				4F89105A2034BF2800D8382C /* Coordinate.cpp in Sources */,
 				4FA0677F207DC36700934122 /* BattleActionParser.cpp in Sources */,
 				4FBCDC68203220CD006B3B5E /* GridHD.cpp in Sources */,
@@ -1311,6 +1318,7 @@
 				4F2DF5472096F15A00F38AEE /* EndOfBattle.cpp in Sources */,
 				4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4FBCDC69203220CD006B3B5E /* GridHD.cpp in Sources */,
+				4F91C4D6209ECDF600A662CB /* AbstractFrame.cpp in Sources */,
 				4F1A53F0209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,
 				4FBFCADA209CBD92009199AC /* BattleHeroesScene.cpp in Sources */,

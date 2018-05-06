@@ -1,7 +1,7 @@
 #include "BattleHeroesView.h"
 #include "LeftFrame.h"
 #include "RightFrame.h"
-#include "../Buttons/MainMenuButton.h"
+#include "TopHud.h"
 
 BattleHeroesView::BattleHeroesView(Layer *layer)
     : ViewHelper(layer)
@@ -11,7 +11,7 @@ BattleHeroesView::BattleHeroesView(Layer *layer)
 
 void BattleHeroesView::addView()
 {
-    new MainMenuButton(layer);
+    new TopHud(layer);
     addFrames();
 }
 

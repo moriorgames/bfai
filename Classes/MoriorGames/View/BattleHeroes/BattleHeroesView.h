@@ -12,6 +12,7 @@ public:
 
 private:
     void addView() override;
+    void addTopHud();
     void addFrames();
 };
 

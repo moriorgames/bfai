@@ -11,7 +11,6 @@ public:
 private:
     void addView() override;
     void addHeroesList();
-    void addRow(int index, Hero *);
     ui::Button *getActionButton(Hero *);
 };
 

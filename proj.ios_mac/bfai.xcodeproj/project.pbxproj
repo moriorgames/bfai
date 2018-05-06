@@ -165,6 +165,8 @@
 		4FE0EAF720304B8500E6DD88 /* sprites in Resources */ = {isa = PBXBuildFile; fileRef = 4FE0EAF520304B8500E6DD88 /* sprites */; };
 		4FE0EAF920304D5800E6DD88 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 4FE0EAF820304D5800E6DD88 /* sounds */; };
 		4FE0EAFA20304D5800E6DD88 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = 4FE0EAF820304D5800E6DD88 /* sounds */; };
+		4FE4A934209EFA09003EDA9F /* TopHud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE4A932209EFA09003EDA9F /* TopHud.cpp */; };
+		4FE4A935209EFA09003EDA9F /* TopHud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE4A932209EFA09003EDA9F /* TopHud.cpp */; };
 		4FEFCC20205AE61700D447C4 /* JsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFCC1C205AE61700D447C4 /* JsonParser.cpp */; };
 		4FEFCC21205AE61700D447C4 /* JsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFCC1C205AE61700D447C4 /* JsonParser.cpp */; };
 		4FEFCC22205AE61700D447C4 /* HeroParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFCC1D205AE61700D447C4 /* HeroParser.cpp */; };
@@ -424,6 +426,8 @@
 		4FE0EAEF20304B5300E6DD88 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		4FE0EAF520304B8500E6DD88 /* sprites */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sprites; sourceTree = "<group>"; };
 		4FE0EAF820304D5800E6DD88 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
+		4FE4A932209EFA09003EDA9F /* TopHud.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TopHud.cpp; sourceTree = "<group>"; };
+		4FE4A933209EFA09003EDA9F /* TopHud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopHud.h; sourceTree = "<group>"; };
 		4FEFCC1C205AE61700D447C4 /* JsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JsonParser.cpp; sourceTree = "<group>"; };
 		4FEFCC1D205AE61700D447C4 /* HeroParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeroParser.cpp; sourceTree = "<group>"; };
 		4FEFCC1E205AE61700D447C4 /* HeroParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroParser.h; sourceTree = "<group>"; };
@@ -657,6 +661,8 @@
 				4F1A53FC209D7CA4004DDDDC /* RightFrame.h */,
 				4F91C4D3209ECDF600A662CB /* AbstractFrame.cpp */,
 				4F91C4D4209ECDF600A662CB /* AbstractFrame.h */,
+				4FE4A932209EFA09003EDA9F /* TopHud.cpp */,
+				4FE4A933209EFA09003EDA9F /* TopHud.h */,
 			);
 			path = BattleHeroes;
 			sourceTree = "<group>";
@@ -1212,6 +1218,7 @@
 				4F01D160208C2AE9002231DA /* SkillsView.cpp in Sources */,
 				4F5F7B03209C1BFA00FD1D45 /* SkillHero.cpp in Sources */,
 				4F91C4D5209ECDF600A662CB /* AbstractFrame.cpp in Sources */,
+				4FE4A934209EFA09003EDA9F /* TopHud.cpp in Sources */,
 				4F89105A2034BF2800D8382C /* Coordinate.cpp in Sources */,
 				4FA0677F207DC36700934122 /* BattleActionParser.cpp in Sources */,
 				4FBCDC68203220CD006B3B5E /* GridHD.cpp in Sources */,
@@ -1282,6 +1289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F1A53FA209D7C99004DDDDC /* LeftFrame.cpp in Sources */,
+				4FE4A935209EFA09003EDA9F /* TopHud.cpp in Sources */,
 				4F3EBADE2099740A008F6198 /* User.cpp in Sources */,
 				4F3AE455202EE9E000B687FB /* ViewHelper.cpp in Sources */,
 				4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */,

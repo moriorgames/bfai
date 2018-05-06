@@ -42,11 +42,12 @@ void SplashScene::increaseLoadingBar(float delay)
     loadingView->setLoadingBarPercentage(loadingBarPercentage);
     if (loadingBarPercentage == 66) {
         new SpritesInitializer();
-        auto userJson = (new StringFileReader)->getStringFromFile("data/user.json");
+        auto stringFileReader = new StringFileReader;
+        auto userJson = stringFileReader->getStringFromFile("data/user.json");
         playerUser = (new UserParser(userJson))->parse();
-        auto heroesJson = (new StringFileReader)->getStringFromFile("data/heroes.json");
+        auto heroesJson = stringFileReader->getStringFromFile("data/heroes.json");
         heroRepo->init(heroesJson);
-        auto skillsJson = (new StringFileReader)->getStringFromFile("data/skills.json");
+        auto skillsJson = stringFileReader->getStringFromFile("data/skills.json");
         skillRepo->init(skillsJson);
     }
     if (loadingBarPercentage > 99) {

@@ -6,4 +6,5 @@ ViewHelper::ViewHelper(Layer *layer)
     scale = globalResolution->getScale();
     position = new Position;
     centerPosition = position->getCenterCenterPosition();
+    translator = new Translator("es");
 }

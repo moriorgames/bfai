@@ -179,6 +179,8 @@
 		4FEFE7602079E0E90031A6B5 /* BattleProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */; };
 		4FEFE7632079E8CF0031A6B5 /* BattleAction2Json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7612079E8CF0031A6B5 /* BattleAction2Json.cpp */; };
 		4FEFE7642079E8CF0031A6B5 /* BattleAction2Json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7612079E8CF0031A6B5 /* BattleAction2Json.cpp */; };
+		4FF9D53A209F6BA900570E45 /* Translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9D538209F6BA900570E45 /* Translator.cpp */; };
+		4FF9D53B209F6BA900570E45 /* Translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9D538209F6BA900570E45 /* Translator.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -439,6 +441,8 @@
 		4FEFE75E2079E0E90031A6B5 /* BattleProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleProcessor.h; sourceTree = "<group>"; };
 		4FEFE7612079E8CF0031A6B5 /* BattleAction2Json.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleAction2Json.cpp; sourceTree = "<group>"; };
 		4FEFE7622079E8CF0031A6B5 /* BattleAction2Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleAction2Json.h; sourceTree = "<group>"; };
+		4FF9D538209F6BA900570E45 /* Translator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Translator.cpp; sourceTree = "<group>"; };
+		4FF9D539209F6BA900570E45 /* Translator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Translator.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -680,6 +684,8 @@
 				4FA6AD84202F965E00158956 /* SpritesInitializer.h */,
 				4FD96FCE205B84F700C0F5A1 /* StringFileReader.cpp */,
 				4FD96FCF205B84F700C0F5A1 /* StringFileReader.h */,
+				4FF9D538209F6BA900570E45 /* Translator.cpp */,
+				4FF9D539209F6BA900570E45 /* Translator.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1211,6 +1217,7 @@
 				4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
 				4F12CC94207890190033DE0E /* ResolutionChecker.cpp in Sources */,
 				4F7EB1632069FF340086A900 /* BattleContainer.cpp in Sources */,
+				4FF9D53A209F6BA900570E45 /* Translator.cpp in Sources */,
 				4F5C0CDF208B0749006D57BF /* SkillRepository.cpp in Sources */,
 				4F9604CF2059A12C004CAEED /* HeroView.cpp in Sources */,
 				4F02062E209ACA520000B29C /* Client.cpp in Sources */,
@@ -1329,6 +1336,7 @@
 				4F91C4D6209ECDF600A662CB /* AbstractFrame.cpp in Sources */,
 				4F1A53F0209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,
+				4FF9D53B209F6BA900570E45 /* Translator.cpp in Sources */,
 				4FBFCADA209CBD92009199AC /* BattleHeroesScene.cpp in Sources */,
 				4FEFE7602079E0E90031A6B5 /* BattleProcessor.cpp in Sources */,
 				4F576D1B2075E56200011BC7 /* Coordinate2Screen.cpp in Sources */,

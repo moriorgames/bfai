@@ -25,8 +25,7 @@ void TopHud::addView()
         )
     );
 
-    std::string text = "Remaining points";
-    auto label = fontCreator->titleLabel(text);
+    auto label = fontCreator->titleLabel(translator->tr("battle_heroes_remaining_points"));
     label->setAnchorPoint(Point(1, 0.5));
     label->setPositionX(label->getPosition().x - 50);
     node->addChild(label);
@@ -47,8 +46,7 @@ void TopHud::addResetButton()
     auto button = ui::Button::create("ui/action-button.png", "", "");
     button->setPositionX(-550);
 
-    // Translator: translator->tr("menu_" + key)
-    auto label = fontCreator->buttonLabel("Reset", "fonts/buttons-label.otf", 50);
+    auto label = fontCreator->buttonLabel(translator->tr("battle_heroes_reset"), "fonts/buttons-label.otf", 50);
     button->setTitleLabel(label);
     button->addTouchEventListener(
         [&](Ref *sender, ui::Widget::TouchEventType type)

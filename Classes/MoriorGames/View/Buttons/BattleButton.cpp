@@ -16,8 +16,7 @@ void BattleButton::addView()
     button->setPosition(centerPosition);
     button->setPositionY(centerPosition.y + BUTTON_Y * scale);
 
-    // Translator: translator->tr("menu_" + key)
-    auto label = (new FontCreator)->buttonLabel("BATTLE");
+    auto label = (new FontCreator)->buttonLabel(translator->tr("main_menu_battle"));
     button->setTitleLabel(label);
     button->addTouchEventListener(
         [&](Ref *sender, ui::Widget::TouchEventType type)

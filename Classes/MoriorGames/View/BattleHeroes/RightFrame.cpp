@@ -42,8 +42,7 @@ ui::Button *RightFrame::getActionButton(Hero *hero)
     button->setAnchorPoint(Point(0, 0));
     button->setPosition(Point(COL_3, ROW_2));
 
-    // Translator: translator->tr("menu_" + key)
-    auto label = fontCreator->buttonLabel("Use", "fonts/buttons-label.otf", 50);
+    auto label = fontCreator->buttonLabel(translator->tr("battle_heroes_use"), "fonts/buttons-label.otf", 50);
     button->setTitleLabel(label);
     button->addTouchEventListener(
         [&, hero](Ref *sender, ui::Widget::TouchEventType type)

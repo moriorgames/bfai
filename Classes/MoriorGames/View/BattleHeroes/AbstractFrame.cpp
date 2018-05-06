@@ -58,32 +58,13 @@ Sprite *AbstractFrame::heroRow(int index, Hero *hero)
 
     auto name = fontCreator->titleLabel(hero->getName());
     name->setAnchorPoint(Point(0, 0));
-    name->setPosition(ROW_1, 150);
+    name->setPosition(COL_1, 150);
     sprite->addChild(name);
 
-    std::string damageText = "Damage: " + to_string(hero->getDamage());
-    auto damageLabel = fontCreator->infoLabel(damageText);
-    damageLabel->setAnchorPoint(Point(0, 0));
-    damageLabel->setPosition(ROW_1, 90);
-    sprite->addChild(damageLabel);
-
-    std::string healthText = "Health: " + to_string(hero->getHealth());
-    auto healthLabel = fontCreator->infoLabel(healthText);
-    healthLabel->setAnchorPoint(Point(0, 0));
-    healthLabel->setPosition(ROW_1, 40);
-    sprite->addChild(healthLabel);
-
-    std::string rangedText = "Ranged: " + to_string(hero->getRanged());
-    auto rangedLabel = fontCreator->infoLabel(rangedText);
-    rangedLabel->setAnchorPoint(Point(0, 0));
-    rangedLabel->setPosition(ROW_2, 90);
-    sprite->addChild(rangedLabel);
-
-    std::string moveText = "Movement: " + to_string(hero->getMovement());
-    auto moveLabel = fontCreator->infoLabel(moveText);
-    moveLabel->setAnchorPoint(Point(0, 0));
-    moveLabel->setPosition(ROW_2, 40);
-    sprite->addChild(moveLabel);
+    addNumericStat(sprite, "Damage: ", hero->getDamage(), COL_1, ROW_1);
+    addNumericStat(sprite, "Health: ", hero->getHealth(), COL_1, ROW_2);
+    addNumericStat(sprite, "Ranged: ", hero->getRanged(), COL_2, ROW_1);
+    addNumericStat(sprite, "Movement: ", hero->getMovement(), COL_2, ROW_2);
 
     auto costSprite = ui::Button::create("ui/cost.png", "", "");
     costSprite->setAnchorPoint(Point(0, 0));
@@ -95,4 +76,13 @@ Sprite *AbstractFrame::heroRow(int index, Hero *hero)
     sprite->setPositionY(y);
 
     return sprite;
+}
+
+void AbstractFrame::addNumericStat(Sprite *sprite, std::string text, int number, float col, float row)
+{
+    std::string damageText = text + to_string(number);
+    auto damageLabel = fontCreator->infoLabel(damageText);
+    damageLabel->setAnchorPoint(Point(0, 0));
+    damageLabel->setPosition(col, row);
+    sprite->addChild(damageLabel);
 }

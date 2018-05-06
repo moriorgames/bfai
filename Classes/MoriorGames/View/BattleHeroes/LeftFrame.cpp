@@ -40,7 +40,7 @@ ui::Button *LeftFrame::getActionButton(Hero *hero)
 {
     auto button = ui::Button::create("ui/action-button.png", "", "");
     button->setAnchorPoint(Point(0, 0));
-    button->setPosition(Point(ROW_3, 40));
+    button->setPosition(Point(COL_3, ROW_2));
 
     // Translator: translator->tr("menu_" + key)
     auto label = fontCreator->buttonLabel("Remove", "fonts/buttons-label.otf", 50);

@@ -13,9 +13,12 @@ public:
     float const SCROLL_VIEW_MARGIN = 8;
     float const SCROLL_VIEW_INNER_HEIGHT = 240;
 
-    float const ROW_1 = 220;
-    float const ROW_2 = 410;
-    float const ROW_3 = 600;
+    float const COL_1 = 220;
+    float const COL_2 = 410;
+    float const COL_3 = 600;
+
+    float const ROW_1 = 90;
+    float const ROW_2 = 40;
 
     explicit AbstractFrame(Layer *);
 
@@ -30,6 +33,7 @@ protected:
 private:
     void initFrame();
     void initScrollView();
+    void addNumericStat(Sprite *, std::string text, int number, float col, float row);
 };
 
 #endif

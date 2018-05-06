@@ -52,6 +52,7 @@ void HeroParser::addData(Hero *item, const rapidjson::Value &data)
     item->setRanged(getInt(data, "ranged"));
     item->setHealth(getInt(data, "health"));
     item->setMovement(getInt(data, "movement"));
+    item->setCost(getInt(data, "cost"));
     item->setMoveFrames(getInt(data, "moveFrames"));
     item->setAttackFrames(getInt(data, "attackFrames"));
 }

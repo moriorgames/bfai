@@ -80,6 +80,16 @@ void Hero::setMovement(int movement)
     this->movement = movement;
 }
 
+int Hero::getCost() const
+{
+    return cost;
+}
+
+void Hero::setCost(int cost)
+{
+    this->cost = cost;
+}
+
 int Hero::getMoveFrames() const
 {
     return moveFrames;

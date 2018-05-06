@@ -31,7 +31,7 @@ void RightFrame::addHeroesList()
 
     scrollView = ui::ScrollView::create();
     scrollView->setDirection(ui::ScrollView::Direction::VERTICAL);
-    scrollView->setScrollBarWidth(3);
+    scrollView->setScrollBarWidth(10);
     scrollView->setContentSize(Size(
         frame->getContentSize().width - SCROLL_VIEW_MARGIN,
         frame->getContentSize().height - SCROLL_VIEW_MARGIN
@@ -78,30 +78,37 @@ void RightFrame::addRow(int index, Hero *hero)
     std::string damageText = "Damage: " + to_string(hero->getDamage());
     auto damageLabel = fontCreator->infoLabel(damageText);
     damageLabel->setAnchorPoint(Point(0, 0));
-    damageLabel->setPosition(ROW_1, 100);
+    damageLabel->setPosition(ROW_1, 90);
     sprite->addChild(damageLabel);
 
     std::string healthText = "Health: " + to_string(hero->getHealth());
     auto healthLabel = fontCreator->infoLabel(healthText);
     healthLabel->setAnchorPoint(Point(0, 0));
-    healthLabel->setPosition(ROW_1, 60);
+    healthLabel->setPosition(ROW_1, 40);
     sprite->addChild(healthLabel);
 
     std::string rangedText = "Ranged: " + to_string(hero->getRanged());
     auto rangedLabel = fontCreator->infoLabel(rangedText);
     rangedLabel->setAnchorPoint(Point(0, 0));
-    rangedLabel->setPosition(ROW_2, 100);
+    rangedLabel->setPosition(ROW_2, 90);
     sprite->addChild(rangedLabel);
 
     std::string moveText = "Movement: " + to_string(hero->getMovement());
     auto moveLabel = fontCreator->infoLabel(moveText);
     moveLabel->setAnchorPoint(Point(0, 0));
-    moveLabel->setPosition(ROW_2, 60);
+    moveLabel->setPosition(ROW_2, 40);
     sprite->addChild(moveLabel);
+
+    auto costSprite = ui::Button::create("ui/cost.png", "", "");
+    costSprite->setAnchorPoint(Point(0, 0));
+    costSprite->setPosition(Point(760, 140));
+    auto costLabel = fontCreator->numberLabel(to_string(hero->getCost()));
+    costSprite->setTitleLabel(costLabel);
+    sprite->addChild(costSprite);
 
     auto actionButton = getActionButton(hero);
     actionButton->setAnchorPoint(Point(0, 0));
-    actionButton->setPosition(Point(ROW_3, 60));
+    actionButton->setPosition(Point(ROW_3, 40));
     sprite->addChild(actionButton);
 
     sprite->setPositionY(y);

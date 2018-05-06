@@ -8,6 +8,7 @@
       "ranged": 4,
       "health": 8,
       "movement": 3,
+      "cost": 2,
       "moveFrames": 16,
       "attackFrames": 16
     },
@@ -15,10 +16,11 @@
       "id": 2,
       "name": "Pink",
       "slug": "pink",
-      "damage": 4,
+      "damage": 8,
       "ranged": 4,
       "health": 10,
       "movement": 2,
+      "cost": 3,
       "moveFrames": 24,
       "attackFrames": 24
     },
@@ -28,8 +30,9 @@
       "slug": "atlas",
       "damage": 3,
       "ranged": 1,
-      "health": 20,
+      "health": 25,
       "movement": 2,
+      "cost": 3,
       "moveFrames": 24,
       "attackFrames": 24
     },
@@ -41,6 +44,7 @@
       "ranged": 2,
       "health": 10,
       "movement": 2,
+      "cost": 3,
       "moveFrames": 24,
       "attackFrames": 24
     },
@@ -52,6 +56,7 @@
       "ranged": 1,
       "health": 18,
       "movement": 3,
+      "cost": 4,
       "moveFrames": 24,
       "attackFrames": 24
     },
@@ -63,6 +68,7 @@
       "ranged": 1,
       "health": 4,
       "movement": 4,
+      "cost": 1,
       "moveFrames": 16,
       "attackFrames": 24
     },
@@ -70,10 +76,11 @@
       "id": 7,
       "name": "Mecha Knuckles",
       "slug": "mecha-knuckles",
-      "damage": 2,
+      "damage": 10,
       "ranged": 1,
-      "health": 4,
-      "movement": 4,
+      "health": 22,
+      "movement": 2,
+      "cost": 4,
       "moveFrames": 16,
       "attackFrames": 24
     },
@@ -81,10 +88,11 @@
       "id": 8,
       "name": "Shera",
       "slug": "shera",
-      "damage": 2,
+      "damage": 8,
       "ranged": 1,
-      "health": 4,
-      "movement": 4,
+      "health": 15,
+      "movement": 3,
+      "cost": 4,
       "moveFrames": 16,
       "attackFrames": 24
     }

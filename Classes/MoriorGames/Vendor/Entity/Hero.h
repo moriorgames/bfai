@@ -24,6 +24,8 @@ public:
     void setHealth(int health);
     int getMovement() const;
     void setMovement(int movement);
+    int getCost() const;
+    void setCost(int cost);
     int getMoveFrames() const;
     void setMoveFrames(int moveFrames);
     int getAttackFrames() const;
@@ -39,7 +41,7 @@ public:
 protected:
     int id = 0;
     std::string name = "", slug = "", userToken = "";
-    int damage = 0, ranged = 0, health = 0, movement = 0, moveFrames = 0, attackFrames = 0, agro = 0;
+    int damage = 0, ranged = 0, health = 0, movement = 0, cost = 0, moveFrames = 0, attackFrames = 0, agro = 0;
 
     std::vector<Skill *> skills;
 };

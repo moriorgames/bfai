@@ -82,6 +82,7 @@ void BattleHero::copy(Hero *hero)
     ranged = hero->getRanged();
     health = hero->getHealth();
     movement = hero->getMovement();
+    cost = hero->getCost();
     moveFrames = hero->getMoveFrames();
     attackFrames = hero->getAttackFrames();
     skills = hero->getSkills();

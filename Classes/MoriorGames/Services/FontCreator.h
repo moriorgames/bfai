@@ -12,6 +12,7 @@ public:
     Label *hitPointsLabel(std::string text, std::string font = "fonts/buttons-label.otf", float size = 24);
     Label *titleLabel(std::string text, std::string font = "fonts/title.otf", float size = 34);
     Label *infoLabel(std::string text, std::string font = "fonts/info.otf", float size = 30);
+    Label *numberLabel(std::string text, std::string font = "fonts/title.otf", float size = 40);
 };
 
 #endif

@@ -11,6 +11,7 @@ public:
     void clear();
     void addHero(Hero *);
     void removeHero(Hero *);
+    int countBattleHeroesCost();
 
 protected:
     std::vector<Hero *> heroes;

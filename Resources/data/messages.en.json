@@ -1,7 +1,12 @@
 {
   "main_menu_battle": "BATTLE",
   "battle_heroes_remaining_points": "Remaining points",
-  "battle_heroes_use": "Use",
-  "battle_heroes_remove": "Remove",
-  "battle_heroes_reset": "reset"
+  "battle_heroes_use": "USE",
+  "battle_heroes_info": "INFO",
+  "battle_heroes_remove": "REMOVE",
+  "battle_heroes_reset": "reset",
+  "battle_heroes_damage": "Damage: %s",
+  "battle_heroes_health": "Health: %s",
+  "battle_heroes_ranged": "Ranged: %s",
+  "battle_heroes_movement": "Movement: %s"
 }

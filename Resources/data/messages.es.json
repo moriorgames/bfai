@@ -1,7 +1,12 @@
 {
   "main_menu_battle": "BATALLA",
   "battle_heroes_remaining_points": "Puntos restantes",
-  "battle_heroes_use": "Usar",
-  "battle_heroes_remove": "Quitar",
-  "battle_heroes_reset": "Limpiar"
+  "battle_heroes_use": "USAR",
+  "battle_heroes_info": "INFO",
+  "battle_heroes_remove": "QUITAR",
+  "battle_heroes_reset": "Limpiar",
+  "battle_heroes_damage": "Daño: %s",
+  "battle_heroes_health": "Salud: %s",
+  "battle_heroes_ranged": "Alcance: %s",
+  "battle_heroes_movement": "Movimiento: %s"
 }

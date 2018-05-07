@@ -26,6 +26,9 @@ void LeftFrame::addHeroesList()
         if (battleHeroesConfig->hasHero(hero)) {
             auto sprite = heroRow(index, hero);
             sprite->addChild(
+                getInfoButton(hero)
+            );
+            sprite->addChild(
                 getActionButton(hero)
             );
             scrollView->addChild(sprite);
@@ -36,9 +39,26 @@ void LeftFrame::addHeroesList()
     frame->addChild(scrollView);
 }
 
+ui::Button *LeftFrame::getInfoButton(Hero *hero)
+{
+    auto button = createInfoButton("battle_heroes_info");
+    button->addTouchEventListener(
+        [&, hero](Ref *sender, ui::Widget::TouchEventType type)
+        {
+            if (type == ui::Widget::TouchEventType::ENDED) {
+//                battleHeroesConfig->addHero(hero);
+//                SoundPlayer::playEffect("sounds/button.mp3");
+//                auto scene = BattleHeroesScene::createScene();
+//                Director::getInstance()->replaceScene(scene);
+            }
+        });
+
+    return button;
+}
+
 ui::Button *LeftFrame::getActionButton(Hero *hero)
 {
-    auto button = createActionButton("battle_heroes_remove", hero);
+    auto button = createActionButton("battle_heroes_remove");
     button->addTouchEventListener(
         [&, hero](Ref *sender, ui::Widget::TouchEventType type)
         {

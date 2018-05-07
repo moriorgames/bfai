@@ -53,18 +53,18 @@ Sprite *AbstractFrame::heroRow(int index, Hero *hero)
     auto portrait = new Sprite;
     portrait->initWithSpriteFrameName("portraits/" + hero->getSlug() + ".png");
     portrait->setAnchorPoint(Point(0, 0));
-    portrait->setPosition(Point(SCROLL_VIEW_MARGIN * 2, SCROLL_VIEW_MARGIN * 2));
+    portrait->setPosition(Point(SCROLL_VIEW_MARGIN * 2, SCROLL_VIEW_MARGIN * 3));
     sprite->addChild(portrait);
 
     auto name = fontCreator->titleLabel(hero->getName());
     name->setAnchorPoint(Point(0, 0));
-    name->setPosition(COL_1, 150);
+    name->setPosition(220, 170);
     sprite->addChild(name);
 
-    addNumericStat(sprite, "Damage: ", hero->getDamage(), COL_1, ROW_1);
-    addNumericStat(sprite, "Health: ", hero->getHealth(), COL_1, ROW_2);
-    addNumericStat(sprite, "Ranged: ", hero->getRanged(), COL_2, ROW_1);
-    addNumericStat(sprite, "Movement: ", hero->getMovement(), COL_2, ROW_2);
+    addNumericStat(sprite, "battle_heroes_damage", hero->getDamage(), COL_1, ROW_1);
+    addNumericStat(sprite, "battle_heroes_health", hero->getHealth(), COL_1, ROW_2);
+    addNumericStat(sprite, "battle_heroes_ranged", hero->getRanged(), COL_2, ROW_1);
+    addNumericStat(sprite, "battle_heroes_movement", hero->getMovement(), COL_2, ROW_2);
 
     auto costSprite = ui::Button::create("ui/cost.png", "", "");
     costSprite->setAnchorPoint(Point(0, 0));
@@ -78,22 +78,33 @@ Sprite *AbstractFrame::heroRow(int index, Hero *hero)
     return sprite;
 }
 
-void AbstractFrame::addNumericStat(Sprite *sprite, std::string text, int number, float col, float row)
+void AbstractFrame::addNumericStat(Sprite *sprite, std::string key, int number, float col, float row)
 {
-    std::string damageText = text + to_string(number);
-    auto damageLabel = fontCreator->infoLabel(damageText);
+    auto damageLabel = fontCreator->infoLabel(translator->tr(key, number));
     damageLabel->setAnchorPoint(Point(0, 0));
     damageLabel->setPosition(col, row);
     sprite->addChild(damageLabel);
 }
 
-ui::Button *AbstractFrame::createActionButton(std::string key, Hero *hero)
+ui::Button *AbstractFrame::createInfoButton(std::string key)
 {
-    auto button = ui::Button::create("ui/action-button.png", "", "");
+    auto button = ui::Button::create("ui/battle-hero-button.png", "", "");
     button->setAnchorPoint(Point(0, 0));
-    button->setPosition(Point(COL_3, ROW_2));
+    button->setPosition(Point(230, BUTTON_ROW));
 
-    auto label = fontCreator->buttonLabel(translator->tr(key), "fonts/buttons-label.otf", 50);
+    auto label = fontCreator->titleLabel(translator->tr(key));
+    button->setTitleLabel(label);
+
+    return button;
+}
+
+ui::Button *AbstractFrame::createActionButton(std::string key)
+{
+    auto button = ui::Button::create("ui/battle-hero-button.png", "", "");
+    button->setAnchorPoint(Point(0, 0));
+    button->setPosition(Point(500, BUTTON_ROW));
+
+    auto label = fontCreator->titleLabel(translator->tr(key));
     button->setTitleLabel(label);
 
     return button;

@@ -11,14 +11,15 @@ class AbstractFrame: public ViewHelper
 public:
     float const FRAME_X = 500;
     float const SCROLL_VIEW_MARGIN = 8;
-    float const SCROLL_VIEW_INNER_HEIGHT = 240;
+    float const SCROLL_VIEW_INNER_HEIGHT = 250;
 
-    float const COL_1 = 220;
-    float const COL_2 = 410;
-    float const COL_3 = 600;
+    float const COL_1 = 240;
+    float const COL_2 = 430;
 
-    float const ROW_1 = 90;
-    float const ROW_2 = 40;
+    float const ROW_1 = 135;
+    float const ROW_2 = 95;
+
+    float const BUTTON_ROW = 15;
 
     explicit AbstractFrame(Layer *);
 
@@ -29,12 +30,13 @@ protected:
     FontCreator *fontCreator;
 
     Sprite *heroRow(int index, Hero *);
-    ui::Button *createActionButton(std::string key, Hero *);
+    ui::Button *createInfoButton(std::string key);
+    ui::Button *createActionButton(std::string key);
 
 private:
     void initFrame();
     void initScrollView();
-    void addNumericStat(Sprite *, std::string text, int number, float col, float row);
+    void addNumericStat(Sprite *, std::string key, int number, float col, float row);
 };
 
 #endif

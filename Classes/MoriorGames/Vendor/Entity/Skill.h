@@ -33,6 +33,12 @@ public:
     void setRanged(int ranged);
     int getExtra() const;
     void setExtra(int extra);
+    int getCost() const;
+    void setCost(int cost);
+    bool isUnique() const;
+    void setUnique(bool unique);
+    bool isUpgradable() const;
+    void setUpgradable(bool upgradable);
 
     void print();
 
@@ -40,7 +46,8 @@ protected:
     int id = 0;
     std::string name = "", slug = "";
     short type = 0;
-    int damage = 0, ranged = 0, extra = 0;
+    int damage = 0, ranged = 0, extra = 0, cost = 0;
+    bool unique = true, upgradable = false;
 };
 
 #endif

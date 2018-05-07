@@ -92,6 +92,36 @@ void Skill::setExtra(int extra)
     this->extra = extra;
 }
 
+int Skill::getCost() const
+{
+    return cost;
+}
+
+void Skill::setCost(int cost)
+{
+    this->cost = cost;
+}
+
+bool Skill::isUnique() const
+{
+    return unique;
+}
+
+void Skill::setUnique(bool unique)
+{
+    this->unique = unique;
+}
+
+bool Skill::isUpgradable() const
+{
+    return upgradable;
+}
+
+void Skill::setUpgradable(bool upgradable)
+{
+    this->upgradable = upgradable;
+}
+
 void Skill::print()
 {
     printf("========= Skill: \n"
@@ -102,6 +132,8 @@ void Skill::print()
            " - damage %i\n"
            " - ranged %i\n"
            " - extra %i\n"
+           " - cost %i\n"
+           " - unique %i\n"
            " \n",
            id,
            name.c_str(),
@@ -109,6 +141,8 @@ void Skill::print()
            type,
            damage,
            ranged,
-           extra
+           extra,
+           cost,
+           unique
     );
 }

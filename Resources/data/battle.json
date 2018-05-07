@@ -41,6 +41,14 @@
       "side": "visitor",
       "x": 5,
       "y": -3
+    },
+    {
+      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FA",
+      "battleHeroId": 6,
+      "heroId": 2,
+      "side": "local",
+      "x": -7,
+      "y": 0
     }
   ],
   "skillsHeroes": [

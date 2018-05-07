@@ -43,6 +43,10 @@
 		4F2DF54C2097340D00F38AEE /* AI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2DF5492097340D00F38AEE /* AI.cpp */; };
 		4F2ECD97209DF14F00E387F5 /* BattleHeroesConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2ECD95209DF14F00E387F5 /* BattleHeroesConfig.cpp */; };
 		4F2ECD98209DF14F00E387F5 /* BattleHeroesConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2ECD95209DF14F00E387F5 /* BattleHeroesConfig.cpp */; };
+		4F2F41F920A07F75007A36A1 /* SkillHeroRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F41F720A07F75007A36A1 /* SkillHeroRepository.cpp */; };
+		4F2F41FA20A07F75007A36A1 /* SkillHeroRepository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F41F720A07F75007A36A1 /* SkillHeroRepository.cpp */; };
+		4F2F41FE20A07F8B007A36A1 /* SkillHeroParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F41FC20A07F8B007A36A1 /* SkillHeroParser.cpp */; };
+		4F2F41FF20A07F8B007A36A1 /* SkillHeroParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2F41FC20A07F8B007A36A1 /* SkillHeroParser.cpp */; };
 		4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE449202EE30500B687FB /* LogoScene.cpp */; };
 		4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3AE44D202EE32E00B687FB /* Resolution.cpp */; };
@@ -305,6 +309,10 @@
 		4F2DF54A2097340D00F38AEE /* AI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AI.h; sourceTree = "<group>"; };
 		4F2ECD95209DF14F00E387F5 /* BattleHeroesConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleHeroesConfig.cpp; sourceTree = "<group>"; };
 		4F2ECD96209DF14F00E387F5 /* BattleHeroesConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleHeroesConfig.h; sourceTree = "<group>"; };
+		4F2F41F720A07F75007A36A1 /* SkillHeroRepository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SkillHeroRepository.cpp; sourceTree = "<group>"; };
+		4F2F41F820A07F75007A36A1 /* SkillHeroRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkillHeroRepository.h; sourceTree = "<group>"; };
+		4F2F41FC20A07F8B007A36A1 /* SkillHeroParser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SkillHeroParser.cpp; sourceTree = "<group>"; };
+		4F2F41FD20A07F8B007A36A1 /* SkillHeroParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkillHeroParser.h; sourceTree = "<group>"; };
 		4F3AE449202EE30500B687FB /* LogoScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LogoScene.cpp; sourceTree = "<group>"; };
 		4F3AE44A202EE30500B687FB /* LogoScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoScene.h; sourceTree = "<group>"; };
 		4F3AE44D202EE32E00B687FB /* Resolution.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Resolution.cpp; sourceTree = "<group>"; };
@@ -799,6 +807,8 @@
 			children = (
 				4F72383D20637E0D0064037C /* HeroRepository.cpp */,
 				4F72383E20637E0D0064037C /* HeroRepository.h */,
+				4F2F41F720A07F75007A36A1 /* SkillHeroRepository.cpp */,
+				4F2F41F820A07F75007A36A1 /* SkillHeroRepository.h */,
 				4F5C0CDD208B0749006D57BF /* SkillRepository.cpp */,
 				4F5C0CDE208B0749006D57BF /* SkillRepository.h */,
 			);
@@ -996,6 +1006,8 @@
 				4FEFCC1E205AE61700D447C4 /* HeroParser.h */,
 				4FEFCC1C205AE61700D447C4 /* JsonParser.cpp */,
 				4FEFCC1F205AE61700D447C4 /* JsonParser.h */,
+				4F2F41FC20A07F8B007A36A1 /* SkillHeroParser.cpp */,
+				4F2F41FD20A07F8B007A36A1 /* SkillHeroParser.h */,
 				4F5C0CD9208B0254006D57BF /* SkillParser.cpp */,
 				4F5C0CDA208B0254006D57BF /* SkillParser.h */,
 				4F3EBAE02099765F008F6198 /* UserParser.cpp */,
@@ -1212,6 +1224,7 @@
 				4FBCDC532032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
 				4F3AE458202EE9F600B687FB /* LogoView.cpp in Sources */,
 				4F1A53F5209D72C8004DDDDC /* MainMenuButton.cpp in Sources */,
+				4F2F41FE20A07F8B007A36A1 /* SkillHeroParser.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
@@ -1264,6 +1277,7 @@
 				4F57815D207C78240060C7D9 /* BattleEventOnlinePublisher.cpp in Sources */,
 				4FEFE7632079E8CF0031A6B5 /* BattleAction2Json.cpp in Sources */,
 				4FBCDC6A203220CD006B3B5E /* GridSD.cpp in Sources */,
+				4F2F41F920A07F75007A36A1 /* SkillHeroRepository.cpp in Sources */,
 				4F576D152075E17E00011BC7 /* GridView.cpp in Sources */,
 				4F57815B207C78240060C7D9 /* BattleEventOfflinePublisher.cpp in Sources */,
 				4FE0EAE120303AD600E6DD88 /* BattleButton.cpp in Sources */,
@@ -1307,6 +1321,7 @@
 				4F3AE459202EE9F600B687FB /* LogoView.cpp in Sources */,
 				4FE0EAEA2030410000E6DD88 /* FontCreator.cpp in Sources */,
 				4F7314C4205CF5B5005AAB83 /* BattleView.cpp in Sources */,
+				4F2F41FF20A07F8B007A36A1 /* SkillHeroParser.cpp in Sources */,
 				4F3AE462202F040400B687FB /* ScreenProperties.cpp in Sources */,
 				4FBCDC6F203220CD006B3B5E /* GridHDR.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
@@ -1319,6 +1334,7 @@
 				4FBFCADF209CBF05009199AC /* BattleHeroesButton.cpp in Sources */,
 				4FD96FD1205B84F700C0F5A1 /* StringFileReader.cpp in Sources */,
 				4FBCDC502032008E006B3B5E /* BattleScene.cpp in Sources */,
+				4F2F41FA20A07F75007A36A1 /* SkillHeroRepository.cpp in Sources */,
 				4F4B1FC32092E09A00DAA0B1 /* HeroAnimator.cpp in Sources */,
 				4FA6694F2098E0DA00EDFC0A /* PathBuilder.cpp in Sources */,
 				4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */,

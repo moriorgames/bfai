@@ -7,7 +7,10 @@
       "type": 0,
       "damage": 0,
       "ranged": 0,
-      "extra": 0
+      "extra": 0,
+      "cost": 0,
+      "unique": true,
+      "upgradable": false
     },
     {
       "id": 2,
@@ -16,7 +19,10 @@
       "type": 0,
       "damage": 0,
       "ranged": 0,
-      "extra": 0
+      "extra": 0,
+      "cost": 0,
+      "unique": true,
+      "upgradable": false
     },
     {
       "id": 3,
@@ -25,7 +31,10 @@
       "type": 0,
       "damage": 0,
       "ranged": 0,
-      "extra": 0
+      "extra": 0,
+      "cost": 0,
+      "unique": true,
+      "upgradable": false
     },
     {
       "id": 4,
@@ -34,61 +43,78 @@
       "type": 0,
       "damage": 0,
       "ranged": 0,
-      "extra": 0
+      "extra": 0,
+      "cost": 0,
+      "unique": true,
+      "upgradable": false
     },
     {
       "id": 5,
-      "name": "Shotgun",
-      "slug": "shotgun",
-      "type": 1,
-      "damage": 3,
-      "ranged": 2,
-      "extra": 0
-    },
-    {
-      "id": 6,
-      "name": "Spawn Bots",
-      "slug": "spawn-bots",
-      "type": 2,
-      "damage": 0,
-      "ranged": 1,
-      "extra": 6
-    },
-    {
-      "id": 7,
       "name": "Boost Health",
       "slug": "boost-health",
       "type": 3,
       "damage": 0,
       "ranged": 0,
-      "extra": 0
+      "cost": 1,
+      "unique": false,
+      "upgradable": true
     },
     {
-      "id": 8,
+      "id": 6,
       "name": "Boost Damage",
       "slug": "boost-dealth",
       "type": 4,
       "damage": 0,
       "ranged": 0,
-      "extra": 0
+      "cost": 1,
+      "unique": false,
+      "upgradable": true
     },
     {
-      "id": 9,
+      "id": 7,
       "name": "Boost Ranged",
       "slug": "boost-ranged",
       "type": 5,
       "damage": 0,
       "ranged": 0,
-      "extra": 0
+      "cost": 1,
+      "unique": false,
+      "upgradable": true
     },
     {
-      "id": 10,
+      "id": 8,
       "name": "Boost Move",
       "slug": "boost-move",
       "type": 6,
       "damage": 0,
       "ranged": 0,
-      "extra": 0
+      "cost": 1,
+      "unique": false,
+      "upgradable": true
+    },
+    {
+      "id": 9,
+      "name": "Shotgun",
+      "slug": "shotgun",
+      "type": 1,
+      "damage": 3,
+      "ranged": 2,
+      "extra": 0,
+      "cost": 3,
+      "unique": true,
+      "upgradable": true
+    },
+    {
+      "id": 10,
+      "name": "Spawn Bots",
+      "slug": "spawn-bots",
+      "type": 2,
+      "damage": 0,
+      "ranged": 1,
+      "extra": 6,
+      "cost": 4,
+      "unique": true,
+      "upgradable": true
     },
     {
       "id": 99,
@@ -97,7 +123,10 @@
       "type": 0,
       "damage": 0,
       "ranged": 0,
-      "extra": 6
+      "extra": 0,
+      "cost": 1,
+      "unique": false,
+      "upgradable": false
     }
   ]
 }

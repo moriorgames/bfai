@@ -6,6 +6,7 @@
 #include "../Vendor/Parsers/UserParser.h"
 #include "../Vendor/Repository/HeroRepository.h"
 #include "../Vendor/Repository/SkillRepository.h"
+#include "../Vendor/Repository/SkillHeroRepository.h"
 #include "../View/SplashView.h"
 
 USING_NS_CC;
@@ -49,6 +50,8 @@ void SplashScene::increaseLoadingBar(float delay)
         heroRepo->init(heroesJson);
         auto skillsJson = stringFileReader->getStringFromFile("data/skills.json");
         skillRepo->init(skillsJson);
+        auto skillsHeroesJson = stringFileReader->getStringFromFile("data/skillsHeroes.json");
+        skillHeroRepo->init(skillsJson);
     }
     if (loadingBarPercentage > 99) {
         this->unschedule(schedule_selector(SplashScene::increaseLoadingBar));

@@ -29,6 +29,7 @@ protected:
     FontCreator *fontCreator;
 
     Sprite *heroRow(int index, Hero *);
+    ui::Button *createActionButton(std::string key, Hero *);
 
 private:
     void initFrame();

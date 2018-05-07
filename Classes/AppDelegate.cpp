@@ -5,12 +5,14 @@
 #include "MoriorGames/Vendor/Entity/User.h"
 #include "MoriorGames/Vendor/Repository/HeroRepository.h"
 #include "MoriorGames/Vendor/Repository/SkillRepository.h"
+#include "MoriorGames/Vendor/Repository/SkillHeroRepository.h"
 
 Resolution *globalResolution = new Resolution;
 BattleHeroesConfig *battleHeroesConfig = new BattleHeroesConfig;
 User *playerUser = new User;
 HeroRepository *heroRepo = new HeroRepository;
 SkillRepository *skillRepo = new SkillRepository;
+SkillHeroRepository *skillHeroRepo = new SkillHeroRepository;
 
 #if USE_AUDIO_ENGINE && USE_SIMPLE_AUDIO_ENGINE
 #error "Don't use AudioEngine and SimpleAudioEngine at the same time. Please just select one in your game!"

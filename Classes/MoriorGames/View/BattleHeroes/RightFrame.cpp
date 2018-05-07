@@ -38,12 +38,7 @@ void RightFrame::addHeroesList()
 
 ui::Button *RightFrame::getActionButton(Hero *hero)
 {
-    auto button = ui::Button::create("ui/action-button.png", "", "");
-    button->setAnchorPoint(Point(0, 0));
-    button->setPosition(Point(COL_3, ROW_2));
-
-    auto label = fontCreator->buttonLabel(translator->tr("battle_heroes_use"), "fonts/buttons-label.otf", 50);
-    button->setTitleLabel(label);
+    auto button = createActionButton("battle_heroes_use", hero);
     button->addTouchEventListener(
         [&, hero](Ref *sender, ui::Widget::TouchEventType type)
         {

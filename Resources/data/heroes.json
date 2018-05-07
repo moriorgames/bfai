@@ -22,7 +22,7 @@
       "movement": 2,
       "cost": 3,
       "moveFrames": 24,
-      "attackFrames": 24
+      "attackFrames": 16
     },
     {
       "id": 3,

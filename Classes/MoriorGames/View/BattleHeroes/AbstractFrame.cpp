@@ -86,3 +86,15 @@ void AbstractFrame::addNumericStat(Sprite *sprite, std::string text, int number,
     damageLabel->setPosition(col, row);
     sprite->addChild(damageLabel);
 }
+
+ui::Button *AbstractFrame::createActionButton(std::string key, Hero *hero)
+{
+    auto button = ui::Button::create("ui/action-button.png", "", "");
+    button->setAnchorPoint(Point(0, 0));
+    button->setPosition(Point(COL_3, ROW_2));
+
+    auto label = fontCreator->buttonLabel(translator->tr(key), "fonts/buttons-label.otf", 50);
+    button->setTitleLabel(label);
+
+    return button;
+}

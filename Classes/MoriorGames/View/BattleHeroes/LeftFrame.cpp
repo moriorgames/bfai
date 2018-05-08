@@ -26,7 +26,7 @@ void LeftFrame::addHeroesList()
         if (battleHeroesConfig->hasHero(hero)) {
             auto sprite = heroRow(index, hero);
             sprite->addChild(
-                getInfoButton(hero)
+                getUpgradeButton(hero)
             );
             sprite->addChild(
                 getActionButton(hero)
@@ -39,9 +39,9 @@ void LeftFrame::addHeroesList()
     frame->addChild(scrollView);
 }
 
-ui::Button *LeftFrame::getInfoButton(Hero *hero)
+ui::Button *LeftFrame::getUpgradeButton(Hero *hero)
 {
-    auto button = createInfoButton("battle_heroes_info");
+    auto button = createInfoButton("battle_heroes_upgrade");
     button->addTouchEventListener(
         [&, hero](Ref *sender, ui::Widget::TouchEventType type)
         {

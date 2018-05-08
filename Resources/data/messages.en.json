@@ -3,6 +3,7 @@
   "battle_heroes_remaining_points": "Remaining points",
   "battle_heroes_use": "USE",
   "battle_heroes_info": "INFO",
+  "battle_heroes_upgrade": "UPGRADE",
   "battle_heroes_remove": "REMOVE",
   "battle_heroes_reset": "reset",
   "battle_heroes_damage": "Damage: %s",

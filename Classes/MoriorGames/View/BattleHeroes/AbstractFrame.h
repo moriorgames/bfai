@@ -10,8 +10,9 @@ class AbstractFrame: public ViewHelper
 {
 public:
     float const FRAME_X = 500;
+    float const FRAME_Y = 50;
     float const SCROLL_VIEW_MARGIN = 8;
-    float const SCROLL_VIEW_INNER_HEIGHT = 250;
+    float const SCROLL_VIEW_INNER_HEIGHT = 245;
 
     float const COL_1 = 240;
     float const COL_2 = 430;

@@ -1,11 +1,9 @@
 #ifndef MORIOR_GAMES_VIEW_CUSTOM_POPUP_BATTLE_HERO_H
 #define MORIOR_GAMES_VIEW_CUSTOM_POPUP_BATTLE_HERO_H
 
-#include "ui/CocosGUI.h"
-#include "../ViewHelper.h"
-#include "../../Vendor/Entity/Hero.h"
+#include "../BattleHeroes/AbstractFrame.h"
 
-class PopupBattleHero: public ViewHelper
+class PopupBattleHero: public AbstractFrame
 {
 public:
     explicit PopupBattleHero(Layer *, Hero *);
@@ -17,7 +15,7 @@ private:
 
     void addView() override;
     void addBackground() const;
-    void addFrame() const;
+    void addFrame();
 };
 
 #endif

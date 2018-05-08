@@ -1,7 +1,7 @@
 #include "PopupBattleHero.h"
 
 PopupBattleHero::PopupBattleHero(Layer *layer, Hero *hero)
-    : ViewHelper(layer), hero{hero}
+    : AbstractFrame(layer), hero{hero}
 {
     addView();
 }
@@ -18,9 +18,12 @@ void PopupBattleHero::addView()
     layer->addChild(node, Z_ORDER_POPUP);
 }
 
-void PopupBattleHero::addFrame() const
+void PopupBattleHero::addFrame()
 {
     auto frame = Sprite::create("ui/frame-battle-heroes.png");
+    auto sprite = heroRow(0, hero);
+    scrollView->addChild(sprite);
+    frame->addChild(scrollView);
     node->addChild(frame);
 }
 

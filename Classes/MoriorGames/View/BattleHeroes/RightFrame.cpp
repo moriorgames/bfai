@@ -1,4 +1,5 @@
 #include "RightFrame.h"
+#include "../Custom/PopupBattleHero.h"
 #include "../../Scenes/BattleHeroesScene.h"
 #include "../../Services/SoundPlayer.h"
 #include "../../Vendor/Containers/BattleHeroesConfig.h"
@@ -46,10 +47,8 @@ ui::Button *RightFrame::getInfoButton(Hero *hero)
         [&, hero](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-//                battleHeroesConfig->addHero(hero);
-//                SoundPlayer::playEffect("sounds/button.mp3");
-//                auto scene = BattleHeroesScene::createScene();
-//                Director::getInstance()->replaceScene(scene);
+                SoundPlayer::playEffect("sounds/button.mp3");
+                new PopupBattleHero(layer, hero);
             }
         });
 

@@ -131,6 +131,8 @@
 		4FA6AD7F202F8FC200158956 /* WorldView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6AD7C202F8FC200158956 /* WorldView.cpp */; };
 		4FA6AD85202F965E00158956 /* SpritesInitializer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6AD83202F965E00158956 /* SpritesInitializer.cpp */; };
 		4FA6AD86202F965E00158956 /* SpritesInitializer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6AD83202F965E00158956 /* SpritesInitializer.cpp */; };
+		4FAEAB6920A15B94008A2755 /* PopupBattleHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FAEAB6720A15B94008A2755 /* PopupBattleHero.cpp */; };
+		4FAEAB6A20A15B94008A2755 /* PopupBattleHero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FAEAB6720A15B94008A2755 /* PopupBattleHero.cpp */; };
 		4FB468FC20852F1E0038843C /* ClosestCoordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FB468FA20852F1E0038843C /* ClosestCoordinate.cpp */; };
 		4FB468FD20852F1E0038843C /* ClosestCoordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FB468FA20852F1E0038843C /* ClosestCoordinate.cpp */; };
 		4FBCDC4F2032008E006B3B5E /* BattleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCDC4D2032008E006B3B5E /* BattleScene.cpp */; };
@@ -402,6 +404,8 @@
 		4FA6AD83202F965E00158956 /* SpritesInitializer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpritesInitializer.cpp; sourceTree = "<group>"; };
 		4FA6AD84202F965E00158956 /* SpritesInitializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpritesInitializer.h; sourceTree = "<group>"; };
 		4FA6AD8F202F9A6E00158956 /* TextUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextUtils.h; sourceTree = "<group>"; };
+		4FAEAB6720A15B94008A2755 /* PopupBattleHero.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PopupBattleHero.cpp; sourceTree = "<group>"; };
+		4FAEAB6820A15B94008A2755 /* PopupBattleHero.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupBattleHero.h; sourceTree = "<group>"; };
 		4FB468FA20852F1E0038843C /* ClosestCoordinate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClosestCoordinate.cpp; sourceTree = "<group>"; };
 		4FB468FB20852F1E0038843C /* ClosestCoordinate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClosestCoordinate.h; sourceTree = "<group>"; };
 		4FBCDC4D2032008E006B3B5E /* BattleScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleScene.cpp; sourceTree = "<group>"; };
@@ -930,6 +934,8 @@
 			children = (
 				4FBCDC562032079A006B3B5E /* BattleInitCustomActions.cpp */,
 				4FBCDC572032079A006B3B5E /* BattleInitCustomActions.h */,
+				4FAEAB6720A15B94008A2755 /* PopupBattleHero.cpp */,
+				4FAEAB6820A15B94008A2755 /* PopupBattleHero.h */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1224,6 +1230,7 @@
 				4FBCDC532032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
 				4F3AE458202EE9F600B687FB /* LogoView.cpp in Sources */,
 				4F1A53F5209D72C8004DDDDC /* MainMenuButton.cpp in Sources */,
+				4FAEAB6920A15B94008A2755 /* PopupBattleHero.cpp in Sources */,
 				4F2F41FE20A07F8B007A36A1 /* SkillHeroParser.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				4F3AE44B202EE30500B687FB /* LogoScene.cpp in Sources */,
@@ -1350,6 +1357,7 @@
 				4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */,
 				4FBCDC69203220CD006B3B5E /* GridHD.cpp in Sources */,
 				4F91C4D6209ECDF600A662CB /* AbstractFrame.cpp in Sources */,
+				4FAEAB6A20A15B94008A2755 /* PopupBattleHero.cpp in Sources */,
 				4F1A53F0209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,
 				4FF9D53B209F6BA900570E45 /* Translator.cpp in Sources */,

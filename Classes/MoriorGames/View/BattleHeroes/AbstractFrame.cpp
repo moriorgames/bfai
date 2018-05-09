@@ -6,19 +6,16 @@ AbstractFrame::AbstractFrame(Layer *layer)
     : ViewHelper(layer)
 {
     fontCreator = new FontCreator;
-
-    initFrame();
-    initScrollView();
 }
 
-void AbstractFrame::initFrame()
+Sprite *AbstractFrame::initFrame()
 {
     frame = Sprite::create("ui/frame-battle-heroes.png");
     frame->setScale(scale);
     frame->setPosition(centerPosition);
     frame->setPositionY(centerPosition.y - FRAME_Y * scale);
 
-    layer->addChild(frame, Z_ORDER_BACKGROUND);
+    return frame;
 }
 
 void AbstractFrame::initScrollView()

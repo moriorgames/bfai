@@ -30,13 +30,13 @@ protected:
     ui::ScrollView *scrollView;
     FontCreator *fontCreator;
 
+    Sprite *initFrame();
+    void initScrollView();
     Sprite *heroRow(int index, Hero *);
     ui::Button *createInfoButton(std::string key);
     ui::Button *createActionButton(std::string key);
 
 private:
-    void initFrame();
-    void initScrollView();
     void addNumericStat(Sprite *, std::string key, int number, float col, float row);
 };
 

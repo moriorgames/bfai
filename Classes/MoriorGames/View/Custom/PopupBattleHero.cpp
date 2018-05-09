@@ -20,6 +20,8 @@ void PopupBattleHero::addView()
 
 void PopupBattleHero::addFrame()
 {
+    initFrame();
+    initScrollView();
     auto frame = Sprite::create("ui/frame-battle-heroes.png");
     auto sprite = heroRow(0, hero);
     scrollView->addChild(sprite);

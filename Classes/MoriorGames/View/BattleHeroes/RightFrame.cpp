@@ -15,7 +15,10 @@ RightFrame::RightFrame(Layer *layer)
 
 void RightFrame::addView()
 {
+    auto frame = initFrame();
     frame->setPositionX(centerPosition.x + FRAME_X * scale);
+    layer->addChild(frame, Z_ORDER_BACKGROUND);
+    initScrollView();
 }
 
 void RightFrame::addHeroesList()

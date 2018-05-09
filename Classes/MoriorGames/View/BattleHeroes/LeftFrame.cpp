@@ -14,7 +14,10 @@ LeftFrame::LeftFrame(Layer *layer)
 
 void LeftFrame::addView()
 {
+    auto frame = initFrame();
     frame->setPositionX(centerPosition.x - FRAME_X * scale);
+    layer->addChild(frame, Z_ORDER_BACKGROUND);
+    initScrollView();
 }
 
 void LeftFrame::addHeroesList()

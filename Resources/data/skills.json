@@ -62,7 +62,7 @@
     {
       "id": 6,
       "name": "Boost Damage",
-      "slug": "boost-dealth",
+      "slug": "boost-damage",
       "type": 4,
       "damage": 0,
       "ranged": 0,

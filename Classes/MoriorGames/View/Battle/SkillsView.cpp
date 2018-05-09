@@ -52,6 +52,8 @@ void SkillsView::addSkillButtons()
 
         auto battle = this->battle;
         auto skillModel = skillRepo->findById(skill->getId());
+
+        // @TODO this will not work I've moved the sprites to a portraits plist file
         auto button = ui::Button::create("ui/" + skillModel->getSlug() + ".png", "", "");
         button->setPosition(Point(x, y));
         button->addTouchEventListener(

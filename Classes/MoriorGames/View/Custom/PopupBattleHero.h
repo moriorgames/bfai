@@ -16,6 +16,7 @@ private:
     void addView() override;
     void addBackground() const;
     void addFrame();
+    void addSkillRow(int index, int skillId);
 };
 
 #endif

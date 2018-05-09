@@ -46,12 +46,10 @@ void SplashScene::increaseLoadingBar(float delay)
         auto stringFileReader = new StringFileReader;
         auto userJson = stringFileReader->getStringFromFile("data/user.json");
         playerUser = (new UserParser(userJson))->parse();
-        auto heroesJson = stringFileReader->getStringFromFile("data/heroes.json");
-        heroRepo->init(heroesJson);
-        auto skillsJson = stringFileReader->getStringFromFile("data/skills.json");
-        skillRepo->init(skillsJson);
-        auto skillsHeroesJson = stringFileReader->getStringFromFile("data/skillsHeroes.json");
-        skillHeroRepo->init(skillsJson);
+        auto apiJson = stringFileReader->getStringFromFile("data/api-data.json");
+        heroRepo->init(apiJson);
+        skillRepo->init(apiJson);
+        skillHeroRepo->init(apiJson);
     }
     if (loadingBarPercentage > 99) {
         this->unschedule(schedule_selector(SplashScene::increaseLoadingBar));

@@ -8,6 +8,18 @@ void SkillHeroRepository::init(const std::string &json)
     }
 }
 
+std::vector<SkillHero *> SkillHeroRepository::findSkillsByHero(Hero *hero)
+{
+    std::vector<SkillHero *> skillsHero;
+    for (auto item:items) {
+        if (item->getHeroId() == hero->getId()) {
+            skillsHero.push_back(item);
+        }
+    }
+
+    return skillsHero;
+}
+
 SkillHero *SkillHeroRepository::findBySkillAndHero(int skillId, int heroId)
 {
     for (auto item:items) {

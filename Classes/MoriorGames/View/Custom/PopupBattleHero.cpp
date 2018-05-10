@@ -1,5 +1,6 @@
 #include "PopupBattleHero.h"
 #include "../../Vendor/Repository/SkillRepository.h"
+#include "../../Vendor/Repository/SkillHeroRepository.h"
 #include "../../Vendor/Utils/TextUtils.h"
 
 PopupBattleHero::PopupBattleHero(Layer *layer, Hero *hero)
@@ -30,10 +31,11 @@ void PopupBattleHero::addFrame()
     frame->addChild(scrollView);
     node->addChild(frame);
 
-    addSkillRow(1, 5);
-    addSkillRow(2, 6);
-    addSkillRow(3, 7);
-    addSkillRow(4, 8);
+    int index = 1;
+    for (auto skillHero:skillHeroRepo->findSkillsByHero(hero)) {
+        addSkillRow(1, skillHero->getSkillId());
+        index++;
+    }
 }
 
 void PopupBattleHero::addBackground() const

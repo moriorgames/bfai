@@ -53,8 +53,7 @@ void SkillsView::addSkillButtons()
         auto battle = this->battle;
         auto skillModel = skillRepo->findById(skill->getId());
 
-        // @TODO this will not work I've moved the sprites to a portraits plist file
-        auto button = ui::Button::create("ui/" + skillModel->getSlug() + ".png", "", "");
+        auto button = ui::Button::create("portraits/" + skillModel->getSlug() + ".png", "", "", uiTexture::PLIST);
         button->setPosition(Point(x, y));
         button->addTouchEventListener(
             [&, battleHero, skillModel, gridViewLambda, battle](Ref *sender, ui::Widget::TouchEventType type)

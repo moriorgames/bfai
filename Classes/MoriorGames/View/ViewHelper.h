@@ -2,10 +2,13 @@
 #define MORIOR_GAMES_VIEW_VIEW_HELPER_H
 
 #include "cocos2d.h"
+#include "ui/CocosGUI.h"
 #include "../Screen/Position.h"
 #include "../Services/Translator.h"
 #include "../Definitions.h"
 USING_NS_CC;
+
+using uiTexture = ui::Widget::TextureResType;
 
 class ViewHelper
 {

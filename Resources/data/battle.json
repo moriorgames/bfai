@@ -21,7 +21,7 @@
     {
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "battleHeroId": 3,
-      "heroId": 5,
+      "heroId": 10,
       "side": "visitor",
       "x": 6,
       "y": 0
@@ -29,7 +29,7 @@
     {
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "battleHeroId": 4,
-      "heroId": 6,
+      "heroId": 11,
       "side": "visitor",
       "x": 7,
       "y": -2

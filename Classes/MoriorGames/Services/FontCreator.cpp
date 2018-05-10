@@ -55,3 +55,12 @@ Label *FontCreator::numberLabel(std::string text, std::string font, float size)
 
     return label;
 }
+
+ui::Text *FontCreator::descriptionText(std::string text, std::string font, float size)
+{
+    auto description = ui::Text::create(text, font, size);
+    description->setTextColor(Color4B::WHITE);
+    description->ignoreContentAdaptWithSize(false);
+
+    return description;
+}

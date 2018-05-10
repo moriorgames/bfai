@@ -32,7 +32,7 @@ void PopupBattleHero::addFrame()
 
     index++;
     for (auto skillHero:skillHeroRepo->findSkillsByHero(hero)) {
-        addSkillRow(index, skillHero->getSkillId());
+        addSkillRow(index, skillHero);
         index++;
     }
 
@@ -57,9 +57,9 @@ void PopupBattleHero::addBackground() const
     node->addChild(background);
 }
 
-void PopupBattleHero::addSkillRow(int index, int skillId)
+void PopupBattleHero::addSkillRow(int index, SkillHero *skillHero)
 {
-    auto skill = skillRepo->findById(skillId);
+    auto skill = skillRepo->findById(skillHero->getSkillId());
     float y = -index * SCROLL_VIEW_INNER_HEIGHT + scrollViewHeight - SCROLL_VIEW_MARGIN;
 
     auto sprite = Sprite::create("img/battle-heroes-row-background.png");
@@ -77,13 +77,19 @@ void PopupBattleHero::addSkillRow(int index, int skillId)
     name->setPosition(220, 170);
     sprite->addChild(name);
 
-    // @TODO here we have to add the text description of the skill
-    // @TODO And we have the upgrade button too
+    auto description = fontCreator->descriptionText(translator->tr("skill_description_" + skill->getSlug()));
+    description->setAnchorPoint(Point(0, 1));
+    description->setContentSize(Size(500, 200));
+    description->setPosition(Point(COL_1, 150));
+    sprite->addChild(description);
+
+    // @TODO We have the upgrade button
 
     auto costSprite = ui::Button::create("ui/cost.png", "", "");
     costSprite->setAnchorPoint(Point(0, 0));
     costSprite->setPosition(Point(760, 140));
-    auto costLabel = fontCreator->numberLabel(to_string(skill->getCost()));
+    auto cost = skillHero->getCost() + skill->getCost();
+    auto costLabel = fontCreator->numberLabel(to_string(cost));
     costSprite->setTitleLabel(costLabel);
     sprite->addChild(costSprite);
 

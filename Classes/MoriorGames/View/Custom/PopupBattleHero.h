@@ -2,6 +2,7 @@
 #define MORIOR_GAMES_VIEW_CUSTOM_POPUP_BATTLE_HERO_H
 
 #include "../BattleHeroes/AbstractFrame.h"
+#include "../../Vendor/Entity/SkillHero.h"
 
 class PopupBattleHero: public AbstractFrame
 {
@@ -16,7 +17,7 @@ private:
     void addView() override;
     void addBackground() const;
     void addFrame();
-    void addSkillRow(int index, int skillId);
+    void addSkillRow(int index, SkillHero *);
 };
 
 #endif

@@ -1,6 +1,7 @@
 #ifndef MORIOR_GAMES_SERVICES_FONT_CREATOR_H
 #define MORIOR_GAMES_SERVICES_FONT_CREATOR_H
 
+#include "ui/CocosGUI.h"
 #include "cocos2d.h"
 USING_NS_CC;
 
@@ -13,6 +14,7 @@ public:
     Label *titleLabel(std::string text, std::string font = "fonts/title.otf", float size = 34);
     Label *infoLabel(std::string text, std::string font = "fonts/info.otf", float size = 30);
     Label *numberLabel(std::string text, std::string font = "fonts/title.otf", float size = 40);
+    ui::Text *descriptionText(std::string text, std::string font = "fonts/info.otf", float size = 30);
 };
 
 #endif

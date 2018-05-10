@@ -9,5 +9,9 @@
   "battle_heroes_damage": "Daño: %s",
   "battle_heroes_health": "Salud: %s",
   "battle_heroes_ranged": "Alcance: %s",
-  "battle_heroes_movement": "Movimiento: %s"
+  "battle_heroes_movement": "Movimiento: %s",
+  "skill_description_boost-health": "Aumenta un punto de salud por cada mejora obtenida",
+  "skill_description_boost-damage": "Aumenta un punto de daño por cada mejora obetnida",
+  "skill_description_boost-ranged": "Aumenta el alcance del ataque básico en 1",
+  "skill_description_boost-move": "Aumenta el área de movimiento en 1"
 }

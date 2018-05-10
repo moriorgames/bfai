@@ -12,7 +12,7 @@ void SkillHero::setSkillId(int skillId)
 
 int SkillHero::getHeroId() const
 {
-    return 0;
+    return heroId;
 }
 
 void SkillHero::setHeroId(int heroId)

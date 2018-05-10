@@ -25,17 +25,20 @@ void PopupBattleHero::addFrame()
 {
     initFrame();
     initScrollView();
+
     auto frame = Sprite::create("ui/frame-battle-heroes.png");
-    auto sprite = heroRow(0, hero);
+    int index = 0;
+    auto sprite = heroRow(index, hero);
+
+    index++;
+    for (auto skillHero:skillHeroRepo->findSkillsByHero(hero)) {
+        addSkillRow(index, skillHero->getSkillId());
+        index++;
+    }
+
     scrollView->addChild(sprite);
     frame->addChild(scrollView);
     node->addChild(frame);
-
-    int index = 1;
-    for (auto skillHero:skillHeroRepo->findSkillsByHero(hero)) {
-        addSkillRow(1, skillHero->getSkillId());
-        index++;
-    }
 }
 
 void PopupBattleHero::addBackground() const

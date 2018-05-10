@@ -16,7 +16,6 @@ std::vector<SkillHero *> SkillHeroParser::parse()
             if ((*itr).IsObject()) {
                 auto skill = new SkillHero;
                 addData(skill, *itr);
-                skill->print();
                 items.push_back(skill);
             }
         }

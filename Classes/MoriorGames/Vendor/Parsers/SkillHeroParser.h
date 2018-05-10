@@ -7,7 +7,7 @@
 class SkillHeroParser: public JsonParser
 {
 public:
-    const char *ROW = "skills";
+    const char *ROW = "skillsHeroes";
     explicit SkillHeroParser(std::string json);
     std::vector<SkillHero *> parse();
 

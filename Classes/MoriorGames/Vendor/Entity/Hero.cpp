@@ -120,6 +120,16 @@ void Hero::addAgro(int agro)
     this->agro += agro;
 }
 
+bool Hero::isEnabled() const
+{
+    return enabled;
+}
+
+void Hero::setEnabled(bool enabled)
+{
+    this->enabled = enabled;
+}
+
 const std::vector<Skill *> &Hero::getSkills() const
 {
     return skills;

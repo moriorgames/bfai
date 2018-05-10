@@ -29,12 +29,14 @@ void RightFrame::addHeroesList()
     for (auto hero:heroes) {
         if (!battleHeroesConfig->hasHero(hero)) {
             auto sprite = heroRow(index, hero);
-            sprite->addChild(
-                getInfoButton(hero)
-            );
-            sprite->addChild(
-                getActionButton(hero)
-            );
+            if (hero->isEnabled()) {
+                sprite->addChild(
+                    getInfoButton(hero)
+                );
+                sprite->addChild(
+                    getActionButton(hero)
+                );
+            }
             scrollView->addChild(sprite);
             index++;
         }

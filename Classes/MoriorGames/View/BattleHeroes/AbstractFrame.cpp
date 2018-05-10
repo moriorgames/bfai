@@ -47,6 +47,7 @@ Sprite *AbstractFrame::heroRow(int index, Hero *hero)
 
     auto sprite = Sprite::create("img/battle-heroes-row-background.png");
     sprite->setAnchorPoint(Point(0, 1));
+    sprite->setCascadeOpacityEnabled(true);
 
     auto portrait = new Sprite;
     portrait->initWithSpriteFrameName("portraits/" + hero->getSlug() + ".png");
@@ -59,17 +60,21 @@ Sprite *AbstractFrame::heroRow(int index, Hero *hero)
     name->setPosition(220, 170);
     sprite->addChild(name);
 
-    addNumericStat(sprite, "battle_heroes_damage", hero->getDamage(), COL_1, ROW_1);
-    addNumericStat(sprite, "battle_heroes_health", hero->getHealth(), COL_1, ROW_2);
-    addNumericStat(sprite, "battle_heroes_ranged", hero->getRanged(), COL_2, ROW_1);
-    addNumericStat(sprite, "battle_heroes_movement", hero->getMovement(), COL_2, ROW_2);
+    if (hero->isEnabled()) {
+        addNumericStat(sprite, "battle_heroes_damage", hero->getDamage(), COL_1, ROW_1);
+        addNumericStat(sprite, "battle_heroes_health", hero->getHealth(), COL_1, ROW_2);
+        addNumericStat(sprite, "battle_heroes_ranged", hero->getRanged(), COL_2, ROW_1);
+        addNumericStat(sprite, "battle_heroes_movement", hero->getMovement(), COL_2, ROW_2);
 
-    auto costSprite = ui::Button::create("ui/cost.png", "", "");
-    costSprite->setAnchorPoint(Point(0, 0));
-    costSprite->setPosition(Point(760, 140));
-    auto costLabel = fontCreator->numberLabel(to_string(hero->getCost()));
-    costSprite->setTitleLabel(costLabel);
-    sprite->addChild(costSprite);
+        auto costSprite = ui::Button::create("ui/cost.png", "", "");
+        costSprite->setAnchorPoint(Point(0, 0));
+        costSprite->setPosition(Point(760, 140));
+        auto costLabel = fontCreator->numberLabel(to_string(hero->getCost()));
+        costSprite->setTitleLabel(costLabel);
+        sprite->addChild(costSprite);
+    } else {
+        sprite->setOpacity(150);
+    }
 
     sprite->setPositionY(y);
 

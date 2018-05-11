@@ -34,7 +34,7 @@ void TopHud::addView()
     auto sprite = ui::Button::create("ui/cost.png", "", "");
     auto costLabel = fontCreator->numberLabel(to_string(remainingCost), "fonts/title.otf", 30);
     sprite->setTitleLabel(costLabel);
-    sprite->setScale(1.2f);
+    sprite->setScale(1.25f);
     node->addChild(sprite);
 
     addResetButton();

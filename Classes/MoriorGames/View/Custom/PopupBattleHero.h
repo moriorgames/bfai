@@ -7,9 +7,10 @@
 class PopupBattleHero: public AbstractFrame
 {
 public:
-    explicit PopupBattleHero(Layer *, Hero *);
+    PopupBattleHero(Layer *, Hero *, bool canImprove = false);
 
 private:
+    bool canImprove = false;
     Hero *hero;
     Node *node;
     Sprite *frame;
@@ -18,6 +19,7 @@ private:
     void addBackground() const;
     void addFrame();
     void addSkillRow(int index, SkillHero *);
+    ui::Button *getUpgradeButton(Skill *);
 };
 
 #endif

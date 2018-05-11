@@ -3,8 +3,8 @@
 #include "../../Vendor/Repository/SkillHeroRepository.h"
 #include "../../Vendor/Utils/TextUtils.h"
 
-PopupBattleHero::PopupBattleHero(Layer *layer, Hero *hero)
-    : AbstractFrame(layer), hero{hero}
+PopupBattleHero::PopupBattleHero(Layer *layer, Hero *hero, bool canImprove)
+    : AbstractFrame(layer), hero{hero}, canImprove{canImprove}
 {
     addView();
 }
@@ -80,10 +80,14 @@ void PopupBattleHero::addSkillRow(int index, SkillHero *skillHero)
     auto description = fontCreator->descriptionText(translator->tr("skill_description_" + skill->getSlug()));
     description->setAnchorPoint(Point(0, 1));
     description->setContentSize(Size(500, 200));
-    description->setPosition(Point(COL_1, 150));
+    description->setPosition(Point(COL_1, 160));
     sprite->addChild(description);
 
-    // @TODO We have the upgrade button
+    if (canImprove) {
+        sprite->addChild(
+            getUpgradeButton(skill)
+        );
+    }
 
     auto costSprite = ui::Button::create("ui/cost.png", "", "");
     costSprite->setAnchorPoint(Point(0, 0));
@@ -96,4 +100,18 @@ void PopupBattleHero::addSkillRow(int index, SkillHero *skillHero)
     sprite->setPositionY(y);
 
     scrollView->addChild(sprite);
+}
+
+ui::Button *PopupBattleHero::getUpgradeButton(Skill *skill)
+{
+    auto button = createInfoButton("battle_heroes_upgrade");
+    button->addTouchEventListener(
+        [&, skill](Ref *sender, ui::Widget::TouchEventType type)
+        {
+            if (type == ui::Widget::TouchEventType::ENDED) {
+
+            }
+        });
+
+    return button;
 }

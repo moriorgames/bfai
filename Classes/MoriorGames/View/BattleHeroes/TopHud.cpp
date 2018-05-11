@@ -27,13 +27,14 @@ void TopHud::addView()
 
     auto label = fontCreator->titleLabel(translator->tr("battle_heroes_remaining_points"));
     label->setAnchorPoint(Point(1, 0.5));
-    label->setPositionX(label->getPosition().x - 50);
+    label->setPositionX(label->getPosition().x - 60);
     node->addChild(label);
 
     auto remainingCost = BATTLE_TOTAL_COST - battleHeroesConfig->countBattleHeroesCost();
     auto sprite = ui::Button::create("ui/cost.png", "", "");
-    auto costLabel = fontCreator->numberLabel(to_string(remainingCost));
+    auto costLabel = fontCreator->numberLabel(to_string(remainingCost), "fonts/title.otf", 30);
     sprite->setTitleLabel(costLabel);
+    sprite->setScale(1.2f);
     node->addChild(sprite);
 
     addResetButton();

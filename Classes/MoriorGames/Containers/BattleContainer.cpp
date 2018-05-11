@@ -74,6 +74,7 @@ void BattleContainer::update(BattleAction *battleAction)
     auto skill = skillRepo->findById(battleAction->getSkillId());
     if (skill != nullptr) {
         if (skill->getId() == Skill::END_OF_BATTLE_ID) {
+            socket->close();
             new EndOfBattle(layer);
         }
         if (skill->getType() == Skill::TYPE_SPAWN) {

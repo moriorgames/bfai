@@ -25,6 +25,15 @@ void BattleHeroesConfig::addHero(Hero *hero)
     }
 }
 
+void BattleHeroesConfig::addSkillToHero(Skill *skill, Hero *heroToAdd)
+{
+    for (auto hero:heroes) {
+        if (heroToAdd->getId() == hero->getId()) {
+            heroToAdd->addSkill(skill);
+        }
+    }
+}
+
 void BattleHeroesConfig::removeHero(Hero *hero)
 {
     heroes.erase(std::remove(heroes.begin(), heroes.end(), hero), heroes.end());

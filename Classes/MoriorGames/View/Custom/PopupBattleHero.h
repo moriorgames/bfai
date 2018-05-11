@@ -19,7 +19,7 @@ private:
     void addBackground() const;
     void addFrame();
     void addSkillRow(int index, SkillHero *);
-    ui::Button *getUpgradeButton(Skill *);
+    ui::Button *getUpgradeButton(Skill *, Hero *);
 };
 
 #endif

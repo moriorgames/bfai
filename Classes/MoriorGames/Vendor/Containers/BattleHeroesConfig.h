@@ -10,6 +10,7 @@ public:
     bool hasHero(Hero *);
     void clear();
     void addHero(Hero *);
+    void addSkillToHero(Skill *, Hero *);
     void removeHero(Hero *);
     int countBattleHeroesCost();
 

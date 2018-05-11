@@ -1,4 +1,6 @@
 #include "PopupBattleHero.h"
+#include "../../Services/SoundPlayer.h"
+#include "../../Vendor/Containers/BattleHeroesConfig.h"
 #include "../../Vendor/Repository/SkillRepository.h"
 #include "../../Vendor/Repository/SkillHeroRepository.h"
 #include "../../Vendor/Utils/TextUtils.h"
@@ -85,7 +87,7 @@ void PopupBattleHero::addSkillRow(int index, SkillHero *skillHero)
 
     if (canImprove) {
         sprite->addChild(
-            getUpgradeButton(skill)
+            getUpgradeButton(skill, hero)
         );
     }
 
@@ -102,14 +104,15 @@ void PopupBattleHero::addSkillRow(int index, SkillHero *skillHero)
     scrollView->addChild(sprite);
 }
 
-ui::Button *PopupBattleHero::getUpgradeButton(Skill *skill)
+ui::Button *PopupBattleHero::getUpgradeButton(Skill *skill, Hero *hero)
 {
     auto button = createInfoButton("battle_heroes_upgrade");
     button->addTouchEventListener(
-        [&, skill](Ref *sender, ui::Widget::TouchEventType type)
+        [&, skill, hero](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-
+                battleHeroesConfig->addSkillToHero(skill, hero);
+                SoundPlayer::playEffect("sounds/button.mp3");
             }
         });
 

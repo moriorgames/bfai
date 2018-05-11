@@ -1,13 +1,13 @@
-#include "BattleHeroesScene.h"
+#include "HeroesConfigScene.h"
 #include "../View/BackgroundView.h"
 #include "../View/BattleHeroes/BattleHeroesView.h"
 
 USING_NS_CC;
 
-Scene *BattleHeroesScene::createScene()
+Scene *HeroesConfigScene::createScene()
 {
     auto scene = Scene::create();
-    auto layer = BattleHeroesScene::create();
+    auto layer = HeroesConfigScene::create();
     scene->addChild(layer);
 
     return scene;
@@ -16,7 +16,7 @@ Scene *BattleHeroesScene::createScene()
 /**
  * on "init" you need to initialize your instance
  */
-bool BattleHeroesScene::init()
+bool HeroesConfigScene::init()
 {
     if (!Layer::init()) {
         return false;

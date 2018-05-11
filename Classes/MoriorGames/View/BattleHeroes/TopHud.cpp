@@ -1,6 +1,6 @@
 #include "TopHud.h"
 #include "../Buttons/MainMenuButton.h"
-#include "../../Scenes/BattleHeroesScene.h"
+#include "../../Scenes/HeroesConfigScene.h"
 #include "../../Services/SoundPlayer.h"
 #include "../../Vendor/Utils/TextUtils.h"
 #include "../../Vendor/Containers/BattleHeroesConfig.h"
@@ -55,7 +55,7 @@ void TopHud::addResetButton()
             if (type == ui::Widget::TouchEventType::ENDED) {
                 battleHeroesConfig->clear();
                 SoundPlayer::playEffect("sounds/button.mp3");
-                auto scene = BattleHeroesScene::createScene();
+                auto scene = HeroesConfigScene::createScene();
                 Director::getInstance()->replaceScene(scene);
             }
         });

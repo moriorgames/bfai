@@ -1,5 +1,5 @@
 #include "BattleHeroesButton.h"
-#include "../../Scenes/BattleHeroesScene.h"
+#include "../../Scenes/HeroesConfigScene.h"
 #include "../../Services/SoundPlayer.h"
 #include "../../Services/FontCreator.h"
 
@@ -21,7 +21,7 @@ void BattleHeroesButton::addView()
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
                 SoundPlayer::playEffect("sounds/button.mp3");
-                auto scene = BattleHeroesScene::createScene();
+                auto scene = HeroesConfigScene::createScene();
                 Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
             }
         });

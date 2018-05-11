@@ -1,21 +1,21 @@
-#include "BattleHeroesView.h"
+#include "HeroesConfigView.h"
 #include "LeftFrame.h"
 #include "RightFrame.h"
 #include "TopHud.h"
 
-BattleHeroesView::BattleHeroesView(Layer *layer)
+HeroesConfigView::HeroesConfigView(Layer *layer)
     : ViewHelper(layer)
 {
     addView();
 }
 
-void BattleHeroesView::addView()
+void HeroesConfigView::addView()
 {
     new TopHud(layer);
     addFrames();
 }
 
-void BattleHeroesView::addFrames()
+void HeroesConfigView::addFrames()
 {
     new LeftFrame(layer);
     new RightFrame(layer);

@@ -1,7 +1,7 @@
 #ifndef MORIOR_GAMES_VIEW_CUSTOM_POPUP_BATTLE_HERO_H
 #define MORIOR_GAMES_VIEW_CUSTOM_POPUP_BATTLE_HERO_H
 
-#include "../BattleHeroes/AbstractFrame.h"
+#include "../HeroesConfig/AbstractFrame.h"
 #include "../../Vendor/Entity/SkillHero.h"
 
 class PopupBattleHero: public AbstractFrame

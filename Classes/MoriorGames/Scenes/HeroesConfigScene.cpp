@@ -1,6 +1,6 @@
 #include "HeroesConfigScene.h"
 #include "../View/BackgroundView.h"
-#include "../View/BattleHeroes/BattleHeroesView.h"
+#include "../View/HeroesConfig/HeroesConfigView.h"
 
 USING_NS_CC;
 
@@ -23,7 +23,7 @@ bool HeroesConfigScene::init()
     }
 
     new BackgroundView(this);
-    new BattleHeroesView(this);
+    new HeroesConfigView(this);
 
     return true;
 }

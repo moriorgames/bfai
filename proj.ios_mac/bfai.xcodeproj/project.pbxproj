@@ -21,8 +21,8 @@
 		4F02062F209ACA520000B29C /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F02062C209ACA520000B29C /* Client.cpp */; };
 		4F12CC94207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
 		4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
-		4F1A53EF209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53ED209D70B7004DDDDC /* BattleHeroesView.cpp */; };
-		4F1A53F0209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53ED209D70B7004DDDDC /* BattleHeroesView.cpp */; };
+		4F1A53EF209D70B7004DDDDC /* HeroesConfigView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53ED209D70B7004DDDDC /* HeroesConfigView.cpp */; };
+		4F1A53F0209D70B7004DDDDC /* HeroesConfigView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53ED209D70B7004DDDDC /* HeroesConfigView.cpp */; };
 		4F1A53F5209D72C8004DDDDC /* MainMenuButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */; };
 		4F1A53F6209D72C8004DDDDC /* MainMenuButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */; };
 		4F1A53F9209D7C99004DDDDC /* LeftFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53F7209D7C99004DDDDC /* LeftFrame.cpp */; };
@@ -291,8 +291,8 @@
 		4F12CC92207890190033DE0E /* ResolutionChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResolutionChecker.cpp; sourceTree = "<group>"; };
 		4F12CC93207890190033DE0E /* ResolutionChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResolutionChecker.h; sourceTree = "<group>"; };
 		4F12CC992078985F0033DE0E /* Path.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
-		4F1A53ED209D70B7004DDDDC /* BattleHeroesView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleHeroesView.cpp; sourceTree = "<group>"; };
-		4F1A53EE209D70B7004DDDDC /* BattleHeroesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleHeroesView.h; sourceTree = "<group>"; };
+		4F1A53ED209D70B7004DDDDC /* HeroesConfigView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HeroesConfigView.cpp; sourceTree = "<group>"; };
+		4F1A53EE209D70B7004DDDDC /* HeroesConfigView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroesConfigView.h; sourceTree = "<group>"; };
 		4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuButton.cpp; sourceTree = "<group>"; };
 		4F1A53F4209D72C8004DDDDC /* MainMenuButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuButton.h; sourceTree = "<group>"; };
 		4F1A53F7209D7C99004DDDDC /* LeftFrame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LeftFrame.cpp; sourceTree = "<group>"; };
@@ -672,23 +672,6 @@
 			path = Containers;
 			sourceTree = "<group>";
 		};
-		4F1A53F2209D71F1004DDDDC /* BattleHeroes */ = {
-			isa = PBXGroup;
-			children = (
-				4F1A53ED209D70B7004DDDDC /* BattleHeroesView.cpp */,
-				4F1A53EE209D70B7004DDDDC /* BattleHeroesView.h */,
-				4F1A53F7209D7C99004DDDDC /* LeftFrame.cpp */,
-				4F1A53F8209D7C99004DDDDC /* LeftFrame.h */,
-				4F1A53FB209D7CA4004DDDDC /* RightFrame.cpp */,
-				4F1A53FC209D7CA4004DDDDC /* RightFrame.h */,
-				4F91C4D3209ECDF600A662CB /* AbstractFrame.cpp */,
-				4F91C4D4209ECDF600A662CB /* AbstractFrame.h */,
-				4FE4A932209EFA09003EDA9F /* TopHud.cpp */,
-				4FE4A933209EFA09003EDA9F /* TopHud.h */,
-			);
-			path = BattleHeroes;
-			sourceTree = "<group>";
-		};
 		4F2CBFEA202F1E4400169E86 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,9 +752,9 @@
 				4FA6AD72202F83A200158956 /* BackgroundView.cpp */,
 				4FA6AD73202F83A200158956 /* BackgroundView.h */,
 				4F7314C0205CF4BD005AAB83 /* Battle */,
-				4F1A53F2209D71F1004DDDDC /* BattleHeroes */,
 				4FE0EADD20303AB200E6DD88 /* Buttons */,
 				4FBCDC5520320770006B3B5E /* Custom */,
+				4FDCADEB20A6022400EC6217 /* HeroesConfig */,
 				4F2CBFFB202F252000169E86 /* LoadingView.cpp */,
 				4F2CBFFC202F252000169E86 /* LoadingView.h */,
 				4F3AE456202EE9F600B687FB /* LogoView.cpp */,
@@ -1004,6 +987,23 @@
 				4F578159207C78230060C7D9 /* BattleEventPublishable.h */,
 			);
 			path = EventListeners;
+			sourceTree = "<group>";
+		};
+		4FDCADEB20A6022400EC6217 /* HeroesConfig */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A53ED209D70B7004DDDDC /* HeroesConfigView.cpp */,
+				4F1A53EE209D70B7004DDDDC /* HeroesConfigView.h */,
+				4F1A53F7209D7C99004DDDDC /* LeftFrame.cpp */,
+				4F1A53F8209D7C99004DDDDC /* LeftFrame.h */,
+				4F1A53FB209D7CA4004DDDDC /* RightFrame.cpp */,
+				4F1A53FC209D7CA4004DDDDC /* RightFrame.h */,
+				4F91C4D3209ECDF600A662CB /* AbstractFrame.cpp */,
+				4F91C4D4209ECDF600A662CB /* AbstractFrame.h */,
+				4FE4A932209EFA09003EDA9F /* TopHud.cpp */,
+				4FE4A933209EFA09003EDA9F /* TopHud.h */,
+			);
+			path = HeroesConfig;
 			sourceTree = "<group>";
 		};
 		4FE0EADD20303AB200E6DD88 /* Buttons */ = {
@@ -1290,7 +1290,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4F78876620989A8C00F18454 /* PathFinderArea.cpp in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
-				4F1A53EF209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */,
+				4F1A53EF209D70B7004DDDDC /* HeroesConfigView.cpp in Sources */,
 				4F1A53F9209D7C99004DDDDC /* LeftFrame.cpp in Sources */,
 				4FEFCC22205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F72383F20637E0D0064037C /* HeroRepository.cpp in Sources */,
@@ -1377,7 +1377,7 @@
 				4FBCDC69203220CD006B3B5E /* GridHD.cpp in Sources */,
 				4F91C4D6209ECDF600A662CB /* AbstractFrame.cpp in Sources */,
 				4FAEAB6A20A15B94008A2755 /* PopupBattleHero.cpp in Sources */,
-				4F1A53F0209D70B7004DDDDC /* BattleHeroesView.cpp in Sources */,
+				4F1A53F0209D70B7004DDDDC /* HeroesConfigView.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,
 				4FF9D53B209F6BA900570E45 /* Translator.cpp in Sources */,
 				4FEFE7602079E0E90031A6B5 /* BattleProcessor.cpp in Sources */,

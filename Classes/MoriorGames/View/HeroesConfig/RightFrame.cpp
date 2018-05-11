@@ -2,7 +2,7 @@
 #include "../Custom/PopupBattleHero.h"
 #include "../../Scenes/HeroesConfigScene.h"
 #include "../../Services/SoundPlayer.h"
-#include "../../Vendor/Containers/BattleHeroesConfig.h"
+#include "../../Vendor/Containers/HeroesConfig.h"
 #include "../../Vendor/Repository/HeroRepository.h"
 #include "../../Vendor/Utils/TextUtils.h"
 
@@ -27,7 +27,7 @@ void RightFrame::addHeroesList()
 
     int index = 0;
     for (auto hero:heroes) {
-        if (!battleHeroesConfig->hasHero(hero)) {
+        if (!heroesConfig->hasHero(hero)) {
             auto sprite = heroRow(index, hero);
             if (hero->isEnabled()) {
                 sprite->addChild(
@@ -67,7 +67,7 @@ ui::Button *RightFrame::getActionButton(Hero *hero)
         [&, hero](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-                battleHeroesConfig->addHero(hero);
+                heroesConfig->addHero(hero);
                 SoundPlayer::playEffect("sounds/button.mp3");
                 auto scene = HeroesConfigScene::createScene();
                 Director::getInstance()->replaceScene(scene);

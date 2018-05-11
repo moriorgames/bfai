@@ -3,7 +3,7 @@
 #include "../../Scenes/HeroesConfigScene.h"
 #include "../../Services/SoundPlayer.h"
 #include "../../Vendor/Utils/TextUtils.h"
-#include "../../Vendor/Containers/BattleHeroesConfig.h"
+#include "../../Vendor/Containers/HeroesConfig.h"
 
 TopHud::TopHud(Layer *layer)
     : ViewHelper(layer)
@@ -30,7 +30,7 @@ void TopHud::addView()
     label->setPositionX(label->getPosition().x - 60);
     node->addChild(label);
 
-    auto remainingCost = BATTLE_TOTAL_COST - battleHeroesConfig->countBattleHeroesCost();
+    auto remainingCost = BATTLE_TOTAL_COST - heroesConfig->countBattleHeroesCost();
     auto sprite = ui::Button::create("ui/cost.png", "", "");
     auto costLabel = fontCreator->numberLabel(to_string(remainingCost), "fonts/title.otf", 30);
     sprite->setTitleLabel(costLabel);
@@ -53,7 +53,7 @@ void TopHud::addResetButton()
         [&](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-                battleHeroesConfig->clear();
+                heroesConfig->clear();
                 SoundPlayer::playEffect("sounds/button.mp3");
                 auto scene = HeroesConfigScene::createScene();
                 Director::getInstance()->replaceScene(scene);

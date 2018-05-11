@@ -4,7 +4,7 @@
 #include <vector>
 #include "../Entity/Hero.h"
 
-class BattleHeroesConfig
+class HeroesConfig
 {
 public:
     bool hasHero(Hero *);
@@ -18,6 +18,6 @@ protected:
     std::vector<Hero *> heroes;
 };
 
-extern BattleHeroesConfig *battleHeroesConfig;
+extern HeroesConfig *heroesConfig;
 
 #endif

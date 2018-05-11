@@ -1,7 +1,7 @@
-#include "BattleHeroesConfig.h"
+#include "HeroesConfig.h"
 #include "../../Definitions.h"
 
-bool BattleHeroesConfig::hasHero(Hero *currentHero)
+bool HeroesConfig::hasHero(Hero *currentHero)
 {
     for (auto hero:heroes) {
         if (hero->getId() == currentHero->getId()) {
@@ -12,12 +12,12 @@ bool BattleHeroesConfig::hasHero(Hero *currentHero)
     return false;
 }
 
-void BattleHeroesConfig::clear()
+void HeroesConfig::clear()
 {
     heroes.clear();
 }
 
-void BattleHeroesConfig::addHero(Hero *hero)
+void HeroesConfig::addHero(Hero *hero)
 {
     int totalCost = countBattleHeroesCost() + hero->getCost();
     if (totalCost <= BATTLE_TOTAL_COST && !hasHero(hero)) {
@@ -25,7 +25,7 @@ void BattleHeroesConfig::addHero(Hero *hero)
     }
 }
 
-void BattleHeroesConfig::addSkillToHero(Skill *skill, Hero *heroToAdd)
+void HeroesConfig::addSkillToHero(Skill *skill, Hero *heroToAdd)
 {
     for (auto hero:heroes) {
         if (heroToAdd->getId() == hero->getId()) {
@@ -34,12 +34,12 @@ void BattleHeroesConfig::addSkillToHero(Skill *skill, Hero *heroToAdd)
     }
 }
 
-void BattleHeroesConfig::removeHero(Hero *hero)
+void HeroesConfig::removeHero(Hero *hero)
 {
     heroes.erase(std::remove(heroes.begin(), heroes.end(), hero), heroes.end());
 }
 
-int BattleHeroesConfig::countBattleHeroesCost()
+int HeroesConfig::countBattleHeroesCost()
 {
     int count = 0;
     for (auto hero:heroes) {

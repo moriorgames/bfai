@@ -1,6 +1,6 @@
 #include "PopupBattleHero.h"
 #include "../../Services/SoundPlayer.h"
-#include "../../Vendor/Containers/BattleHeroesConfig.h"
+#include "../../Vendor/Containers/HeroesConfig.h"
 #include "../../Vendor/Repository/SkillRepository.h"
 #include "../../Vendor/Repository/SkillHeroRepository.h"
 #include "../../Vendor/Utils/TextUtils.h"
@@ -111,7 +111,7 @@ ui::Button *PopupBattleHero::getUpgradeButton(Skill *skill, Hero *hero)
         [&, skill, hero](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-                battleHeroesConfig->addSkillToHero(skill, hero);
+                heroesConfig->addSkillToHero(skill, hero);
                 SoundPlayer::playEffect("sounds/button.mp3");
             }
         });

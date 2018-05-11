@@ -81,7 +81,7 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
         if (skill->getType() == Skill::TYPE_SPAWN) {
             spawn(skill, battleHero, battleAction);
         }
-        if (skill->getType() == Skill::TYPE_AREA_DAMAGE) {
+        if (skill->getType() == Skill::TYPE_CONE_AREA_DAMAGE) {
             areaDamage(skill, battleHero, battleAction);
         }
     }

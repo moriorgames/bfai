@@ -10,17 +10,19 @@ short Skill::SINGLE_ATTACK_ID = 4;
 
 short Skill::END_OF_BATTLE_ID = 99;
 
-short Skill::TYPE_AREA_DAMAGE = 1;
+// ---------- TYPES
 
-short Skill::TYPE_SPAWN = 2;
+short Skill::TYPE_BOOST_HEALTH = 1;
 
-short Skill::TYPE_BOOST_HEALTH = 3;
+short Skill::TYPE_BOOST_DAMAGE = 2;
 
-short Skill::TYPE_BOOST_DAMAGE = 4;
+short Skill::TYPE_BOOST_RANGED = 3;
 
-short Skill::TYPE_BOOST_RANGED = 5;
+short Skill::TYPE_BOOST_MOVE = 4;
 
-short Skill::TYPE_BOOST_MOVE = 6;
+short Skill::TYPE_CONE_AREA_DAMAGE = 5;
+
+short Skill::TYPE_SPAWN = 6;
 
 int Skill::getId() const
 {

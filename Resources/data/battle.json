@@ -19,8 +19,16 @@
       "y": -2
     },
     {
-      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
+      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FA",
       "battleHeroId": 3,
+      "heroId": 2,
+      "side": "local",
+      "x": -7,
+      "y": 0
+    },
+    {
+      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
+      "battleHeroId": 4,
       "heroId": 10,
       "side": "visitor",
       "x": 6,
@@ -28,7 +36,7 @@
     },
     {
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
-      "battleHeroId": 4,
+      "battleHeroId": 5,
       "heroId": 11,
       "side": "visitor",
       "x": 7,
@@ -36,33 +44,33 @@
     },
     {
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
-      "battleHeroId": 5,
+      "battleHeroId": 6,
       "heroId": 4,
       "side": "visitor",
       "x": 5,
       "y": -3
-    },
-    {
-      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FA",
-      "battleHeroId": 6,
-      "heroId": 2,
-      "side": "local",
-      "x": -7,
-      "y": 0
     }
   ],
   "skillsHeroes": [
     {
-      "battleHeroId": 3,
-      "skillId": 6
-    },
-    {
-      "battleHeroId": 2,
+      "battleHeroId": 1,
       "skillId": 5
     },
     {
-      "battleHeroId": 1,
-      "skillId": 7
+      "battleHeroId": 2,
+      "skillId": 9
+    },
+    {
+      "battleHeroId": 4,
+      "skillId": 10
+    },
+    {
+      "battleHeroId": 5,
+      "skillId": 8
+    },
+    {
+      "battleHeroId": 5,
+      "skillId": 6
     }
   ]
 }

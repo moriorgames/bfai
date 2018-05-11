@@ -334,7 +334,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>portraits/spawn-bots.png</key>
+            <key>portraits/spawn-bot.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -378,7 +378,7 @@
             <key>size</key>
             <string>{683,935}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:b097cbf43ea86f807f5b995b5fe71321:f2eba5a9d63c1feb66656a1e8a72607e:7240ddfaf9fb2d65b536ec5bd2f64395$</string>
+            <string>$TexturePacker:SmartUpdate:943da5b9bf0f965a3eb80ed9691076dc:f2eba5a9d63c1feb66656a1e8a72607e:7240ddfaf9fb2d65b536ec5bd2f64395$</string>
             <key>textureFileName</key>
             <string>portraits.png</string>
         </dict>

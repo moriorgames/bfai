@@ -11,12 +11,13 @@ public:
     static short MOVE_ID;
     static short SINGLE_ATTACK_ID;
     static short END_OF_BATTLE_ID;
-    static short TYPE_AREA_DAMAGE;
-    static short TYPE_SPAWN;
+
     static short TYPE_BOOST_HEALTH;
     static short TYPE_BOOST_DAMAGE;
     static short TYPE_BOOST_RANGED;
     static short TYPE_BOOST_MOVE;
+    static short TYPE_CONE_AREA_DAMAGE;
+    static short TYPE_SPAWN;
 
 public:
     int getId() const;

@@ -205,7 +205,6 @@
       "damage": 0,
       "ranged": 0,
       "extra": 0,
-      "cost": 0,
       "unique": true,
       "upgradable": false
     },
@@ -217,7 +216,6 @@
       "damage": 0,
       "ranged": 0,
       "extra": 0,
-      "cost": 0,
       "unique": true,
       "upgradable": false
     },
@@ -229,7 +227,6 @@
       "damage": 0,
       "ranged": 0,
       "extra": 0,
-      "cost": 0,
       "unique": true,
       "upgradable": false
     },
@@ -241,7 +238,6 @@
       "damage": 0,
       "ranged": 0,
       "extra": 0,
-      "cost": 0,
       "unique": true,
       "upgradable": false
     },
@@ -253,7 +249,6 @@
       "damage": 0,
       "ranged": 0,
       "extra": 0,
-      "cost": 1,
       "unique": false,
       "upgradable": true
     },
@@ -265,7 +260,6 @@
       "damage": 0,
       "ranged": 0,
       "extra": 0,
-      "cost": 1,
       "unique": false,
       "upgradable": true
     },
@@ -277,8 +271,7 @@
       "damage": 0,
       "ranged": 0,
       "extra": 0,
-      "cost": 1,
-      "unique": false,
+      "unique": true,
       "upgradable": true
     },
     {
@@ -289,8 +282,7 @@
       "damage": 0,
       "ranged": 0,
       "extra": 0,
-      "cost": 1,
-      "unique": false,
+      "unique": true,
       "upgradable": true
     },
     {
@@ -301,7 +293,6 @@
       "damage": 3,
       "ranged": 2,
       "extra": 0,
-      "cost": 3,
       "unique": true,
       "upgradable": true
     },
@@ -313,7 +304,6 @@
       "damage": 0,
       "ranged": 1,
       "extra": 11,
-      "cost": 4,
       "unique": true,
       "upgradable": true
     },
@@ -325,7 +315,6 @@
       "damage": 0,
       "ranged": 0,
       "extra": 0,
-      "cost": 1,
       "unique": false,
       "upgradable": false
     }
@@ -334,22 +323,42 @@
     {
       "heroId": 1,
       "skillId": 5,
-      "cost": 4
+      "cost": 3
     },
     {
       "heroId": 1,
       "skillId": 6,
-      "cost": 3
+      "cost": 2
     },
     {
       "heroId": 1,
       "skillId": 7,
-      "cost": 3
+      "cost": 2
     },
     {
       "heroId": 1,
       "skillId": 8,
-      "cost": 5
+      "cost": 3
+    },
+    {
+      "heroId": 2,
+      "skillId": 5,
+      "cost": 2
+    },
+    {
+      "heroId": 2,
+      "skillId": 6,
+      "cost": 2
+    },
+    {
+      "heroId": 2,
+      "skillId": 7,
+      "cost": 1
+    },
+    {
+      "heroId": 2,
+      "skillId": 8,
+      "cost": 4
     }
   ]
 }

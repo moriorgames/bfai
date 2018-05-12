@@ -16,6 +16,8 @@ public:
 
 protected:
     std::vector<Hero *> heroes;
+
+    bool isAbleToAddSkill(Skill *skill, Hero *heroToAdd);
 };
 
 extern HeroesConfig *heroesConfig;

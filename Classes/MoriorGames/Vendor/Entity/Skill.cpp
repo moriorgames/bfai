@@ -94,16 +94,6 @@ void Skill::setExtra(int extra)
     this->extra = extra;
 }
 
-int Skill::getCost() const
-{
-    return cost;
-}
-
-void Skill::setCost(int cost)
-{
-    this->cost = cost;
-}
-
 bool Skill::isUnique() const
 {
     return unique;
@@ -134,7 +124,6 @@ void Skill::print()
            " - damage %i\n"
            " - ranged %i\n"
            " - extra %i\n"
-           " - cost %i\n"
            " - unique %i\n"
            " \n",
            id,
@@ -144,7 +133,6 @@ void Skill::print()
            damage,
            ranged,
            extra,
-           cost,
            unique
     );
 }

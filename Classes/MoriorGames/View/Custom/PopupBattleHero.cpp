@@ -94,7 +94,7 @@ void PopupBattleHero::addSkillRow(int index, SkillHero *skillHero)
     auto costSprite = ui::Button::create("ui/cost.png", "", "");
     costSprite->setAnchorPoint(Point(0, 0));
     costSprite->setPosition(Point(760, 140));
-    auto cost = skillHero->getCost() + skill->getCost();
+    auto cost = skillHero->getCost();
     auto costLabel = fontCreator->numberLabel(to_string(cost));
     costSprite->setTitleLabel(costLabel);
     sprite->addChild(costSprite);

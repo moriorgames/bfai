@@ -1,4 +1,5 @@
 #include "HeroesConfig.h"
+#include "../Repository/SkillHeroRepository.h"
 #include "../../Definitions.h"
 
 bool HeroesConfig::hasHero(Hero *currentHero)
@@ -27,9 +28,12 @@ void HeroesConfig::addHero(Hero *hero)
 
 void HeroesConfig::addSkillToHero(Skill *skill, Hero *heroToAdd)
 {
-    for (auto hero:heroes) {
-        if (heroToAdd->getId() == hero->getId()) {
-            heroToAdd->addSkill(skill);
+    if (isAbleToAddSkill(skill, heroToAdd)) {
+        for (auto hero:heroes) {
+            if (heroToAdd->getId() == hero->getId()) {
+                heroToAdd->addSkill(skill);
+                skill->print();
+            }
         }
     }
 }
@@ -44,7 +48,31 @@ int HeroesConfig::countBattleHeroesCost()
     int count = 0;
     for (auto hero:heroes) {
         count += hero->getCost();
+        for (auto skill:hero->getSkills()) {
+            auto skillHero = skillHeroRepo->findBySkillAndHero(skill->getId(), hero->getId());
+            count += skillHero->getCost();
+        }
     }
 
     return count;
+}
+
+bool HeroesConfig::isAbleToAddSkill(Skill *skill, Hero *heroToAdd)
+{
+    if (!skill->isUpgradable()) {
+        return false;
+    }
+
+    if (skill->isUnique()) {
+        for (auto skillToCheck:heroToAdd->getSkills()) {
+            if (skillToCheck->getId() == skill->getId()) {
+                return false;
+            }
+        }
+    }
+
+    auto skillHero = skillHeroRepo->findBySkillAndHero(skill->getId(), heroToAdd->getId());
+    int totalCost = countBattleHeroesCost() + skillHero->getCost();
+
+    return totalCost <= BATTLE_TOTAL_COST;
 }

@@ -140,6 +140,11 @@ void Hero::addSkill(Skill *skill)
     skills.push_back(skill);
 }
 
+void Hero::clearSkills()
+{
+    skills.clear();
+}
+
 void Hero::print()
 {
     printf("========= Hero: \n"

@@ -15,6 +15,9 @@ bool HeroesConfig::hasHero(Hero *currentHero)
 
 void HeroesConfig::clear()
 {
+    for (auto hero:heroes) {
+        hero->clearSkills();
+    }
     heroes.clear();
 }
 
@@ -32,7 +35,6 @@ void HeroesConfig::addSkillToHero(Skill *skill, Hero *heroToAdd)
         for (auto hero:heroes) {
             if (heroToAdd->getId() == hero->getId()) {
                 heroToAdd->addSkill(skill);
-                skill->print();
             }
         }
     }
@@ -40,6 +42,7 @@ void HeroesConfig::addSkillToHero(Skill *skill, Hero *heroToAdd)
 
 void HeroesConfig::removeHero(Hero *hero)
 {
+    hero->clearSkills();
     heroes.erase(std::remove(heroes.begin(), heroes.end(), hero), heroes.end());
 }
 

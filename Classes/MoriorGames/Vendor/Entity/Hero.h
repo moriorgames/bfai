@@ -37,6 +37,7 @@ public:
 
     const std::vector<Skill *> &getSkills() const;
     void addSkill(Skill *);
+    void clearSkills();
 
     void print();
 

@@ -53,11 +53,11 @@ ui::Button *RightFrame::getInfoButton(Hero *hero)
 {
     auto button = createInfoButton("battle_heroes_info");
     button->addTouchEventListener(
-        [&, hero](Ref *sender, ui::Widget::TouchEventType type)
+        [&, hero, this](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
                 SoundPlayer::playEffect("sounds/button.mp3");
-                new PopupBattleHero(layer, hero);
+                new PopupBattleHero(layer, publisher, hero);
             }
         });
 
@@ -66,7 +66,7 @@ ui::Button *RightFrame::getInfoButton(Hero *hero)
 
 ui::Button *RightFrame::getActionButton(Hero *hero)
 {
-    auto button = createActionButton("battle_heroes_use");
+    auto button = createActionButton("battle_heroes_add");
     button->addTouchEventListener(
         [&, hero, this](Ref *sender, ui::Widget::TouchEventType type)
         {

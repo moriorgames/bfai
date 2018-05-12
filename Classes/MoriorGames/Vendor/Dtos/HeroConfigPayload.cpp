@@ -6,8 +6,8 @@ const std::string HeroConfigPayload::REMOVE = "remove";
 
 const std::string HeroConfigPayload::CLEAR = "clear";
 
-HeroConfigPayload::HeroConfigPayload(std::string type, Hero *hero)
-    : type{type}, hero{hero}
+HeroConfigPayload::HeroConfigPayload(const std::string type, Hero *hero, Skill *skill)
+    : type{type}, hero{hero}, skill{skill}
 {
 }
 

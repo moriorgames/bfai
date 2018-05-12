@@ -3,15 +3,17 @@
 
 #include "../HeroesConfig/AbstractFrame.h"
 #include "../../Vendor/Entity/SkillHero.h"
+#include "../../Services/HeroesConfigPublisher.h"
 
 class PopupBattleHero: public AbstractFrame
 {
 public:
-    PopupBattleHero(Layer *, Hero *, bool canImprove = false);
+    PopupBattleHero(Layer *, HeroesConfigPublisher *, Hero *, bool canImprove = false);
 
 private:
     bool canImprove = false;
     Hero *hero;
+    HeroesConfigPublisher *publisher;
     Node *node;
     Sprite *frame;
 

@@ -5,8 +5,8 @@
 #include "../../Vendor/Repository/SkillHeroRepository.h"
 #include "../../Vendor/Utils/TextUtils.h"
 
-PopupBattleHero::PopupBattleHero(Layer *layer, Hero *hero, bool canImprove)
-    : AbstractFrame(layer), hero{hero}, canImprove{canImprove}
+PopupBattleHero::PopupBattleHero(Layer *layer, HeroesConfigPublisher *publisher, Hero *hero, bool canImprove)
+    : AbstractFrame(layer), publisher{publisher}, hero{hero}, canImprove{canImprove}
 {
     addView();
 }
@@ -108,7 +108,7 @@ ui::Button *PopupBattleHero::getUpgradeButton(Skill *skill, Hero *hero)
 {
     auto button = createInfoButton("battle_heroes_upgrade");
     button->addTouchEventListener(
-        [&, skill, hero](Ref *sender, ui::Widget::TouchEventType type)
+        [&, skill, hero, this](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
                 heroesConfig->addSkillToHero(skill, hero);

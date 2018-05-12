@@ -59,7 +59,7 @@ void TopHud::addResetButton()
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
                 publisher->notifyObservers(
-                    new HeroConfigPayload(HeroConfigPayload::CLEAR, new Hero)
+                    new HeroConfigPayload(HeroConfigPayload::CLEAR)
                 );
                 SoundPlayer::playEffect("sounds/button.mp3");
             }

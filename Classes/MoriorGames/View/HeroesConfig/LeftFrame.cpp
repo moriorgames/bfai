@@ -53,12 +53,12 @@ ui::Button *LeftFrame::getUpgradeButton(Hero *hero)
 {
     auto button = createInfoButton("battle_heroes_upgrade");
     button->addTouchEventListener(
-        [&, hero](Ref *sender, ui::Widget::TouchEventType type)
+        [&, hero, this](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
                 SoundPlayer::playEffect("sounds/button.mp3");
                 bool canImprove = true;
-                new PopupBattleHero(layer, hero, canImprove);
+                new PopupBattleHero(layer, publisher, hero, canImprove);
             }
         });
 

@@ -12,13 +12,14 @@ public:
     static const std::string CLEAR;
 
 public:
-    HeroConfigPayload(std::string type, Hero *);
+    HeroConfigPayload(const std::string type, Hero *hero = new Hero, Skill *skill = new Skill);
     const std::string &getType() const;
     Hero *getHero() const;
 
 private:
     std::string type = "";
     Hero *hero;
+    Skill *skill;
 };
 
 #endif

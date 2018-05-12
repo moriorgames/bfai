@@ -6,14 +6,10 @@
 class HeroesConfigView: public ViewHelper
 {
 public:
-    int const FRAME_X = 500;
-
     explicit HeroesConfigView(Layer *);
 
 private:
     void addView() override;
-    void addTopHud();
-    void addFrames();
 };
 
 #endif

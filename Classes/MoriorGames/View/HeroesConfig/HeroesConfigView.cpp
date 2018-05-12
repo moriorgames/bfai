@@ -2,6 +2,8 @@
 #include "LeftFrame.h"
 #include "RightFrame.h"
 #include "TopHud.h"
+#include "../../Services/HeroesConfigProcessor.h"
+#include "../../Services/HeroesConfigPublisher.h"
 
 HeroesConfigView::HeroesConfigView(Layer *layer)
     : ViewHelper(layer)
@@ -11,12 +13,14 @@ HeroesConfigView::HeroesConfigView(Layer *layer)
 
 void HeroesConfigView::addView()
 {
-    new TopHud(layer);
-    addFrames();
-}
+    auto heroesConfigProcessor = new HeroesConfigProcessor;
+    auto publisher = new HeroesConfigPublisher;
+    auto topHud = new TopHud(layer, publisher);
+    auto rightFrame = new RightFrame(layer, publisher);
+    auto leftFrame = new LeftFrame(layer, publisher);
 
-void HeroesConfigView::addFrames()
-{
-    new LeftFrame(layer);
-    new RightFrame(layer);
+    publisher->registerObserver(heroesConfigProcessor);
+    publisher->registerObserver(topHud);
+    publisher->registerObserver(rightFrame);
+    publisher->registerObserver(leftFrame);
 }

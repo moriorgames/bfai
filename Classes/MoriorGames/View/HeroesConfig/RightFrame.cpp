@@ -1,15 +1,21 @@
 #include "RightFrame.h"
 #include "../Custom/PopupBattleHero.h"
-#include "../../Scenes/HeroesConfigScene.h"
 #include "../../Services/SoundPlayer.h"
 #include "../../Vendor/Containers/HeroesConfig.h"
 #include "../../Vendor/Repository/HeroRepository.h"
 #include "../../Vendor/Utils/TextUtils.h"
 
-RightFrame::RightFrame(Layer *layer)
-    : AbstractFrame(layer)
+RightFrame::RightFrame(Layer *layer, HeroesConfigPublisher *publisher)
+    : AbstractFrame(layer), publisher{publisher}
 {
     addView();
+    addHeroesList();
+    frame->addChild(scrollView);
+}
+
+void RightFrame::update(HeroConfigPayload *)
+{
+    scrollView->removeAllChildren();
     addHeroesList();
 }
 
@@ -41,8 +47,6 @@ void RightFrame::addHeroesList()
             index++;
         }
     }
-
-    frame->addChild(scrollView);
 }
 
 ui::Button *RightFrame::getInfoButton(Hero *hero)
@@ -64,13 +68,13 @@ ui::Button *RightFrame::getActionButton(Hero *hero)
 {
     auto button = createActionButton("battle_heroes_use");
     button->addTouchEventListener(
-        [&, hero](Ref *sender, ui::Widget::TouchEventType type)
+        [&, hero, this](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-                heroesConfig->addHero(hero);
+                publisher->notifyObservers(
+                    new HeroConfigPayload(HeroConfigPayload::ADD, hero)
+                );
                 SoundPlayer::playEffect("sounds/button.mp3");
-                auto scene = HeroesConfigScene::createScene();
-                Director::getInstance()->replaceScene(scene);
             }
         });
 

@@ -1,15 +1,20 @@
 #include "TopHud.h"
 #include "../Buttons/MainMenuButton.h"
-#include "../../Scenes/HeroesConfigScene.h"
 #include "../../Services/SoundPlayer.h"
 #include "../../Vendor/Utils/TextUtils.h"
 #include "../../Vendor/Containers/HeroesConfig.h"
 
-TopHud::TopHud(Layer *layer)
-    : ViewHelper(layer)
+TopHud::TopHud(Layer *layer, HeroesConfigPublisher *publisher)
+    : ViewHelper(layer), publisher{publisher}
 {
     fontCreator = new FontCreator;
     addView();
+}
+
+void TopHud::update(HeroConfigPayload *)
+{
+    auto remainingCost = BATTLE_TOTAL_COST - heroesConfig->countBattleHeroesCost();
+    costLabel->setString(to_string(remainingCost));
 }
 
 void TopHud::addView()
@@ -32,7 +37,7 @@ void TopHud::addView()
 
     auto remainingCost = BATTLE_TOTAL_COST - heroesConfig->countBattleHeroesCost();
     auto sprite = ui::Button::create("ui/cost.png", "", "");
-    auto costLabel = fontCreator->numberLabel(to_string(remainingCost), "fonts/title.otf", 30);
+    costLabel = fontCreator->numberLabel(to_string(remainingCost), "fonts/title.otf", 30);
     sprite->setTitleLabel(costLabel);
     sprite->setScale(1.25f);
     node->addChild(sprite);
@@ -50,13 +55,13 @@ void TopHud::addResetButton()
     auto label = fontCreator->buttonLabel(translator->tr("battle_heroes_reset"), "fonts/buttons-label.otf", 50);
     button->setTitleLabel(label);
     button->addTouchEventListener(
-        [&](Ref *sender, ui::Widget::TouchEventType type)
+        [&, this](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-                heroesConfig->clear();
+                publisher->notifyObservers(
+                    new HeroConfigPayload(HeroConfigPayload::CLEAR, new Hero)
+                );
                 SoundPlayer::playEffect("sounds/button.mp3");
-                auto scene = HeroesConfigScene::createScene();
-                Director::getInstance()->replaceScene(scene);
             }
         });
 

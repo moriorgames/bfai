@@ -6,11 +6,9 @@
 class HeroConfigPublishable
 {
 public:
-    virtual void registerObserver(BattleHeroConfigObservable *) = 0;
-    virtual void removeObserver(BattleHeroConfigObservable *) = 0;
-
-protected:
-    virtual void notifyObservers(BattleHeroConfigDto *) = 0;
+    virtual void registerObserver(HeroConfigObservable *) = 0;
+    virtual void removeObserver(HeroConfigObservable *) = 0;
+    virtual void notifyObservers(HeroConfigPayload *) = 0;
 };
 
 #endif

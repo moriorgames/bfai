@@ -1,7 +1,8 @@
 #include "BattleView.h"
 #include "../../Containers/BattleContainer.h"
 #include "../../EventListeners/BattleEventListener.h"
-#include "../../Services/StringFileReader.h"
+#include "../../Transformers/HeroesConfig2Json.h"
+#include "../../Vendor/Containers/HeroesConfig.h"
 #include "../../Vendor/Parsers/BattleActionParser.h"
 
 const std::string BattleView::NAME = "battle-node";
@@ -26,7 +27,8 @@ void BattleView::processOnlineAction(std::string json)
 
 void BattleView::addView()
 {
-    auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
+    auto json = (new HeroesConfig2Json)->transform(heroesConfig);
+    CCLOG("%s", json.c_str());
 
     battleContainer = new BattleContainer(layer, socket, json);
 

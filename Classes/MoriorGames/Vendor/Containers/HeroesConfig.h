@@ -7,6 +7,7 @@
 class HeroesConfig
 {
 public:
+    const std::vector<Hero *> &getHeroes() const;
     bool hasHero(Hero *);
     void clear();
     void addHero(Hero *);

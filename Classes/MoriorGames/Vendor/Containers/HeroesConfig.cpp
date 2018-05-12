@@ -2,6 +2,11 @@
 #include "../Repository/SkillHeroRepository.h"
 #include "../../Definitions.h"
 
+const std::vector<Hero *> &HeroesConfig::getHeroes() const
+{
+    return heroes;
+}
+
 bool HeroesConfig::hasHero(Hero *currentHero)
 {
     for (auto hero:heroes) {

@@ -165,6 +165,8 @@
 		4FDCADF820A60ADD00EC6217 /* HeroConfigPayload.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FDCADF620A60ADC00EC6217 /* HeroConfigPayload.cpp */; };
 		4FDCADFB20A6138F00EC6217 /* HeroesConfigProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FDCADF920A6138F00EC6217 /* HeroesConfigProcessor.cpp */; };
 		4FDCADFC20A6138F00EC6217 /* HeroesConfigProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FDCADF920A6138F00EC6217 /* HeroesConfigProcessor.cpp */; };
+		4FDCADFF20A6C1BC00EC6217 /* HeroesConfig2Json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FDCADFD20A6C1BC00EC6217 /* HeroesConfig2Json.cpp */; };
+		4FDCAE0020A6C1BC00EC6217 /* HeroesConfig2Json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FDCADFD20A6C1BC00EC6217 /* HeroesConfig2Json.cpp */; };
 		4FE0EAE120303AD600E6DD88 /* BattleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */; };
 		4FE0EAE220303AD600E6DD88 /* BattleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */; };
 		4FE0EAE92030410000E6DD88 /* FontCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0EAE72030410000E6DD88 /* FontCreator.cpp */; };
@@ -446,6 +448,8 @@
 		4FDCADF620A60ADC00EC6217 /* HeroConfigPayload.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeroConfigPayload.cpp; sourceTree = "<group>"; };
 		4FDCADF920A6138F00EC6217 /* HeroesConfigProcessor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HeroesConfigProcessor.cpp; sourceTree = "<group>"; };
 		4FDCADFA20A6138F00EC6217 /* HeroesConfigProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroesConfigProcessor.h; sourceTree = "<group>"; };
+		4FDCADFD20A6C1BC00EC6217 /* HeroesConfig2Json.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HeroesConfig2Json.cpp; sourceTree = "<group>"; };
+		4FDCADFE20A6C1BC00EC6217 /* HeroesConfig2Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroesConfig2Json.h; sourceTree = "<group>"; };
 		4FE0EADF20303AD600E6DD88 /* BattleButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleButton.cpp; sourceTree = "<group>"; };
 		4FE0EAE020303AD600E6DD88 /* BattleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleButton.h; sourceTree = "<group>"; };
 		4FE0EAE72030410000E6DD88 /* FontCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FontCreator.cpp; sourceTree = "<group>"; };
@@ -901,6 +905,8 @@
 			children = (
 				4FEFE7612079E8CF0031A6B5 /* BattleAction2Json.cpp */,
 				4FEFE7622079E8CF0031A6B5 /* BattleAction2Json.h */,
+				4FDCADFD20A6C1BC00EC6217 /* HeroesConfig2Json.cpp */,
+				4FDCADFE20A6C1BC00EC6217 /* HeroesConfig2Json.h */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -1291,6 +1297,7 @@
 				4FBCDC6E203220CD006B3B5E /* GridHDR.cpp in Sources */,
 				4FA6AD74202F83A200158956 /* BackgroundView.cpp in Sources */,
 				4FDBF47220919E2B005FF943 /* TileDrawer.cpp in Sources */,
+				4FDCADFF20A6C1BC00EC6217 /* HeroesConfig2Json.cpp in Sources */,
 				4FA6694E2098E0DA00EDFC0A /* PathBuilder.cpp in Sources */,
 				4FA6AD68202F7C8800158956 /* SplashView.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -1376,6 +1383,7 @@
 				4FD96FD1205B84F700C0F5A1 /* StringFileReader.cpp in Sources */,
 				4FBCDC502032008E006B3B5E /* BattleScene.cpp in Sources */,
 				4F2F41FA20A07F75007A36A1 /* SkillHeroRepository.cpp in Sources */,
+				4FDCAE0020A6C1BC00EC6217 /* HeroesConfig2Json.cpp in Sources */,
 				4F4B1FC32092E09A00DAA0B1 /* HeroAnimator.cpp in Sources */,
 				4FA6694F2098E0DA00EDFC0A /* PathBuilder.cpp in Sources */,
 				4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */,

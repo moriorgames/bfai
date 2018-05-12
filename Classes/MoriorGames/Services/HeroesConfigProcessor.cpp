@@ -11,4 +11,7 @@ void HeroesConfigProcessor::update(HeroConfigPayload *payload)
     if (payload->getType() == HeroConfigPayload::CLEAR) {
         heroesConfig->clear();
     }
+    if (payload->getType() == HeroConfigPayload::IMPROVE) {
+        heroesConfig->addSkillToHero(payload->getSkill(), payload->getHero());
+    }
 }

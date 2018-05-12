@@ -111,7 +111,9 @@ ui::Button *PopupBattleHero::getUpgradeButton(Skill *skill, Hero *hero)
         [&, skill, hero, this](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-                heroesConfig->addSkillToHero(skill, hero);
+                publisher->notifyObservers(
+                    new HeroConfigPayload(HeroConfigPayload::IMPROVE, hero, skill)
+                );
                 SoundPlayer::playEffect("sounds/button.mp3");
             }
         });

@@ -10,11 +10,13 @@ public:
     static const std::string ADD;
     static const std::string REMOVE;
     static const std::string CLEAR;
+    static const std::string IMPROVE;
 
 public:
     HeroConfigPayload(const std::string type, Hero *hero = new Hero, Skill *skill = new Skill);
     const std::string &getType() const;
     Hero *getHero() const;
+    Skill *getSkill() const;
 
 private:
     std::string type = "";

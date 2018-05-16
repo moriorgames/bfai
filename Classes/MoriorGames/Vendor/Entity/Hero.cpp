@@ -16,7 +16,6 @@ Hero *Hero::clone()
     clone->setAttackFrames(attackFrames);
     clone->addAgro(agro);
     clone->setEnabled(enabled);
-    printf("\n Count cloned skills: %i", skills.size());
     for (auto skill:skills) {
         clone->addSkill(skill);
     }

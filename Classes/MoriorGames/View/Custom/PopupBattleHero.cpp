@@ -45,7 +45,6 @@ void PopupBattleHero::addSkillsList()
     int index = 0;
     for (auto heroCheck:heroesConfig->getHeroes()) {
         if (heroCheck->getId() == hero->getId()) {
-            printf("\nCount skills: %i", heroCheck->getSkills().size());
             for (auto skill:heroCheck->getSkills()) {
                 battleHeroInitializer->addSkillToHero(skill, hero);
             }

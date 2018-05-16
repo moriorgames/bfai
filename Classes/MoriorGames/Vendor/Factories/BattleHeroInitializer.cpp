@@ -21,6 +21,7 @@ void BattleHeroInitializer::addBaseSkills(Battle *battle, BattleHero *battleHero
     for (auto skillHero:battle->getSkillHeroes()) {
         if (battleHero->getBattleHeroId() == skillHero->getBattleHeroId()) {
             auto skill = skillRepo->findById(skillHero->getSkillId());
+            skill->print();
             if (skill->getType() == Skill::TYPE_BOOST_HEALTH) {
                 battleHero->setHealth(battleHero->getHealth() + 1);
             }

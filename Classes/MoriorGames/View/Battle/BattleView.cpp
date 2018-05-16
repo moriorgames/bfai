@@ -27,9 +27,8 @@ void BattleView::processOnlineAction(std::string json)
 
 void BattleView::addView()
 {
+    // @TODO we have to determine if its OFFline or ONline battle to get local or server data
     auto json = (new HeroesConfig2Json)->transform(heroesConfig);
-    CCLOG("%s", json.c_str());
-
     battleContainer = new BattleContainer(layer, socket, json);
 
     new BattleEventListener(

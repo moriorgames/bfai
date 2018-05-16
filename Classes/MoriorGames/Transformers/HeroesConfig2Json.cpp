@@ -93,7 +93,7 @@ std::string HeroesConfig2Json::skillsHeroesRows(HeroesConfig *heroesConfig)
 std::string HeroesConfig2Json::skillHeroRow(int battleHeroId, int skillId)
 {
     std::string json =
-        "{ \"battleHeroId\":\"" + to_string(battleHeroId) + "\", "
+        "{ \"battleHeroId\":" + to_string(battleHeroId) + ", "
         "\"skillId\":" + to_string(skillId) + " },";
 
     return json;

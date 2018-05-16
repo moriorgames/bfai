@@ -3,9 +3,8 @@
 
 Battle *BattleFactory::execute(const std::string &json)
 {
-    auto battleParser = new BattleParser(json);
     auto battleHeroInitializer = new BattleHeroInitializer;
-    auto battle = battleParser->parse();
+    auto battle = (new BattleParser(json))->parse();
     for (auto battleHero:battle->getBattleHeroes()) {
         battleHeroInitializer->init(battle, battleHero);
     }

@@ -6,7 +6,7 @@
 #include "../../Vendor/Utils/TextUtils.h"
 
 PopupBattleHero::PopupBattleHero(Layer *layer, HeroesConfigPublisher *publisher, Hero *hero, bool canImprove)
-    : AbstractFrame(layer), publisher{publisher}, hero{hero}, canImprove{canImprove}
+    : AbstractFrame(layer), publisher{publisher}, hero{hero->clone()}, canImprove{canImprove}
 {
     battleHeroInitializer = new BattleHeroInitializer;
     publisher->registerObserver(this);
@@ -45,6 +45,7 @@ void PopupBattleHero::addSkillsList()
     int index = 0;
     for (auto heroCheck:heroesConfig->getHeroes()) {
         if (heroCheck->getId() == hero->getId()) {
+            printf("\nCount skills: %i", heroCheck->getSkills().size());
             for (auto skill:heroCheck->getSkills()) {
                 battleHeroInitializer->addSkillToHero(skill, hero);
             }

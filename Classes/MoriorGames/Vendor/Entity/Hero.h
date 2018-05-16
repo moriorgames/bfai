@@ -8,8 +8,7 @@
 class Hero
 {
 public:
-    Hero() = default;
-    Hero(Hero *);
+    Hero *clone();
     int getId() const;
     void setId(int id);
     const std::string &getName() const;

@@ -1,22 +1,27 @@
 #include "Hero.h"
 
-Hero::Hero(Hero *hero)
+Hero *Hero::clone()
 {
-    printf("\n copy constructor called \n");
-    id = hero->getId();
-    name = hero->getName();
-    slug = hero->getSlug();
-    userToken = hero->getUserToken();
-    damage = hero->getDamage();
-    ranged = hero->getRanged();
-    health = hero->getHealth();
-    movement = hero->getMovement();
-    cost = hero->getCost();
-    moveFrames = hero->getMoveFrames();
-    attackFrames = hero->getAttackFrames();
-    agro = hero->getAgro();
-    enabled = hero->isEnabled();
-    skills = hero->getSkills();
+    auto clone = new Hero;
+    clone->setId(id);
+    clone->setName(name);
+    clone->setSlug(slug);
+    clone->setUserToken(userToken);
+    clone->setDamage(damage);
+    clone->setRanged(ranged);
+    clone->setHealth(health);
+    clone->setMovement(movement);
+    clone->setCost(cost);
+    clone->setMoveFrames(moveFrames);
+    clone->setAttackFrames(attackFrames);
+    clone->addAgro(agro);
+    clone->setEnabled(enabled);
+    printf("\n Count cloned skills: %i", skills.size());
+    for (auto skill:skills) {
+        clone->addSkill(skill);
+    }
+
+    return clone;
 }
 
 int Hero::getId() const

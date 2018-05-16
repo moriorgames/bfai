@@ -17,6 +17,9 @@ private:
 
     std::string heroesRows(HeroesConfig *);
     std::string heroRow(std::string userToken, std::string side, int battleHeroId, int heroId, short x, short y);
+    std::string skillsHeroesRows(HeroesConfig *);
+    std::string skillHeroRow(int battleHeroId, int skillId);
+    void removeLastComma(std::string &json);
 };
 
 #endif

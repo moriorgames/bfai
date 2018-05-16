@@ -11,8 +11,19 @@ PopupBattleHero::PopupBattleHero(Layer *layer, HeroesConfigPublisher *publisher,
     addView();
 }
 
+PopupBattleHero::~PopupBattleHero()
+{
+    publisher->removeObserver(this);
+}
+
+void PopupBattleHero::update(HeroConfigPayload *)
+{
+    CCLOG("Hi I'm observing!!!!!");
+}
+
 void PopupBattleHero::addView()
 {
+    publisher->registerObserver(this);
     node = new Node;
     node->setScale(scale);
     node->setPosition(centerPosition);
@@ -47,12 +58,12 @@ void PopupBattleHero::addBackground() const
 {
     auto background = ui::Button::create("img/black.png", "", "");
     background->setOpacity(190);
-    auto nodeToRemove = node;
     background->addTouchEventListener(
-        [&, nodeToRemove](Ref *sender, ui::Widget::TouchEventType type)
+        [&, this](Ref *sender, ui::Widget::TouchEventType type)
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
-                nodeToRemove->removeAllChildren();
+                node->removeAllChildren();
+                delete this;
             }
         });
 

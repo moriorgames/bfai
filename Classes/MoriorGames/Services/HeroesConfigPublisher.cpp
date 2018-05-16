@@ -7,6 +7,7 @@ void HeroesConfigPublisher::registerObserver(HeroConfigObservable *observer)
 
 void HeroesConfigPublisher::removeObserver(HeroConfigObservable *observer)
 {
+    printf("\n Hi my observer is removed! \n");
     observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
 }
 

@@ -4,11 +4,14 @@
 #include "../HeroesConfig/AbstractFrame.h"
 #include "../../Vendor/Entity/SkillHero.h"
 #include "../../Services/HeroesConfigPublisher.h"
+#include "../../Vendor/Observer/HeroConfigObservable.h"
 
-class PopupBattleHero: public AbstractFrame
+class PopupBattleHero: public AbstractFrame, public HeroConfigObservable
 {
 public:
     PopupBattleHero(Layer *, HeroesConfigPublisher *, Hero *, bool canImprove = false);
+    ~PopupBattleHero();
+    void update(HeroConfigPayload *) override;
 
 private:
     bool canImprove = false;

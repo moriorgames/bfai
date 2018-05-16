@@ -8,6 +8,8 @@
 class Hero
 {
 public:
+    Hero() = default;
+    Hero(Hero *);
     int getId() const;
     void setId(int id);
     const std::string &getName() const;

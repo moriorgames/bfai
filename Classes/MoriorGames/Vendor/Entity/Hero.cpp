@@ -1,5 +1,24 @@
 #include "Hero.h"
 
+Hero::Hero(Hero *hero)
+{
+    printf("\n copy constructor called \n");
+    id = hero->getId();
+    name = hero->getName();
+    slug = hero->getSlug();
+    userToken = hero->getUserToken();
+    damage = hero->getDamage();
+    ranged = hero->getRanged();
+    health = hero->getHealth();
+    movement = hero->getMovement();
+    cost = hero->getCost();
+    moveFrames = hero->getMoveFrames();
+    attackFrames = hero->getAttackFrames();
+    agro = hero->getAgro();
+    enabled = hero->isEnabled();
+    skills = hero->getSkills();
+}
+
 int Hero::getId() const
 {
     return id;

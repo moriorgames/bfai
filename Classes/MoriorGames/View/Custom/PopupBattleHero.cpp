@@ -8,7 +8,14 @@
 PopupBattleHero::PopupBattleHero(Layer *layer, HeroesConfigPublisher *publisher, Hero *hero, bool canImprove)
     : AbstractFrame(layer), publisher{publisher}, hero{hero}, canImprove{canImprove}
 {
+    battleHeroInitializer = new BattleHeroInitializer;
+    publisher->registerObserver(this);
     addView();
+    addSkillsList();
+    auto frame = Sprite::create("ui/frame-battle-heroes.png");
+    frame->addChild(scrollView);
+    node->addChild(frame);
+    layer->addChild(node, Z_ORDER_POPUP);
 }
 
 PopupBattleHero::~PopupBattleHero()
@@ -18,29 +25,31 @@ PopupBattleHero::~PopupBattleHero()
 
 void PopupBattleHero::update(HeroConfigPayload *)
 {
-    CCLOG("Hi I'm observing!!!!!");
+    scrollView->removeAllChildren();
+    addSkillsList();
 }
 
 void PopupBattleHero::addView()
 {
-    publisher->registerObserver(this);
     node = new Node;
     node->setScale(scale);
     node->setPosition(centerPosition);
 
     addBackground();
-    addFrame();
-
-    layer->addChild(node, Z_ORDER_POPUP);
-}
-
-void PopupBattleHero::addFrame()
-{
     initFrame();
     initScrollView();
+}
 
-    auto frame = Sprite::create("ui/frame-battle-heroes.png");
+void PopupBattleHero::addSkillsList()
+{
     int index = 0;
+    for (auto heroCheck:heroesConfig->getHeroes()) {
+        if (heroCheck->getId() == hero->getId()) {
+            for (auto skill:heroCheck->getSkills()) {
+                battleHeroInitializer->addSkillToHero(skill, hero);
+            }
+        }
+    }
     auto sprite = heroRow(index, hero);
 
     index++;
@@ -50,8 +59,6 @@ void PopupBattleHero::addFrame()
     }
 
     scrollView->addChild(sprite);
-    frame->addChild(scrollView);
-    node->addChild(frame);
 }
 
 void PopupBattleHero::addBackground() const

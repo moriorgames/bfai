@@ -8,6 +8,7 @@ class BattleHeroInitializer
 {
 public:
     void init(Battle *, BattleHero *);
+    void addSkillToHero(Skill *, Hero *);
 
 private:
     void addBaseSkills(Battle *, BattleHero *);

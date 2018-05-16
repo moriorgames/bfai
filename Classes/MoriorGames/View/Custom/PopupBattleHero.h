@@ -5,6 +5,7 @@
 #include "../../Vendor/Entity/SkillHero.h"
 #include "../../Services/HeroesConfigPublisher.h"
 #include "../../Vendor/Observer/HeroConfigObservable.h"
+#include "../../Vendor/Factories/BattleHeroInitializer.h"
 
 class PopupBattleHero: public AbstractFrame, public HeroConfigObservable
 {
@@ -17,12 +18,13 @@ private:
     bool canImprove = false;
     Hero *hero;
     HeroesConfigPublisher *publisher;
+    BattleHeroInitializer *battleHeroInitializer;
     Node *node;
     Sprite *frame;
 
     void addView() override;
     void addBackground() const;
-    void addFrame();
+    void addSkillsList();
     void addSkillRow(int index, SkillHero *);
     ui::Button *getUpgradeButton(Skill *, Hero *);
 };

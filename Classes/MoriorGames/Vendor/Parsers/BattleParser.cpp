@@ -67,7 +67,6 @@ void BattleParser::addSkillHeroData(Battle *battle, const rapidjson::Value &data
     auto skillHero = new SkillHero;
     skillHero->setSkillId(getInt(data, "skillId"));
     skillHero->setBattleHeroId(getInt(data, "battleHeroId"));
-    skillHero->print();
 
     battle->addSkillHero(skillHero);
 }

@@ -30,7 +30,7 @@ void HeroesConfig::addHero(Hero *hero)
 {
     int totalCost = countBattleHeroesCost() + hero->getCost();
     if (totalCost <= BATTLE_TOTAL_COST && !hasHero(hero)) {
-        heroes.push_back(hero);
+        heroes.push_back(hero->clone());
     }
 }
 

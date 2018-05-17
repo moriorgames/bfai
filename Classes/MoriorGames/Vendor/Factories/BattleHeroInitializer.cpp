@@ -4,7 +4,7 @@
 
 void BattleHeroInitializer::init(Battle *battle, BattleHero *battleHero)
 {
-    auto hero = heroRepo->findById(battleHero->getId());
+    auto hero = heroRepo->findById(battleHero->getId())->clone();
     if (hero) {
         battleHero->copy(hero);
         battleHero->flip(battleHero->getCoordinate());

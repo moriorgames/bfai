@@ -5,6 +5,8 @@
 #include "../../Vendor/Containers/HeroesConfig.h"
 #include "../../Vendor/Parsers/BattleActionParser.h"
 
+#include "../../Services/StringFileReader.h"
+
 const std::string BattleView::NAME = "battle-node";
 
 BattleView::BattleView(Layer *layer, Socket *socket)
@@ -29,6 +31,7 @@ void BattleView::addView()
 {
     // @TODO we have to determine if its OFFline or ONline battle to get local or server data
     auto json = (new HeroesConfig2Json)->transform(heroesConfig);
+//    auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
     battleContainer = new BattleContainer(layer, socket, json);
 
     new BattleEventListener(

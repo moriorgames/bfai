@@ -40,15 +40,15 @@ std::string HeroesConfig2Json::heroesRows(HeroesConfig *heroesConfig)
     }
 
     // Enemy Heroes
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 4, 5, -3);
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 1, 7, -2);
     battleHeroId++;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 11, 7, -2);
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 4, 5, -3);
     battleHeroId++;
     json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 1, 5, 0);
     battleHeroId++;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 10, 5, 3);
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 2, 5, 3);
     battleHeroId++;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 11, 7, 2);
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 2, 7, 2);
 
     removeLastComma(json);
     json += "],";

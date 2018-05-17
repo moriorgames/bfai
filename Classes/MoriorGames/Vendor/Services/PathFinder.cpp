@@ -4,9 +4,10 @@ PathFinder::PathFinder(Grid *grid)
     : grid{grid}
 {
     pathFinderArea = new PathFinderArea(grid);
+    pathFinderShot = new PathFinderShot(grid);
 }
 
-const std::vector<Path> &PathFinder::buildPathScope(Coordinate *origin, int range, bool withCollision)
+std::vector<Path> &PathFinder::buildPathScope(Coordinate *origin, int range, bool withCollision)
 {
     pathScope.clear();
     Path path;
@@ -36,6 +37,8 @@ const std::vector<Path> &PathFinder::buildPathScope(Coordinate *origin, int rang
             }
         }
     }
+
+    pathFinderShot->eraseForbiddenCoordinates(pathScope);
 
     return pathScope;
 }

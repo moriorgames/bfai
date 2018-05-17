@@ -30,14 +30,14 @@
       "id": 3,
       "name": "Atlas",
       "slug": "atlas",
-      "damage": 1,
+      "damage": 3,
       "ranged": 1,
-      "health": 1,
-      "movement": 1,
-      "cost": 1,
-      "moveFrames": 1,
-      "attackFrames": 1,
-      "enabled": false
+      "health": 22,
+      "movement": 2,
+      "cost": 3,
+      "moveFrames": 24,
+      "attackFrames": 24,
+      "enabled": true
     },
     {
       "id": 4,
@@ -357,6 +357,26 @@
     },
     {
       "heroId": 2,
+      "skillId": 8,
+      "cost": 4
+    },
+    {
+      "heroId": 3,
+      "skillId": 5,
+      "cost": 2
+    },
+    {
+      "heroId": 3,
+      "skillId": 6,
+      "cost": 4
+    },
+    {
+      "heroId": 3,
+      "skillId": 7,
+      "cost": 4
+    },
+    {
+      "heroId": 3,
       "skillId": 8,
       "cost": 4
     },

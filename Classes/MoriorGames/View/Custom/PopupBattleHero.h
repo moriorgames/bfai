@@ -5,7 +5,6 @@
 #include "../../Vendor/Entity/SkillHero.h"
 #include "../../Services/HeroesConfigPublisher.h"
 #include "../../Vendor/Observer/HeroConfigObservable.h"
-#include "../../Vendor/Factories/BattleHeroInitializer.h"
 
 class PopupBattleHero: public AbstractFrame, public HeroConfigObservable
 {
@@ -18,7 +17,6 @@ private:
     bool canImprove = false;
     Hero *hero;
     HeroesConfigPublisher *publisher;
-    BattleHeroInitializer *battleHeroInitializer;
     Node *node;
     Sprite *frame;
 

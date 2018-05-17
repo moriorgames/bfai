@@ -6,13 +6,13 @@
 #include "../../Vendor/Utils/TextUtils.h"
 
 PopupBattleHero::PopupBattleHero(Layer *layer, HeroesConfigPublisher *publisher, Hero *hero, bool canImprove)
-    : AbstractFrame(layer), publisher{publisher}, hero{hero->clone()}, canImprove{canImprove}
+    : AbstractFrame(layer), publisher{publisher}, hero{hero}, canImprove{canImprove}
 {
-    battleHeroInitializer = new BattleHeroInitializer;
     publisher->registerObserver(this);
     addView();
     addSkillsList();
     auto frame = Sprite::create("ui/frame-battle-heroes.png");
+    frame->setPositionY(-FRAME_Y);
     frame->addChild(scrollView);
     node->addChild(frame);
     layer->addChild(node, Z_ORDER_POPUP);
@@ -43,14 +43,8 @@ void PopupBattleHero::addView()
 void PopupBattleHero::addSkillsList()
 {
     int index = 0;
-    for (auto heroCheck:heroesConfig->getHeroes()) {
-        if (heroCheck->getId() == hero->getId()) {
-            for (auto skill:heroCheck->getSkills()) {
-                battleHeroInitializer->addSkillToHero(skill, hero);
-            }
-        }
-    }
-    auto sprite = heroRow(index, hero);
+    auto heroWithSkills = getHeroWithSkills(hero);
+    auto sprite = heroRow(index, heroWithSkills);
 
     index++;
     for (auto skillHero:skillHeroRepo->findSkillsByHero(hero)) {

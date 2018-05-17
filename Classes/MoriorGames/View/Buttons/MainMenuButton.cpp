@@ -30,5 +30,5 @@ void MainMenuButton::addView()
             }
         });
 
-    layer->addChild(button, Z_ORDER_MENU_ITEMS);
+    layer->addChild(button, Z_ORDER_OVER_POPUP);
 }

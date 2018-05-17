@@ -44,7 +44,7 @@ void TopHud::addView()
 
     addResetButton();
 
-    layer->addChild(node, Z_ORDER_MENU_ITEMS);
+    layer->addChild(node, Z_ORDER_OVER_POPUP);
 }
 
 void TopHud::addResetButton()

@@ -1,4 +1,5 @@
 #include "AbstractFrame.h"
+#include "../../Vendor/Containers/HeroesConfig.h"
 #include "../../Vendor/Repository/HeroRepository.h"
 #include "../../Vendor/Utils/TextUtils.h"
 
@@ -6,6 +7,7 @@ AbstractFrame::AbstractFrame(Layer *layer)
     : ViewHelper(layer)
 {
     fontCreator = new FontCreator;
+    battleHeroInitializer = new BattleHeroInitializer;
 }
 
 Sprite *AbstractFrame::initFrame()
@@ -111,4 +113,18 @@ ui::Button *AbstractFrame::createActionButton(std::string key)
     button->setTitleLabel(label);
 
     return button;
+}
+
+Hero *AbstractFrame::getHeroWithSkills(Hero *heroBase)
+{
+    auto hero = heroBase->clone();
+    for (auto heroCheck:heroesConfig->getHeroes()) {
+        if (heroCheck->getId() == hero->getId()) {
+            for (auto skill:heroCheck->getSkills()) {
+                battleHeroInitializer->addSkillToHero(skill, hero);
+            }
+        }
+    }
+
+    return hero;
 }

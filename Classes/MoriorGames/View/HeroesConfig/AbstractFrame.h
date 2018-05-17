@@ -5,6 +5,7 @@
 #include "../ViewHelper.h"
 #include "../../Services/FontCreator.h"
 #include "../../Vendor/Entity/Hero.h"
+#include "../../Vendor/Factories/BattleHeroInitializer.h"
 
 class AbstractFrame: public ViewHelper
 {
@@ -29,12 +30,14 @@ protected:
     float scrollViewHeight = 0;
     ui::ScrollView *scrollView;
     FontCreator *fontCreator;
+    BattleHeroInitializer *battleHeroInitializer;
 
     Sprite *initFrame();
     void initScrollView();
     Sprite *heroRow(int index, Hero *);
     ui::Button *createInfoButton(std::string key);
     ui::Button *createActionButton(std::string key);
+    Hero *getHeroWithSkills(Hero *);
 
 private:
     void addNumericStat(Sprite *, std::string key, int number, float col, float row);

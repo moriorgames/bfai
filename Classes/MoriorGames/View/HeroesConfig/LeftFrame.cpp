@@ -34,7 +34,8 @@ void LeftFrame::addHeroesList()
     int index = 0;
     for (auto hero:heroes) {
         if (heroesConfig->hasHero(hero)) {
-            auto sprite = heroRow(index, hero);
+            auto heroWithSkills = getHeroWithSkills(hero);
+            auto sprite = heroRow(index, heroWithSkills);
             if (hero->isEnabled()) {
                 sprite->addChild(
                     getUpgradeButton(hero)

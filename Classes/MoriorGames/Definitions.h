@@ -8,6 +8,7 @@
 #define Z_ORDER_WORLD           35
 #define Z_ORDER_MENU_ITEMS      40
 #define Z_ORDER_POPUP           50
+#define Z_ORDER_OVER_POPUP      55
 
 #define FPS                     24
 
@@ -19,7 +20,7 @@
 #define DEBUG_SCENE     1
 #define SANDBOX_MODE    1
 
-#define BATTLE_TOTAL_COST       10
+#define BATTLE_TOTAL_COST       15
 
 #define CARTESIAN_EAST          0
 #define CARTESIAN_NORTHEAST     45

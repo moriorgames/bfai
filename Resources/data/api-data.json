@@ -359,6 +359,76 @@
       "heroId": 2,
       "skillId": 8,
       "cost": 4
+    },
+    {
+      "heroId": 4,
+      "skillId": 5,
+      "cost": 2
+    },
+    {
+      "heroId": 4,
+      "skillId": 6,
+      "cost": 2
+    },
+    {
+      "heroId": 4,
+      "skillId": 7,
+      "cost": 3
+    },
+    {
+      "heroId": 4,
+      "skillId": 8,
+      "cost": 4
+    },
+    {
+      "heroId": 4,
+      "skillId": 9,
+      "cost": 3
+    },
+    {
+      "heroId": 10,
+      "skillId": 5,
+      "cost": 1
+    },
+    {
+      "heroId": 10,
+      "skillId": 6,
+      "cost": 4
+    },
+    {
+      "heroId": 10,
+      "skillId": 7,
+      "cost": 4
+    },
+    {
+      "heroId": 10,
+      "skillId": 8,
+      "cost": 4
+    },
+    {
+      "heroId": 10,
+      "skillId": 10,
+      "cost": 3
+    },
+    {
+      "heroId": 11,
+      "skillId": 5,
+      "cost": 4
+    },
+    {
+      "heroId": 11,
+      "skillId": 6,
+      "cost": 1
+    },
+    {
+      "heroId": 11,
+      "skillId": 7,
+      "cost": 4
+    },
+    {
+      "heroId": 11,
+      "skillId": 8,
+      "cost": 1
     }
   ]
 }

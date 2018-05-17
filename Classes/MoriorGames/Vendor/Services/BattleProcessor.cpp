@@ -8,7 +8,7 @@ BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
 {
     pathFinder = new PathFinder(grid);
     battleActionChecker = new BattleActionChecker(pathFinder);
-    battleHeroInitializer = new BattleHeroInitializer;
+    battleHeroSpawner = new BattleHeroSpawner(battle, grid);
 }
 
 void BattleProcessor::processBattleAction(BattleAction *battleAction)
@@ -79,7 +79,7 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
     } else {
 
         if (skill->getType() == Skill::TYPE_SPAWN) {
-            spawn(skill, battleHero, battleAction);
+            battleHeroSpawner->spawn(skill, battleHero, battleAction);
         }
         if (skill->getType() == Skill::TYPE_CONE_AREA_DAMAGE) {
             areaDamage(skill, battleHero, battleAction);
@@ -110,19 +110,6 @@ void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAct
             break;
         }
     }
-}
-
-void BattleProcessor::spawn(Skill *skill, BattleHero *battleHero, BattleAction *battleAction)
-{
-    auto spawnHero = new BattleHero;
-    spawnHero->setId(skill->getExtra());
-    spawnHero->setSide(battleHero->getSide());
-    auto coordinate = grid->findByXY(battleAction->getCoordinate()->x, battleAction->getCoordinate()->y);
-    coordinate->occupied = true;
-    spawnHero->setCoordinate(coordinate);
-    battleHeroInitializer->init(battle, spawnHero);
-
-    battle->addHero(spawnHero);
 }
 
 void BattleProcessor::areaDamage(Skill *skill, BattleHero *attacker, BattleAction *battleAction)

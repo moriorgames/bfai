@@ -1,6 +1,7 @@
 #include "HeroesConfig.h"
 #include "../Repository/SkillHeroRepository.h"
 #include "../../Definitions.h"
+#include <algorithm>
 
 const std::vector<Hero *> &HeroesConfig::getHeroes() const
 {

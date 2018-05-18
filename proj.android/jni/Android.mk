@@ -21,7 +21,9 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Grid/GridHD.cpp \
                    ../../Classes/MoriorGames/Grid/GridHDR.cpp \
                    ../../Classes/MoriorGames/Grid/GridSD.cpp \
+                   ../../Classes/MoriorGames/Http/Client.cpp \
                    ../../Classes/MoriorGames/Scenes/BattleScene.cpp \
+                   ../../Classes/MoriorGames/Scenes/HeroesConfigScene.cpp \
                    ../../Classes/MoriorGames/Scenes/LogoScene.cpp \
                    ../../Classes/MoriorGames/Scenes/MainMenuScene.cpp \
                    ../../Classes/MoriorGames/Scenes/SplashScene.cpp \
@@ -32,38 +34,65 @@ LOCAL_SRC_FILES := projectbfai/main.cpp \
                    ../../Classes/MoriorGames/Screen/ResolutionChecker.cpp \
                    ../../Classes/MoriorGames/Screen/ScreenProperties.cpp \
                    ../../Classes/MoriorGames/Services/FontCreator.cpp \
+                   ../../Classes/MoriorGames/Services/HeroesConfigProcessor.cpp \
+                   ../../Classes/MoriorGames/Services/HeroesConfigPublisher.cpp \
                    ../../Classes/MoriorGames/Services/SoundPlayer.cpp \
                    ../../Classes/MoriorGames/Services/SpriteAnimator.cpp \
                    ../../Classes/MoriorGames/Services/SpritesInitializer.cpp \
                    ../../Classes/MoriorGames/Services/StringFileReader.cpp \
+                   ../../Classes/MoriorGames/Services/Translator.cpp \
                    ../../Classes/MoriorGames/Transformers/BattleAction2Json.cpp \
+                   ../../Classes/MoriorGames/Transformers/HeroesConfig2Json.cpp \
+                   ../../Classes/MoriorGames/Vendor/Containers/HeroesConfig.cpp \
+                   ../../Classes/MoriorGames/Vendor/Dtos/HeroConfigPayload.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Battle.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/BattleAction.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/BattleHero.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Hero.cpp \
                    ../../Classes/MoriorGames/Vendor/Entity/Skill.cpp \
+                   ../../Classes/MoriorGames/Vendor/Entity/SkillHero.cpp \
+                   ../../Classes/MoriorGames/Vendor/Entity/User.cpp \
                    ../../Classes/MoriorGames/Vendor/Factories/BattleFactory.cpp \
+                   ../../Classes/MoriorGames/Vendor/Factories/BattleHeroInitializer.cpp \
+                   ../../Classes/MoriorGames/Vendor/Factories/PathBuilder.cpp \
                    ../../Classes/MoriorGames/Vendor/Grid/Grid.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/BattleActionParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/BattleParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/HeroParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/JsonParser.cpp \
+                   ../../Classes/MoriorGames/Vendor/Parsers/SkillHeroParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Parsers/SkillParser.cpp \
+                   ../../Classes/MoriorGames/Vendor/Parsers/UserParser.cpp \
                    ../../Classes/MoriorGames/Vendor/Repository/HeroRepository.cpp \
+                   ../../Classes/MoriorGames/Vendor/Repository/SkillHeroRepository.cpp \
                    ../../Classes/MoriorGames/Vendor/Repository/SkillRepository.cpp \
+                   ../../Classes/MoriorGames/Vendor/Services/AI.cpp \
+                   ../../Classes/MoriorGames/Vendor/Services/BattleActionChecker.cpp \
+                   ../../Classes/MoriorGames/Vendor/Services/BattleHeroSpawner.cpp \
                    ../../Classes/MoriorGames/Vendor/Services/BattleProcessor.cpp \
                    ../../Classes/MoriorGames/Vendor/Services/PathFinder.cpp \
+                   ../../Classes/MoriorGames/Vendor/Services/PathFinderArea.cpp \
+                   ../../Classes/MoriorGames/Vendor/Services/PathFinderShot.cpp \
                    ../../Classes/MoriorGames/Vendor/ValueObjects/Coordinate.cpp \
                    ../../Classes/MoriorGames/View/Battle/BattleBackgroundView.cpp \
                    ../../Classes/MoriorGames/View/Battle/BattleView.cpp \
+                   ../../Classes/MoriorGames/View/Battle/EndOfBattle.cpp \
                    ../../Classes/MoriorGames/View/Battle/GridView.cpp \
                    ../../Classes/MoriorGames/View/Battle/HeroAnimator.cpp \
+                   ../../Classes/MoriorGames/View/Battle/HeroHitPointsView.cpp \
                    ../../Classes/MoriorGames/View/Battle/HeroView.cpp \
                    ../../Classes/MoriorGames/View/Battle/SkillsView.cpp \
                    ../../Classes/MoriorGames/View/Battle/TileDrawer.cpp \
-                   ../../Classes/MoriorGames/View/TileDrawer.cpp \
                    ../../Classes/MoriorGames/View/Buttons/BattleButton.cpp \
+                   ../../Classes/MoriorGames/View/Buttons/BattleHeroesButton.cpp \
+                   ../../Classes/MoriorGames/View/Buttons/MainMenuButton.cpp \
                    ../../Classes/MoriorGames/View/Custom/BattleInitCustomActions.cpp \
+                   ../../Classes/MoriorGames/View/Custom/PopupBattleHero.cpp \
+                   ../../Classes/MoriorGames/View/HeroesConfig/AbstractFrame.cpp \
+                   ../../Classes/MoriorGames/View/HeroesConfig/HeroesConfigView.cpp \
+                   ../../Classes/MoriorGames/View/HeroesConfig/LeftFrame.cpp \
+                   ../../Classes/MoriorGames/View/HeroesConfig/RightFrame.cpp \
+                   ../../Classes/MoriorGames/View/HeroesConfig/TopHud.cpp \
                    ../../Classes/MoriorGames/View/BackgroundView.cpp \
                    ../../Classes/MoriorGames/View/LoadingView.cpp \
                    ../../Classes/MoriorGames/View/LogoView.cpp \

@@ -2,6 +2,7 @@
 #include "../Parsers/BattleActionParser.h"
 #include "../Repository/SkillRepository.h"
 #include "../Repository/HeroRepository.h"
+#include <algorithm>
 
 BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
     : battle{battle}, grid{grid}

@@ -1,4 +1,5 @@
 #include "HeroesConfigPublisher.h"
+#include <algorithm>
 
 void HeroesConfigPublisher::registerObserver(HeroConfigObservable *observer)
 {

@@ -44,4 +44,8 @@ $ adb kill-server
 $ adb start-server
 $ adb devices
 $ cocos run -p android --app-abi arm64-v8a
+# Run on android device
+$ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8) && cocos run -p android --android-studio
+# Run with the no uninstall option if the app is not installed on the device
+$ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8) && cocos run -p android --android-studio --no-uninstall
 ```

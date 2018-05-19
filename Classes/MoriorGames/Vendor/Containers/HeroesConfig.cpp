@@ -1,4 +1,5 @@
 #include "HeroesConfig.h"
+#include "../Repository/HeroRepository.h"
 #include "../Repository/SkillHeroRepository.h"
 #include "../../Definitions.h"
 #include <algorithm>
@@ -46,10 +47,13 @@ void HeroesConfig::addSkillToHero(Skill *skill, Hero *hero)
     }
 }
 
-void HeroesConfig::removeHero(Hero *hero)
+void HeroesConfig::removeHero(Hero *heroToRemove)
 {
-    hero->clearSkills();
-    heroes.erase(std::remove(heroes.begin(), heroes.end(), hero), heroes.end());
+    for (int i = 0; i < heroes.size(); ++i) {
+        if (heroes[i]->getId() == heroToRemove->getId()) {
+            heroes.erase(heroes.begin() + i);
+        }
+    }
 }
 
 int HeroesConfig::countBattleHeroesCost()

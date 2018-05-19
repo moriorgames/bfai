@@ -50,13 +50,13 @@ Coordinate *AI::coordinateForMove(BattleHero *activeHero, std::vector<Path> &pat
 {
     auto coordinateTarget = enemyCoordinateTarget(activeHero);
 
-    return closestCoordinate(coordinateTarget, pathScope);
+    return closestCoordinateForMove(coordinateTarget, pathScope);
 }
 
 Coordinate *AI::coordinateForAction(BattleHero *activeHero, std::vector<Path> &pathScope)
 {
     auto coordinateTarget = enemyCoordinateTarget(activeHero);
-    auto coordinate = closestCoordinate(coordinateTarget, pathScope);
+    auto coordinate = closestCoordinateForAction(coordinateTarget, pathScope);
 
     // Check selected coordinate does not belong to a hero on the same side as me
     for (auto hero:battle->getBattleHeroes()) {
@@ -88,27 +88,53 @@ Coordinate *AI::enemyCoordinateTarget(BattleHero *current)
     return coordinateTarget;
 }
 
-double AI::getDistance(BattleHero *enemy, Coordinate *coordinate)
+Coordinate *AI::closestCoordinateForMove(Coordinate *coordinateTarget, std::vector<Path> &pathScope)
 {
-    return getDistance(enemy->getCoordinate(), coordinate) - (enemy->getAgro() / AGRO_FACTOR);
-}
-
-Coordinate *AI::closestCoordinate(Coordinate *coordinateTarget, std::vector<Path> &pathScope)
-{
-    double distance = 5000;
     int index = 0;
-    for (int i = 0; i < pathScope.size(); ++i) {
-        auto tmpDistance = getDistance(coordinateTarget, pathScope[i].coordinate);
-        if (distance > tmpDistance) {
-            distance = tmpDistance;
-            index = i;
-        }
+
+    // Index / Distance
+    auto closest = closestDistance(coordinateTarget, pathScope);
+
+    if (closest.size() >= DEVIATION_MOVEMENT) {
+        int subIndex = rand() % DEVIATION_MOVEMENT;
+        index = closest.at(subIndex).first;
+    } else {
+        index = closest.front().first;
     }
 
     return pathScope[index].coordinate;
 }
 
+Coordinate *AI::closestCoordinateForAction(Coordinate *coordinateTarget, std::vector<Path> &pathScope)
+{
+    auto closest = closestDistance(coordinateTarget, pathScope);
+    auto index = closest.front().first;
+
+    return pathScope[index].coordinate;
+}
+
+std::vector<std::pair<int, double >> AI::closestDistance(Coordinate *coordinateTarget, std::vector<Path> &pathScope)
+{
+    // Index / Distance
+    std::vector<std::pair<int, double >> closest;
+    for (int i = 0; i < pathScope.size(); ++i) {
+        auto distance = getDistance(coordinateTarget, pathScope[i].coordinate);
+        closest.emplace_back(i, distance);
+    }
+    std::sort(closest.begin(), closest.end(), [](std::pair<int, double> &left, std::pair<int, double> &right)
+    {
+        return left.second < right.second;
+    });
+
+    return closest;
+}
+
 double AI::getDistance(Coordinate *a, Coordinate *b)
 {
     return fabs(a->x - b->x) / 2 + fabs(a->y - b->y) / 2;
+}
+
+double AI::getDistance(BattleHero *enemy, Coordinate *coordinate)
+{
+    return getDistance(enemy->getCoordinate(), coordinate) - (enemy->getAgro() / AGRO_FACTOR);
 }

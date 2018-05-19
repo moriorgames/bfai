@@ -36,9 +36,18 @@ void AI::process()
 Coordinate *AI::calculateCoordinate(BattleHero *activeHero)
 {
     if (!activeHero->hasMoved()) {
-        auto pathScope = pathFinder->buildPathScope(activeHero->getCoordinate(), activeHero->getMovement(), true);
 
-        return coordinateForMove(activeHero, pathScope);
+        auto actionPathScope = pathFinder->buildPathScope(activeHero->getCoordinate(), activeHero->getRanged());
+        auto enemyOnRangeCoordinate = coordinateForAction(activeHero, actionPathScope);
+
+        if (enemyOnRangeCoordinate->x == 99) {
+            auto pathScope = pathFinder->buildPathScope(activeHero->getCoordinate(), activeHero->getMovement(), true);
+
+            return coordinateForMove(activeHero, pathScope);
+        } else {
+
+            return activeHero->getCoordinate();
+        }
     } else {
         auto pathScope = pathFinder->buildPathScope(activeHero->getCoordinate(), activeHero->getRanged());
 
@@ -48,14 +57,14 @@ Coordinate *AI::calculateCoordinate(BattleHero *activeHero)
 
 Coordinate *AI::coordinateForMove(BattleHero *activeHero, std::vector<Path> &pathScope)
 {
-    auto coordinateTarget = enemyCoordinateTarget(activeHero);
+    auto coordinateTarget = enemyCoordinateTargetForMove(activeHero);
 
     return closestCoordinateForMove(coordinateTarget, pathScope);
 }
 
 Coordinate *AI::coordinateForAction(BattleHero *activeHero, std::vector<Path> &pathScope)
 {
-    auto coordinateTarget = enemyCoordinateTarget(activeHero);
+    auto coordinateTarget = enemyCoordinateTargetForAction(activeHero);
     auto coordinate = closestCoordinateForAction(coordinateTarget, pathScope);
 
     // Check selected coordinate does not belong to a hero on the same side as me
@@ -71,14 +80,31 @@ Coordinate *AI::coordinateForAction(BattleHero *activeHero, std::vector<Path> &p
     return new Coordinate(99, 99);
 }
 
-Coordinate *AI::enemyCoordinateTarget(BattleHero *current)
+Coordinate *AI::enemyCoordinateTargetForMove(BattleHero *current)
+{
+    auto coordinateTarget = new Coordinate(0, 0);
+    double distance = 5000;
+    for (auto enemy:battle->getBattleHeroes()) {
+        if (!enemy->isDead() && enemy->getSide() == BattleHero::SIDE_LOCAL) {
+            auto tmpDistance = getDistance(enemy, current->getCoordinate(), true);
+            if (distance > tmpDistance) {
+                coordinateTarget = enemy->getCoordinate();
+                distance = tmpDistance;
+            }
+        }
+    }
+
+    return coordinateTarget;
+}
+
+Coordinate *AI::enemyCoordinateTargetForAction(BattleHero *current)
 {
     auto coordinateTarget = new Coordinate(0, 0);
     double distance = 5000;
     for (auto enemy:battle->getBattleHeroes()) {
         if (!enemy->isDead() && enemy->getSide() == BattleHero::SIDE_LOCAL) {
             auto tmpDistance = getDistance(enemy, current->getCoordinate());
-            if (distance > tmpDistance) {
+            if (distance > tmpDistance && tmpDistance <= current->getRanged()) {
                 coordinateTarget = enemy->getCoordinate();
                 distance = tmpDistance;
             }
@@ -134,7 +160,13 @@ double AI::getDistance(Coordinate *a, Coordinate *b)
     return fabs(a->x - b->x) / 2 + fabs(a->y - b->y) / 2;
 }
 
-double AI::getDistance(BattleHero *enemy, Coordinate *coordinate)
+double AI::getDistance(BattleHero *enemy, Coordinate *coordinate, bool withAgro)
 {
-    return getDistance(enemy->getCoordinate(), coordinate) - (enemy->getAgro() / AGRO_FACTOR);
+    auto dist = getDistance(enemy->getCoordinate(), coordinate);
+    double agro = 0;
+    if (withAgro) {
+        agro = (enemy->getAgro() / AGRO_FACTOR);
+    }
+
+    return dist - agro;
 }

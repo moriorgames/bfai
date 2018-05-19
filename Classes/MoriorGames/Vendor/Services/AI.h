@@ -28,11 +28,12 @@ private:
     Coordinate *coordinateForMove(BattleHero *, std::vector<Path> &pathScope);
     Coordinate *coordinateForAction(BattleHero *, std::vector<Path> &pathScope);
 
-    Coordinate *enemyCoordinateTarget(BattleHero *);
+    Coordinate *enemyCoordinateTargetForMove(BattleHero *);
+    Coordinate *enemyCoordinateTargetForAction(BattleHero *);
     Coordinate *closestCoordinateForMove(Coordinate *, std::vector<Path> &pathScope);
     Coordinate *closestCoordinateForAction(Coordinate *, std::vector<Path> &pathScope);
     std::vector<std::pair<int, double >> closestDistance(Coordinate *, std::vector<Path> &pathScope);
-    double getDistance(BattleHero *, Coordinate *);
+    double getDistance(BattleHero *, Coordinate *, bool withAgro = false);
     double getDistance(Coordinate *, Coordinate *);
 };
 

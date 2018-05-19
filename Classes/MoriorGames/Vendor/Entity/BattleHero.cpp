@@ -85,6 +85,7 @@ void BattleHero::copy(Hero *hero)
     cost = hero->getCost();
     moveFrames = hero->getMoveFrames();
     attackFrames = hero->getAttackFrames();
+    size = hero->getSize();
     enabled = hero->isEnabled();
     skills = hero->getSkills();
 }

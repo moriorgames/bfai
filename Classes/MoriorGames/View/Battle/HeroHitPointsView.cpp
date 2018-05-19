@@ -9,8 +9,11 @@ HeroHitPointsView::HeroHitPointsView(BattleHero *battleHero)
 
 void HeroHitPointsView::addHitPoints(Node *container)
 {
+    node = new Node;
+    node->setCascadeOpacityEnabled(true);
+    node->setPositionY(POS_Y + battleHero->getSize() * SIZE_FACTOR);
+
     auto hitPointsBack = Sprite::create("ui/hit-points-back.png");
-    hitPointsBack->setPositionY(POS_Y);
 
     auto hitPointSprite = Sprite::create(
         battleHero->getSide() == BattleHero::SIDE_LOCAL ? "ui/hit-points-local.png" : "ui/hit-points-visitor.png"
@@ -20,16 +23,17 @@ void HeroHitPointsView::addHitPoints(Node *container)
     hitPoints->setType(ProgressTimer::Type::BAR);
     hitPoints->setMidpoint(Point(0, 0));
     hitPoints->setBarChangeRate(Point(1, 0));
-    hitPoints->setPositionY(POS_Y);
 
     label = fontCreator->hitPointsLabel(hitText());
-    label->setPositionY(POS_Y + 8);
+    label->setPositionY(8);
 
     update();
 
-    container->addChild(hitPointsBack);
-    container->addChild(hitPoints);
-    container->addChild(label);
+    node->addChild(hitPointsBack);
+    node->addChild(hitPoints);
+    node->addChild(label);
+
+    container->addChild(node);
 }
 
 void HeroHitPointsView::update()

@@ -14,6 +14,7 @@ Hero *Hero::clone()
     clone->setCost(cost);
     clone->setMoveFrames(moveFrames);
     clone->setAttackFrames(attackFrames);
+    clone->setSize(size);
     clone->addAgro(agro);
     clone->setEnabled(enabled);
     for (auto skill:skills) {
@@ -141,6 +142,16 @@ int Hero::getAgro() const
 void Hero::addAgro(int agro)
 {
     this->agro += agro;
+}
+
+int Hero::getSize() const
+{
+    return size;
+}
+
+void Hero::setSize(int size)
+{
+    this->size = size;
 }
 
 bool Hero::isEnabled() const

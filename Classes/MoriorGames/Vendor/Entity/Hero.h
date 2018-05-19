@@ -33,6 +33,8 @@ public:
     void setAttackFrames(int attackFrames);
     int getAgro() const;
     void addAgro(int agro);
+    int getSize() const;
+    void setSize(int size);
     bool isEnabled() const;
     void setEnabled(bool enabled);
 
@@ -45,7 +47,8 @@ public:
 protected:
     int id = 0;
     std::string name = "", slug = "", userToken = "";
-    int damage = 0, ranged = 0, health = 0, movement = 0, cost = 0, moveFrames = 0, attackFrames = 0, agro = 0;
+    int damage = 0, ranged = 0, health = 0, movement = 0, cost = 0, moveFrames = 0, attackFrames = 0, agro = 0,
+        size = 0;
     bool enabled = false;
 
     std::vector<Skill *> skills;

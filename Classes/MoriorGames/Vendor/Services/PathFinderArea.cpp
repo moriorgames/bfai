@@ -38,9 +38,9 @@ const std::vector<Path> &PathFinderArea::buildPathScope(Coordinate *origin, int 
     return pathScope;
 }
 
-void PathFinderArea::addPathForAxis(Coordinate *axis, int index)
+void PathFinderArea::addPathForAxis(Coordinate *origin, int index)
 {
-    for (auto axis:moveAxis(axis)) {
+    for (auto axis:moveAxis(origin)) {
         bool add = true;
         for (auto limits:pathScope) {
             if (limits.coordinate->x == axis->x && limits.coordinate->y == axis->y) {
@@ -57,7 +57,7 @@ void PathFinderArea::addPathForAxis(Coordinate *axis, int index)
     }
     bool add = true;
     for (auto limits:pathScope) {
-        if (limits.coordinate->x == axis->x && limits.coordinate->y == axis->y) {
+        if (limits.coordinate->x == origin->x && limits.coordinate->y == origin->y) {
             add = false;
             break;
         }
@@ -65,7 +65,7 @@ void PathFinderArea::addPathForAxis(Coordinate *axis, int index)
     if (add) {
         Path newPath;
         newPath.level = index + 1;
-        newPath.coordinate = axis;
+        newPath.coordinate = origin;
         pathScope.push_back(newPath);
     }
 }

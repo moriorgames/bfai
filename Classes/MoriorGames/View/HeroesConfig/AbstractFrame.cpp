@@ -75,7 +75,7 @@ Sprite *AbstractFrame::heroRow(int index, Hero *hero)
         costSprite->setTitleLabel(costLabel);
         sprite->addChild(costSprite);
     } else {
-        sprite->setOpacity(150);
+        sprite->setOpacity(OPACITY_INACTIVE);
     }
 
     sprite->setPositionY(y);

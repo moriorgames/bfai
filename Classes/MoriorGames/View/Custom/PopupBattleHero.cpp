@@ -74,10 +74,12 @@ void PopupBattleHero::addBackground() const
 void PopupBattleHero::addSkillRow(int index, SkillHero *skillHero)
 {
     auto skill = skillRepo->findById(skillHero->getSkillId());
+    bool isAbleToImproveSkill = heroesConfig->isAbleToAddSkill(skill, hero);
     float y = -index * SCROLL_VIEW_INNER_HEIGHT + scrollViewHeight - SCROLL_VIEW_MARGIN;
 
     auto sprite = Sprite::create("img/battle-heroes-row-background.png");
     sprite->setAnchorPoint(Point(0, 1));
+    sprite->setCascadeOpacityEnabled(true);
 
     auto portrait = new Sprite;
     portrait->initWithSpriteFrameName("portraits/" + skill->getSlug() + ".png");
@@ -97,10 +99,13 @@ void PopupBattleHero::addSkillRow(int index, SkillHero *skillHero)
     description->setPosition(Point(COL_1, 160));
     sprite->addChild(description);
 
-    if (canImprove) {
+    if (canImprove && isAbleToImproveSkill) {
         sprite->addChild(
             getUpgradeButton(skill, hero)
         );
+    }
+    if (!isAbleToImproveSkill) {
+        sprite->setOpacity(OPACITY_INACTIVE);
     }
 
     auto costSprite = ui::Button::create("ui/cost.png", "", "");

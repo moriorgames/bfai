@@ -14,11 +14,10 @@ public:
     void addSkillToHero(Skill *, Hero *);
     void removeHero(Hero *);
     int countBattleHeroesCost();
+    bool isAbleToAddSkill(Skill *skill, Hero *hero);
 
 protected:
     std::vector<Hero *> heroes;
-
-    bool isAbleToAddSkill(Skill *skill, Hero *hero);
 };
 
 extern HeroesConfig *heroesConfig;

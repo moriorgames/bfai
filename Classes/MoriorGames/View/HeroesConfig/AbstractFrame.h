@@ -10,6 +10,8 @@
 class AbstractFrame: public ViewHelper
 {
 public:
+    const GLubyte OPACITY_INACTIVE = 180;
+
     float const FRAME_X = 500;
     float const FRAME_Y = 50;
     float const SCROLL_VIEW_MARGIN = 8;

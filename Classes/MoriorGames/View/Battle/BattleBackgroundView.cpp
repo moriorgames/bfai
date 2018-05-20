@@ -24,6 +24,13 @@ void BattleBackgroundView::addView()
 
     layer->addChild(background, Z_ORDER_BACKGROUND);
 
+    auto middleObstacle = Sprite::create("img/middle-obstacle.png");
+    middleObstacle->setScale(scale);
+    middleObstacle->setPosition(
+        pos.x, pos.y + PADDING_MIDDLE_OBSTACLE * scale
+    );
+    layer->addChild(middleObstacle, Z_ORDER_HEROES);
+
     new BattleInitCustomActions(layer);
 
     SoundPlayer::playBackgroundMusic("sounds/main-menu-theme.mp3");

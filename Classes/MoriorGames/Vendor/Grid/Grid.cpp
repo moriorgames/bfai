@@ -60,6 +60,9 @@ void Grid::createGridCoordinates()
         for (int y:lines) {
             int x = initialX + i;
             auto coordinate = new Coordinate(x, y);
+            if (y == 0 && (x >= -3 && x <= 3)) {
+                coordinate->occupied = true;
+            }
             coordinates.push_back(coordinate);
         }
     }

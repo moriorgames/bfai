@@ -18,7 +18,7 @@ std::vector<Path> &PathFinder::buildPathScope(Coordinate *origin, int range, boo
         for (auto pathStruct:pathScope) {
             if (pathStruct.level == i) {
                 for (auto axis:moveAxis(pathStruct.coordinate)) {
-                    if (!withCollision || (withCollision && !axis->occupied)) {
+                    if (!withCollision || !axis->occupied) {
                         bool add = true;
                         for (auto limits:pathScope) {
                             if (limits.coordinate->x == axis->x && limits.coordinate->y == axis->y) {

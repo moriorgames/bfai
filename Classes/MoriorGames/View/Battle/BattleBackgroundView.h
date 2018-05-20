@@ -7,6 +7,7 @@ class BattleBackgroundView: public ViewHelper
 {
 public:
     const float PADDING_BATTLE_FIELD = 231;
+    const float PADDING_MIDDLE_OBSTACLE = 640;
     static const std::string NAME;
 
 public:

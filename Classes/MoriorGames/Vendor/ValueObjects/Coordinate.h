@@ -8,7 +8,7 @@ public:
     Coordinate(int x, int y);
     bool isEqual(const Coordinate *);
 
-    int x, y;
+    int x = 99, y = 99;
     bool occupied = false;
 };
 

@@ -147,13 +147,26 @@ bool BattleProcessor::checkEndOfBattle()
 {
     bool localDeath = true, visitorDeath = true;
     for (auto hero:battle->getBattleHeroes()) {
-        if (hero->getSide() == BattleHero::SIDE_LOCAL && !hero->isDead()) {
-            localDeath = false;
-        }
-        if (hero->getSide() == BattleHero::SIDE_VISITOR && !hero->isDead()) {
-            visitorDeath = false;
+        if (!hero->isNexus()) {
+            if (hero->getSide() == BattleHero::SIDE_LOCAL && !hero->isDead()) {
+                localDeath = false;
+            }
+            if (hero->getSide() == BattleHero::SIDE_VISITOR && !hero->isDead()) {
+                visitorDeath = false;
+            }
         }
     }
+    for (auto hero:battle->getBattleHeroes()) {
+        if (hero->isNexus() && hero->isDead()) {
+            if (hero->getSide() == BattleHero::SIDE_LOCAL) {
+                localDeath = true;
+            }
+            if (hero->getSide() == BattleHero::SIDE_VISITOR) {
+                visitorDeath = true;
+            }
+        }
+    }
+
     if (localDeath) {
         battle->visitorWin();
     }

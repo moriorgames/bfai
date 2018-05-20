@@ -29,7 +29,7 @@ void WorldView::addWorld()
     auto content = world->getContentSize();
 
     auto details = new Sprite;
-    details->initWithSpriteFrameName(spriteAnimator->getFrameName("details"));
+    details->initWithSpriteFrameName(spriteAnimator->getFrameName("nexus"));
     details->setPosition(
         content.width / 2,
         content.height / 2 + DETAIL_Y
@@ -42,5 +42,5 @@ void WorldView::addWorld()
 
 Action *WorldView::detailAction()
 {
-    return spriteAnimator->generateAction("details", "default", 16, 36);
+    return spriteAnimator->generateAction("nexus", "move", 16, 36);
 }

@@ -16,10 +16,10 @@ Sprite *HeroAnimator::createSprite()
     sprite->setAnchorPoint(ANCHOR);
     sprite->setFlippedX(battleHero->flipped);
     if (battleHero->isNexus()) {
-        auto base = Sprite::create("img/nexus.png");
-        base->setPositionX(105);
-        base->setPositionY(35);
-        sprite->addChild(base, -1);
+//        auto base = Sprite::create("img/nexus.png");
+//        base->setPositionX(105);
+//        base->setPositionY(35);
+//        sprite->addChild(base, -1);
         sprite->setAnchorPoint({0.5, 0.07});
         sprite->runAction(moveAnimation());
     }
@@ -60,6 +60,7 @@ void HeroAnimator::action()
 void HeroAnimator::hurt(Node *container, BattleAction *battleAction)
 {
     if (battleHero->isDead()) {
+        sprite->stopAllActions();
         sprite->setSpriteFrame(spriteAnimator->getFrameName("death", "default"));
         sprite->runAction(deathAnimation());
         auto delay = DelayTime::create(1.5f);

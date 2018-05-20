@@ -51,6 +51,11 @@ void HeroView::addHero()
     auto position = coordinate2Screen->execute(battleHero->getCoordinate());
     container->setPosition(position);
     container->addChild(heroAnimator->createSprite());
+    if (battleHero->isNexus()) {
+        auto base = Sprite::create("img/nexus.png");
+        base->setPositionY(20);
+        container->addChild(base, -1);
+    }
 }
 
 void HeroView::setLocalZOrder()

@@ -22,7 +22,13 @@ Sprite *AbstractFrame::initFrame()
 
 void AbstractFrame::initScrollView()
 {
-    auto heroes = heroRepo->findAll();
+    std::vector<Hero *> heroes;
+    for (auto hero:heroRepo->findAll()) {
+        if (!hero->isNexus()) {
+            heroes.push_back(hero);
+        }
+    }
+
     scrollViewHeight = heroes.size() * SCROLL_VIEW_INNER_HEIGHT;
 
     scrollView = ui::ScrollView::create();

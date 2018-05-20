@@ -8,6 +8,8 @@
 class Hero
 {
 public:
+    const int NEXUS_ID = 1;
+
     Hero *clone();
     int getId() const;
     void setId(int id);
@@ -37,6 +39,7 @@ public:
     void setSize(int size);
     bool isEnabled() const;
     void setEnabled(bool enabled);
+    bool isNexus() const;
 
     const std::vector<Skill *> &getSkills() const;
     void addSkill(Skill *);

@@ -29,7 +29,12 @@ void RightFrame::addView()
 
 void RightFrame::addHeroesList()
 {
-    auto heroes = heroRepo->findAll();
+    std::vector<Hero *> heroes;
+    for (auto hero:heroRepo->findAll()) {
+        if (!hero->isNexus()) {
+            heroes.push_back(hero);
+        }
+    }
 
     int index = 0;
     for (auto hero:heroes) {

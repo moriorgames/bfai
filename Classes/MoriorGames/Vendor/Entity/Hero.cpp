@@ -164,6 +164,11 @@ void Hero::setEnabled(bool enabled)
     this->enabled = enabled;
 }
 
+bool Hero::isNexus() const
+{
+    return id == NEXUS_ID;
+}
+
 const std::vector<Skill *> &Hero::getSkills() const
 {
     return skills;

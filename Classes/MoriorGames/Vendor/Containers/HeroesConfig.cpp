@@ -70,21 +70,25 @@ int HeroesConfig::countBattleHeroesCost()
     return count;
 }
 
-bool HeroesConfig::isAbleToAddSkill(Skill *skill, Hero *hero)
+bool HeroesConfig::isAbleToAddSkill(Skill *skill, Hero *heroToCheck)
 {
     if (!skill->isUpgradable()) {
         return false;
     }
 
     if (skill->isUnique()) {
-        for (auto skillToCheck:hero->getSkills()) {
-            if (skillToCheck->getId() == skill->getId()) {
-                return false;
+        for (auto hero:heroes) {
+            if (heroToCheck->getId() == hero->getId()) {
+                for (auto skillToCheck:hero->getSkills()) {
+                    if (skillToCheck->getId() == skill->getId()) {
+                        return false;
+                    }
+                }
             }
         }
     }
 
-    auto skillHero = skillHeroRepo->findBySkillAndHero(skill->getId(), hero->getId());
+    auto skillHero = skillHeroRepo->findBySkillAndHero(skill->getId(), heroToCheck->getId());
     int totalCost = countBattleHeroesCost() + skillHero->getCost();
 
     return totalCost <= BATTLE_TOTAL_COST;

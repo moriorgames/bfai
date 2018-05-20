@@ -11,7 +11,7 @@ public:
 private:
     cocos2d::SpriteFrameCache *cacher;
     std::vector<std::string> sprites{
-        "jaimie", "pink", "atlas", "paul", "fractal", "bot", "portraits", "battle-effects", "world"
+        "nexus", "jaimie", "pink", "atlas", "paul", "fractal", "bot", "portraits", "battle-effects", "world"
     };
 
     void addSprites();

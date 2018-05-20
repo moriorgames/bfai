@@ -67,7 +67,7 @@ void Battle::nextHero()
     { hero->isActive = false; });
 
     for (auto hero:heroes) {
-        if (!hero->isDead() && hero->getBattleHeroId() > activeHero) {
+        if (!hero->isDead() && !hero->isNexus() && hero->getBattleHeroId() > activeHero) {
             activeHero = hero->getBattleHeroId();
             activeSkill = Skill::MOVE_ID;
             hero->isActive = true;

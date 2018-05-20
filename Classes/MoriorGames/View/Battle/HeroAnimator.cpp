@@ -15,6 +15,14 @@ Sprite *HeroAnimator::createSprite()
     sprite->initWithSpriteFrameName(spriteAnimator->getFrameName(battleHero->getSlug()));
     sprite->setAnchorPoint(ANCHOR);
     sprite->setFlippedX(battleHero->flipped);
+    if (battleHero->isNexus()) {
+        auto base = Sprite::create("img/nexus.png");
+        base->setPositionX(105);
+        base->setPositionY(35);
+        sprite->addChild(base, -1);
+        sprite->setAnchorPoint({0.5, 0.07});
+        sprite->runAction(moveAnimation());
+    }
 
     return sprite;
 }

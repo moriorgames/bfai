@@ -12,7 +12,7 @@ public:
 
 private:
     std::vector<std::pair<short, short>> coords{
-        {0, 0}, {-8, 2}, {-7, 1}, {-7, -1}, {-8, -2},
+        {-8, 2}, {-7, 1}, {-7, -1}, {-8, -2},
     };
 
     std::string heroesRows(HeroesConfig *);

@@ -29,10 +29,11 @@ std::string HeroesConfig2Json::heroesRows(HeroesConfig *heroesConfig)
     battleHeroId++;
 
     // Local Heroes
+    int index = 0;
     for (auto hero:heroesConfig->getHeroes()) {
 
-        short x = coords[battleHeroId].first;
-        short y = coords[battleHeroId].second;
+        short x = coords[index].first;
+        short y = coords[index].second;
 
         json += heroRow(
             "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FA",
@@ -43,6 +44,7 @@ std::string HeroesConfig2Json::heroesRows(HeroesConfig *heroesConfig)
             y
         );
         battleHeroId++;
+        index++;
     }
 
     // @TODO this has to be managed by a kind of Campaign creator
@@ -82,7 +84,7 @@ std::string HeroesConfig2Json::skillsHeroesRows(HeroesConfig *heroesConfig)
     std::string json = "\"skillsHeroes\": [";
 
     bool hasToRemoveLastComma = false;
-    int battleHeroId = 1;
+    int battleHeroId = 3;
     for (auto hero:heroesConfig->getHeroes()) {
         for (auto skill:hero->getSkills()) {
             json += skillHeroRow(battleHeroId, skill->getId());

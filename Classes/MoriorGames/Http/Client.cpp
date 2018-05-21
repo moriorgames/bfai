@@ -6,10 +6,8 @@ Client::Client()
 {
     if (SANDBOX_MODE) {
         _apiHost = "http://localhost:8000/app_dev.php/functions";
-        _battleHost = "http://localhost:8001/app_dev.php";
     } else {
         _apiHost = "https://some.url.com/functions";
-        _battleHost = "https://some.url.com";
     }
 }
 
@@ -26,7 +24,7 @@ void Client::request(methodType method, const std::string &endpoint, HttpCallbac
 
 std::string Client::getSocketHost(int port)
 {
-    std::string socketHost = "ws://some.socket.url.com:" + to_string(port);
+    std::string socketHost = "ws://some.url.com:" + to_string(port);
     if (SANDBOX_MODE) {
         socketHost = "127.0.0.1:" + to_string(port);
     }

@@ -30,7 +30,6 @@ public:
 
 private:
     std::string _apiHost;
-    std::string _battleHost;
 
 };
 

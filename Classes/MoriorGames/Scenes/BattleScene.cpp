@@ -21,6 +21,7 @@ bool BattleScene::init()
         return false;
     }
 
+    client = new Client;
     socket = new Socket;
     battleView = new BattleView(this, socket);
     if (battleView->getBattle()->isOnline()) {
@@ -45,8 +46,7 @@ void BattleScene::goToMainMenuScene(float delay)
 
 void BattleScene::connectToSocket(int port)
 {
-    std::string socketHost = "127.0.0.1:8080";
-    socket->init(*this, socketHost);
+    socket->init(*this, client->getSocketHost(port));
 }
 
 void BattleScene::onOpen(Socket *ws)

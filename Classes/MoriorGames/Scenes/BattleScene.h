@@ -18,6 +18,7 @@ public:
 private:
     BattleView *battleView;
     Socket *socket;
+    Client *client;
 
     void connectToSocket(int port);
     virtual void onOpen(Socket *ws);

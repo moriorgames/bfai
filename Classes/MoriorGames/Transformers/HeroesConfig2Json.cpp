@@ -49,15 +49,14 @@ std::string HeroesConfig2Json::heroesRows(HeroesConfig *heroesConfig)
 
     // @TODO this has to be managed by a kind of Campaign creator
     // Enemy Heroes
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 4, 5, 0);
-    battleHeroId++;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 2, 6, 1);
-    battleHeroId++;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 5, 6, -1);
-    battleHeroId++;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 3, 7, 2);
-    battleHeroId++;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 3, 7, -2);
+    index = 0;
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 2, abs(coords[index].first), coords[index].second);
+    battleHeroId++; index++;
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 4, abs(coords[index].first), coords[index].second);
+    battleHeroId++; index++;
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 5, abs(coords[index].first), coords[index].second);
+    battleHeroId++; index++;
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, 3, abs(coords[index].first), coords[index].second);
 
     removeLastComma(json);
     json += "],";

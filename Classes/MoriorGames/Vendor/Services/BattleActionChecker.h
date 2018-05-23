@@ -9,7 +9,8 @@ class BattleActionChecker
 {
 public:
     explicit BattleActionChecker(PathFinder *);
-    bool check(Skill *, BattleHero *, BattleAction *);
+    bool isBattleActionAllowed(BattleHero *current, BattleHero *active, BattleAction *battleAction);
+    bool isSkillAllowed(Skill *, BattleHero *, BattleAction *);
 
 private:
     PathBuilder *pathBuilder;

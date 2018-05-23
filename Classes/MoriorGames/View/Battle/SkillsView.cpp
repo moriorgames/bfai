@@ -34,7 +34,6 @@ void SkillsView::addSkillButtons()
     auto battleHero = battle->getActiveBattleHero();
     float x = 80;
     float y = 80;
-    auto gridViewLambda = gridView;
     for (auto skill:battleHero->getSkills()) {
 
         if (skill->getType() == Skill::TYPE_BOOST_HEALTH ||
@@ -50,13 +49,12 @@ void SkillsView::addSkillButtons()
             skillBackground->setScale(skillBackground->getScale() * 1.15f);
         }
 
-        auto battle = this->battle;
         auto skillModel = skillRepo->findById(skill->getId());
 
         auto button = ui::Button::create("portraits/" + skillModel->getSlug() + ".png", "", "", uiTexture::PLIST);
         button->setPosition(Point(x, y));
         button->addTouchEventListener(
-            [&, battleHero, skillModel, gridViewLambda, battle](Ref *sender, ui::Widget::TouchEventType type)
+            [&, battleHero, skillModel, this](Ref *sender, ui::Widget::TouchEventType type)
             {
                 if (type == ui::Widget::TouchEventType::ENDED) {
                     battle->setActiveSkill(skillModel->getId());
@@ -75,8 +73,8 @@ void SkillsView::addSkillButtons()
 
                     } else {
 
-                        gridViewLambda->removeActionGrid();
-                        gridViewLambda->drawPath(skillModel, battleHero);
+                        gridView->removeActionGrid();
+                        gridView->drawPath(skillModel, battleHero);
                     }
 
                     update(new BattleAction);

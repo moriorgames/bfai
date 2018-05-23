@@ -15,12 +15,15 @@ BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
 void BattleProcessor::processBattleAction(BattleAction *battleAction)
 {
     bool endOfTurn = true;
-    for (auto battleHero:battle->getBattleHeroes()) {
-        if (isBattleActionAllowed(battleHero, battleAction)) {
-            auto coord = battleAction->getCoordinate();
-            battleAction->setCoordinate(grid->findByXY(coord->x, coord->y));
-            endOfTurn = battleActionProcess(battleHero, battleAction);
-            break;
+    auto activeHero = battle->getActiveBattleHero();
+    if (activeHero) {
+        for (auto battleHero:battle->getBattleHeroes()) {
+            if (battleActionChecker->isBattleActionAllowed(battleHero, activeHero, battleAction)) {
+                auto coord = battleAction->getCoordinate();
+                battleAction->setCoordinate(grid->findByXY(coord->x, coord->y));
+                endOfTurn = battleActionProcess(battleHero, battleAction);
+                break;
+            }
         }
     }
 
@@ -64,7 +67,7 @@ void BattleProcessor::notifyObservers(BattleAction *battleAction)
 bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *battleAction)
 {
     auto skill = skillRepo->findById(battleAction->getSkillId());
-    if (!battleActionChecker->check(skill, battleHero, battleAction)) {
+    if (!battleActionChecker->isSkillAllowed(skill, battleHero, battleAction)) {
 
         return true;
     }
@@ -180,12 +183,6 @@ bool BattleProcessor::checkEndOfBattle()
     }
 
     return localDeath || visitorDeath;
-}
-
-bool BattleProcessor::isBattleActionAllowed(BattleHero *battleHero, BattleAction *battleAction)
-{
-    return battleHero->getBattleHeroId() == battleAction->getBattleHeroId() &&
-        battleHero->getBattleHeroId() == battle->getActiveBattleHero()->getBattleHeroId();
 }
 
 bool BattleProcessor::isValidAreaOfEffect(BattleHero *battleHero, BattleAction *battleAction, Coordinate *coordinate)

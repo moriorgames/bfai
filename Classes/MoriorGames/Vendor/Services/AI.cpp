@@ -19,6 +19,7 @@ void AI::process()
             battleAction->setBattleHeroId(
                 activeHero->getBattleHeroId()
             );
+            battleAction->setUserToken(AI_TOKEN);
             // @TODO this is causing some troubles we have to solve this in another way
             if (coordinate->x == 99) {
                 battleAction->setSkillId(Skill::NEXT_TURN_ID);

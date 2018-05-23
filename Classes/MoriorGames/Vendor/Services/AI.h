@@ -11,6 +11,7 @@
 class AI
 {
 public:
+    const std::string AI_TOKEN = "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB";
     const float AGRO_FACTOR = 4;
     const int DEVIATION_MOVEMENT = 2;
 

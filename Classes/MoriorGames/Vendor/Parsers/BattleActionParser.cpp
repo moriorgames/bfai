@@ -7,22 +7,19 @@ BattleActionParser::BattleActionParser(std::string json)
 
 BattleAction *BattleActionParser::parse()
 {
-    auto battleAction = new BattleAction;
-
-    addBattleActionData(battleAction, document);
-
-    return battleAction;
+    return createBattleActionFromData(document);
 }
 
-void BattleActionParser::addBattleActionData(BattleAction *battleAction, const rapidjson::Value &data)
+BattleAction *BattleActionParser::createBattleActionFromData(const rapidjson::Value &data)
 {
-    auto coordinate = new Coordinate(getInt(data, "x"), getInt(data, "y"));
+    auto action = new BattleAction(
+        getString(data, "battleToken"),
+        getString(data, "userToken"),
+        getInt(data, "battleHeroId"),
+        getInt(data, "skillId")
+    );
+    action->setId(getInt(data, "id"));
+    action->setCoordinate(new Coordinate(getInt(data, "x"), getInt(data, "y")));
 
-    battleAction->setBattleToken(getString(data, "battleToken"));
-    battleAction->setUserToken(getString(data, "userToken"));
-    battleAction->setId(getInt(data, "id"));
-    battleAction->setBattleHeroId(getInt(data, "battleHeroId"));
-    battleAction->setSkillId(getInt(data, "skillId"));
-    battleAction->setCoordinate(coordinate);
+    return action;
 }
-

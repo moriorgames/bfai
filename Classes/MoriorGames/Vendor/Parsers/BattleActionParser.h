@@ -12,7 +12,7 @@ public:
     BattleAction *parse();
 
 private:
-    void addBattleActionData(BattleAction *, const rapidjson::Value &data);
+    BattleAction *createBattleActionFromData(const rapidjson::Value &data);
 };
 
 #endif

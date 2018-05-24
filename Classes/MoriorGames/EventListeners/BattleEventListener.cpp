@@ -36,17 +36,16 @@ bool BattleEventListener::onTouchEnd(Touch *touch, Event *event)
     if (activeHero->getUserToken() == playerUser->getToken() && isTouchWithinBoundariesOfBattleField(screenTouch)) {
 
         auto coordinate = closestCoordinate(screenTouch);
-        auto battleAction = new BattleAction;
-        battleAction->setBattleToken(battle->getToken());
-        battleAction->setUserToken(battle->getUserToken());
-        battleAction->setBattleHeroId(
-            activeHero->getBattleHeroId()
-        );
-        battleAction->setSkillId(
+
+        // @TODO I think we have to change "battle->getUserToken()" to  "activeHero->getUserToken()"
+        auto action = new BattleAction(
+            battle->getToken(),
+            battle->getUserToken(),
+            activeHero->getBattleHeroId(),
             battle->getActiveSkill()
         );
-        battleAction->setCoordinate(coordinate);
-        eventPublisher->publish(battleAction);
+        action->setCoordinate(coordinate);
+        eventPublisher->publish(action);
 
     }
 

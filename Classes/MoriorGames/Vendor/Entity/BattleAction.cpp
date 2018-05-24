@@ -1,23 +1,18 @@
 #include "BattleAction.h"
 
+BattleAction::BattleAction(std::string battleToken, std::string userToken, int battleHeroId, int skillId)
+    : battleToken{battleToken}, userToken{userToken}, battleHeroId{battleHeroId}, skillId{skillId}
+{
+}
+
 const std::string &BattleAction::getBattleToken() const
 {
     return battleToken;
 }
 
-void BattleAction::setBattleToken(const std::string &battleToken)
-{
-    this->battleToken = battleToken;
-}
-
 const std::string &BattleAction::getUserToken() const
 {
     return userToken;
-}
-
-void BattleAction::setUserToken(const std::string &userToken)
-{
-    this->userToken = userToken;
 }
 
 int BattleAction::getId() const
@@ -35,29 +30,9 @@ int BattleAction::getBattleHeroId() const
     return battleHeroId;
 }
 
-void BattleAction::setBattleHeroId(int battleHeroId)
-{
-    this->battleHeroId = battleHeroId;
-}
-
 int BattleAction::getSkillId() const
 {
     return skillId;
-}
-
-void BattleAction::setSkillId(int skillId)
-{
-    this->skillId = skillId;
-}
-
-int BattleAction::getExtra() const
-{
-    return extra;
-}
-
-void BattleAction::setExtra(int extra)
-{
-    BattleAction::extra = extra;
 }
 
 Coordinate *BattleAction::getCoordinate() const
@@ -68,6 +43,16 @@ Coordinate *BattleAction::getCoordinate() const
 void BattleAction::setCoordinate(Coordinate *coordinate)
 {
     this->coordinate = coordinate;
+}
+
+int BattleAction::getExtra() const
+{
+    return extra;
+}
+
+void BattleAction::setExtra(int extra)
+{
+    BattleAction::extra = extra;
 }
 
 void BattleAction::print()

@@ -15,21 +15,19 @@ void AI::process()
         if (activeHero->getSide() == BattleHero::SIDE_VISITOR) {
 
             auto coordinate = calculateCoordinate(activeHero);
-            auto battleAction = new BattleAction;
-            battleAction->setBattleHeroId(
-                activeHero->getBattleHeroId()
-            );
-            battleAction->setUserToken(AI_TOKEN);
+            int skillId = battle->getActiveSkill();
             // @TODO this is causing some troubles we have to solve this in another way
             if (coordinate->x == 99) {
-                battleAction->setSkillId(Skill::NEXT_TURN_ID);
-            } else {
-                battleAction->setSkillId(
-                    battle->getActiveSkill()
-                );
+                skillId = Skill::NEXT_TURN_ID;
             }
-            battleAction->setCoordinate(coordinate);
-            eventPublisher->publish(battleAction);
+            auto action = new BattleAction(
+                battle->getToken(),
+                AI_TOKEN,
+                activeHero->getBattleHeroId(),
+                skillId
+            );
+            action->setCoordinate(coordinate);
+            eventPublisher->publish(action);
         }
     }
 }

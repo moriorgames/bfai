@@ -62,17 +62,15 @@ void SkillsView::addSkillButtons()
                     if (type == ui::Widget::TouchEventType::ENDED) {
                         battle->setActiveSkill(skillModel->getId());
                         if (skillModel->getId() == Skill::NEXT_TURN_ID) {
-                            auto battleAction = new BattleAction;
-                            battleAction->setBattleToken(battle->getToken());
-                            battleAction->setUserToken(battle->getUserToken());
-                            battleAction->setBattleHeroId(
-                                activeHero->getBattleHeroId()
+                            // @TODO I think we have to change "battle->getUserToken()" to  "activeHero->getUserToken()"
+                            auto action = new BattleAction(
+                                battle->getToken(),
+                                battle->getUserToken(),
+                                activeHero->getBattleHeroId(),
+                                Skill::NEXT_TURN_ID
                             );
-                            battleAction->setSkillId(
-                                skillModel->getId()
-                            );
-                            battleAction->setCoordinate(activeHero->getCoordinate());
-                            eventPublisher->publish(battleAction);
+                            action->setCoordinate(activeHero->getCoordinate());
+                            eventPublisher->publish(action);
 
                         } else {
 
@@ -80,7 +78,7 @@ void SkillsView::addSkillButtons()
                             gridView->drawPath(skillModel, activeHero);
                         }
 
-                        update(new BattleAction);
+                        update(new BattleAction("", "", 0, 0));
                     }
                 });
         }

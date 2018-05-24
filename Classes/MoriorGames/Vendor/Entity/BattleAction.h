@@ -7,20 +7,18 @@
 class BattleAction
 {
 public:
-    const std::string &getBattleToken() const;
-    void setBattleToken(const std::string &battleToken);
-    const std::string &getUserToken() const;
-    void setUserToken(const std::string &userToken);
+    explicit BattleAction(std::string battleToken, std::string userToken, int battleHeroId, int skillId);
     int getId() const;
     void setId(int id);
+    const std::string &getBattleToken() const;
+    const std::string &getUserToken() const;
     int getBattleHeroId() const;
-    void setBattleHeroId(int battleHeroId);
     int getSkillId() const;
-    void setSkillId(int skillId);
-    int getExtra() const;
-    void setExtra(int extra);
     Coordinate *getCoordinate() const;
     void setCoordinate(Coordinate *);
+
+    int getExtra() const;
+    void setExtra(int extra);
 
     void print();
 

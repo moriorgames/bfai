@@ -147,9 +147,7 @@ void BattleProcessor::performDamage(BattleHero *defender, BattleHero *attacker, 
 
     attacker->addAgro(damage);
 
-    auto damageAction = new BattleAction;
-    damageAction->setSkillId(Skill::DAMAGE_ID);
-    damageAction->setBattleHeroId(defender->getBattleHeroId());
+    auto damageAction = new BattleAction("", "", defender->getBattleHeroId(), Skill::DAMAGE_ID);
     damageAction->setExtra(damage);
     extraActions.push_back(damageAction);
 }
@@ -185,8 +183,7 @@ bool BattleProcessor::checkEndOfBattle()
         battle->localWin();
     }
     if (localDeath || visitorDeath) {
-        auto endOfBattleAction = new BattleAction;
-        endOfBattleAction->setSkillId(Skill::END_OF_BATTLE_ID);
+        auto endOfBattleAction = new BattleAction("", "", 0, Skill::END_OF_BATTLE_ID);
         extraActions.push_back(endOfBattleAction);
     }
 

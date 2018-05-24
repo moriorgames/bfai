@@ -14,9 +14,17 @@ BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
 
 void BattleProcessor::processBattleAction(BattleAction *battleAction)
 {
+    if (battleAction->getSkillId() == Skill::START_BATTLE_ID) {
+        battle->nextHero();
+        notifyObservers(battleAction);
+
+        return;
+    }
+
     bool endOfTurn = true;
     auto activeHero = battle->getActiveBattleHero();
-    if (activeHero) {
+    if (battleActionChecker->isActiveBattleHeroInTurn(activeHero, battleAction)) {
+
         for (auto battleHero:battle->getBattleHeroes()) {
             if (battleActionChecker->isBattleActionAllowed(battleHero, activeHero, battleAction)) {
                 auto coord = battleAction->getCoordinate();
@@ -25,15 +33,15 @@ void BattleProcessor::processBattleAction(BattleAction *battleAction)
                 break;
             }
         }
-    }
 
-    if (endOfTurn) {
-        battle->nextHero();
-    } else {
-        battle->setActiveSkill(Skill::SINGLE_ATTACK_ID);
-    }
+        if (endOfTurn) {
+            battle->nextHero();
+        } else {
+            battle->setActiveSkill(Skill::SINGLE_ATTACK_ID);
+        }
 
-    notifyObservers(battleAction);
+        notifyObservers(battleAction);
+    }
 }
 
 void BattleProcessor::registerObserver(BattleObservable *observer)

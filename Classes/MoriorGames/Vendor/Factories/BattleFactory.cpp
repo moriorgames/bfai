@@ -11,8 +11,3 @@ Battle *BattleFactory::execute(const std::string &json)
 
     return battle;
 }
-
-void BattleFactory::initNexus()
-{
-
-}

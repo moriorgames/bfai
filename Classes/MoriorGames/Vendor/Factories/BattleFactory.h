@@ -9,9 +9,6 @@ class BattleFactory
 {
 public:
     Battle *execute(const std::string &json);
-
-private:
-    void initNexus();
 };
 
 #endif

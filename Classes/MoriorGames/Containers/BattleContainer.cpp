@@ -66,7 +66,9 @@ void BattleContainer::registerObservers()
     battleProcessor->registerObserver(gridContainer->getGridView());
     battleProcessor->registerObserver(skillsView);
     battleProcessor->registerObserver(this);
-    battleProcessor->processBattleAction(new BattleAction);
+    auto battleStart = new BattleAction;
+    battleStart->setSkillId(Skill::START_BATTLE_ID);
+    battleProcessor->processBattleAction(battleStart);
 }
 
 void BattleContainer::update(BattleAction *battleAction)

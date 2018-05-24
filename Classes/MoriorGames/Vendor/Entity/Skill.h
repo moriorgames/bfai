@@ -10,6 +10,7 @@ public:
     static short NEXT_TURN_ID;
     static short MOVE_ID;
     static short SINGLE_ATTACK_ID;
+    static short START_BATTLE_ID;
     static short END_OF_BATTLE_ID;
 
     static short TYPE_BOOST_HEALTH;

@@ -5,6 +5,7 @@
 #include "../Grid/GridHD.h"
 #include "../Grid/GridHDR.h"
 #include "../Screen/ClosestCoordinate.h"
+#include "../Services/TeamSight.h"
 #include "../Vendor/Containers/Path.h"
 #include "../Vendor/Entity/Battle.h"
 #include "../Vendor/Services/PathFinder.h"
@@ -20,6 +21,7 @@ public:
     ClosestCoordinate *getClosestCoordinate() const;
     PathFinder *getPathFinder() const;
     GridView *getGridView() const;
+    TeamSight *getTeamSight() const;
 
 private:
     Layer *layer;
@@ -28,6 +30,7 @@ private:
     Coordinate2Screen *coordinate2Screen;
     ClosestCoordinate *closestCoordinate;
     PathFinder *pathFinder;
+    TeamSight *teamSight;
 };
 
 #endif

@@ -5,7 +5,6 @@
 #include "../Containers/GridContainer.h"
 #include "../EventListeners/BattleEventPublishable.h"
 #include "../Http/Client.h"
-#include "../Services/TeamSight.h"
 #include "../Vendor/Factories/BattleFactory.h"
 #include "../Vendor/Services/AI.h"
 #include "../Vendor/Services/BattleProcessor.h"
@@ -35,7 +34,6 @@ private:
     BattleProcessor *battleProcessor;
     std::vector<HeroView *> heroViews;
     SkillsView *skillsView;
-    TeamSight *teamSight;
 
     void addHeroViews();
     void registerObservers();

@@ -17,6 +17,7 @@ public:
     static const Color4F FILL_COLOR;
     static const Color4F MOVE_FILL_COLOR;
     static const Color4F ATTACK_FILL_COLOR;
+    static const Color4F HIDDEN_COLOR;
 
 public:
     GridView(Layer *, Battle *, PathFinder *, TileDrawer *);

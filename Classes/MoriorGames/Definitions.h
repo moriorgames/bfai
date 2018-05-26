@@ -9,6 +9,7 @@
 #define Z_ORDER_MENU_ITEMS      40
 #define Z_ORDER_POPUP           50
 #define Z_ORDER_OVER_POPUP      55
+#define Z_ORDER_HIDDEN          60
 
 #define FPS                     24
 

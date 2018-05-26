@@ -34,7 +34,7 @@ private:
     PathFinder *pathFinder;
     PathBuilder *pathBuilder;
     TileDrawer *tileDrawer;
-    Node *gridTiles = new Node, *actionTiles = new Node;
+    Node *gridTiles = new Node, *actionTiles = new Node, *hiddenTiles = new Node;
 
     void buildPathScopeView();
 };

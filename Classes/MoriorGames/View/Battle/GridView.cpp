@@ -7,7 +7,7 @@ const Color4F GridView::MOVE_FILL_COLOR{.2f, 1, .2f, .3f};
 
 const Color4F GridView::ATTACK_FILL_COLOR{1, .2f, .2f, .3f};
 
-const Color4F GridView::HIDDEN_COLOR{0, 0, 0, .3f};
+const Color4F GridView::HIDDEN_COLOR{0, 0, 0, 1};
 
 GridView::GridView(Layer *layer, Battle *battle, PathFinder *pathFinder, TileDrawer *tileDrawer)
     : layer{layer}, battle{battle}, pathFinder{pathFinder}, tileDrawer{tileDrawer}
@@ -16,6 +16,7 @@ GridView::GridView(Layer *layer, Battle *battle, PathFinder *pathFinder, TileDra
 
     layer->addChild(gridTiles, Z_ORDER_GRID);
     layer->addChild(actionTiles, Z_ORDER_GRID);
+    layer->addChild(hiddenTiles, Z_ORDER_HIDDEN);
 }
 
 void GridView::drawTile(Coordinate *coordinate, Color4F color, Node *node)
@@ -32,8 +33,9 @@ void GridView::drawGrid(const std::vector<Coordinate *> &coordinates)
 
 void GridView::drawHiddenArea(const std::vector<Coordinate *> &coordinates)
 {
+    hiddenTiles->removeAllChildren();
     for (auto coordinate:coordinates) {
-        drawTile(coordinate, GridView::HIDDEN_COLOR, gridTiles);
+        drawTile(coordinate, GridView::HIDDEN_COLOR, hiddenTiles);
     }
 }
 

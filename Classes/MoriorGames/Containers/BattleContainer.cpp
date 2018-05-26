@@ -21,6 +21,7 @@ BattleContainer::BattleContainer(Layer *layer, Socket *socket, const std::string
     eventPublisher = BattleEventPublisherFactory::execute(connectionType, battleProcessor, socket);
     skillsView = new SkillsView(layer, battle, eventPublisher, gridContainer->getGridView());
     artificialIntelligence = new AI(battle, gridContainer->getGrid(), eventPublisher);
+    teamSight = new TeamSight(BattleHero::SIDE_LOCAL, battle);
 
     addHeroViews();
     registerObservers();
@@ -65,6 +66,7 @@ void BattleContainer::registerObservers()
     }
     battleProcessor->registerObserver(gridContainer->getGridView());
     battleProcessor->registerObserver(skillsView);
+    battleProcessor->registerObserver(teamSight);
     battleProcessor->registerObserver(this);
     auto battleStart = new BattleAction("", "", 0, Skill::START_BATTLE_ID);
     battleProcessor->processBattleAction(battleStart);

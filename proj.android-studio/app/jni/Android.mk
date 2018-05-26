@@ -40,6 +40,7 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    ../../../Classes/MoriorGames/Services/SpriteAnimator.cpp \
                    ../../../Classes/MoriorGames/Services/SpritesInitializer.cpp \
                    ../../../Classes/MoriorGames/Services/StringFileReader.cpp \
+                   ../../../Classes/MoriorGames/Services/TeamSight.cpp \
                    ../../../Classes/MoriorGames/Services/Translator.cpp \
                    ../../../Classes/MoriorGames/Transformers/BattleAction2Json.cpp \
                    ../../../Classes/MoriorGames/Transformers/HeroesConfig2Json.cpp \

@@ -29,6 +29,8 @@
 		4F1A53FA209D7C99004DDDDC /* LeftFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53F7209D7C99004DDDDC /* LeftFrame.cpp */; };
 		4F1A53FD209D7CA4004DDDDC /* RightFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53FB209D7CA4004DDDDC /* RightFrame.cpp */; };
 		4F1A53FE209D7CA4004DDDDC /* RightFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53FB209D7CA4004DDDDC /* RightFrame.cpp */; };
+		4F21E04020B93E300047D69B /* TeamSight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F21E03E20B93E300047D69B /* TeamSight.cpp */; };
+		4F21E04120B93E300047D69B /* TeamSight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F21E03E20B93E300047D69B /* TeamSight.cpp */; };
 		4F2CBFEE202F1E7D00169E86 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */; };
 		4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */; };
 		4F2CBFF2202F1E9300169E86 /* SpriteAnimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */; };
@@ -309,6 +311,8 @@
 		4F1A53F8209D7C99004DDDDC /* LeftFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftFrame.h; sourceTree = "<group>"; };
 		4F1A53FB209D7CA4004DDDDC /* RightFrame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RightFrame.cpp; sourceTree = "<group>"; };
 		4F1A53FC209D7CA4004DDDDC /* RightFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightFrame.h; sourceTree = "<group>"; };
+		4F21E03E20B93E300047D69B /* TeamSight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TeamSight.cpp; sourceTree = "<group>"; };
+		4F21E03F20B93E300047D69B /* TeamSight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamSight.h; sourceTree = "<group>"; };
 		4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoundPlayer.cpp; sourceTree = "<group>"; };
 		4F2CBFED202F1E7D00169E86 /* SoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
 		4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteAnimator.cpp; sourceTree = "<group>"; };
@@ -709,6 +713,8 @@
 				4FA6AD84202F965E00158956 /* SpritesInitializer.h */,
 				4FD96FCE205B84F700C0F5A1 /* StringFileReader.cpp */,
 				4FD96FCF205B84F700C0F5A1 /* StringFileReader.h */,
+				4F21E03E20B93E300047D69B /* TeamSight.cpp */,
+				4F21E03F20B93E300047D69B /* TeamSight.h */,
 				4FF9D538209F6BA900570E45 /* Translator.cpp */,
 				4FF9D539209F6BA900570E45 /* Translator.h */,
 			);
@@ -1276,6 +1282,7 @@
 				4F2DF54B2097340D00F38AEE /* AI.cpp in Sources */,
 				4F4B7D0F20ADE7D30049E74B /* PathFinderShot.cpp in Sources */,
 				4F3AE454202EE9E000B687FB /* ViewHelper.cpp in Sources */,
+				4F21E04020B93E300047D69B /* TeamSight.cpp in Sources */,
 				4FBCDC532032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
 				4F3AE458202EE9F600B687FB /* LogoView.cpp in Sources */,
 				4F1A53F5209D72C8004DDDDC /* MainMenuButton.cpp in Sources */,
@@ -1392,6 +1399,7 @@
 				4FBCDC592032079A006B3B5E /* BattleInitCustomActions.cpp in Sources */,
 				4F5146E1208A80380042AD3F /* GridContainer.cpp in Sources */,
 				4FB468FD20852F1E0038843C /* ClosestCoordinate.cpp in Sources */,
+				4F21E04120B93E300047D69B /* TeamSight.cpp in Sources */,
 				4F7EB1642069FF340086A900 /* BattleContainer.cpp in Sources */,
 				4FBFCADF209CBF05009199AC /* BattleHeroesButton.cpp in Sources */,
 				4FD96FD1205B84F700C0F5A1 /* StringFileReader.cpp in Sources */,

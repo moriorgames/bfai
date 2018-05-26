@@ -21,7 +21,7 @@ BattleContainer::BattleContainer(Layer *layer, Socket *socket, const std::string
     eventPublisher = BattleEventPublisherFactory::execute(connectionType, battleProcessor, socket);
     skillsView = new SkillsView(layer, battle, eventPublisher, gridContainer->getGridView());
     artificialIntelligence = new AI(battle, gridContainer->getGrid(), eventPublisher);
-    teamSight = new TeamSight(BattleHero::SIDE_LOCAL, battle);
+    teamSight = new TeamSight(BattleHero::SIDE_LOCAL, battle, gridContainer->getGridView());
 
     addHeroViews();
     registerObservers();

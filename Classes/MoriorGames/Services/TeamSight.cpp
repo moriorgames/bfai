@@ -1,7 +1,7 @@
 #include "TeamSight.h"
 
-TeamSight::TeamSight(std::string side, Battle *battle)
-    : side{side}, battle{battle}
+TeamSight::TeamSight(std::string side, Battle *battle, GridView *gridView)
+    : side{side}, battle{battle}, gridView{gridView}
 {
 }
 

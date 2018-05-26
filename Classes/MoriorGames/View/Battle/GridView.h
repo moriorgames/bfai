@@ -22,6 +22,7 @@ public:
     GridView(Layer *, Battle *, PathFinder *, TileDrawer *);
     void drawTile(Coordinate *coordinate, Color4F color, Node *);
     void drawGrid(const std::vector<Coordinate *> &coordinates);
+    void drawHiddenArea(const std::vector<Coordinate *> &coordinates);
     void drawPath(Skill *, BattleHero *);
     void removeActionGrid();
     void update(BattleAction *) override;

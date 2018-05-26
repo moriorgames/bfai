@@ -28,6 +28,11 @@ void GridView::drawGrid(const std::vector<Coordinate *> &coordinates)
     }
 }
 
+void GridView::drawHiddenArea(const std::vector<Coordinate *> &coordinates)
+{
+
+}
+
 void GridView::drawPath(Skill *skill, BattleHero *battleHero)
 {
     auto pathScope = pathBuilder->build(skill, battleHero);

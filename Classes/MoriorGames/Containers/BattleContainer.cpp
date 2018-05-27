@@ -10,8 +10,7 @@ BattleContainer::BattleContainer(Layer *layer, Socket *socket, const std::string
 {
     new BattleBackgroundView(layer);
 
-//    battle = (new BattleFactory)->execute(json);
-    battle = (new BattleFactory)->execute("{\"token\": \"Miu_tTgazSW6OkSFAYyBxT4DbUpgQ-hQwZlatQV8auY\",  \"online\": false, \"heroes\": [{ \"userToken\":\"\", \"side\":\"local\", \"battleHeroId\":1, \"heroId\":1, \"x\":-8, \"y\":0 },{ \"userToken\":\"\", \"side\":\"visitor\", \"battleHeroId\":2, \"heroId\":1, \"x\":8, \"y\":0 },{ \"userToken\":\"j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FA\", \"side\":\"local\", \"battleHeroId\":3, \"heroId\":2, \"x\":-8, \"y\":2 },{ \"userToken\":\"j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB\", \"side\":\"visitor\", \"battleHeroId\":4, \"heroId\":2, \"x\":8, \"y\":2 },{ \"userToken\":\"j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB\", \"side\":\"visitor\", \"battleHeroId\":5, \"heroId\":4, \"x\":7, \"y\":1 },{ \"userToken\":\"j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB\", \"side\":\"visitor\", \"battleHeroId\":6, \"heroId\":5, \"x\":7, \"y\":-1 },{ \"userToken\":\"j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB\", \"side\":\"visitor\", \"battleHeroId\":7, \"heroId\":3, \"x\":8, \"y\":-2 }],\"skillsHeroes\": []}");
+    battle = (new BattleFactory)->execute(json);
     battle->setUserToken(playerUser->getToken());
     gridContainer = new GridContainer(layer, battle);
     battleProcessor = new BattleProcessor(battle, gridContainer->getGrid());
@@ -26,7 +25,7 @@ BattleContainer::BattleContainer(Layer *layer, Socket *socket, const std::string
     addHeroViews();
 
     teamSight = new TeamSight(
-        BattleHero::SIDE_LOCAL, heroViews, gridContainer->getGrid(), gridContainer->getGridView()
+        BattleHero::SIDE_LOCAL, battle, gridContainer->getGrid(), gridContainer->getGridView(), heroViews
     );
     registerObservers();
 }

@@ -28,7 +28,7 @@ bool BattleScene::init()
         connectToSocket(5100);
     }
 
-    this->schedule(schedule_selector(BattleScene::scheduledEvents), 3.f);
+    this->schedule(schedule_selector(BattleScene::scheduledEvents), 2.5f);
 
     return true;
 }

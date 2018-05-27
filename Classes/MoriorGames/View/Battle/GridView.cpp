@@ -13,6 +13,7 @@ GridView::GridView(Layer *layer, Battle *battle, PathFinder *pathFinder, TileDra
     : layer{layer}, battle{battle}, pathFinder{pathFinder}, tileDrawer{tileDrawer}
 {
     pathBuilder = new PathBuilder(pathFinder);
+    actionTiles->setCascadeOpacityEnabled(true);
 
     layer->addChild(gridTiles, Z_ORDER_GRID);
     layer->addChild(actionTiles, Z_ORDER_GRID);
@@ -54,6 +55,16 @@ void GridView::drawPath(Skill *skill, BattleHero *battleHero)
 void GridView::removeActionGrid()
 {
     actionTiles->removeAllChildren();
+}
+
+void GridView::hideActionTiles()
+{
+    actionTiles->setOpacity(0);
+}
+
+void GridView::showActionTiles()
+{
+    actionTiles->setOpacity(255);
 }
 
 void GridView::update(BattleAction *)

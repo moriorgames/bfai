@@ -26,6 +26,8 @@ public:
     void drawHiddenArea(const std::vector<Coordinate *> &coordinates);
     void drawPath(Skill *, BattleHero *);
     void removeActionGrid();
+    void hideActionTiles();
+    void showActionTiles();
     void update(BattleAction *) override;
 
 private:

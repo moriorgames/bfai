@@ -1,7 +1,9 @@
 #include "TeamSight.h"
 
-TeamSight::TeamSight(std::string side, std::vector<HeroView *> &heroViews, Grid *grid, GridView *gridView)
-    : side{side}, heroViews{heroViews}, grid{grid}, gridView{gridView}
+TeamSight::TeamSight(
+    std::string side, Battle *battle, Grid *grid, GridView *gridView, std::vector<HeroView *> &heroViews
+)
+    : side{side}, battle{battle}, grid{grid}, gridView{gridView}, heroViews{heroViews}
 {
 }
 
@@ -28,6 +30,8 @@ void TeamSight::update(BattleAction *)
     }
     gridView->drawHiddenArea(hiddenCoordinates);
 
+    gridView->showActionTiles();
+    auto activeHero = battle->getActiveBattleHero();
     for (auto heroView:heroViews) {
         auto hero = heroView->getBattleHero();
         if (hero->getSide() != side) {
@@ -35,6 +39,9 @@ void TeamSight::update(BattleAction *)
             for (auto hide:hiddenCoordinates) {
                 if (hero->getCoordinate()->isEqual(hide)) {
                     heroView->hide();
+                    if (activeHero->getBattleHeroId() == hero->getBattleHeroId()) {
+                        gridView->hideActionTiles();
+                    }
                     break;
                 }
             }

@@ -5,6 +5,7 @@
 #include "../Containers/GridContainer.h"
 #include "../EventListeners/BattleEventPublishable.h"
 #include "../Http/Client.h"
+#include "../Services/TeamSight.h"
 #include "../Vendor/Factories/BattleFactory.h"
 #include "../Vendor/Services/AI.h"
 #include "../Vendor/Services/BattleProcessor.h"
@@ -29,6 +30,7 @@ private:
     Socket *socket;
     Battle *battle;
     GridContainer *gridContainer;
+    TeamSight *teamSight;
     BattleEventPublishable *eventPublisher;
     AI *artificialIntelligence;
     BattleProcessor *battleProcessor;

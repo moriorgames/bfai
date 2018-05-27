@@ -28,7 +28,6 @@ GridContainer::GridContainer(Layer *layer, Battle *battle)
     auto tileDrawer = new TileDrawer(size, coordinate2Screen);
     gridView = new GridView(layer, battle, pathFinder, tileDrawer);
     gridView->drawGrid(grid->getCoordinates());
-    teamSight = new TeamSight(BattleHero::SIDE_LOCAL, battle, grid, gridView);
 }
 
 Grid *GridContainer::getGrid() const
@@ -54,9 +53,4 @@ PathFinder *GridContainer::getPathFinder() const
 GridView *GridContainer::getGridView() const
 {
     return gridView;
-}
-
-TeamSight *GridContainer::getTeamSight() const
-{
-    return teamSight;
 }

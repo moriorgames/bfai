@@ -10,6 +10,23 @@ HeroView::HeroView(Layer *layer, BattleHero *battleHero, Coordinate2Screen *coor
     addView();
 }
 
+BattleHero *HeroView::getBattleHero() const
+{
+    return battleHero;
+}
+
+void HeroView::hide()
+{
+    container->setOpacity(0);
+    heroHitPointsView->hide();
+}
+
+void HeroView::show()
+{
+    container->setOpacity(255);
+    heroHitPointsView->show();
+}
+
 void HeroView::update(BattleAction *battleAction)
 {
     if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {

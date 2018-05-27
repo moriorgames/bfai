@@ -24,6 +24,10 @@ BattleContainer::BattleContainer(Layer *layer, Socket *socket, const std::string
     artificialIntelligence = new AI(battle, gridContainer->getGrid(), eventPublisher);
 
     addHeroViews();
+
+    teamSight = new TeamSight(
+        BattleHero::SIDE_LOCAL, heroViews, gridContainer->getGrid(), gridContainer->getGridView()
+    );
     registerObservers();
 }
 
@@ -66,7 +70,7 @@ void BattleContainer::registerObservers()
     }
     battleProcessor->registerObserver(gridContainer->getGridView());
     battleProcessor->registerObserver(skillsView);
-    battleProcessor->registerObserver(gridContainer->getTeamSight());
+    battleProcessor->registerObserver(teamSight);
     battleProcessor->registerObserver(this);
     auto battleStart = new BattleAction("", "", 0, Skill::START_BATTLE_ID);
     battleProcessor->processBattleAction(battleStart);

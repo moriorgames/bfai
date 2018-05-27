@@ -14,6 +14,8 @@ public:
 
     explicit HeroHitPointsView(BattleHero *);
     void addHitPoints(Node *);
+    void hide();
+    void show();
     void update();
 
 private:

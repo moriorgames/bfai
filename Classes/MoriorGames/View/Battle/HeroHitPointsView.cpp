@@ -36,6 +36,16 @@ void HeroHitPointsView::addHitPoints(Node *container)
     container->addChild(node);
 }
 
+void HeroHitPointsView::hide()
+{
+    hitPoints->setOpacity(0);
+}
+
+void HeroHitPointsView::show()
+{
+    hitPoints->setOpacity(255);
+}
+
 void HeroHitPointsView::update()
 {
     hitPoints->setPercentage(float(battleHero->getCurrentHealth()) / float(battleHero->getHealth()) * 100);

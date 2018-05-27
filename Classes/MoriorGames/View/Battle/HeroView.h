@@ -12,6 +12,9 @@ class HeroView: public ViewHelper, public BattleObservable
 {
 public:
     HeroView(Layer *, BattleHero *, Coordinate2Screen *);
+    BattleHero *getBattleHero() const;
+    void hide();
+    void show();
     void update(BattleAction *) override;
 
 private:

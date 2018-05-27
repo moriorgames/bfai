@@ -34,7 +34,7 @@ void TeamSight::update(BattleAction *)
     auto activeHero = battle->getActiveBattleHero();
     for (auto heroView:heroViews) {
         auto hero = heroView->getBattleHero();
-        if (hero->getSide() != side) {
+        if (hero->getSide() != side && !hero->isDead()) {
             heroView->show();
             for (auto hide:hiddenCoordinates) {
                 if (hero->getCoordinate()->isEqual(hide)) {

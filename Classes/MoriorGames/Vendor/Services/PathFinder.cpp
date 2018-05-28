@@ -43,6 +43,38 @@ std::vector<Path> &PathFinder::buildPathScope(Coordinate *origin, int range, boo
     return pathScope;
 }
 
+const std::vector<Path> &PathFinder::buildPathForSight(Coordinate *origin, int range)
+{
+    pathScope.clear();
+    Path path;
+    path.coordinate = origin;
+    pathScope.push_back(path);
+
+    for (int i = 0; i < range; ++i) {
+        for (auto pathStruct:pathScope) {
+            if (pathStruct.level == i) {
+                for (auto axis:moveAxis(pathStruct.coordinate)) {
+                    bool add = true;
+                    for (auto limits:pathScope) {
+                        if (limits.coordinate->x == axis->x && limits.coordinate->y == axis->y) {
+                            add = false;
+                            break;
+                        }
+                    }
+                    if (add && grid->isValidCoordinate(axis)) {
+                        Path newPath;
+                        newPath.level = i + 1;
+                        newPath.coordinate = axis;
+                        pathScope.push_back(newPath);
+                    }
+                }
+            }
+        }
+    }
+
+    return pathScope;
+}
+
 const std::vector<Path> &PathFinder::buildPathForArea(Coordinate *origin, int range)
 {
     pathScope.clear();

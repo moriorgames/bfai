@@ -11,7 +11,7 @@
 class TeamSight: public BattleObservable
 {
 public:
-    const short RANGE = 8;
+    const short RANGE = 7;
 
     TeamSight(std::string side, Battle *, Grid *, GridView *, std::vector<HeroView *> &);
     void update(BattleAction *) override;

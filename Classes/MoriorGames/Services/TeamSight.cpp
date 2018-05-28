@@ -15,10 +15,9 @@ void TeamSight::update(BattleAction *)
         hiddenCoordinates.push_back(coordinate);
     }
 
-    for (auto heroView:heroViews) {
-        auto hero = heroView->getBattleHero();
+    for (auto hero:battle->getBattleHeroes()) {
         if (hero->getSide() == side && !hero->isDead()) {
-            auto pathScope = pathFinder->buildPathScope(hero->getCoordinate(), RANGE);
+            auto pathScope = pathFinder->buildPathForSight(hero->getCoordinate(), RANGE);
             for (auto path:pathScope) {
                 for (int i = 0; i < hiddenCoordinates.size(); ++i) {
                     if (path.coordinate->isEqual(hiddenCoordinates[i])) {

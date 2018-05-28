@@ -38,12 +38,7 @@ $RECYCLE.BIN/
 
 # proj.android
 bin/
-proj.android/assets/
-proj.android/bin/
-proj.android/gen/
-proj.android/libs/
-proj.android/local.properties
-proj.android/obj/
+proj.android-studio/app/gradle.properties
 cocos2d/cocos/platform/android/java/bin/
 cocos2d/cocos/platform/android/java/gen/
 cocos2d/cocos/platform/android/java/local.properties

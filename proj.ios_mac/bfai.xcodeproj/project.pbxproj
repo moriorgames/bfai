@@ -201,6 +201,8 @@
 		4FEFE7642079E8CF0031A6B5 /* BattleAction2Json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7612079E8CF0031A6B5 /* BattleAction2Json.cpp */; };
 		4FF9D53A209F6BA900570E45 /* Translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9D538209F6BA900570E45 /* Translator.cpp */; };
 		4FF9D53B209F6BA900570E45 /* Translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9D538209F6BA900570E45 /* Translator.cpp */; };
+		4FFC1C7920BD13D600FE4DF7 /* TrainingButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFC1C7720BD13D600FE4DF7 /* TrainingButton.cpp */; };
+		4FFC1C7A20BD13D600FE4DF7 /* TrainingButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFC1C7720BD13D600FE4DF7 /* TrainingButton.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -485,6 +487,8 @@
 		4FEFE7622079E8CF0031A6B5 /* BattleAction2Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleAction2Json.h; sourceTree = "<group>"; };
 		4FF9D538209F6BA900570E45 /* Translator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Translator.cpp; sourceTree = "<group>"; };
 		4FF9D539209F6BA900570E45 /* Translator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Translator.h; sourceTree = "<group>"; };
+		4FFC1C7720BD13D600FE4DF7 /* TrainingButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TrainingButton.cpp; sourceTree = "<group>"; };
+		4FFC1C7820BD13D600FE4DF7 /* TrainingButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainingButton.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -1051,6 +1055,8 @@
 				4FBFCADD209CBF05009199AC /* BattleHeroesButton.h */,
 				4F1A53F3209D72C8004DDDDC /* MainMenuButton.cpp */,
 				4F1A53F4209D72C8004DDDDC /* MainMenuButton.h */,
+				4FFC1C7720BD13D600FE4DF7 /* TrainingButton.cpp */,
+				4FFC1C7820BD13D600FE4DF7 /* TrainingButton.h */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -1328,6 +1334,7 @@
 				4FA6AD7E202F8FC200158956 /* WorldView.cpp in Sources */,
 				4F7314BE205CF3D4005AAB83 /* BattleHero.cpp in Sources */,
 				4FD96FD0205B84F700C0F5A1 /* StringFileReader.cpp in Sources */,
+				4FFC1C7920BD13D600FE4DF7 /* TrainingButton.cpp in Sources */,
 				4FEFE75A2079E0A30031A6B5 /* BattleAction.cpp in Sources */,
 				4F89105E2034BF3A00D8382C /* Grid.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -1423,6 +1430,7 @@
 				4FBCDC69203220CD006B3B5E /* GridHD.cpp in Sources */,
 				4F91C4D6209ECDF600A662CB /* AbstractFrame.cpp in Sources */,
 				4FAEAB6A20A15B94008A2755 /* PopupBattleHero.cpp in Sources */,
+				4FFC1C7A20BD13D600FE4DF7 /* TrainingButton.cpp in Sources */,
 				4F1A53F0209D70B7004DDDDC /* HeroesConfigView.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,
 				4FF9D53B209F6BA900570E45 /* Translator.cpp in Sources */,

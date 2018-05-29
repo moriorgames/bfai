@@ -7,7 +7,7 @@
 class BattleHeroesButton: public ViewHelper
 {
 public:
-    int const BUTTON_X = 300;
+    float const BUTTON_X = 300;
 
     explicit BattleHeroesButton(Layer *layer);
 

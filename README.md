@@ -23,7 +23,7 @@ $ cocos run -p android -j 4
 $ cocos run -p ios -j 4
 $ cocos run -p mac -j 4
 $ cocos run -p android --ap android-16 -m release
-$ keytool -keystore clientbattlefury -genkey -alias mgbattlefury -validity 9999 
+$ keytool -keystore clienttmfghr -genkey -alias tmfghrmoriorgames -validity 9999
 ```
 
 

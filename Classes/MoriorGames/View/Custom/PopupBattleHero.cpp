@@ -88,7 +88,7 @@ void PopupBattleHero::addSkillRow(int index, SkillHero *skillHero)
     portrait->setScale(1.55);
     sprite->addChild(portrait);
 
-    auto name = fontCreator->titleLabel(skill->getName());
+    auto name = fontCreator->titleLabel(translator->tr("skill_name_" + skill->getSlug()));
     name->setAnchorPoint(Point(0, 0));
     name->setPosition(220, 170);
     sprite->addChild(name);

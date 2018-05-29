@@ -10,10 +10,16 @@
   "battle_heroes_health": "Health: %s",
   "battle_heroes_ranged": "Ranged: %s",
   "battle_heroes_movement": "Movement: %s",
+  "skill_name_boost-health": "Boost health",
   "skill_description_boost-health": "Increase one health point for each improvement obtained.",
+  "skill_name_boost-damage": "Boost damage",
   "skill_description_boost-damage": "Increase one damage point for each improvement obtained.",
+  "skill_name_boost-ranged": "Boost range",
   "skill_description_boost-ranged": "Increase the scope of the basic attack by 1.",
+  "skill_name_boost-move": "Boost movement",
   "skill_description_boost-move": "Increase movement area by 1.",
+  "skill_name_shotgun": "Shotgun",
   "skill_description_shotgun": "Perform a shot with area damage front or behind the hero.",
+  "skill_name_spawn-bot": "Spawn Bot",
   "skill_description_spawn-bot": "Spawn one Bot and you gain the full control of this new character ingame."
 }

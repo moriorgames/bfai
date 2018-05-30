@@ -1,5 +1,5 @@
 #include "BattleButton.h"
-#include "../../Scenes/BattleScene.h"
+#include "../../Scenes/MatchMakerScene.h"
 #include "../../Services/SoundPlayer.h"
 #include "../../Services/FontCreator.h"
 
@@ -24,7 +24,7 @@ void BattleButton::addView()
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
                 SoundPlayer::playEffect("sounds/button.mp3");
-                auto scene = BattleScene::createScene();
+                auto scene = MatchMakerScene::createScene();
                 Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
             }
         });

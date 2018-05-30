@@ -73,6 +73,8 @@
 		4F5146E1208A80380042AD3F /* GridContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5146DE208A80380042AD3F /* GridContainer.cpp */; };
 		4F5503E020A6000F00151E13 /* HeroesConfigScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5503DF20A6000F00151E13 /* HeroesConfigScene.cpp */; };
 		4F5503E120A6000F00151E13 /* HeroesConfigScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5503DF20A6000F00151E13 /* HeroesConfigScene.cpp */; };
+		4F555BC720BE65CA0099D299 /* MatchMakerScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F555BC520BE65CA0099D299 /* MatchMakerScene.cpp */; };
+		4F555BC820BE65CA0099D299 /* MatchMakerScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F555BC520BE65CA0099D299 /* MatchMakerScene.cpp */; };
 		4F576D152075E17E00011BC7 /* GridView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F576D132075E17E00011BC7 /* GridView.cpp */; };
 		4F576D162075E17E00011BC7 /* GridView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F576D132075E17E00011BC7 /* GridView.cpp */; };
 		4F576D1A2075E56200011BC7 /* Coordinate2Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F576D182075E56200011BC7 /* Coordinate2Screen.cpp */; };
@@ -360,6 +362,8 @@
 		4F5503DB20A5FD3500151E13 /* HeroConfigPublishable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroConfigPublishable.h; sourceTree = "<group>"; };
 		4F5503DE20A6000F00151E13 /* HeroesConfigScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroesConfigScene.h; sourceTree = "<group>"; };
 		4F5503DF20A6000F00151E13 /* HeroesConfigScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeroesConfigScene.cpp; sourceTree = "<group>"; };
+		4F555BC520BE65CA0099D299 /* MatchMakerScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MatchMakerScene.cpp; sourceTree = "<group>"; };
+		4F555BC620BE65CA0099D299 /* MatchMakerScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchMakerScene.h; sourceTree = "<group>"; };
 		4F576D132075E17E00011BC7 /* GridView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GridView.cpp; sourceTree = "<group>"; };
 		4F576D142075E17E00011BC7 /* GridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
 		4F576D182075E56200011BC7 /* Coordinate2Screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinate2Screen.cpp; sourceTree = "<group>"; };
@@ -755,6 +759,8 @@
 				4F3AE44A202EE30500B687FB /* LogoScene.h */,
 				4FA6AD6E202F809A00158956 /* MainMenuScene.cpp */,
 				4FA6AD6F202F809A00158956 /* MainMenuScene.h */,
+				4F555BC520BE65CA0099D299 /* MatchMakerScene.cpp */,
+				4F555BC620BE65CA0099D299 /* MatchMakerScene.h */,
 				4F2CBFF7202F22CD00169E86 /* SplashScene.cpp */,
 				4F2CBFF8202F22CD00169E86 /* SplashScene.h */,
 			);
@@ -1327,6 +1333,7 @@
 				4FDCADFF20A6C1BC00EC6217 /* HeroesConfig2Json.cpp in Sources */,
 				4FA6694E2098E0DA00EDFC0A /* PathBuilder.cpp in Sources */,
 				4FA6AD68202F7C8800158956 /* SplashView.cpp in Sources */,
+				4F555BC720BE65CA0099D299 /* MatchMakerScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				4FE0EAE92030410000E6DD88 /* FontCreator.cpp in Sources */,
 				4F7314C3205CF5B5005AAB83 /* BattleView.cpp in Sources */,
@@ -1427,6 +1434,7 @@
 				4F57815C207C78240060C7D9 /* BattleEventOfflinePublisher.cpp in Sources */,
 				4F2DF5472096F15A00F38AEE /* EndOfBattle.cpp in Sources */,
 				4F3AE44C202EE30500B687FB /* LogoScene.cpp in Sources */,
+				4F555BC820BE65CA0099D299 /* MatchMakerScene.cpp in Sources */,
 				4FBCDC69203220CD006B3B5E /* GridHD.cpp in Sources */,
 				4F91C4D6209ECDF600A662CB /* AbstractFrame.cpp in Sources */,
 				4FAEAB6A20A15B94008A2755 /* PopupBattleHero.cpp in Sources */,

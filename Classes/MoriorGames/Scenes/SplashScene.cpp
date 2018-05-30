@@ -66,7 +66,8 @@ void SplashScene::goToMainMenuScene()
 {
     Scene *scene;
     if (DEBUG_SCENE) {
-        scene = BattleScene::createScene();
+        auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
+        scene = BattleScene::createScene(json);
     } else {
         scene = MainMenuScene::createScene();
     }

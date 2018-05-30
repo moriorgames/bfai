@@ -47,6 +47,6 @@ void MatchMakerScene::increaseLoadingBar(float delay)
 
 void MatchMakerScene::goToBattleScene()
 {
-    auto scene = BattleScene::createScene();
+    auto scene = BattleScene::createScene("{}");
     Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
 }

@@ -3,8 +3,11 @@
 
 USING_NS_CC;
 
-Scene *BattleScene::createScene()
+std::string _battleJson = "";
+
+Scene *BattleScene::createScene(std::string json)
 {
+    _battleJson = json;
     auto scene = Scene::create();
     auto layer = BattleScene::create();
     scene->addChild(layer);

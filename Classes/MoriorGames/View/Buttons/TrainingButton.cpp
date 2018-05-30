@@ -24,7 +24,7 @@ void TrainingButton::addView()
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
                 SoundPlayer::playEffect("sounds/button.mp3");
-                auto scene = BattleScene::createScene();
+                auto scene = BattleScene::createScene("{}");
                 Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
             }
         });

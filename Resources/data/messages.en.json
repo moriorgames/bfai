@@ -11,6 +11,7 @@
   "battle_heroes_health": "Health: %s",
   "battle_heroes_ranged": "Ranged: %s",
   "battle_heroes_movement": "Movement: %s",
+  "match_maker_looking_for_rivals": "Looking for rivals",
   "skill_name_boost-health": "Boost health",
   "skill_description_boost-health": "Increase one health point for each improvement obtained.",
   "skill_name_boost-damage": "Boost damage",

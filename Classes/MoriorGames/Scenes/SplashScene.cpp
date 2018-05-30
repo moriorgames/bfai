@@ -60,14 +60,16 @@ void SplashScene::increaseLoadingBar(float delay)
 #ifdef DEBUG_SCENE
 #include "HeroesConfigScene.h"
 #include "BattleScene.h"
+#include "MatchMakerScene.h"
 #endif
 
 void SplashScene::goToMainMenuScene()
 {
     Scene *scene;
     if (DEBUG_SCENE) {
-        auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
-        scene = BattleScene::createScene(json);
+//        auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
+//        scene = BattleScene::createScene(json);
+        scene = MatchMakerScene::createScene();
     } else {
         scene = MainMenuScene::createScene();
     }

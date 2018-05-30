@@ -1,7 +1,5 @@
 #include "LoadingView.h"
 
-const std::string LoadingView::LOADING_BAR_NAME = "loading-bar";
-
 LoadingView::LoadingView(Layer *layer)
     : ViewHelper(layer)
 {
@@ -16,16 +14,6 @@ void LoadingView::setLoadingBarPercentage(float percentage)
 void LoadingView::addView()
 {
     container = new Node;
-
-//    addTipLabel();
-    addLoadingBar();
-//    addLoadingText();
-
-    layer->addChild(container, Z_ORDER_MENU_ITEMS);
-}
-
-void LoadingView::addLoadingBar()
-{
     auto bottomPosition = position->getCenterBotPosition();
     auto loadingBarNode = new Node;
 
@@ -37,7 +25,6 @@ void LoadingView::addLoadingBar()
 
     loadingBar = new ProgressTimer;
     loadingBar->initWithSprite(foregroundBar);
-    loadingBar->setName(LOADING_BAR_NAME);
     loadingBar->setType(ProgressTimer::Type::BAR);
     loadingBar->setMidpoint(Point(0, 0));
     loadingBar->setBarChangeRate(Point(1, 0));
@@ -47,6 +34,7 @@ void LoadingView::addLoadingBar()
     loadingBarNode->addChild(backgroundBar);
     loadingBarNode->addChild(loadingBar);
     loadingBarNode->setScale(scale);
+    container->addChild(loadingBarNode);
 
-    container->addChild(loadingBarNode, Z_ORDER_MENU_ITEMS);
+    layer->addChild(container, Z_ORDER_MENU_ITEMS);
 }

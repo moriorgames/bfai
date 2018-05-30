@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "../View/LoadingView.h"
+#include "../View/LoadingTitleView.h"
 
 class MatchMakerScene: public cocos2d::Layer
 {
@@ -19,6 +20,7 @@ private:
     std::string json;
     float loadingBarPercentage = 0.0f;
     LoadingView *loadingView;
+    LoadingTitleView *loadingTitleView;
 
     void goToBattleScene();
 };

@@ -28,22 +28,21 @@ bool MatchMakerScene::init()
     json = (new HeroesConfig2Json)->transform(heroesConfig);
     new SplashView(this);
     loadingView = new LoadingView(this);
+    loadingTitleView = new LoadingTitleView(this);
 
-    this->schedule(schedule_selector(MatchMakerScene::increaseLoadingBar), LOADER_BAR_DELAY);
+    this->schedule(schedule_selector(MatchMakerScene::increaseLoadingBar), 0.1);
 
     return true;
 }
 
 void MatchMakerScene::increaseLoadingBar(float delay)
 {
-    loadingBarPercentage += 3;
+    loadingBarPercentage += 2;
     loadingView->setLoadingBarPercentage(loadingBarPercentage);
-    if (loadingBarPercentage == 66) {
-
-    }
+    loadingTitleView->setEllipsis(loadingBarPercentage);
     if (loadingBarPercentage > 99) {
         this->unschedule(schedule_selector(MatchMakerScene::increaseLoadingBar));
-        MatchMakerScene::goToBattleScene();
+//        MatchMakerScene::goToBattleScene();
     }
 }
 

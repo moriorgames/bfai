@@ -11,6 +11,7 @@
   "battle_heroes_health": "Salud: %s",
   "battle_heroes_ranged": "Alcance: %s",
   "battle_heroes_movement": "Movimiento: %s",
+  "match_maker_looking_for_rivals": "Buscando rivales",
   "skill_name_boost-health": "Aumento de vida",
   "skill_description_boost-health": "Aumenta un punto de salud por cada mejora obtenida.",
   "skill_name_boost-damage": "Aumento de daño",

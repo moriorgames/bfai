@@ -75,6 +75,8 @@
 		4F5503E120A6000F00151E13 /* HeroesConfigScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F5503DF20A6000F00151E13 /* HeroesConfigScene.cpp */; };
 		4F555BC720BE65CA0099D299 /* MatchMakerScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F555BC520BE65CA0099D299 /* MatchMakerScene.cpp */; };
 		4F555BC820BE65CA0099D299 /* MatchMakerScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F555BC520BE65CA0099D299 /* MatchMakerScene.cpp */; };
+		4F555BCC20BE712E0099D299 /* LoadingTitleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F555BCA20BE712E0099D299 /* LoadingTitleView.cpp */; };
+		4F555BCD20BE712E0099D299 /* LoadingTitleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F555BCA20BE712E0099D299 /* LoadingTitleView.cpp */; };
 		4F576D152075E17E00011BC7 /* GridView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F576D132075E17E00011BC7 /* GridView.cpp */; };
 		4F576D162075E17E00011BC7 /* GridView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F576D132075E17E00011BC7 /* GridView.cpp */; };
 		4F576D1A2075E56200011BC7 /* Coordinate2Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F576D182075E56200011BC7 /* Coordinate2Screen.cpp */; };
@@ -364,6 +366,8 @@
 		4F5503DF20A6000F00151E13 /* HeroesConfigScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeroesConfigScene.cpp; sourceTree = "<group>"; };
 		4F555BC520BE65CA0099D299 /* MatchMakerScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MatchMakerScene.cpp; sourceTree = "<group>"; };
 		4F555BC620BE65CA0099D299 /* MatchMakerScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchMakerScene.h; sourceTree = "<group>"; };
+		4F555BCA20BE712E0099D299 /* LoadingTitleView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingTitleView.cpp; sourceTree = "<group>"; };
+		4F555BCB20BE712E0099D299 /* LoadingTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingTitleView.h; sourceTree = "<group>"; };
 		4F576D132075E17E00011BC7 /* GridView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GridView.cpp; sourceTree = "<group>"; };
 		4F576D142075E17E00011BC7 /* GridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
 		4F576D182075E56200011BC7 /* Coordinate2Screen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinate2Screen.cpp; sourceTree = "<group>"; };
@@ -795,6 +799,8 @@
 				4FE0EADD20303AB200E6DD88 /* Buttons */,
 				4FBCDC5520320770006B3B5E /* Custom */,
 				4FDCADEB20A6022400EC6217 /* HeroesConfig */,
+				4F555BCA20BE712E0099D299 /* LoadingTitleView.cpp */,
+				4F555BCB20BE712E0099D299 /* LoadingTitleView.h */,
 				4F2CBFFB202F252000169E86 /* LoadingView.cpp */,
 				4F2CBFFC202F252000169E86 /* LoadingView.h */,
 				4F3AE456202EE9F600B687FB /* LogoView.cpp */,
@@ -1379,6 +1385,7 @@
 				4F2DF5462096F15A00F38AEE /* EndOfBattle.cpp in Sources */,
 				4F3AE461202F040400B687FB /* ScreenProperties.cpp in Sources */,
 				4F5146E0208A80380042AD3F /* GridContainer.cpp in Sources */,
+				4F555BCC20BE712E0099D299 /* LoadingTitleView.cpp in Sources */,
 				4FB468FC20852F1E0038843C /* ClosestCoordinate.cpp in Sources */,
 				4F3AE45D202F03D700B687FB /* Position.cpp in Sources */,
 				4FBCDC5E2032207E006B3B5E /* Hero.cpp in Sources */,
@@ -1473,6 +1480,7 @@
 				4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
 				4F3EBAE32099765F008F6198 /* UserParser.cpp in Sources */,
 				4F2DF54C2097340D00F38AEE /* AI.cpp in Sources */,
+				4F555BCD20BE712E0099D299 /* LoadingTitleView.cpp in Sources */,
 				4FA669462098DE5E00EDFC0A /* BattleActionChecker.cpp in Sources */,
 				4FA6AD69202F7C8800158956 /* SplashView.cpp in Sources */,
 				4F01D161208C2AE9002231DA /* SkillsView.cpp in Sources */,

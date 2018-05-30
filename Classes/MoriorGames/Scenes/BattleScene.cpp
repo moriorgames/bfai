@@ -26,7 +26,7 @@ bool BattleScene::init()
 
     client = new Client;
     socket = new Socket;
-    battleView = new BattleView(this, socket);
+    battleView = new BattleView(_battleJson, this, socket);
     if (battleView->getBattle()->isOnline()) {
         connectToSocket(5100);
     }

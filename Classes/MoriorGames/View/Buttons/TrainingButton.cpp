@@ -2,6 +2,7 @@
 #include "../../Scenes/BattleScene.h"
 #include "../../Services/SoundPlayer.h"
 #include "../../Services/FontCreator.h"
+#include "../../Transformers/HeroesConfig2Json.h"
 
 TrainingButton::TrainingButton(Layer *layer)
     : ViewHelper(layer)
@@ -24,7 +25,8 @@ void TrainingButton::addView()
         {
             if (type == ui::Widget::TouchEventType::ENDED) {
                 SoundPlayer::playEffect("sounds/button.mp3");
-                auto scene = BattleScene::createScene("{}");
+                auto json = (new HeroesConfig2Json)->transform(heroesConfig);
+                auto scene = BattleScene::createScene(json);
                 Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
             }
         });

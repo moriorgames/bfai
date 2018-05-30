@@ -1,6 +1,7 @@
 #include "MatchMakerScene.h"
 #include "../Scenes/BattleScene.h"
 #include "../Services/StringFileReader.h"
+#include "../Transformers/HeroesConfig2Json.h"
 #include "../Vendor/Entity/User.h"
 #include "../View/SplashView.h"
 
@@ -24,6 +25,7 @@ bool MatchMakerScene::init()
         return false;
     }
 
+    json = (new HeroesConfig2Json)->transform(heroesConfig);
     new SplashView(this);
     loadingView = new LoadingView(this);
 
@@ -47,6 +49,6 @@ void MatchMakerScene::increaseLoadingBar(float delay)
 
 void MatchMakerScene::goToBattleScene()
 {
-    auto scene = BattleScene::createScene("{}");
+    auto scene = BattleScene::createScene(json);
     Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
 }

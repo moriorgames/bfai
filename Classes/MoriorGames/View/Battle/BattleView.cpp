@@ -9,8 +9,8 @@
 
 const std::string BattleView::NAME = "battle-node";
 
-BattleView::BattleView(Layer *layer, Socket *socket)
-    : ViewHelper(layer), socket{socket}
+BattleView::BattleView(const std::string &json, Layer *layer, Socket *socket)
+    : json{json}, ViewHelper(layer), socket{socket}
 {
     addView();
 }
@@ -29,9 +29,6 @@ void BattleView::processOnlineAction(std::string json)
 
 void BattleView::addView()
 {
-    // @TODO we have to determine if its OFFline or ONline battle to get local or server data
-    auto json = (new HeroesConfig2Json)->transform(heroesConfig);
-//    auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
     battleContainer = new BattleContainer(layer, socket, json);
 
     new BattleEventListener(

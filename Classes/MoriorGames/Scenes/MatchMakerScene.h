@@ -16,6 +16,7 @@ public:
     void increaseLoadingBar(float delay);
 
 private:
+    std::string json;
     float loadingBarPercentage = 0.0f;
     LoadingView *loadingView;
 

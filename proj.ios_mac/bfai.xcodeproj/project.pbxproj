@@ -497,6 +497,7 @@
 		4FF9D539209F6BA900570E45 /* Translator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Translator.h; sourceTree = "<group>"; };
 		4FFC1C7720BD13D600FE4DF7 /* TrainingButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TrainingButton.cpp; sourceTree = "<group>"; };
 		4FFC1C7820BD13D600FE4DF7 /* TrainingButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainingButton.h; sourceTree = "<group>"; };
+		4FFD5BA020CA4EA9008A1AAF /* Sole.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sole.hpp; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -717,6 +718,7 @@
 				4FDCADFA20A6138F00EC6217 /* HeroesConfigProcessor.h */,
 				4FDCADF120A608E900EC6217 /* HeroesConfigPublisher.cpp */,
 				4FDCADF220A608E900EC6217 /* HeroesConfigPublisher.h */,
+				4FFD5BA020CA4EA9008A1AAF /* Sole.hpp */,
 				4F2CBFEC202F1E7D00169E86 /* SoundPlayer.cpp */,
 				4F2CBFED202F1E7D00169E86 /* SoundPlayer.h */,
 				4F2CBFF0202F1E9300169E86 /* SpriteAnimator.cpp */,

@@ -1,6 +1,5 @@
 #include "SplashScene.h"
 #include "../Scenes/MainMenuScene.h"
-#include "../Services/Sole.hpp"
 #include "../Services/SpritesInitializer.h"
 #include "../Services/StringFileReader.h"
 #include "../Vendor/Entity/User.h"
@@ -47,9 +46,6 @@ void SplashScene::increaseLoadingBar(float delay)
         auto stringFileReader = new StringFileReader;
         auto userJson = stringFileReader->getStringFromFile("data/user.json");
         playerUser = (new UserParser(userJson))->parse();
-        auto u4 = sole::uuid4();
-        playerUser->setToken(u4.str());
-        playerUser->print();
         auto apiJson = stringFileReader->getStringFromFile("data/api-data.json");
         heroRepo->init(apiJson);
         skillRepo->init(apiJson);

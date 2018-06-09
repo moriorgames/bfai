@@ -1,4 +1,5 @@
 #include "HeroesConfig2Json.h"
+#include "../Vendor/Entity/User.h"
 #include "../Vendor/Utils/TextUtils.h"
 
 std::string HeroesConfig2Json::transform(HeroesConfig *heroesConfig)
@@ -6,7 +7,7 @@ std::string HeroesConfig2Json::transform(HeroesConfig *heroesConfig)
     std::string heroesJson = heroesRows(heroesConfig);
     std::string skillsHeroesJson = skillsHeroesRows(heroesConfig);
     std::string json =
-        "{\"token\": \"Miu_tTgazSW6OkSFAYyBxT4DbUpgQ-hQwZlatQV8auY\", "
+        "{\"token\": \"some-uuid4-battle-token\", "
         " \"online\": false, "
         + heroesJson
         + skillsHeroesJson
@@ -31,18 +32,9 @@ std::string HeroesConfig2Json::heroesRows(HeroesConfig *heroesConfig)
     // Local Heroes
     int index = 0;
     for (auto hero:heroesConfig->getHeroes()) {
-
         short x = coords[index].first;
         short y = coords[index].second;
-
-        json += heroRow(
-            "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FA",
-            "local",
-            battleHeroId,
-            hero->getId(),
-            x,
-            y
-        );
+        json += heroRow(playerUser->getToken(), "local", battleHeroId, hero->getId(), x, y);
         battleHeroId++;
         index++;
     }

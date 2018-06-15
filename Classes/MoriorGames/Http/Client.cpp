@@ -1,5 +1,7 @@
 #include "Client.h"
+#include "../Vendor/Entity/User.h"
 #include "../Vendor/Utils/TextUtils.h"
+#include "../Transformers/HeroesConfig2Json.h"
 #include "../Definitions.h"
 
 Client::Client()
@@ -11,7 +13,8 @@ void Client::apiBattle()
 {
     auto method = network::HttpRequest::Type::POST;
     std::string endpoint = "battle";
-    std::string data = R"(userToken=562cce32-7268-4910-8a87-76bc99dbf115&json={"hello":"world"})";
+    auto json = (new HeroesConfig2Json)->transform(heroesConfig);
+    std::string data = "userToken=" + playerUser->getToken() + "&json=" + json;
 
     HttpCallback callback = [=](network::HttpClient *client, network::HttpResponse *response)
     {
@@ -27,7 +30,7 @@ void Client::apiBattle()
         }
     };
 
-    request(method, endpoint, callback);
+    request(method, endpoint, callback, data.c_str());
 }
 
 void Client::request(methodType method, const std::string &endpoint, HttpCallback &callback, const char *data)

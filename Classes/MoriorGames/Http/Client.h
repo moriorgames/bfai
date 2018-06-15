@@ -24,6 +24,7 @@ class Client
 {
 public:
     Client();
+    void apiBattle();
     void request(methodType method, const std::string &endpoint, HttpCallback &callback, const char *data = "");
 
     std::string getSocketHost(int port);

@@ -1,4 +1,5 @@
 #include "MatchMakerScene.h"
+#include "../Http/Client.h"
 #include "../Scenes/BattleScene.h"
 #include "../Services/StringFileReader.h"
 #include "../Transformers/HeroesConfig2Json.h"
@@ -31,6 +32,8 @@ bool MatchMakerScene::init()
     loadingTitleView = new LoadingTitleView(this);
 
     this->schedule(schedule_selector(MatchMakerScene::increaseLoadingBar), 0.1);
+    auto client = new Client;
+    client->apiBattle();
 
     return true;
 }

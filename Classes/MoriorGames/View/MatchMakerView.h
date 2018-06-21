@@ -4,6 +4,7 @@
 #include "ViewHelper.h"
 #include "LoadingView.h"
 #include "LoadingTitleView.h"
+#include "../Http/Client.h"
 
 class MatchMakerView: public ViewHelper
 {
@@ -20,6 +21,7 @@ private:
     std::string battleJson = "";
     LoadingView *loadingView;
     LoadingTitleView *loadingTitleView;
+    Client *client;
 
     void addView() override;
 };

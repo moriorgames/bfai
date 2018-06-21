@@ -1,7 +1,9 @@
 #include "MatchMakerView.h"
 #include "SplashView.h"
 #include "../Scenes/MatchMakerScene.h"
+#include "../Services/StringFileReader.h"
 #include "../Transformers/HeroesConfig2Json.h"
+#include "../Vendor/Entity/User.h"
 
 MatchMakerView::MatchMakerView(Layer *layer)
     : ViewHelper(layer)
@@ -14,8 +16,7 @@ void MatchMakerView::addView()
     new SplashView(layer);
     loadingView = new LoadingView(layer);
     loadingTitleView = new LoadingTitleView(layer);
-    //    auto client = new Client;
-//    client->apiBattle();
+    client = new Client;
 }
 
 bool MatchMakerView::update()
@@ -25,6 +26,7 @@ bool MatchMakerView::update()
     loadingTitleView->setEllipsis(loadingBarPercentage);
     if (loadingBarPercentage % 15 == 0) {
         // Perform api battle each 15 iterations
+        client->apiBattle();
     }
 
     // Passed some iterations go to offline battle

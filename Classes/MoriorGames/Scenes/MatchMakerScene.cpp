@@ -1,8 +1,5 @@
 #include "MatchMakerScene.h"
-#include "../Http/Client.h"
 #include "../Scenes/BattleScene.h"
-#include "../Services/StringFileReader.h"
-#include "../Vendor/Entity/User.h"
 
 USING_NS_CC;
 

@@ -2,8 +2,7 @@
 #define MORIOR_GAMES_SCENES_MATCH_MAKER_SCENE_H
 
 #include "cocos2d.h"
-#include "../View/LoadingView.h"
-#include "../View/LoadingTitleView.h"
+#include "../View/MatchMakerView.h"
 
 class MatchMakerScene: public cocos2d::Layer
 {
@@ -14,15 +13,11 @@ public:
 
     CREATE_FUNC(MatchMakerScene);
 
-    void increaseLoadingBar(float delay);
+    void update(float delay);
+    void goToBattleScene(std::string json);
 
 private:
-    std::string json;
-    float loadingBarPercentage = 0.0f;
-    LoadingView *loadingView;
-    LoadingTitleView *loadingTitleView;
-
-    void goToBattleScene();
+    MatchMakerView *matchMakerView;
 };
 
 #endif

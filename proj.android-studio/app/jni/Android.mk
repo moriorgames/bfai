@@ -99,6 +99,7 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    ../../../Classes/MoriorGames/View/LoadingTitleView.cpp \
                    ../../../Classes/MoriorGames/View/LoadingView.cpp \
                    ../../../Classes/MoriorGames/View/LogoView.cpp \
+                   ../../../Classes/MoriorGames/View/MatchMakerView.cpp \
                    ../../../Classes/MoriorGames/View/SplashView.cpp \
                    ../../../Classes/MoriorGames/View/ViewHelper.cpp \
                    ../../../Classes/MoriorGames/View/WorldView.cpp \

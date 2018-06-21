@@ -2,9 +2,7 @@
 #include "../Http/Client.h"
 #include "../Scenes/BattleScene.h"
 #include "../Services/StringFileReader.h"
-#include "../Transformers/HeroesConfig2Json.h"
 #include "../Vendor/Entity/User.h"
-#include "../View/SplashView.h"
 
 USING_NS_CC;
 
@@ -26,30 +24,21 @@ bool MatchMakerScene::init()
         return false;
     }
 
-    json = (new HeroesConfig2Json)->transform(heroesConfig);
-    new SplashView(this);
-    loadingView = new LoadingView(this);
-    loadingTitleView = new LoadingTitleView(this);
-
-    this->schedule(schedule_selector(MatchMakerScene::increaseLoadingBar), 0.1);
-    auto client = new Client;
-    client->apiBattle();
+    matchMakerView = new MatchMakerView(this);
+    this->schedule(schedule_selector(MatchMakerScene::update), 0.1);
 
     return true;
 }
 
-void MatchMakerScene::increaseLoadingBar(float delay)
+void MatchMakerScene::update(float delay)
 {
-    loadingBarPercentage += 2;
-    loadingView->setLoadingBarPercentage(loadingBarPercentage);
-    loadingTitleView->setEllipsis(loadingBarPercentage);
-    if (loadingBarPercentage > 99) {
-        this->unschedule(schedule_selector(MatchMakerScene::increaseLoadingBar));
-//        MatchMakerScene::goToBattleScene();
-    }
+    if (matchMakerView->update()) {
+        this->unschedule(schedule_selector(MatchMakerScene::update));
+        MatchMakerScene::goToBattleScene(matchMakerView->getBattleJson());
+    };
 }
 
-void MatchMakerScene::goToBattleScene()
+void MatchMakerScene::goToBattleScene(std::string json)
 {
     auto scene = BattleScene::createScene(json);
     Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));

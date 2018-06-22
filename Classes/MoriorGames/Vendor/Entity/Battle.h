@@ -14,6 +14,8 @@ public:
     void setToken(const std::string &token);
     const std::string &getUserToken() const;
     void setUserToken(const std::string &userToken);
+    const std::string &getStatus() const;
+    void setStatus(const std::string &status);
     void addHero(BattleHero *);
     const std::vector<BattleHero *> &getBattleHeroes() const;
     void addSkillHero(SkillHero *);
@@ -32,7 +34,7 @@ public:
     void print();
 
 private:
-    std::string token = "", userToken = "";
+    std::string token = "", userToken = "", status = "";
     std::vector<BattleHero *> heroes;
     std::vector<SkillHero *> skillHeroes;
     int activeHero = 0;

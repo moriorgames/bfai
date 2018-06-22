@@ -26,6 +26,7 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    ../../../Classes/MoriorGames/Scenes/HeroesConfigScene.cpp \
                    ../../../Classes/MoriorGames/Scenes/LogoScene.cpp \
                    ../../../Classes/MoriorGames/Scenes/MainMenuScene.cpp \
+                   ../../../Classes/MoriorGames/Scenes/MatchMakerScene.cpp \
                    ../../../Classes/MoriorGames/Scenes/SplashScene.cpp \
                    ../../../Classes/MoriorGames/Screen/ClosestCoordinate.cpp \
                    ../../../Classes/MoriorGames/Screen/Coordinate2Screen.cpp \

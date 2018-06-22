@@ -20,6 +20,16 @@ void Battle::setUserToken(const std::string &userToken)
     this->userToken = userToken;
 }
 
+const std::string &Battle::getStatus() const
+{
+    return status;
+}
+
+void Battle::setStatus(const std::string &status)
+{
+    this->status = status;
+}
+
 void Battle::addHero(BattleHero *battleHero)
 {
     heroes.push_back(battleHero);

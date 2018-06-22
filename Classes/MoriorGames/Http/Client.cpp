@@ -1,6 +1,8 @@
 #include "Client.h"
+#include "../Scenes/BattleScene.h"
 #include "../Vendor/Entity/User.h"
 #include "../Vendor/Utils/TextUtils.h"
+#include "../Vendor/Parsers/BattleParser.h"
 #include "../Transformers/HeroesConfig2Json.h"
 #include "../Definitions.h"
 
@@ -21,7 +23,11 @@ void Client::apiBattle()
         if (response->getResponseCode() == 200) {
             std::vector<char> *buffer = response->getResponseData();
             std::string json(buffer->begin(), buffer->end());
-            CCLOG("%s", json.c_str());
+            auto battle = (new BattleParser(json))->parse();
+            if (battle->getStatus() == BATTLE_IN_PROGRESS) {
+                auto scene = BattleScene::createScene(json);
+                Director::getInstance()->replaceScene(TransitionFade::create(SCENES_TRANSITION_TIME, scene));
+            }
 
         } else {
             CCLOG("cocos2d --------- Fail with code %i", int(response -> getResponseCode()));

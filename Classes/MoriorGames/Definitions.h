@@ -22,6 +22,8 @@
 #define SANDBOX_MODE    1
 
 #define BATTLE_TOTAL_COST       15
+#define BATTLE_WAITING          "waiting"
+#define BATTLE_IN_PROGRESS      "in_progress"
 
 #define CARTESIAN_EAST          0
 #define CARTESIAN_NORTHEAST     45

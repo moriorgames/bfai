@@ -20,6 +20,7 @@ void BattleParser::addBattleData(Battle *battle, const rapidjson::Value &data)
 {
     battle->setToken(getString(document, "token"));
     battle->setOnline(getBool(document, "online"));
+    battle->setStatus(getString(document, "status"));
 }
 
 void BattleParser::addHeroesData(Battle *battle, const rapidjson::Value &data)

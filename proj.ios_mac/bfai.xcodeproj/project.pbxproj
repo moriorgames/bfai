@@ -67,6 +67,8 @@
 		4F3EBAE32099765F008F6198 /* UserParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F3EBAE02099765F008F6198 /* UserParser.cpp */; };
 		4F46C52720DC1B5300879455 /* MatchMakerView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F46C52520DC1B5300879455 /* MatchMakerView.cpp */; };
 		4F46C52820DC1B5300879455 /* MatchMakerView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F46C52520DC1B5300879455 /* MatchMakerView.cpp */; };
+		4F46C52C20DD3FFF00879455 /* PlayerSide.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F46C52A20DD3FFF00879455 /* PlayerSide.cpp */; };
+		4F46C52D20DD3FFF00879455 /* PlayerSide.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F46C52A20DD3FFF00879455 /* PlayerSide.cpp */; };
 		4F4B1FC22092E09A00DAA0B1 /* HeroAnimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B1FC02092E09A00DAA0B1 /* HeroAnimator.cpp */; };
 		4F4B1FC32092E09A00DAA0B1 /* HeroAnimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B1FC02092E09A00DAA0B1 /* HeroAnimator.cpp */; };
 		4F4B7D0F20ADE7D30049E74B /* PathFinderShot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F4B7D0D20ADE7D30049E74B /* PathFinderShot.cpp */; };
@@ -358,6 +360,8 @@
 		4F3EBAE12099765F008F6198 /* UserParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserParser.h; sourceTree = "<group>"; };
 		4F46C52520DC1B5300879455 /* MatchMakerView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MatchMakerView.cpp; sourceTree = "<group>"; };
 		4F46C52620DC1B5300879455 /* MatchMakerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchMakerView.h; sourceTree = "<group>"; };
+		4F46C52A20DD3FFF00879455 /* PlayerSide.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerSide.cpp; sourceTree = "<group>"; };
+		4F46C52B20DD3FFF00879455 /* PlayerSide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerSide.h; sourceTree = "<group>"; };
 		4F4B1FC02092E09A00DAA0B1 /* HeroAnimator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HeroAnimator.cpp; sourceTree = "<group>"; };
 		4F4B1FC12092E09A00DAA0B1 /* HeroAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroAnimator.h; sourceTree = "<group>"; };
 		4F4B7D0D20ADE7D30049E74B /* PathFinderShot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PathFinderShot.cpp; sourceTree = "<group>"; };
@@ -840,6 +844,8 @@
 				4F78876520989A8C00F18454 /* PathFinderArea.h */,
 				4F4B7D0D20ADE7D30049E74B /* PathFinderShot.cpp */,
 				4F4B7D0E20ADE7D30049E74B /* PathFinderShot.h */,
+				4F46C52A20DD3FFF00879455 /* PlayerSide.cpp */,
+				4F46C52B20DD3FFF00879455 /* PlayerSide.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1307,6 +1313,7 @@
 				4F3B0B81205E57C500D4B53C /* PathFinder.cpp in Sources */,
 				4F2DF54B2097340D00F38AEE /* AI.cpp in Sources */,
 				4F4B7D0F20ADE7D30049E74B /* PathFinderShot.cpp in Sources */,
+				4F46C52C20DD3FFF00879455 /* PlayerSide.cpp in Sources */,
 				4F3AE454202EE9E000B687FB /* ViewHelper.cpp in Sources */,
 				4F21E04020B93E300047D69B /* TeamSight.cpp in Sources */,
 				4FBCDC532032031D006B3B5E /* BattleBackgroundView.cpp in Sources */,
@@ -1489,6 +1496,7 @@
 				4FEFCC23205AE61700D447C4 /* HeroParser.cpp in Sources */,
 				4F2CBFEF202F1E7D00169E86 /* SoundPlayer.cpp in Sources */,
 				4F3EBAE32099765F008F6198 /* UserParser.cpp in Sources */,
+				4F46C52D20DD3FFF00879455 /* PlayerSide.cpp in Sources */,
 				4F2DF54C2097340D00F38AEE /* AI.cpp in Sources */,
 				4F555BCD20BE712E0099D299 /* LoadingTitleView.cpp in Sources */,
 				4FA669462098DE5E00EDFC0A /* BattleActionChecker.cpp in Sources */,

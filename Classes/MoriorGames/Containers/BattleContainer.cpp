@@ -2,6 +2,7 @@
 #include "../Factories/BattleEventPublisherFactory.h"
 #include "../Vendor/Entity/User.h"
 #include "../Vendor/Repository/SkillRepository.h"
+#include "../Vendor/Services/PlayerSide.h"
 #include "../View/Battle/BattleBackgroundView.h"
 #include "../View/Battle/EndOfBattle.h"
 
@@ -23,9 +24,10 @@ BattleContainer::BattleContainer(Layer *layer, Socket *socket, const std::string
     artificialIntelligence = new AI(battle, gridContainer->getGrid(), eventPublisher);
 
     addHeroViews();
+    auto playerSide = (new PlayerSide)->calculate(playerUser->getToken(), battle);
 
     teamSight = new TeamSight(
-        BattleHero::SIDE_LOCAL, battle, gridContainer->getGrid(), gridContainer->getGridView(), heroViews
+        playerSide, battle, gridContainer->getGrid(), gridContainer->getGridView(), heroViews
     );
     registerObservers();
 }

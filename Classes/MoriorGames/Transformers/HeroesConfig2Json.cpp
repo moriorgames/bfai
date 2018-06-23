@@ -1,4 +1,5 @@
 #include "HeroesConfig2Json.h"
+#include "../Vendor/Entity/BattleHero.h"
 #include "../Vendor/Entity/User.h"
 #include "../Vendor/Utils/TextUtils.h"
 
@@ -13,7 +14,7 @@ std::string HeroesConfig2Json::transform(HeroesConfig *heroesConfig)
         + skillsHeroesJson
         + "}";
 
-//    printf("\n%s\n", json.c_str());
+    printf("\n%s\n", json.c_str());
 
     return json;
 }
@@ -34,7 +35,7 @@ std::string HeroesConfig2Json::heroesRows(HeroesConfig *heroesConfig)
     for (auto hero:heroesConfig->getHeroes()) {
         short x = coords[index].first;
         short y = coords[index].second;
-        json += heroRow(playerUser->getToken(), "local", battleHeroId, hero->getId(), x, y);
+        json += heroRow(playerUser->getToken(), BattleHero::SIDE_LOCAL, battleHeroId, hero->getId(), x, y);
         battleHeroId++;
         index++;
     }
@@ -42,13 +43,13 @@ std::string HeroesConfig2Json::heroesRows(HeroesConfig *heroesConfig)
     // @TODO this has to be managed by a kind of Campaign creator
     // Enemy Heroes
     index = 0;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, rand() % 4 + 2, abs(coords[index].first), coords[index].second);
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", BattleHero::SIDE_VISITOR, battleHeroId, rand() % 4 + 2, abs(coords[index].first), coords[index].second);
     battleHeroId++; index++;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, rand() % 4 + 2, abs(coords[index].first), coords[index].second);
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", BattleHero::SIDE_VISITOR, battleHeroId, rand() % 4 + 2, abs(coords[index].first), coords[index].second);
     battleHeroId++; index++;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, rand() % 4 + 2, abs(coords[index].first), coords[index].second);
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", BattleHero::SIDE_VISITOR, battleHeroId, rand() % 4 + 2, abs(coords[index].first), coords[index].second);
     battleHeroId++; index++;
-    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", "visitor", battleHeroId, rand() % 4 + 2, abs(coords[index].first), coords[index].second);
+    json += heroRow("j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB", BattleHero::SIDE_VISITOR, battleHeroId, rand() % 4 + 2, abs(coords[index].first), coords[index].second);
 
     removeLastComma(json);
     json += "],";

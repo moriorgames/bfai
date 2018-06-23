@@ -7,7 +7,8 @@
 class LoadingTitleView: public ViewHelper
 {
 public:
-    const int PADDING_TITLE = 120;
+    const float PADDING_X = 220;
+    const float PADDING_Y = 120;
 
     explicit LoadingTitleView(Layer *layer);
     void setEllipsis(int progress);

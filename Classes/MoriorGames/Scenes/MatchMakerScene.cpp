@@ -22,7 +22,7 @@ bool MatchMakerScene::init()
     }
 
     matchMakerView = new MatchMakerView(this);
-    this->schedule(schedule_selector(MatchMakerScene::update), 0.1);
+    this->schedule(schedule_selector(MatchMakerScene::update), 0.2);
 
     return true;
 }

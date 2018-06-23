@@ -24,13 +24,13 @@ bool MatchMakerView::update()
     loadingBarPercentage++;
     loadingView->setLoadingBarPercentage(loadingBarPercentage);
     loadingTitleView->setEllipsis(loadingBarPercentage);
-    if (loadingBarPercentage % 15 == 0) {
-        // Perform api battle each 15 iterations
+    if (loadingBarPercentage % 8 == 0) {
+        // Perform api battle in some periods
         client->apiBattle();
     }
 
     // Passed some iterations go to offline battle
-    if (loadingBarPercentage > 150) {
+    if (loadingBarPercentage > 100) {
         battleJson = (new HeroesConfig2Json)->transform(heroesConfig);
 
         return true;

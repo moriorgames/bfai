@@ -10,11 +10,11 @@ void LoadingTitleView::setEllipsis(int progress)
 {
     std::string text;
     if (progress % 6 <= 1) {
-        text = base + "...";
+        text = base + ".";
     } else if (progress % 6 <= 3) {
         text = base + "..";
     } else {
-        text = base + ".";
+        text = base + "...";
     }
     titleLabel->setString(text);
 }
@@ -29,8 +29,8 @@ void LoadingTitleView::addView()
     titleLabel = fontCreator->titleLabel(base, "fonts/title.otf", 45);
     titleLabel->setAnchorPoint({0, 0});
     titleLabel->setScale(scale);
-    titleLabel->setPositionX(bottomPosition.x - PADDING_TITLE * scale);
-    titleLabel->setPositionY(PADDING_TITLE * scale);
+    titleLabel->setPositionX(bottomPosition.x - PADDING_X * scale);
+    titleLabel->setPositionY(PADDING_Y * scale);
     container->addChild(titleLabel);
 
     layer->addChild(container, Z_ORDER_MENU_ITEMS);

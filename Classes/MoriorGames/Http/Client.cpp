@@ -52,7 +52,7 @@ void Client::request(methodType method, const std::string &endpoint, HttpCallbac
 
 std::string Client::getSocketHost(int port)
 {
-    std::string socketHost = "ws://some.url.com:" + to_string(port);
+    std::string socketHost = "ws://moriorgames.com:" + to_string(port);
     if (SANDBOX_MODE) {
         socketHost = "127.0.0.1:" + to_string(port);
     }

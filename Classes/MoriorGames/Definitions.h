@@ -19,7 +19,7 @@
 
 #define MODE_SOUND      0
 #define DEBUG_SCENE     0
-#define SANDBOX_MODE    1
+#define SANDBOX_MODE    0
 
 #define BATTLE_TOTAL_COST       15
 #define BATTLE_WAITING          "waiting"

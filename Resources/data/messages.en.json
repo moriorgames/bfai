@@ -23,5 +23,7 @@
   "skill_name_shotgun": "Shotgun",
   "skill_description_shotgun": "Perform a shot with area damage front or behind the hero.",
   "skill_name_spawn-bot": "Spawn Bot",
-  "skill_description_spawn-bot": "Spawn one Bot and you gain the full control of this new character ingame."
+  "skill_description_spawn-bot": "Spawn one Bot and you gain the full control of this new character ingame.",
+  "skill_name_extra-shot": "Extra Shot",
+  "skill_description_extra-shot": "You can perform and extra shot during movement phase."
 }

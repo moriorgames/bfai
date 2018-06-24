@@ -337,6 +337,17 @@
       "upgradable": true
     },
     {
+      "id": 11,
+      "name": "Extra Shot",
+      "slug": "extra-shot",
+      "type": 7,
+      "damage": 0,
+      "ranged": 0,
+      "extra": 0,
+      "unique": true,
+      "upgradable": true
+    },
+    {
       "id": 99,
       "name": "End Of Battle",
       "slug": "end-of-battle",
@@ -367,6 +378,11 @@
     {
       "heroId": 2,
       "skillId": 8,
+      "cost": 3
+    },
+    {
+      "heroId": 2,
+      "skillId": 11,
       "cost": 3
     },
     {

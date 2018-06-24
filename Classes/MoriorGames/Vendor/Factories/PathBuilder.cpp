@@ -11,7 +11,7 @@ const std::vector<Path> &PathBuilder::build(Skill *skill, BattleHero *battleHero
 
         return pathFinder->buildPathScope(battleHero->getCoordinate(), battleHero->getMovement(), true);
 
-    } else if (skill->getId() == Skill::SINGLE_ATTACK_ID) {
+    } else if (skill->getId() == Skill::SINGLE_ATTACK_ID || skill->getType() == Skill::TYPE_EXTRA_SHOT) {
 
         return pathFinder->buildPathScope(battleHero->getCoordinate(), battleHero->getRanged());
 

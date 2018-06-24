@@ -31,6 +31,7 @@ void HeroView::update(BattleAction *battleAction)
 {
     if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {
 
+        // @TODO we have to setup a way to animate hero action when extra shot
         if (battleAction->getSkillId() == Skill::NEXT_TURN_ID) {
             heroAnimator->stop();
         } else if (battleAction->getSkillId() == Skill::MOVE_ID) {

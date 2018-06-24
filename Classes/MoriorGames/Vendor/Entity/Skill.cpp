@@ -26,6 +26,8 @@ short Skill::TYPE_CONE_AREA_DAMAGE = 5;
 
 short Skill::TYPE_SPAWN = 6;
 
+short Skill::TYPE_EXTRA_SHOT = 7;
+
 int Skill::getId() const
 {
     return id;

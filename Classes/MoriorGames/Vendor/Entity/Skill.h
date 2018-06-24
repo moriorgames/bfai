@@ -19,6 +19,7 @@ public:
     static short TYPE_BOOST_MOVE;
     static short TYPE_CONE_AREA_DAMAGE;
     static short TYPE_SPAWN;
+    static short TYPE_EXTRA_SHOT;
 
 public:
     int getId() const;

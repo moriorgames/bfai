@@ -74,26 +74,33 @@ void BattleProcessor::notifyObservers(BattleAction *battleAction)
 
 bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *battleAction)
 {
-    auto skill = skillRepo->findById(battleAction->getSkillId());
+    auto skillId = battleAction->getSkillId();
+    auto skill = skillRepo->findById(skillId);
+    auto skillType = skill->getType();
     if (!battleActionChecker->isSkillAllowed(skill, battleHero, battleAction)) {
 
         return true;
     }
 
-    if (!battleHero->hasMoved() && battleAction->getSkillId() == Skill::MOVE_ID) {
-        movement(battleHero, battleAction);
+    if (!battleHero->hasMoved() && (skillId == Skill::MOVE_ID || skillType == Skill::TYPE_EXTRA_SHOT)) {
+        if (skillType == Skill::TYPE_EXTRA_SHOT) {
+            singleDamage(battleHero, battleAction);
+            battleHero->move();
+        } else {
+            movement(battleHero, battleAction);
+        }
 
         return false;
     }
 
-    if (battleAction->getSkillId() == Skill::SINGLE_ATTACK_ID) {
+    if (skillId == Skill::SINGLE_ATTACK_ID || skillType == Skill::TYPE_EXTRA_SHOT) {
         singleDamage(battleHero, battleAction);
     } else {
 
-        if (skill->getType() == Skill::TYPE_SPAWN) {
+        if (skillType == Skill::TYPE_SPAWN) {
             battleHeroSpawner->spawn(skill, battleHero, battleAction);
         }
-        if (skill->getType() == Skill::TYPE_CONE_AREA_DAMAGE) {
+        if (skillType == Skill::TYPE_CONE_AREA_DAMAGE) {
             areaDamage(skill, battleHero, battleAction);
         }
     }

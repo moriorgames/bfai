@@ -342,7 +342,7 @@
       "slug": "extra-shot",
       "type": 7,
       "damage": 0,
-      "ranged": 0,
+      "ranged": 4,
       "extra": 0,
       "unique": true,
       "upgradable": true

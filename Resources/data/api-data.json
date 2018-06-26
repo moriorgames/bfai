@@ -74,15 +74,15 @@
       "id": 6,
       "name": "Katia",
       "slug": "katia",
-      "damage": 1,
+      "damage": 9,
       "ranged": 1,
-      "health": 1,
-      "movement": 1,
-      "cost": 1,
-      "moveFrames": 1,
-      "attackFrames": 1,
-      "size": 1,
-      "enabled": false
+      "health": 12,
+      "movement": 3,
+      "cost": 4,
+      "moveFrames": 16,
+      "attackFrames": 32,
+      "size": 3,
+      "enabled": true
     },
     {
       "id": 7,
@@ -342,7 +342,7 @@
       "slug": "extra-shot",
       "type": 7,
       "damage": 0,
-      "ranged": 4,
+      "ranged": 0,
       "extra": 0,
       "unique": true,
       "upgradable": true
@@ -417,11 +417,6 @@
     },
     {
       "heroId": 4,
-      "skillId": 7,
-      "cost": 4
-    },
-    {
-      "heroId": 4,
       "skillId": 8,
       "cost": 4
     },
@@ -448,6 +443,21 @@
     {
       "heroId": 5,
       "skillId": 9,
+      "cost": 3
+    },
+    {
+      "heroId": 6,
+      "skillId": 5,
+      "cost": 2
+    },
+    {
+      "heroId": 6,
+      "skillId": 6,
+      "cost": 2
+    },
+    {
+      "heroId": 6,
+      "skillId": 8,
       "cost": 3
     },
     {

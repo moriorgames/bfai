@@ -119,6 +119,8 @@
 		4F78876720989A8C00F18454 /* PathFinderArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F78876420989A8C00F18454 /* PathFinderArea.cpp */; };
 		4F7EB1632069FF340086A900 /* BattleContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EB1612069FF340086A900 /* BattleContainer.cpp */; };
 		4F7EB1642069FF340086A900 /* BattleContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7EB1612069FF340086A900 /* BattleContainer.cpp */; };
+		4F7F1AD120E2084400AE8DB0 /* BushView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F1ACF20E2084400AE8DB0 /* BushView.cpp */; };
+		4F7F1AD220E2084400AE8DB0 /* BushView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7F1ACF20E2084400AE8DB0 /* BushView.cpp */; };
 		4F89105A2034BF2800D8382C /* Coordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8910582034BF2800D8382C /* Coordinate.cpp */; };
 		4F89105B2034BF2800D8382C /* Coordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8910582034BF2800D8382C /* Coordinate.cpp */; };
 		4F89105E2034BF3A00D8382C /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F89105C2034BF3A00D8382C /* Grid.cpp */; };
@@ -415,6 +417,8 @@
 		4F78876520989A8C00F18454 /* PathFinderArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathFinderArea.h; sourceTree = "<group>"; };
 		4F7EB1612069FF340086A900 /* BattleContainer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleContainer.cpp; sourceTree = "<group>"; };
 		4F7EB1622069FF340086A900 /* BattleContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleContainer.h; sourceTree = "<group>"; };
+		4F7F1ACF20E2084400AE8DB0 /* BushView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BushView.cpp; sourceTree = "<group>"; };
+		4F7F1AD020E2084400AE8DB0 /* BushView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BushView.h; sourceTree = "<group>"; };
 		4F8910582034BF2800D8382C /* Coordinate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinate.cpp; sourceTree = "<group>"; };
 		4F8910592034BF2800D8382C /* Coordinate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
 		4F89105C2034BF3A00D8382C /* Grid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Grid.cpp; sourceTree = "<group>"; };
@@ -901,6 +905,8 @@
 				4FBCDC522032031D006B3B5E /* BattleBackgroundView.h */,
 				4F7314C1205CF5B5005AAB83 /* BattleView.cpp */,
 				4F7314C2205CF5B5005AAB83 /* BattleView.h */,
+				4F7F1ACF20E2084400AE8DB0 /* BushView.cpp */,
+				4F7F1AD020E2084400AE8DB0 /* BushView.h */,
 				4F2DF5442096F15A00F38AEE /* EndOfBattle.cpp */,
 				4F2DF5452096F15A00F38AEE /* EndOfBattle.h */,
 				4F576D132075E17E00011BC7 /* GridView.cpp */,
@@ -1369,6 +1375,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				4F78876620989A8C00F18454 /* PathFinderArea.cpp in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
+				4F7F1AD120E2084400AE8DB0 /* BushView.cpp in Sources */,
 				4F1A53EF209D70B7004DDDDC /* HeroesConfigView.cpp in Sources */,
 				4F1A53F9209D7C99004DDDDC /* LeftFrame.cpp in Sources */,
 				4FEFCC22205AE61700D447C4 /* HeroParser.cpp in Sources */,
@@ -1475,6 +1482,7 @@
 				4F5C0CD8208AFE6D006D57BF /* Skill.cpp in Sources */,
 				4FEFE75B2079E0A30031A6B5 /* BattleAction.cpp in Sources */,
 				4FD30898205ED742007D8039 /* BattleEventListener.cpp in Sources */,
+				4F7F1AD220E2084400AE8DB0 /* BushView.cpp in Sources */,
 				4FDBF47320919E2B005FF943 /* TileDrawer.cpp in Sources */,
 				4FEFCC21205AE61700D447C4 /* JsonParser.cpp in Sources */,
 				4FDCADFC20A6138F00EC6217 /* HeroesConfigProcessor.cpp in Sources */,

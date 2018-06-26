@@ -79,6 +79,7 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    ../../../Classes/MoriorGames/Vendor/ValueObjects/Coordinate.cpp \
                    ../../../Classes/MoriorGames/View/Battle/BattleBackgroundView.cpp \
                    ../../../Classes/MoriorGames/View/Battle/BattleView.cpp \
+                   ../../../Classes/MoriorGames/View/Battle/BushView.cpp \
                    ../../../Classes/MoriorGames/View/Battle/EndOfBattle.cpp \
                    ../../../Classes/MoriorGames/View/Battle/GridView.cpp \
                    ../../../Classes/MoriorGames/View/Battle/HeroAnimator.cpp \

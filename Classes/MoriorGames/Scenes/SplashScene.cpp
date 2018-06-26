@@ -67,9 +67,9 @@ void SplashScene::goToMainMenuScene()
 {
     Scene *scene;
     if (DEBUG_SCENE) {
-//        auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
-//        scene = BattleScene::createScene(json);
-        scene = MatchMakerScene::createScene();
+        auto json = (new StringFileReader)->getStringFromFile("data/battle.json");
+        scene = BattleScene::createScene(json);
+//        scene = MatchMakerScene::createScene();
     } else {
         scene = MainMenuScene::createScene();
     }

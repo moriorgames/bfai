@@ -14,7 +14,7 @@ std::string HeroesConfig2Json::transform(HeroesConfig *heroesConfig)
         + skillsHeroesJson
         + "}";
 
-    printf("\n%s\n", json.c_str());
+    CCLOG("%s", json.c_str());
 
     return json;
 }

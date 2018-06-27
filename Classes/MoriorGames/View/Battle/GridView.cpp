@@ -7,7 +7,7 @@ const Color4F GridView::MOVE_FILL_COLOR{.2f, 1, .2f, .3f};
 
 const Color4F GridView::ATTACK_FILL_COLOR{1, .2f, .2f, .3f};
 
-const Color4F GridView::HIDDEN_COLOR{0, 0, 0, .3f};
+const Color4F GridView::HIDDEN_COLOR{0, 0, 0, .25f};
 
 GridView::GridView(Layer *layer, Battle *battle, PathFinder *pathFinder, TileDrawer *tileDrawer)
     : layer{layer}, battle{battle}, pathFinder{pathFinder}, tileDrawer{tileDrawer}

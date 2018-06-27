@@ -1,4 +1,5 @@
 #include "BushView.h"
+#include "../../Vendor/Config/StaticBushConfig.h"
 
 BushView::BushView(Layer *layer, Coordinate2Screen *coordinate2Screen)
     : ViewHelper(layer), coordinate2Screen{coordinate2Screen}
@@ -8,7 +9,7 @@ BushView::BushView(Layer *layer, Coordinate2Screen *coordinate2Screen)
 
 void BushView::addView()
 {
-    for (auto coord:coords) {
+    for (auto coord:StaticBushConfig::get()) {
         auto sprite = Sprite::create("img/bush.png");
         auto position = coordinate2Screen->execute(new Coordinate(coord.first, coord.second));
         sprite->setScale(scale);

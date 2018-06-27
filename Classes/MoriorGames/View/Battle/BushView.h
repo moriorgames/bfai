@@ -12,10 +12,6 @@ public:
 
 private:
     Coordinate2Screen *coordinate2Screen;
-
-    std::vector<std::pair<short, short>> coords{
-        {-8, 3}, {-7, 3}, {-6, 3}, {-5, 3}, {8, -3}, {7, -3}, {6, -3}, {5, -3},
-    };
 };
 
 #endif

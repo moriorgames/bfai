@@ -58,6 +58,16 @@ bool BattleHero::isDead()
     return dead;
 }
 
+bool BattleHero::isVisible()
+{
+    return _visible;
+}
+
+void BattleHero::setVisible(bool visible)
+{
+    this->_visible = visible;
+}
+
 void BattleHero::setCoordinate(Coordinate *coordinate)
 {
     this->coordinate = coordinate;

@@ -21,6 +21,8 @@ public:
     bool hasMoved();
     void addInjury(int injury);
     bool isDead();
+    bool isVisible();
+    void setVisible(bool);
     Coordinate *getCoordinate() const;
     void setCoordinate(Coordinate *);
 
@@ -37,7 +39,7 @@ private:
     int battleHeroId = 0;
     std::string side = SIDE_LOCAL;
     int injury = 0;
-    bool moved = false, dead = false;
+    bool moved = false, dead = false, _visible = true;
     Coordinate *coordinate;
 };
 

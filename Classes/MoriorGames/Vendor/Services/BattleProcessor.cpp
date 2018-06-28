@@ -145,6 +145,7 @@ void BattleProcessor::performDamage(BattleHero *defender, BattleHero *attacker, 
     }
 
     attacker->addAgro(damage);
+    attacker->setVisible(true);
 
     auto damageAction = new BattleAction("", "", defender->getBattleHeroId(), Skill::DAMAGE_ID);
     damageAction->setExtra(damage);

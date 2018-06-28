@@ -8,6 +8,9 @@ class MotionEngine
 {
 public:
     void movement(BattleHero *, BattleAction *);
+
+private:
+    bool isVisibleCoordinate(Coordinate *);
 };
 
 #endif

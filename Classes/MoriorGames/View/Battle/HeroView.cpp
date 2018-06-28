@@ -47,6 +47,9 @@ void HeroView::update(BattleAction *battleAction)
     if (battleAction->getSkillId() != Skill::EXTRA_SHOT_ID && battleHero->isActive && !battleHero->hasMoved()) {
         heroAnimator->move();
     }
+    if (!battleHero->isDead()) {
+        container->setOpacity(battleHero->isVisible() ? 255 : 140);
+    }
     setLocalZOrder();
 }
 

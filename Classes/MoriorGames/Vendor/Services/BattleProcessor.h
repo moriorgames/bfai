@@ -4,6 +4,7 @@
 #include "PathFinder.h"
 #include "BattleActionChecker.h"
 #include "BattleHeroSpawner.h"
+#include "MotionEngine.h"
 #include "../Entity/Battle.h"
 #include "../Entity/BattleAction.h"
 #include "../Observer/BattlePublishable.h"
@@ -25,12 +26,12 @@ private:
     PathFinder *pathFinder;
     BattleHeroSpawner *battleHeroSpawner;
     BattleActionChecker *battleActionChecker;
+    MotionEngine *motionEngine;
     Grid *grid;
     std::vector<BattleObservable *> observers;
     std::vector<BattleAction *> extraActions;
 
     bool battleActionProcess(BattleHero *, BattleAction *);
-    void movement(BattleHero *, BattleAction *);
     void singleDamage(BattleHero *, BattleAction *);
     void areaDamage(Skill *, BattleHero *, BattleAction *);
     void performDamage(BattleHero *, BattleHero *, BattleAction *, int damage);

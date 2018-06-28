@@ -10,6 +10,7 @@ BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
     pathFinder = new PathFinder(grid);
     battleActionChecker = new BattleActionChecker(pathFinder);
     battleHeroSpawner = new BattleHeroSpawner(battle, grid);
+    motionEngine = new MotionEngine;
 }
 
 void BattleProcessor::processBattleAction(BattleAction *battleAction)
@@ -87,7 +88,7 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
             singleDamage(battleHero, battleAction);
             battleHero->move();
         } else {
-            movement(battleHero, battleAction);
+            motionEngine->movement(battleHero, battleAction);
         }
 
         return false;
@@ -106,15 +107,6 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
     }
 
     return true;
-}
-
-void BattleProcessor::movement(BattleHero *battleHero, BattleAction *battleAction)
-{
-    battleHero->move();
-    battleHero->flip(battleAction->getCoordinate());
-    battleHero->getCoordinate()->occupied = false;
-    battleAction->getCoordinate()->occupied = true;
-    battleHero->setCoordinate(battleAction->getCoordinate());
 }
 
 void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAction)

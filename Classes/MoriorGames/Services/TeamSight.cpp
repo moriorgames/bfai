@@ -30,20 +30,28 @@ void TeamSight::update(BattleAction *)
     gridView->drawHiddenArea(hiddenCoordinates);
 
     gridView->showActionTiles();
-    auto activeHero = battle->getActiveBattleHero();
     for (auto heroView:heroViews) {
         auto hero = heroView->getBattleHero();
         if (hero->getSide() != side && !hero->isDead()) {
-            heroView->show();
+            if (hero->isVisible()) {
+                heroView->show();
+            } else {
+                hideHero(heroView);
+            }
             for (auto hide:hiddenCoordinates) {
                 if (hero->getCoordinate()->isEqual(hide)) {
-                    heroView->hide();
-                    if (activeHero->getBattleHeroId() == hero->getBattleHeroId()) {
-                        gridView->hideActionTiles();
-                    }
+                    hideHero(heroView);
                     break;
                 }
             }
         }
+    }
+}
+
+void TeamSight::hideHero(HeroView *heroView)
+{
+    heroView->hide();
+    if (battle->getActiveBattleHero()->getBattleHeroId() == heroView->getBattleHero()->getBattleHeroId()) {
+        gridView->hideActionTiles();
     }
 }

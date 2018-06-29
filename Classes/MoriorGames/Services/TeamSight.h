@@ -23,6 +23,8 @@ private:
     GridView *gridView;
     std::vector<HeroView *> heroViews;
     std::vector<Coordinate *> hiddenCoordinates;
+
+    void hideHero(HeroView *);
 };
 
 #endif

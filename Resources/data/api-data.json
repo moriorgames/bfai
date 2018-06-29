@@ -88,15 +88,15 @@
       "id": 7,
       "name": "Knuckles",
       "slug": "knuckles",
-      "damage": 1,
+      "damage": 7,
       "ranged": 1,
-      "health": 1,
-      "movement": 1,
-      "cost": 1,
-      "moveFrames": 1,
-      "attackFrames": 1,
-      "size": 1,
-      "enabled": false
+      "health": 15,
+      "movement": 2,
+      "cost": 4,
+      "moveFrames": 24,
+      "attackFrames": 24,
+      "size": 5,
+      "enabled": true
     },
     {
       "id": 10,
@@ -459,6 +459,21 @@
       "heroId": 6,
       "skillId": 8,
       "cost": 3
+    },
+    {
+      "heroId": 7,
+      "skillId": 5,
+      "cost": 1
+    },
+    {
+      "heroId": 7,
+      "skillId": 6,
+      "cost": 2
+    },
+    {
+      "heroId": 7,
+      "skillId": 8,
+      "cost": 4
     },
     {
       "heroId": 10,

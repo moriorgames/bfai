@@ -18,6 +18,8 @@ private:
     Battle *battle;
 
     void addView() override;
+    void addButtons();
+    void removeButtons();
 };
 
 #endif

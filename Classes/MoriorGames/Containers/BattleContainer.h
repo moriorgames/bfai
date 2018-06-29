@@ -11,6 +11,7 @@
 #include "../Vendor/Services/BattleProcessor.h"
 #include "../Vendor/Services/PathFinder.h"
 #include "../View/Battle/HeroView.h"
+#include "../View/Battle/PortraitsView.h"
 #include "../View/Battle/SkillsView.h"
 USING_NS_CC;
 
@@ -35,6 +36,7 @@ private:
     AI *artificialIntelligence;
     BattleProcessor *battleProcessor;
     std::vector<HeroView *> heroViews;
+    PortraitsView *portraitsView;
     SkillsView *skillsView;
 
     void addHeroViews();

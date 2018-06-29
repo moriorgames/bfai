@@ -87,6 +87,7 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    ../../../Classes/MoriorGames/View/Battle/HeroAnimator.cpp \
                    ../../../Classes/MoriorGames/View/Battle/HeroHitPointsView.cpp \
                    ../../../Classes/MoriorGames/View/Battle/HeroView.cpp \
+                   ../../../Classes/MoriorGames/View/Battle/PortraitsView.cpp \
                    ../../../Classes/MoriorGames/View/Battle/SkillsView.cpp \
                    ../../../Classes/MoriorGames/View/Battle/TileDrawer.cpp \
                    ../../../Classes/MoriorGames/View/Buttons/BattleButton.cpp \

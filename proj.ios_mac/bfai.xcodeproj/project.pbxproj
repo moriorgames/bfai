@@ -19,6 +19,8 @@
 		4F01D161208C2AE9002231DA /* SkillsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F01D15E208C2AE9002231DA /* SkillsView.cpp */; };
 		4F02062E209ACA520000B29C /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F02062C209ACA520000B29C /* Client.cpp */; };
 		4F02062F209ACA520000B29C /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F02062C209ACA520000B29C /* Client.cpp */; };
+		4F0600C920E68E640040D956 /* PortraitsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0600C720E68E640040D956 /* PortraitsView.cpp */; };
+		4F0600CA20E68E640040D956 /* PortraitsView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F0600C720E68E640040D956 /* PortraitsView.cpp */; };
 		4F12CC94207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
 		4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F12CC92207890190033DE0E /* ResolutionChecker.cpp */; };
 		4F1A53EF209D70B7004DDDDC /* HeroesConfigView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A53ED209D70B7004DDDDC /* HeroesConfigView.cpp */; };
@@ -316,6 +318,8 @@
 		4F01D15F208C2AE9002231DA /* SkillsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkillsView.h; sourceTree = "<group>"; };
 		4F02062C209ACA520000B29C /* Client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Client.cpp; sourceTree = "<group>"; };
 		4F02062D209ACA520000B29C /* Client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		4F0600C720E68E640040D956 /* PortraitsView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PortraitsView.cpp; sourceTree = "<group>"; };
+		4F0600C820E68E640040D956 /* PortraitsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PortraitsView.h; sourceTree = "<group>"; };
 		4F12CC92207890190033DE0E /* ResolutionChecker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResolutionChecker.cpp; sourceTree = "<group>"; };
 		4F12CC93207890190033DE0E /* ResolutionChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResolutionChecker.h; sourceTree = "<group>"; };
 		4F12CC992078985F0033DE0E /* Path.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
@@ -927,6 +931,8 @@
 				4F668B6F2095A9AE00D9FD36 /* HeroHitPointsView.h */,
 				4F9604CD2059A12C004CAEED /* HeroView.cpp */,
 				4F9604CE2059A12C004CAEED /* HeroView.h */,
+				4F0600C720E68E640040D956 /* PortraitsView.cpp */,
+				4F0600C820E68E640040D956 /* PortraitsView.h */,
 				4F01D15E208C2AE9002231DA /* SkillsView.cpp */,
 				4F01D15F208C2AE9002231DA /* SkillsView.h */,
 				4FDBF47020919E2B005FF943 /* TileDrawer.cpp */,
@@ -1409,6 +1415,7 @@
 				4FEFE7632079E8CF0031A6B5 /* BattleAction2Json.cpp in Sources */,
 				4FBCDC6A203220CD006B3B5E /* GridSD.cpp in Sources */,
 				4F2F41F920A07F75007A36A1 /* SkillHeroRepository.cpp in Sources */,
+				4F0600C920E68E640040D956 /* PortraitsView.cpp in Sources */,
 				4F576D152075E17E00011BC7 /* GridView.cpp in Sources */,
 				4F7F1AD720E34B5A00AE8DB0 /* StaticBushConfig.cpp in Sources */,
 				4F57815B207C78240060C7D9 /* BattleEventOfflinePublisher.cpp in Sources */,
@@ -1475,6 +1482,7 @@
 				4FDCAE0020A6C1BC00EC6217 /* HeroesConfig2Json.cpp in Sources */,
 				4F4B1FC32092E09A00DAA0B1 /* HeroAnimator.cpp in Sources */,
 				4FA6694F2098E0DA00EDFC0A /* PathBuilder.cpp in Sources */,
+				4F0600CA20E68E640040D956 /* PortraitsView.cpp in Sources */,
 				4F2CBFFA202F22CD00169E86 /* SplashScene.cpp in Sources */,
 				4F576D162075E17E00011BC7 /* GridView.cpp in Sources */,
 				4FA5E8C920AD5B16004919AA /* BattleHeroSpawner.cpp in Sources */,

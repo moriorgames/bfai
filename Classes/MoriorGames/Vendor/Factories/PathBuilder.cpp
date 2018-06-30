@@ -15,6 +15,10 @@ const std::vector<Path> &PathBuilder::build(Skill *skill, BattleHero *battleHero
 
         return pathFinder->buildPathScope(battleHero->getCoordinate(), battleHero->getRanged());
 
+    } else if (skill->getType() == Skill::TYPE_JUMP) {
+
+        return pathFinder->buildPathForJump(battleHero->getCoordinate(), skill->getRanged());
+
     } else if (skill->getType() == Skill::TYPE_CONE_AREA_DAMAGE) {
 
         return pathFinder->buildPathForArea(battleHero->getCoordinate(), skill->getRanged());

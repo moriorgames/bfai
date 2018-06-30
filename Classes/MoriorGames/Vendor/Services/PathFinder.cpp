@@ -75,6 +75,22 @@ const std::vector<Path> &PathFinder::buildPathForSight(Coordinate *origin, int r
     return pathScope;
 }
 
+const std::vector<Path> &PathFinder::buildPathForJump(Coordinate *origin, int range)
+{
+    pathScope = buildPathForSight(origin, range);
+    for (auto coordinate:grid->getCoordinates()) {
+        int index = 0;
+        for (auto path:pathScope) {
+            if (coordinate->occupied && path.coordinate->isEqual(coordinate)) {
+                pathScope.erase(pathScope.begin() + index);
+            }
+            index++;
+        }
+    }
+
+    return pathScope;
+}
+
 const std::vector<Path> &PathFinder::buildPathForArea(Coordinate *origin, int range)
 {
     pathScope.clear();

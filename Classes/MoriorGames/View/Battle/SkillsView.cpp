@@ -62,7 +62,6 @@ void SkillsView::addSkillButtons()
                     if (type == ui::Widget::TouchEventType::ENDED) {
                         battle->setActiveSkill(skillModel->getId());
                         if (skillModel->getId() == Skill::NEXT_TURN_ID) {
-                            // @TODO I think we have to change "battle->getUserToken()" to  "activeHero->getUserToken()"
                             auto action = new BattleAction(
                                 battle->getToken(),
                                 battle->getUserToken(),

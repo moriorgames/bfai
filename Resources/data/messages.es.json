@@ -25,5 +25,9 @@
   "skill_name_spawn-bot": "Invocador Bot",
   "skill_description_spawn-bot": "Invoca un Bot y gana el control de este nuevo personaje en juego.",
   "skill_name_extra-shot": "Disparo extra",
-  "skill_description_extra-shot": "Permite ejecutar un disparo extra durante la fase de movimiento."
+  "skill_description_extra-shot": "Permite ejecutar un disparo extra durante la fase de movimiento.",
+  "skill_name_smash": "Aplastar",
+  "skill_description_smash": "Aplasta a tus enemigos causando un severo daño en área.",
+  "skill_name_jump": "Saltar",
+  "skill_description_jump": "Muévete de un salto a otra posición durante la fase de acción."
 }

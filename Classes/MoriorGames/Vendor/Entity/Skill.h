@@ -21,6 +21,7 @@ public:
     static short TYPE_CONE_AREA_DAMAGE;
     static short TYPE_SPAWN;
     static short TYPE_EXTRA_SHOT;
+    static short TYPE_JUMP;
 
 public:
     int getId() const;

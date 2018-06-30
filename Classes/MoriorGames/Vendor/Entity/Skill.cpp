@@ -30,6 +30,8 @@ short Skill::TYPE_SPAWN = 6;
 
 short Skill::TYPE_EXTRA_SHOT = 7;
 
+short Skill::TYPE_JUMP = 8;
+
 int Skill::getId() const
 {
     return id;

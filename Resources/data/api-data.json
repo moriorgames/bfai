@@ -348,6 +348,28 @@
       "upgradable": true
     },
     {
+      "id": 12,
+      "name": "Smash",
+      "slug": "smash",
+      "type": 5,
+      "damage": 5,
+      "ranged": 1,
+      "extra": 0,
+      "unique": true,
+      "upgradable": true
+    },
+    {
+      "id": 13,
+      "name": "Jump",
+      "slug": "jump",
+      "type": 8,
+      "damage": 0,
+      "ranged": 2,
+      "extra": 0,
+      "unique": true,
+      "upgradable": true
+    },
+    {
       "id": 99,
       "name": "End Of Battle",
       "slug": "end-of-battle",
@@ -461,6 +483,11 @@
       "cost": 3
     },
     {
+      "heroId": 6,
+      "skillId": 13,
+      "cost": 2
+    },
+    {
       "heroId": 7,
       "skillId": 5,
       "cost": 1
@@ -474,6 +501,11 @@
       "heroId": 7,
       "skillId": 8,
       "cost": 4
+    },
+    {
+      "heroId": 7,
+      "skillId": 12,
+      "cost": 1
     },
     {
       "heroId": 10,

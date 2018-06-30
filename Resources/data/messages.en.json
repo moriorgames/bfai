@@ -25,5 +25,9 @@
   "skill_name_spawn-bot": "Spawn Bot",
   "skill_description_spawn-bot": "Spawn one Bot and you gain the full control of this new character ingame.",
   "skill_name_extra-shot": "Extra Shot",
-  "skill_description_extra-shot": "You can perform and extra shot during movement phase."
+  "skill_description_extra-shot": "You can perform and extra shot during movement phase.",
+  "skill_name_smash": "Smash",
+  "skill_description_smash": "Smash and area effect causing several damage.",
+  "skill_name_jump": "Jump",
+  "skill_description_jump": "Jump to another position during the action phase."
 }

@@ -104,6 +104,9 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
         if (skillType == Skill::TYPE_CONE_AREA_DAMAGE) {
             areaDamage(skill, battleHero, battleAction);
         }
+        if (skillType == Skill::TYPE_JUMP) {
+            motionEngine->movement(battleHero, battleAction);
+        }
     }
 
     return true;

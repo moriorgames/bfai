@@ -99,7 +99,7 @@
       "enabled": true
     },
     {
-      "id": 10,
+      "id": 8,
       "name": "Fractal",
       "slug": "fractal",
       "damage": 4,
@@ -113,7 +113,7 @@
       "enabled": true
     },
     {
-      "id": 11,
+      "id": 9,
       "name": "Bot",
       "slug": "bot",
       "damage": 2,
@@ -332,7 +332,7 @@
       "type": 6,
       "damage": 0,
       "ranged": 1,
-      "extra": 11,
+      "extra": 9,
       "unique": true,
       "upgradable": true
     },
@@ -508,47 +508,47 @@
       "cost": 1
     },
     {
-      "heroId": 10,
+      "heroId": 8,
       "skillId": 5,
       "cost": 1
     },
     {
-      "heroId": 10,
+      "heroId": 8,
       "skillId": 6,
       "cost": 4
     },
     {
-      "heroId": 10,
+      "heroId": 8,
       "skillId": 7,
       "cost": 4
     },
     {
-      "heroId": 10,
+      "heroId": 8,
       "skillId": 8,
       "cost": 4
     },
     {
-      "heroId": 10,
+      "heroId": 8,
       "skillId": 10,
       "cost": 3
     },
     {
-      "heroId": 11,
+      "heroId": 9,
       "skillId": 5,
       "cost": 4
     },
     {
-      "heroId": 11,
+      "heroId": 9,
       "skillId": 6,
       "cost": 1
     },
     {
-      "heroId": 11,
+      "heroId": 9,
       "skillId": 7,
       "cost": 4
     },
     {
-      "heroId": 11,
+      "heroId": 9,
       "skillId": 8,
       "cost": 1
     }

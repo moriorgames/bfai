@@ -36,6 +36,9 @@ void HeroView::update(BattleAction *battleAction)
         } else if (battleAction->getSkillId() == Skill::MOVE_ID) {
             heroAnimator->stop();
             container->runAction(heroAnimator->moveTo(battleHero->getCoordinate()));
+        } else if (battleAction->getSkillId() == Skill::JUMP_ID) {
+            heroAnimator->stop();
+            container->runAction(heroAnimator->jumpTo(container, battleHero->getCoordinate()));
         } else if (battleAction->getSkillId() == Skill::DAMAGE_ID) {
             heroHitPointsView->update();
             heroAnimator->hurt(container, battleAction);

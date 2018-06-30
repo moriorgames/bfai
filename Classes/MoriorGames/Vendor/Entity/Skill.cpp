@@ -10,6 +10,8 @@ short Skill::SINGLE_ATTACK_ID = 4;
 
 short Skill::EXTRA_SHOT_ID = 11;
 
+short Skill::JUMP_ID = 13;
+
 short Skill::START_BATTLE_ID = 98;
 
 short Skill::END_OF_BATTLE_ID = 99;

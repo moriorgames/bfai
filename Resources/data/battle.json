@@ -19,69 +19,50 @@
       "y": 0
     },
     {
-      "userToken": "e1c7b924-86d6-4e6f-906c-2cda0629f030",
+      "userToken": "7ed6e78a-598d-4a24-9243-0afd0d7714cd",
       "side": "local",
       "battleHeroId": 3,
-      "heroId": 2,
-      "x": -8,
-      "y": 2
+      "heroId": 6,
+      "x": -4,
+      "y": 1
     },
     {
-      "userToken": "e1c7b924-86d6-4e6f-906c-2cda0629f030",
-      "side": "local",
+      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
+      "side": "visitor",
       "battleHeroId": 4,
-      "heroId": 3,
-      "x": -7,
-      "y": 1
-    },
-    {
-      "userToken": "e1c7b924-86d6-4e6f-906c-2cda0629f030",
-      "side": "local",
-      "battleHeroId": 5,
-      "heroId": 4,
-      "x": -7,
-      "y": -1
-    },
-    {
-      "userToken": "e1c7b924-86d6-4e6f-906c-2cda0629f030",
-      "side": "local",
-      "battleHeroId": 6,
-      "heroId": 5,
-      "x": -8,
-      "y": -2
-    },
-    {
-      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
-      "side": "visitor",
-      "battleHeroId": 7,
-      "heroId": 3,
+      "heroId": 7,
       "x": 8,
       "y": 2
-    },
-    {
-      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
-      "side": "visitor",
-      "battleHeroId": 8,
-      "heroId": 3,
-      "x": 7,
-      "y": 1
-    },
-    {
-      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
-      "side": "visitor",
-      "battleHeroId": 9,
-      "heroId": 7,
-      "x": 7,
-      "y": -1
-    },
-    {
-      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
-      "side": "visitor",
-      "battleHeroId": 10,
-      "heroId": 4,
-      "x": 8,
-      "y": -2
     }
   ],
-  "skillsHeroes": []
+  "skillsHeroes": [
+    {
+      "battleHeroId": 3,
+      "skillId": 8
+    },
+    {
+      "battleHeroId": 3,
+      "skillId": 13
+    },
+    {
+      "battleHeroId": 3,
+      "skillId": 6
+    },
+    {
+      "battleHeroId": 3,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 3,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 3,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 3,
+      "skillId": 5
+    }
+  ]
 }

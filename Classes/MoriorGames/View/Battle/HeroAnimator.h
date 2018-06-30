@@ -21,6 +21,7 @@ public:
     void stop();
     void move();
     Action *moveTo(Coordinate *);
+    Action *jumpTo(Node *, Coordinate *);
     void action();
     void hurt(Node *, BattleAction *);
 

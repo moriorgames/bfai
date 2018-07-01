@@ -19,12 +19,14 @@ void HeroView::hide()
 {
     container->setOpacity(0);
     heroHitPointsView->hide();
+    battleHero->setHidden(true);
 }
 
 void HeroView::show()
 {
     container->setOpacity(255);
     heroHitPointsView->show();
+    battleHero->setHidden(false);
 }
 
 void HeroView::update(BattleAction *battleAction)

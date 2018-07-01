@@ -69,6 +69,16 @@ void BattleHero::setVisible(bool visible)
     this->_visible = visible;
 }
 
+bool BattleHero::isHidden()
+{
+    return _hidden;
+}
+
+void BattleHero::setHidden(bool hidden)
+{
+    this->_hidden = hidden;
+}
+
 void BattleHero::setCoordinate(Coordinate *coordinate)
 {
     this->coordinate = coordinate;

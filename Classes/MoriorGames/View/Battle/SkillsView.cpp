@@ -52,7 +52,12 @@ void SkillsView::addSkillButtons()
 
         auto skillModel = skillRepo->findById(skill->getId());
 
-        auto button = ui::Button::create("portraits/" + skillModel->getSlug() + ".png", "", "", uiTexture::PLIST);
+        auto skillImg = skillModel->getSlug();
+        if ((!activeHero->isVisible() || activeHero->isHidden()) &&
+            activeHero->getUserToken() != playerUser->getToken()) {
+            skillImg = "unknown";
+        }
+        auto button = ui::Button::create("portraits/" + skillImg + ".png", "", "", uiTexture::PLIST);
         button->setPosition(Point(x, y));
 
         if (activeHero->getUserToken() == playerUser->getToken()) {

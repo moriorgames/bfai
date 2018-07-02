@@ -74,8 +74,8 @@ void BattleContainer::registerObservers()
     }
     battleProcessor->registerObserver(gridContainer->getGridView());
 //    battleProcessor->registerObserver(portraitsView);
-    battleProcessor->registerObserver(skillsView);
     battleProcessor->registerObserver(teamSight);
+    battleProcessor->registerObserver(skillsView);
     battleProcessor->registerObserver(this);
     auto battleStart = new BattleAction("", "", 0, Skill::START_BATTLE_ID);
     battleProcessor->processBattleAction(battleStart);

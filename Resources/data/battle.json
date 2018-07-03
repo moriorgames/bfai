@@ -1,6 +1,6 @@
 {
-  "token": "some-uuid4-battle-token",
-  "online": false,
+  "token": "8ed6e98c-598d-4a24-9243-0afd0d7714cd",
+  "online": true,
   "heroes": [
     {
       "userToken": "",

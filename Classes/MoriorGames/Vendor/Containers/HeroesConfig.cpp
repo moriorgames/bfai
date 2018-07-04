@@ -93,3 +93,8 @@ bool HeroesConfig::isAbleToAddSkill(Skill *skill, Hero *heroToCheck)
 
     return totalCost <= BATTLE_TOTAL_COST;
 }
+
+bool HeroesConfig::isAbleToAddHero()
+{
+    return MAX_HEROES > heroes.size();
+}

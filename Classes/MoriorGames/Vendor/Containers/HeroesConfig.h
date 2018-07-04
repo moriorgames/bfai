@@ -7,6 +7,8 @@
 class HeroesConfig
 {
 public:
+    const short MAX_HEROES = 4;
+
     const std::vector<Hero *> &getHeroes() const;
     bool hasHero(Hero *);
     void clear();
@@ -15,6 +17,7 @@ public:
     void removeHero(Hero *);
     int countBattleHeroesCost();
     bool isAbleToAddSkill(Skill *skill, Hero *hero);
+    bool isAbleToAddHero();
 
 protected:
     std::vector<Hero *> heroes;

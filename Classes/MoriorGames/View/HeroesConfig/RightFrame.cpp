@@ -44,9 +44,11 @@ void RightFrame::addHeroesList()
                 sprite->addChild(
                     getInfoButton(hero)
                 );
-                sprite->addChild(
-                    getActionButton(hero)
-                );
+                if (heroesConfig->isAbleToAddHero()) {
+                    sprite->addChild(
+                        getActionButton(hero)
+                    );
+                }
             }
             scrollView->addChild(sprite);
             index++;

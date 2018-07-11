@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moriorgames.teamfightheroes"
     android:installLocation="auto"
-    android:versionCode="109"
-    android:versionName="1.09">
+    android:versionCode="110"
+    android:versionName="1.10">
 
     <uses-feature android:glEsVersion="0x00020000" />
     

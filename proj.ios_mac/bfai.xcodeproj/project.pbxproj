@@ -215,6 +215,8 @@
 		4FEFE7602079E0E90031A6B5 /* BattleProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE75D2079E0E90031A6B5 /* BattleProcessor.cpp */; };
 		4FEFE7632079E8CF0031A6B5 /* BattleAction2Json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7612079E8CF0031A6B5 /* BattleAction2Json.cpp */; };
 		4FEFE7642079E8CF0031A6B5 /* BattleAction2Json.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FEFE7612079E8CF0031A6B5 /* BattleAction2Json.cpp */; };
+		4FF4D25C20F5C028002A31E1 /* Randomizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF4D25A20F5C028002A31E1 /* Randomizer.cpp */; };
+		4FF4D25D20F5C028002A31E1 /* Randomizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF4D25A20F5C028002A31E1 /* Randomizer.cpp */; };
 		4FF9D53A209F6BA900570E45 /* Translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9D538209F6BA900570E45 /* Translator.cpp */; };
 		4FF9D53B209F6BA900570E45 /* Translator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FF9D538209F6BA900570E45 /* Translator.cpp */; };
 		4FFC1C7920BD13D600FE4DF7 /* TrainingButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FFC1C7720BD13D600FE4DF7 /* TrainingButton.cpp */; };
@@ -517,6 +519,8 @@
 		4FEFE75E2079E0E90031A6B5 /* BattleProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleProcessor.h; sourceTree = "<group>"; };
 		4FEFE7612079E8CF0031A6B5 /* BattleAction2Json.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleAction2Json.cpp; sourceTree = "<group>"; };
 		4FEFE7622079E8CF0031A6B5 /* BattleAction2Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleAction2Json.h; sourceTree = "<group>"; };
+		4FF4D25A20F5C028002A31E1 /* Randomizer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Randomizer.cpp; sourceTree = "<group>"; };
+		4FF4D25B20F5C028002A31E1 /* Randomizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Randomizer.h; sourceTree = "<group>"; };
 		4FF9D538209F6BA900570E45 /* Translator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Translator.cpp; sourceTree = "<group>"; };
 		4FF9D539209F6BA900570E45 /* Translator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Translator.h; sourceTree = "<group>"; };
 		4FFC1C7720BD13D600FE4DF7 /* TrainingButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TrainingButton.cpp; sourceTree = "<group>"; };
@@ -864,6 +868,8 @@
 				4F4B7D0E20ADE7D30049E74B /* PathFinderShot.h */,
 				4F46C52A20DD3FFF00879455 /* PlayerSide.cpp */,
 				4F46C52B20DD3FFF00879455 /* PlayerSide.h */,
+				4FF4D25A20F5C028002A31E1 /* Randomizer.cpp */,
+				4FF4D25B20F5C028002A31E1 /* Randomizer.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1412,6 +1418,7 @@
 				4FBCDC582032079A006B3B5E /* BattleInitCustomActions.cpp in Sources */,
 				4FD30897205ED742007D8039 /* BattleEventListener.cpp in Sources */,
 				4F57815D207C78240060C7D9 /* BattleEventOnlinePublisher.cpp in Sources */,
+				4FF4D25C20F5C028002A31E1 /* Randomizer.cpp in Sources */,
 				4FEFE7632079E8CF0031A6B5 /* BattleAction2Json.cpp in Sources */,
 				4FBCDC6A203220CD006B3B5E /* GridSD.cpp in Sources */,
 				4F2F41F920A07F75007A36A1 /* SkillHeroRepository.cpp in Sources */,
@@ -1456,6 +1463,7 @@
 				4F3AE455202EE9E000B687FB /* ViewHelper.cpp in Sources */,
 				4F12CC95207890190033DE0E /* ResolutionChecker.cpp in Sources */,
 				4FA6AD7F202F8FC200158956 /* WorldView.cpp in Sources */,
+				4FF4D25D20F5C028002A31E1 /* Randomizer.cpp in Sources */,
 				4F5C0CE0208B0749006D57BF /* SkillRepository.cpp in Sources */,
 				4F5062BA20E49B36005C1DBE /* MotionEngine.cpp in Sources */,
 				4FDCADF420A608E900EC6217 /* HeroesConfigPublisher.cpp in Sources */,

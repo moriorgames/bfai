@@ -78,6 +78,7 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    ../../../Classes/MoriorGames/Vendor/Services/PathFinderArea.cpp \
                    ../../../Classes/MoriorGames/Vendor/Services/PathFinderShot.cpp \
                    ../../../Classes/MoriorGames/Vendor/Services/PlayerSide.cpp \
+                   ../../../Classes/MoriorGames/Vendor/Services/Randomizer.cpp \
                    ../../../Classes/MoriorGames/Vendor/ValueObjects/Coordinate.cpp \
                    ../../../Classes/MoriorGames/View/Battle/BattleBackgroundView.cpp \
                    ../../../Classes/MoriorGames/View/Battle/BattleView.cpp \

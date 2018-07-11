@@ -10,7 +10,6 @@ class BattleScene: public cocos2d::Layer, public Socket::Delegate
 public:
     static cocos2d::Scene *createScene(std::string json);
     virtual bool init();
-    void scheduledEvents(float delay);
     static void goToMainMenuScene(float delay);
 
     CREATE_FUNC(BattleScene);

@@ -35,7 +35,3 @@ void BattleView::addView()
         layer, battleContainer->getBattle(), battleContainer->getEventPublisher(), battleContainer->getGridContainer()
     );
 }
-void BattleView::ai()
-{
-    battleContainer->getAI()->process();
-}

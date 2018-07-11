@@ -13,7 +13,6 @@ public:
     BattleView(const std::string &json, Layer *, Socket *);
     Battle *getBattle();
     void processOnlineAction(std::string json);
-    void ai();
 
 private:
     std::string json;

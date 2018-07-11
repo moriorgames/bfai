@@ -31,14 +31,7 @@ bool BattleScene::init()
         connectToSocket(5100);
     }
 
-    this->schedule(schedule_selector(BattleScene::scheduledEvents), 2.5f);
-
     return true;
-}
-
-void BattleScene::scheduledEvents(float delay)
-{
-    battleView->ai();
 }
 
 void BattleScene::goToMainMenuScene(float delay)

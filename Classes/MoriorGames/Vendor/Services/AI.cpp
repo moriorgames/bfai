@@ -1,5 +1,5 @@
 #include "AI.h"
-#include <cstdlib>
+#include "Randomizer.h"
 
 AI::AI(Battle *battle, BattleProcessor *battleProcessor, BattleEventPublishable *eventPublisher)
     : battle{battle}, battleProcessor{battleProcessor}, eventPublisher{eventPublisher}
@@ -31,5 +31,64 @@ void AI::update(BattleAction *)
 
 void AI::geneticAlgorithm()
 {
+    initialize();
 
+    for (int generation = 0; generation < MAX_GENERATIONS; ++generation) {
+
+        printf("==: Generation %i Population %lu\n", generation, dnas.size());
+
+//        calculateFitness();
+
+//        generation = evaluate(generation);
+
+//        environmentExtinction();
+
+//        printBest();
+
+//        newGeneration();
+    }
+
+    printf("\nFINISHED\n");
+}
+
+void AI::initialize()
+{
+    dnas.clear();
+    for (int i = 0; i < POPULATION; ++i) {
+        DNA dna;
+        dnas.push_back(dna);
+        // Full random
+        mutate(dna, 100);
+    }
+}
+
+void AI::mutate(DNA &dna, int mutationRate)
+{
+    if (mutationRate >= 100) {
+        dna.x1 = Randomizer::randomize(-5, 5);
+        dna.y1 = Randomizer::randomize(-5, 5);
+        dna.skill1 = Randomizer::randomize(-5, 5);
+        dna.x2 = Randomizer::randomize(-5, 5);
+        dna.y2 = Randomizer::randomize(-5, 5);
+        dna.skill2 = Randomizer::randomize(-5, 5);
+    } else {
+        if (Randomizer::randomize(0, 100) <= mutationRate) {
+            dna.x1 = Randomizer::randomize(-5, 5);
+        }
+        if (Randomizer::randomize(0, 100) <= mutationRate) {
+            dna.y1 = Randomizer::randomize(-5, 5);
+        }
+        if (Randomizer::randomize(0, 100) <= mutationRate) {
+            dna.skill1 = Randomizer::randomize(-5, 5);
+        }
+        if (Randomizer::randomize(0, 100) <= mutationRate) {
+            dna.x2 = Randomizer::randomize(-5, 5);
+        }
+        if (Randomizer::randomize(0, 100) <= mutationRate) {
+            dna.y2 = Randomizer::randomize(-5, 5);
+        }
+        if (Randomizer::randomize(0, 100) <= mutationRate) {
+            dna.skill2 = Randomizer::randomize(-5, 5);
+        }
+    }
 }

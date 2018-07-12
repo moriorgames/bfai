@@ -37,7 +37,7 @@ void AI::geneticAlgorithm()
 
         printf("==: Generation %i Population %lu\n", generation, dnas.size());
 
-//        calculateFitness();
+        calculateFitness();
 
 //        generation = evaluate(generation);
 
@@ -93,9 +93,18 @@ void AI::mutate(DNA &dna, int mutationRate)
     }
 }
 
+void AI::calculateFitness()
+{
+    auto battleAction = new BattleAction("", "", 0, 0);
+    for (DNA dna:dnas) {
+        dna.fitness = battleProcessor->processBattleAction(battleAction, true);
+        printDNA(dna);
+    }
+}
+
 void AI::printDNA(DNA &dna)
 {
-    printf("========= DNA: x1: %i y1: %i skill1: %i x2: %i y2: %i skill2: %i \n",
-           dna.x1, dna.y1, dna.skill1, dna.x2, dna.y2, dna.skill2
+    printf("========= DNA: x1: %i y1: %i skill1: %i x2: %i y2: %i skill2: %i -- fitness: %f \n",
+           dna.x1, dna.y1, dna.skill1, dna.x2, dna.y2, dna.skill2, dna.fitness
     );
 }

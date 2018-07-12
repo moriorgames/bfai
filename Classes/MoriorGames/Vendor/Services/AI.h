@@ -16,13 +16,14 @@ struct DNA
     int x2 = 0;
     int y2 = 0;
     int skill2 = 0;
+    double fitness = 0;
 };
 
 class AI: public BattleObservable
 {
 public:
-    const int POPULATION = 100;
-    const int MAX_GENERATIONS = 100;
+    const int POPULATION = 5;
+    const int MAX_GENERATIONS = 1;
 
     const std::string AI_TOKEN = "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB";
 
@@ -36,10 +37,9 @@ private:
     std::vector<DNA> dnas;
 
     void geneticAlgorithm();
-
     void initialize();
-
     void mutate(DNA &dna, int mutationRate);
+    void calculateFitness();
     void printDNA(DNA &dna);
 };
 

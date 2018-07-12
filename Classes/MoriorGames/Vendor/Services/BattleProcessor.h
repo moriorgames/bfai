@@ -14,7 +14,7 @@ class BattleProcessor: public BattlePublishable
 {
 public:
     explicit BattleProcessor(Battle *, Grid *);
-    void processBattleAction(BattleAction *);
+    double processBattleAction(BattleAction *, bool withFitness = false);
     void registerObserver(BattleObservable *) override;
     void removeObserver(BattleObservable *) override;
 

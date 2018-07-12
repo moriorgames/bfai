@@ -13,13 +13,13 @@ BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
     motionEngine = new MotionEngine;
 }
 
-void BattleProcessor::processBattleAction(BattleAction *battleAction)
+double BattleProcessor::processBattleAction(BattleAction *battleAction, bool withFitness)
 {
     if (battleAction->getSkillId() == Skill::START_BATTLE_ID) {
         battle->nextHero();
         notifyObservers(battleAction);
 
-        return;
+        return 0;
     }
 
     bool endOfTurn = true;
@@ -43,6 +43,8 @@ void BattleProcessor::processBattleAction(BattleAction *battleAction)
 
         notifyObservers(battleAction);
     }
+
+    return 0;
 }
 
 void BattleProcessor::registerObserver(BattleObservable *observer)

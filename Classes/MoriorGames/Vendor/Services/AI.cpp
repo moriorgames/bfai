@@ -92,3 +92,10 @@ void AI::mutate(DNA &dna, int mutationRate)
         }
     }
 }
+
+void AI::printDNA(DNA &dna)
+{
+    printf("========= DNA: x1: %i y1: %i skill1: %i x2: %i y2: %i skill2: %i \n",
+           dna.x1, dna.y1, dna.skill1, dna.x2, dna.y2, dna.skill2
+    );
+}

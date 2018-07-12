@@ -40,6 +40,7 @@ private:
     void initialize();
 
     void mutate(DNA &dna, int mutationRate);
+    void printDNA(DNA &dna);
 };
 
 #endif

@@ -95,12 +95,21 @@ void AI::mutate(DNA &dna, int mutationRate)
 
 void AI::calculateFitness()
 {
-    auto battleAction = new BattleAction("", "", 0, 0);
+    auto activeHero = battle->getActiveBattleHero();
     for (DNA dna:dnas) {
-        auto fitnessDTO = battleProcessor->processBattleAction(battleAction, true);
-        double fitness = fitnessDTO->getFitnessMove() * WEIGHT_MOVE +
-            fitnessDTO->getFitnessDamage() * WEIGHT_DAMAGE;
-        dna.fitness = fitness;
+
+        // @todo WIP we have to know how to get the fitness for battle action process for "virtual Action"
+//        auto battleAction = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), dna.skill1);
+//        auto coordinate = new Coordinate(dna.x1, dna.y1);
+//        battleAction->setCoordinate(coordinate);
+
+//        auto fitnessDTO = battleProcessor->processBattleAction(battleAction, true);
+//        double fitness = fitnessDTO->getFitnessMove() * WEIGHT_MOVE +
+//            fitnessDTO->getFitnessDamage() * WEIGHT_DAMAGE;
+//        dna.fitness = fitness;
+//
+//        delete coordinate;
+//        delete battleAction;
         printDNA(dna);
     }
 }

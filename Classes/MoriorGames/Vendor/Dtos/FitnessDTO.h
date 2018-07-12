@@ -7,9 +7,9 @@ public:
     explicit FitnessDTO() = default;
     void clear();
     double getFitnessMove() const;
-    void setFitnessMove(double fitnessMove);
+    void addFitnessMove(double fitnessMove);
     double getFitnessDamage() const;
-    void setFitnessDamage(double fitnessDamage);
+    void addFitnessDamage(double fitnessDamage);
 
 private:
     double fitnessMove = 0;

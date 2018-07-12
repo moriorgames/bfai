@@ -11,9 +11,9 @@ double FitnessDTO::getFitnessMove() const
     return fitnessMove;
 }
 
-void FitnessDTO::setFitnessMove(double fitnessMove)
+void FitnessDTO::addFitnessMove(double fitnessMove)
 {
-    this->fitnessMove = fitnessMove;
+    this->fitnessMove += fitnessMove;
 }
 
 double FitnessDTO::getFitnessDamage() const
@@ -21,7 +21,7 @@ double FitnessDTO::getFitnessDamage() const
     return fitnessDamage;
 }
 
-void FitnessDTO::setFitnessDamage(double fitnessDamage)
+void FitnessDTO::addFitnessDamage(double fitnessDamage)
 {
-    this->fitnessDamage = fitnessDamage;
+    this->fitnessDamage += fitnessDamage;
 }

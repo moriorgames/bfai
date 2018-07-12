@@ -25,6 +25,9 @@ public:
     const int POPULATION = 5;
     const int MAX_GENERATIONS = 1;
 
+    const double WEIGHT_MOVE = 1.5;
+    const double WEIGHT_DAMAGE = 3.5;
+
     const std::string AI_TOKEN = "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB";
 
     AI(Battle *, BattleProcessor *, BattleEventPublishable *);

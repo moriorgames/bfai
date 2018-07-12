@@ -5,6 +5,7 @@
 #include "BattleActionChecker.h"
 #include "BattleHeroSpawner.h"
 #include "MotionEngine.h"
+#include "../Dtos/FitnessDTO.h"
 #include "../Entity/Battle.h"
 #include "../Entity/BattleAction.h"
 #include "../Observer/BattlePublishable.h"
@@ -14,7 +15,7 @@ class BattleProcessor: public BattlePublishable
 {
 public:
     explicit BattleProcessor(Battle *, Grid *);
-    double processBattleAction(BattleAction *, bool withFitness = false);
+    FitnessDTO *processBattleAction(BattleAction *, bool withFitness = false);
     void registerObserver(BattleObservable *) override;
     void removeObserver(BattleObservable *) override;
 
@@ -27,6 +28,7 @@ private:
     BattleHeroSpawner *battleHeroSpawner;
     BattleActionChecker *battleActionChecker;
     MotionEngine *motionEngine;
+    FitnessDTO *fitnessDTO;
     Grid *grid;
     std::vector<BattleObservable *> observers;
     std::vector<BattleAction *> extraActions;

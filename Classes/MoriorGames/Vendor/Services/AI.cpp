@@ -97,7 +97,10 @@ void AI::calculateFitness()
 {
     auto battleAction = new BattleAction("", "", 0, 0);
     for (DNA dna:dnas) {
-        dna.fitness = battleProcessor->processBattleAction(battleAction, true);
+        auto fitnessDTO = battleProcessor->processBattleAction(battleAction, true);
+        double fitness = fitnessDTO->getFitnessMove() * WEIGHT_MOVE +
+            fitnessDTO->getFitnessDamage() * WEIGHT_DAMAGE;
+        dna.fitness = fitness;
         printDNA(dna);
     }
 }

@@ -1,13 +1,19 @@
-//
-//  FitnessDTO.hpp
-//  bfai
-//
-//  Created by Jordi Grados García on 12/07/2018.
-//
+#ifndef MORIOR_GAMES_VENDOR_DTOS_FITNESS_DTO_H
+#define MORIOR_GAMES_VENDOR_DTOS_FITNESS_DTO_H
 
-#ifndef FitnessDTO_hpp
-#define FitnessDTO_hpp
+class FitnessDTO
+{
+public:
+    explicit FitnessDTO() = default;
+    void clear();
+    double getFitnessMove() const;
+    void setFitnessMove(double fitnessMove);
+    double getFitnessDamage() const;
+    void setFitnessDamage(double fitnessDamage);
 
-#include <stdio.h>
+private:
+    double fitnessMove = 0;
+    double fitnessDamage = 0;
+};
 
-#endif /* FitnessDTO_hpp */
+#endif

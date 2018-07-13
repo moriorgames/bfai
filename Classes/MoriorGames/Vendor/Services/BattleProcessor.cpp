@@ -28,7 +28,7 @@ void BattleProcessor::processBattleAction(BattleAction *battleAction)
 
         for (auto battleHero:battle->getBattleHeroes()) {
             if (battleActionChecker->isBattleActionAllowed(battleHero, activeHero, battleAction)) {
-                endOfTurn = battleActionProcess(battleHero, battleAction);
+                endOfTurn = processBattleActionSideEffects(battleHero, battleAction);
                 break;
             }
         }
@@ -71,7 +71,7 @@ void BattleProcessor::notifyObservers(BattleAction *battleAction)
     }
 }
 
-bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *battleAction)
+bool BattleProcessor::processBattleActionSideEffects(BattleHero *battleHero, BattleAction *battleAction)
 {
     auto coord = grid->findByXY(battleAction->getCoordinate()->x, battleAction->getCoordinate()->y);
     if (coord) {
@@ -88,8 +88,12 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
 
         if (!battleHero->hasMoved() && (skillId == Skill::MOVE_ID || skillType == Skill::TYPE_EXTRA_SHOT)) {
             if (skillType == Skill::TYPE_EXTRA_SHOT) {
-                singleDamage(battleHero, battleAction);
-                battleHero->move();
+                if (battleAction->isVirtualAction()) {
+                    battleAction->addFitnessDamage(battleHero->getDamage());
+                } else {
+                    singleDamage(battleHero, battleAction);
+                    battleHero->move();
+                }
             } else {
                 motionEngine->movement(battleHero, battleAction);
             }
@@ -98,14 +102,26 @@ bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *
         }
 
         if (skillId == Skill::SINGLE_ATTACK_ID || skillType == Skill::TYPE_EXTRA_SHOT) {
-            singleDamage(battleHero, battleAction);
+            if (battleAction->isVirtualAction()) {
+                battleAction->addFitnessDamage(battleHero->getDamage());
+            } else {
+                singleDamage(battleHero, battleAction);
+            }
         } else {
 
             if (skillType == Skill::TYPE_SPAWN) {
-                battleHeroSpawner->spawn(skill, battleHero, battleAction);
+                if (battleAction->isVirtualAction()) {
+
+                } else {
+                    battleHeroSpawner->spawn(skill, battleHero, battleAction);
+                }
             }
             if (skillType == Skill::TYPE_CONE_AREA_DAMAGE) {
-                areaDamage(skill, battleHero, battleAction);
+                if (battleAction->isVirtualAction()) {
+
+                } else {
+                    areaDamage(skill, battleHero, battleAction);
+                }
             }
             if (skillType == Skill::TYPE_JUMP) {
                 motionEngine->movement(battleHero, battleAction);

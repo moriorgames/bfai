@@ -1,14 +1,19 @@
 #include "MotionEngine.h"
 #include "../Config/StaticBushConfig.h"
+#include <cmath>
 
 void MotionEngine::movement(BattleHero *battleHero, BattleAction *battleAction)
 {
-    battleHero->move();
-    battleHero->flip(battleAction->getCoordinate());
-    battleHero->getCoordinate()->occupied = false;
-    battleAction->getCoordinate()->occupied = true;
-    battleHero->setCoordinate(battleAction->getCoordinate());
-    battleHero->setVisible(isVisibleCoordinate(battleHero->getCoordinate()));
+    if (battleAction->isVirtualAction()) {
+
+    } else {
+        battleHero->move();
+        battleHero->flip(battleAction->getCoordinate());
+        battleHero->getCoordinate()->occupied = false;
+        battleAction->getCoordinate()->occupied = true;
+        battleHero->setCoordinate(battleAction->getCoordinate());
+        battleHero->setVisible(isVisibleCoordinate(battleHero->getCoordinate()));
+    }
 }
 
 bool MotionEngine::isVisibleCoordinate(Coordinate *coordinate)
@@ -20,4 +25,9 @@ bool MotionEngine::isVisibleCoordinate(Coordinate *coordinate)
     }
 
     return true;
+}
+
+double MotionEngine::getDistance(Coordinate *a, Coordinate *b)
+{
+    return fabs(a->x - b->x) / 2 + fabs(a->y - b->y) / 2;
 }

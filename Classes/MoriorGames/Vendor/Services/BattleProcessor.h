@@ -15,6 +15,7 @@ class BattleProcessor: public BattlePublishable
 public:
     explicit BattleProcessor(Battle *, Grid *);
     void processBattleAction(BattleAction *);
+    bool processBattleActionSideEffects(BattleHero *, BattleAction *);
     void registerObserver(BattleObservable *) override;
     void removeObserver(BattleObservable *) override;
 
@@ -31,7 +32,6 @@ private:
     std::vector<BattleObservable *> observers;
     std::vector<BattleAction *> extraActions;
 
-    bool battleActionProcess(BattleHero *, BattleAction *);
     void singleDamage(BattleHero *, BattleAction *);
     void areaDamage(Skill *, BattleHero *, BattleAction *);
     void performDamage(BattleHero *, BattleHero *, BattleAction *, int damage);

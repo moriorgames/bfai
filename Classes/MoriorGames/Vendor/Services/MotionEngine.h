@@ -11,6 +11,7 @@ public:
 
 private:
     bool isVisibleCoordinate(Coordinate *);
+    double getDistance(Coordinate *a, Coordinate *b);
 };
 
 #endif

@@ -94,6 +94,7 @@ void BattleAction::print()
            " - id %i\n"
            " - battleHeroId %i\n"
            " - skillId %i\n"
+           " - x %i / y %i\n"
            " - extra %i\n"
            " - _isVirtualAction %i\n"
            " - fitnessMove %f\n"
@@ -104,6 +105,7 @@ void BattleAction::print()
            id,
            battleHeroId,
            skillId,
+           coordinate->x, coordinate->y,
            extra,
            _isVirtualAction,
            fitnessMove,

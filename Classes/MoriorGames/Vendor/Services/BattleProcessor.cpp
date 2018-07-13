@@ -28,8 +28,6 @@ void BattleProcessor::processBattleAction(BattleAction *battleAction)
 
         for (auto battleHero:battle->getBattleHeroes()) {
             if (battleActionChecker->isBattleActionAllowed(battleHero, activeHero, battleAction)) {
-                auto coord = battleAction->getCoordinate();
-                battleAction->setCoordinate(grid->findByXY(coord->x, coord->y));
                 endOfTurn = battleActionProcess(battleHero, battleAction);
                 break;
             }
@@ -75,37 +73,43 @@ void BattleProcessor::notifyObservers(BattleAction *battleAction)
 
 bool BattleProcessor::battleActionProcess(BattleHero *battleHero, BattleAction *battleAction)
 {
-    auto skillId = battleAction->getSkillId();
-    auto skill = skillRepo->findById(skillId);
-    auto skillType = skill->getType();
-    if (!battleActionChecker->isSkillAllowed(skill, battleHero, battleAction)) {
+    auto coord = grid->findByXY(battleAction->getCoordinate()->x, battleAction->getCoordinate()->y);
+    if (coord) {
 
-        return true;
-    }
+        battleAction->setCoordinate(coord);
 
-    if (!battleHero->hasMoved() && (skillId == Skill::MOVE_ID || skillType == Skill::TYPE_EXTRA_SHOT)) {
-        if (skillType == Skill::TYPE_EXTRA_SHOT) {
+        auto skillId = battleAction->getSkillId();
+        auto skill = skillRepo->findById(skillId);
+        auto skillType = skill->getType();
+        if (!battleActionChecker->isSkillAllowed(skill, battleHero, battleAction)) {
+
+            return true;
+        }
+
+        if (!battleHero->hasMoved() && (skillId == Skill::MOVE_ID || skillType == Skill::TYPE_EXTRA_SHOT)) {
+            if (skillType == Skill::TYPE_EXTRA_SHOT) {
+                singleDamage(battleHero, battleAction);
+                battleHero->move();
+            } else {
+                motionEngine->movement(battleHero, battleAction);
+            }
+
+            return false;
+        }
+
+        if (skillId == Skill::SINGLE_ATTACK_ID || skillType == Skill::TYPE_EXTRA_SHOT) {
             singleDamage(battleHero, battleAction);
-            battleHero->move();
         } else {
-            motionEngine->movement(battleHero, battleAction);
-        }
 
-        return false;
-    }
-
-    if (skillId == Skill::SINGLE_ATTACK_ID || skillType == Skill::TYPE_EXTRA_SHOT) {
-        singleDamage(battleHero, battleAction);
-    } else {
-
-        if (skillType == Skill::TYPE_SPAWN) {
-            battleHeroSpawner->spawn(skill, battleHero, battleAction);
-        }
-        if (skillType == Skill::TYPE_CONE_AREA_DAMAGE) {
-            areaDamage(skill, battleHero, battleAction);
-        }
-        if (skillType == Skill::TYPE_JUMP) {
-            motionEngine->movement(battleHero, battleAction);
+            if (skillType == Skill::TYPE_SPAWN) {
+                battleHeroSpawner->spawn(skill, battleHero, battleAction);
+            }
+            if (skillType == Skill::TYPE_CONE_AREA_DAMAGE) {
+                areaDamage(skill, battleHero, battleAction);
+            }
+            if (skillType == Skill::TYPE_JUMP) {
+                motionEngine->movement(battleHero, battleAction);
+            }
         }
     }
 

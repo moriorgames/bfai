@@ -67,10 +67,10 @@ void AI::mutate(DNA &dna, int mutationRate)
     if (mutationRate >= 100) {
         dna.x1 = Randomizer::randomize(-5, 5);
         dna.y1 = Randomizer::randomize(-5, 5);
-        dna.skill1 = Randomizer::randomize(-5, 5);
+        dna.skill1 = Randomizer::randomize(2, 4);
         dna.x2 = Randomizer::randomize(-5, 5);
         dna.y2 = Randomizer::randomize(-5, 5);
-        dna.skill2 = Randomizer::randomize(-5, 5);
+        dna.skill2 = Randomizer::randomize(2, 4);
     } else {
         if (Randomizer::randomize(0, 100) <= mutationRate) {
             dna.x1 = Randomizer::randomize(-5, 5);
@@ -79,7 +79,7 @@ void AI::mutate(DNA &dna, int mutationRate)
             dna.y1 = Randomizer::randomize(-5, 5);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna.skill1 = Randomizer::randomize(-5, 5);
+            dna.skill1 = Randomizer::randomize(2, 4);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
             dna.x2 = Randomizer::randomize(-5, 5);
@@ -88,9 +88,10 @@ void AI::mutate(DNA &dna, int mutationRate)
             dna.y2 = Randomizer::randomize(-5, 5);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna.skill2 = Randomizer::randomize(-5, 5);
+            dna.skill2 = Randomizer::randomize(2, 4);
         }
     }
+    printDNA(dna);
 }
 
 void AI::calculateFitness()
@@ -103,15 +104,17 @@ void AI::calculateFitness()
         auto coordinate = new Coordinate(dna.x1, dna.y1);
         battleAction->setCoordinate(coordinate);
         battleAction->setVirtualAction(true);
+        battleAction->print();
 
-        battleProcessor->processBattleAction(battleAction);
-        double fitness = battleAction->getFitnessMove() * WEIGHT_MOVE +
-            battleAction->getFitnessDamage() * WEIGHT_DAMAGE;
-        dna.fitness = fitness;
-
-        delete coordinate;
-        delete battleAction;
+//        battleProcessor->processBattleAction(battleAction);
+//        double fitness = battleAction->getFitnessMove() * WEIGHT_MOVE +
+//            battleAction->getFitnessDamage() * WEIGHT_DAMAGE;
+//        dna.fitness = fitness;
+//
+//        delete coordinate;
+//        delete battleAction;
         printDNA(dna);
+        break;
     }
 }
 

@@ -5,7 +5,11 @@
 void MotionEngine::movement(BattleHero *battleHero, BattleAction *battleAction)
 {
     if (battleAction->isVirtualAction()) {
-
+        auto origin = battleHero->getCoordinate();
+        auto destination = battleAction->getCoordinate();
+        auto target = new Coordinate(-8, 0);
+        double fitness = getDistance(target, origin) - getDistance(target, destination);
+        battleAction->addFitnessMove(fitness);
     } else {
         battleHero->move();
         battleHero->flip(battleAction->getCoordinate());

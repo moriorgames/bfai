@@ -22,7 +22,7 @@ struct DNA
 class AI: public BattleObservable
 {
 public:
-    const int POPULATION = 1;
+    const int POPULATION = 5;
     const int MAX_GENERATIONS = 1;
 
     const double WEIGHT_MOVE = 1.5;

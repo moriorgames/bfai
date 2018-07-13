@@ -73,7 +73,7 @@ void AI::mutate(DNA *dna, int mutationRate)
         dna->skill1 = Randomizer::randomize(2, 4);
         dna->x2 = Randomizer::randomize(-5, 5);
         dna->y2 = Randomizer::randomize(-5, 5);
-        dna->skill2 = Randomizer::randomize(2, 4);
+        dna->skill2 = 4;
     } else {
         if (Randomizer::randomize(0, 100) <= mutationRate) {
             dna->x1 = Randomizer::randomize(-5, 5);
@@ -90,9 +90,7 @@ void AI::mutate(DNA *dna, int mutationRate)
         if (Randomizer::randomize(0, 100) <= mutationRate) {
             dna->y2 = Randomizer::randomize(-5, 5);
         }
-        if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna->skill2 = Randomizer::randomize(2, 4);
-        }
+        dna->skill2 = 4;
     }
 }
 
@@ -102,10 +100,12 @@ void AI::calculateFitness()
     for (auto dna:dnas) {
 
         auto battleAction = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), dna->skill1);
-        auto coordinate = new Coordinate(dna->x1, dna->y1);
+        auto coordinate = new Coordinate(
+            activeHero->getCoordinate()->x + dna->x1,
+            activeHero->getCoordinate()->y + dna->y1
+        );
         battleAction->setCoordinate(coordinate);
         battleAction->setVirtualAction(true);
-        battleAction->print();
 
         // @todo WIP Will use this boolean to perform another Battle Action
         auto endOfTurn = battleProcessor->processBattleActionSideEffects(activeHero, battleAction);
@@ -116,7 +116,6 @@ void AI::calculateFitness()
         delete coordinate;
         delete battleAction;
         printDNA(dna);
-        break;
     }
 }
 

@@ -16,16 +16,26 @@ public:
     int getSkillId() const;
     Coordinate *getCoordinate() const;
     void setCoordinate(Coordinate *);
-
     int getExtra() const;
     void setExtra(int extra);
+    bool isVirtualAction() const;
+    void setVirtualAction(bool _isVirtualAction);
+    double getFitnessMove() const;
+    void addFitnessMove(double fitnessMove);
+    double getFitnessDamage() const;
+    void addFitnessDamage(double fitnessDamage);
 
     void print();
 
 private:
     std::string battleToken = "", userToken = "";
     int id = 0, battleHeroId = 0, skillId = 0, extra = 0;
+    bool _isVirtualAction = false;
+
     Coordinate *coordinate = nullptr;
+
+    double fitnessMove = 0;
+    double fitnessDamage = 0;
 };
 
 #endif

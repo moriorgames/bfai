@@ -47,7 +47,6 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    ../../../Classes/MoriorGames/Transformers/HeroesConfig2Json.cpp \
                    ../../../Classes/MoriorGames/Vendor/Config/StaticBushConfig.cpp \
                    ../../../Classes/MoriorGames/Vendor/Containers/HeroesConfig.cpp \
-                   ../../../Classes/MoriorGames/Vendor/Dtos/FitnessDTO.cpp \
                    ../../../Classes/MoriorGames/Vendor/Dtos/HeroConfigPayload.cpp \
                    ../../../Classes/MoriorGames/Vendor/Entity/Battle.cpp \
                    ../../../Classes/MoriorGames/Vendor/Entity/BattleAction.cpp \

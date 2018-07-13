@@ -11,17 +11,15 @@ BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
     battleActionChecker = new BattleActionChecker(pathFinder);
     battleHeroSpawner = new BattleHeroSpawner(battle, grid);
     motionEngine = new MotionEngine;
-    fitnessDTO = new FitnessDTO;
 }
 
-FitnessDTO *BattleProcessor::processBattleAction(BattleAction *battleAction, bool withFitness)
+void BattleProcessor::processBattleAction(BattleAction *battleAction)
 {
-    fitnessDTO->clear();
     if (battleAction->getSkillId() == Skill::START_BATTLE_ID) {
         battle->nextHero();
         notifyObservers(battleAction);
 
-        return fitnessDTO;
+        return;
     }
 
     bool endOfTurn = true;
@@ -45,8 +43,6 @@ FitnessDTO *BattleProcessor::processBattleAction(BattleAction *battleAction, boo
 
         notifyObservers(battleAction);
     }
-
-    return fitnessDTO;
 }
 
 void BattleProcessor::registerObserver(BattleObservable *observer)

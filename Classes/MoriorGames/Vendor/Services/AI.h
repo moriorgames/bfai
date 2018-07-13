@@ -22,7 +22,7 @@ struct DNA
 class AI: public BattleObservable
 {
 public:
-    const int POPULATION = 5;
+    const int POPULATION = 1;
     const int MAX_GENERATIONS = 1;
 
     const double WEIGHT_MOVE = 1.5;
@@ -37,13 +37,13 @@ private:
     Battle *battle;
     BattleProcessor *battleProcessor;
     BattleEventPublishable *eventPublisher;
-    std::vector<DNA> dnas;
+    std::vector<DNA *> dnas;
 
     void geneticAlgorithm();
     void initialize();
-    void mutate(DNA &dna, int mutationRate);
+    void mutate(DNA *dna, int mutationRate);
     void calculateFitness();
-    void printDNA(DNA &dna);
+    void printDNA(DNA *dna);
 };
 
 #endif

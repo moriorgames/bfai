@@ -55,53 +55,52 @@ void AI::initialize()
 {
     dnas.clear();
     for (int i = 0; i < POPULATION; ++i) {
-        DNA dna;
+        auto dna = new DNA;
         dnas.push_back(dna);
         // Full random
         mutate(dna, 100);
     }
 }
 
-void AI::mutate(DNA &dna, int mutationRate)
+void AI::mutate(DNA *dna, int mutationRate)
 {
     if (mutationRate >= 100) {
-        dna.x1 = Randomizer::randomize(-5, 5);
-        dna.y1 = Randomizer::randomize(-5, 5);
-        dna.skill1 = Randomizer::randomize(2, 4);
-        dna.x2 = Randomizer::randomize(-5, 5);
-        dna.y2 = Randomizer::randomize(-5, 5);
-        dna.skill2 = Randomizer::randomize(2, 4);
+        dna->x1 = Randomizer::randomize(-5, 5);
+        dna->y1 = Randomizer::randomize(-5, 5);
+        dna->skill1 = Randomizer::randomize(2, 4);
+        dna->x2 = Randomizer::randomize(-5, 5);
+        dna->y2 = Randomizer::randomize(-5, 5);
+        dna->skill2 = Randomizer::randomize(2, 4);
     } else {
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna.x1 = Randomizer::randomize(-5, 5);
+            dna->x1 = Randomizer::randomize(-5, 5);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna.y1 = Randomizer::randomize(-5, 5);
+            dna->y1 = Randomizer::randomize(-5, 5);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna.skill1 = Randomizer::randomize(2, 4);
+            dna->skill1 = Randomizer::randomize(2, 4);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna.x2 = Randomizer::randomize(-5, 5);
+            dna->x2 = Randomizer::randomize(-5, 5);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna.y2 = Randomizer::randomize(-5, 5);
+            dna->y2 = Randomizer::randomize(-5, 5);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna.skill2 = Randomizer::randomize(2, 4);
+            dna->skill2 = Randomizer::randomize(2, 4);
         }
     }
-    printDNA(dna);
 }
 
 void AI::calculateFitness()
 {
     auto activeHero = battle->getActiveBattleHero();
-    for (DNA dna:dnas) {
+    for (auto dna:dnas) {
 
         // @todo WIP we have to know how to get the fitness for battle action process for "virtual Action"
-        auto battleAction = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), dna.skill1);
-        auto coordinate = new Coordinate(dna.x1, dna.y1);
+        auto battleAction = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), dna->skill1);
+        auto coordinate = new Coordinate(dna->x1, dna->y1);
         battleAction->setCoordinate(coordinate);
         battleAction->setVirtualAction(true);
         battleAction->print();
@@ -118,9 +117,9 @@ void AI::calculateFitness()
     }
 }
 
-void AI::printDNA(DNA &dna)
+void AI::printDNA(DNA *dna)
 {
     printf("========= DNA: x1: %i y1: %i skill1: %i x2: %i y2: %i skill2: %i -- fitness: %f \n",
-           dna.x1, dna.y1, dna.skill1, dna.x2, dna.y2, dna.skill2, dna.fitness
+           dna->x1, dna->y1, dna->skill1, dna->x2, dna->y2, dna->skill2, dna->fitness
     );
 }

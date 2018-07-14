@@ -23,12 +23,16 @@ struct DNA
 class AI: public BattleObservable
 {
 public:
+    const int MIN_RAND_X = -5;
+    const int MAX_RAND_X = 5;
+    const int MIN_RAND_Y = -4;
+    const int MAX_RAND_Y = 4;
     const int POPULATION = 100;
     const int MAX_GENERATIONS = 1;
     const int EXTINCTION = 30;
     const int ENVIRONMENT = 10;
     const int REPRODUCTION = 3;
-    const int MUTATION_RATE = 3;
+    const int MUTATION_RATE = 1;
 
     const double WEIGHT_MOVE = 1.5;
     const double WEIGHT_DAMAGE = 3.5;

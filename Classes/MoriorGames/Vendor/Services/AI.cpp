@@ -1,7 +1,5 @@
 #include "AI.h"
 #include "Randomizer.h"
-#include <chrono>
-#include <thread>
 
 AI::AI(Battle *battle, BattleProcessor *battleProcessor, BattleEventPublishable *eventPublisher)
     : battle{battle}, battleProcessor{battleProcessor}, eventPublisher{eventPublisher}
@@ -16,7 +14,6 @@ void AI::update(BattleAction *)
         if (activeHero->getBattleHeroId() == 4 && !activeHero->hasMoved() &&
             activeHero->getSide() == BattleHero::SIDE_VISITOR && activeHero->getUserToken() == AI_TOKEN) {
 
-            auto coordinate = activeHero->getCoordinate();
             // Process Genetic Algorithm to choose better next move
             auto best = geneticAlgorithm();
             auto action = new BattleAction(
@@ -25,12 +22,9 @@ void AI::update(BattleAction *)
                 activeHero->getBattleHeroId(),
                 best->skill1
             );
-            action->setCoordinate(new Coordinate(coordinate->x + best->x1, coordinate->y + best->y1));
+            action->setCoordinate(new Coordinate(best->x1, best->y1));
             action->print();
             eventPublisher->publish(action);
-
-//            std::this_thread::sleep_for(std::chrono::nanoseconds(10));
-//            std::this_thread::sleep_until(std::chrono::system_clock::now() + std::chrono::seconds(2));
         }
     }
 }
@@ -45,13 +39,14 @@ DNA *AI::geneticAlgorithm()
 
         calculateFitness();
 
-        environmentExtinction();
+//        environmentExtinction();
 
         printBest();
 
-        newGeneration();
+//        newGeneration();
     }
 
+    calculateFitness();
     auto best = getBest();
     dnas.clear();
     printf("\nFINISHED\n");
@@ -71,25 +66,26 @@ void AI::initialize()
 
 void AI::mutate(DNA *dna, int mutationRate)
 {
+    auto coord = battle->getActiveBattleHero()->getCoordinate();
     if (mutationRate >= 100) {
         // @todo WIP duplication of code to assign X
-        dna->x1 = Randomizer::randomize(-5, 5);
+        dna->x1 = coord->x + Randomizer::randomize(MIN_RAND_X, MAX_RAND_X);
         // @todo WIP duplication of code to assign Y
-        dna->y1 = Randomizer::randomize(-5, 5);
-        dna->x2 = Randomizer::randomize(-5, 5);
-        dna->y2 = Randomizer::randomize(-5, 5);
+        dna->y1 = coord->y + Randomizer::randomize(MIN_RAND_Y, MAX_RAND_Y);
+        dna->x2 = coord->x + Randomizer::randomize(MIN_RAND_X, MAX_RAND_X);
+        dna->y2 = coord->y + Randomizer::randomize(MIN_RAND_Y, MAX_RAND_Y);
     } else {
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna->x1 = Randomizer::randomize(-5, 5);
+            dna->x1 = coord->x + Randomizer::randomize(MIN_RAND_X, MAX_RAND_X);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna->y1 = Randomizer::randomize(-5, 5);
+            dna->y1 = coord->y + Randomizer::randomize(MIN_RAND_Y, MAX_RAND_Y);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna->x2 = Randomizer::randomize(-5, 5);
+            dna->x2 = coord->x + Randomizer::randomize(MIN_RAND_X, MAX_RAND_X);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna->y2 = Randomizer::randomize(-5, 5);
+            dna->y2 = coord->y + Randomizer::randomize(MIN_RAND_Y, MAX_RAND_Y);
         }
     }
     dna->skill1 = 3;
@@ -102,10 +98,7 @@ void AI::calculateFitness()
     for (auto dna:dnas) {
 
         auto battleAction = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), dna->skill1);
-        auto coordinate = new Coordinate(
-            activeHero->getCoordinate()->x + dna->x1,
-            activeHero->getCoordinate()->y + dna->y1
-        );
+        auto coordinate = new Coordinate(dna->x1, dna->y1);
         battleAction->setCoordinate(coordinate);
         battleAction->setVirtualAction(true);
 

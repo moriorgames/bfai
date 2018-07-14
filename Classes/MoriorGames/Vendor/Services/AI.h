@@ -2,6 +2,7 @@
 #define MORIOR_GAMES_VENDOR_SERVICES_AI_H
 
 #include <cmath>
+#include <c++/v1/string>
 #include "../../EventListeners/BattleEventPublishable.h"
 #include "../Entity/Battle.h"
 #include "../Entity/BattleAction.h"
@@ -22,8 +23,9 @@ struct DNA
 class AI: public BattleObservable
 {
 public:
-    const int POPULATION = 5;
+    const int POPULATION = 20;
     const int MAX_GENERATIONS = 1;
+    const int EXTINCTION = 10;
 
     const double WEIGHT_MOVE = 1.5;
     const double WEIGHT_DAMAGE = 3.5;
@@ -43,6 +45,9 @@ private:
     void initialize();
     void mutate(DNA *dna, int mutationRate);
     void calculateFitness();
+    void sortByFitness();
+    void environmentExtinction();
+    void printBest();
     void printDNA(DNA *dna);
 };
 

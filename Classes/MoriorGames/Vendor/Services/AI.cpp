@@ -39,11 +39,9 @@ void AI::geneticAlgorithm()
 
         calculateFitness();
 
-//        generation = evaluate(generation);
+        environmentExtinction();
 
-//        environmentExtinction();
-
-//        printBest();
+        printBest();
 
 //        newGeneration();
     }
@@ -69,11 +67,8 @@ void AI::mutate(DNA *dna, int mutationRate)
         dna->x1 = Randomizer::randomize(-5, 5);
         // @todo WIP duplication of code to assign Y
         dna->y1 = Randomizer::randomize(-5, 5);
-        // @todo WIP duplication of code to assign Skill
-        dna->skill1 = Randomizer::randomize(2, 4);
         dna->x2 = Randomizer::randomize(-5, 5);
         dna->y2 = Randomizer::randomize(-5, 5);
-        dna->skill2 = 4;
     } else {
         if (Randomizer::randomize(0, 100) <= mutationRate) {
             dna->x1 = Randomizer::randomize(-5, 5);
@@ -82,16 +77,14 @@ void AI::mutate(DNA *dna, int mutationRate)
             dna->y1 = Randomizer::randomize(-5, 5);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna->skill1 = Randomizer::randomize(2, 4);
-        }
-        if (Randomizer::randomize(0, 100) <= mutationRate) {
             dna->x2 = Randomizer::randomize(-5, 5);
         }
         if (Randomizer::randomize(0, 100) <= mutationRate) {
             dna->y2 = Randomizer::randomize(-5, 5);
         }
-        dna->skill2 = 4;
     }
+    dna->skill1 = 3;
+    dna->skill2 = 4;
 }
 
 void AI::calculateFitness()
@@ -115,7 +108,29 @@ void AI::calculateFitness()
 
         delete coordinate;
         delete battleAction;
-        printDNA(dna);
+    }
+    sortByFitness();
+}
+
+void AI::sortByFitness()
+{
+    std::sort(dnas.begin(), dnas.end(), [](const DNA *a, const DNA *b) -> bool
+    {
+        return a->fitness > b->fitness;
+    });
+}
+
+void AI::environmentExtinction()
+{
+    int size = dnas.size();
+    int extincion = ceil(EXTINCTION * 0.01 * size);
+    dnas.resize(size - extincion);
+}
+
+void AI::printBest()
+{
+    for (int i = 0; i < 10; ++i) {
+        printDNA(dnas[i]);
     }
 }
 

@@ -90,9 +90,7 @@ bool BattleProcessor::processBattleActionSideEffects(BattleHero *battleHero, Bat
         if (!battleHero->hasMoved() && (skillId == Skill::MOVE_ID || skillType == Skill::TYPE_EXTRA_SHOT)) {
             if (skillType == Skill::TYPE_EXTRA_SHOT) {
                 singleDamage(battleHero, battleAction);
-                if (!battleAction->isVirtualAction()) {
-                    battleHero->move();
-                }
+                battleHero->move();
             } else {
                 motionEngine->movement(battleHero, battleAction);
             }
@@ -102,24 +100,14 @@ bool BattleProcessor::processBattleActionSideEffects(BattleHero *battleHero, Bat
 
         if (skillId == Skill::SINGLE_ATTACK_ID || skillType == Skill::TYPE_EXTRA_SHOT) {
             singleDamage(battleHero, battleAction);
-            if (!battleAction->isVirtualAction()) {
-                battleHero->move();
-            }
+            battleHero->move();
         } else {
 
             if (skillType == Skill::TYPE_SPAWN) {
-                if (battleAction->isVirtualAction()) {
-
-                } else {
-                    battleHeroSpawner->spawn(skill, battleHero, battleAction);
-                }
+                battleHeroSpawner->spawn(skill, battleHero, battleAction);
             }
             if (skillType == Skill::TYPE_CONE_AREA_DAMAGE) {
-                if (battleAction->isVirtualAction()) {
-
-                } else {
-                    areaDamage(skill, battleHero, battleAction);
-                }
+                areaDamage(skill, battleHero, battleAction);
             }
             if (skillType == Skill::TYPE_JUMP) {
                 motionEngine->movement(battleHero, battleAction);
@@ -137,12 +125,7 @@ void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAct
         if (!defender->isDead() && defender->getCoordinate()->isEqual(battleAction->getCoordinate())) {
 
             auto damage = attacker->getDamage();
-            if (battleAction->isVirtualAction() && defender->getSide() != attacker->getSide()) {
-                battleAction->addFitnessDamage(damage);
-            }
-            if (!battleAction->isVirtualAction()) {
-                performDamage(defender, attacker, battleAction, damage);
-            }
+            performDamage(defender, attacker, battleAction, damage);
 
             break;
         }

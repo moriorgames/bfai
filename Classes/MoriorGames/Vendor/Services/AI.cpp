@@ -3,8 +3,8 @@
 
 const std::string AI::AI_TOKEN = "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB";
 
-AI::AI(Battle *battle, BattleProcessor *battleProcessor, BattleEventPublishable *eventPublisher)
-    : battle{battle}, battleProcessor{battleProcessor}, eventPublisher{eventPublisher}
+AI::AI(Battle *battle, FitnessCalculator *fitnessCalculator, BattleEventPublishable *eventPublisher)
+    : battle{battle}, fitnessCalculator{fitnessCalculator}, eventPublisher{eventPublisher}
 {
     best = new DNA;
 }
@@ -105,12 +105,8 @@ void AI::calculateFitness()
         auto battleAction = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), dna->skill1);
         auto coordinate = new Coordinate(dna->x1, dna->y1);
         battleAction->setCoordinate(coordinate);
-        battleAction->setVirtualAction(true);
-
-        // @todo WIP Will use this boolean to perform another Battle Action
-        battleProcessor->processBattleActionSideEffects(activeHero, battleAction);
-        dna->fitness = battleAction->getFitnessMove() * WEIGHT_MOVE +
-            battleAction->getFitnessDamage() * WEIGHT_DAMAGE;
+        dna->fitness = fitnessCalculator->calculate(activeHero, battleAction);
+        printDNA(dna);
 
         delete coordinate;
         delete battleAction;

@@ -1,25 +1,14 @@
 #include "MotionEngine.h"
 #include "../Config/StaticBushConfig.h"
-#include "../Services/Randomizer.h"
-#include <cmath>
 
 void MotionEngine::movement(BattleHero *battleHero, BattleAction *battleAction)
 {
-    if (battleAction->isVirtualAction()) {
-        auto origin = battleHero->getCoordinate();
-        auto destination = battleAction->getCoordinate();
-        auto target = new Coordinate(-8, Randomizer::randomize(-1, 1));
-        double fitness = getDistance(target, origin) - getDistance(target, destination);
-        battleAction->addFitnessMove(.3);
-        battleAction->addFitnessMove(fitness);
-    } else {
-        battleHero->move();
-        battleHero->flip(battleAction->getCoordinate());
-        battleHero->getCoordinate()->occupied = false;
-        battleAction->getCoordinate()->occupied = true;
-        battleHero->setCoordinate(battleAction->getCoordinate());
-        battleHero->setVisible(isVisibleCoordinate(battleHero->getCoordinate()));
-    }
+    battleHero->move();
+    battleHero->flip(battleAction->getCoordinate());
+    battleHero->getCoordinate()->occupied = false;
+    battleAction->getCoordinate()->occupied = true;
+    battleHero->setCoordinate(battleAction->getCoordinate());
+    battleHero->setVisible(isVisibleCoordinate(battleHero->getCoordinate()));
 }
 
 bool MotionEngine::isVisibleCoordinate(Coordinate *coordinate)
@@ -31,9 +20,4 @@ bool MotionEngine::isVisibleCoordinate(Coordinate *coordinate)
     }
 
     return true;
-}
-
-double MotionEngine::getDistance(Coordinate *a, Coordinate *b)
-{
-    return fabs(a->x - b->x) / 2 + fabs(a->y - b->y) / 2;
 }

@@ -10,8 +10,8 @@ android {
         applicationId "com.moriorgames.teamfightheroes"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
-        versionCode 110
-        versionName "1.10"
+        versionCode 111
+        versionName "1.11"
 
         externalNativeBuild {
             ndkBuild {

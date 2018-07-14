@@ -3,10 +3,10 @@
 
 #include <cmath>
 #include <string>
+#include "FitnessCalculator.h"
 #include "../../EventListeners/BattleEventPublishable.h"
 #include "../Entity/Battle.h"
 #include "../Entity/BattleAction.h"
-#include "../Services/BattleProcessor.h"
 
 struct DNA
 {
@@ -36,16 +36,13 @@ public:
     const int REPRODUCTION = 3;
     const int MUTATION_RATE = 1;
 
-    const double WEIGHT_MOVE = 1.5;
-    const double WEIGHT_DAMAGE = 3.5;
-
-    AI(Battle *, BattleProcessor *, BattleEventPublishable *);
+    AI(Battle *, FitnessCalculator *, BattleEventPublishable *);
     void update();
 
 private:
     DNA *best;
     Battle *battle;
-    BattleProcessor *battleProcessor;
+    FitnessCalculator *fitnessCalculator;
     BattleEventPublishable *eventPublisher;
     std::vector<DNA *> dnas;
 

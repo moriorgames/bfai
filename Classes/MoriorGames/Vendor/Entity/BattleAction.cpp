@@ -61,36 +61,6 @@ void BattleAction::setExtra(int extra)
     BattleAction::extra = extra;
 }
 
-bool BattleAction::isVirtualAction() const
-{
-    return _isVirtualAction;
-}
-
-void BattleAction::setVirtualAction(bool _isVirtualAction)
-{
-    this->_isVirtualAction = _isVirtualAction;
-}
-
-double BattleAction::getFitnessMove() const
-{
-    return fitnessMove;
-}
-
-void BattleAction::addFitnessMove(double fitnessMove)
-{
-    this->fitnessMove += fitnessMove;
-}
-
-double BattleAction::getFitnessDamage() const
-{
-    return fitnessDamage;
-}
-
-void BattleAction::addFitnessDamage(double fitnessDamage)
-{
-    this->fitnessDamage += fitnessDamage;
-}
-
 void BattleAction::print()
 {
     printf("========= BattleAction: \n"
@@ -101,9 +71,6 @@ void BattleAction::print()
            " - skillId %i\n"
            " - x %i / y %i\n"
            " - extra %i\n"
-           " - _isVirtualAction %i\n"
-           " - fitnessMove %f\n"
-           " - fitnessDamage %f\n"
            " \n",
            battleToken.c_str(),
            userToken.c_str(),
@@ -111,9 +78,6 @@ void BattleAction::print()
            battleHeroId,
            skillId,
            coordinate->x, coordinate->y,
-           extra,
-           _isVirtualAction,
-           fitnessMove,
-           fitnessDamage
+           extra
     );
 }

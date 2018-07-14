@@ -1,0 +1,136 @@
+#include "FitnessCalculator.h"
+#include "AI.h"
+#include "Randomizer.h"
+#include "../Parsers/BattleActionParser.h"
+#include "../Repository/SkillRepository.h"
+#include "../Repository/HeroRepository.h"
+#include <algorithm>
+#include <cmath>
+
+FitnessCalculator::FitnessCalculator(Battle *battle, Grid *grid)
+    : battle{battle}, grid{grid}
+{
+    pathFinder = new PathFinder(grid);
+    battleActionChecker = new BattleActionChecker(pathFinder);
+}
+
+double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battleAction)
+{
+    fitnessMove = 0;
+    fitnessDamage = 0;
+
+    auto coord = grid->findByXY(battleAction->getCoordinate()->x, battleAction->getCoordinate()->y);
+    if (coord) {
+
+        battleAction->setCoordinate(coord);
+
+        auto skillId = battleAction->getSkillId();
+        auto skill = skillRepo->findById(skillId);
+        auto skillType = skill->getType();
+        if (!battleActionChecker->isSkillAllowed(skill, battleHero, battleAction)) {
+
+            return fitnessWeight();
+        }
+
+        if (!battleHero->hasMoved() && (skillId == Skill::MOVE_ID || skillType == Skill::TYPE_EXTRA_SHOT)) {
+            if (skillType == Skill::TYPE_EXTRA_SHOT) {
+                singleDamage(battleHero, battleAction);
+            } else {
+
+                auto origin = battleHero->getCoordinate();
+                auto destination = battleAction->getCoordinate();
+                auto target = new Coordinate(-8, Randomizer::randomize(-1, 1));
+                double fitness = getDistance(target, origin) - getDistance(target, destination);
+                addFitnessMove(.3);
+                addFitnessMove(fitness);
+
+            }
+
+            return fitnessWeight();
+        }
+
+        if (skillId == Skill::SINGLE_ATTACK_ID || skillType == Skill::TYPE_EXTRA_SHOT) {
+            singleDamage(battleHero, battleAction);
+        } else {
+
+            if (skillType == Skill::TYPE_SPAWN) {
+
+                // @TODO something
+
+            }
+            if (skillType == Skill::TYPE_CONE_AREA_DAMAGE) {
+                areaDamage(skill, battleHero, battleAction);
+            }
+            if (skillType == Skill::TYPE_JUMP) {
+
+                auto origin = battleHero->getCoordinate();
+                auto destination = battleAction->getCoordinate();
+                auto target = new Coordinate(-8, Randomizer::randomize(-1, 1));
+                double fitness = getDistance(target, origin) - getDistance(target, destination);
+                addFitnessMove(.3);
+                addFitnessMove(fitness);
+
+            }
+        }
+    }
+
+    return fitnessWeight();
+}
+
+void FitnessCalculator::singleDamage(BattleHero *attacker, BattleAction *battleAction)
+{
+    for (auto defender:battle->getBattleHeroes()) {
+        // @todo duplicated code on this same class
+        if (!defender->isDead() &&
+            defender->getCoordinate()->isEqual(battleAction->getCoordinate()) &&
+            defender->getSide() != attacker->getSide()) {
+            addFitnessDamage(attacker->getDamage());
+            break;
+        }
+    }
+}
+
+void FitnessCalculator::areaDamage(Skill *skill, BattleHero *attacker, BattleAction *battleAction)
+{
+    auto pathScope = pathFinder->buildPathForArea(attacker->getCoordinate(), skill->getRanged());
+    for (auto path:pathScope) {
+        if (isValidAreaOfEffect(attacker, battleAction, path.coordinate)) {
+            for (auto defender:battle->getBattleHeroes()) {
+                if (!defender->isDead() &&
+                    defender->getCoordinate()->isEqual(path.coordinate) &&
+                    defender->getSide() != attacker->getSide()) {
+                    addFitnessDamage(attacker->getDamage());
+                }
+            }
+        }
+    }
+}
+
+// @todo duplicated code on Battle processor
+bool FitnessCalculator::isValidAreaOfEffect(BattleHero *battleHero, BattleAction *battleAction, Coordinate *coordinate)
+{
+    auto x = battleHero->getCoordinate()->x;
+
+    return (x > battleAction->getCoordinate()->x && x > coordinate->x) ||
+        (x < battleAction->getCoordinate()->x && x < coordinate->x);
+}
+
+void FitnessCalculator::addFitnessDamage(double fitness)
+{
+    fitnessDamage += fitness;
+}
+
+void FitnessCalculator::addFitnessMove(double fitness)
+{
+    fitnessMove += fitness;
+}
+
+double FitnessCalculator::getDistance(Coordinate *a, Coordinate *b)
+{
+    return fabs(a->x - b->x) / 2 + fabs(a->y - b->y) / 2;
+}
+
+double FitnessCalculator::fitnessWeight()
+{
+    return fitnessMove * WEIGHT_MOVE + fitnessDamage * WEIGHT_DAMAGE;
+}

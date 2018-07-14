@@ -6,7 +6,6 @@
 #include "../../EventListeners/BattleEventPublishable.h"
 #include "../Entity/Battle.h"
 #include "../Entity/BattleAction.h"
-#include "../Observer/BattleObservable.h"
 #include "../Services/BattleProcessor.h"
 
 struct DNA
@@ -20,9 +19,10 @@ struct DNA
     double fitness = 0;
 };
 
-class AI: public BattleObservable
+class AI
 {
 public:
+    const int BEST_RANGE = 10;
     const int MIN_RAND_X = -5;
     const int MAX_RAND_X = 5;
     const int MIN_RAND_Y = -4;
@@ -40,7 +40,7 @@ public:
     const std::string AI_TOKEN = "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB";
 
     AI(Battle *, BattleProcessor *, BattleEventPublishable *);
-    void update(BattleAction *) override;
+    void update();
 
 private:
     Battle *battle;

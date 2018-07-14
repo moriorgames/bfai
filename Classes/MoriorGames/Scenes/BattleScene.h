@@ -19,6 +19,7 @@ private:
     Socket *socket;
     Client *client;
 
+    void scheduledEvents(float delay);
     void connectToSocket(int port);
     virtual void onOpen(Socket *ws);
     virtual void onMessage(Socket *ws, const Socket::Data &data);

@@ -6,13 +6,11 @@ AI::AI(Battle *battle, BattleProcessor *battleProcessor, BattleEventPublishable 
 {
 }
 
-void AI::update(BattleAction *)
+void AI::update()
 {
     if (!battle->isOnline()) {
         auto activeHero = battle->getActiveBattleHero();
-
-        if (activeHero->getBattleHeroId() == 4 && !activeHero->hasMoved() &&
-            activeHero->getSide() == BattleHero::SIDE_VISITOR && activeHero->getUserToken() == AI_TOKEN) {
+        if (activeHero->getSide() == BattleHero::SIDE_VISITOR && activeHero->getUserToken() == AI_TOKEN) {
 
             // Process Genetic Algorithm to choose better next move
             auto best = geneticAlgorithm();
@@ -39,11 +37,11 @@ DNA *AI::geneticAlgorithm()
 
         calculateFitness();
 
-//        environmentExtinction();
+        environmentExtinction();
 
         printBest();
 
-//        newGeneration();
+        newGeneration();
     }
 
     calculateFitness();
@@ -131,7 +129,7 @@ void AI::environmentExtinction()
 
 void AI::printBest()
 {
-    for (int i = 0; i < 10; ++i) {
+    for (int i = 0; i < BEST_RANGE; ++i) {
         printDNA(dnas[i]);
     }
 }
@@ -171,6 +169,9 @@ void AI::newGeneration()
 std::vector<int> AI::matingPoolCreator()
 {
     std::vector<int> matingPool;
+    for (int i = 0; i < BEST_RANGE; ++i) {
+        matingPool.push_back(i);
+    }
 
     for (int index = 0; index < dnas.size(); ++index) {
         int matingPoolRatio = ENVIRONMENT * dnas[index]->fitness;

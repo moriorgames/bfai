@@ -27,6 +27,11 @@ void BattleView::processOnlineAction(std::string json)
     battleContainer->getBattleProcessor()->processBattleAction(battleAction);
 }
 
+void BattleView::ai()
+{
+    battleContainer->getAI()->update();
+}
+
 void BattleView::addView()
 {
     battleContainer = new BattleContainer(layer, socket, json);

@@ -77,7 +77,6 @@ void BattleContainer::registerObservers()
     battleProcessor->registerObserver(teamSight);
     battleProcessor->registerObserver(skillsView);
     battleProcessor->registerObserver(this);
-    battleProcessor->registerObserver(artificialIntelligence);
     auto battleStart = new BattleAction("", "", 0, Skill::START_BATTLE_ID);
     battleProcessor->processBattleAction(battleStart);
 }

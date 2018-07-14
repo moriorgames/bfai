@@ -14,6 +14,7 @@ public:
     const std::string &getUserToken() const;
     int getBattleHeroId() const;
     int getSkillId() const;
+    void setSkillId(int skillId);
     Coordinate *getCoordinate() const;
     void setCoordinate(Coordinate *);
     int getExtra() const;

@@ -1,5 +1,6 @@
 #include "MotionEngine.h"
 #include "../Config/StaticBushConfig.h"
+#include "../Services/Randomizer.h"
 #include <cmath>
 
 void MotionEngine::movement(BattleHero *battleHero, BattleAction *battleAction)
@@ -7,8 +8,9 @@ void MotionEngine::movement(BattleHero *battleHero, BattleAction *battleAction)
     if (battleAction->isVirtualAction()) {
         auto origin = battleHero->getCoordinate();
         auto destination = battleAction->getCoordinate();
-        auto target = new Coordinate(-8, 0);
+        auto target = new Coordinate(-8, Randomizer::randomize(-1, 1));
         double fitness = getDistance(target, origin) - getDistance(target, destination);
+        battleAction->addFitnessMove(.3);
         battleAction->addFitnessMove(fitness);
     } else {
         battleHero->move();

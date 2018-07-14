@@ -2,7 +2,7 @@
 #define MORIOR_GAMES_VENDOR_SERVICES_AI_H
 
 #include <cmath>
-#include <c++/v1/string>
+#include <string>
 #include "../../EventListeners/BattleEventPublishable.h"
 #include "../Entity/Battle.h"
 #include "../Entity/BattleAction.h"
@@ -22,13 +22,15 @@ struct DNA
 class AI
 {
 public:
-    const int BEST_RANGE = 10;
+    static const std::string AI_TOKEN;
+
+    const int BEST_RANGE = 5;
     const int MIN_RAND_X = -5;
     const int MAX_RAND_X = 5;
     const int MIN_RAND_Y = -4;
     const int MAX_RAND_Y = 4;
     const int POPULATION = 100;
-    const int MAX_GENERATIONS = 1;
+    const int MAX_GENERATIONS = 5;
     const int EXTINCTION = 30;
     const int ENVIRONMENT = 10;
     const int REPRODUCTION = 3;
@@ -37,12 +39,11 @@ public:
     const double WEIGHT_MOVE = 1.5;
     const double WEIGHT_DAMAGE = 3.5;
 
-    const std::string AI_TOKEN = "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB";
-
     AI(Battle *, BattleProcessor *, BattleEventPublishable *);
     void update();
 
 private:
+    DNA *best;
     Battle *battle;
     BattleProcessor *battleProcessor;
     BattleEventPublishable *eventPublisher;
@@ -57,7 +58,7 @@ private:
     void printBest();
     void newGeneration();
     std::vector<int> matingPoolCreator();
-    DNA *getBest();
+    void createBest();
     void printDNA(DNA *dna);
 };
 

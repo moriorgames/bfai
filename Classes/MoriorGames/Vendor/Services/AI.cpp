@@ -1,19 +1,22 @@
 #include "AI.h"
 #include "Randomizer.h"
 
+const std::string AI::AI_TOKEN = "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB";
+
 AI::AI(Battle *battle, BattleProcessor *battleProcessor, BattleEventPublishable *eventPublisher)
     : battle{battle}, battleProcessor{battleProcessor}, eventPublisher{eventPublisher}
 {
+    best = new DNA;
 }
 
 void AI::update()
 {
     if (!battle->isOnline()) {
         auto activeHero = battle->getActiveBattleHero();
-        if (activeHero->getSide() == BattleHero::SIDE_VISITOR && activeHero->getUserToken() == AI_TOKEN) {
+        if (activeHero->getUserToken() == AI_TOKEN) {
 
             // Process Genetic Algorithm to choose better next move
-            auto best = geneticAlgorithm();
+            geneticAlgorithm();
             auto action = new BattleAction(
                 battle->getToken(),
                 AI_TOKEN,
@@ -21,7 +24,9 @@ void AI::update()
                 best->skill1
             );
             action->setCoordinate(new Coordinate(best->x1, best->y1));
-            action->print();
+            if (activeHero->hasMoved() && best->skill1 == 4 && activeHero->getCoordinate()->isEqual(action->getCoordinate())) {
+                action->setSkillId(2);
+            }
             eventPublisher->publish(action);
         }
     }
@@ -39,15 +44,15 @@ DNA *AI::geneticAlgorithm()
 
         environmentExtinction();
 
-        printBest();
+//        printBest();
 
         newGeneration();
     }
 
     calculateFitness();
-    auto best = getBest();
+    createBest();
     dnas.clear();
-    printf("\nFINISHED\n");
+    printDNA(best);
 
     return best;
 }
@@ -86,8 +91,10 @@ void AI::mutate(DNA *dna, int mutationRate)
             dna->y2 = coord->y + Randomizer::randomize(MIN_RAND_Y, MAX_RAND_Y);
         }
     }
-    dna->skill1 = 3;
-    dna->skill2 = 4;
+    dna->skill1 = Randomizer::randomize(2, 4);
+    if (battle->getActiveBattleHero()->hasMoved()) {
+        dna->skill1 = 4;
+    }
 }
 
 void AI::calculateFitness()
@@ -101,10 +108,9 @@ void AI::calculateFitness()
         battleAction->setVirtualAction(true);
 
         // @todo WIP Will use this boolean to perform another Battle Action
-        auto endOfTurn = battleProcessor->processBattleActionSideEffects(activeHero, battleAction);
-        double fitness = battleAction->getFitnessMove() * WEIGHT_MOVE +
+        battleProcessor->processBattleActionSideEffects(activeHero, battleAction);
+        dna->fitness = battleAction->getFitnessMove() * WEIGHT_MOVE +
             battleAction->getFitnessDamage() * WEIGHT_DAMAGE;
-        dna->fitness = fitness;
 
         delete coordinate;
         delete battleAction;
@@ -183,22 +189,20 @@ std::vector<int> AI::matingPoolCreator()
     return matingPool;
 }
 
-DNA *AI::getBest()
+void AI::createBest()
 {
-    auto best = new DNA;
     best->x1 = dnas[0]->x1;
     best->y1 = dnas[0]->y1;
     best->skill1 = dnas[0]->skill1;
     best->x2 = dnas[0]->x2;
     best->y2 = dnas[0]->y2;
     best->skill2 = dnas[0]->skill2;
-
-    return best;
+    best->fitness = dnas[0]->fitness;
 }
 
 void AI::printDNA(DNA *dna)
 {
-    printf("========= DNA: x1: %i y1: %i skill1: %i x2: %i y2: %i skill2: %i -- fitness: %f \n",
-           dna->x1, dna->y1, dna->skill1, dna->x2, dna->y2, dna->skill2, dna->fitness
+    printf("========= DNA: x1: %i y1: %i skill1: %i -- fitness: %f \n",
+           dna->x1, dna->y1, dna->skill1, dna->fitness
     );
 }

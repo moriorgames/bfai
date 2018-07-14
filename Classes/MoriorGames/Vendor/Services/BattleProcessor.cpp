@@ -2,6 +2,7 @@
 #include "../Parsers/BattleActionParser.h"
 #include "../Repository/SkillRepository.h"
 #include "../Repository/HeroRepository.h"
+#include "AI.h"
 #include <algorithm>
 
 BattleProcessor::BattleProcessor(Battle *battle, Grid *grid)
@@ -88,10 +89,8 @@ bool BattleProcessor::processBattleActionSideEffects(BattleHero *battleHero, Bat
 
         if (!battleHero->hasMoved() && (skillId == Skill::MOVE_ID || skillType == Skill::TYPE_EXTRA_SHOT)) {
             if (skillType == Skill::TYPE_EXTRA_SHOT) {
-                if (battleAction->isVirtualAction()) {
-                    battleAction->addFitnessDamage(battleHero->getDamage());
-                } else {
-                    singleDamage(battleHero, battleAction);
+                singleDamage(battleHero, battleAction);
+                if (!battleAction->isVirtualAction()) {
                     battleHero->move();
                 }
             } else {
@@ -102,10 +101,9 @@ bool BattleProcessor::processBattleActionSideEffects(BattleHero *battleHero, Bat
         }
 
         if (skillId == Skill::SINGLE_ATTACK_ID || skillType == Skill::TYPE_EXTRA_SHOT) {
-            if (battleAction->isVirtualAction()) {
-                battleAction->addFitnessDamage(battleHero->getDamage());
-            } else {
-                singleDamage(battleHero, battleAction);
+            singleDamage(battleHero, battleAction);
+            if (!battleAction->isVirtualAction()) {
+                battleHero->move();
             }
         } else {
 
@@ -139,7 +137,12 @@ void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAct
         if (!defender->isDead() && defender->getCoordinate()->isEqual(battleAction->getCoordinate())) {
 
             auto damage = attacker->getDamage();
-            performDamage(defender, attacker, battleAction, damage);
+            if (battleAction->isVirtualAction() && defender->getSide() != attacker->getSide()) {
+                battleAction->addFitnessDamage(damage);
+            }
+            if (!battleAction->isVirtualAction()) {
+                performDamage(defender, attacker, battleAction, damage);
+            }
 
             break;
         }

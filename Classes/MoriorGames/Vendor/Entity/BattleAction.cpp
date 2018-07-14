@@ -36,6 +36,11 @@ int BattleAction::getSkillId() const
     return skillId;
 }
 
+void BattleAction::setSkillId(int skillId)
+{
+    this->skillId = skillId;
+}
+
 Coordinate *BattleAction::getCoordinate() const
 {
     return coordinate;

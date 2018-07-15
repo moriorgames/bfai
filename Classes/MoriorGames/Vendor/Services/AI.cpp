@@ -36,7 +36,7 @@ void AI::update()
                 for (auto enemy:battle->getBattleHeroes()) {
                     if (enemy->getSide() == activeHero->getSide()
                         && enemy->getCoordinate()->isEqual(action->getCoordinate())) {
-                        action->setSkillId(2);
+                        action->setSkillId(Skill::NEXT_TURN_ID);
                     }
                 }
             }
@@ -53,7 +53,7 @@ void AI::fitnessAlgorithm()
 
     calculateFitness();
 
-    printBest();
+//    printBest();
 
     createBest();
     dnas.clear();
@@ -62,9 +62,10 @@ void AI::fitnessAlgorithm()
 void AI::initialize()
 {
     auto activeHero = battle->getActiveBattleHero();
-    for (auto pathMove:pathFinder->buildPathScope(activeHero->getCoordinate(), activeHero->getMovement(), true)) {
-        auto movedCoord = new Coordinate(pathMove.coordinate->x, pathMove.coordinate->y);
-        for (auto pathAction:pathFinder->buildPathScope(movedCoord, activeHero->getRanged())) {
+    pathFinder->buildPathScope(activeHero->getCoordinate(), activeHero->getMovement(), true);
+    auto pathScopeMovement = pathFinder->getPathScope();
+    for (auto pathMove:pathScopeMovement) {
+        for (auto pathAction:pathFinder->buildPathScope(pathMove.coordinate, activeHero->getRanged())) {
             auto dna = new DNA;
             dna->x1 = pathMove.coordinate->x;
             dna->y1 = pathMove.coordinate->y;

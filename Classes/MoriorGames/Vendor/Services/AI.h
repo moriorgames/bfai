@@ -25,7 +25,7 @@ public:
     static const std::string AI_TOKEN;
 
     const int BEST_RANGE = 15;
-    const int DEVIATION = 3;
+    const int DEVIATION = 2;
 
     AI(Battle *, Grid *, BattleEventPublishable *);
     void update();

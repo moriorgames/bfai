@@ -29,7 +29,7 @@ double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battle
 
         if (!battleHero->hasMoved() && (skillId == Skill::MOVE_ID || skillType == Skill::TYPE_EXTRA_SHOT)) {
             if (skillType == Skill::TYPE_EXTRA_SHOT) {
-                singleDamage(battleHero, battleAction);
+                singleDamage(battleHero, battleAction->getCoordinate());
             } else {
                 moveAssignation(battleHero, battleAction);
             }
@@ -39,7 +39,7 @@ double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battle
 
         bool isSkillType = (skillId == Skill::SINGLE_ATTACK_ID || skillType == Skill::TYPE_EXTRA_SHOT);
         if (isSkillType) {
-            singleDamage(battleHero, battleAction);
+            singleDamage(battleHero, battleAction->getCoordinate());
         } else {
 
             if (skillType == Skill::TYPE_SPAWN) {
@@ -59,15 +59,13 @@ double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battle
     return fitnessWeight();
 }
 
-void FitnessCalculator::singleDamage(BattleHero *attacker, BattleAction *battleAction)
+void FitnessCalculator::singleDamage(BattleHero *attacker, Coordinate *coordinate)
 {
     for (auto defender:battle->getBattleHeroes()) {
-        // @todo duplicated code on this same class
         if (!defender->isDead() &&
-            defender->getCoordinate()->isEqual(battleAction->getCoordinate()) &&
+            defender->getCoordinate()->isEqual(coordinate) &&
             defender->getSide() != attacker->getSide()) {
             addFitnessDamage(attacker->getDamage());
-            break;
         }
     }
 }
@@ -77,13 +75,7 @@ void FitnessCalculator::areaDamage(Skill *skill, BattleHero *attacker, BattleAct
     auto pathScope = pathFinder->buildPathForArea(attacker->getCoordinate(), skill->getRanged());
     for (auto path:pathScope) {
         if (isValidAreaOfEffect(attacker, battleAction, path.coordinate)) {
-            for (auto defender:battle->getBattleHeroes()) {
-                if (!defender->isDead() &&
-                    defender->getCoordinate()->isEqual(path.coordinate) &&
-                    defender->getSide() != attacker->getSide()) {
-                    addFitnessDamage(attacker->getDamage());
-                }
-            }
+            singleDamage(attacker, path.coordinate);
         }
     }
 }

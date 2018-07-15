@@ -24,7 +24,7 @@ private:
     PathFinder *pathFinder;
     Grid *grid;
 
-    void singleDamage(BattleHero *, BattleAction *);
+    void singleDamage(BattleHero *, Coordinate *);
     void areaDamage(Skill *, BattleHero *, BattleAction *);
     bool isValidAreaOfEffect(BattleHero *, BattleAction *, Coordinate *);
     void moveAssignation(BattleHero *battleHero, BattleAction *battleAction);

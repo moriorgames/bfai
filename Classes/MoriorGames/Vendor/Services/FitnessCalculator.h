@@ -28,6 +28,7 @@ private:
     void singleDamage(BattleHero *, BattleAction *);
     void areaDamage(Skill *, BattleHero *, BattleAction *);
     bool isValidAreaOfEffect(BattleHero *, BattleAction *, Coordinate *);
+    void moveAssignation(BattleHero *battleHero, BattleAction *battleAction);
     void addFitnessDamage(double fitness);
     void addFitnessMove(double fitness);
     double getDistance(Coordinate *, Coordinate *);

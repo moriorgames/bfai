@@ -81,6 +81,10 @@ bool BattleProcessor::processBattleActionSideEffects(BattleHero *battleHero, Bat
 
         auto skillId = battleAction->getSkillId();
         auto skill = skillRepo->findById(skillId);
+        if (!skill) {
+
+            return true;
+        }
         auto skillType = skill->getType();
         if (!battleActionChecker->isSkillAllowed(skill, battleHero, battleAction)) {
 

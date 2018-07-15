@@ -13,26 +13,38 @@ void AI::update()
 {
     if (!battle->isOnline()) {
         auto activeHero = battle->getActiveBattleHero();
+        initialX = activeHero->getCoordinate()->x;
+        initialY = activeHero->getCoordinate()->y;
         if (activeHero->getUserToken() == AI_TOKEN) {
 
             // Process Genetic Algorithm to choose better next move
-            geneticAlgorithm();
-            auto action = new BattleAction(
-                battle->getToken(),
-                AI_TOKEN,
-                activeHero->getBattleHeroId(),
-                best->skill1
-            );
-            action->setCoordinate(new Coordinate(best->x1, best->y1));
-            if (activeHero->hasMoved() && best->skill1 == 4 && activeHero->getCoordinate()->isEqual(action->getCoordinate())) {
+            int x = best->x1;
+            int y = best->y1;
+            int skillId = best->skill1;
+            if (activeHero->hasMoved()) {
+                x = best->x2;
+                y = best->y2;
+                skillId = best->skill2;
+            } else {
+                geneticAlgorithm();
+            }
+            auto action = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), skillId);
+            action->setCoordinate(new Coordinate(x, y));
+            if (activeHero->hasMoved() && best->skill1 == 4
+                && activeHero->getCoordinate()->isEqual(action->getCoordinate())) {
                 action->setSkillId(2);
             }
+            action->print();
+
+            auto coordinate = new Coordinate(initialX, initialY);
+            coordinate->occupied = true;
+            activeHero->setCoordinate(coordinate);
             eventPublisher->publish(action);
         }
     }
 }
 
-DNA *AI::geneticAlgorithm()
+void AI::geneticAlgorithm()
 {
     initialize();
 
@@ -44,7 +56,7 @@ DNA *AI::geneticAlgorithm()
 
         environmentExtinction();
 
-//        printBest();
+        printBest();
 
         newGeneration();
     }
@@ -52,9 +64,6 @@ DNA *AI::geneticAlgorithm()
     calculateFitness();
     createBest();
     dnas.clear();
-    printDNA(best);
-
-    return best;
 }
 
 void AI::initialize()
@@ -92,6 +101,7 @@ void AI::mutate(DNA *dna, int mutationRate)
         }
     }
     dna->skill1 = Randomizer::randomize(2, 4);
+    dna->skill2 = 4;
     if (battle->getActiveBattleHero()->hasMoved()) {
         dna->skill1 = 4;
     }
@@ -101,15 +111,20 @@ void AI::calculateFitness()
 {
     auto activeHero = battle->getActiveBattleHero();
     for (auto dna:dnas) {
+        auto battleAction1 = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), dna->skill1);
+        auto coordinate1 = new Coordinate(dna->x1, dna->y1);
+        battleAction1->setCoordinate(coordinate1);
+        dna->fitness = fitnessCalculator->calculate(activeHero, battleAction1);
 
-        auto battleAction = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), dna->skill1);
-        auto coordinate = new Coordinate(dna->x1, dna->y1);
-        battleAction->setCoordinate(coordinate);
-        dna->fitness = fitnessCalculator->calculate(activeHero, battleAction);
-        printDNA(dna);
+        auto battleAction2 = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), dna->skill2);
+        auto coordinate2 = new Coordinate(dna->x2, dna->y2);
+        battleAction2->setCoordinate(coordinate2);
+        dna->fitness += fitnessCalculator->calculate(activeHero, battleAction2);
 
-        delete coordinate;
-        delete battleAction;
+        delete coordinate1;
+        delete battleAction1;
+        delete coordinate2;
+        delete battleAction2;
     }
     sortByFitness();
 }
@@ -194,11 +209,13 @@ void AI::createBest()
     best->y2 = dnas[0]->y2;
     best->skill2 = dnas[0]->skill2;
     best->fitness = dnas[0]->fitness;
+    printf("BEST:\n");
+    printDNA(best);
 }
 
 void AI::printDNA(DNA *dna)
 {
-    printf("========= DNA: x1: %i y1: %i skill1: %i -- fitness: %f \n",
-           dna->x1, dna->y1, dna->skill1, dna->fitness
+    printf("========= DNA: x1: %i y1: %i skill1: %i x2: %i y2: %i skill2: %i -- fitness: %f \n",
+           dna->x1, dna->y1, dna->skill1, dna->x2, dna->y2, dna->skill2, dna->fitness
     );
 }

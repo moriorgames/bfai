@@ -27,7 +27,8 @@ double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battle
         auto skillId = battleAction->getSkillId();
         auto skill = skillRepo->findById(skillId);
         auto skillType = skill->getType();
-        if (!battleActionChecker->isSkillAllowed(skill, battleHero, battleAction)) {
+        auto skillAllowed = battleActionChecker->isSkillAllowed(skill, battleHero, battleAction);
+        if (!skillAllowed) {
 
             return fitnessWeight();
         }
@@ -36,20 +37,14 @@ double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battle
             if (skillType == Skill::TYPE_EXTRA_SHOT) {
                 singleDamage(battleHero, battleAction);
             } else {
-
-                auto origin = battleHero->getCoordinate();
-                auto destination = battleAction->getCoordinate();
-                auto target = new Coordinate(-8, Randomizer::randomize(-1, 1));
-                double fitness = getDistance(target, origin) - getDistance(target, destination);
-                addFitnessMove(.3);
-                addFitnessMove(fitness);
-
+                moveAssignation(battleHero, battleAction);
             }
 
             return fitnessWeight();
         }
 
-        if (skillId == Skill::SINGLE_ATTACK_ID || skillType == Skill::TYPE_EXTRA_SHOT) {
+        bool isSkillType = (skillId == Skill::SINGLE_ATTACK_ID || skillType == Skill::TYPE_EXTRA_SHOT);
+        if (isSkillType) {
             singleDamage(battleHero, battleAction);
         } else {
 
@@ -62,14 +57,7 @@ double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battle
                 areaDamage(skill, battleHero, battleAction);
             }
             if (skillType == Skill::TYPE_JUMP) {
-
-                auto origin = battleHero->getCoordinate();
-                auto destination = battleAction->getCoordinate();
-                auto target = new Coordinate(-8, Randomizer::randomize(-1, 1));
-                double fitness = getDistance(target, origin) - getDistance(target, destination);
-                addFitnessMove(.3);
-                addFitnessMove(fitness);
-
+                moveAssignation(battleHero, battleAction);
             }
         }
     }
@@ -113,6 +101,17 @@ bool FitnessCalculator::isValidAreaOfEffect(BattleHero *battleHero, BattleAction
 
     return (x > battleAction->getCoordinate()->x && x > coordinate->x) ||
         (x < battleAction->getCoordinate()->x && x < coordinate->x);
+}
+
+void FitnessCalculator::moveAssignation(BattleHero *battleHero, BattleAction *battleAction)
+{
+    auto origin = battleHero->getCoordinate();
+    auto destination = battleAction->getCoordinate();
+    auto target = new Coordinate(-8, Randomizer::randomize(-1, 1));
+    double fitness = getDistance(target, origin) - getDistance(target, destination);
+    addFitnessMove(.3);
+    addFitnessMove(fitness);
+    battleHero->setCoordinate(destination);
 }
 
 void FitnessCalculator::addFitnessDamage(double fitness)

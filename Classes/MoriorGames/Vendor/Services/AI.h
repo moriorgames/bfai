@@ -29,7 +29,7 @@ public:
     const int MAX_RAND_X = 5;
     const int MIN_RAND_Y = -4;
     const int MAX_RAND_Y = 4;
-    const int POPULATION = 100;
+    const int POPULATION = 50;
     const int MAX_GENERATIONS = 5;
     const int EXTINCTION = 30;
     const int ENVIRONMENT = 10;
@@ -45,8 +45,10 @@ private:
     FitnessCalculator *fitnessCalculator;
     BattleEventPublishable *eventPublisher;
     std::vector<DNA *> dnas;
+    int initialX = 0;
+    int initialY = 0;
 
-    DNA *geneticAlgorithm();
+    void geneticAlgorithm();
     void initialize();
     void mutate(DNA *dna, int mutationRate);
     void calculateFitness();

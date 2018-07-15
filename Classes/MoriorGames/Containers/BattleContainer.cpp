@@ -2,7 +2,6 @@
 #include "../Factories/BattleEventPublisherFactory.h"
 #include "../Vendor/Entity/User.h"
 #include "../Vendor/Repository/SkillRepository.h"
-#include "../Vendor/Services/FitnessCalculator.h"
 #include "../Vendor/Services/PlayerSide.h"
 #include "../View/Battle/BattleBackgroundView.h"
 #include "../View/Battle/BushView.h"
@@ -24,8 +23,7 @@ BattleContainer::BattleContainer(Layer *layer, Socket *socket, const std::string
     eventPublisher = BattleEventPublisherFactory::execute(connectionType, battleProcessor, socket);
 //    portraitsView = new PortraitsView(layer, battle);
     skillsView = new SkillsView(layer, battle, eventPublisher, gridContainer->getGridView());
-    auto fitnessCalculator = new FitnessCalculator(battle, gridContainer->getGrid());
-    artificialIntelligence = new AI(battle, fitnessCalculator, eventPublisher);
+    artificialIntelligence = new AI(battle, gridContainer->getGrid(), eventPublisher);
 
     addHeroViews();
     new BushView(layer, gridContainer->getCoordinate2Screen());

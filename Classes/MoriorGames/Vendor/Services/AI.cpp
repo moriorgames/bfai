@@ -3,9 +3,11 @@
 
 const std::string AI::AI_TOKEN = "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB";
 
-AI::AI(Battle *battle, FitnessCalculator *fitnessCalculator, BattleEventPublishable *eventPublisher)
-    : battle{battle}, fitnessCalculator{fitnessCalculator}, eventPublisher{eventPublisher}
+AI::AI(Battle *battle, Grid *grid, BattleEventPublishable *eventPublisher)
+    : battle{battle}, eventPublisher{eventPublisher}
 {
+    pathFinder = new PathFinder(grid);
+    fitnessCalculator = new FitnessCalculator(battle, grid);
     best = new DNA;
 }
 
@@ -13,11 +15,13 @@ void AI::update()
 {
     if (!battle->isOnline()) {
         auto activeHero = battle->getActiveBattleHero();
-        initialX = activeHero->getCoordinate()->x;
-        initialY = activeHero->getCoordinate()->y;
         if (activeHero->getUserToken() == AI_TOKEN) {
 
             // Process Genetic Algorithm to choose better next move
+            if (!activeHero->hasMoved()) {
+                fitnessAlgorithm();
+            }
+
             int x = best->x1;
             int y = best->y1;
             int skillId = best->skill1;
@@ -25,85 +29,51 @@ void AI::update()
                 x = best->x2;
                 y = best->y2;
                 skillId = best->skill2;
-            } else {
-                geneticAlgorithm();
             }
             auto action = new BattleAction(battle->getToken(), AI_TOKEN, activeHero->getBattleHeroId(), skillId);
             action->setCoordinate(new Coordinate(x, y));
-            if (activeHero->hasMoved() && best->skill1 == 4
-                && activeHero->getCoordinate()->isEqual(action->getCoordinate())) {
-                action->setSkillId(2);
+            if (action->getSkillId() == Skill::SINGLE_ATTACK_ID) {
+                for (auto enemy:battle->getBattleHeroes()) {
+                    if (enemy->getSide() == activeHero->getSide()
+                        && enemy->getCoordinate()->isEqual(action->getCoordinate())) {
+                        action->setSkillId(2);
+                    }
+                }
             }
             action->print();
 
-            auto coordinate = new Coordinate(initialX, initialY);
-            coordinate->occupied = true;
-            activeHero->setCoordinate(coordinate);
             eventPublisher->publish(action);
         }
     }
 }
 
-void AI::geneticAlgorithm()
+void AI::fitnessAlgorithm()
 {
     initialize();
 
-    for (int generation = 0; generation < MAX_GENERATIONS; ++generation) {
-
-        printf("==: Generation %i Population %lu\n", generation, dnas.size());
-
-        calculateFitness();
-
-        environmentExtinction();
-
-        printBest();
-
-        newGeneration();
-    }
-
     calculateFitness();
+
+    printBest();
+
     createBest();
     dnas.clear();
 }
 
 void AI::initialize()
 {
-    for (int i = 0; i < POPULATION; ++i) {
-        auto dna = new DNA;
-        dnas.push_back(dna);
-        // Full random
-        mutate(dna, 100);
-    }
-}
-
-void AI::mutate(DNA *dna, int mutationRate)
-{
-    auto coord = battle->getActiveBattleHero()->getCoordinate();
-    if (mutationRate >= 100) {
-        // @todo WIP duplication of code to assign X
-        dna->x1 = coord->x + Randomizer::randomize(MIN_RAND_X, MAX_RAND_X);
-        // @todo WIP duplication of code to assign Y
-        dna->y1 = coord->y + Randomizer::randomize(MIN_RAND_Y, MAX_RAND_Y);
-        dna->x2 = coord->x + Randomizer::randomize(MIN_RAND_X, MAX_RAND_X);
-        dna->y2 = coord->y + Randomizer::randomize(MIN_RAND_Y, MAX_RAND_Y);
-    } else {
-        if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna->x1 = coord->x + Randomizer::randomize(MIN_RAND_X, MAX_RAND_X);
+    auto activeHero = battle->getActiveBattleHero();
+    for (auto pathMove:pathFinder->buildPathScope(activeHero->getCoordinate(), activeHero->getMovement(), true)) {
+        auto movedCoord = new Coordinate(pathMove.coordinate->x, pathMove.coordinate->y);
+        for (auto pathAction:pathFinder->buildPathScope(movedCoord, activeHero->getRanged())) {
+            auto dna = new DNA;
+            dna->x1 = pathMove.coordinate->x;
+            dna->y1 = pathMove.coordinate->y;
+            dna->skill1 = Skill::MOVE_ID;
+            dna->x2 = pathAction.coordinate->x;
+            dna->y2 = pathAction.coordinate->y;
+            dna->skill2 = Skill::SINGLE_ATTACK_ID;
+            dnas.push_back(dna);
         }
-        if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna->y1 = coord->y + Randomizer::randomize(MIN_RAND_Y, MAX_RAND_Y);
-        }
-        if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna->x2 = coord->x + Randomizer::randomize(MIN_RAND_X, MAX_RAND_X);
-        }
-        if (Randomizer::randomize(0, 100) <= mutationRate) {
-            dna->y2 = coord->y + Randomizer::randomize(MIN_RAND_Y, MAX_RAND_Y);
-        }
-    }
-    dna->skill1 = Randomizer::randomize(2, 4);
-    dna->skill2 = 4;
-    if (battle->getActiveBattleHero()->hasMoved()) {
-        dna->skill1 = 4;
     }
 }
 
@@ -137,13 +107,6 @@ void AI::sortByFitness()
     });
 }
 
-void AI::environmentExtinction()
-{
-    int size = dnas.size();
-    int extinction = ceil(EXTINCTION * 0.01 * size);
-    dnas.resize(size - extinction);
-}
-
 void AI::printBest()
 {
     for (int i = 0; i < BEST_RANGE; ++i) {
@@ -151,64 +114,19 @@ void AI::printBest()
     }
 }
 
-void AI::newGeneration()
-{
-    std::vector<int> matingPool = matingPoolCreator();
-    std::vector<DNA *> newGeneration;
-
-    for (int i = 0; i < POPULATION; ++i) {
-        int father = Randomizer::randomize(0, matingPool.size() - 1);
-        int mother = Randomizer::randomize(0, matingPool.size() - 1);
-
-        // Each couple has between N child
-        for (int j = 1; j <= Randomizer::randomize(1, REPRODUCTION); ++j) {
-            // Pick 2 parents and update a child
-            auto child = new DNA;
-
-            if (j % 2 == 0) {
-                child->x1 = dnas[matingPool[father]]->x1;
-                child->y1 = dnas[matingPool[mother]]->y1;
-            } else {
-                child->x1 = dnas[matingPool[mother]]->x1;
-                child->y1 = dnas[matingPool[father]]->y1;
-            }
-
-            mutate(child, MUTATION_RATE);
-            newGeneration.push_back(child);
-        }
-    }
-
-    matingPool.clear();
-    dnas.clear();
-    dnas = newGeneration;
-}
-
-std::vector<int> AI::matingPoolCreator()
-{
-    std::vector<int> matingPool;
-    for (int i = 0; i < BEST_RANGE; ++i) {
-        matingPool.push_back(i);
-    }
-
-    for (int index = 0; index < dnas.size(); ++index) {
-        int matingPoolRatio = ENVIRONMENT * dnas[index]->fitness;
-        for (int i = 0; i < matingPoolRatio; ++i) {
-            matingPool.push_back(index);
-        }
-    }
-
-    return matingPool;
-}
-
 void AI::createBest()
 {
-    best->x1 = dnas[0]->x1;
-    best->y1 = dnas[0]->y1;
-    best->skill1 = dnas[0]->skill1;
-    best->x2 = dnas[0]->x2;
-    best->y2 = dnas[0]->y2;
-    best->skill2 = dnas[0]->skill2;
-    best->fitness = dnas[0]->fitness;
+    int i = 0;
+    if (dnas.size() >= DEVIATION) {
+        i = Randomizer::randomize(0, DEVIATION);
+    }
+    best->x1 = dnas[i]->x1;
+    best->y1 = dnas[i]->y1;
+    best->skill1 = dnas[i]->skill1;
+    best->x2 = dnas[i]->x2;
+    best->y2 = dnas[i]->y2;
+    best->skill2 = dnas[i]->skill2;
+    best->fitness = dnas[i]->fitness;
     printf("BEST:\n");
     printDNA(best);
 }

@@ -22,7 +22,6 @@ private:
 
     Battle *battle;
     PathFinder *pathFinder;
-    BattleActionChecker *battleActionChecker;
     Grid *grid;
 
     void singleDamage(BattleHero *, BattleAction *);

@@ -11,7 +11,6 @@ FitnessCalculator::FitnessCalculator(Battle *battle, Grid *grid)
     : battle{battle}, grid{grid}
 {
     pathFinder = new PathFinder(grid);
-    battleActionChecker = new BattleActionChecker(pathFinder);
 }
 
 double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battleAction)
@@ -27,11 +26,6 @@ double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battle
         auto skillId = battleAction->getSkillId();
         auto skill = skillRepo->findById(skillId);
         auto skillType = skill->getType();
-        auto skillAllowed = battleActionChecker->isSkillAllowed(skill, battleHero, battleAction);
-        if (!skillAllowed) {
-
-            return fitnessWeight();
-        }
 
         if (!battleHero->hasMoved() && (skillId == Skill::MOVE_ID || skillType == Skill::TYPE_EXTRA_SHOT)) {
             if (skillType == Skill::TYPE_EXTRA_SHOT) {
@@ -107,11 +101,9 @@ void FitnessCalculator::moveAssignation(BattleHero *battleHero, BattleAction *ba
 {
     auto origin = battleHero->getCoordinate();
     auto destination = battleAction->getCoordinate();
-    auto target = new Coordinate(-8, Randomizer::randomize(-1, 1));
+    auto target = new Coordinate(-8, Randomizer::randomize(-2, 2));
     double fitness = getDistance(target, origin) - getDistance(target, destination);
-    addFitnessMove(.3);
     addFitnessMove(fitness);
-    battleHero->setCoordinate(destination);
 }
 
 void FitnessCalculator::addFitnessDamage(double fitness)

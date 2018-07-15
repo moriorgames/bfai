@@ -18,7 +18,7 @@
 #define LOADER_BAR_DELAY 0.06
 
 #define MODE_SOUND      0
-#define DEBUG_SCENE     1
+#define DEBUG_SCENE     0
 #define SANDBOX_MODE    0
 
 #define BATTLE_TOTAL_COST       20

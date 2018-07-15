@@ -24,39 +24,25 @@ class AI
 public:
     static const std::string AI_TOKEN;
 
-    const int BEST_RANGE = 5;
-    const int MIN_RAND_X = -5;
-    const int MAX_RAND_X = 5;
-    const int MIN_RAND_Y = -4;
-    const int MAX_RAND_Y = 4;
-    const int POPULATION = 50;
-    const int MAX_GENERATIONS = 5;
-    const int EXTINCTION = 30;
-    const int ENVIRONMENT = 10;
-    const int REPRODUCTION = 3;
-    const int MUTATION_RATE = 1;
+    const int BEST_RANGE = 15;
+    const int DEVIATION = 3;
 
-    AI(Battle *, FitnessCalculator *, BattleEventPublishable *);
+    AI(Battle *, Grid *, BattleEventPublishable *);
     void update();
 
 private:
     DNA *best;
     Battle *battle;
+    PathFinder *pathFinder;
     FitnessCalculator *fitnessCalculator;
     BattleEventPublishable *eventPublisher;
     std::vector<DNA *> dnas;
-    int initialX = 0;
-    int initialY = 0;
 
-    void geneticAlgorithm();
+    void fitnessAlgorithm();
     void initialize();
-    void mutate(DNA *dna, int mutationRate);
     void calculateFitness();
     void sortByFitness();
-    void environmentExtinction();
     void printBest();
-    void newGeneration();
-    std::vector<int> matingPoolCreator();
     void createBest();
     void printDNA(DNA *dna);
 };

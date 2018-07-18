@@ -29,5 +29,7 @@
   "skill_name_smash": "Smash",
   "skill_description_smash": "Smash and area effect causing several damage.",
   "skill_name_jump": "Jump",
-  "skill_description_jump": "Jump to another position during the action phase."
+  "skill_description_jump": "Jump to another position during the action phase.",
+  "skill_name_mitigation": "Mitigation",
+  "skill_description_mitigation": "Next time the target of this skill will be damage will reduce in 1 that damage."
 }

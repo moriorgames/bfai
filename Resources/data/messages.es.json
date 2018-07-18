@@ -29,5 +29,7 @@
   "skill_name_smash": "Aplastar",
   "skill_description_smash": "Aplasta a tus enemigos causando un severo daño en área.",
   "skill_name_jump": "Saltar",
-  "skill_description_jump": "Muévete de un salto a otra posición durante la fase de acción."
+  "skill_description_jump": "Muévete de un salto a otra posición durante la fase de acción.",
+  "skill_name_mitigation": "Mitigación",
+  "skill_description_mitigation": "La próxima vez que el objetivo de esta habilidad sea dañado recibirá 1 punto menos de daño."
 }

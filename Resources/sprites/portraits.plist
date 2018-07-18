@@ -244,6 +244,21 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>portraits/mitigation.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{120,120}</string>
+                <key>spriteSourceSize</key>
+                <string>{120,120}</string>
+                <key>textureRect</key>
+                <string>{{733,375},{120,120}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
             <key>portraits/movement.png</key>
             <dict>
                 <key>aliases</key>
@@ -270,7 +285,7 @@
                 <key>spriteSourceSize</key>
                 <string>{120,120}</string>
                 <key>textureRect</key>
-                <string>{{733,375},{120,120}}</string>
+                <string>{{855,375},{120,120}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -345,7 +360,7 @@
                 <key>spriteSourceSize</key>
                 <string>{120,120}</string>
                 <key>textureRect</key>
-                <string>{{855,375},{120,120}}</string>
+                <string>{{977,375},{120,120}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -375,7 +390,7 @@
                 <key>spriteSourceSize</key>
                 <string>{120,120}</string>
                 <key>textureRect</key>
-                <string>{{977,375},{120,120}}</string>
+                <string>{{1099,375},{120,120}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -390,7 +405,7 @@
                 <key>spriteSourceSize</key>
                 <string>{120,120}</string>
                 <key>textureRect</key>
-                <string>{{1099,375},{120,120}}</string>
+                <string>{{1221,375},{120,120}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -420,7 +435,7 @@
                 <key>spriteSourceSize</key>
                 <string>{120,120}</string>
                 <key>textureRect</key>
-                <string>{{1221,375},{120,120}}</string>
+                <string>{{1310,188},{120,120}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -438,7 +453,7 @@
             <key>size</key>
             <string>{1496,496}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:0a3fc809d6c64fe904740fc880ab99c8:36ea771f3ce5646aac1b4091e0d22723:7240ddfaf9fb2d65b536ec5bd2f64395$</string>
+            <string>$TexturePacker:SmartUpdate:f90fe67712cdc3bee15e5a4adb4acd4d:865b67365704aa7bb79da557095664c6:7240ddfaf9fb2d65b536ec5bd2f64395$</string>
             <key>textureFileName</key>
             <string>portraits.png</string>
         </dict>

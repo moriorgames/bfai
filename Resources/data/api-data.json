@@ -376,7 +376,7 @@
       "type": 9,
       "damage": 0,
       "ranged": 1,
-      "extra": 1,
+      "extra": 2,
       "unique": true,
       "upgradable": true
     },

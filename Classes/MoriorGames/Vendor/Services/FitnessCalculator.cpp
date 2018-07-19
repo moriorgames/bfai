@@ -43,15 +43,16 @@ double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battle
         } else {
 
             if (skillType == Skill::TYPE_SPAWN) {
-
                 // @TODO something
-
             }
             if (skillType == Skill::TYPE_CONE_AREA_DAMAGE) {
                 areaDamage(skill, battleHero, battleAction);
             }
             if (skillType == Skill::TYPE_JUMP) {
                 moveAssignation(battleHero, battleAction);
+            }
+            if (skillType == Skill::TYPE_SHIELD) {
+                // @TODO something
             }
         }
     }

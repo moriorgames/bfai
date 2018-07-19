@@ -46,7 +46,14 @@ bool BattleHero::hasMoved()
 
 void BattleHero::addInjury(int injury)
 {
-    this->_visible = true;
+    _visible = true;
+    if (shield > injury) {
+        shield -= injury;
+        injury = 0;
+    } else {
+        injury -= shield;
+        shield = 0;
+    }
     this->injury += injury;
     if (this->injury >= health) {
         this->injury = health;

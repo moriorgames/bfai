@@ -15,6 +15,8 @@ public:
 
 private:
     PathFinder *pathFinder;
+
+    bool isTypeSkillHeroTargetable(Skill *);
 };
 
 #endif

@@ -116,6 +116,9 @@ bool BattleProcessor::processBattleActionSideEffects(BattleHero *battleHero, Bat
             if (skillType == Skill::TYPE_JUMP) {
                 motionEngine->movement(battleHero, battleAction);
             }
+            if (skillType == Skill::TYPE_SHIELD) {
+                setShield(skill, battleHero, battleAction);
+            }
         }
     }
 
@@ -163,6 +166,19 @@ void BattleProcessor::performDamage(BattleHero *defender, BattleHero *attacker, 
     auto damageAction = new BattleAction("", "", defender->getBattleHeroId(), Skill::DAMAGE_ID);
     damageAction->setExtra(damage);
     extraActions.push_back(damageAction);
+}
+
+void BattleProcessor::setShield(Skill *skill, BattleHero *attacker, BattleAction *battleAction)
+{
+    attacker->flip(battleAction->getCoordinate());
+    for (auto defender:battle->getBattleHeroes()) {
+        if (!defender->isDead() && defender->getCoordinate()->isEqual(battleAction->getCoordinate())) {
+
+            defender->setShield(skill->getExtra());
+
+            break;
+        }
+    }
 }
 
 bool BattleProcessor::checkEndOfBattle()

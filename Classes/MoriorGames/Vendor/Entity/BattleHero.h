@@ -25,6 +25,8 @@ public:
     void setVisible(bool);
     bool isHidden();
     void setHidden(bool);
+    int getShield() const;
+    void setShield(int);
     Coordinate *getCoordinate() const;
     void setCoordinate(Coordinate *);
 
@@ -41,6 +43,7 @@ private:
     int battleHeroId = 0;
     std::string side = SIDE_LOCAL;
     int injury = 0;
+    int shield = 0;
     bool moved = false, dead = false, _visible = true, _hidden = false;
     Coordinate *coordinate;
 };

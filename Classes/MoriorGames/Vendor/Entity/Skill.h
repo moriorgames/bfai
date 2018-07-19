@@ -23,6 +23,7 @@ public:
     static short TYPE_SPAWN;
     static short TYPE_EXTRA_SHOT;
     static short TYPE_JUMP;
+    static short TYPE_SHIELD;
 
 public:
     int getId() const;

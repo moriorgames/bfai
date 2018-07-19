@@ -11,7 +11,7 @@ const std::vector<Path> &PathBuilder::build(Skill *skill, BattleHero *battleHero
 
         return pathFinder->buildPathScope(battleHero->getCoordinate(), battleHero->getMovement(), true);
 
-    } else if (skill->getId() == Skill::SINGLE_ATTACK_ID || skill->getType() == Skill::TYPE_EXTRA_SHOT) {
+    } else if (isTypeSkillHeroTargetable(skill)) {
 
         return pathFinder->buildPathScope(battleHero->getCoordinate(), battleHero->getRanged());
 
@@ -27,4 +27,11 @@ const std::vector<Path> &PathBuilder::build(Skill *skill, BattleHero *battleHero
 
         return pathFinder->buildPathScope(battleHero->getCoordinate(), skill->getRanged(), true);
     }
+}
+
+bool PathBuilder::isTypeSkillHeroTargetable(Skill *skill)
+{
+    return skill->getId() == Skill::SINGLE_ATTACK_ID ||
+        skill->getType() == Skill::TYPE_EXTRA_SHOT ||
+        skill->getType() == Skill::TYPE_SHIELD;
 }

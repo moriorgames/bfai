@@ -35,6 +35,7 @@ private:
     void singleDamage(BattleHero *, BattleAction *);
     void areaDamage(Skill *, BattleHero *, BattleAction *);
     void performDamage(BattleHero *, BattleHero *, BattleAction *, int damage);
+    void setShield(Skill *, BattleHero *, BattleAction *);
     bool checkEndOfBattle();
     bool isValidAreaOfEffect(BattleHero *, BattleAction *, Coordinate *);
 };

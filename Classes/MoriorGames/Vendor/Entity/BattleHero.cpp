@@ -79,6 +79,16 @@ void BattleHero::setHidden(bool hidden)
     this->_hidden = hidden;
 }
 
+int BattleHero::getShield() const
+{
+    return shield;
+}
+
+void BattleHero::setShield(int shield)
+{
+    this->shield = shield;
+}
+
 void BattleHero::setCoordinate(Coordinate *coordinate)
 {
     this->coordinate = coordinate;

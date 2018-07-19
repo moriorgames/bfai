@@ -54,5 +54,10 @@ void HeroHitPointsView::update()
 
 std::string HeroHitPointsView::hitText()
 {
-    return to_string(battleHero->getCurrentHealth()) + "/" + to_string(battleHero->getHealth());
+    std::string text = to_string(battleHero->getCurrentHealth()) + "/" + to_string(battleHero->getHealth());
+    if (battleHero->getShield() > 0) {
+        text += "(+" + to_string(battleHero->getShield()) + ")";
+    }
+
+    return text;
 }

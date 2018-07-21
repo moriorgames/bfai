@@ -8,10 +8,14 @@
 class CampaignEditor
 {
 public:
-    explicit CampaignEditor();
     std::string transform(HeroesConfig *);
+    void parse(std::string file);
+    std::vector<int> getHeroIds();
 
 private:
+    std::vector<int> heroIds;
+    std::vector<std::pair<short, short>> skills;
+
     std::vector<std::pair<short, short>> coords{
         {-8, 2}, {-7, 1}, {-7, -1}, {-8, -2},
     };

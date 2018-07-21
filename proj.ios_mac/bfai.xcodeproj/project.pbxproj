@@ -139,6 +139,8 @@
 		4F98F9DC20F9DFC800CCEE53 /* FitnessCalculator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F98F9D920F9DFC800CCEE53 /* FitnessCalculator.cpp */; };
 		4F9E2CAE21030DCC00A7C370 /* CampaignEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E2CAC21030DCC00A7C370 /* CampaignEditor.cpp */; };
 		4F9E2CAF21030DCC00A7C370 /* CampaignEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E2CAC21030DCC00A7C370 /* CampaignEditor.cpp */; };
+		4F9E2CB221031ABD00A7C370 /* CampaignParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E2CB021031ABD00A7C370 /* CampaignParser.cpp */; };
+		4F9E2CB321031ABD00A7C370 /* CampaignParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E2CB021031ABD00A7C370 /* CampaignParser.cpp */; };
 		4FA0677F207DC36700934122 /* BattleActionParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0677D207DC36700934122 /* BattleActionParser.cpp */; };
 		4FA06780207DC36700934122 /* BattleActionParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0677D207DC36700934122 /* BattleActionParser.cpp */; };
 		4FA5E8C820AD5B16004919AA /* BattleHeroSpawner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5E8C620AD5B16004919AA /* BattleHeroSpawner.cpp */; };
@@ -451,6 +453,8 @@
 		4F9CE313207D269D00A65619 /* BattlePublishable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattlePublishable.h; sourceTree = "<group>"; };
 		4F9E2CAC21030DCC00A7C370 /* CampaignEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CampaignEditor.cpp; sourceTree = "<group>"; };
 		4F9E2CAD21030DCC00A7C370 /* CampaignEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CampaignEditor.h; sourceTree = "<group>"; };
+		4F9E2CB021031ABD00A7C370 /* CampaignParser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CampaignParser.cpp; sourceTree = "<group>"; };
+		4F9E2CB121031ABD00A7C370 /* CampaignParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CampaignParser.h; sourceTree = "<group>"; };
 		4FA0677D207DC36700934122 /* BattleActionParser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleActionParser.cpp; sourceTree = "<group>"; };
 		4FA0677E207DC36700934122 /* BattleActionParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattleActionParser.h; sourceTree = "<group>"; };
 		4FA5E8C620AD5B16004919AA /* BattleHeroSpawner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BattleHeroSpawner.cpp; sourceTree = "<group>"; };
@@ -1154,6 +1158,8 @@
 				4F5C0CDA208B0254006D57BF /* SkillParser.h */,
 				4F3EBAE02099765F008F6198 /* UserParser.cpp */,
 				4F3EBAE12099765F008F6198 /* UserParser.h */,
+				4F9E2CB021031ABD00A7C370 /* CampaignParser.cpp */,
+				4F9E2CB121031ABD00A7C370 /* CampaignParser.h */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -1422,6 +1428,7 @@
 				4F5062B920E49B36005C1DBE /* MotionEngine.cpp in Sources */,
 				4F78876620989A8C00F18454 /* PathFinderArea.cpp in Sources */,
 				4F3AE44F202EE32E00B687FB /* Resolution.cpp in Sources */,
+				4F9E2CB221031ABD00A7C370 /* CampaignParser.cpp in Sources */,
 				4F7F1AD120E2084400AE8DB0 /* BushView.cpp in Sources */,
 				4F1A53EF209D70B7004DDDDC /* HeroesConfigView.cpp in Sources */,
 				4F1A53F9209D7C99004DDDDC /* LeftFrame.cpp in Sources */,
@@ -1526,6 +1533,7 @@
 				4F1A53F0209D70B7004DDDDC /* HeroesConfigView.cpp in Sources */,
 				4F3AE45E202F03D700B687FB /* Position.cpp in Sources */,
 				4FF9D53B209F6BA900570E45 /* Translator.cpp in Sources */,
+				4F9E2CB321031ABD00A7C370 /* CampaignParser.cpp in Sources */,
 				4FEFE7602079E0E90031A6B5 /* BattleProcessor.cpp in Sources */,
 				4F576D1B2075E56200011BC7 /* Coordinate2Screen.cpp in Sources */,
 				4FA6AD71202F809A00158956 /* MainMenuScene.cpp in Sources */,

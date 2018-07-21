@@ -1,12 +1,10 @@
 #include "CampaignEditor.h"
+#include "../Services/StringFileReader.h"
 #include "../Vendor/Entity/BattleHero.h"
 #include "../Vendor/Entity/User.h"
+#include "../Vendor/Parsers/CampaignParser.h"
 #include "../Vendor/Services/AI.h"
 #include "../Vendor/Utils/TextUtils.h"
-
-CampaignEditor::CampaignEditor()
-{
-}
 
 std::string CampaignEditor::transform(HeroesConfig *heroesConfig)
 {
@@ -45,11 +43,13 @@ CampaignEditor::heroRow(std::string userToken, std::string side, int battleHeroI
 {
     std::string json =
         "{ \"userToken\":\"" + userToken + "\", "
-        "\"side\":\"" + side + "\", "
-        "\"battleHeroId\":" + to_string(battleHeroId) + ", "
-        "\"heroId\":" + to_string(heroId) + ", "
-        "\"x\":" + to_string(x) + ", "
-        "\"y\":" + to_string(y) + " },";
+                                           "\"side\":\"" + side + "\", "
+                                                                  "\"battleHeroId\":" + to_string(battleHeroId) + ", "
+                                                                                                                  "\"heroId\":"
+            + to_string(heroId) + ", "
+                                  "\"x\":" + to_string(x) + ", "
+                                                            "\"y\":" + to_string(y) + " },";
+    heroIds.push_back(heroId);
 
     return json;
 }
@@ -86,4 +86,18 @@ std::string CampaignEditor::skillHeroRow(int battleHeroId, int skillId)
 void CampaignEditor::removeLastComma(std::string &json)
 {
     json = json.substr(0, json.size() - 1);
+}
+
+void CampaignEditor::parse(std::string file)
+{
+    auto json = (new StringFileReader)->getStringFromFile(file);
+    auto campaignParser = new CampaignParser(json);
+    campaignParser->parse();
+    heroIds = campaignParser->getHeroIds();
+    skills = campaignParser->getSkills();
+}
+
+std::vector<int> CampaignEditor::getHeroIds()
+{
+    return heroIds;
 }

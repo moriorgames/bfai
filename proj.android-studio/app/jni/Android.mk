@@ -62,6 +62,7 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    ../../../Classes/MoriorGames/Vendor/Grid/Grid.cpp \
                    ../../../Classes/MoriorGames/Vendor/Parsers/BattleActionParser.cpp \
                    ../../../Classes/MoriorGames/Vendor/Parsers/BattleParser.cpp \
+                   ../../../Classes/MoriorGames/Vendor/Parsers/CampaignParser.cpp \
                    ../../../Classes/MoriorGames/Vendor/Parsers/HeroParser.cpp \
                    ../../../Classes/MoriorGames/Vendor/Parsers/JsonParser.cpp \
                    ../../../Classes/MoriorGames/Vendor/Parsers/SkillHeroParser.cpp \

@@ -19,7 +19,7 @@
       "y": 0
     },
     {
-      "userToken": "7bf60f6f-312b-4d19-8b17-e09a0039fbbe",
+      "userToken": "3666a5d4-938d-4f50-958f-4ecc0974c78d",
       "side": "local",
       "battleHeroId": 3,
       "heroId": 3,
@@ -27,26 +27,26 @@
       "y": 2
     },
     {
-      "userToken": "7bf60f6f-312b-4d19-8b17-e09a0039fbbe",
+      "userToken": "3666a5d4-938d-4f50-958f-4ecc0974c78d",
       "side": "local",
       "battleHeroId": 4,
-      "heroId": 4,
+      "heroId": 10,
       "x": -7,
       "y": 1
     },
     {
-      "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
-      "side": "visitor",
+      "userToken": "3666a5d4-938d-4f50-958f-4ecc0974c78d",
+      "side": "local",
       "battleHeroId": 5,
-      "heroId": 9,
-      "x": 8,
-      "y": 2
+      "heroId": 4,
+      "x": -5,
+      "y": -2
     },
     {
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "side": "visitor",
       "battleHeroId": 6,
-      "heroId": 3,
+      "heroId": 9,
       "x": 7,
       "y": 1
     },
@@ -54,7 +54,7 @@
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "side": "visitor",
       "battleHeroId": 7,
-      "heroId": 3,
+      "heroId": 7,
       "x": 7,
       "y": -1
     },
@@ -69,7 +69,19 @@
   ],
   "skillsHeroes": [
     {
+      "battleHeroId": 3,
+      "skillId": 15
+    },
+    {
       "battleHeroId": 4,
+      "skillId": 16
+    },
+    {
+      "battleHeroId": 4,
+      "skillId": 8
+    },
+    {
+      "battleHeroId": 5,
       "skillId": 14
     }
   ]

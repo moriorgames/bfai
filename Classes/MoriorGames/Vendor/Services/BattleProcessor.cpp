@@ -173,11 +173,7 @@ void BattleProcessor::setShield(Skill *skill, BattleHero *attacker, BattleAction
     attacker->flip(battleAction->getCoordinate());
     for (auto defender:battle->getBattleHeroes()) {
         if (!defender->isDead() && defender->getCoordinate()->isEqual(battleAction->getCoordinate())) {
-
             defender->setShield(skill->getExtra());
-            auto extraAction = new BattleAction("", "", defender->getBattleHeroId(), skill->getId());
-            extraActions.push_back(extraAction);
-
             break;
         }
     }

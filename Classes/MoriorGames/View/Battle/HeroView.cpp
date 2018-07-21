@@ -33,7 +33,8 @@ void HeroView::update(BattleAction *battleAction)
 {
     if (battleAction->getBattleHeroId() == battleHero->getBattleHeroId()) {
 
-        auto skill = skillRepo->findById(battleAction->getSkillId());
+//        // @todo I'm sure it will be used in future
+//        auto skill = skillRepo->findById(battleAction->getSkillId());
 
         if (battleAction->getSkillId() == Skill::NEXT_TURN_ID) {
             heroAnimator->stop();
@@ -44,15 +45,13 @@ void HeroView::update(BattleAction *battleAction)
             heroAnimator->stop();
             container->runAction(heroAnimator->jumpTo(container, battleHero->getCoordinate()));
         } else if (battleAction->getSkillId() == Skill::DAMAGE_ID) {
-            heroHitPointsView->update();
             heroAnimator->hurt(container, battleAction);
-        } else if (skill->getType() == Skill::TYPE_SHIELD) {
-            heroHitPointsView->update();
         } else {
             heroAnimator->stop();
             heroAnimator->action();
         }
     }
+    heroHitPointsView->update();
     if (battleAction->getSkillId() != Skill::EXTRA_SHOT_ID && battleHero->isActive && !battleHero->hasMoved()) {
         heroAnimator->move();
     }

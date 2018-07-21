@@ -23,7 +23,7 @@
       "side": "local",
       "battleHeroId": 3,
       "heroId": 3,
-      "x": -8,
+      "x": -6,
       "y": 2
     },
     {
@@ -40,7 +40,7 @@
       "battleHeroId": 5,
       "heroId": 4,
       "x": -5,
-      "y": -2
+      "y": 2
     },
     {
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",

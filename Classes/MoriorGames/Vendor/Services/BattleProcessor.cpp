@@ -110,7 +110,7 @@ bool BattleProcessor::processBattleActionSideEffects(BattleHero *battleHero, Bat
             if (skillType == Skill::TYPE_SPAWN) {
                 battleHeroSpawner->spawn(skill, battleHero, battleAction);
             }
-            if (skillType == Skill::TYPE_CONE_AREA_DAMAGE) {
+            if (skillType == Skill::TYPE_CONE_AREA_DAMAGE || skillType == Skill::TYPE_LINE_AREA_DAMAGE) {
                 areaDamage(skill, battleHero, battleAction);
             }
             if (skillType == Skill::TYPE_JUMP) {
@@ -141,7 +141,13 @@ void BattleProcessor::singleDamage(BattleHero *attacker, BattleAction *battleAct
 
 void BattleProcessor::areaDamage(Skill *skill, BattleHero *attacker, BattleAction *battleAction)
 {
-    auto pathScope = pathFinder->buildPathForArea(attacker->getCoordinate(), skill->getRanged());
+    attacker->flip(battleAction->getCoordinate());
+    std::vector<Path> pathScope;
+    if (skill->getType() == Skill::TYPE_LINE_AREA_DAMAGE) {
+        pathScope = pathFinder->buildPathForLine(attacker->getCoordinate(), skill->getRanged());
+    } else {
+        pathScope = pathFinder->buildPathForArea(attacker->getCoordinate(), skill->getRanged());
+    }
     for (auto path:pathScope) {
         if (isValidAreaOfEffect(attacker, battleAction, path.coordinate)) {
             for (auto defender:battle->getBattleHeroes()) {

@@ -49,13 +49,11 @@ const std::vector<Path> &PathFinderArea::buildPathScopeLine(Coordinate *origin, 
     for (int i = 0; i < range; ++i) {
         Path pathLeft;
         pathLeft.coordinate = new Coordinate(baseLeft->x, baseLeft->y);
-        pathLeft.coordinate->x--;
         if (grid->isValidCoordinate(pathLeft.coordinate)) {
             pathScope.push_back(pathLeft);
         }
         Path pathRight;
         pathRight.coordinate = new Coordinate(baseRight->x, baseRight->y);
-        pathRight.coordinate->x++;
         if (grid->isValidCoordinate(pathRight.coordinate)) {
             pathScope.push_back(pathRight);
         }

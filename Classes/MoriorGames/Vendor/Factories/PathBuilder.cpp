@@ -27,6 +27,10 @@ const std::vector<Path> &PathBuilder::build(Skill *skill, BattleHero *battleHero
 
         return pathFinder->buildPathForArea(battleHero->getCoordinate(), skill->getRanged());
 
+    } else if (skill->getType() == Skill::TYPE_LINE_AREA_DAMAGE) {
+
+        return pathFinder->buildPathForLine(battleHero->getCoordinate(), skill->getRanged());
+
     } else {
 
         return pathFinder->buildPathScope(battleHero->getCoordinate(), skill->getRanged(), true);

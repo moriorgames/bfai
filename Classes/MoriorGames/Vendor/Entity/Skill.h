@@ -24,6 +24,7 @@ public:
     static short TYPE_EXTRA_SHOT;
     static short TYPE_JUMP;
     static short TYPE_SHIELD;
+    static short TYPE_LINE_AREA_DAMAGE;
 
 public:
     int getId() const;

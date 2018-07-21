@@ -34,7 +34,9 @@ short Skill::TYPE_EXTRA_SHOT = 7;
 
 short Skill::TYPE_JUMP = 8;
 
-short Skill::TYPE_SHIELD= 9;
+short Skill::TYPE_SHIELD = 9;
+
+short Skill::TYPE_LINE_AREA_DAMAGE = 10;
 
 int Skill::getId() const
 {

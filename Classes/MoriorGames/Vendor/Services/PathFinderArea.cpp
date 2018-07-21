@@ -38,6 +38,35 @@ const std::vector<Path> &PathFinderArea::buildPathScope(Coordinate *origin, int 
     return pathScope;
 }
 
+const std::vector<Path> &PathFinderArea::buildPathScopeLine(Coordinate *origin, int range)
+{
+    pathScope.clear();
+    auto baseLeft = new Coordinate(origin->x, origin->y);
+    baseLeft->x--;
+    auto baseRight = new Coordinate(origin->x, origin->y);
+    baseRight->x++;
+
+    for (int i = 0; i < range; ++i) {
+        Path pathLeft;
+        pathLeft.coordinate = new Coordinate(baseLeft->x, baseLeft->y);
+        pathLeft.coordinate->x--;
+        if (grid->isValidCoordinate(pathLeft.coordinate)) {
+            pathScope.push_back(pathLeft);
+        }
+        Path pathRight;
+        pathRight.coordinate = new Coordinate(baseRight->x, baseRight->y);
+        pathRight.coordinate->x++;
+        if (grid->isValidCoordinate(pathRight.coordinate)) {
+            pathScope.push_back(pathRight);
+        }
+
+        baseLeft->x--;
+        baseRight->x++;
+    }
+
+    return pathScope;
+}
+
 void PathFinderArea::addPathForAxis(Coordinate *origin, int index)
 {
     for (auto axis:moveAxis(origin)) {

@@ -99,6 +99,14 @@ const std::vector<Path> &PathFinder::buildPathForArea(Coordinate *origin, int ra
     return pathScope;
 }
 
+const std::vector<Path> &PathFinder::buildPathForLine(Coordinate *origin, int range)
+{
+    pathScope.clear();
+    pathScope = pathFinderArea->buildPathScopeLine(origin, range);
+
+    return pathScope;
+}
+
 const std::vector<Path> &PathFinder::getPathScope() const
 {
     return pathScope;

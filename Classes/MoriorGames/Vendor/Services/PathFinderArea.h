@@ -11,6 +11,7 @@ class PathFinderArea
 public:
     explicit PathFinderArea(Grid *grid);
     const std::vector<Path> &buildPathScope(Coordinate *, int range);
+    const std::vector<Path> &buildPathScopeLine(Coordinate *, int range);
 
 private:
     Grid *grid;

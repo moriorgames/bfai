@@ -16,6 +16,7 @@ public:
     const std::vector<Path> &buildPathForSight(Coordinate *, int range);
     const std::vector<Path> &buildPathForJump(Coordinate *, int range);
     const std::vector<Path> &buildPathForArea(Coordinate *, int range);
+    const std::vector<Path> &buildPathForLine(Coordinate *, int range);
     const std::vector<Path> &getPathScope() const;
 
 private:

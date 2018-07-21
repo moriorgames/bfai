@@ -1,4 +1,5 @@
 #include "HeroesConfig2Json.h"
+#include "CampaignEditor.h"
 #include "../Vendor/Entity/BattleHero.h"
 #include "../Vendor/Entity/User.h"
 #include "../Vendor/Utils/TextUtils.h"
@@ -39,6 +40,9 @@ std::string HeroesConfig2Json::heroesRows(HeroesConfig *heroesConfig)
         battleHeroId++;
         index++;
     }
+
+    auto campaignEditor = new CampaignEditor;
+    campaignEditor->transform(heroesConfig);
 
     // @TODO this has to be managed by a kind of Campaign creator
     // Enemy Heroes

@@ -44,6 +44,7 @@ LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
                    ../../../Classes/MoriorGames/Services/TeamSight.cpp \
                    ../../../Classes/MoriorGames/Services/Translator.cpp \
                    ../../../Classes/MoriorGames/Transformers/BattleAction2Json.cpp \
+                   ../../../Classes/MoriorGames/Transformers/CampaignEditor.cpp \
                    ../../../Classes/MoriorGames/Transformers/HeroesConfig2Json.cpp \
                    ../../../Classes/MoriorGames/Vendor/Config/StaticBushConfig.cpp \
                    ../../../Classes/MoriorGames/Vendor/Containers/HeroesConfig.cpp \

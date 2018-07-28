@@ -86,8 +86,7 @@ bool BattleProcessor::processBattleActionSideEffects(BattleHero *battleHero, Bat
             return true;
         }
         auto skillType = skill->getType();
-        bool isallll  = battleActionChecker->isSkillAllowed(skill, battleHero, battleAction);
-        if (!isallll) {
+        if (!battleActionChecker->isSkillAllowed(skill, battleHero, battleAction)) {
 
             return true;
         }

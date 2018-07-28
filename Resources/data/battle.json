@@ -24,7 +24,15 @@
       "battleHeroId": 3,
       "heroId": 5,
       "x": 4,
-      "y": 2
+      "y": 0
+    },
+    {
+      "userToken": "e755fe33-30f9-425d-8f31-dd250318606c",
+      "side": "local",
+      "battleHeroId": 4,
+      "heroId": 5,
+      "x": 4,
+      "y": -3
     },
     {
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",

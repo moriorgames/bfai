@@ -75,6 +75,7 @@ void AI::initialize()
     }
 
     auto pathScopeMovement = pathFinder->getPathScope();
+    auto pathScopeExtra = pathFinder->getPathScope();
     for (auto pathMove:pathScopeMovement) {
         for (auto pathAction:pathFinder->buildPathScope(pathMove.coordinate, activeHero->getRanged())) {
             auto dna = new DNA;
@@ -86,7 +87,13 @@ void AI::initialize()
             dna->skill2 = Skill::SINGLE_ATTACK_ID;
             dnas.push_back(dna);
         }
-        if (extraSkill->getId() > 0) {
+    }
+    if (extraSkill->getId() > 0) {
+        int initialX = activeHero->getCoordinate()->x;
+        int initialY = activeHero->getCoordinate()->y;
+        for (auto pathMove:pathScopeExtra) {
+            activeHero->getCoordinate()->x = pathMove.coordinate->x;
+            activeHero->getCoordinate()->y = pathMove.coordinate->y;
             for (auto pathAction:pathBuilder->build(extraSkill, activeHero)) {
                 auto dna = new DNA;
                 dna->x1 = pathMove.coordinate->x;
@@ -98,6 +105,8 @@ void AI::initialize()
                 dnas.push_back(dna);
             }
         }
+        activeHero->getCoordinate()->x = initialX;
+        activeHero->getCoordinate()->y = initialY;
     }
 }
 

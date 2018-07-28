@@ -4,7 +4,7 @@
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "side": "visitor",
       "battleHeroId": 7,
-      "heroId": 2,
+      "heroId": 4,
       "x": 8,
       "y": 2
     },
@@ -12,7 +12,7 @@
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "side": "visitor",
       "battleHeroId": 8,
-      "heroId": 4,
+      "heroId": 7,
       "x": 7,
       "y": 1
     },
@@ -28,7 +28,7 @@
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "side": "visitor",
       "battleHeroId": 10,
-      "heroId": 3,
+      "heroId": 10,
       "x": 8,
       "y": -2
     }
@@ -36,46 +36,58 @@
   "skillsHeroes": [
     {
       "battleHeroId": 8,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 8,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 8,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 8,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 8,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 9,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 9,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 9,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 9,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 9,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 9,
+      "skillId": 5
+    },
+    {
+      "battleHeroId": 10,
       "skillId": 8
     },
     {
-      "battleHeroId": 8,
+      "battleHeroId": 10,
       "skillId": 5
     },
     {
-      "battleHeroId": 8,
-      "skillId": 5
-    },
-    {
-      "battleHeroId": 8,
-      "skillId": 5
-    },
-    {
-      "battleHeroId": 8,
-      "skillId": 5
-    },
-    {
-      "battleHeroId": 9,
-      "skillId": 5
-    },
-    {
-      "battleHeroId": 9,
-      "skillId": 5
-    },
-    {
-      "battleHeroId": 9,
-      "skillId": 5
-    },
-    {
-      "battleHeroId": 9,
-      "skillId": 5
-    },
-    {
-      "battleHeroId": 9,
-      "skillId": 5
-    },
-    {
-      "battleHeroId": 9,
+      "battleHeroId": 10,
       "skillId": 5
     }
   ]

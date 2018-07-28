@@ -2,6 +2,7 @@
 #include "../Vendor/Entity/BattleHero.h"
 #include "../Vendor/Entity/User.h"
 #include "../Vendor/Services/AI.h"
+#include "../Vendor/Services/Randomizer.h"
 #include "../Vendor/Utils/TextUtils.h"
 #include "../Definitions.h"
 
@@ -11,7 +12,8 @@ std::string HeroesConfig2Json::transform(HeroesConfig *heroesConfig)
     if (CAMPAIGN_EDITOR) {
         campaignEditor->transform(heroesConfig);
     } else {
-        campaignEditor->parse("data/x-campaign-102.json");
+        int rand = Randomizer::randomize(0, 9);
+        campaignEditor->parse("data/x-campaign-10" + to_string(rand) + ".json");
     }
 
     std::string heroesJson = heroesRows(heroesConfig);

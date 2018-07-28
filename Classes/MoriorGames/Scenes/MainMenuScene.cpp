@@ -28,7 +28,7 @@ bool MainMenuScene::init()
     new BackgroundView(this);
     new WorldView(this);
     new BattleButton(this);
-    new TrainingButton(this);
+//    new TrainingButton(this);
     new BattleHeroesButton(this);
 
     return true;

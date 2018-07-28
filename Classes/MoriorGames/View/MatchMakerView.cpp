@@ -21,13 +21,13 @@ void MatchMakerView::addView()
 
 bool MatchMakerView::update()
 {
-    loadingBarPercentage++;
+    loadingBarPercentage += 2;
     loadingView->setLoadingBarPercentage(loadingBarPercentage);
     loadingTitleView->setEllipsis(loadingBarPercentage);
-    if (loadingBarPercentage % 8 == 0) {
-        // Perform api battle in some periods
-        client->apiBattle();
-    }
+//    if (loadingBarPercentage % 8 == 0) {
+//        // Perform api battle in some periods
+//        client->apiBattle();
+//    }
 
     // Passed some iterations go to offline battle
     if (loadingBarPercentage > 100) {

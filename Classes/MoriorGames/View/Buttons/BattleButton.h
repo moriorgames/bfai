@@ -8,7 +8,7 @@ class BattleButton: public ViewHelper
 {
 public:
     float const BUTTON_X = -300;
-    float const BUTTON_Y = 85;
+    float const BUTTON_Y = 0;
 
     explicit BattleButton(Layer *layer);
 

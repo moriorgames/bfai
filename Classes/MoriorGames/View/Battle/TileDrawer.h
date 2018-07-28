@@ -13,6 +13,7 @@ public:
 
     TileDrawer(float size, Coordinate2Screen *);
     void draw(Coordinate *, Color4F color, Node *);
+    void debug(Coordinate *, Node *);
 
 private:
     float size = 0;

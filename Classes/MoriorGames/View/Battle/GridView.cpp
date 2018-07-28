@@ -29,6 +29,7 @@ void GridView::drawGrid(const std::vector<Coordinate *> &coordinates)
 {
     for (auto coordinate:coordinates) {
         drawTile(coordinate, GridView::FILL_COLOR, gridTiles);
+        tileDrawer->debug(coordinate, gridTiles);
     }
 }
 

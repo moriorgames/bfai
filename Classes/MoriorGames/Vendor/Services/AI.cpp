@@ -7,6 +7,7 @@ AI::AI(Battle *battle, Grid *grid, BattleEventPublishable *eventPublisher)
     : battle{battle}, eventPublisher{eventPublisher}
 {
     pathFinder = new PathFinder(grid);
+    pathBuilder = new PathBuilder(pathFinder);
     fitnessCalculator = new FitnessCalculator(battle, grid);
     best = new DNA;
 }
@@ -63,6 +64,16 @@ void AI::initialize()
 {
     auto activeHero = battle->getActiveBattleHero();
     pathFinder->buildPathScope(activeHero->getCoordinate(), activeHero->getMovement(), true);
+
+    Skill *extraSkill = new Skill;
+    extraSkill->setId(0);
+    for (auto skill:activeHero->getSkills()) {
+        if (skill->isUnique() && skill->getId() >= 9) {
+            extraSkill = skill;
+            break;
+        }
+    }
+
     auto pathScopeMovement = pathFinder->getPathScope();
     for (auto pathMove:pathScopeMovement) {
         for (auto pathAction:pathFinder->buildPathScope(pathMove.coordinate, activeHero->getRanged())) {
@@ -74,6 +85,18 @@ void AI::initialize()
             dna->y2 = pathAction.coordinate->y;
             dna->skill2 = Skill::SINGLE_ATTACK_ID;
             dnas.push_back(dna);
+        }
+        if (extraSkill->getId() > 0) {
+            for (auto pathAction:pathBuilder->build(extraSkill, activeHero)) {
+                auto dna = new DNA;
+                dna->x1 = pathMove.coordinate->x;
+                dna->y1 = pathMove.coordinate->y;
+                dna->skill1 = Skill::MOVE_ID;
+                dna->x2 = pathAction.coordinate->x;
+                dna->y2 = pathAction.coordinate->y;
+                dna->skill2 = extraSkill->getId();
+                dnas.push_back(dna);
+            }
         }
     }
 }

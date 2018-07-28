@@ -34,6 +34,7 @@ private:
     DNA *best;
     Battle *battle;
     PathFinder *pathFinder;
+    PathBuilder *pathBuilder;
     FitnessCalculator *fitnessCalculator;
     BattleEventPublishable *eventPublisher;
     std::vector<DNA *> dnas;

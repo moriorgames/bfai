@@ -26,6 +26,9 @@ public:
     void hurt(Node *, BattleAction *);
 
 private:
+    const float MOVE_SEEP = .7;
+    const float JUMP_SEEP = .35;
+
     Sprite *sprite;
     BattleHero *battleHero;
     Coordinate2Screen *coordinate2Screen;

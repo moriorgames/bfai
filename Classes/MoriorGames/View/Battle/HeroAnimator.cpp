@@ -40,7 +40,7 @@ Action *HeroAnimator::moveTo(Coordinate *coordinate)
     move();
     sprite->runAction(moveAnimation());
     auto pos = coordinate2Screen->execute(coordinate);
-    auto moveTo = MoveTo::create(1, coordinate2Screen->execute(coordinate));
+    auto moveTo = MoveTo::create(MOVE_SEEP, coordinate2Screen->execute(coordinate));
     auto callback = CallFunc::create([this]()
                                      { stop(); });
 
@@ -52,10 +52,10 @@ Action *HeroAnimator::jumpTo(Node *container, Coordinate *coordinate)
     move();
     sprite->runAction(moveAnimation());
     auto pos = coordinate2Screen->execute(coordinate);
-    auto moveTo = MoveTo::create(.4, coordinate2Screen->execute(coordinate));
+    auto moveTo = MoveTo::create(JUMP_SEEP, coordinate2Screen->execute(coordinate));
     auto callback = CallFunc::create([this]()
                                      { stop(); });
-    auto jump = JumpBy::create(0.4, Vec2(0, 0), 40, 1);
+    auto jump = JumpBy::create(JUMP_SEEP, Vec2(0, 0), 40, 1);
     container->runAction(jump);
 
     return Sequence::create(moveTo, callback, nullptr);

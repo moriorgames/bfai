@@ -18,7 +18,7 @@
 #define LOADER_BAR_DELAY 0.06
 
 #define MODE_SOUND      0
-#define DEBUG_SCENE     0
+#define DEBUG_SCENE     1
 #define CAMPAIGN_EDITOR 0
 #define SANDBOX_MODE    0
 

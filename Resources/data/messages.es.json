@@ -31,5 +31,9 @@
   "skill_name_jump": "Saltar",
   "skill_description_jump": "Muévete de un salto a otra posición durante la fase de acción.",
   "skill_name_mitigation": "Mitigación",
-  "skill_description_mitigation": "La próxima vez que el objetivo de esta habilidad sea dañado recibirá 1 punto menos de daño."
+  "skill_description_mitigation": "La próxima vez que el objetivo de esta habilidad sea dañado recibirá 2 punto menos de daño.",
+  "skill_name_burst": "Ráfaga",
+  "skill_description_burst": "Crea una ráfaga de daño en área en línea de largo alcance enfrende del héroe.",
+  "skill_name_shield-skill": "Escudo",
+  "skill_description_shield-skill": "La próxima vez que el objetivo de esta habilidad sea dañado recibirá 4 punto menos de daño.."
 }

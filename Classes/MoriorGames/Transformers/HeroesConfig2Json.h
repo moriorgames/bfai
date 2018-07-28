@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include "CampaignEditor.h"
 #include "../Vendor/Containers/HeroesConfig.h"
 
 class HeroesConfig2Json
@@ -11,6 +12,7 @@ public:
     std::string transform(HeroesConfig *);
 
 private:
+    CampaignEditor *campaignEditor;
     std::vector<std::pair<short, short>> coords{
         {-8, 2}, {-7, 1}, {-7, -1}, {-8, -2},
     };

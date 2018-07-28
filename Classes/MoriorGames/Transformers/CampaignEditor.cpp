@@ -43,12 +43,12 @@ CampaignEditor::heroRow(std::string userToken, std::string side, int battleHeroI
 {
     std::string json =
         "{ \"userToken\":\"" + userToken + "\", "
-                                           "\"side\":\"" + side + "\", "
-                                                                  "\"battleHeroId\":" + to_string(battleHeroId) + ", "
-                                                                                                                  "\"heroId\":"
-            + to_string(heroId) + ", "
-                                  "\"x\":" + to_string(x) + ", "
-                                                            "\"y\":" + to_string(y) + " },";
+        "\"side\":\"" + side + "\", "
+        "\"battleHeroId\":" + to_string(battleHeroId) + ", "
+        "\"heroId\":"
+        + to_string(heroId) + ", "
+        "\"x\":" + to_string(x) + ", "
+        "\"y\":" + to_string(y) + " },";
     heroIds.push_back(heroId);
 
     return json;
@@ -79,6 +79,7 @@ std::string CampaignEditor::skillsHeroesRows(HeroesConfig *heroesConfig)
 std::string CampaignEditor::skillHeroRow(int battleHeroId, int skillId)
 {
     std::string json = "{ \"battleHeroId\":" + to_string(battleHeroId) + ", \"skillId\":" + to_string(skillId) + " },";
+    skills.emplace_back(battleHeroId, skillId);
 
     return json;
 }
@@ -100,4 +101,9 @@ void CampaignEditor::parse(std::string file)
 std::vector<int> CampaignEditor::getHeroIds()
 {
     return heroIds;
+}
+
+std::vector<std::pair<short, short>> CampaignEditor::getSkillsHeroes()
+{
+    return skills;
 }

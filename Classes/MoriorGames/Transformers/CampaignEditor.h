@@ -11,6 +11,7 @@ public:
     std::string transform(HeroesConfig *);
     void parse(std::string file);
     std::vector<int> getHeroIds();
+    std::vector<std::pair<short, short>> getSkillsHeroes();
 
 private:
     std::vector<int> heroIds;

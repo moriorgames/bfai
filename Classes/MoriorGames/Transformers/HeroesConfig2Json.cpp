@@ -1,5 +1,4 @@
 #include "HeroesConfig2Json.h"
-#include "CampaignEditor.h"
 #include "../Vendor/Entity/BattleHero.h"
 #include "../Vendor/Entity/User.h"
 #include "../Vendor/Services/AI.h"
@@ -8,6 +7,13 @@
 
 std::string HeroesConfig2Json::transform(HeroesConfig *heroesConfig)
 {
+    campaignEditor = new CampaignEditor;
+    if (CAMPAIGN_EDITOR) {
+        campaignEditor->transform(heroesConfig);
+    } else {
+        campaignEditor->parse("data/x-campaign-102.json");
+    }
+
     std::string heroesJson = heroesRows(heroesConfig);
     std::string skillsHeroesJson = skillsHeroesRows(heroesConfig);
     std::string json =
@@ -43,17 +49,8 @@ std::string HeroesConfig2Json::heroesRows(HeroesConfig *heroesConfig)
         index++;
     }
 
-    auto campaignEditor = new CampaignEditor;
-
-    if (DEBUG_SCENE) {
-        campaignEditor->transform(heroesConfig);
-    } else {
-        campaignEditor->parse("data/x-campaign-101.json");
-    }
-    std::vector<int> enemies = campaignEditor->getHeroIds();
-
     index = 0;
-    for (auto enemy:enemies) {
+    for (auto enemy:campaignEditor->getHeroIds()) {
         short x = abs(coords[index].first);
         short y = coords[index].second;
         json += heroRow(
@@ -100,6 +97,11 @@ std::string HeroesConfig2Json::skillsHeroesRows(HeroesConfig *heroesConfig)
             hasToRemoveLastComma = true;
         }
         battleHeroId++;
+    }
+
+    for (auto skillHero:campaignEditor->getSkillsHeroes()) {
+        json += skillHeroRow(skillHero.first, skillHero.second);
+        hasToRemoveLastComma = true;
     }
 
     if (hasToRemoveLastComma) {

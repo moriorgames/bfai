@@ -50,6 +50,7 @@ std::string HeroesConfig2Json::heroesRows(HeroesConfig *heroesConfig)
     }
 
     index = 0;
+    battleHeroId = 7;
     for (auto enemy:campaignEditor->getHeroIds()) {
         short x = abs(coords[index].first);
         short y = coords[index].second;

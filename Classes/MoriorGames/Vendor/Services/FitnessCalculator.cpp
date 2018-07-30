@@ -52,7 +52,12 @@ double FitnessCalculator::calculate(BattleHero *battleHero, BattleAction *battle
                 moveAssignation(battleHero, battleAction);
             }
             if (skillType == Skill::TYPE_SHIELD) {
-                // @TODO something
+                for (auto hero:battle->getBattleHeroes()) {
+                    if (!hero->isDead() && hero->getCoordinate()->isEqual(battleAction->getCoordinate())
+                        && hero->getSide() == battleHero->getSide()) {
+                        addFitnessDamage(skill->getExtra());
+                    }
+                }
             }
         }
     }

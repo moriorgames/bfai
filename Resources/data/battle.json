@@ -38,7 +38,7 @@
       "userToken": "j54tfg4AeMP4O8z9FgtWJEZeFYmmrtS3LpoaKbQ47FB",
       "side": "visitor",
       "battleHeroId": 9,
-      "heroId": 5,
+      "heroId": 4,
       "x": 7,
       "y": -1
     }
@@ -50,7 +50,7 @@
     },
     {
       "battleHeroId": 9,
-      "skillId": 9
+      "skillId": 14
     }
   ]
 }
